@@ -61,4 +61,14 @@ jobs:
         run: |
           python ../configure.py --build exp --enable-optimize
           ~/.local/bin/ambuild
-        
+
+      - name: Package libraries
+        working-directory: sourcepawn
+        run: tar -zcf build.tar.gz build
+
+      - name: Upload libraries
+        uses: actions/upload-artifact@v1
+        working-directory: sourcepawn
+        with:
+          name: libraries
+          path: build.tar.gz
