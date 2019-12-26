@@ -100,8 +100,7 @@ jobs:
         run: sudo tar -xzf libraries/build.tar.gz -C /usr/lib/
 
       - name: Build generator
-        working-directory: docgen/generator
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --release
+          args: --release --manifest-path docgen/generator/Cargo.toml
