@@ -60,5 +60,5 @@ jobs:
         working-directory: sourcepawn/build
         run: |
           python ../configure.py --build exp --enable-optimize
-          ambuild
+          ~/.local/bin/ambuild
         
