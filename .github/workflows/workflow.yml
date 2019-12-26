@@ -99,5 +99,9 @@ jobs:
       - name: Extract libraries
         run: sudo tar -xzf libraries/build.tar.gz -C /usr/lib/
 
-      - name: ls
-        run: ls -lh /usr/lib/
+      - name: Build generator
+        working-directory: docgen/generator
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release
