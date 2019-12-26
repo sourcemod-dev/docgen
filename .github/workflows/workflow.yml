@@ -39,7 +39,9 @@ jobs:
 
       - name: Install AMBuild
         working-directory: ambuild
-        run: sudo python setup.py install
+        run: |
+          python setup.py build
+          python setup.py install --user
 
       - name: Copy binding helpers
         run: |
