@@ -15,7 +15,7 @@ def make_objdir_name(p):
   return 'obj-' + util.Platform() + '-' + p.target_arch
 
 parser = run.BuildParser(sourcePath=sys.path[0], api='2.1')
-parser.default_arch = 'x86'
+parser.default_arch = 'x64'
 parser.default_build_folder = make_objdir_name
 parser.options.add_option('--enable-debug', action='store_const', const='1', dest='debug',
                        help='Enable debugging symbols')
