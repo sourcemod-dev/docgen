@@ -64,7 +64,7 @@ jobs:
 
       - name: Package libraries
         working-directory: sourcepawn
-        run: tar -zcf build.tar.gz build
+        run: tar -zcf build.tar.gz build/*
 
       - name: Upload libraries
         uses: actions/upload-artifact@v1
