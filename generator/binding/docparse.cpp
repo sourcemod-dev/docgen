@@ -244,7 +244,7 @@ class ExprToStr : public StrictAstVisitor
     result_ = "{ ";
     for (size_t i = 0; i < exprs->length(); i++) {
       ke::AString element = Convert(exprs->at(i));
-      if (i == node->arrayLength() - 1 && !node->repeatLastElement())
+      if (i == exprs->length() - 1 && !node->repeatLastElement())
         result_.format("%s%s, ", result_.chars(), element.chars());
       else
         result_.format("%s%s", result_.chars(), element.chars());
