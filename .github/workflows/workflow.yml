@@ -97,7 +97,7 @@ jobs:
           path: libraries
 
       - name: Extract libraries
-        run: tar -xzf libraries/build.tar.gz -C /usr/lib/
+        run: sudo tar -xzf libraries/build.tar.gz -C /usr/lib/
 
       - name: ls
         run: ls -lh /usr/lib/
