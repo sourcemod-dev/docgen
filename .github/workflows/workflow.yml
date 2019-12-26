@@ -18,6 +18,7 @@ jobs:
           path: docgen
 
       - name: Checkout SourcePawn
+        uses: actions/checkout@v2
         with:
           path: sourcepawn
           repository: alliedmodders/sourcepawn
