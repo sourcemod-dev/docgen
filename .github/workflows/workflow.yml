@@ -104,3 +104,6 @@ jobs:
         with:
           command: build
           args: --release --manifest-path docgen/generator/Cargo.toml
+
+      - name: ls
+        run: ls -lh target/release/
