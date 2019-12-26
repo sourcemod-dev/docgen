@@ -56,6 +56,12 @@ jobs:
         run: |
           mkdir build
 
+      - name: Cache build files
+        uses: actions/cache@v1
+        with:
+          path: build
+          key: ${{ runner.os }}-libraries-build
+
       - name: Build libraries
         working-directory: sourcepawn/build
         run: |
