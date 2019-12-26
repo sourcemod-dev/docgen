@@ -49,7 +49,7 @@ jobs:
           cp docgen/generator/binding/AMBuilder sourcepawn/exp/tools/docparse/
           cp docgen/generator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
           cp docgen/generator/binding/docparse.h sourcepawn/exp/tools/docparse/
-          cp docgen/generator/binding/dll_exports.cpp sourcepawn/vm/
+          cp docgen/generator/binding/dll_exports.cpp sourcepawn/exp/compiler/
 
       - name: Create build directory
         working-directory: sourcepawn
