@@ -1,10 +1,11 @@
 extern crate bindgen;
 
 use std::env;
+use std::env::var;
 use std::path::PathBuf;
 
 fn main() {
-    const manifest_dir = var("CARGO_MANIFEST_DIR").unwrap();
+    let manifest_dir = var("CARGO_MANIFEST_DIR").unwrap();
 
     println!("cargo:rustc-link-search={}/libraries", manifest_dir);
 
