@@ -1,0 +1,12 @@
+[package]
+name = "mono"
+version = "0.1.0"
+authors = ["rumblefrog <contact@rumblefrog.me>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+spdcp = "0.4.4"
+serde = { version = "1.0.103", features = ["derive"] }
