@@ -97,7 +97,9 @@ jobs:
           path: libraries
 
       - name: Extract libraries
-        run: tar -xzf libraries/build.tar.gz -C docgen/generator/libraries
+        run: |
+          mkdir docgen/generator/libraries
+          tar -xzf libraries/build.tar.gz -C docgen/generator/libraries
 
       - name: Build generator
         uses: actions-rs/cargo@v1
