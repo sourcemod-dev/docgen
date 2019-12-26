@@ -43,11 +43,11 @@ jobs:
 
       - name: Copy binding helpers
         run: |
-          cp docgen/binding/configure.py sourcepawn/
-          cp docgen/binding/AMBuilder sourcepawn/exp/tools/docparse/
-          cp docgen/binding/docparse.cpp sourcepawn/exp/tools/docparse/
-          cp docgen/binding/docparse.h sourcepawn/exp/tools/docparse/
-          cp docgen/binding/dll_exports.cpp sourcepawn/vm/
+          cp docgen/generator/binding/configure.py sourcepawn/
+          cp docgen/generator/binding/AMBuilder sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/docparse.h sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/dll_exports.cpp sourcepawn/vm/
 
       - name: Create build directory
         working-directory: sourcepawn
