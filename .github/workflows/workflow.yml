@@ -1,0 +1,126 @@
+name: Build libraries & docgen
+
+on: [push]
+
+jobs:
+  libraries:
+    name: SP Libraries
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Python environment
+        uses: actions/setup-python@v1.1.1
+
+      - name: Checkout generator
+        uses: actions/checkout@v2
+        with:
+          path: docgen
+
+      - name: Checkout SourcePawn
+        uses: actions/checkout@v2
+        with:
+          path: sourcepawn
+          repository: alliedmodders/sourcepawn
+
+      - name: Checkout SP Submodules
+        shell: bash
+        working-directory: sourcepawn
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+      - name: Checkout AMbuild
+        uses: actions/checkout@v2
+        with:
+          path: ambuild
+          repository: alliedmodders/ambuild
+
+      - name: Install AMBuild
+        working-directory: ambuild
+        run: |
+          python setup.py build
+          python setup.py install --user
+
+      - name: Copy binding helpers
+        run: |
+          cp docgen/generator/binding/configure.py sourcepawn/
+          cp docgen/generator/binding/AMBuilder sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/docparse.h sourcepawn/exp/tools/docparse/
+          cp docgen/generator/binding/dll_exports.cpp sourcepawn/exp/compiler/
+
+      - name: Create build directory
+        working-directory: sourcepawn
+        run: |
+          mkdir build
+
+      - name: Build libraries
+        working-directory: sourcepawn/build
+        run: |
+          python ../configure.py --build exp --enable-optimize
+          ~/.local/bin/ambuild
+
+      - name: Package libraries
+        working-directory: sourcepawn
+        run: cd build/ && tar -zcvf ../build.tar.gz * && cd - 
+
+      - name: Upload libraries
+        uses: actions/upload-artifact@v1
+        with:
+          name: libraries
+          path: sourcepawn/build.tar.gz
+  generator:
+    name: DocGen
+
+    needs: libraries
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout generator
+        uses: actions/checkout@v2
+        with:
+          path: docgen
+
+      - name: Install rust nightly
+        uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+            override: true
+
+      - name: Download libraries
+        uses: actions/download-artifact@v1
+        with:
+          name: libraries
+          path: libraries
+
+      - name: Extract libraries
+        run: |
+          mkdir docgen/generator/libraries
+          tar -xzf libraries/build.tar.gz -C docgen/generator/libraries
+
+      - name: Cache cargo registry
+        uses: actions/cache@v1
+        with:
+          path: ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('docgen/Cargo.lock') }}
+
+      - name: Cache cargo build
+        uses: actions/cache@v1
+        with:
+          path: docgen/target
+          key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('docgen/Cargo.lock') }}
+
+      - name: Build generator
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --manifest-path docgen/generator/Cargo.toml
+
+      - name: Upload docgen
+        uses: actions/upload-artifact@v1
+        with:
+          name: docgen
+          path: docgen/target/release/sp-docgen
