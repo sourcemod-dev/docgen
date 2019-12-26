@@ -4,6 +4,10 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
+    const manifest_dir = var("CARGO_MANIFEST_DIR").unwrap();
+
+    println!("cargo:rustc-link-search={}/libraries", manifest_dir);
+
     println!("cargo:rustc-link-lib=static=docparse");
     println!("cargo:rustc-link-lib=static=spcomp2");
     println!("cargo:rustc-link-lib=static=smx");
