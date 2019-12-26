@@ -4,14 +4,6 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    // println!("cargo:rustc-link-search=/home/fishy/Github/sp-docs/generator/build/exp/compiler/spcomp2");
-    // println!("cargo:rustc-link-search=/home/fishy/Github/sp-docs/generator/build/exp/tools/docparse/docparse");
-    // println!("cargo:rustc-link-search=/home/fishy/Github/sp-docs/generator/build/libsmx/smx");
-
-    println!("cargo:rustc-link-search=F:\\Github\\sp-docs\\generator\\build\\exp\\compiler\\spcomp2");
-    println!("cargo:rustc-link-search=F:\\Github\\sp-docs\\generator\\build\\exp\\tools\\docparse\\docparse");
-    println!("cargo:rustc-link-search=F:\\Github\\sp-docs\\generator\\build\\libsmx\\smx");
-
     println!("cargo:rustc-link-lib=static=docparse");
     println!("cargo:rustc-link-lib=static=spcomp2");
     println!("cargo:rustc-link-lib=static=smx");
