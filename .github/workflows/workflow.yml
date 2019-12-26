@@ -107,8 +107,8 @@ jobs:
           command: build
           args: --release --manifest-path docgen/generator/Cargo.toml
 
-      - name: ls
-        run: ls -lh
-
-      - name: ls 2
-        run: ls -lh docgen/target/release
+      - name: Upload docgen
+        uses: actions/upload-artifact@v1
+        with:
+          name: docgen
+          path: docgen/target/release/sp-docgen
