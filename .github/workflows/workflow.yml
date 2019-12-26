@@ -95,3 +95,6 @@ jobs:
         with:
           name: libraries
           path: libraries
+
+      - name: ls
+        run: ls -lh libraries
