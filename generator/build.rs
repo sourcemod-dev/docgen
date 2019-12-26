@@ -7,9 +7,9 @@ use std::path::PathBuf;
 fn main() {
     let manifest_dir = var("CARGO_MANIFEST_DIR").unwrap();
 
-    println!("cargo:rustc-link-search={}/libraries/libsmx", manifest_dir);
-    println!("cargo:rustc-link-search={}/libraries/exp/compiler", manifest_dir);
-    println!("cargo:rustc-link-search={}/libraries/exp/tools/docparse", manifest_dir);
+    println!("cargo:rustc-link-search={}/libraries/libsmx/smx.x64", manifest_dir);
+    println!("cargo:rustc-link-search={}/libraries/exp/compiler/spcomp2.x64", manifest_dir);
+    println!("cargo:rustc-link-search={}/libraries/exp/tools/docparse/docparse.x64", manifest_dir);
 
     println!("cargo:rustc-link-lib=static=docparse");
     println!("cargo:rustc-link-lib=static=spcomp2");
