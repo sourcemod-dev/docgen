@@ -3,7 +3,7 @@ name: Build DocGen
 on: [push]
 
 jobs:
-  library:
+  libraries:
     name: SP Libraries
 
     runs-on: ubuntu-latest
@@ -71,3 +71,27 @@ jobs:
         with:
           name: libraries
           path: sourcepawn/build.tar.gz
+  generator:
+    name: DocGen
+
+    needs: libraries
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout generator
+        uses: actions/checkout@v2
+        with:
+          path: docgen
+
+      - name: Install rust nightly
+        uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+            override: true
+
+      - name: Download libraries
+        uses: actions/download-artifact@v1
+        with:
+          name: libraries
+          path: libraries
