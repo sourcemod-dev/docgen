@@ -30,4 +30,33 @@ jobs:
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+      - name: Checkout AMbuild
+        uses: actions/checkout@v2
+        with:
+          path: ambuild
+          repository: alliedmodders/ambuild
+
+      - name: Install AMBuild
+        working-directory: ambuild
+        run: sudo python setup.py install
+
+      - name: Copy binding helpers
+        run: |
+          cp docgen/binding/configure.py sourcepawn/
+          cp docgen/binding/AMBuilder sourcepawn/exp/tools/docparse/
+          cp docgen/binding/docparse.cpp sourcepawn/exp/tools/docparse/
+          cp docgen/binding/docparse.h sourcepawn/exp/tools/docparse/
+          cp docgen/binding/dll_exports.cpp sourcepawn/vm/
+
+      - name: Create build directory
+        working-directory: sourcepawn
+        run: |
+          mkdir build
+
+      - name: Build library
+        working-directory: sourcepawn/build
+        run: |
+          python ../configure.py --build exp --enable-optimize
+          ambuild
         
