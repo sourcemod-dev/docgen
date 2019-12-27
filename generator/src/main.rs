@@ -18,13 +18,13 @@ include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 #[derive(StructOpt, Debug)]
 struct Cli {
-    #[structopt(short, long, parse(from_os_str))]
-    /// Input path of include (.inc) file(s) to parse. This can either be a file or a directory.
-    pub input: PathBuf,
-
     #[structopt(short = "o", long = "output", parse(from_os_str))]
     /// Output path of generated include documentation.
     pub output: PathBuf,
+
+    #[structopt(name = "FILE", parse(from_os_str))]
+    /// Input path of an include (.inc) file to parse.
+    pub input: PathBuf,
 }
 
 fn main() {
