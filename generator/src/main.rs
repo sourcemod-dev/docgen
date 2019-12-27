@@ -26,8 +26,8 @@ struct Cli {
     /// Parses a manifest (json) file
     pub is_manifest: bool,
 
-    #[structopt(long, default_value = "https://cdn.jsdelivr.net/gh/rumblefrog/sp-gid@1/")]
-    /// Base URL to use in generated manifest file
+    #[structopt(long, default_value = "https://cdn.jsdelivr.net/gh/rumblefrog/sp-gid@1")]
+    /// Base URL w/o trailing slash to use in generated manifest file
     pub base_url: String,
 
     #[structopt(name = "file", parse(from_os_str))]

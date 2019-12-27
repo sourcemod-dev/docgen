@@ -1,4 +1,3 @@
-
 use std::fs::{
     File,
     read_to_string,
@@ -64,7 +63,7 @@ pub async fn process_manifest(file: PathBuf, output: Option<PathBuf>, base_url: 
                     Ok(_) => {
                         manifest_include_pairs.insert(
                             k.clone(),
-                            format!("{}{}/{}.gid", base_url, stem, &k)
+                            format!("{}/{}/{}.gid", base_url, stem, &k)
                         );
                     },
                     Err(e) => {
