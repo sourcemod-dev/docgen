@@ -20,9 +20,7 @@ pub async fn process_include(file: PathBuf, output: Option<PathBuf>) {
         },
     };
 
-    if output.is_some() {
-        let out_pathbuf = output.unwrap();
-
+    if let Some(out_pathbuf) = output {
         let out_file = File::create(&out_pathbuf).expect("Unable to create output file");
 
         to_writer(out_file, &include).expect("Unable to write to output file");
