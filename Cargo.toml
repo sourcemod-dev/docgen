@@ -4,3 +4,6 @@ members = [
     "generator",
     "mono",
 ]
+
+[profile.release]
+lto = true
