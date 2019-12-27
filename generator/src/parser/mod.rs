@@ -70,7 +70,7 @@ pub async fn parse_documentation<D: Into<String>>(
         promises.push(process_section(&mut enums.declaration.documentation, &raw_str));
 
         for entry in &mut enums.entries {
-            promises.push(process_section(&mut entry.documentation, &raw_str));
+            promises.push(process_section(&mut entry.declaration.documentation, &raw_str));
         }
     }
 

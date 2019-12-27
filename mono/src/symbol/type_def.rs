@@ -8,6 +8,6 @@ pub struct TypeDefinition {
     #[serde(flatten)]
     pub declaration: Declaration,
 
-    /// Return type of the definition
+    /// Function definition
     pub r#type: String,
 }

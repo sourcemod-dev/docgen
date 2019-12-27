@@ -5,15 +5,20 @@ use serde::{Serialize, Deserialize};
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
     #[serde(default)]
+    /// Documentation starting byte
     pub doc_start: DocLocation,
+
     #[serde(default)]
+    /// Documentation ending byte
     pub doc_end: DocLocation,
 
+    /// Parsed documentation
     pub docs: Option<Comment>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+/// Base symbol declaration
 pub struct Declaration {
     pub name: String,
 

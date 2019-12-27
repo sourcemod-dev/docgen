@@ -10,6 +10,10 @@ pub struct Function {
 
     /// Ex kinds: (forward, stock, etc)
     pub kind: String,
+
+    /// Return type of the function
     pub return_type: String,
+
+    /// Arguments of the function
     pub arguments: Vec<Argument>,
 }
