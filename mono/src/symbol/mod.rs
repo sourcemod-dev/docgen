@@ -1,5 +1,11 @@
 use serde::{Serialize, Deserialize};
 
+use std::fmt::{
+    Display,
+    Formatter,
+    Result
+};
+
 pub mod base;
 pub mod argument;
 pub mod constant;
@@ -30,10 +36,29 @@ pub enum SymbolType {
     MethodMap,
     MethodMapMethod,
     MethodMapProperty,
+    Property,
     Constant,
     Enum,
     EnumStruct,
     EnumStructMethod,
     TypeSet,
     TypeDefinition,
+}
+
+impl Display for SymbolType {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        match *self {
+            Self::Function => write!(f, "function"),
+            Self::MethodMap => write!(f, "methodmap"),
+            Self::MethodMapMethod => write!(f, "methodmap_method"),
+            Self::MethodMapProperty => write!(f, "methodmap_property"),
+            Self::Property => write!(f, "property"),
+            Self::Constant => write!(f, "constant"),
+            Self::Enum => write!(f, "enumeration"),
+            Self::EnumStruct => write!(f, "enumstruct"), // Undecided
+            Self::EnumStructMethod => write!(f, "enumstruct_method"), // Undecided
+            Self::TypeSet => write!(f, "typeset"),
+            Self::TypeDefinition => write!(f, "typedef"),
+        }
+    }
 }

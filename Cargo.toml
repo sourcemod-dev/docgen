@@ -3,6 +3,7 @@
 members = [
     "generator",
     "mono",
+    "sitemap",
 ]
 
 [profile.release]
