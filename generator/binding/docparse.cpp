@@ -145,7 +145,7 @@ class ExprToStr : public StrictAstVisitor
  public:
   static ke::AString Convert(Expression *expr) {
     ExprToStr converter(expr);
-	return converter.result_;
+    return converter.result_;
   }
 
  private:
@@ -187,7 +187,7 @@ class ExprToStr : public StrictAstVisitor
       if (i != args->length() - 1)
         result_.format("%s%s, ", result_.chars(), arg.chars());
       else
-	    result_.format("%s%s", result_.chars(), arg.chars());
+        result_.format("%s%s", result_.chars(), arg.chars());
     }
     result_.format("%s)", result_.chars());
   }
@@ -219,9 +219,20 @@ class ExprToStr : public StrictAstVisitor
   void visitSizeofExpression(SizeofExpression *node) override {
     Atom *atom_name = node->proxy()->name();
     result_.format("sizeof(%s", atom_name->chars());
-    for (size_t i = 0; i < node->level(); i++) {
-      result_.format("%s[]", result_.chars());
+    AbstractAccessorExpression* accessor = node->accessorExpression();
+    while (accessor != nullptr) {
+      if (AbstractArrayMemberExpression* arrayExpr = accessor->asAbstractArrayMemberExpression()) {
+        for (size_t i = 0; i < arrayExpr->level(); i++) {
+          result_.format("%s[]", result_.chars());
+        }
+      } else if (AbstractFieldExpression* fieldExpr = accessor->asAbstractFieldExpression()) {
+        Atom *field_name = fieldExpr->field();
+        TokenKind token = fieldExpr->token();
+        result_.format("%s%s%s", result_.chars(), TokenNames[token], field_name->chars());
+      }
+      accessor = accessor->child();
     }
+    
     result_.format("%s)", result_.chars());
   }
   void visitTernaryExpression(TernaryExpression *node) override {
@@ -239,7 +250,7 @@ class ExprToStr : public StrictAstVisitor
       return;
     }
 
-	ExpressionList* exprs = node->expressions();
+    ExpressionList* exprs = node->expressions();
 
     result_ = "{ ";
     for (size_t i = 0; i < exprs->length(); i++) {
@@ -278,6 +289,7 @@ class Analyzer : public PartialAstVisitor
     atom_doc_end_ = cc_.add("docEnd");
     atom_properties_ = cc_.add("properties");
     atom_methods_ = cc_.add("methods");
+    atom_fields_ = cc_.add("fields");
     atom_getter_ = cc_.add("getter");
     atom_setter_ = cc_.add("setter");
     atom_entries_ = cc_.add("entries");
@@ -294,6 +306,7 @@ class Analyzer : public PartialAstVisitor
     constants_ = new (pool_) JsonList();
     typesets_ = new (pool_) JsonList();
     typedefs_ = new (pool_) JsonList();
+    enum_structs_ = new (pool_) JsonList();
 
     for (size_t i = 0; i < tree->statements()->length(); i++) {
       Statement *stmt = tree->statements()->at(i);
@@ -307,7 +320,23 @@ class Analyzer : public PartialAstVisitor
     obj->add(cc_.add("constants"), constants_);
     obj->add(cc_.add("typesets"), typesets_);
     obj->add(cc_.add("typedefs"), typedefs_);
+    obj->add(cc_.add("enumstructs"), enum_structs_);
     return obj;
+  }
+
+  void visitRecordDecl(RecordDecl* node) override {
+    JsonObject *obj = new (pool_) JsonObject();
+    obj->add(atom_name_, toJson(node->name()));
+    startDoc(obj, "enum struct", node->name(), node->loc());
+
+    SaveAndSet<JsonList *> new_props(&props_, new (pool_) JsonList());
+    SaveAndSet<JsonList *> new_methods(&methods_, new (pool_) JsonList());
+    for (size_t i = 0; i < node->body()->length(); i++)
+      node->body()->at(i)->accept(this);
+
+    obj->add(atom_methods_, methods_);
+    obj->add(atom_fields_, props_);
+    enum_structs_->add(obj);
   }
 
   void visitMethodmapDecl(MethodmapDecl *node) override {
@@ -331,10 +360,6 @@ class Analyzer : public PartialAstVisitor
     startDoc(obj, "method", node->name(), node->loc());
 
     FunctionNode *fun = node->method();
-    if (fun->signature()->native())
-        obj->add(atom_kind_, toJson("native"));
-    else
-        obj->add(atom_kind_, toJson("stock"));
     obj->add(atom_returnType_, toJson(fun->signature()->returnType()));
     obj->add(atom_parameters_, toJson(fun->signature()->parameters()));
     methods_->add(obj);
@@ -347,6 +372,14 @@ class Analyzer : public PartialAstVisitor
     obj->add(atom_type_, toJson(node->te()));
     obj->add(atom_getter_, new (pool_) JsonBool(!!node->getter()));
     obj->add(atom_setter_, new (pool_) JsonBool(!!node->setter()));
+    props_->add(obj);
+  }
+  void visitFieldDecl(FieldDecl* node) override {
+    JsonObject *obj = new (pool_) JsonObject();
+    obj->add(atom_name_, toJson(node->name()));
+    startDoc(obj, "field", node->name(), node->loc());
+
+    obj->add(atom_type_, toJson(node->te()));
     props_->add(obj);
   }
 
@@ -535,7 +568,8 @@ class Analyzer : public PartialAstVisitor
   Atom *atom_doc_start_;
   Atom *atom_doc_end_;
   Atom *atom_properties_;
-  Atom *atom_methods_;
+  Atom* atom_methods_;
+  Atom* atom_fields_;
   Atom *atom_getter_;
   Atom *atom_setter_;
   Atom *atom_entries_;
@@ -549,6 +583,7 @@ class Analyzer : public PartialAstVisitor
   JsonList *constants_;
   JsonList *typesets_;
   JsonList *typedefs_;
+  JsonList *enum_structs_;
 
   JsonList *props_;
   JsonList *methods_;
