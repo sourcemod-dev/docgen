@@ -3,6 +3,7 @@ use serde::{Serialize, Deserialize};
 use crate::symbol::{
     Function,
     MethodMap,
+    EnumStruct,
     Constant,
     Enumeration,
     TypeSet,
@@ -14,6 +15,7 @@ use crate::symbol::{
 pub struct IncludeFile {
     pub functions: Vec<Function>,
     pub methodmaps: Vec<MethodMap>,
+    pub enumstructs: Vec<EnumStruct>,
     pub constants: Vec<Constant>,
     pub enums: Vec<Enumeration>,
     pub typesets: Vec<TypeSet>,

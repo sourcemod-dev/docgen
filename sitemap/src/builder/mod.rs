@@ -64,6 +64,38 @@ pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> 
         }
     }
 
+    for m in &include.enumstructs {
+        let m_name = format_decl_name(&m.declaration.name, SymbolType::MethodMap);
+
+        push_child(&m_name);
+
+        for func in &m.methods {
+            push_child(
+                &format!(
+                    "{}/{}",
+                    m_name,
+                    format_decl_name(
+                        &func.declaration.name,
+                        SymbolType::Function,
+                    ),
+                ),
+            );
+        }
+
+        for f in &m.fields {
+            push_child(
+                &format!(
+                    "{}/{}",
+                    m_name,
+                    format_decl_name(
+                        &f.declaration.name,
+                        SymbolType::Property,
+                    ),
+                ),
+            );
+        }
+    }
+
 
     l1!(include.functions, SymbolType::Function);
     l1!(include.constants, SymbolType::Constant);

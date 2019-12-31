@@ -58,6 +58,18 @@ pub async fn parse_documentation<D: Into<String>>(
         }
     }
 
+    for e in &mut include_file.enumstructs {
+        promises.push(process_section(&mut e.declaration.documentation, &raw_str));
+
+        for func in &mut e.methods {
+            promises.push(process_section(&mut func.declaration.documentation, &raw_str));
+        }
+
+        for f in &mut e.fields {
+            promises.push(process_section(&mut f.declaration.documentation, &raw_str));
+        }
+    }
+
     for func in &mut include_file.functions {
         promises.push(process_section(&mut func.declaration.documentation, &raw_str));
     }

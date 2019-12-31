@@ -12,10 +12,15 @@ pub mod constant;
 pub mod enumeration;
 pub mod function;
 pub mod method_map;
+pub mod enum_struct;
 pub mod property;
 pub mod type_def;
 pub mod type_set;
 
+pub use self::enum_struct::{
+    EnumStruct,
+    Field,
+};
 pub use self::base::{
     DocLocation,
     Documentation,
@@ -34,13 +39,11 @@ pub use self::type_set::TypeSet;
 pub enum SymbolType {
     Function,
     MethodMap,
-    MethodMapMethod,
-    MethodMapProperty,
     Property,
     Constant,
     Enum,
     EnumStruct,
-    EnumStructMethod,
+    Field,
     TypeSet,
     TypeDefinition,
 }
@@ -50,13 +53,11 @@ impl Display for SymbolType {
         match *self {
             Self::Function => write!(f, "function"),
             Self::MethodMap => write!(f, "methodmap"),
-            Self::MethodMapMethod => write!(f, "methodmap_method"),
-            Self::MethodMapProperty => write!(f, "methodmap_property"),
             Self::Property => write!(f, "property"),
             Self::Constant => write!(f, "constant"),
             Self::Enum => write!(f, "enumeration"),
-            Self::EnumStruct => write!(f, "enumstruct"), // Undecided
-            Self::EnumStructMethod => write!(f, "enumstruct_method"), // Undecided
+            Self::EnumStruct => write!(f, "enumstruct"),
+            Self::Field => write!(f, "field"),
             Self::TypeSet => write!(f, "typeset"),
             Self::TypeDefinition => write!(f, "typedef"),
         }
