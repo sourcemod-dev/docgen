@@ -1,0 +1,45 @@
+From 29f3f52dfe0d94272613225883edd6070eb0844c Mon Sep 17 00:00:00 2001
+From: Maksim Smolin <maximsmol@gmail.com>
+Date: Tue, 31 Dec 2019 11:01:31 -0800
+Subject: [PATCH] fix switch only acccepting one statement per case block
+
+---
+ exp/compiler/parser/parser.cpp | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+
+diff --git a/exp/compiler/parser/parser.cpp b/exp/compiler/parser/parser.cpp
+index 5d52162..e2ab83f 100644
+--- a/exp/compiler/parser/parser.cpp
++++ b/exp/compiler/parser/parser.cpp
+@@ -1532,10 +1532,27 @@ Parser::switch_()
+     if (need_colon && !expect(TOK_COLON))
+       return nullptr;
+ 
+-    Statement* stmt = statementOrBlock();
++
++    SourceLocation block_pos = scanner_.begin();
++
++    Scope* scope = nullptr;
++    StatementList* list = nullptr;
++    {
++      AutoEnterScope env(delegate_, Scope::Block, &scope);
++      SaveAndSet<bool> save(&allowDeclarations_, true);
++
++      list = new (pool_) StatementList();
++      while (!peek(TOK_CASE) && !peek(TOK_DEFAULT) && !peek(TOK_RBRACE)) {
++        if (Statement* stmt = statement())
++          list->append(stmt);
++      }
++    }
++
++    Statement* stmt = new (pool_) BlockStatement(block_pos, list, TOK_LBRACE, scope);
+     if (!stmt)
+       return nullptr;
+ 
++
+     requireNewline();
+ 
+     if (!peek(TOK_CASE) && !peek(TOK_DEFAULT) && !peek(TOK_RBRACE)) {
+-- 
+2.20.1.windows.1
+

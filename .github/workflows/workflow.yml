@@ -32,6 +32,14 @@ jobs:
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
+      - name: Apply temporary switch patch
+        run: |
+          cp docgen/generator/binding/0001-fix-switch-only-acccepting-one-statement-per-case-bl.patch sourcepawn/
+          cd sourcepawn/
+          git config --global user.email "temp@example.com"
+          git config --global user.name "temp"
+          git am < 0001-fix-switch-only-acccepting-one-statement-per-case-bl.patch
+
       - name: Checkout AMbuild
         uses: actions/checkout@v2
         with:
