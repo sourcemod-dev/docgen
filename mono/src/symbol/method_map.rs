@@ -8,6 +8,9 @@ pub struct MethodMap {
     #[serde(flatten)]
     pub declaration: Declaration,
 
+    /// Parent inheritance if any
+    pub parent: Option<String>,
+
     /// Functions within this methodmap
     pub methods: Vec<Function>,
 
