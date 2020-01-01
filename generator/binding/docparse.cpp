@@ -297,6 +297,7 @@ class Analyzer : public PartialAstVisitor
     atom_decl_ = cc_.add("decl");
     atom_default_ = cc_.add("default");
     atom_value_ = cc_.add("value");
+    atom_parent_ = cc_.add("parent");
   }
 
   JsonObject *analyze(ParseTree *tree) {
@@ -351,6 +352,10 @@ class Analyzer : public PartialAstVisitor
 
     obj->add(atom_methods_, methods_);
     obj->add(atom_properties_, props_);
+    if (NameProxy* parent = node->parent()) {
+      Atom* parent_name = parent->name();
+      obj->add(atom_parent_, toJson(parent_name->chars()));
+    }
     methodmaps_->add(obj);
   }
 
@@ -581,6 +586,7 @@ class Analyzer : public PartialAstVisitor
   Atom *atom_decl_;
   Atom *atom_default_;
   Atom *atom_value_;
+  Atom *atom_parent_;
   JsonList *functions_;
   JsonList *methodmaps_;
   JsonList *enums_;
