@@ -89,7 +89,7 @@ pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> 
                     m_name,
                     format_decl_name(
                         &f.declaration.name,
-                        SymbolType::Property,
+                        SymbolType::Field,
                     ),
                 ),
             );
