@@ -41,29 +41,35 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
     TypeSignature {
         return_type: return_type.to_string(),
         arguments: {
-            param_section
-                .split(", ")
-                .map(|v| v.split(" "))
-                .map(|v| {
-                    let parts = v.collect::<Vec<_>>();
+            if param_section.find(',').is_none() {
+                Vec::new()
+            } else {
+                param_section
+                    .split(", ")
+                    .map(|v| v.split(" "))
+                    .map(|v| {
+                        let parts = v.collect::<Vec<_>>();
 
-                    if parts.len() == 2 {
+                        if parts.len() == 2 {
+                            return Argument {
+                                r#type: parts[0].to_string(),
+                                name: parts[1].to_string(),
+                                decl: parts.join(" "),
+                                default: None,
+                            };
+                        }
+
+                        println!("{:?}", parts);
+
                         return Argument {
-                            r#type: parts[0].to_string(),
-                            name: parts[1].to_string(),
+                            r#type: parts[..2].join(" "),
+                            name: parts[2].to_string(),
                             decl: parts.join(" "),
                             default: None,
-                        };
-                    }
-
-                    return Argument {
-                        r#type: parts[..2].join(" "),
-                        name: parts[2].to_string(),
-                        decl: parts.join(" "),
-                        default: None,
-                    }
-                })
-                .collect()
+                        }
+                    })
+                    .collect()
+            }
         },
     }
 }
