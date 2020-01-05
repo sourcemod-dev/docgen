@@ -59,8 +59,6 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
                             };
                         }
 
-                        println!("{:?}", parts);
-
                         return Argument {
                             r#type: parts[..2].join(" "),
                             name: parts[2].to_string(),
