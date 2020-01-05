@@ -6,11 +6,20 @@ use mono::file::IncludeFile;
 use mono::symbol::{
     DocLocation,
     Documentation,
+    MethodMap,
+    Function,
+    Property,
+    EnumStruct,
+    Enumeration,
+    Field,
+    Constant,
+    TypeSet,
+    Type,
+    TypeDefinition,
+    parse_type_signature,
 };
 
 use spdcp::Comment;
-
-use futures::future::join_all;
 
 use crate::errors::{Error, Result};
 
@@ -44,71 +53,122 @@ pub async fn parse_documentation<D: Into<String>>(
         Err(v) => return Err(Error::SchemaMismatch(v)),
     };
 
-    let mut promises = Vec::new();
-
     for m in &mut include_file.methodmaps {
-        promises.push(process_section(&mut m.declaration.documentation, &raw_str));
-
-        for func in &mut m.methods {
-            promises.push(process_section(&mut func.declaration.documentation, &raw_str));
-        }
-
-        for prop in &mut m.properties {
-            promises.push(process_section(&mut prop.declaration.documentation, &raw_str));
-        }
+        process_methodmap(m, &raw_str).await;
     }
 
     for e in &mut include_file.enumstructs {
-        promises.push(process_section(&mut e.declaration.documentation, &raw_str));
-
-        for func in &mut e.methods {
-            promises.push(process_section(&mut func.declaration.documentation, &raw_str));
-        }
-
-        for f in &mut e.fields {
-            promises.push(process_section(&mut f.declaration.documentation, &raw_str));
-        }
+        process_enumstruct(e, &raw_str).await;
     }
 
     for func in &mut include_file.functions {
-        promises.push(process_section(&mut func.declaration.documentation, &raw_str));
+        process_function(func, &raw_str).await;
     }
 
     for constant in &mut include_file.constants {
-        promises.push(process_section(&mut constant.declaration.documentation, &raw_str));
+        process_constant(constant, &raw_str).await;
     }
 
-    for enums in &mut include_file.enums {
-        promises.push(process_section(&mut enums.declaration.documentation, &raw_str));
-
-        for entry in &mut enums.entries {
-            promises.push(process_section(&mut entry.declaration.documentation, &raw_str));
-        }
+    for r#enum in &mut include_file.enums {
+        process_enum(r#enum, &raw_str).await;
     }
 
     for typeset in &mut include_file.typesets {
-        promises.push(process_section(&mut typeset.declaration.documentation, &raw_str));
-
-        for type_e in &mut typeset.types {
-            promises.push(process_section(&mut type_e.documentation, &raw_str));
-        }
+        process_typeset(typeset, &raw_str).await;
     }
 
     for typedef in &mut include_file.typedefs {
-        promises.push(process_section(&mut typedef.declaration.documentation, &raw_str));
-    }
-
-    {
-        join_all(promises).await;
+        process_typedef(typedef, &raw_str).await;
     }
 
     Ok(include_file)
 }
 
-async fn process_section<S>(doc: &mut Documentation, section: S)
-where
-    S: Into<String>,
-{
+async fn process_methodmap(m: &mut MethodMap, section: &str) {
+    process_section(&mut m.declaration.documentation, section).await;
+
+    for method in &mut m.methods {
+        process_function(method, section).await;
+    }
+
+    for property in &mut m.properties {
+        process_property(property, section).await;
+    }
+}
+
+async fn process_enumstruct(e: &mut EnumStruct, section: &str) {
+    process_section(&mut e.declaration.documentation, section).await;
+
+    for method in &mut e.methods {
+        process_function(method, section).await;
+    }
+
+    for field in &mut e.fields {
+        process_field(field, section).await;
+    }
+}
+
+async fn process_typeset(t: &mut TypeSet, section: &str) {
+    process_section(&mut t.declaration.documentation, section).await;
+
+    for type_t in &mut t.types {
+        process_type(type_t, section).await;
+    }
+}
+
+async fn process_enum(e: &mut Enumeration, section: &str) {
+    process_section(&mut e.declaration.documentation, section).await;
+
+    for entry in &mut e.entries {
+        process_section(&mut entry.declaration.documentation, section).await;
+    }
+}
+
+async fn process_function(f: &mut Function, section: &str) {
+    process_section(&mut f.declaration.documentation, section).await;
+
+    // For array types, the array couples the type in the
+    // `type` prop, but in practice, it should couple name
+    // Instead of parsing type and extracting any dimension out of type
+    // we extract it directly from decl which already is correct
+    for arg in &mut f.arguments {
+        let split = arg.decl.split(" ").collect::<Vec<_>>();
+
+        if split.len() == 2 {
+            arg.r#type = split[0].to_string();
+            arg.name = split[1].to_string();
+        } else if split.len() > 2 {
+            arg.r#type = split[0..2].join(" ");
+            arg.name = split[2].to_string();
+        }
+    }
+}
+
+async fn process_property(p: &mut Property, section: &str) {
+    process_section(&mut p.declaration.documentation, section).await;
+}
+
+async fn process_field(f: &mut Field, section: &str) {
+    process_section(&mut f.declaration.documentation, section).await;
+}
+
+async fn process_constant(c: &mut Constant, section: &str) {
+    process_section(&mut c.declaration.documentation, section).await;
+}
+
+async fn process_type(t: &mut Type, section: &str) {
+    process_section(&mut t.documentation, section).await;
+
+    t.parsed_signature = Some(parse_type_signature(&t.r#type));
+}
+
+async fn process_typedef(t: &mut TypeDefinition, section: &str) {
+    process_section(&mut t.declaration.documentation, section).await;
+
+    t.parsed_signature = Some(parse_type_signature(&t.r#type));
+}
+
+async fn process_section(doc: &mut Documentation, section: &str) {
     if doc.docs != None {
         return
     }
@@ -117,12 +177,12 @@ where
         return
     }
 
-    let byte_vec: Vec<u8> = section.into().into_bytes();
+    let bytes = section.as_bytes();
 
     let start: usize = doc.doc_start.into();
     let end: usize = doc.doc_end.into();
 
-    let snippet = &byte_vec[start .. end];
+    let snippet = &bytes[start .. end];
 
     let section: String = std::str::from_utf8(snippet).unwrap().to_owned();
 

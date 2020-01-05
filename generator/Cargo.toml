@@ -1,6 +1,6 @@
 [package]
 name = "sp-docgen"
-version = "2.2.0"
+version = "2.3.0"
 authors = ["rumblefrog <contact@rumblefrog.me>"]
 edition = "2018"
 

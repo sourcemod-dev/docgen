@@ -549,6 +549,7 @@ class Analyzer : public PartialAstVisitor
         obj->add(atom_name_, toJson("..."));
 
         AutoString builder = BuildTypeName(decl->te(), nullptr, TypeDiagFlags::Names);
+        builder = builder + " ";
         obj->add(atom_decl_, toJson(builder.ptr()));
       }
       list->add(obj);
