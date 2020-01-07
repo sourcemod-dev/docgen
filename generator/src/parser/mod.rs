@@ -131,22 +131,22 @@ async fn process_function(f: &mut Function, section: &str) {
     // `type` prop, but in practice, it should couple name
     // Instead of parsing type and extracting any dimension out of type
     // we extract it directly from decl which already is correct
-    for arg in &mut f.arguments {
-        if arg.decl.contains("...") {
-            arg.r#type = arg.decl.replace("...", "");
-            arg.name = "...".to_string();
-        } else {
-            let split = arg.decl.split(" ").collect::<Vec<_>>();
+    // for arg in &mut f.arguments {
+    //     if arg.decl.contains("...") {
+    //         arg.r#type = arg.decl.replace("...", "");
+    //         arg.name = "...".to_string();
+    //     } else {
+    //         let split = arg.decl.split(" ").collect::<Vec<_>>();
 
-            if split.len() == 2 {
-                arg.r#type = split[0].to_string();
-                arg.name = split[1].to_string();
-            } else if split.len() > 2 {
-                arg.r#type = split[0..2].join(" ");
-                arg.name = split[2].to_string();
-            }
-        }
-    }
+    //         if split.len() == 2 {
+    //             arg.r#type = split[0].to_string();
+    //             arg.name = split[1].to_string();
+    //         } else if split.len() > 2 {
+    //             arg.r#type = split[0..2].join(" ");
+    //             arg.name = split[2].to_string();
+    //         }
+    //     }
+    // }
 }
 
 async fn process_property(p: &mut Property, section: &str) {
