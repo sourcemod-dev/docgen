@@ -26,7 +26,6 @@ fn main() -> IOResult<()> {
 
     if cli.directory.is_dir() {
         let mut entries: Vec<ElementBuilder> = read_dir(&cli.directory)?
-            .into_iter()
             .filter(|r| r.is_ok())
             .map(|p| p.unwrap().path())
             .filter(|f| f.file_stem().unwrap() != "include")

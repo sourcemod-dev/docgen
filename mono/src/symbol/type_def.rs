@@ -43,7 +43,7 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
             } else {
                 param_section
                     .split(", ")
-                    .map(|v| v.split(" "))
+                    .map(|v| v.split(' '))
                     .map(|v| {
                         let parts = v.collect::<Vec<_>>();
 
@@ -56,12 +56,12 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
                             };
                         }
 
-                        return Argument {
+                        Argument {
                             r#type: parts[..2].join(" "),
                             name: parts[2].to_string(),
                             decl: parts.join(" "),
                             default: None,
-                        };
+                        }
                     })
                     .collect()
             }
