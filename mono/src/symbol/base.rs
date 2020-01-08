@@ -1,5 +1,5 @@
+use serde::{Deserialize, Serialize};
 use spdcp::Comment;
-use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

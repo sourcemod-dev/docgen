@@ -1,22 +1,11 @@
-use std::ffi::{CString, CStr};
+use std::ffi::{CStr, CString};
 
 use serde_json::from_str;
 
 use mono::file::IncludeFile;
 use mono::symbol::{
-    DocLocation,
-    Documentation,
-    MethodMap,
-    Function,
-    Property,
-    EnumStruct,
-    Enumeration,
-    Field,
-    Constant,
-    TypeSet,
-    Type,
-    TypeDefinition,
-    parse_type_signature,
+    parse_type_signature, Constant, DocLocation, Documentation, EnumStruct, Enumeration, Field,
+    Function, MethodMap, Property, Type, TypeDefinition, TypeSet,
 };
 
 use spdcp::Comment;
@@ -25,9 +14,7 @@ use crate::errors::{Error, Result};
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-pub async fn parse_documentation<D: Into<String>>(
-    data: D,
-) -> Result<IncludeFile> {
+pub async fn parse_documentation<D: Into<String>>(data: D) -> Result<IncludeFile> {
     let raw_str = data.into();
 
     let content = CString::new(raw_str.clone())?;
@@ -175,11 +162,11 @@ async fn process_typedef(t: &mut TypeDefinition, section: &str) {
 
 async fn process_section(doc: &mut Documentation, section: &str) {
     if doc.docs != None {
-        return
+        return;
     }
 
     if doc.doc_start == DocLocation::from(0) || doc.doc_end == DocLocation::from(0) {
-        return
+        return;
     }
 
     let bytes = section.as_bytes();
@@ -187,7 +174,7 @@ async fn process_section(doc: &mut Documentation, section: &str) {
     let start: usize = doc.doc_start.into();
     let end: usize = doc.doc_end.into();
 
-    let snippet = &bytes[start .. end];
+    let snippet = &bytes[start..end];
 
     let section: String = std::str::from_utf8(snippet).unwrap().to_owned();
 

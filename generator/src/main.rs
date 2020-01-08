@@ -5,15 +5,15 @@ use structopt::StructOpt;
 use futures::executor::block_on;
 
 mod errors;
-mod parser;
 mod include;
 mod manifest;
+mod parser;
 
 #[derive(StructOpt, Debug)]
 struct Cli {
     #[structopt(short = "o", long = "output", parse(from_os_str))]
     /// Optional output path of generated include documentation.
-    /// 
+    ///
     /// For include mode, this should be the desired path to the output file
     /// For manifest mode, this should be the desired path to the output directory
     pub output: Option<PathBuf>,
@@ -26,7 +26,10 @@ struct Cli {
     /// Parses a manifest (json) file
     pub is_manifest: bool,
 
-    #[structopt(long, default_value = "https://cdn.jsdelivr.net/gh/rumblefrog/sp-gid@2")]
+    #[structopt(
+        long,
+        default_value = "https://cdn.jsdelivr.net/gh/rumblefrog/sp-gid@2"
+    )]
     /// Base URL w/o trailing slash to use in generated manifest file
     pub base_url: String,
 
@@ -58,6 +61,10 @@ fn main() {
             }
         }
 
-        block_on(manifest::process_manifest(cli.input, cli.output, cli.base_url));
+        block_on(manifest::process_manifest(
+            cli.input,
+            cli.output,
+            cli.base_url,
+        ));
     }
 }

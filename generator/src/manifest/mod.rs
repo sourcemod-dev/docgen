@@ -1,21 +1,14 @@
-use std::fs::{
-    File,
-    read_to_string,
-    create_dir_all,
-};
-use std::path::PathBuf;
 use std::collections::HashMap;
+use std::fs::{create_dir_all, read_to_string, File};
+use std::path::PathBuf;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use serde_json::{
-    from_str,
-    to_writer,
-};
+use serde_json::{from_str, to_writer};
 
 use reqwest::get;
 
-use crate::parser::parse_documentation;
 use crate::errors::Result;
+use crate::parser::parse_documentation;
 
 use mono::file::IncludeFile;
 use mono::manifest::IncludeManifest;
@@ -23,15 +16,12 @@ use mono::manifest::IncludeManifest;
 pub async fn process_manifest(file: PathBuf, output: Option<PathBuf>, base_url: String) {
     let content = read_to_string(&file).expect("Unable to read from file");
 
-    let include_pairs: HashMap<String, String> = from_str(&content).expect("Unable to parse manifest file");
+    let include_pairs: HashMap<String, String> =
+        from_str(&content).expect("Unable to parse manifest file");
 
     let mut output_path = PathBuf::new();
 
-    let stem: String = file
-        .file_stem()
-        .unwrap()
-        .to_string_lossy()
-        .to_string();
+    let stem: String = file.file_stem().unwrap().to_string_lossy().to_string();
 
     if let Some(output_some) = &output {
         output_path.push(output_some);
@@ -40,8 +30,9 @@ pub async fn process_manifest(file: PathBuf, output: Option<PathBuf>, base_url: 
     }
 
     create_dir_all(&output_path).expect("Unable to create output directory");
-    
-    let mut manifest_include_pairs: HashMap<String, String> = HashMap::with_capacity(include_pairs.keys().len());
+
+    let mut manifest_include_pairs: HashMap<String, String> =
+        HashMap::with_capacity(include_pairs.keys().len());
 
     for (k, v) in include_pairs {
         let result = process_entry(k, v).await;
@@ -61,16 +52,14 @@ pub async fn process_manifest(file: PathBuf, output: Option<PathBuf>, base_url: 
 
                 match to_writer(file, &v) {
                     Ok(_) => {
-                        manifest_include_pairs.insert(
-                            k.clone(),
-                            format!("{}/{}/{}.gid", base_url, stem, &k)
-                        );
-                    },
+                        manifest_include_pairs
+                            .insert(k.clone(), format!("{}/{}/{}.gid", base_url, stem, &k));
+                    }
                     Err(e) => {
                         println!("Failed to write to file for {}: {}", &k, e);
                     }
                 }
-            },
+            }
             Err(e) => {
                 println!("{}", e);
             }
@@ -82,10 +71,17 @@ pub async fn process_manifest(file: PathBuf, output: Option<PathBuf>, base_url: 
 
     let manifest_file = File::create(&manifest_path).expect("Unable to create manifest file");
 
-    to_writer(manifest_file, &IncludeManifest{
-        includes: manifest_include_pairs,
-        timestamp: SystemTime::now().duration_since(UNIX_EPOCH).expect("Time broke").as_secs()
-    }).expect("Unable to write manifest file");
+    to_writer(
+        manifest_file,
+        &IncludeManifest {
+            includes: manifest_include_pairs,
+            timestamp: SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .expect("Time broke")
+                .as_secs(),
+        },
+    )
+    .expect("Unable to write manifest file");
 }
 
 async fn process_entry(key: String, endpoint: String) -> Result<(String, IncludeFile)> {
@@ -95,7 +91,7 @@ async fn process_entry(key: String, endpoint: String) -> Result<(String, Include
         Ok(v) => v,
         Err(v) => {
             return Err(v);
-        },
+        }
     };
 
     Ok((key, include))

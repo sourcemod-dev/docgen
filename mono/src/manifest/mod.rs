@@ -1,7 +1,7 @@
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use serde::{Serialize, Deserialize};
 
-/// Manifest on remote/local includes 
+/// Manifest on remote/local includes
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct IncludeManifest {
     /// List of include pair (include key, fetch endpoint)

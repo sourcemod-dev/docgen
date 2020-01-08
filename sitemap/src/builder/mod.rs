@@ -3,10 +3,14 @@ use treexml::ElementBuilder;
 use mono::file::IncludeFile;
 use mono::symbol::SymbolType;
 
-pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> Vec<ElementBuilder> {
+pub fn build_include_tree(
+    key: String,
+    include: IncludeFile,
+    base_url: &str,
+) -> Vec<ElementBuilder> {
     let mut children: Vec<ElementBuilder> = Vec::new();
 
-    let mut push_child = | sub_loc: &str | {
+    let mut push_child = |sub_loc: &str| {
         let mut element = ElementBuilder::new("url");
 
         element.children(vec![
@@ -20,12 +24,7 @@ pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> 
     macro_rules! l1 {
         ($x:expr, $t:expr) => {
             for obj in &$x {
-                push_child(
-                    &format_decl_name(
-                        &obj.declaration.name,
-                        $t,
-                    ),
-                );
+                push_child(&format_decl_name(&obj.declaration.name, $t));
             }
         };
     }
@@ -38,29 +37,19 @@ pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> 
         push_child(&m_name);
 
         for func in &m.methods {
-            push_child(
-                &format!(
-                    "{}/{}",
-                    m_name,
-                    format_decl_name(
-                        &func.declaration.name,
-                        SymbolType::Function,
-                    ),
-                ),
-            );
+            push_child(&format!(
+                "{}/{}",
+                m_name,
+                format_decl_name(&func.declaration.name, SymbolType::Function,),
+            ));
         }
 
         for prop in &m.properties {
-            push_child(
-                &format!(
-                    "{}/{}",
-                    m_name,
-                    format_decl_name(
-                        &prop.declaration.name,
-                        SymbolType::Property,
-                    ),
-                ),
-            );
+            push_child(&format!(
+                "{}/{}",
+                m_name,
+                format_decl_name(&prop.declaration.name, SymbolType::Property,),
+            ));
         }
     }
 
@@ -70,32 +59,21 @@ pub fn build_include_tree(key: String, include: IncludeFile, base_url: &str) -> 
         push_child(&m_name);
 
         for func in &m.methods {
-            push_child(
-                &format!(
-                    "{}/{}",
-                    m_name,
-                    format_decl_name(
-                        &func.declaration.name,
-                        SymbolType::Function,
-                    ),
-                ),
-            );
+            push_child(&format!(
+                "{}/{}",
+                m_name,
+                format_decl_name(&func.declaration.name, SymbolType::Function,),
+            ));
         }
 
         for f in &m.fields {
-            push_child(
-                &format!(
-                    "{}/{}",
-                    m_name,
-                    format_decl_name(
-                        &f.declaration.name,
-                        SymbolType::Field,
-                    ),
-                ),
-            );
+            push_child(&format!(
+                "{}/{}",
+                m_name,
+                format_decl_name(&f.declaration.name, SymbolType::Field,),
+            ));
         }
     }
-
 
     l1!(include.functions, SymbolType::Function);
     l1!(include.constants, SymbolType::Constant);

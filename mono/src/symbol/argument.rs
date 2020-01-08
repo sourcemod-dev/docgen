@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -11,7 +11,7 @@ pub struct Argument {
 
     /// Raw declaration of the argument
     pub decl: String,
-    
+
     /// Default value if any
     pub default: Option<String>,
 }

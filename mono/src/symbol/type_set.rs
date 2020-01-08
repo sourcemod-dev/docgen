@@ -1,6 +1,6 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-use crate::symbol::{Documentation, Declaration, TypeSignature};
+use crate::symbol::{Declaration, Documentation, TypeSignature};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

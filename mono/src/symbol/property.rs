@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 use crate::symbol::Declaration;
 
@@ -6,14 +6,14 @@ use crate::symbol::Declaration;
 #[serde(rename_all = "camelCase")]
 pub struct Property {
     #[serde(flatten)]
-	pub declaration: Declaration,
+    pub declaration: Declaration,
 
     /// Type of the property
-	pub r#type: String,
+    pub r#type: String,
 
     /// Whether getter exists
     pub getter: bool,
-    
+
     /// Whether setter exists
-	pub setter: bool,
+    pub setter: bool,
 }

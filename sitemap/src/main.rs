@@ -1,18 +1,11 @@
 use std::path::PathBuf;
 
-use std::fs::{
-    read_dir,
-    read_to_string,
-    write,
-};
+use std::fs::{read_dir, read_to_string, write};
 
-use std::io::Result as IOResult;
 use serde_json::from_str;
+use std::io::Result as IOResult;
 
-use treexml::{
-    ElementBuilder,
-    Document,
-};
+use treexml::{Document, ElementBuilder};
 
 use structopt::StructOpt;
 
@@ -40,7 +33,7 @@ fn main() -> IOResult<()> {
             .flat_map(|path| {
                 builder::build_include_tree(
                     path.file_stem().unwrap().to_string_lossy().to_string(),
-                    from_str(&read_to_string(path).unwrap()).unwrap(), 
+                    from_str(&read_to_string(path).unwrap()).unwrap(),
                     &cli.base_url,
                 )
             })
@@ -55,7 +48,7 @@ fn main() -> IOResult<()> {
         let doc = Document::build(
             &mut ElementBuilder::new("urlset")
                 .attr("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
-                .children(interior_mut)
+                .children(interior_mut),
         );
 
         write("sitemap.xml", doc.to_string())?;

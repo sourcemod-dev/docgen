@@ -1,13 +1,7 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 use crate::symbol::{
-    Function,
-    MethodMap,
-    EnumStruct,
-    Constant,
-    Enumeration,
-    TypeSet,
-    TypeDefinition,
+    Constant, EnumStruct, Enumeration, Function, MethodMap, TypeDefinition, TypeSet,
 };
 
 /// Structural representation of an include's file contents

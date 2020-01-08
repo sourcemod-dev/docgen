@@ -1,43 +1,25 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-use std::fmt::{
-    Display,
-    Formatter,
-    Result
-};
+use std::fmt::{Display, Formatter, Result};
 
-pub mod base;
 pub mod argument;
+pub mod base;
 pub mod constant;
+pub mod enum_struct;
 pub mod enumeration;
 pub mod function;
 pub mod method_map;
-pub mod enum_struct;
 pub mod property;
 pub mod type_def;
 pub mod type_set;
 
-pub use self::enum_struct::{
-    EnumStruct,
-    Field,
-};
+pub use self::enum_struct::{EnumStruct, Field};
 
-pub use self::base::{
-    DocLocation,
-    Documentation,
-    Declaration,
-};
+pub use self::base::{Declaration, DocLocation, Documentation};
 
-pub use self::type_def::{
-    TypeDefinition,
-    TypeSignature,
-    parse_type_signature,
-};
+pub use self::type_def::{parse_type_signature, TypeDefinition, TypeSignature};
 
-pub use self::type_set::{
-    TypeSet,
-    Type,
-};
+pub use self::type_set::{Type, TypeSet};
 
 pub use self::argument::Argument;
 pub use self::constant::Constant;

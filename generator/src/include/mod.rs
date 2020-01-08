@@ -1,7 +1,4 @@
-use std::fs::{
-    File,
-    read_to_string,
-};
+use std::fs::{read_to_string, File};
 use std::path::PathBuf;
 
 use serde_json::to_writer;
@@ -17,7 +14,7 @@ pub async fn process_include(file: PathBuf, output: Option<PathBuf>) {
             println!("Unable to generate documentation for include file: {}", v);
 
             return;
-        },
+        }
     };
 
     if let Some(out_pathbuf) = output {

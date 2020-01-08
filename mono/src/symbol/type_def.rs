@@ -1,9 +1,6 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-use crate::symbol::{
-    Declaration,
-    Argument,
-};
+use crate::symbol::{Argument, Declaration};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -20,7 +17,7 @@ pub struct TypeDefinition {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct TypeSignature{
+pub struct TypeSignature {
     /// Return type of the function
     pub return_type: String,
 
@@ -64,7 +61,7 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
                             name: parts[2].to_string(),
                             decl: parts.join(" "),
                             default: None,
-                        }
+                        };
                     })
                     .collect()
             }
