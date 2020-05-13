@@ -677,6 +677,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "manifest"
+version = "0.1.0"
+dependencies = [
+ "serde 1.0.103 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "matches"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -876,13 +883,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "pin-utils"
 version = "0.1.0-alpha.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "pkg"
-version = "0.1.0"
-dependencies = [
- "serde 1.0.103 (registry+https://github.com/rust-lang/crates.io-index)",
-]
 
 [[package]]
 name = "pkg-config"
