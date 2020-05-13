@@ -5,6 +5,7 @@ members = [
     "mono",
     "sitemap",
     "libmanifest",
+    "fishingrod",
 ]
 
 [profile.release]
