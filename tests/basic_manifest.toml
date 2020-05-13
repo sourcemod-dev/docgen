@@ -1,0 +1,16 @@
+[package]
+name = "fishingrod"
+verison = "0.0.1"
+
+[dependencies]
+boat = "0.1.5"
+
+[files]
+plugins = [
+    "scripting/fishingrod.sp",
+    "scripting/pond/*.sp",
+]
+
+translations = [
+    "translations/owowowow.txt",
+]
