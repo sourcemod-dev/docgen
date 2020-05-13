@@ -4,6 +4,7 @@ members = [
     "generator",
     "mono",
     "sitemap",
+    "libpkg",
 ]
 
 [profile.release]
