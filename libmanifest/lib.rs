@@ -12,21 +12,31 @@ pub struct Manifest {
 
     pub dependencies: BTreeMap<String, String>,
 
-    pub files: Files,
+    pub files: SMBaseFiles,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum MatchType {
+    Exact(String),
+    Pattern(String),
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case")]
-pub struct Files {
-    pub plugins: Option<Vec<String>>,
+pub struct SMBaseFiles {
+    pub configs: Option<Vec<MatchType>>,
 
-    pub includes: Option<Vec<String>>,
+    pub data: Option<Vec<MatchType>>,
 
-    pub translations: Option<Vec<String>>,
+    pub extensions: Option<Vec<MatchType>>,
 
-    pub configs: Option<Vec<String>>,
+    pub gamedata: Option<Vec<MatchType>>,
 
-    pub gamedata: Option<Vec<String>>,
+    pub plugins: Option<Vec<MatchType>>,
+
+    pub scripting: Option<Vec<MatchType>>,
+
+    pub translations:Option<Vec<MatchType>>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
