@@ -51,6 +51,7 @@ jobs:
           cp docgen/generator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
           cp docgen/generator/binding/docparse.h sourcepawn/exp/tools/docparse/
           cp docgen/generator/binding/dll_exports.cpp sourcepawn/exp/compiler/
+          cp docgen/generator/binding/preprocessor.h sourcepawn/exp/compiler/parser/
 
       - name: Create build directory
         working-directory: sourcepawn
@@ -59,8 +60,11 @@ jobs:
 
       - name: Build libraries
         working-directory: sourcepawn/build
+        env:
+          CC: gcc
+          CXX: g++ 
         run: |
-          python ../configure.py --build exp --enable-optimize
+          python ../configure.py --build exp --enable-debug
           ~/.local/bin/ambuild
 
       - name: Package libraries

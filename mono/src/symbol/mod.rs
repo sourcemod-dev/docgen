@@ -5,6 +5,7 @@ use std::fmt::{Display, Formatter, Result};
 pub mod argument;
 pub mod base;
 pub mod constant;
+pub mod define;
 pub mod enum_struct;
 pub mod enumeration;
 pub mod function;
@@ -23,6 +24,7 @@ pub use self::type_set::{Type, TypeSet};
 
 pub use self::argument::Argument;
 pub use self::constant::Constant;
+pub use self::define::Define;
 pub use self::enumeration::Enumeration;
 pub use self::function::Function;
 pub use self::method_map::MethodMap;
@@ -34,6 +36,7 @@ pub enum SymbolType {
     MethodMap,
     Property,
     Constant,
+    Define,
     Enum,
     EnumStruct,
     Field,
@@ -48,6 +51,7 @@ impl Display for SymbolType {
             Self::MethodMap => write!(f, "methodmap"),
             Self::Property => write!(f, "property"),
             Self::Constant => write!(f, "constant"),
+            Self::Define => write!(f, "define"),
             Self::Enum => write!(f, "enumeration"),
             Self::EnumStruct => write!(f, "enumstruct"),
             Self::Field => write!(f, "field"),

@@ -6,6 +6,7 @@ members = [
     "sitemap",
     "libmanifest",
     "fishingrod",
+    "edge_worker",
 ]
 
 [profile.release]

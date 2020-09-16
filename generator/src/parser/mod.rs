@@ -4,7 +4,7 @@ use serde_json::from_str;
 
 use mono::file::IncludeFile;
 use mono::symbol::{
-    parse_type_signature, Constant, DocLocation, Documentation, EnumStruct, Enumeration, Field,
+    parse_type_signature, Constant, Define, DocLocation, Documentation, EnumStruct, Enumeration, Field,
     Function, MethodMap, Property, Type, TypeDefinition, TypeSet,
 };
 
@@ -54,6 +54,10 @@ pub async fn parse_documentation<D: Into<String>>(data: D) -> Result<IncludeFile
 
     for constant in &mut include_file.constants {
         process_constant(constant, &raw_str).await;
+    }
+
+    for define in &mut include_file.defines {
+        process_define(define, &raw_str).await;
     }
 
     for r#enum in &mut include_file.enums {
@@ -146,6 +150,10 @@ async fn process_field(f: &mut Field, section: &str) {
 
 async fn process_constant(c: &mut Constant, section: &str) {
     process_section(&mut c.declaration.documentation, section).await;
+}
+
+async fn process_define(d: &mut Define, section: &str) {
+    process_section(&mut d.declaration.documentation, section).await;
 }
 
 async fn process_type(t: &mut Type, section: &str) {

@@ -1,2 +1,7 @@
 target
 **/*.rs.bk
+
+edge_worker/bin/
+edge_worker/pkg/
+edge_worker/wasm-pack.log
+edge_worker/worker/generated/

@@ -300,7 +300,7 @@ class Analyzer : public PartialAstVisitor
     atom_parent_ = cc_.add("parent");
   }
 
-  JsonObject *analyze(ParseTree *tree) {
+  JsonObject *analyze(ParseTree *tree, Preprocessor* pp, RefPtr<SourceFile> file) {
     functions_ = new (pool_) JsonList();
     methodmaps_ = new (pool_) JsonList();
     enums_ = new (pool_) JsonList();
@@ -308,7 +308,12 @@ class Analyzer : public PartialAstVisitor
     typesets_ = new (pool_) JsonList();
     typedefs_ = new (pool_) JsonList();
     enum_structs_ = new (pool_) JsonList();
+    defines_ = new (pool_) JsonList();
 
+    for (AtomMap<Macro *>::iterator iter = pp->macros_.iter(); !iter.empty(); iter.next()) {
+      visitMacro(iter->key, iter->value, file);
+    }
+    
     for (size_t i = 0; i < tree->statements()->length(); i++) {
       Statement *stmt = tree->statements()->at(i);
       stmt->accept(this);
@@ -322,6 +327,7 @@ class Analyzer : public PartialAstVisitor
     obj->add(cc_.add("typesets"), typesets_);
     obj->add(cc_.add("typedefs"), typedefs_);
     obj->add(cc_.add("enumstructs"), enum_structs_);
+    obj->add(cc_.add("defines"), defines_);
     return obj;
   }
 
@@ -477,6 +483,25 @@ class Analyzer : public PartialAstVisitor
     functions_->add(obj);
   }
 
+  void visitMacro(Atom* key, Macro *node, RefPtr<SourceFile> file) {
+    JsonObject *obj = new (pool_) JsonObject();
+    obj->add(atom_name_, toJson(key));
+    startDoc(obj, "define", key, node->start());
+
+    FullSourceRef ref = cc_.source().decode(node->tokens->at(0).start.loc);
+
+    const char* str = file->chars();
+
+    std::string value{
+      str + ref.offset,
+      str + ref.offset + node->tokens->length(),
+    };
+
+    obj->add(atom_value_, toJson(value.c_str()));
+
+    defines_->add(obj);
+  }
+
  private:
   void startDoc(JsonObject *obj, const char *type, Atom *name, const SourceLocation &loc) {
     unsigned start, end;
@@ -593,6 +618,7 @@ class Analyzer : public PartialAstVisitor
   JsonList *typesets_;
   JsonList *typedefs_;
   JsonList *enum_structs_;
+  JsonList *defines_;
 
   JsonList *props_;
   JsonList *methods_;
@@ -603,34 +629,31 @@ Run(CompileContext &cc, const char* buffer, const char* path)
 {
   Comments comments(cc);
   ParseTree *tree = nullptr;
-  {
-    Preprocessor pp(cc);
+  
+  Preprocessor pp(cc);
 
-    pp.disableIncludes();
-    pp.setCommentDelegate(&comments);
+  pp.disableIncludes();
+  pp.setCommentDelegate(&comments);
 
-    {
-      UniquePtr<char[]> o_ptr = MakeUnique<char[]>(strlen(buffer) + 10);
-      strcpy(o_ptr.get(), buffer);
+  UniquePtr<char[]> o_ptr = MakeUnique<char[]>(strlen(buffer) + 10);
+  strcpy(o_ptr.get(), buffer);
 
-      RefPtr<SourceFile> file = cc.source().createFromBuffer(std::move(o_ptr), strlen(buffer), path);
+  RefPtr<SourceFile> file = cc.source().createFromBuffer(std::move(o_ptr), strlen(buffer), path);
 
-      if (!file)
-        return nullptr;
-      if (!pp.enter(file))
-        return nullptr;
-    }
+  if (!file)
+    return nullptr;
+  if (!pp.enter(file))
+    return nullptr;
+  
+  NameResolver nr(cc);
+  Parser parser(cc, pp, nr);
 
-    NameResolver nr(cc);
-    Parser parser(cc, pp, nr);
-
-    tree = parser.parse();
-    if (!tree || !cc.canContinueProcessing())
-      return nullptr;
-  }
+  tree = parser.parse();
+  if (!tree || !cc.canContinueProcessing())
+    return nullptr;
 
   Analyzer analyzer(cc, comments);
-  return analyzer.analyze(tree);
+  return analyzer.analyze(tree, &pp, file);
 }
 
 const char* parse(const char* input, const char* path) {

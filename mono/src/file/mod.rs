@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 use crate::symbol::{
-    Constant, EnumStruct, Enumeration, Function, MethodMap, TypeDefinition, TypeSet,
+    Constant, Define, EnumStruct, Enumeration, Function, MethodMap, TypeDefinition, TypeSet,
 };
 
 /// Structural representation of an include's file contents
@@ -11,6 +11,7 @@ pub struct IncludeFile {
     pub methodmaps: Vec<MethodMap>,
     pub enumstructs: Vec<EnumStruct>,
     pub constants: Vec<Constant>,
+    pub defines: Vec<Define>,
     pub enums: Vec<Enumeration>,
     pub typesets: Vec<TypeSet>,
     pub typedefs: Vec<TypeDefinition>,
