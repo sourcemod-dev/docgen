@@ -7,7 +7,6 @@ members = [
     "libmanifest",
     "libschema",
     "chumbucket",
-    "fishingrod",
     "edge_worker",
 ]
 
