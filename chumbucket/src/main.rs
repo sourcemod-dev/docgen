@@ -11,6 +11,12 @@ fn main() {
                 .short('i')
         )
         .arg(
+            Arg::new("no-history")
+                .about("Skip SVN history lookups")
+                .required(false)
+        )
+        .arg(
+            // By default, it will output to a path relative to the chumbucket
             Arg::new("output")
                 .about("Location to output bundle to")
                 .short('o')

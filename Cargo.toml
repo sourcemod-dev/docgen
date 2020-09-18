@@ -4,7 +4,6 @@ members = [
     "generator",
     "mono",
     "sitemap",
-    "libmanifest",
     "libschema",
     "chumbucket",
     "edge_worker",
