@@ -1,0 +1,21 @@
+import os
+
+lib = Root.StaticLibrary(builder, 'docparse', arch)
+lib.compiler.cxxincludes += [
+  os.path.join(builder.sourcePath),
+  os.path.join(builder.sourcePath, 'exp'),
+  os.path.join(builder.sourcePath, 'exp/compiler'),
+]
+
+if lib.compiler.like('msvc'):
+  lib.compiler.postlink += ['/SUBSYSTEM:CONSOLE']
+
+lib.sources += [
+  'docparse.cpp',
+]
+lib.compiler.linkflags += [
+  SP.libspcomp2[arch].binary,
+  SP.libsmx[arch].binary,
+  SP.libamtl[arch],
+]
+builder.Add(lib)

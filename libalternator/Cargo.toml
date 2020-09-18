@@ -1,0 +1,16 @@
+[package]
+name = "alternator"
+version = "0.1.0"
+authors = ["rumblefrog <contact@rumblefrog.me>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+schema = { path = "../libschema" }
+spdcp = { version = "0.4.4", features = ["serde"]}
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+
+[build-dependencies]
+bindgen = "0.55.1"

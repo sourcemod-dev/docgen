@@ -5,6 +5,7 @@ members = [
     "mono",
     "sitemap",
     "libschema",
+    "libalternator",
     "chumbucket",
     "edge_worker",
 ]

@@ -11,6 +11,8 @@ pub struct Bundle {
     /// Meta descriptor of bundle content
     pub meta: Meta,
 
+    /// Strand or each individual include file
+    /// With optional addon metadata for versioninig
     pub strands: Vec<Strand>,
 
     /// Current version this bundle was parsed from
@@ -20,22 +22,24 @@ pub struct Bundle {
 
 #[derive(Deserialize, Serialize)]
 pub struct Strand {
-    pub functions: Vec<Fiber<Function>>,
+    pub functions: Fibers<Function>,
 
-    pub methodmaps: Vec<Fiber<MethodMap>>,
+    pub methodmaps: Fibers<MethodMap>,
 
-    pub enumstructs: Vec<Fiber<EnumStruct>>,
+    pub enumstructs: Fibers<EnumStruct>,
 
-    pub constants: Vec<Fiber<Constant>>,
+    pub constants: Fibers<Constant>,
 
-    pub defines: Vec<Fiber<Define>>,
+    pub defines: Fibers<Define>,
 
-    pub enums: Vec<Fiber<Enumeration>>,
+    pub enums: Fibers<Enumeration>,
 
-    pub typesets: Vec<Fiber<TypeSet>>,
+    pub typesets: Fibers<TypeSet>,
 
-    pub typedefs: Vec<Fiber<TypeDefinition>>,
+    pub typedefs: Fibers<TypeDefinition>,
 }
+
+pub type Fibers<T> = Vec<Fiber<T>>;
 
 #[derive(Deserialize, Serialize)]
 pub struct Fiber<T> {
