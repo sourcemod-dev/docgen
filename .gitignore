@@ -1,5 +1,6 @@
 target
 **/*.rs.bk
+.vscode
 
 edge_worker/bin/
 edge_worker/pkg/

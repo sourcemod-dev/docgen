@@ -5,6 +5,8 @@ members = [
     "mono",
     "sitemap",
     "libmanifest",
+    "libschema",
+    "chumbucket",
     "fishingrod",
     "edge_worker",
 ]
