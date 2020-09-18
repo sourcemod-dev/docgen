@@ -104,6 +104,7 @@ jobs:
         run: |
           mkdir docgen/generator/libraries
           tar -xzf libraries/build.tar.gz -C docgen/generator/libraries
+          tar -xzf libraries/build.tar.gz -C docgen/libalternator/libraries
 
       - name: Cache cargo registry
         uses: actions/cache@v1

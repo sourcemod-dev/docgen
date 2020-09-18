@@ -1,4 +1,4 @@
-use clap::{crate_version, crate_description, crate_authors, App, Arg};
+use clap::{crate_authors, crate_description, crate_version, App, Arg};
 
 fn main() {
     let _matches = App::new("Chum Bucket")
@@ -8,26 +8,26 @@ fn main() {
         .arg(
             Arg::with_name("include")
                 .about("Target file is an include file")
-                .short('i')
+                .short('i'),
         )
         .arg(
             Arg::with_name("no-history")
                 .about("Skip SVN history lookups")
                 .long("no-history")
-                .required(false)
+                .required(false),
         )
         .arg(
             // By default, it will output to a path relative to the chumbucket
             Arg::with_name("output")
                 .about("Location to output bundle to")
                 .short('o')
-                .required(false)
+                .required(false),
         )
         .arg(
             Arg::with_name("file")
                 .about("Input file")
                 .takes_value(true)
-                .required(true)
+                .required(true),
         )
         .get_matches();
 }

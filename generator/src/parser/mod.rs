@@ -4,8 +4,8 @@ use serde_json::from_str;
 
 use mono::file::IncludeFile;
 use mono::symbol::{
-    parse_type_signature, Constant, Define, DocLocation, Documentation, EnumStruct, Enumeration, Field,
-    Function, MethodMap, Property, Type, TypeDefinition, TypeSet,
+    parse_type_signature, Constant, Define, DocLocation, Documentation, EnumStruct, Enumeration,
+    Field, Function, MethodMap, Property, Type, TypeDefinition, TypeSet,
 };
 
 use spdcp::Comment;

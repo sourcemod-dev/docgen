@@ -1,4 +1,4 @@
-pub mod symbol;
-pub mod meta;
-pub mod manifest;
 pub mod bundle;
+pub mod manifest;
+pub mod meta;
+pub mod symbol;
