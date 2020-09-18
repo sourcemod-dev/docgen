@@ -6,21 +6,28 @@ fn main() {
         .version(crate_version!())
         .author(crate_authors!())
         .arg(
-            Arg::new("include")
+            Arg::with_name("include")
                 .about("Target file is an include file")
                 .short('i')
         )
         .arg(
-            Arg::new("no-history")
+            Arg::with_name("no-history")
                 .about("Skip SVN history lookups")
+                .long("no-history")
                 .required(false)
         )
         .arg(
             // By default, it will output to a path relative to the chumbucket
-            Arg::new("output")
+            Arg::with_name("output")
                 .about("Location to output bundle to")
                 .short('o')
                 .required(false)
+        )
+        .arg(
+            Arg::with_name("file")
+                .about("Input file")
+                .takes_value(true)
+                .required(true)
         )
         .get_matches();
 }
