@@ -300,7 +300,7 @@ class Analyzer : public PartialAstVisitor
     atom_parent_ = cc_.add("parent");
   }
 
-  JsonObject *analyze(ParseTree *tree, Preprocessor* pp, RefPtr<SourceFile> file) {
+  JsonObject *analyze(ParseTree *tree, Preprocessor& pp) {
     functions_ = new (pool_) JsonList();
     methodmaps_ = new (pool_) JsonList();
     enums_ = new (pool_) JsonList();
@@ -310,8 +310,8 @@ class Analyzer : public PartialAstVisitor
     enum_structs_ = new (pool_) JsonList();
     defines_ = new (pool_) JsonList();
 
-    for (AtomMap<Macro *>::iterator iter = pp->macros_.iter(); !iter.empty(); iter.next()) {
-      visitMacro(iter->key, iter->value, file);
+    for (auto iter = pp.macros(); !iter.empty(); iter.next()) {
+      visitMacro(iter->key, iter->value);
     }
     
     for (size_t i = 0; i < tree->statements()->length(); i++) {
@@ -483,19 +483,28 @@ class Analyzer : public PartialAstVisitor
     functions_->add(obj);
   }
 
-  void visitMacro(Atom* key, Macro *node, RefPtr<SourceFile> file) {
+  void visitMacro(Atom* key, Macro *node) {
+    // Ignore macros that aren't backed by file (e.g. __sourcepawn__)
+    FullSourceRef ref = cc_.source().decode(node->start());
+    if (!ref.file)
+      return;
+
     JsonObject *obj = new (pool_) JsonObject();
     obj->add(atom_name_, toJson(key));
     startDoc(obj, "define", key, node->start());
 
-    FullSourceRef ref = cc_.source().decode(node->tokens->at(0).start.loc);
+    std::string value;
+    if (node->tokens->length()) {
+      ref = cc_.source().decode(node->start());
+      if (ref.file) {
+        const char* file = ref.file->chars();
 
-    const char* str = file->chars();
-
-    std::string value{
-      str + ref.offset,
-      str + ref.offset + node->tokens->length(),
-    };
+        value = std::string{
+          file + ref.offset,
+          file + ref.offset + node->length(),
+        };
+      }
+    }
 
     obj->add(atom_value_, toJson(value.c_str()));
 
@@ -601,8 +610,8 @@ class Analyzer : public PartialAstVisitor
   Atom *atom_doc_start_;
   Atom *atom_doc_end_;
   Atom *atom_properties_;
-  Atom* atom_methods_;
-  Atom* atom_fields_;
+  Atom *atom_methods_;
+  Atom *atom_fields_;
   Atom *atom_getter_;
   Atom *atom_setter_;
   Atom *atom_entries_;
@@ -653,7 +662,7 @@ Run(CompileContext &cc, const char* buffer, const char* path)
     return nullptr;
 
   Analyzer analyzer(cc, comments);
-  return analyzer.analyze(tree, &pp, file);
+  return analyzer.analyze(tree, pp);
 }
 
 const char* parse(const char* input, const char* path) {
