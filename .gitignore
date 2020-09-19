@@ -2,6 +2,8 @@ target
 **/*.rs.bk
 .vscode
 
+libalternator/libraries
+
 edge_worker/bin/
 edge_worker/pkg/
 edge_worker/wasm-pack.log

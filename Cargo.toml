@@ -6,6 +6,7 @@ members = [
     "sitemap",
     "libschema",
     "libalternator",
+    "libwalker",
     "chumbucket",
     "edge_worker",
 ]

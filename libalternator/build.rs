@@ -24,9 +24,9 @@ fn main() {
     println!("cargo:rustc-link-lib=static=spcomp2");
     println!("cargo:rustc-link-lib=static=smx");
 
-    if cfg!(unix) {
-        println!("cargo:rustc-link-lib=static=stdc++");
-    }
+    // if cfg!(unix) {
+    //     println!("cargo:rustc-link-lib=static=stdc++");
+    // }
 
     println!("cargo:rerun-if-changed=binding/wrapper.h");
 
