@@ -1,4 +1,5 @@
-use std::path::Path;
+use std::ops::Range;
+use std::path::{Path, PathBuf};
 
 use git2::{Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort};
 
@@ -12,11 +13,18 @@ pub struct Walker {
     pathspec: Pathspec,
 }
 
-#[derive(Debug)]
+pub struct DiffList<'w> {
+    spec_diffs: Vec<CommitDiffs>,
+
+    range: Range<usize>,
+
+    walker: &'w Walker,
+}
+
 pub struct CommitDiffs {
     pub commit: Oid,
 
-    pub stem_diffs: Vec<String>,
+    pub path_diffs: Vec<PathBuf>,
 }
 
 impl Walker {
@@ -32,7 +40,7 @@ impl Walker {
         })
     }
 
-    pub fn walk(&mut self, from: Option<Oid>) -> Result<Vec<CommitDiffs>> {
+    pub fn walk(&mut self, from: Option<Oid>) -> Result<DiffList> {
         let mut revwalk = self.repo.revwalk()?;
 
         revwalk.set_sorting(Sort::TIME | Sort::REVERSE)?;
@@ -63,20 +71,18 @@ impl Walker {
 
                     let ml = self.pathspec.match_diff(&diff, PathspecFlags::DEFAULT)?;
 
-                    let diff_stems: Vec<String> = ml
+                    let diff_stems: Vec<PathBuf> = ml
                         .diff_entries()
                         .filter(|v| v.status() != Delta::Deleted)
                         .map(|v| v.new_file().path())
                         .filter(|v| v.is_some())
-                        .map(|v| v.unwrap().file_stem())
-                        .filter(|v| v.is_some())
-                        .map(|v| v.unwrap().to_string_lossy().into_owned())
+                        .map(|v| v.unwrap().to_path_buf())
                         .collect();
 
                     if !diff_stems.is_empty() {
                         spec_diffs.push(CommitDiffs {
                             commit: commit.id(),
-                            stem_diffs: diff_stems,
+                            path_diffs: diff_stems,
                         });
                     }
                 }
@@ -86,6 +92,54 @@ impl Walker {
             }
         }
 
-        Ok(spec_diffs)
+        Ok(DiffList {
+            range: 0..spec_diffs.len(),
+            spec_diffs,
+            walker: self,
+        })
+    }
+}
+
+pub struct BlobContent {
+    pub commit: Oid,
+
+    pub path: PathBuf,
+
+    pub content: Vec<u8>,
+}
+
+impl<'w> Iterator for DiffList<'w> {
+    type Item = Vec<BlobContent>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let spec_diff = self.range.next().and_then(|i| self.spec_diffs.get(i))?;
+
+        let commit = self
+            .walker
+            .repo
+            .find_commit(
+                spec_diff.commit,
+            )
+            .ok()?;
+
+        let tree = commit.tree().ok()?;
+
+        let mut bcs = Vec::new();
+
+        for path in &spec_diff.path_diffs {
+            let te = tree.get_path(&path).ok()?;
+
+            let obj = te.to_object(&self.walker.repo).ok()?;
+
+            let content = obj.as_blob()?.content().to_owned();
+
+            bcs.push(BlobContent {
+                commit: spec_diff.commit,
+                path: path.to_owned(),
+                content,
+            })
+        }
+
+        Some(bcs)
     }
 }
