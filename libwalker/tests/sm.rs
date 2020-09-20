@@ -9,9 +9,9 @@ fn test_walk() -> Result<(), Box<dyn std::error::Error>> {
         vec!["plugins/include/*.inc"],
     )?;
 
-    walker.walk(None)?;
+    let spec_diffs = walker.walk(None)?;
 
-    println!("{:?}", walker.spec_diffs());
+    println!("{:?}", spec_diffs);
 
     Ok(())
 }

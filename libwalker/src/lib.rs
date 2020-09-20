@@ -10,8 +10,6 @@ pub struct Walker {
     repo: Repository,
 
     pathspec: Pathspec,
-
-    spec_diffs: Vec<CommitDiffs>,
 }
 
 #[derive(Debug)]
@@ -31,15 +29,10 @@ impl Walker {
         Ok(Self {
             repo: Repository::open(repo)?,
             pathspec: Pathspec::new(paths)?,
-            spec_diffs: Vec::new(),
         })
     }
 
-    pub fn spec_diffs(&self) -> &Vec<CommitDiffs> {
-        &self.spec_diffs
-    }
-
-    pub fn walk(&mut self, from: Option<Oid>) -> Result<()> {
+    pub fn walk(&mut self, from: Option<Oid>) -> Result<Vec<CommitDiffs>> {
         let mut revwalk = self.repo.revwalk()?;
 
         revwalk.set_sorting(Sort::TIME | Sort::REVERSE)?;
@@ -48,6 +41,8 @@ impl Walker {
             Some(v) => revwalk.push(v)?,
             None => revwalk.push_head()?,
         }
+
+        let mut spec_diffs = Vec::new();
 
         for oid in revwalk {
             let oid = oid?;
@@ -79,7 +74,7 @@ impl Walker {
                         .collect();
 
                     if !diff_stems.is_empty() {
-                        self.spec_diffs.push(CommitDiffs {
+                        spec_diffs.push(CommitDiffs {
                             commit: commit.id(),
                             stem_diffs: diff_stems,
                         });
@@ -91,6 +86,6 @@ impl Walker {
             }
         }
 
-        Ok(())
+        Ok(spec_diffs)
     }
 }
