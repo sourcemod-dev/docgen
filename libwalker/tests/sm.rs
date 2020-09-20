@@ -6,12 +6,12 @@ use walker::Walker;
 fn test_walk() -> Result<(), Box<dyn std::error::Error>> {
     let mut walker = Walker::new(
         "/home/fishy/Documents/Github/sp-docgen/libwalker/tests/sourcemod",
-        vec!["plugins/include/geoip.inc"],
+        vec!["plugins/include/*.inc"],
     )?;
 
     walker.walk(None)?;
 
-    println!("{:?}", walker.commits());
+    println!("{:?}", walker.spec_diffs());
 
     Ok(())
 }

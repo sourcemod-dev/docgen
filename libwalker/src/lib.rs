@@ -1,7 +1,6 @@
-use std::collections::HashMap;
 use std::path::Path;
 
-use git2::{IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort};
+use git2::{Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort};
 
 mod error;
 
@@ -12,9 +11,14 @@ pub struct Walker {
 
     pathspec: Pathspec,
 
-    path_commits: HashMap<String, Vec<Oid>>,
+    spec_diffs: Vec<CommitDiffs>,
+}
 
-    commits: Vec<String>,
+#[derive(Debug)]
+pub struct CommitDiffs {
+    pub commit: Oid,
+
+    pub stem_diffs: Vec<String>,
 }
 
 impl Walker {
@@ -27,13 +31,12 @@ impl Walker {
         Ok(Self {
             repo: Repository::open(repo)?,
             pathspec: Pathspec::new(paths)?,
-            path_commits: HashMap::new(),
-            commits: Vec::new(),
+            spec_diffs: Vec::new(),
         })
     }
 
-    pub fn commits(&self) -> Vec<String> {
-        self.commits.clone()
+    pub fn spec_diffs(&self) -> &Vec<CommitDiffs> {
+        &self.spec_diffs
     }
 
     pub fn walk(&mut self, from: Option<Oid>) -> Result<()> {
@@ -46,7 +49,7 @@ impl Walker {
             None => revwalk.push_head()?,
         }
 
-        while let Some(oid) = revwalk.next() {
+        for oid in revwalk {
             let oid = oid?;
 
             let commit = self.repo.find_commit(oid)?;
@@ -65,22 +68,21 @@ impl Walker {
 
                     let ml = self.pathspec.match_diff(&diff, PathspecFlags::DEFAULT)?;
 
-                    for v in ml.diff_entries() {
-                        if let Some(new_file) = v.new_file().path() {
-                            if let Some(file) = new_file.to_str() {
-                                match self.path_commits.get_mut(file) {
-                                    Some(vec) => vec.push(commit.id()),
-                                    None => {
-                                        self.path_commits
-                                            .insert(file.to_string(), vec![commit.id()]);
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    let diff_stems: Vec<String> = ml
+                        .diff_entries()
+                        .filter(|v| v.status() != Delta::Deleted)
+                        .map(|v| v.new_file().path())
+                        .filter(|v| v.is_some())
+                        .map(|v| v.unwrap().file_stem())
+                        .filter(|v| v.is_some())
+                        .map(|v| v.unwrap().to_string_lossy().into_owned())
+                        .collect();
 
-                    if ml.diff_entries().len() > 0 {
-                        self.commits.push(commit.id().to_string());
+                    if !diff_stems.is_empty() {
+                        self.spec_diffs.push(CommitDiffs {
+                            commit: commit.id(),
+                            stem_diffs: diff_stems,
+                        });
                     }
                 }
                 _ => {
