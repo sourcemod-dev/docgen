@@ -15,7 +15,7 @@ pub struct Bundle {
     /// With optional addon metadata for versioninig
     pub strands: Vec<Strand>,
 
-    /// Current version this bundle was parsed from
+    /// Current version this bundle was last parsed from
     /// Chum bucket will continue from this commit
     pub version: Versioning,
 }
@@ -55,6 +55,9 @@ pub struct Fiber<T> {
 #[derive(Deserialize, Serialize)]
 pub struct Versioning {
     pub hash: String,
+
+    /// Walker commit depth
+    pub sequence: usize,
 
     pub time: u64,
 }

@@ -3,6 +3,7 @@ target
 .vscode
 
 libalternator/libraries
+libwalker/tests/contents/*
 
 edge_worker/bin/
 edge_worker/pkg/

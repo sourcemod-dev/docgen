@@ -11,9 +11,9 @@ fn main() {
                 .short('i'),
         )
         .arg(
-            Arg::with_name("no-history")
-                .about("Skip SVN history lookups")
-                .long("no-history")
+            Arg::with_name("rebuild-history")
+                .about("Rebuild versioning history from the start")
+                .long("rebuild-history")
                 .required(false),
         )
         .arg(

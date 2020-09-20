@@ -114,13 +114,7 @@ impl<'w> Iterator for DiffList<'w> {
     fn next(&mut self) -> Option<Self::Item> {
         let spec_diff = self.range.next().and_then(|i| self.spec_diffs.get(i))?;
 
-        let commit = self
-            .walker
-            .repo
-            .find_commit(
-                spec_diff.commit,
-            )
-            .ok()?;
+        let commit = self.walker.repo.find_commit(spec_diff.commit).ok()?;
 
         let tree = commit.tree().ok()?;
 

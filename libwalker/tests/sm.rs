@@ -13,7 +13,10 @@ fn test_walk() -> Result<(), Box<dyn std::error::Error>> {
 
     for t in spec_diffs {
         for c in t {
-            std::fs::write(format!("tests/contents/{}", c.commit.to_string()), c.content)?;
+            std::fs::write(
+                format!("tests/contents/{}", c.commit.to_string()),
+                c.content,
+            )?;
         }
     }
 
