@@ -8,9 +8,6 @@ pub struct Manifest {
     pub meta: Meta,
 
     pub source: Source,
-
-    /// Used as regex glob pattern when Git is selected
-    pub patterns: Option<Vec<String>>,
 }
 
 #[derive(Deserialize)]
@@ -29,9 +26,15 @@ pub struct Source {
     /// Type of source or method of access
     pub r#type: SourceType,
 
+    /// If true, all sources will be merged into a single namespace when consumed by the UI
+    pub merge: bool,
+
     /// Mandatory if Git is selected as the type
     pub repository: Option<String>,
 
     /// Mandatory if Direct is selected as the type
     pub endpoints: Option<Vec<String>>,
+
+    /// Used as regex glob pattern when Git is selected
+    pub patterns: Option<Vec<String>>,
 }

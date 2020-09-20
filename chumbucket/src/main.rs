@@ -12,7 +12,7 @@ fn main() {
         )
         .arg(
             Arg::with_name("rebuild-history")
-                .about("Rebuild versioning history from the start")
+                .about("Rebuild versioning history from the start. Will not read existing bundle for versioning.")
                 .long("rebuild-history")
                 .required(false),
         )
