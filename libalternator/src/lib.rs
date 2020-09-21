@@ -1,7 +1,7 @@
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use spdcp::Comment;
 
@@ -16,7 +16,7 @@ use error::{AlternatorError, Result};
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize)]
 pub struct AlternatorStrand {
     pub functions: Vec<Function>,
 

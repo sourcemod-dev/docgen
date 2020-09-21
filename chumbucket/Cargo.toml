@@ -9,6 +9,10 @@ edition = "2018"
 
 [dependencies]
 schema = { path = "../libschema" }
-
+alternator = { path = "../libalternator" }
+tokio = { version = "0.2", features = ["full"] }
 clap = "3.0.0-beta.1"
 git2 = "0.13"
+serde = "1"
+serde_json = "1"
+toml = "0.5"

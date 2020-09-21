@@ -1,7 +1,8 @@
 use clap::{crate_authors, crate_description, crate_version, App, Arg};
 
-fn main() {
-    let _matches = App::new("Chum Bucket")
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let matches = App::new("Chum Bucket")
         .about(crate_description!())
         .version(crate_version!())
         .author(crate_authors!())
@@ -21,7 +22,7 @@ fn main() {
             Arg::with_name("output")
                 .about("Location to output bundle to")
                 .short('o')
-                .required(false),
+                .required(true),
         )
         .arg(
             Arg::with_name("file")
@@ -30,4 +31,34 @@ fn main() {
                 .required(true),
         )
         .get_matches();
+
+    let fs_content = std::fs::read(matches.value_of("file").unwrap())?;
+
+    let fs_out = matches.value_of("output").unwrap();
+
+    let input = std::str::from_utf8(&fs_content)?;
+    
+    // Supercede and process singular include only
+    if matches.is_present("include") {
+        let res = alternator::consume("chumbucket", input).await?;
+
+        write_to_disk(fs_out, res)?;
+
+        return Ok(());
+    }
+
+    // Remaining manifest
+
+    Ok(())
+}
+
+fn write_to_disk<T>(loc: &str, t: T) -> Result<(), Box<dyn std::error::Error>>
+where
+    T: serde::Serialize,
+{
+    let s = serde_json::to_string(&t)?;
+
+    std::fs::write(loc, &s)?;
+
+    Ok(())
 }
