@@ -118,10 +118,7 @@ jobs:
           key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('docgen/Cargo.lock') }}
 
       - name: Build crates
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release --manifest-path docgen/
+        run: cargo build --release docgen
 
       - name: Upload docgen
         uses: actions/upload-artifact@v1
