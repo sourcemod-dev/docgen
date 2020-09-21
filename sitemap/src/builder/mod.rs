@@ -1,11 +1,12 @@
 use treexml::ElementBuilder;
 
-use mono::file::IncludeFile;
-use mono::symbol::SymbolType;
+use alternator::AlternatorStrand;
+
+use schema::symbol::SymbolType;
 
 pub fn build_include_tree(
     key: String,
-    include: IncludeFile,
+    include: AlternatorStrand,
     base_url: &str,
 ) -> Vec<ElementBuilder> {
     let mut children: Vec<ElementBuilder> = Vec::new();
