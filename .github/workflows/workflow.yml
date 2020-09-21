@@ -121,7 +121,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --release
+          args: --release --manifest-path docgen/
 
       - name: Upload docgen
         uses: actions/upload-artifact@v1
