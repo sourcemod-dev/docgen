@@ -10,6 +10,8 @@ edition = "2018"
 [dependencies]
 schema = { path = "../libschema" }
 alternator = { path = "../libalternator" }
+walker = { path = "../libwalker" }
+anyhow = "1.0"
 tokio = { version = "0.2", features = ["full"] }
 clap = "3.0.0-beta.1"
 git2 = "0.13"

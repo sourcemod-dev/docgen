@@ -28,7 +28,7 @@ pub struct CommitDiffs {
 }
 
 impl Walker {
-    pub fn new<R, T, P>(repo: R, paths: P) -> Result<Self>
+    pub fn new<R, T, P>(repo: R, path_specs: P) -> Result<Self>
     where
         R: AsRef<Path>,
         T: IntoCString,
@@ -36,17 +36,29 @@ impl Walker {
     {
         Ok(Self {
             repo: Repository::open(repo)?,
-            pathspec: Pathspec::new(paths)?,
+            pathspec: Pathspec::new(path_specs)?,
         })
     }
 
-    pub fn walk(&mut self, from: Option<Oid>) -> Result<DiffList> {
+    pub fn from_remote<P, T, S>(url: &str, into: P, path_specs: S) -> Result<Self>
+    where
+        P: AsRef<Path>,
+        T: IntoCString,
+        S: IntoIterator<Item = T>,
+    {
+        Ok(Self {
+            repo: Repository::clone(url, into)?,
+            pathspec: Pathspec::new(path_specs)?,
+        })
+    }
+
+    pub fn walk(&mut self, from: Option<&str>) -> Result<DiffList> {
         let mut revwalk = self.repo.revwalk()?;
 
         revwalk.set_sorting(Sort::TIME | Sort::REVERSE)?;
 
         match from {
-            Some(v) => revwalk.push(v)?,
+            Some(v) => revwalk.push(Oid::from_str(v)?)?,
             None => revwalk.push_head()?,
         }
 
