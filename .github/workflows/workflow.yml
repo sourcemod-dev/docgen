@@ -59,9 +59,9 @@ jobs:
 
       - name: Build libraries
         working-directory: sourcepawn/build
-        env:
-          CC: gcc
-          CXX: g++ 
+        # env:
+        #   CC: gcc
+        #   CXX: g++ 
         run: |
           python ../configure.py --build exp --enable-optimize
           ~/.local/bin/ambuild
