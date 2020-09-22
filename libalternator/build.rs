@@ -26,7 +26,7 @@ fn main() {
 
     // Required for CI
     if cfg!(unix) {
-        println!("cargo:rustc-link-lib=static=stdc++");
+        println!("cargo:rustc-link-lib=dylib=stdc++"); 
     }
 
     println!("cargo:rerun-if-changed=binding/wrapper.h");
