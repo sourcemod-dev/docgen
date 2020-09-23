@@ -119,10 +119,10 @@ jobs:
 
       - name: Build crates
         working-directory: docgen
-        run: cargo build --release
+        run: cargo build
 
       - name: Upload docgen
         uses: actions/upload-artifact@v1
         with:
           name: docgen
-          path: docgen/target/release/chumbucket
+          path: docgen/target/debug/chumbucket

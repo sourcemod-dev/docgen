@@ -88,13 +88,9 @@ async fn main() -> Result<()> {
 
             let b = iterate_chronicles(git, manifest, bundle).await?;
 
-            println!("never ever reached 2");
-
             write_to_disk(fs_out, b)?;
         }
     };
-
-    println!("wtf");
 
     Ok(())
 }
@@ -188,17 +184,11 @@ where
                     insert_symbol!(typesets);
                     insert_symbol!(typedefs);
 
-                    println!("insertion bundle");
-
                     bundle.strands.insert(file_name, bundle_strand);
                 }
             }
         }
     }
-
-    println!("never reached");
-
-    println!("b: {:?}", bundle);
 
     Ok(bundle)
 }
