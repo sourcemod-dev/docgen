@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::symbol::Declaration;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Entry {
     #[serde(flatten)]
@@ -12,7 +12,7 @@ pub struct Entry {
     pub value: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Enumeration {
     #[serde(flatten)]

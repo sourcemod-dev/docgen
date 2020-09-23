@@ -63,7 +63,7 @@ jobs:
         #   CC: gcc
         #   CXX: g++ 
         run: |
-          python ../configure.py --build exp --enable-optimize
+          python ../configure.py --build exp --enable-debug
           ~/.local/bin/ambuild
 
       - name: Package libraries

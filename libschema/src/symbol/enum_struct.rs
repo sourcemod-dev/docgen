@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::symbol::{Declaration, Function};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Field {
     #[serde(flatten)]
@@ -12,7 +12,7 @@ pub struct Field {
     pub r#type: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EnumStruct {
     #[serde(flatten)]

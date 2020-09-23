@@ -2,11 +2,11 @@
 
 use anyhow::Result;
 use clap::{crate_authors, crate_description, crate_version, App, Arg};
-
 use schema::{
-    bundle::Bundle,
+    bundle::{Bundle, Fiber, Strand},
     manifest::{Manifest, SourceType},
 };
+use std::collections::HashMap;
 use walker::Walker;
 
 mod accessors;
@@ -55,11 +55,9 @@ async fn main() -> Result<()> {
 
     let fs_out = matches.value_of("output").unwrap();
 
-    let input = std::str::from_utf8(&fs_content)?;
-
     // Supercede and process singular include only
     if matches.is_present("include") {
-        let res = alternator::consume("chumbucket", input).await?;
+        let res = alternator::consume("chumbucket", fs_content).await?;
 
         write_to_disk(fs_out, res)?;
 
@@ -80,16 +78,129 @@ async fn main() -> Result<()> {
 
         // },
         _ => {
-            let repo = manifest.source.repository.clone().unwrap();
-            let patterns = manifest.source.patterns.clone().unwrap();
+            let mut walker = Walker::from_remote(
+                &manifest.source.repository.clone().unwrap(),
+                &manifest.meta.name,
+                manifest.source.patterns.clone().unwrap(),
+            )?;
 
-            let mut walker = Walker::from_remote(&repo, &manifest.meta.name, patterns)?;
+            let git = accessors::Git::from_walker(None, &mut walker)?;
 
-            let git = accessors::Git::from_walker(&manifest, None, &mut walker)?;
+            let b = iterate_chronicles(git, manifest, bundle).await?;
+
+            println!("never ever reached 2");
+
+            write_to_disk(fs_out, b)?;
         }
     };
 
+    println!("wtf");
+
     Ok(())
+}
+
+async fn iterate_chronicles<I>(i: I, manifest: Manifest, bundle: Option<Bundle>) -> Result<Bundle>
+where
+    I: accessors::Accessor,
+{
+    let mut bundle = bundle.unwrap_or(Bundle {
+        meta: manifest.meta,
+        strands: HashMap::new(),
+        version: None,
+    });
+
+    for chronicle in i {
+        let version = chronicle.version;
+
+        for (file_name, v) in chronicle.files {
+            let alternator_strand = alternator::consume(file_name.clone(), v).await?;
+
+            match bundle.strands.get_mut(&file_name) {
+                // Include file already exist as a strand
+                Some(bundle_strand) => {
+                    // Iterate all symbols and compare to find differences
+                    // Upon difference, update the last_update
+                    // If symbol does not exist, update created_at as it was first discovered
+
+                    macro_rules! process_symbol {
+                        ($field:ident) => {
+                            for (k, v) in alternator_strand.$field {
+                                // Attempt to find the equivalent symbol in the bundle
+
+                                match bundle_strand.$field.get_mut(&k) {
+                                    Some(b_v) => {
+                                        // Symbol does not partialeq, update the updated_at
+                                        if v != b_v.symbol {
+                                            b_v.last_updated = version.clone();
+
+                                            // Symbol has changed, assign the new value to bundle value
+                                            b_v.symbol = v;
+                                        }
+                                    },
+                                    None => {
+                                        // Symbol is not found in the current bundle, must be new!
+                                        bundle_strand.$field.insert(k, Fiber{
+                                            symbol: v,
+                                            last_updated: version.clone(),
+                                            created: version.clone(),
+                                        });
+                                    }
+                                }
+                            }
+                        };
+                    }
+
+                    process_symbol!(functions);
+                    process_symbol!(methodmaps);
+                    process_symbol!(enumstructs);
+                    process_symbol!(constants);
+                    process_symbol!(defines);
+                    process_symbol!(enums);
+                    process_symbol!(typesets);
+                    process_symbol!(typedefs);
+                }
+                None => {
+                    // This strand (file) does not exist in the bundle
+                    // Do a direct insertion and use current version
+                    let mut bundle_strand = Strand::default();
+
+                    macro_rules! insert_symbol {
+                        ($field:ident) => {
+                            for (k, v) in alternator_strand.$field {
+                                bundle_strand.$field.insert(
+                                    k,
+                                    Fiber {
+                                        symbol: v,
+                                        last_updated: version.clone(),
+                                        created: version.clone(),
+                                    },
+                                );
+                            }
+                        };
+                    }
+
+                    insert_symbol!(functions);
+                    insert_symbol!(methodmaps);
+                    insert_symbol!(enumstructs);
+                    insert_symbol!(constants);
+                    insert_symbol!(defines);
+                    insert_symbol!(enums);
+                    insert_symbol!(typesets);
+                    insert_symbol!(typedefs);
+
+                    println!("insertion bundle");
+
+                    bundle.strands.insert(file_name, bundle_strand);
+                }
+            }
+        }
+    }
+
+    println!("never reached");
+
+    println!("b: {:?}", bundle);
+
+    Ok(bundle)
 }
 
 fn write_to_disk<T>(loc: &str, t: T) -> Result<()>

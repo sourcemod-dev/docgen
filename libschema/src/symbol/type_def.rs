@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::symbol::{Argument, Declaration};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TypeDefinition {
     #[serde(flatten)]
@@ -15,7 +15,7 @@ pub struct TypeDefinition {
     pub parsed_signature: Option<TypeSignature>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TypeSignature {
     /// Return type of the function

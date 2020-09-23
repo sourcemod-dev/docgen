@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use spdcp::Comment;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
     #[serde(default)]
@@ -16,7 +16,7 @@ pub struct Documentation {
     pub docs: Option<Comment>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 /// Base symbol declaration
 pub struct Declaration {

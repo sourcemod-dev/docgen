@@ -27,7 +27,7 @@ pub struct Source {
     pub r#type: SourceType,
 
     /// If true, all sources will be merged into a single namespace when consumed by the UI
-    pub merge: bool,
+    pub merge: Option<bool>,
 
     /// Mandatory if Git is selected as the type
     pub repository: Option<String>,

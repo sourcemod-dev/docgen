@@ -46,8 +46,14 @@ impl Walker {
         T: IntoCString,
         S: IntoIterator<Item = T>,
     {
+        // If repository exists locally, open instead
+        let repo = match into.as_ref().exists() {
+            true => Repository::open(into)?,
+            _ => Repository::clone(url, into)?,
+        };
+
         Ok(Self {
-            repo: Repository::clone(url, into)?,
+            repo,
             pathspec: Pathspec::new(path_specs)?,
         })
     }
@@ -115,6 +121,8 @@ impl Walker {
 pub struct BlobContent {
     pub commit: Oid,
 
+    pub time: i64,
+
     pub path: PathBuf,
 
     pub content: Vec<u8>,
@@ -141,6 +149,7 @@ impl<'w> Iterator for DiffList<'w> {
 
             bcs.push(BlobContent {
                 commit: spec_diff.commit,
+                time: commit.time().seconds(),
                 path: path.to_owned(),
                 content,
             })

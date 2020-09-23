@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
@@ -16,8 +17,27 @@ use error::{AlternatorError, Result};
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Default)]
 pub struct AlternatorStrand {
+    pub functions: HashMap<String, Function>,
+
+    pub methodmaps: HashMap<String, MethodMap>,
+
+    pub enumstructs: HashMap<String, EnumStruct>,
+
+    pub constants: HashMap<String, Constant>,
+
+    pub defines: HashMap<String, Define>,
+
+    pub enums: HashMap<String, Enumeration>,
+
+    pub typesets: HashMap<String, TypeSet>,
+
+    pub typedefs: HashMap<String, TypeDefinition>,
+}
+
+#[derive(Deserialize)]
+pub struct DPStrand {
     pub functions: Vec<Function>,
 
     pub methodmaps: Vec<MethodMap>,
@@ -35,11 +55,11 @@ pub struct AlternatorStrand {
     pub typedefs: Vec<TypeDefinition>,
 }
 
-pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: T) -> Result<AlternatorStrand> {
+pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {
     let dp_ptr: *const c_char = unsafe {
         parse(
             CString::new(content)?.as_ptr(),
-            CString::new(atom)?.as_ptr(),
+            CString::new(atom.into())?.as_ptr(),
         )
     };
 
@@ -47,43 +67,77 @@ pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: T) -> Result<Alternator
         CStr::from_ptr(dp_ptr.as_ref().ok_or(AlternatorError::ParseFail)?).to_string_lossy()
     };
 
-    Ok(AlternatorStrand::parse(&parsed).await?)
+    Ok(DPStrand::parse(&parsed).await?)
 }
 
-impl AlternatorStrand {
+impl DPStrand {
     pub async fn parse(content: &str) -> Result<AlternatorStrand> {
-        let mut alternator_strand: Self = serde_json::from_str(content)?;
+        let mut dp_strand: Self = serde_json::from_str(content)?;
 
-        for m in &mut alternator_strand.methodmaps {
+        let mut alternator_strand = AlternatorStrand::default();
+
+        for m in &mut dp_strand.methodmaps {
             Self::process_methodmap(m, &content).await;
+
+            alternator_strand
+                .methodmaps
+                .insert(m.declaration.name.clone(), m.clone());
         }
 
-        for e in &mut alternator_strand.enumstructs {
+        for e in &mut dp_strand.enumstructs {
             Self::process_enumstruct(e, &content).await;
+
+            alternator_strand
+                .enumstructs
+                .insert(e.declaration.name.clone(), e.clone());
         }
 
-        for func in &mut alternator_strand.functions {
+        for func in &mut dp_strand.functions {
             Self::process_function(func, &content).await;
+
+            alternator_strand
+                .functions
+                .insert(func.declaration.name.clone(), func.clone());
         }
 
-        for constant in &mut alternator_strand.constants {
+        for constant in &mut dp_strand.constants {
             Self::process_constant(constant, &content).await;
+
+            alternator_strand
+                .constants
+                .insert(constant.declaration.name.clone(), constant.clone());
         }
 
-        for define in &mut alternator_strand.defines {
+        for define in &mut dp_strand.defines {
             Self::process_define(define, &content).await;
+
+            alternator_strand
+                .defines
+                .insert(define.declaration.name.clone(), define.clone());
         }
 
-        for r#enum in &mut alternator_strand.enums {
+        for r#enum in &mut dp_strand.enums {
             Self::process_enum(r#enum, &content).await;
+
+            alternator_strand
+                .enums
+                .insert(r#enum.declaration.name.clone(), r#enum.clone());
         }
 
-        for typeset in &mut alternator_strand.typesets {
+        for typeset in &mut dp_strand.typesets {
             Self::process_typeset(typeset, &content).await;
+
+            alternator_strand
+                .typesets
+                .insert(typeset.declaration.name.clone(), typeset.clone());
         }
 
-        for typedef in &mut alternator_strand.typedefs {
+        for typedef in &mut dp_strand.typedefs {
             Self::process_typedef(typedef, &content).await;
+
+            alternator_strand
+                .typedefs
+                .insert(typedef.declaration.name.clone(), typedef.clone());
         }
 
         Ok(alternator_strand)
@@ -193,8 +247,14 @@ impl AlternatorStrand {
 
         let bytes = section.as_bytes();
 
+        let len = section.len();
+
         let start: usize = doc.doc_start.into();
         let end: usize = doc.doc_end.into();
+
+        if start > len || end > len {
+            return;
+        }
 
         let snippet = &bytes[start..end];
 
