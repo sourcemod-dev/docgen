@@ -4,8 +4,9 @@ use walker::Walker;
 
 #[test]
 fn test_walk() -> Result<(), Box<dyn std::error::Error>> {
-    let mut walker = Walker::new(
-        "/home/fishy/Documents/Github/sp-docgen/libwalker/tests/sourcemod",
+    let mut walker = Walker::from_remote(
+        "https://github.com/alliedmodders/sourcemod.git",
+        "sourcemod",
         vec!["plugins/include/geoip.inc"],
     )?;
 
