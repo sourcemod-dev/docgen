@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
+use std::str::from_utf8;
 
 use serde::{Deserialize, Serialize};
 
@@ -55,10 +56,10 @@ pub struct DPStrand {
     pub typedefs: Vec<TypeDefinition>,
 }
 
-pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {
+pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {  
     let dp_ptr: *const c_char = unsafe {
         parse(
-            CString::new(content)?.as_ptr(),
+            CString::new(content.clone())?.as_ptr(),
             CString::new(atom.into())?.as_ptr(),
         )
     };
@@ -67,12 +68,12 @@ pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<Alte
         CStr::from_ptr(dp_ptr.as_ref().ok_or(AlternatorError::ParseFail)?).to_string_lossy()
     };
 
-    Ok(DPStrand::parse(&parsed).await?)
+    Ok(DPStrand::parse(&parsed, from_utf8(&content)?).await?)
 }
 
 impl DPStrand {
-    pub async fn parse(content: &str) -> Result<AlternatorStrand> {
-        let mut dp_strand: Self = serde_json::from_str(content)?;
+    pub async fn parse(parsed: &str, content: &str) -> Result<AlternatorStrand> {
+        let mut dp_strand: Self = serde_json::from_str(parsed)?;
 
         let mut alternator_strand = AlternatorStrand::default();
 
@@ -247,18 +248,14 @@ impl DPStrand {
 
         let bytes = section.as_bytes();
 
-        let len = section.len();
-
         let start: usize = doc.doc_start.into();
         let end: usize = doc.doc_end.into();
 
-        if start > len || end > len {
-            return;
-        }
-
         let snippet = &bytes[start..end];
 
-        let section: String = std::str::from_utf8(snippet).unwrap().to_owned();
+        let section: String = from_utf8(snippet).unwrap().to_owned();
+
+        println!("{}", section);
 
         doc.docs = Some(Comment::parse(section));
     }

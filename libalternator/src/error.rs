@@ -12,4 +12,7 @@ pub enum AlternatorError {
 
     #[error("Schema mismatch from alternator's strand")]
     SchemaMismatch(#[from] serde_json::error::Error),
+
+    #[error("Encoding non utf-8")]
+    Encoding(#[from] std::str::Utf8Error),
 }
