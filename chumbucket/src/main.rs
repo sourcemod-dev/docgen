@@ -109,7 +109,14 @@ where
         let version = chronicle.version;
 
         for (file_name, v) in chronicle.files {
-            let alternator_strand = alternator::consume(file_name.clone(), v).await?;
+            println!("processing {} @ {}", file_name, version.clone().unwrap().hash);
+
+            let alternator_strand = match alternator::consume(file_name.clone(), v).await {
+                Ok(o) => o,
+                // If it errors, we'll continue
+                // Some prior syntaxes aren't supported by current lexer/parser
+                Err(_) => continue,
+            };
 
             match bundle.strands.get_mut(&file_name) {
                 // Include file already exist as a strand

@@ -647,18 +647,20 @@ Run(CompileContext &cc, const char* buffer, const char* path)
   UniquePtr<char[]> o_ptr = MakeUnique<char[]>(strlen(buffer) + 10);
   strcpy(o_ptr.get(), buffer);
 
-  RefPtr<SourceFile> file = cc.source().createFromBuffer(std::move(o_ptr), strlen(buffer), path);
+  {
+    RefPtr<SourceFile> file = cc.source().createFromBuffer(std::move(o_ptr), strlen(buffer), path);
 
-  if (!file)
-    return nullptr;
-  if (!pp.enter(file))
-    return nullptr;
+    if (!file)
+      return nullptr;
+    if (!pp.enter(file))
+      return nullptr;
+  }
   
   NameResolver nr(cc);
   Parser parser(cc, pp, nr);
 
   tree = parser.parse();
-  if (!tree || !cc.canContinueProcessing())
+  if (!tree || !cc.phasePassed())
     return nullptr;
 
   Analyzer analyzer(cc, comments);
