@@ -58,15 +58,12 @@ impl Walker {
         })
     }
 
-    pub fn walk(&mut self, from: Option<&str>) -> Result<DiffList> {
+    pub fn walk(&mut self, from: Option<i64>) -> Result<DiffList> {
         let mut revwalk = self.repo.revwalk()?;
 
         revwalk.set_sorting(Sort::TIME | Sort::REVERSE)?;
 
-        match from {
-            Some(v) => revwalk.push(Oid::from_str(v)?)?,
-            None => revwalk.push_head()?,
-        }
+        revwalk.push_head()?;
 
         let mut spec_diffs = Vec::new();
 
@@ -74,6 +71,14 @@ impl Walker {
             let oid = oid?;
 
             let commit = self.repo.find_commit(oid)?;
+
+            // If a from time is specified
+            // Any commit that's older than this time is skipped
+            if let Some(from_time) = from {
+                if commit.time().seconds() < from_time {
+                    continue;
+                }
+            }
 
             let c_tree = commit.tree()?;
 

@@ -8,7 +8,7 @@ use walker::{DiffList, Walker};
 pub struct Git<'g>(DiffList<'g>);
 
 impl<'g> Git<'g> {
-    pub fn from_walker(from: Option<&str>, walker: &'g mut Walker) -> Result<Self> {
+    pub fn from_walker(from: Option<i64>, walker: &'g mut Walker) -> Result<Self> {
         Ok(Self(walker.walk(from)?))
     }
 }

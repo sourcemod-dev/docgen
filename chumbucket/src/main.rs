@@ -66,30 +66,35 @@ async fn main() -> Result<()> {
 
     let manifest: Manifest = toml::from_slice(&fs_content)?;
     let mut bundle: Option<Bundle> = None;
+    let mut from_time: Option<i64> = None;
 
     if matches.is_present("bundle") {
         let bundle_str = std::fs::read(matches.value_of("bundle").unwrap())?;
 
-        bundle = Some(serde_json::from_slice(&bundle_str)?);
+        let parsed_bundle: Bundle = serde_json::from_slice(&bundle_str)?;
+
+        if let Some(version) = &parsed_bundle.version {
+            from_time = Some(version.time);
+        }
+
+        bundle = Some(parsed_bundle);
     }
 
     match manifest.source.r#type {
-        // SourceType::Git => {
-
-        // },
-        _ => {
+        SourceType::Git => {
             let mut walker = Walker::from_remote(
                 &manifest.source.repository.clone().unwrap(),
                 &manifest.meta.name,
                 manifest.source.patterns.clone().unwrap(),
             )?;
 
-            let git = accessors::Git::from_walker(None, &mut walker)?;
+            let git = accessors::Git::from_walker(from_time, &mut walker)?;
 
             let b = iterate_chronicles(git, manifest, bundle).await?;
 
             write_to_disk(fs_out, b)?;
         }
+        _ => (),
     };
 
     Ok(())
@@ -105,12 +110,12 @@ where
         version: None,
     });
 
-    for chronicle in i {
+    let mut iter = i.peekable();
+
+    while let Some(chronicle) = iter.next() {
         let version = chronicle.version;
 
         for (file_name, v) in chronicle.files {
-            println!("processing {} @ {}", file_name, version.clone().unwrap().hash);
-
             let alternator_strand = match alternator::consume(file_name.clone(), v).await {
                 Ok(o) => o,
                 // If it errors, we'll continue
@@ -194,6 +199,12 @@ where
                     bundle.strands.insert(file_name, bundle_strand);
                 }
             }
+        }
+
+        // If this is the last iteration of chronicles
+        // Set the bundle's version to the last commit processed
+        if iter.peek().is_none() {
+            bundle.version = version.clone();
         }
     }
 

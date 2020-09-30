@@ -11,6 +11,7 @@ pub struct Manifest {
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "lowercase")]
 pub enum SourceType {
     /// Git SSH URL schema
     /// Repository field must be populated

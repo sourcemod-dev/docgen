@@ -255,8 +255,6 @@ impl DPStrand {
 
         let section: String = from_utf8(snippet).unwrap().to_owned();
 
-        println!("{}", section);
-
         doc.docs = Some(Comment::parse(section));
     }
 }
