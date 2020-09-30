@@ -63,7 +63,7 @@ jobs:
         #   CC: gcc
         #   CXX: g++ 
         run: |
-          python ../configure.py --build exp --enable-debug
+          python ../configure.py --build exp --enable-optimize
           ~/.local/bin/ambuild
 
       - name: Package libraries
@@ -119,7 +119,7 @@ jobs:
 
       - name: Build crates
         working-directory: docgen
-        run: cargo build
+        run: cargo build --release
 
       - name: Upload docgen
         uses: actions/upload-artifact@v1
