@@ -1,8 +1,8 @@
-import { Declaration, searchDeclaration } from './base';
+import { Declaration } from './base';
 import { Property } from './property';
-import { SearchYield, SymbolYield } from './search';
+import { SearchYield } from './search';
 import { Function } from './function';
-import { Identifier, IdentifierWeights } from './types';
+import { Identifier } from './types';
 
 export interface MethodMap extends Declaration {
     tag: Identifier.MethodMap,

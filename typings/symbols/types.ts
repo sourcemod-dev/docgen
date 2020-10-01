@@ -1,4 +1,5 @@
 import { Constant, ConstantYield } from './constant';
+import { Define } from './define';
 import { Enumeration, EnumerationYield } from './enumeration';
 import { Function, FunctionYield } from './function';
 import {
@@ -18,6 +19,7 @@ import {
 /* eslint-disable no-shadow */
 export enum Identifier {
     Constant = 'constant',
+    Define = 'define',
     Enumeration = 'enumeration',
     Function = 'function',
     MethodMap = 'methodmap',
@@ -44,6 +46,7 @@ export enum IdentifierWeights {
 
 export const SINGLETON_TYPES = [
     Identifier.Constant,
+    Identifier.Define,
     Identifier.Function,
     Identifier.Enumeration,
     Identifier.MethodMap,
@@ -61,6 +64,7 @@ export const NESTED_TYPES = [
 
 export type Symbol =
     Constant |
+    Define |
     Enumeration |
     Function |
     MethodMap |
