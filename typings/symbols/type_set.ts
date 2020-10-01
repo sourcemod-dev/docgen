@@ -1,7 +1,6 @@
-import { symbolDistance } from '@/utils';
-import { Declaration, Documentation, searchDeclaration } from './base';
-import { SearchYield, SymbolYield, Containment } from './search';
-import { Identifier, IdentifierWeights } from './types';
+import { Declaration, Documentation } from './base';
+import { SearchYield } from './search';
+import { Identifier } from './types';
 import { TypeSignature } from './type_def';
 
 /**

@@ -1,7 +1,6 @@
-import { symbolDistance } from '@/utils';
-import { Declaration, searchDeclaration } from './base';
-import { SearchYield, SymbolYield, Containment } from './search';
-import { Identifier, IdentifierWeights } from './types';
+import { Declaration } from './base';
+import { SearchYield } from './search';
+import { Identifier } from './types';
 import { Argument } from './argument';
 
 export interface TypeDefinition extends Declaration {

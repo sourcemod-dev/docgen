@@ -1,6 +1,7 @@
 export * from './base';
 export * from './argument';
 export * from './constant';
+export * from './define';
 export * from './enumeration';
 export * from './function';
 export * from './method_map';

@@ -1,7 +1,6 @@
-import { symbolDistance } from '@/utils';
-import { Declaration, searchDeclaration } from './base';
-import { Containment, SymbolYield, SearchYield } from './search';
-import { Identifier, IdentifierWeights } from './types';
+import { Declaration } from './base';
+import { SearchYield } from './search';
+import { Identifier } from './types';
 
 export interface Entry extends Declaration {
     /**

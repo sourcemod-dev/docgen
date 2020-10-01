@@ -1,4 +1,3 @@
-import { symbolDistance } from '@/utils';
 import { Comment } from './dcp';
 import { SymbolYield, Containment } from './search';
 import { Property } from './property';

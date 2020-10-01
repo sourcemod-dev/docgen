@@ -1,7 +1,7 @@
-import { Declaration, searchDeclaration } from './base';
-import { SearchYield, SymbolYield } from './search';
+import { Declaration } from './base';
+import { SearchYield } from './search';
 import { Function } from './function';
-import { Identifier, IdentifierWeights } from './types';
+import { Identifier } from './types';
 
 export interface Field extends Declaration {
     tag: Identifier.Field,

@@ -1,8 +1,7 @@
-import { symbolDistance } from '@/utils';
-import { Declaration, searchDeclaration } from './base';
+import { Declaration  } from './base';
 import { Argument } from './argument';
-import { SearchYield, SymbolYield, Containment } from './search';
-import { Identifier, IdentifierWeights } from './types';
+import { SearchYield } from './search';
+import { Identifier } from './types';
 
 export interface Function extends Declaration {
     tag: Identifier.Function,
