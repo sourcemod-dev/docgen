@@ -46,11 +46,11 @@ jobs:
 
       - name: Copy binding helpers
         run: |
-          cp docgen/generator/binding/configure.py sourcepawn/
-          cp docgen/generator/binding/AMBuilder sourcepawn/exp/tools/docparse/
-          cp docgen/generator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
-          cp docgen/generator/binding/docparse.h sourcepawn/exp/tools/docparse/
-          cp docgen/generator/binding/dll_exports.cpp sourcepawn/exp/compiler/
+          cp docgen/libalternator/binding/configure.py sourcepawn/
+          cp docgen/libalternator/binding/AMBuilder sourcepawn/exp/tools/docparse/
+          cp docgen/libalternator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
+          cp docgen/libalternator/binding/docparse.h sourcepawn/exp/tools/docparse/
+          cp docgen/libalternator/binding/dll_exports.cpp sourcepawn/exp/compiler/
 
       - name: Create build directory
         working-directory: sourcepawn
@@ -59,6 +59,9 @@ jobs:
 
       - name: Build libraries
         working-directory: sourcepawn/build
+        # env:
+        #   CC: gcc
+        #   CXX: g++ 
         run: |
           python ../configure.py --build exp --enable-optimize
           ~/.local/bin/ambuild
@@ -99,8 +102,8 @@ jobs:
 
       - name: Extract libraries
         run: |
-          mkdir docgen/generator/libraries
-          tar -xzf libraries/build.tar.gz -C docgen/generator/libraries
+          mkdir docgen/libalternator/libraries
+          tar -xzf libraries/build.tar.gz -C docgen/libalternator/libraries
 
       - name: Cache cargo registry
         uses: actions/cache@v1
@@ -114,14 +117,12 @@ jobs:
           path: docgen/target
           key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('docgen/Cargo.lock') }}
 
-      - name: Build generator
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release --manifest-path docgen/generator/Cargo.toml
+      - name: Build crates
+        working-directory: docgen
+        run: cargo build --release
 
       - name: Upload docgen
         uses: actions/upload-artifact@v1
         with:
           name: docgen
-          path: docgen/target/release/sp-docgen
+          path: docgen/target/release/chumbucket

@@ -1,9 +1,11 @@
 [workspace]
 
 members = [
-    "generator",
-    "mono",
-    "sitemap",
+    "libschema",
+    "libalternator",
+    "libwalker",
+    "chumbucket",
+    "edge_worker",
 ]
 
 [profile.release]

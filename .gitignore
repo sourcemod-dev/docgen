@@ -1,2 +1,11 @@
 target
 **/*.rs.bk
+.vscode
+
+libalternator/libraries
+libwalker/tests/contents/*
+
+edge_worker/bin/
+edge_worker/pkg/
+edge_worker/wasm-pack.log
+edge_worker/worker/generated/

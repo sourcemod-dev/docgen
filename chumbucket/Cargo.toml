@@ -1,0 +1,20 @@
+[package]
+name = "chumbucket"
+version = "0.1.0"
+description = "Chums through manifest and include files"
+authors = ["rumblefrog <contact@rumblefrog>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+schema = { path = "../libschema" }
+alternator = { path = "../libalternator" }
+walker = { path = "../libwalker" }
+anyhow = "1.0"
+tokio = { version = "0.2", features = ["full"] }
+clap = "3.0.0-beta.1"
+git2 = "0.13"
+serde = "1"
+serde_json = "1"
+toml = "0.5"
