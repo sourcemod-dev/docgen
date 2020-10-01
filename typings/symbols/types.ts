@@ -1,5 +1,5 @@
 import { Constant, ConstantYield } from './constant';
-import { Define } from './define';
+import { Define, DefineYield } from './define';
 import { Enumeration, EnumerationYield } from './enumeration';
 import { Function, FunctionYield } from './function';
 import {
@@ -76,6 +76,7 @@ export type Symbol =
 
 export type SingletonYield =
     | ConstantYield
+    | DefineYield
     | FunctionYield
     | EnumerationYield
     | MethodMapYield
@@ -91,6 +92,7 @@ export type NestedYield =
 
 export type YieldType =
     | ConstantYield
+    | DefineYield
     | FunctionYield
     | EnumerationYield
     | MethodMapYield
