@@ -4,9 +4,12 @@ A documentation generator for SourcePawn includes
 
 ## Overview
 
-- `generator` - The documentation generator & necessary bindings
-- `mono` - A shared SP type library used between crates and projects
-- `sitemap` - A enerator that generates sitemap from a directory of gids; used for crawling and indexing
+- `chumbucket` - Chums through manifest and include files
+- `edge_worker` - CloudFlare edge server worker for modifying content title and description
+- `libalternator` - Parser and binder to SourcePawn v2 compiler
+- `libschema` Shared types between documentation components
+- `libwalker` Git history traversal/walker for sources
+- `typings` - Typescript typing for UI
 
 ## Download
 
