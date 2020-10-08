@@ -24,6 +24,7 @@ impl<'g> Iterator for Git<'g> {
 
             Versioning {
                 hash: bc.commit.to_string(),
+                count: bc.count,
                 time: bc.time,
             }
         };

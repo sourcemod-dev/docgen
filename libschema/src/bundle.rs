@@ -58,5 +58,9 @@ pub struct Fiber<T> {
 pub struct Versioning {
     pub hash: String,
 
+    /// Rev-list count
+    /// Mainly used for core where product.version will be within spec paths
+    pub count: u64,
+
     pub time: i64,
 }
