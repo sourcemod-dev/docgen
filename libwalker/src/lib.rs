@@ -24,6 +24,8 @@ pub struct DiffList<'w> {
 pub struct CommitDiffs {
     pub commit: Oid,
 
+    pub count: u64,
+
     pub path_diffs: Vec<PathBuf>,
 }
 
@@ -65,9 +67,13 @@ impl Walker {
 
         revwalk.push_head()?;
 
+        let mut count = 0u64;
+
         let mut spec_diffs = Vec::new();
 
         for oid in revwalk {
+            count += 1;
+
             let oid = oid?;
 
             let commit = self.repo.find_commit(oid)?;
@@ -105,6 +111,7 @@ impl Walker {
                     if !diff_stems.is_empty() {
                         spec_diffs.push(CommitDiffs {
                             commit: commit.id(),
+                            count,
                             path_diffs: diff_stems,
                         });
                     }
@@ -125,6 +132,8 @@ impl Walker {
 
 pub struct BlobContent {
     pub commit: Oid,
+
+    pub count: u64,
 
     pub time: i64,
 
@@ -154,6 +163,7 @@ impl<'w> Iterator for DiffList<'w> {
 
             bcs.push(BlobContent {
                 commit: spec_diff.commit,
+                count: spec_diff.count,
                 time: commit.time().seconds(),
                 path: path.to_owned(),
                 content,
