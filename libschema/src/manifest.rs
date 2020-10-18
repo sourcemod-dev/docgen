@@ -7,6 +7,7 @@ pub struct Manifest {
     /// Meta descriptor of manifest content
     pub meta: Meta,
 
+    /// Meta content source
     pub source: Source,
 }
 
