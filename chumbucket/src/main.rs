@@ -106,6 +106,7 @@ where
 {
     let mut bundle = bundle.unwrap_or(Bundle {
         meta: manifest.meta,
+        source: manifest.source,
         strands: HashMap::new(),
         version: None,
     });

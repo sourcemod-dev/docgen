@@ -1,4 +1,4 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use super::meta::Meta;
 
@@ -10,7 +10,7 @@ pub struct Manifest {
     pub source: Source,
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize)]
 #[serde(rename_all = "lowercase")]
 pub enum SourceType {
     /// Git SSH URL schema
@@ -22,7 +22,7 @@ pub enum SourceType {
     Direct,
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Serialize)]
 pub struct Source {
     /// Type of source or method of access
     pub r#type: SourceType,

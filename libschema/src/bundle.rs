@@ -3,15 +3,19 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 
 use super::meta::Meta;
+use super::manifest::Source;
 
 use crate::symbol::{
     Constant, Define, EnumStruct, Enumeration, Function, MethodMap, TypeDefinition, TypeSet,
 };
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize)]
 pub struct Bundle {
     /// Meta descriptor of bundle content
     pub meta: Meta,
+
+    /// Manifest source
+    pub source: Source,
 
     /// Strand or each individual include file
     /// With optional addon metadata for versioninig
@@ -22,7 +26,7 @@ pub struct Bundle {
     pub version: Option<Versioning>,
 }
 
-#[derive(Deserialize, Serialize, Default, Debug)]
+#[derive(Deserialize, Serialize, Default)]
 pub struct Strand {
     pub functions: Fibers<Function>,
 
@@ -43,7 +47,7 @@ pub struct Strand {
 
 pub type Fibers<T> = HashMap<String, Fiber<T>>;
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize)]
 pub struct Fiber<T> {
     pub symbol: T,
 
@@ -54,7 +58,7 @@ pub struct Fiber<T> {
     pub last_updated: Option<Versioning>,
 }
 
-#[derive(Deserialize, Serialize, Clone, Debug)]
+#[derive(Deserialize, Serialize, Clone)]
 pub struct Versioning {
     pub hash: String,
 
