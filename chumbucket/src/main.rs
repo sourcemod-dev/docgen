@@ -90,9 +90,14 @@ async fn main() -> Result<()> {
 
             let git = accessors::Git::from_walker(from_time, &mut walker)?;
 
-            let b = iterate_chronicles(git, manifest, bundle).await?;
+            let it_ret = iterate_chronicles(git, manifest, bundle).await?;
 
-            write_to_disk(fs_out, b)?;
+            // If there are differences, write to file
+            // JSON object keys are not guaranteed to be in ordered each time
+            // This check exists to avoid changing of E-tag on CDN proxy
+            if it_ret.1 > 0 {
+                write_to_disk(fs_out, it_ret.0)?;
+            }
         }
         _ => (),
     };
@@ -100,7 +105,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 
-async fn iterate_chronicles<I>(i: I, manifest: Manifest, bundle: Option<Bundle>) -> Result<Bundle>
+async fn iterate_chronicles<I>(i: I, manifest: Manifest, bundle: Option<Bundle>) -> Result<(Bundle, u64)>
 where
     I: accessors::Accessor,
 {
@@ -111,6 +116,7 @@ where
         version: None,
     });
 
+    let mut diffs = 0u64;
     let mut iter = i.peekable();
 
     while let Some(chronicle) = iter.next() {
@@ -144,6 +150,8 @@ where
 
                                             // Symbol has changed, assign the new value to bundle value
                                             b_v.symbol = v;
+
+                                            diffs += 1;
                                         }
                                     },
                                     None => {
@@ -153,6 +161,8 @@ where
                                             last_updated: version.clone(),
                                             created: version.clone(),
                                         });
+
+                                        diffs += 1;
                                     }
                                 }
                             }
@@ -184,6 +194,8 @@ where
                                         created: version.clone(),
                                     },
                                 );
+
+                                diffs += 1;
                             }
                         };
                     }
@@ -209,7 +221,7 @@ where
         }
     }
 
-    Ok(bundle)
+    Ok((bundle, diffs))
 }
 
 fn write_to_disk<T>(loc: &str, t: T) -> Result<()>
