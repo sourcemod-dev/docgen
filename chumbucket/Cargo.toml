@@ -1,7 +1,7 @@
 [package]
 name = "chumbucket"
-version = "0.1.1"
-description = "Chums through manifest and include files"
+version = "0.2.0"
+description = "Chums through manifest, include, and index files"
 authors = ["rumblefrog <contact@rumblefrog>"]
 edition = "2018"
 
