@@ -24,6 +24,13 @@ async fn main() -> Result<()> {
                         .required(true)
                 )
                 .arg(
+                    Arg::new("index")
+                        .about("Existing index file for partial check")
+                        .short('i')
+                        .takes_value(true)
+                        .required(false)
+                )
+                .arg(
                     Arg::new("directory")
                         .about("Bundle directory")
                         .takes_value(true)

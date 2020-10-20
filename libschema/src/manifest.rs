@@ -11,7 +11,7 @@ pub struct Manifest {
     pub source: Source,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
 pub enum SourceType {
     /// Git SSH URL schema
@@ -23,7 +23,7 @@ pub enum SourceType {
     Direct,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, PartialEq)]
 pub struct Source {
     /// Type of source or method of access
     pub r#type: SourceType,

@@ -3,13 +3,23 @@ use anyhow::Result;
 use clap::ArgMatches;
 use schema::{
     bundle::Bundle,
-    index::{Index, Indices},
+    index::{Index, IndexMap},
 };
 
 pub async fn index_command(matches: &ArgMatches) -> Result<()> {
     let dir = std::fs::read_dir(matches.value_of("directory").unwrap())?;
 
     let fs_out = matches.value_of("output").unwrap();
+
+    let mut index_map = IndexMap::new();
+
+    if matches.is_present("index") {
+        let index_io = std::fs::read(matches.value_of("index").unwrap())?;
+
+        let parsed_indices: IndexMap = serde_json::from_slice(&index_io)?;
+
+        index_map = parsed_indices;
+    }
 
     let entries = dir
         .filter(|i| i.is_ok())
@@ -19,20 +29,38 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
         .map(|i| i.path())
         .collect::<Vec<_>>();
 
-    let mut indices = Indices::new();
+    let mut diffs = 0u64;
 
     for entry in &entries {
         let content = std::fs::read(entry)?;
 
         let bundle: Bundle = serde_json::from_slice(&content)?;
 
-        indices.push(Index {
-            meta: bundle.meta,
-            source: bundle.source,
-        });
+        match index_map.get(&bundle.meta.name) {
+            Some(v) => {
+                if v.meta != bundle.meta || v.source != bundle.source {
+                    diffs += 1;
+    
+                    index_map.insert(bundle.meta.name.clone(), Index {
+                        meta: bundle.meta,
+                        source: bundle.source,
+                    });
+                }
+            }
+            None => {
+                diffs += 1;
+
+                index_map.insert(bundle.meta.name.clone(), Index {
+                    meta: bundle.meta,
+                    source: bundle.source,
+                });
+            }
+        }
     }
 
-    write_to_disk(fs_out, indices)?;
+    if diffs > 0 {
+        write_to_disk(fs_out, index_map)?;
+    }
 
     Ok(())
 }

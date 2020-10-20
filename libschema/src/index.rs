@@ -1,11 +1,13 @@
-use serde::Serialize;
+use std::collections::HashMap;
+
+use serde::{Deserialize, Serialize};
 
 use super::meta::Meta;
 use super::manifest::Source;
 
-pub type Indices = Vec<Index>;
+pub type IndexMap = HashMap<String, Index>;
 
-#[derive(Serialize)]
+#[derive(Deserialize, Serialize, PartialEq)]
 pub struct Index {
     /// Meta descriptor of manifest content
     pub meta: Meta,
