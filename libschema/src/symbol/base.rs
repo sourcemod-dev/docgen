@@ -5,6 +5,9 @@ use spdcp::Comment;
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
     #[serde(default)]
+    pub ref_line: u64,
+
+    #[serde(default)]
     /// Documentation starting byte
     pub doc_start: DocLocation,
 

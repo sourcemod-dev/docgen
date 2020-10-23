@@ -107,10 +107,12 @@ class Comments : public CommentDelegate
     return 0;
   }
 
-  bool findCommentFor(const SourceLocation &loc, unsigned *start, unsigned *end) {
+  bool findCommentFor(const SourceLocation &loc, unsigned *start, unsigned *end, unsigned *line) {
     // Find a comment that ends one line above loc.
     FullSourceRef ref = cc_.source().decode(loc);
     assert(ref.file);
+
+    *line = ref.line;
 
     void *found =
       bsearch(reinterpret_cast<void *>(ref.line - 1),
@@ -285,6 +287,7 @@ class Analyzer : public PartialAstVisitor
     atom_returnType_ = cc_.add("returnType");
     atom_type_ = cc_.add("type");
     atom_parameters_ = cc_.add("arguments");
+    atom_ref_line_ = cc_.add("refLine");
     atom_doc_start_ = cc_.add("docStart");
     atom_doc_end_ = cc_.add("docEnd");
     atom_properties_ = cc_.add("properties");
@@ -408,8 +411,9 @@ class Analyzer : public PartialAstVisitor
       const TypesetDecl::Entry &entry = decl->types()->at(i);
       JsonObject *te = new (pool_) JsonObject();
       te->add(atom_type_, toJson(entry.te));
-      unsigned start, end;
-      if (comments_.findCommentFor(entry.loc, &start, &end)) {
+      unsigned start, end, line;
+      if (comments_.findCommentFor(entry.loc, &start, &end, &line)) {
+        te->add(atom_ref_line_, new (pool_) JsonInt(line));
         te->add(atom_doc_start_, new (pool_) JsonInt(start));
         te->add(atom_doc_end_, new (pool_) JsonInt(end));
       }
@@ -513,8 +517,8 @@ class Analyzer : public PartialAstVisitor
 
  private:
   void startDoc(JsonObject *obj, const char *type, Atom *name, const SourceLocation &loc) {
-    unsigned start, end;
-    if (!comments_.findCommentFor(loc, &start, &end)) {
+    unsigned start, end, line;
+    if (!comments_.findCommentFor(loc, &start, &end, &line)) {
       cc_.report(loc, rmsg::missing_comment)
         << type << name;
       return;
@@ -523,6 +527,7 @@ class Analyzer : public PartialAstVisitor
     assert(start < INT_MAX);
     assert(end < INT_MAX);
 
+    obj->add(atom_ref_line_, new (pool_) JsonInt(line));
     obj->add(atom_doc_start_, new (pool_) JsonInt(start));
     obj->add(atom_doc_end_, new (pool_) JsonInt(end));
   }
@@ -607,6 +612,7 @@ class Analyzer : public PartialAstVisitor
   Atom *atom_returnType_;
   Atom *atom_type_;
   Atom *atom_parameters_;
+  Atom *atom_ref_line_;
   Atom *atom_doc_start_;
   Atom *atom_doc_end_;
   Atom *atom_properties_;
