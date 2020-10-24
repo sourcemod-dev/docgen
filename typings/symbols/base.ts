@@ -1,12 +1,15 @@
 import { Comment } from './dcp';
-import { SymbolYield, Containment } from './search';
-import { Property } from './property';
-import { Field } from './enum_struct';
 
 /**
  * Generator data
  */
 export interface Documentation {
+    /**
+     * @brief Symbol reference line number
+     * @readonly
+     */
+    readonly refLine: number,
+
     /**
      * @brief Documentation starting byte
      * @readonly
