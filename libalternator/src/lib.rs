@@ -56,7 +56,7 @@ pub struct DPStrand {
     pub typedefs: Vec<TypeDefinition>,
 }
 
-pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {  
+pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {
     let dp_ptr: *const c_char = unsafe {
         parse(
             CString::new(content.clone())?.as_ptr(),

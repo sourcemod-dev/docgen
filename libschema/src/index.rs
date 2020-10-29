@@ -2,8 +2,8 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use super::meta::Meta;
 use super::manifest::Source;
+use super::meta::Meta;
 
 pub type IndexMap = HashMap<String, Index>;
 

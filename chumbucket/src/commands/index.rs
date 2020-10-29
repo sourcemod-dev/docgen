@@ -40,20 +40,26 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
             Some(v) => {
                 if v.meta != bundle.meta || v.source != bundle.source {
                     diffs += 1;
-    
-                    index_map.insert(bundle.meta.name.clone(), Index {
-                        meta: bundle.meta,
-                        source: bundle.source,
-                    });
+
+                    index_map.insert(
+                        bundle.meta.name.clone(),
+                        Index {
+                            meta: bundle.meta,
+                            source: bundle.source,
+                        },
+                    );
                 }
             }
             None => {
                 diffs += 1;
 
-                index_map.insert(bundle.meta.name.clone(), Index {
-                    meta: bundle.meta,
-                    source: bundle.source,
-                });
+                index_map.insert(
+                    bundle.meta.name.clone(),
+                    Index {
+                        meta: bundle.meta,
+                        source: bundle.source,
+                    },
+                );
             }
         }
     }

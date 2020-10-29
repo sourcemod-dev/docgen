@@ -46,20 +46,24 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
                 .for_each(|v| {
                     let parts = v.collect::<Vec<_>>();
 
-                    if parts.len() == 2 {
-                        args.push(Argument {
-                            r#type: parts[0].to_string(),
-                            name: parts[1].to_string(),
-                            decl: parts.join(" "),
-                            default: None,
-                        });
-                    } else if parts.len() > 2 {
-                        args.push(Argument {
-                            r#type: parts[..2].join(" "),
-                            name: parts[2].to_string(),
-                            decl: parts.join(" "),
-                            default: None,
-                        });
+                    match parts.len() {
+                        2 => {
+                            args.push(Argument {
+                                r#type: parts[0].to_string(),
+                                name: parts[1].to_string(),
+                                decl: parts.join(" "),
+                                default: None,
+                            });
+                        }
+                        l if l > 2 => {
+                            args.push(Argument {
+                                r#type: parts[..2].join(" "),
+                                name: parts[2].to_string(),
+                                decl: parts.join(" "),
+                                default: None,
+                            });
+                        }
+                        _ => (),
                     }
                 });
 
