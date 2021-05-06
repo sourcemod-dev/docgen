@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use anyhow::Result;
+use anyhow::{anyhow, Result};
 
 use clap::ArgMatches;
 
@@ -49,9 +49,17 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
     match manifest.source.r#type {
         SourceType::Git => {
             let mut walker = Walker::from_remote(
-                &manifest.source.repository.clone().unwrap(),
+                &manifest
+                    .source
+                    .repository
+                    .clone()
+                    .ok_or(anyhow!("Missing source repository"))?,
                 &manifest.meta.name,
-                manifest.source.patterns.clone().unwrap(),
+                manifest
+                    .source
+                    .patterns
+                    .clone()
+                    .ok_or(anyhow!("Missing source patterns"))?,
             )?;
 
             let git = accessors::Git::from_walker(from_time, &mut walker)?;
@@ -65,6 +73,7 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
                 write_to_disk(fs_out, it_ret.0)?;
             }
         }
+        // TODO: Implement direct
         _ => (),
     };
 
