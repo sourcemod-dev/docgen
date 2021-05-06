@@ -1,13 +1,18 @@
-use crate::accessors;
-use crate::utils::write_to_disk;
+use std::collections::HashMap;
+
 use anyhow::Result;
+
 use clap::ArgMatches;
+
 use schema::{
     bundle::{Bundle, Fiber, Strand},
     manifest::{Manifest, SourceType},
 };
-use std::collections::HashMap;
+
 use walker::Walker;
+
+use crate::accessors;
+use crate::utils::write_to_disk;
 
 /// Generate Subcommand
 /// Takes independent manifest or include file and convert to Bundle or AlternatorSrand

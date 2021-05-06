@@ -1,9 +1,12 @@
-use super::Chronicle;
+use std::collections::HashMap;
 
 use anyhow::Result;
+
 use schema::bundle::Versioning;
-use std::collections::HashMap;
+
 use walker::{DiffList, Walker};
+
+use super::Chronicle;
 
 pub struct Git<'g>(DiffList<'g>);
 

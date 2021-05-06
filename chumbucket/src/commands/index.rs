@@ -1,10 +1,15 @@
-use crate::utils::write_to_disk;
-use anyhow::Result;
+use std::path::PathBuf;
+
+use anyhow::{Result, anyhow};
+
 use clap::ArgMatches;
+
 use schema::{
     bundle::Bundle,
     index::{Index, IndexMap},
 };
+
+use crate::utils::write_to_disk;
 
 pub async fn index_command(matches: &ArgMatches) -> Result<()> {
     let dir = std::fs::read_dir(matches.value_of("directory").unwrap())?;
@@ -21,7 +26,7 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
         index_map = parsed_indices;
     }
 
-    let entries = dir
+    let entries: Vec<PathBuf> = dir
         .filter(|i| i.is_ok())
         .map(|i| i.unwrap())
         .filter(|i| i.path().extension().is_some())
@@ -32,6 +37,12 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
     let mut diffs = 0u64;
 
     for entry in &entries {
+        let file_stem = entry
+            .file_stem()
+            .ok_or(anyhow!("Missing file stem"))?
+            .to_string_lossy()
+            .to_string();
+
         let content = std::fs::read(entry)?;
 
         let bundle: Bundle = serde_json::from_slice(&content)?;
@@ -46,6 +57,7 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
                         Index {
                             meta: bundle.meta,
                             source: bundle.source,
+                            file_stem,
                         },
                     );
                 }
@@ -58,6 +70,7 @@ pub async fn index_command(matches: &ArgMatches) -> Result<()> {
                     Index {
                         meta: bundle.meta,
                         source: bundle.source,
+                        file_stem,
                     },
                 );
             }

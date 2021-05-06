@@ -14,4 +14,7 @@ pub struct Index {
 
     /// Meta content source
     pub source: Source,
+
+    /// Bundle file file stem (excluding ext)
+    pub file_stem: String,
 }
