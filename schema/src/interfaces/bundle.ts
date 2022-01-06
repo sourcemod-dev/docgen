@@ -12,6 +12,18 @@ export interface Bundle {
      * Manifest source
      */
     source: Source;
+
+    /**
+     * Strand or each individual include file
+     * With optional addon metadata for versioning
+     */
+    strands: Record<string, Strand>;
+
+    /**
+     * Current version this bundle was last parsed from
+     * Chum bucket will continue from this commit
+     */
+    version: Versioning | null;
 }
 
 export interface Strand {

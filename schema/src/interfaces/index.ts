@@ -2,6 +2,7 @@ import { Meta } from './meta';
 import { Source } from './manifest';
 
 export * from './symbol';
+export * from './bundle';
 export * from './manifest';
 export * from './searchable';
 
