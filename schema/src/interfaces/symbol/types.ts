@@ -1,16 +1,16 @@
-import { Constant } from './constant';
-import { Define } from './define';
-import { Enumeration } from './enumeration';
-import { Function } from './function';
+import { IConstant } from './constant';
+import { IDefine } from './define';
+import { IEnumeration } from './enumeration';
+import { IFunction } from './function';
 import {
-    MethodMap
+    IMethodMap
 } from './method_map';
-import { Property } from './property';
-import { TypeDefinition } from './type_def';
-import { TypeSet } from './type_set';
+import { IProperty } from './property';
+import { ITypeDefinition } from './type_def';
+import { ITypeSet } from './type_set';
 import {
-    EnumStruct,
-    Field,
+    IEnumStruct,
+    IField,
 } from './enum_struct';
 
 /* eslint-disable no-shadow */
@@ -60,20 +60,20 @@ export const NESTED_TYPES = [
 ];
 
 export type Symbol =
-    Constant |
-    Define |
-    Enumeration |
-    Function |
-    MethodMap |
-    Property |
-    EnumStruct |
-    Field |
-    TypeDefinition |
-    TypeSet;
+    IConstant |
+    IDefine |
+    IEnumeration |
+    IFunction |
+    IMethodMap |
+    IProperty |
+    IEnumStruct |
+    IField |
+    ITypeDefinition |
+    ITypeSet;
 
-export type SingletonSymbol = Constant | Define | Function | Enumeration | MethodMap | EnumStruct | TypeDefinition | TypeSet;
+export type SingletonSymbol = IConstant | IDefine | IFunction | IEnumeration | IMethodMap | IEnumStruct | ITypeDefinition | ITypeSet;
 
-export type NestedSymbol = Property | Field;
+export type NestedSymbol = IProperty | IField;
 
 export const PRIMITIVE_TYPES = [
     'int',
