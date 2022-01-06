@@ -1,27 +1,15 @@
 import axios from 'axios';
-import { Bundle, MethodMap } from '../src';
+import { Bundle, IBundle } from '../src';
 
 test('test', async () => {
-    const bundle: Bundle = (await axios.get('https://raw.githubusercontent.com/sourcemod-dev/manifest/bundles/core.bundle'))
+    const data: IBundle = (await axios.get('https://raw.githubusercontent.com/sourcemod-dev/manifest/bundles/core.bundle'))
         .data;
 
-    const methodmaps: Record<string, MethodMap> = {};
+    const bundle = new Bundle(data);
 
-    Object.keys(bundle.strands['adt_array'].methodmaps).forEach(k => {
-        methodmaps[k] = new MethodMap(bundle.strands['adt_array'].methodmaps[k].symbol);
-    });
+    const ret = (await bundle.search('ArrayList', { parents: [] }))
+        .filter(e => e.score > 0.5)
+        .sort((a, b) => b.score - a.score);
 
-    Object.values(methodmaps).forEach(mm => {
-        mm.search('ArrayList', { parents: ['adt_array'] }).then(r => {
-            if (r.length > 0) {
-                r.forEach(e => {
-                    if (e.score > 0.5) {
-                        console.log(e);
-
-                        expect(true).toBe(true);
-                    } 
-                });
-            }
-        });
-    });
+    console.log(ret);
 })

@@ -79,18 +79,20 @@ export class Strand implements IStrand, Searchable {
     public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
         const ret: Promise<SearchResult[]>[] = [];
 
-        const searchSymbolType = (symbol: Searchable, member: any) => {
-            ret.push(symbol.search(needle, options));
-        };
+        const searchSymbolType = (member: IFibers<Searchable>) => {
+            for (const fiber of Object.values(member)) {
+                ret.push(fiber.symbol.search(needle, options));
+            }
+        }
 
-        searchSymbolType(this, this.functions);
-        searchSymbolType(this, this.methodmaps);
-        searchSymbolType(this, this.enumstructs);
-        searchSymbolType(this, this.constants);
-        searchSymbolType(this, this.defines);
-        searchSymbolType(this, this.enums);
-        searchSymbolType(this, this.typesets);
-        searchSymbolType(this, this.typedefs);
+        searchSymbolType(this.functions);
+        searchSymbolType(this.methodmaps);
+        searchSymbolType(this.enumstructs);
+        searchSymbolType(this.constants);
+        searchSymbolType(this.defines);
+        searchSymbolType(this.enums);
+        searchSymbolType(this.typesets);
+        searchSymbolType(this.typedefs);
 
         return (await Promise.all(ret)).flat();
     }
