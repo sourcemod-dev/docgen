@@ -6,13 +6,15 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
      * @brief Function signature
      * @readonly
      */
-     readonly type: string;
+    readonly type: string;
 
-     /**
-      * @brief Parsed function signature
-      * @readonly
-      */
-     readonly parsedSignature: ITypeSignature;
+    /**
+     * @brief Parsed function signature
+     * @readonly
+     */
+    readonly parsedSignature: ITypeSignature;
+
+    readonly identifier: Identifier = Identifier.TypeDefinition;
 
     public constructor(typeDef: ITypeDefinition) {
         super(typeDef);
@@ -36,7 +38,7 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
         if (!options || !options?.weighted) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.TypeDefinition;
-    
+
                 return e;
             });
         }

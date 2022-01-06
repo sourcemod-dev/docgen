@@ -22,17 +22,21 @@ export class Function extends Declaration implements IFunction, Searchable {
 
     readonly identifier: Identifier = Identifier.Function;
 
-    public constructor(fn: IFunction) {
+    public constructor(fn: IFunction, identifier?: Identifier) {
         super(fn);
 
         this.kind = fn.kind;
         this.returnType = fn.returnType;
         this.arguments = fn.arguments;
+
+        if (identifier) {
+            this.identifier = identifier;
+        }
     }
 
     public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
         const identifier: Identifier = (options && options.identifier) ? options.identifier : this.identifier;
-        
+
         let ret: SearchResult[] = [
             ...await super.search(needle, options),
         ];
@@ -56,7 +60,7 @@ export class Function extends Declaration implements IFunction, Searchable {
         if (!options || !options?.weighted) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.Function;
-    
+
                 return e;
             });
         }

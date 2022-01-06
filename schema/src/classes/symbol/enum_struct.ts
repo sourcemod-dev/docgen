@@ -20,7 +20,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
     public constructor(es: IEnumStruct) {
         super(es);
 
-        this.methods = es.methods.map(f => new Function(f));
+        this.methods = es.methods.map(f => new Function(f, Identifier.EnumStructMethod));
         this.fields = es.fields;
     }
 
@@ -49,7 +49,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         if (!options || !options?.weighted) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.EnumStruct;
-    
+
                 return e;
             });
         }

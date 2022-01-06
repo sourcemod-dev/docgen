@@ -6,7 +6,9 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
      * @brief Type signatures
      * @readonly
      */
-     readonly types: IType[];
+    readonly types: IType[];
+
+    readonly identifier: Identifier = Identifier.TypeSet;
 
     public constructor(typeSet: ITypeSet) {
         super(typeSet);
@@ -31,7 +33,7 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
         if (!options || !options?.weighted) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.TypeSet;
-    
+
                 return e;
             });
         }
