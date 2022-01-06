@@ -45,11 +45,14 @@ export class Declaration implements IDeclaration, Searchable {
         this.docs = decl.docs;
     }
 
-    public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+        const path = [...options.parents, this.name];
+
         return [{
             name: this.name,
             identifier: this.identifier,
             part: Part.Name,
+            path,
             score: calculateScore(this.name, needle),
         }]
     }

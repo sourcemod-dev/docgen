@@ -23,7 +23,7 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
         this.parsedSignature = typeDef.parsedSignature;
     }
 
-    public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
         let ret = [
             ...await super.search(needle, options),
         ];
@@ -32,10 +32,11 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
             name: this.type,
             identifier: Identifier.TypeDefinition,
             part: Part.Parameter,
+            path: [...options.parents, this.name],
             score: calculateScore(this.type, needle),
         });
 
-        if (!options || !options?.weighted) {
+        if (options.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.TypeDefinition;
 

@@ -24,10 +24,14 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         this.fields = es.fields;
     }
 
-    public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
         let ret = [
             ...await super.search(needle, options),
         ];
+
+        ret[0].score += 0.01;
+
+        options.parents.push(this.name);
 
         for (const method of this.methods) {
             ret.push(...await method.search(needle, {
@@ -42,11 +46,12 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
                 name: field.name,
                 identifier: Identifier.EnumStructField,
                 part: Part.Name,
+                path: [...options.parents, this.name, field.name],
                 score: calculateScore(field.name, needle),
             });
         }
 
-        if (!options || !options?.weighted) {
+        if (options.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.EnumStruct;
 

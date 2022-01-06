@@ -34,8 +34,8 @@ export class Function extends Declaration implements IFunction, Searchable {
         }
     }
 
-    public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
-        const identifier: Identifier = (options && options.identifier) ? options.identifier : this.identifier;
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+        const identifier: Identifier = options.identifier ? options.identifier : this.identifier;
 
         let ret: SearchResult[] = [
             ...await super.search(needle, options),
@@ -46,6 +46,7 @@ export class Function extends Declaration implements IFunction, Searchable {
                 name: arg.type,
                 identifier,
                 part: Part.Parameter,
+                path: [...options.parents, this.name],
                 score: calculateScore(arg.type, needle),
             });
         }
@@ -54,10 +55,11 @@ export class Function extends Declaration implements IFunction, Searchable {
             name: this.returnType,
             identifier,
             part: Part.Return,
+            path: [...options.parents, this.name],
             score: calculateScore(this.returnType, needle),
         });
 
-        if (!options || !options?.weighted) {
+        if (options.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.Function;
 

@@ -15,4 +15,6 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
 
         this.entries = enumeration.entries;
     }
+
+    // TODO: Implement search
 }

@@ -44,7 +44,7 @@ export interface Strand {
     typedefs: Fibers<ITypeDefinition>,
 }
 
-export type Fibers<T> = Record<string, T>;
+export type Fibers<T> = Record<string, Fiber<T>>;
 
 export interface Fiber<T> {
     symbol: T;

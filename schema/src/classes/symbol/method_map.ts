@@ -21,6 +21,8 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
      */
     readonly properties: IProperty[];
 
+    readonly identifier: Identifier = Identifier.MethodMap;
+
     public constructor(mm: IMethodMap) {
         super(mm);
 
@@ -29,10 +31,14 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         this.properties = mm.properties;
     }
 
-    public async search(needle: string, options?: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
         let ret = [
             ...await super.search(needle, options),
         ];
+
+        ret[0].score += 0.01;
+
+        options.parents.push(this.name);
 
         for (const method of this.methods) {
             ret.push(...await method.search(needle, {
@@ -46,12 +52,13 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
             ret.push({
                 name: property.name,
                 identifier: Identifier.MethodMapProperty,
+                path: [...options.parents, this.name],
                 part: Part.Name,
                 score: calculateScore(property.name, needle),
             });
         }
 
-        if (!options || !options?.weighted) {
+        if (options.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.MethodMap;
 
