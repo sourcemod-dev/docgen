@@ -1,7 +1,7 @@
-import { IBundle, IFibers, IStrand, Meta, Source, IVersioning, Searchable } from '../interfaces';
+import { IBundle, IFibers, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult } from '../interfaces';
 import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet } from './symbol';
 
-export class Bundle {
+export class Bundle implements IBundle, Searchable {
     /**
      * Meta descriptor of bundle content
      */
@@ -33,9 +33,22 @@ export class Bundle {
         }, {} as Record<string, Strand>);
         this.version = bundle.version;
     }
+
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+        const ret: Promise<SearchResult[]>[] = [];
+
+        for (const [include, strand] of Object.entries(this.strands)) {
+            ret.push(strand.search(needle, {
+                ...options,
+                parents: [...options.parents, include],
+            }));
+        }
+
+        return (await Promise.all(ret)).flat();
+    }
 }
 
-export class Strand {
+export class Strand implements IStrand, Searchable {
     functions: IFibers<Function>;
 
     methodmaps: IFibers<MethodMap>;
@@ -61,6 +74,25 @@ export class Strand {
         this.enums = Strand.mapFibers(strand.enums, Enumeration);
         this.typesets = Strand.mapFibers(strand.typesets, TypeSet);
         this.typedefs = Strand.mapFibers(strand.typedefs, TypeDefinition);
+    }
+
+    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+        const ret: Promise<SearchResult[]>[] = [];
+
+        const searchSymbolType = (symbol: Searchable, member: any) => {
+            ret.push(symbol.search(needle, options));
+        };
+
+        searchSymbolType(this, this.functions);
+        searchSymbolType(this, this.methodmaps);
+        searchSymbolType(this, this.enumstructs);
+        searchSymbolType(this, this.constants);
+        searchSymbolType(this, this.defines);
+        searchSymbolType(this, this.enums);
+        searchSymbolType(this, this.typesets);
+        searchSymbolType(this, this.typedefs);
+
+        return (await Promise.all(ret)).flat();
     }
 
     private static mapFibers<T, F>(fibers: IFibers<T>, symbol: new (...args: any[]) => F): IFibers<F> {
