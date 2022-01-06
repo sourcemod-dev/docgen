@@ -94,7 +94,8 @@ export class Strand implements IStrand, Searchable {
         searchSymbolType(this.typesets);
         searchSymbolType(this.typedefs);
 
-        return (await Promise.all(ret)).flat();
+        // Return at least somewhat similar results
+        return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
     }
 
     private static mapFibers<T, F>(fibers: IFibers<T>, symbol: new (...args: any[]) => F): IFibers<F> {
