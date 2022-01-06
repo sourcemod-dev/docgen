@@ -3,7 +3,7 @@ name = "chumbucket"
 version = "0.3.2"
 description = "Chums through manifest, include, and index files"
 authors = ["rumblefrog <contact@rumblefrog>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -13,7 +13,7 @@ alternator = { path = "../libalternator" }
 walker = { path = "../libwalker" }
 anyhow = "1.0"
 tokio = { version = "1", features = ["full"] }
-clap = "3.0.0-beta.2"
+clap = "3"
 git2 = "0.13"
 serde = "1"
 serde_json = "1"

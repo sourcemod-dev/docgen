@@ -19,21 +19,21 @@ async fn main() -> Result<()> {
                 .about("Generate an index file from a directory of bundles")
                 .arg(
                     Arg::new("output")
-                        .about("Location to output index to")
+                        .help("Location to output index to")
                         .short('o')
                         .takes_value(true)
                         .required(true)
                 )
                 .arg(
                     Arg::new("index")
-                        .about("Existing index file for partial check")
+                        .help("Existing index file for partial check")
                         .short('i')
                         .takes_value(true)
                         .required(false)
                 )
                 .arg(
                     Arg::new("directory")
-                        .about("Bundle directory")
+                        .help("Bundle directory")
                         .takes_value(true)
                         .required(true)
                 )
@@ -43,18 +43,18 @@ async fn main() -> Result<()> {
                 .about("Generate bundle or alternator strand from manifest/include respectively")
                 .arg(
                     Arg::new("include")
-                        .about("Target file is an include file")
+                        .help("Target file is an include file")
                         .short('i'),
                 )
                 .arg(
                     Arg::new("rebuild-history")
-                        .about("Rebuild versioning history from the start. Will not read existing bundle for versioning.")
+                        .help("Rebuild versioning history from the start. Will not read existing bundle for versioning.")
                         .long("rebuild-history")
                         .required(false),
                 )
                 .arg(
                     Arg::new("bundle")
-                        .about("Existing bundle to continue from")
+                        .help("Existing bundle to continue from")
                         .short('b')
                         .takes_value(true)
                         .required(false)
@@ -62,14 +62,14 @@ async fn main() -> Result<()> {
                 .arg(
                     // By default, it will output to a path relative to the chumbucket
                     Arg::new("output")
-                        .about("Location to output bundle to")
+                        .help("Location to output bundle to")
                         .short('o')
                         .takes_value(true)
                         .required(true),
                 )
                 .arg(
                     Arg::new("file")
-                        .about("Input file")
+                        .help("Input file")
                         .takes_value(true)
                         .required(true),
                 )
