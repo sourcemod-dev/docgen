@@ -9,7 +9,7 @@ A documentation generator for SourcePawn includes
 - `libalternator` - Parser and binder to SourcePawn v2 compiler
 - `libschema` Shared types between documentation components
 - `libwalker` Git history traversal/walker for sources
-- `typings` - Typescript typing for UI
+- `schema` - Typescript library of mostly symbol classes/interfaces for UI
 
 ## Download
 
