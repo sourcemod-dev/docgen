@@ -1,7 +1,7 @@
 import { Declaration } from './base';
-import { IEnumeration, IEntry } from '../../interfaces';
+import { IEnumeration, IEntry, Searchable } from '../../interfaces';
 
-export class Enumeration extends Declaration implements IEnumeration {
+export class Enumeration extends Declaration implements IEnumeration, Searchable {
     /**
      * @brief Enum entries
      * @readonly

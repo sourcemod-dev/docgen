@@ -3,6 +3,7 @@ import { Source } from './manifest';
 
 export * from './symbol';
 export * from './manifest';
+export * from './searchable';
 
 export interface Index {
     /**

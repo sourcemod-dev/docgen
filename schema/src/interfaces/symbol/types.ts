@@ -29,6 +29,7 @@ export enum Identifier {
     Property = 'property',
     TypeDefinition = 'typedef',
     TypeSet = 'typeset',
+    Unknown = 'unknown',
 }
 
 // Weights smaller than 0.1
