@@ -10,4 +10,3 @@ export * from './property';
 export * from './type_def';
 export * from './type_set';
 export * from './types';
-export * from './search';
