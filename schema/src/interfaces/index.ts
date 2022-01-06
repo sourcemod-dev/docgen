@@ -3,6 +3,7 @@ import { Source } from './manifest';
 
 export * from './symbol';
 export * from './bundle';
+export * from './meta';
 export * from './manifest';
 export * from './searchable';
 

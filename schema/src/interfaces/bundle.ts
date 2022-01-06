@@ -2,7 +2,7 @@ import { IFunction, IMethodMap, IEnumStruct, IConstant, IDefine, IEnumeration, I
 import { Meta } from "./meta";
 import { Source } from "./manifest";
 
-export interface Bundle {
+export interface IBundle {
     /**
      * Meta descriptor of bundle content
      */
@@ -17,50 +17,50 @@ export interface Bundle {
      * Strand or each individual include file
      * With optional addon metadata for versioning
      */
-    strands: Record<string, Strand>;
+    strands: Record<string, IStrand>;
 
     /**
      * Current version this bundle was last parsed from
      * Chum bucket will continue from this commit
      */
-    version: Versioning | null;
+    version: IVersioning | null;
 }
 
-export interface Strand {
-    functions: Fibers<IFunction>,
+export interface IStrand {
+    functions: IFibers<IFunction>;
 
-    methodmaps: Fibers<IMethodMap>,
+    methodmaps: IFibers<IMethodMap>;
 
-    enumstructs: Fibers<IEnumStruct>,
+    enumstructs: IFibers<IEnumStruct>;
 
-    constants: Fibers<IConstant>,
+    constants: IFibers<IConstant>;
 
-    defines: Fibers<IDefine>,
+    defines: IFibers<IDefine>;
 
-    enums: Fibers<IEnumeration>,
+    enums: IFibers<IEnumeration>;
 
-    typesets: Fibers<ITypeSet>,
+    typesets: IFibers<ITypeSet>;
 
-    typedefs: Fibers<ITypeDefinition>,
+    typedefs: IFibers<ITypeDefinition>;
 }
 
-export type Fibers<T> = Record<string, Fiber<T>>;
+export type IFibers<T> = Record<string, IFiber<T>>;
 
-export interface Fiber<T> {
+export interface IFiber<T> {
     symbol: T;
 
     /**
      * SVN version this symbol was introduced
      */
-    created: Versioning | null;
+    created: IVersioning | null;
 
     /**
      * SVN version this symbol was last modified
      */
-    last_updated: Versioning | null;
+    last_updated: IVersioning | null;
 }
 
-export interface Versioning {
+export interface IVersioning {
     hash: string;
 
     /**
