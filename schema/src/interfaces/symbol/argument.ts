@@ -1,4 +1,4 @@
-export interface Argument {
+export interface IArgument {
     /**
      * @brief Type of the argument
      * @readonly

@@ -1,9 +1,6 @@
-import { Declaration } from './base';
-import { Identifier } from './types';
+import { IDeclaration } from './base';
 
-export interface Property extends Declaration {
-    tag: Identifier.Property,
-
+export interface IProperty extends IDeclaration {
     /**
      * @brief Type of the property
      * @readonly

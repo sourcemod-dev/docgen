@@ -1,0 +1,23 @@
+{
+    "name": "@sourcemod-dev/schema",
+    "version": "0.0.2",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "postinstall": "tsc"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.7",
+        "@babel/preset-env": "^7.16.7",
+        "@babel/preset-typescript": "^7.16.7",
+        "@types/jest": "^27.4.0",
+        "axios": "^0.24.0",
+        "babel-jest": "^27.4.6",
+        "jest": "^27.4.7"
+    }
+}

@@ -1,6 +1,7 @@
 target
 **/*.rs.bk
 .vscode
+**/node_modules
 
 libalternator/libraries
 libwalker/tests/contents/*
