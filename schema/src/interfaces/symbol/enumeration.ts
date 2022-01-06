@@ -1,16 +1,16 @@
-import { Declaration } from './base';
+import { IDeclaration } from './base';
 
-export interface Entry extends Declaration {
+export interface IEntry extends IDeclaration {
     /**
      * @brief Value that are explicitly set in code expressions
      */
-    value?: string,
+    value?: string;
 }
 
-export interface Enumeration extends Declaration {
+export interface IEnumeration extends IDeclaration {
     /**
      * @brief Enum entries
      * @readonly
      */
-    readonly entries: Entry[],
+    readonly entries: IEntry[];
 }

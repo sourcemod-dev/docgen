@@ -1,7 +1,7 @@
-import { Declaration } from './base';
-import { Function } from './function';
+import { IDeclaration } from './base';
+import { IFunction } from './function';
 
-export interface Field extends Declaration {
+export interface IField extends IDeclaration {
     /**
      * @brief Type of the field
      * @readonly
@@ -9,16 +9,16 @@ export interface Field extends Declaration {
     readonly type: string,
 }
 
-export interface EnumStruct extends Declaration {
+export interface IEnumStruct extends IDeclaration {
     /**
      * @brief Functions within this enum struct
      * @readonly
      */
-    readonly methods: Function[],
+    readonly methods: IFunction[],
 
     /**
      * @brief Fields within this enum struct
      * @readonly
      */
-    readonly fields: Field[],
+    readonly fields: IField[],
 }

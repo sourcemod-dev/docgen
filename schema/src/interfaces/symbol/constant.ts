@@ -1,3 +1,3 @@
-import { Declaration } from './base';
+import { IDeclaration } from './base';
 
-export interface Constant extends Declaration {}
+export interface IConstant extends IDeclaration {}

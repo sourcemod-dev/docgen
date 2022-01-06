@@ -1,27 +1,27 @@
-import { Declaration, Documentation } from './base';
-import { TypeSignature } from './type_def';
+import { IDeclaration, IDocumentation } from './base';
+import { ITypeSignature } from './type_def';
 
 /**
  * @note This extends Documentation instead of Declaration
  */
-export interface Type extends Documentation {
+export interface IType extends IDocumentation {
     /**
      * @brief Signature of the function
      * @readonly
      */
-    readonly type: string,
+    readonly type: string;
 
     /**
      * @brief Parsed function signature
      * @readonly
      */
-    readonly parsedSignature: TypeSignature,
+    readonly parsedSignature: ITypeSignature;
 }
 
-export interface TypeSet extends Declaration {
+export interface ITypeSet extends IDeclaration {
     /**
      * @brief Type signatures
      * @readonly
      */
-    readonly types: Type[],
+    readonly types: IType[];
 }

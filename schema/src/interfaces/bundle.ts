@@ -1,4 +1,4 @@
-import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeSet, TypeDefinition } from "./symbol";
+import { IFunction, IMethodMap, IEnumStruct, IConstant, IDefine, IEnumeration, ITypeSet, ITypeDefinition } from "./symbol";
 import { Meta } from "./meta";
 import { Source } from "./manifest";
 
@@ -15,21 +15,21 @@ export interface Bundle {
 }
 
 export interface Strand {
-    functions: Fibers<Function>,
+    functions: Fibers<IFunction>,
 
-    methodmaps: Fibers<MethodMap>,
+    methodmaps: Fibers<IMethodMap>,
 
-    enumstructs: Fibers<EnumStruct>,
+    enumstructs: Fibers<IEnumStruct>,
 
-    constants: Fibers<Constant>,
+    constants: Fibers<IConstant>,
 
-    defines: Fibers<Define>,
+    defines: Fibers<IDefine>,
 
-    enums: Fibers<Enumeration>,
+    enums: Fibers<IEnumeration>,
 
-    typesets: Fibers<TypeSet>,
+    typesets: Fibers<ITypeSet>,
 
-    typedefs: Fibers<TypeDefinition>,
+    typedefs: Fibers<ITypeDefinition>,
 }
 
 export type Fibers<T> = Record<string, T>;

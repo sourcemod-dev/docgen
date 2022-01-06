@@ -1,3 +1,3 @@
-import { Declaration } from './base';
+import { IDeclaration } from './base';
 
-export interface Define extends Declaration {}
+export interface IDefine extends IDeclaration {}

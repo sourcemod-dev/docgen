@@ -1,30 +1,30 @@
-import { Declaration } from './base';
-import { Argument } from './argument';
+import { IDeclaration } from './base';
+import { IArgument } from './argument';
 
-export interface TypeDefinition extends Declaration {
+export interface ITypeDefinition extends IDeclaration {
      /**
      * @brief Function signature
      * @readonly
      */
-    readonly type: string,
+    readonly type: string;
 
     /**
      * @brief Parsed function signature
      * @readonly
      */
-    readonly parsedSignature: TypeSignature,
+    readonly parsedSignature: ITypeSignature;
 }
 
-export interface TypeSignature {
+export interface ITypeSignature {
     /**
      * @brief Return type of the function
      * @readonly
      */
-    readonly returnType: string,
+    readonly returnType: string;
 
     /**
      * @brief Arguments of the function
      * @readonly
      */
-    readonly arguments: Argument[],
+    readonly arguments: IArgument[];
 }

@@ -1,24 +1,24 @@
-import { Declaration  } from './base';
-import { Argument } from './argument';
+import { IDeclaration  } from './base';
+import { IArgument } from './argument';
 
-export interface Function extends Declaration {
+export interface IFunction extends IDeclaration {
     /**
      * @brief Function kind (forward, stock, etc)
      * @readonly
      */
-    readonly kind: FunctionKind,
+    readonly kind: FunctionKind;
 
     /**
      * @brief Return type of the function
      * @readonly
      */
-    readonly returnType: string,
+    readonly returnType: string;
 
     /**
      * @brief Arguments of the function
      * @readonly
      */
-    readonly arguments: Argument[],
+    readonly arguments: IArgument[];
 }
 
 export enum FunctionKind {

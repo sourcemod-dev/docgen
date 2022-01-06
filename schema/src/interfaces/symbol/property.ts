@@ -1,6 +1,6 @@
-import { Declaration } from './base';
+import { IDeclaration } from './base';
 
-export interface Property extends Declaration {
+export interface IProperty extends IDeclaration {
     /**
      * @brief Type of the property
      * @readonly
