@@ -1,0 +1,13 @@
+{
+    "name": "typings",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "postinstall": "tsc"
+    }
+}
