@@ -1,9 +1,9 @@
 import { Identifier } from './symbol';
 
 export enum Part {
-    Name = 'name',
-    Parameter = 'parameter',
-    Return = 'return',
+    Name,
+    Parameter,
+    Return,
 }
 
 export interface SearchResult {
