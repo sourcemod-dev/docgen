@@ -45,8 +45,10 @@ export class Declaration implements IDeclaration, Searchable {
         this.docs = decl.docs;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
-        const path = [...options.parents, this.name];
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
+        const path = [...localOptions.parents, `${this.identifier}.${this.name}`];
 
         return [{
             name: this.name,

@@ -23,20 +23,36 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
         this.parsedSignature = typeDef.parsedSignature;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
         let ret = [
             ...await super.search(needle, options),
         ];
 
-        ret.push({
-            name: this.type,
-            identifier: Identifier.TypeDefinition,
-            part: Part.Parameter,
-            path: [...options.parents, this.name],
-            score: calculateScore(this.type, needle),
-        });
+        localOptions.parents.push(`${this.identifier}.${this.name}`);
 
-        if (options.weighted !== false) {
+        if (localOptions.l1Only !== true) {
+            for (const arg of this.parsedSignature.arguments) {
+                ret.push({
+                    name: arg.type,
+                    identifier: Identifier.Argument,
+                    part: Part.Parameter,
+                    path: [...localOptions.parents, `${Identifier.Argument}.${arg.name}`],
+                    score: calculateScore(arg.type, needle),
+                });
+            }
+
+            ret.push({
+                name: this.parsedSignature.returnType,
+                identifier: Identifier.Return,
+                part: Part.Return,
+                path: [...localOptions.parents, `${Identifier.Return}.${this.parsedSignature.returnType}`],
+                score: calculateScore(this.parsedSignature.returnType, needle),
+            });
+        }
+
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.TypeDefinition;
 

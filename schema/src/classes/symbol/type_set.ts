@@ -16,24 +16,38 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
         this.types = typeSet.types;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
         let ret: SearchResult[] = [
             ...await super.search(needle, options),
         ];
 
-        options.parents.push(this.name);
+        localOptions.parents.push(`${this.identifier}.${this.name}`);
 
-        for (const type of this.types) {
-            ret.push({
-                name: type.type,
-                identifier: Identifier.TypeSet,
-                part: Part.Parameter,
-                path: [...options.parents, type.type],
-                score: calculateScore(type.type, needle),
-            });
+        if (localOptions.l1Only !== true) {
+            for (const type of this.types) {
+                for (const arg of type.parsedSignature.arguments) {
+                    ret.push({
+                        name: arg.name,
+                        identifier: Identifier.Argument,
+                        part: Part.Parameter,
+                        path: [...localOptions.parents, `${Identifier.Entry}.${type.type}`, `${Identifier.Argument}.${arg.name}`],
+                        score: calculateScore(arg.type, needle),
+                    });
+                }
+
+                ret.push({
+                    name: type.parsedSignature.returnType,
+                    identifier: Identifier.Return,
+                    part: Part.Return,
+                    path: [...localOptions.parents, `${Identifier.Return}.${type.parsedSignature.returnType}`],
+                    score: calculateScore(type.parsedSignature.returnType, needle),
+                });
+            }
         }
 
-        if (options.weighted !== false) {
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.TypeSet;
 

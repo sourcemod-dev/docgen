@@ -34,19 +34,23 @@ export class Function extends Declaration implements IFunction, Searchable {
         }
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
-        const identifier: Identifier = options.identifier ? options.identifier : this.identifier;
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
+        const identifier: Identifier = localOptions.identifier ? localOptions.identifier : this.identifier;
 
         let ret: SearchResult[] = [
-            ...await super.search(needle, options),
+            ...await super.search(needle, localOptions),
         ];
+
+        localOptions.parents.push(`${identifier}.${this.name}`);
 
         for (const arg of this.arguments) {
             ret.push({
                 name: arg.type,
                 identifier,
                 part: Part.Parameter,
-                path: [...options.parents, this.name],
+                path: [...localOptions.parents, `${Identifier.Argument}.${arg.name}`],
                 score: calculateScore(arg.type, needle),
             });
         }
@@ -55,11 +59,11 @@ export class Function extends Declaration implements IFunction, Searchable {
             name: this.returnType,
             identifier,
             part: Part.Return,
-            path: [...options.parents, this.name],
+            path: [...localOptions.parents, `${Identifier.Return}.${this.returnType}`],
             score: calculateScore(this.returnType, needle),
         });
 
-        if (options.weighted !== false) {
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.Function;
 

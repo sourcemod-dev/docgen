@@ -23,9 +23,11 @@ export interface SearchOptions {
 
     identifier?: Identifier;
 
+    l1Only?: boolean;
+
     parents: string[];
 }
 
 export interface Searchable {
-    search(needle: string, options: SearchOptions): Promise<SearchResult[]>;
+    search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]>;
 }

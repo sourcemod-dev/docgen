@@ -18,6 +18,7 @@ export enum Identifier {
     Constant = 'constant',
     Define = 'define',
     Enumeration = 'enumeration',
+    EnumerationEntry = 'enumeration_entry',
     Function = 'function',
     MethodMap = 'methodmap',
     MethodMapMethod = 'methodmap_method',
@@ -25,11 +26,31 @@ export enum Identifier {
     EnumStruct = 'enumstruct',
     EnumStructMethod = 'enumstruct_method',
     EnumStructField = 'enumstruct_field',
+    Entry = 'entry',
+    Argument = 'argument',
+    Return = 'return',
     Field = 'field',
     Property = 'property',
     TypeDefinition = 'typedef',
     TypeSet = 'typeset',
     Unknown = 'unknown',
+}
+
+export function identifierToL1(identifier: Identifier): Identifier {
+    switch (identifier) {
+        case Identifier.EnumerationEntry:
+            return Identifier.Entry;
+        case Identifier.MethodMapMethod:
+            return Identifier.Function;
+        case Identifier.MethodMapProperty:
+            return Identifier.Property;
+        case Identifier.EnumStructMethod:
+            return Identifier.Function;
+        case Identifier.EnumStructField:
+            return Identifier.Field;
+        default:
+            return identifier;
+    }
 }
 
 // Weights smaller than 0.1

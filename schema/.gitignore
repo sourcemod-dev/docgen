@@ -1,4 +1,5 @@
 dist
 *.d.ts
 *.js
+!babel.config.js
 !jest.config.js

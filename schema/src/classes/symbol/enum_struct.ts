@@ -24,34 +24,38 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         this.fields = es.fields;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
         let ret = [
             ...await super.search(needle, options),
         ];
 
         ret[0].score += 0.01;
 
-        options.parents.push(this.name);
+        localOptions.parents.push(`${this.identifier}.${this.name}`);
 
-        for (const method of this.methods) {
-            ret.push(...await method.search(needle, {
-                ...options,
-                weighted: false,
-                identifier: Identifier.EnumStructMethod,
-            }));
+        if (localOptions.l1Only !== true) {
+            for (const method of this.methods) {
+                ret.push(...await method.search(needle, {
+                    ...options,
+                    weighted: false,
+                    identifier: Identifier.EnumStructMethod,
+                }));
+            }
+
+            for (const field of this.fields) {
+                ret.push({
+                    name: field.name,
+                    identifier: Identifier.EnumStructField,
+                    part: Part.Name,
+                    path: [...localOptions.parents, `${Identifier.EnumStructField}.${field.name}`],
+                    score: calculateScore(field.name, needle),
+                });
+            }
         }
 
-        for (const field of this.fields) {
-            ret.push({
-                name: field.name,
-                identifier: Identifier.EnumStructField,
-                part: Part.Name,
-                path: [...options.parents, this.name, field.name],
-                score: calculateScore(field.name, needle),
-            });
-        }
-
-        if (options.weighted !== false) {
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.EnumStruct;
 

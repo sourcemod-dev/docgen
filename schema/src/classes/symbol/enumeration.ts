@@ -16,26 +16,30 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         this.entries = enumeration.entries;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
         let ret = [
             ...await super.search(needle, options),
         ];
 
         ret[0].score += 0.01;
         
-        options.parents.push(this.name);
+        localOptions.parents.push(this.name);
 
-        for (const entry of this.entries) {
-            ret.push({
-                name: entry.name,
-                identifier: Identifier.Enumeration,
-                part: Part.Name,
-                path: [...options.parents, this.name, entry.name],
-                score: calculateScore(entry.name, needle),
-            });
+        if (localOptions.l1Only !== true) {
+            for (const entry of this.entries) {
+                ret.push({
+                    name: entry.name,
+                    identifier: Identifier.EnumerationEntry,
+                    part: Part.Name,
+                    path: [...localOptions.parents, `${Identifier.EnumerationEntry}.${entry.name}`],
+                    score: calculateScore(entry.name, needle),
+                });
+            }
         }
 
-        if (options.weighted !== false) {
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.Enumeration;
 

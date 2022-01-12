@@ -31,34 +31,38 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         this.properties = mm.properties;
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
+        const localOptions = JSON.parse(JSON.stringify(options));
+
         let ret = [
             ...await super.search(needle, options),
         ];
 
         ret[0].score += 0.01;
 
-        options.parents.push(this.name);
+        localOptions.parents.push(`${this.identifier}.${this.name}`);
 
-        for (const method of this.methods) {
-            ret.push(...await method.search(needle, {
-                ...options,
-                weighted: false,
-                identifier: Identifier.MethodMapMethod,
-            }));
+        if (localOptions.l1Only !== true) {
+            for (const method of this.methods) {
+                ret.push(...await method.search(needle, {
+                    ...options,
+                    weighted: false,
+                    identifier: Identifier.MethodMapMethod,
+                }));
+            }
+    
+            for (const property of this.properties) {
+                ret.push({
+                    name: property.name,
+                    identifier: Identifier.MethodMapProperty,
+                    path: [...localOptions.parents, `${Identifier.MethodMapProperty}.${property.name}`],
+                    part: Part.Name,
+                    score: calculateScore(property.name, needle),
+                });
+            }
         }
 
-        for (const property of this.properties) {
-            ret.push({
-                name: property.name,
-                identifier: Identifier.MethodMapProperty,
-                path: [...options.parents, this.name],
-                part: Part.Name,
-                score: calculateScore(property.name, needle),
-            });
-        }
-
-        if (options.weighted !== false) {
+        if (localOptions.weighted !== false) {
             ret = ret.map(e => {
                 e.score += IdentifierWeights.MethodMap;
 
