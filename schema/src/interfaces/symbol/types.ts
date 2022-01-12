@@ -36,7 +36,7 @@ export enum Identifier {
     Unknown = 'unknown',
 }
 
-export function identifierToL1(identifier: Identifier): Identifier {
+export function normalizeIdentifier(identifier: Identifier): Identifier {
     switch (identifier) {
         case Identifier.EnumerationEntry:
             return Identifier.Entry;

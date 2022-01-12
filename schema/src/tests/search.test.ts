@@ -14,7 +14,6 @@ test('test', async () => {
     console.time('Searching bundle');
 
     const ret = (await bundle.search('ArrayList', { parents: [] }))
-        .filter(e => e.score > 0.5)
         .sort((a: SearchResult, b: SearchResult) => b.score - a.score);
 
     console.timeEnd('Searching bundle');
