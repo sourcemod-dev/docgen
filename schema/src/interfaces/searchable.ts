@@ -34,8 +34,12 @@ export interface Searchable {
 
 export function normalizePath(path: string[]): string[] {
     return path.map(e => {
+        if (!e.includes('.')) {
+            return e;
+        }
+
         const parts = e.split('.');
 
-        return `${normalizeIdentifier(parts[0] as Identifier)}.${parts[1]}}`;
+        return `${normalizeIdentifier(parts[0] as Identifier)}.${parts[1]}`;
     });
 }
