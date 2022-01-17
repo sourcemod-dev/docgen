@@ -44,31 +44,14 @@ export function normalizePath(path: string[]): string[] {
     });
 }
 
-export function getPathIdentifier(path: string): Identifier {
+export function splitPath(path: string): {
+    identifier: Identifier;
+    name: string;
+} {
     const parts = path.split('.');
 
-    return parts[0] as Identifier;
-}
-
-export function identifierToStrandProp(identifier: Identifier): string {
-    switch (identifier) {
-        case Identifier.Constant:
-            return 'constants';
-        case Identifier.Define:
-            return 'defines';
-        case Identifier.Function:
-            return 'functions';
-        case Identifier.Enumeration:
-            return 'enums';
-        case Identifier.MethodMap:
-            return 'methodmaps';
-        case Identifier.EnumStruct:
-            return 'enumstructs';
-        case Identifier.TypeDefinition:
-            return 'typedefs';
-        case Identifier.TypeSet:
-            return 'typesets';
-        default:
-            throw new Error(`Unknown identifier: ${identifier}`);
-    }
+    return {
+        identifier: parts[0] as Identifier,
+        name: parts[1],
+    };
 }
