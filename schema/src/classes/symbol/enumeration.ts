@@ -20,7 +20,7 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         const localOptions = JSON.parse(JSON.stringify(options));
 
         let ret = [
-            ...await super.search(needle, options),
+            ...await super.search(needle, localOptions),
         ];
 
         ret[0].score += 0.01;

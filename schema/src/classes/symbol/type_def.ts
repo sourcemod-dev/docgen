@@ -27,7 +27,7 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
         const localOptions = JSON.parse(JSON.stringify(options));
 
         let ret = [
-            ...await super.search(needle, options),
+            ...await super.search(needle, localOptions),
         ];
 
         localOptions.parents.push(`${this.identifier}.${this.name}`);

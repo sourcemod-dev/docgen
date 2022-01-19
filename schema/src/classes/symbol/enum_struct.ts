@@ -28,7 +28,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         const localOptions = JSON.parse(JSON.stringify(options));
 
         let ret = [
-            ...await super.search(needle, options),
+            ...await super.search(needle, localOptions),
         ];
 
         ret[0].score += 0.01;
@@ -38,7 +38,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         if (localOptions.l1Only !== true) {
             for (const method of this.methods) {
                 ret.push(...await method.search(needle, {
-                    ...options,
+                    ...localOptions,
                     weighted: false,
                     identifier: Identifier.EnumStructMethod,
                 }));
