@@ -102,10 +102,10 @@ jobs:
         with:
           path: docgen
 
-      - name: Install Rust stable
+      - name: Install Rust nightly
         uses: actions-rs/toolchain@v1
         with:
-            toolchain: stable
+            toolchain: nightly
             override: true
 
       - name: Download libraries
