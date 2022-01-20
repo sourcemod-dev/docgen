@@ -6,7 +6,11 @@ jobs:
   libraries:
     name: SP Libraries
 
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Setup Python environment
