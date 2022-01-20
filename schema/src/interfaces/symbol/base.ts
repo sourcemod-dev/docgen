@@ -1,4 +1,5 @@
 import { Comment } from './dcp';
+import { Metadata } from '../metadata';
 
 /**
  * Generator data
@@ -28,6 +29,8 @@ export interface IDocumentation {
      * @readonly
      */
     readonly docs: Comment | null;
+
+    readonly metadata: Metadata | null;
 }
 
 /**

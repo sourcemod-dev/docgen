@@ -1,4 +1,4 @@
-import { IDeclaration, Comment, Searchable, SearchResult, SearchOptions, Identifier, Part } from '../../interfaces';
+import { IDeclaration, Metadata, Comment, Searchable, SearchResult, SearchOptions, Identifier, Part } from '../../interfaces';
 
 export class Declaration implements IDeclaration, Searchable {
     /**
@@ -32,6 +32,8 @@ export class Declaration implements IDeclaration, Searchable {
      */
     readonly docs: Comment | null;
 
+    readonly metadata: Metadata | null;
+
     /**
      * @brief Identifier overriden by inherited classes
      */
@@ -43,6 +45,7 @@ export class Declaration implements IDeclaration, Searchable {
         this.docStart = decl.docStart;
         this.docEnd = decl.docEnd;
         this.docs = decl.docs;
+        this.metadata = decl.metadata;
     }
 
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {

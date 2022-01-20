@@ -6,7 +6,7 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
      * @brief Type signatures
      * @readonly
      */
-    readonly types: IType[];
+    readonly types: Record<string, IType>;
 
     readonly identifier: Identifier = Identifier.TypeSet;
 
@@ -26,7 +26,7 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
         localOptions.parents.push(`${this.identifier}.${this.name}`);
 
         if (localOptions.l1Only !== true) {
-            for (const type of this.types) {
+            for (const type of Object.values(this.types)) {
                 for (const arg of type.parsedSignature.arguments) {
                     ret.push({
                         name: arg.name,

@@ -1,4 +1,4 @@
-import { IBundle, IFibers, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult } from '../interfaces';
+import { IBundle, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult } from '../interfaces';
 import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet } from './symbol';
 
 export class Bundle implements IBundle, Searchable {
@@ -49,21 +49,21 @@ export class Bundle implements IBundle, Searchable {
 }
 
 export class Strand implements IStrand, Searchable {
-    functions: IFibers<Function>;
+    functions: Record<string, Function>;
 
-    methodmaps: IFibers<MethodMap>;
+    methodmaps: Record<string, MethodMap>;
 
-    enumstructs: IFibers<EnumStruct>;
+    enumstructs: Record<string, EnumStruct>;
 
-    constants: IFibers<Constant>;
+    constants: Record<string, Constant>;
 
-    defines: IFibers<Define>;
+    defines: Record<string, Define>;
 
-    enums: IFibers<Enumeration>;
+    enums: Record<string, Enumeration>;
 
-    typesets: IFibers<TypeSet>;
+    typesets: Record<string, TypeSet>;
 
-    typedefs: IFibers<TypeDefinition>;
+    typedefs: Record<string, TypeDefinition>;
 
     constructor(strand: IStrand) {
         this.functions = Strand.mapFibers(strand.functions, Function);
@@ -79,9 +79,9 @@ export class Strand implements IStrand, Searchable {
     public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
         const ret: Promise<SearchResult[]>[] = [];
 
-        const searchSymbolType = (member: IFibers<Searchable>) => {
-            for (const fiber of Object.values(member)) {
-                ret.push(fiber.symbol.search(needle, options));
+        const searchSymbolType = (member: Record<string, Searchable>) => {
+            for (const f of Object.values(member)) {
+                ret.push(f.search(needle, options));
             }
         }
 
@@ -98,15 +98,10 @@ export class Strand implements IStrand, Searchable {
         return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
     }
 
-    private static mapFibers<T, F>(fibers: IFibers<T>, symbol: new (...args: any[]) => F): IFibers<F> {
+    private static mapFibers<T, F>(fibers: Record<string, T>, symbol: new (...args: any[]) => F): Record<string, F> {
         return Object.keys(fibers).reduce((acc, key) => {
-            const fiber = fibers[key];
-            acc[key] = {
-                symbol: new symbol(fiber.symbol),
-                created: fiber.created,
-                last_updated: fiber.last_updated,
-            };
+            acc[key] = new symbol(fibers[key]);
             return acc;
-        }, {} as IFibers<F>);
+        }, {} as Record<string, F>);
     }
 }

@@ -7,20 +7,24 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
      * @brief Functions within this enum struct
      * @readonly
      */
-    readonly methods: Function[];
+    readonly methods: Record<string, Function>;
 
     /**
      * @brief Fields within this enum struct
      * @readonly
      */
-    readonly fields: IField[];
+    readonly fields: Record<string, IField>;
 
     readonly identifier: Identifier = Identifier.EnumStruct;
 
     public constructor(es: IEnumStruct) {
         super(es);
 
-        this.methods = es.methods.map(f => new Function(f, Identifier.EnumStructMethod));
+        this.methods = Object.keys(es.methods).reduce((acc, key) => {
+            acc[key] = new Function(es.methods[key], Identifier.EnumStructMethod);
+
+            return acc; 
+        }, {} as Record<string, Function>);
         this.fields = es.fields;
     }
 
@@ -36,7 +40,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         localOptions.parents.push(`${this.identifier}.${this.name}`);
 
         if (localOptions.l1Only !== true) {
-            for (const method of this.methods) {
+            for (const method of Object.values(this.methods)) {
                 ret.push(...await method.search(needle, {
                     ...localOptions,
                     weighted: false,
@@ -44,7 +48,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
                 }));
             }
 
-            for (const field of this.fields) {
+            for (const field of Object.values(this.fields)) {
                 ret.push({
                     name: field.name,
                     identifier: Identifier.EnumStructField,

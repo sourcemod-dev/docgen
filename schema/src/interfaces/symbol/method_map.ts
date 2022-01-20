@@ -13,11 +13,11 @@ export interface IMethodMap extends IDeclaration {
      * @brief Functions within this methodmap
      * @readonly
      */
-    readonly methods: IFunction[];
+    readonly methods: Record<string, IFunction>;
 
     /**
      * @brief Properties within this methodmap
      * @readonly
      */
-    readonly properties: IProperty[];
+    readonly properties: Record<string, IProperty>;
 }

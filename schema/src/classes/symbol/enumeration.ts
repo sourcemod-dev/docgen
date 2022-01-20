@@ -6,7 +6,7 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
      * @brief Enum entries
      * @readonly
      */
-    readonly entries: IEntry[];
+    readonly entries: Record<string, IEntry>;
 
     readonly identifier: Identifier = Identifier.Enumeration;
 
@@ -28,7 +28,7 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         localOptions.parents.push(this.name);
 
         if (localOptions.l1Only !== true) {
-            for (const entry of this.entries) {
+            for (const entry of Object.values(this.entries)) {
                 ret.push({
                     name: entry.name,
                     identifier: Identifier.EnumerationEntry,
