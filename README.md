@@ -13,4 +13,4 @@ A documentation generator for SourcePawn includes
 
 ## Download
 
-You could download the latest linux sp-docgen from the artifacts of each commit. Windows and Mac builds are currently not being automatically built.
+You could download the latest Linux & Windows chumbucket from the artifacts of each commit. Mac builds are currently not being automatically built.
