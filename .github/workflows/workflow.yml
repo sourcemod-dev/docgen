@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-latest, windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -75,16 +75,20 @@ jobs:
         run: cd build/ && tar -zcvf ../build.tar.gz * && cd - 
 
       - name: Upload libraries
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
-          name: libraries
+          name: libraries-${{ matrix.os }}
           path: sourcepawn/build.tar.gz
   generator:
     name: DocGen
 
     needs: libraries
 
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout generator
@@ -101,7 +105,7 @@ jobs:
       - name: Download libraries
         uses: actions/download-artifact@v1
         with:
-          name: libraries
+          name: libraries-${{ matrix.os }}
           path: libraries
 
       - name: Extract libraries
@@ -126,7 +130,7 @@ jobs:
         run: cargo build --release
 
       - name: Upload docgen
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
-          name: docgen
-          path: docgen/target/release/chumbucket
+          name: docgen-${{ matrix.os }}
+          path: docgen/target/release/chumbucket*
