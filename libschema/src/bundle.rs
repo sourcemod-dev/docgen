@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use super::manifest::Source;
 use super::meta::Meta;
+use super::metadata::Versioning;
 
 use crate::symbol::{
     Constant, Define, EnumStruct, Enumeration, Function, MethodMap, TypeDefinition, TypeSet,
@@ -26,45 +27,21 @@ pub struct Bundle {
     pub version: Option<Versioning>,
 }
 
-#[derive(Deserialize, Serialize, Default)]
+#[derive(Deserialize, Serialize, Default, Clone)]
 pub struct Strand {
-    pub functions: Fibers<Function>,
+    pub functions: HashMap<String, Function>,
 
-    pub methodmaps: Fibers<MethodMap>,
+    pub methodmaps: HashMap<String, MethodMap>,
 
-    pub enumstructs: Fibers<EnumStruct>,
+    pub enumstructs: HashMap<String, EnumStruct>,
 
-    pub constants: Fibers<Constant>,
+    pub constants: HashMap<String, Constant>,
 
-    pub defines: Fibers<Define>,
+    pub defines: HashMap<String, Define>,
 
-    pub enums: Fibers<Enumeration>,
+    pub enums: HashMap<String, Enumeration>,
 
-    pub typesets: Fibers<TypeSet>,
+    pub typesets: HashMap<String, TypeSet>,
 
-    pub typedefs: Fibers<TypeDefinition>,
-}
-
-pub type Fibers<T> = HashMap<String, Fiber<T>>;
-
-#[derive(Deserialize, Serialize)]
-pub struct Fiber<T> {
-    pub symbol: T,
-
-    /// SVN version this symbol was introduced
-    pub created: Option<Versioning>,
-
-    /// SVN version this symbol was last modified
-    pub last_updated: Option<Versioning>,
-}
-
-#[derive(Deserialize, Serialize, Clone)]
-pub struct Versioning {
-    pub hash: String,
-
-    /// Rev-list count
-    /// Mainly used for core where product.version will be within spec paths
-    pub count: u64,
-
-    pub time: i64,
+    pub typedefs: HashMap<String, TypeDefinition>,
 }

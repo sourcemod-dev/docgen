@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use anyhow::Result;
 
-use schema::bundle::Versioning;
+use schema::metadata::Versioning;
 
 use walker::{DiffList, Walker};
 
