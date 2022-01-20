@@ -1,3 +1,5 @@
+use std::ops::ShlAssign;
+
 use serde::{Deserialize, Serialize};
 
 use crate::symbol::Declaration;
@@ -16,4 +18,13 @@ pub struct Property {
 
     /// Whether setter exists
     pub setter: bool,
+}
+
+impl ShlAssign for Property {
+    fn shl_assign(&mut self, rhs: Self) {
+        self.declaration <<= rhs.declaration;
+        self.r#type = rhs.r#type;
+        self.getter = rhs.getter;
+        self.setter = rhs.setter;
+    }
 }

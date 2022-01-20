@@ -1,3 +1,5 @@
+use std::ops::ShlAssign;
+
 use serde::{Deserialize, Serialize};
 
 use crate::symbol::{Argument, Declaration};
@@ -13,6 +15,14 @@ pub struct TypeDefinition {
 
     /// Parsed function signature
     pub parsed_signature: Option<TypeSignature>,
+}
+
+impl ShlAssign for TypeDefinition {
+    fn shl_assign(&mut self, rhs: Self) {
+        self.declaration <<= rhs.declaration;
+        self.r#type = rhs.r#type;
+        self.parsed_signature = rhs.parsed_signature;
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]

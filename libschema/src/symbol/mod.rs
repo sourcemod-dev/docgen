@@ -14,21 +14,17 @@ pub mod property;
 pub mod type_def;
 pub mod type_set;
 
-pub use self::enum_struct::{EnumStruct, Field};
-
-pub use self::base::{Declaration, DocLocation, Documentation};
-
-pub use self::type_def::{parse_type_signature, TypeDefinition, TypeSignature};
-
-pub use self::type_set::{Type, TypeSet};
-
 pub use self::argument::Argument;
+pub use self::base::{Declaration, DocLocation, Documentation};
 pub use self::constant::Constant;
 pub use self::define::Define;
-pub use self::enumeration::Enumeration;
+pub use self::enum_struct::{DPEnumStruct, EnumStruct, Field};
+pub use self::enumeration::{DPEnumeration, Entry, Enumeration};
 pub use self::function::Function;
-pub use self::method_map::MethodMap;
+pub use self::method_map::{DPMethodMap, MethodMap};
 pub use self::property::Property;
+pub use self::type_def::{parse_type_signature, TypeDefinition, TypeSignature};
+pub use self::type_set::{DPTypeSet, Type, TypeSet};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum SymbolType {

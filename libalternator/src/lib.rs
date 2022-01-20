@@ -3,13 +3,15 @@ use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 use std::str::from_utf8;
 
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 
 use spdcp::Comment;
 
+use schema::bundle::Strand;
 use schema::symbol::{
-    parse_type_signature, Constant, Define, DocLocation, Documentation, EnumStruct, Enumeration,
-    Field, Function, MethodMap, Property, Type, TypeDefinition, TypeSet,
+    parse_type_signature, Constant, DPEnumStruct, DPEnumeration, DPMethodMap, DPTypeSet, Define,
+    DocLocation, Documentation, EnumStruct, Enumeration, Field, Function, MethodMap, Property,
+    Type, TypeDefinition, TypeSet,
 };
 
 mod error;
@@ -18,45 +20,26 @@ use error::{AlternatorError, Result};
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-#[derive(Deserialize, Serialize, Default)]
-pub struct AlternatorStrand {
-    pub functions: HashMap<String, Function>,
-
-    pub methodmaps: HashMap<String, MethodMap>,
-
-    pub enumstructs: HashMap<String, EnumStruct>,
-
-    pub constants: HashMap<String, Constant>,
-
-    pub defines: HashMap<String, Define>,
-
-    pub enums: HashMap<String, Enumeration>,
-
-    pub typesets: HashMap<String, TypeSet>,
-
-    pub typedefs: HashMap<String, TypeDefinition>,
-}
-
-#[derive(Deserialize)]
+#[derive(Deserialize, Default)]
 pub struct DPStrand {
     pub functions: Vec<Function>,
 
-    pub methodmaps: Vec<MethodMap>,
+    pub methodmaps: Vec<DPMethodMap>,
 
-    pub enumstructs: Vec<EnumStruct>,
+    pub enumstructs: Vec<DPEnumStruct>,
 
     pub constants: Vec<Constant>,
 
     pub defines: Vec<Define>,
 
-    pub enums: Vec<Enumeration>,
+    pub enums: Vec<DPEnumeration>,
 
-    pub typesets: Vec<TypeSet>,
+    pub typesets: Vec<DPTypeSet>,
 
     pub typedefs: Vec<TypeDefinition>,
 }
 
-pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<AlternatorStrand> {
+pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<Strand> {
     let dp_ptr: *const c_char = unsafe {
         parse(
             CString::new(content.clone())?.as_ptr(),
@@ -72,25 +55,54 @@ pub async fn consume<T: Into<Vec<u8>>>(atom: T, content: Vec<u8>) -> Result<Alte
 }
 
 impl DPStrand {
-    pub async fn parse(parsed: &str, content: &str) -> Result<AlternatorStrand> {
+    pub async fn parse(parsed: &str, content: &str) -> Result<Strand> {
         let mut dp_strand: Self = serde_json::from_str(parsed)?;
 
-        let mut alternator_strand = AlternatorStrand::default();
+        let mut alternator_strand = Strand::default();
 
         for m in &mut dp_strand.methodmaps {
             Self::process_methodmap(m, &content).await;
 
+            let mut t = MethodMap {
+                declaration: m.declaration.clone(),
+                parent: m.parent.clone(),
+                methods: HashMap::new(),
+                properties: HashMap::new(),
+            };
+
+            for v in &m.methods {
+                t.methods.insert(v.declaration.name.clone(), v.clone());
+            }
+
+            for v in &m.properties {
+                t.properties.insert(v.declaration.name.clone(), v.clone());
+            }
+
             alternator_strand
                 .methodmaps
-                .insert(m.declaration.name.clone(), m.clone());
+                .insert(m.declaration.name.clone(), t);
         }
 
         for e in &mut dp_strand.enumstructs {
             Self::process_enumstruct(e, &content).await;
 
+            let mut t = EnumStruct {
+                declaration: e.declaration.clone(),
+                methods: HashMap::new(),
+                fields: HashMap::new(),
+            };
+
+            for v in &e.methods {
+                t.methods.insert(v.declaration.name.clone(), v.clone());
+            }
+
+            for v in &e.fields {
+                t.fields.insert(v.declaration.name.clone(), v.clone());
+            }
+
             alternator_strand
                 .enumstructs
-                .insert(e.declaration.name.clone(), e.clone());
+                .insert(e.declaration.name.clone(), t);
         }
 
         for func in &mut dp_strand.functions {
@@ -120,17 +132,35 @@ impl DPStrand {
         for r#enum in &mut dp_strand.enums {
             Self::process_enum(r#enum, &content).await;
 
+            let mut t = Enumeration {
+                declaration: r#enum.declaration.clone(),
+                entries: HashMap::new(),
+            };
+
+            for v in &r#enum.entries {
+                t.entries.insert(v.declaration.name.clone(), v.clone());
+            }
+
             alternator_strand
                 .enums
-                .insert(r#enum.declaration.name.clone(), r#enum.clone());
+                .insert(r#enum.declaration.name.clone(), t);
         }
 
         for typeset in &mut dp_strand.typesets {
             Self::process_typeset(typeset, &content).await;
 
+            let mut t = TypeSet {
+                declaration: typeset.declaration.clone(),
+                types: HashMap::new(),
+            };
+
+            for v in &typeset.types {
+                t.types.insert(v.r#type.clone(), v.clone());
+            }
+
             alternator_strand
                 .typesets
-                .insert(typeset.declaration.name.clone(), typeset.clone());
+                .insert(typeset.declaration.name.clone(), t);
         }
 
         for typedef in &mut dp_strand.typedefs {
@@ -144,7 +174,7 @@ impl DPStrand {
         Ok(alternator_strand)
     }
 
-    async fn process_methodmap(m: &mut MethodMap, section: &str) {
+    async fn process_methodmap(m: &mut DPMethodMap, section: &str) {
         Self::process_section(&mut m.declaration.documentation, section).await;
 
         for method in &mut m.methods {
@@ -156,7 +186,7 @@ impl DPStrand {
         }
     }
 
-    async fn process_enumstruct(e: &mut EnumStruct, section: &str) {
+    async fn process_enumstruct(e: &mut DPEnumStruct, section: &str) {
         Self::process_section(&mut e.declaration.documentation, section).await;
 
         for method in &mut e.methods {
@@ -168,7 +198,7 @@ impl DPStrand {
         }
     }
 
-    async fn process_typeset(t: &mut TypeSet, section: &str) {
+    async fn process_typeset(t: &mut DPTypeSet, section: &str) {
         Self::process_section(&mut t.declaration.documentation, section).await;
 
         for type_t in &mut t.types {
@@ -176,7 +206,7 @@ impl DPStrand {
         }
     }
 
-    async fn process_enum(e: &mut Enumeration, section: &str) {
+    async fn process_enum(e: &mut DPEnumeration, section: &str) {
         Self::process_section(&mut e.declaration.documentation, section).await;
 
         for entry in &mut e.entries {

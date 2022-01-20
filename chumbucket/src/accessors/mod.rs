@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use schema::bundle::Versioning;
+use schema::metadata::Versioning;
 
 mod git;
 
