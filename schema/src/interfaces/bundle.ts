@@ -1,6 +1,7 @@
 import { IFunction, IMethodMap, IEnumStruct, IConstant, IDefine, IEnumeration, ITypeSet, ITypeDefinition } from "./symbol";
 import { Meta } from "./meta";
 import { Source } from "./manifest";
+import { IVersioning } from './metadata';
 
 export interface IBundle {
     /**
@@ -27,50 +28,19 @@ export interface IBundle {
 }
 
 export interface IStrand {
-    functions: IFibers<IFunction>;
+    functions: Record<string, IFunction>;
 
-    methodmaps: IFibers<IMethodMap>;
+    methodmaps: Record<string, IMethodMap>;
 
-    enumstructs: IFibers<IEnumStruct>;
+    enumstructs: Record<string, IEnumStruct>;
 
-    constants: IFibers<IConstant>;
+    constants: Record<string, IConstant>;
 
-    defines: IFibers<IDefine>;
+    defines: Record<string, IDefine>;
 
-    enums: IFibers<IEnumeration>;
+    enums: Record<string, IEnumeration>;
 
-    typesets: IFibers<ITypeSet>;
+    typesets: Record<string, ITypeSet>;
 
-    typedefs: IFibers<ITypeDefinition>;
-}
-
-export type IFibers<T> = Record<string, IFiber<T>>;
-
-export interface IFiber<T> {
-    symbol: T;
-
-    /**
-     * SVN version this symbol was introduced
-     */
-    created: IVersioning | null;
-
-    /**
-     * SVN version this symbol was last modified
-     */
-    last_updated: IVersioning | null;
-}
-
-export interface IVersioning {
-    hash: string;
-
-    /**
-     * Rev-list count
-     * Mainly used for core where product.version will be within spec paths
-     */
-    count: number;
-
-    /**
-     * Unix timestamp, 64 bit, doesn't fit in JS number
-     */
-    time: string;
+    typedefs: Record<string, ITypeDefinition>;
 }

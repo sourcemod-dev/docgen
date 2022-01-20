@@ -23,5 +23,5 @@ export interface ITypeSet extends IDeclaration {
      * @brief Type signatures
      * @readonly
      */
-    readonly types: IType[];
+    readonly types: Record<string, IType>;
 }

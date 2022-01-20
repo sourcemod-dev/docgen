@@ -13,13 +13,13 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
      * @brief Functions within this methodmap
      * @readonly
      */
-    readonly methods: Function[];
+    readonly methods: Record<string, Function>;
 
     /**
      * @brief Properties within this methodmap
      * @readonly
      */
-    readonly properties: IProperty[];
+    readonly properties: Record<string, IProperty>;
 
     readonly identifier: Identifier = Identifier.MethodMap;
 
@@ -27,7 +27,12 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         super(mm);
 
         this.parent = mm.parent;
-        this.methods = mm.methods.map(f => new Function(f, Identifier.MethodMapMethod));
+        this.methods = Object.keys(mm.methods).reduce((acc, key) => {
+            acc[key] = new Function(mm.methods[key], Identifier.MethodMapMethod);
+
+            return acc; 
+        }, {} as Record<string, Function>);
+
         this.properties = mm.properties;
     }
 
@@ -43,7 +48,7 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         localOptions.parents.push(`${this.identifier}.${this.name}`);
 
         if (localOptions.l1Only !== true) {
-            for (const method of this.methods) {
+            for (const method of Object.values(this.methods)) {
                 ret.push(...await method.search(needle, {
                     ...localOptions,
                     weighted: false,
@@ -51,7 +56,7 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
                 }));
             }
     
-            for (const property of this.properties) {
+            for (const property of Object.values(this.properties)) {
                 ret.push({
                     name: property.name,
                     identifier: Identifier.MethodMapProperty,

@@ -12,5 +12,5 @@ export interface IEnumeration extends IDeclaration {
      * @brief Enum entries
      * @readonly
      */
-    readonly entries: IEntry[];
+    readonly entries: Record<string, IEntry>;
 }

@@ -6,6 +6,7 @@ export * from './bundle';
 export * from './meta';
 export * from './manifest';
 export * from './searchable';
+export * from './metadata';
 
 export interface Index {
     /**
