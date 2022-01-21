@@ -18,5 +18,9 @@ test('test', async () => {
 
     console.timeEnd('Searching bundle');
 
-    console.log(ret);
+    const l = bundle.getSymbolByPath(ret[1].path);
+
+    console.log(l);
+
+    // console.log(ret);
 })

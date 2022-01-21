@@ -1,4 +1,4 @@
-import { IBundle, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult } from '../interfaces';
+import { IBundle, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult, Identifier, Symbol, splitPath } from '../interfaces';
 import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet } from './symbol';
 
 export class Bundle implements IBundle, Searchable {
@@ -45,6 +45,68 @@ export class Bundle implements IBundle, Searchable {
         }
 
         return (await Promise.all(ret)).flat();
+    }
+
+    public getSymbolByPath(path: string[]): Symbol {
+        path = path.splice(0, 3);
+
+        const strand: Strand = this.strands[path[0]];
+
+        const L1 = splitPath(path[1]);
+
+        let L1Symbol: Symbol;
+
+        switch (L1.identifier) {
+        case Identifier.Function:
+            L1Symbol = strand.functions[L1.name];
+            break;
+        case Identifier.MethodMap:
+            L1Symbol = strand.methodmaps[L1.name];
+            break;
+        case Identifier.EnumStruct:
+            L1Symbol = strand.enumstructs[L1.name];
+            break;
+        case Identifier.Constant:
+            L1Symbol = strand.constants[L1.name];
+            break;
+        case Identifier.Define:
+            L1Symbol = strand.defines[L1.name];
+            break;
+        case Identifier.Enumeration:
+            L1Symbol = strand.enums[L1.name];
+            break;
+        case Identifier.TypeSet:
+            L1Symbol = strand.typesets[L1.name];
+            break;
+        default:
+            L1Symbol = strand.typedefs[L1.name];
+            break;
+        }
+
+        if (path.length === 2) {
+            return L1Symbol;
+        } else {
+            if (![Identifier.MethodMap, Identifier.EnumStruct].includes(L1.identifier)) {
+                return L1Symbol;
+            }
+
+            const L2 = splitPath(path[2]);
+
+            const symbol = L1Symbol as MethodMap | EnumStruct;
+
+            switch (L2.identifier) {
+            case Identifier.MethodMapMethod:
+            case Identifier.Function:
+                return symbol.methods[L2.name];
+            case Identifier.EnumStructField:
+            case Identifier.Field:
+                return (symbol as EnumStruct).fields[L2.name];
+            // case Identifier.MethodMapProperty:
+            // case Identifier.Property:
+            default:
+                return (symbol as MethodMap).properties[L2.name];
+            }
+        }
     }
 }
 
