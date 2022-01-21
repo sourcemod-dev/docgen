@@ -1,5 +1,6 @@
 import { IBundle, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult, Identifier, Symbol, splitPath } from '../interfaces';
 import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet } from './symbol';
+import { ClassSymbol } from './symbol/types';
 
 export class Bundle implements IBundle, Searchable {
     /**
@@ -47,14 +48,14 @@ export class Bundle implements IBundle, Searchable {
         return (await Promise.all(ret)).flat();
     }
 
-    public getSymbolByPath(path: string[]): Symbol {
+    public getSymbolByPath(path: string[]): ClassSymbol {
         path = path.splice(0, 3);
 
         const strand: Strand = this.strands[path[0]];
 
         const L1 = splitPath(path[1]);
 
-        let L1Symbol: Symbol;
+        let L1Symbol: ClassSymbol;
 
         switch (L1.identifier) {
         case Identifier.Function:

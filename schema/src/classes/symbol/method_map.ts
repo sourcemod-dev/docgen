@@ -19,7 +19,7 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
      * @brief Properties within this methodmap
      * @readonly
      */
-    readonly properties: Record<string, IProperty>;
+    readonly properties: Record<string, Property>;
 
     readonly identifier: Identifier = Identifier.MethodMap;
 
@@ -27,13 +27,18 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         super(mm);
 
         this.parent = mm.parent;
+
         this.methods = Object.keys(mm.methods).reduce((acc, key) => {
             acc[key] = new Function(mm.methods[key], Identifier.MethodMapMethod);
 
             return acc; 
         }, {} as Record<string, Function>);
 
-        this.properties = mm.properties;
+        this.properties = Object.keys(mm.properties).reduce((acc, key) => {
+            acc[key] = new Property(mm.properties[key]);
+
+            return acc; 
+        }, {} as Record<string, Property>);
     }
 
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
@@ -76,5 +81,35 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         }
 
         return ret;
+    }
+}
+
+export class Property extends Declaration implements IProperty {
+    /**
+     * @brief Type of the property
+     * @readonly
+     */
+     readonly type: string;
+
+     /**
+      * @brief Whether getter exists
+      * @readonly
+      */
+     readonly getter: boolean;
+ 
+     /**
+      * @brief Whether setter exists
+      * @readonly
+      */
+     readonly setter: boolean;
+
+    readonly identifier: Identifier = Identifier.Property;
+
+    public constructor(prop: IProperty) {
+        super(prop);
+
+        this.type = prop.type;
+        this.getter = prop.getter;
+        this.setter = prop.setter;
     }
 }

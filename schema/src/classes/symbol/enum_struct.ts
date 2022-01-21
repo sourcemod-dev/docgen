@@ -13,7 +13,7 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
      * @brief Fields within this enum struct
      * @readonly
      */
-    readonly fields: Record<string, IField>;
+    readonly fields: Record<string, Field>;
 
     readonly identifier: Identifier = Identifier.EnumStruct;
 
@@ -25,7 +25,12 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
 
             return acc; 
         }, {} as Record<string, Function>);
-        this.fields = es.fields;
+
+        this.fields = Object.keys(es.fields).reduce((acc, key) => {
+            acc[key] = new Field(es.fields[key]);
+
+            return acc; 
+        }, {} as Record<string, Field>);
     }
 
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
@@ -68,5 +73,21 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         }
 
         return ret;
+    }
+}
+
+export class Field extends Declaration implements IField {
+    /**
+     * @brief Type of the field
+     * @readonly
+     */
+    readonly type: string;
+
+    readonly identifier: Identifier = Identifier.Field;
+
+    public constructor(field: IField) {
+        super(field);
+
+        this.type = field.type;
     }
 }
