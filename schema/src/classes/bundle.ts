@@ -49,65 +49,12 @@ export class Bundle implements IBundle, Searchable {
     }
 
     public getSymbolByPath(path: string[]): ClassSymbol {
+        // Currently only supports class symbols, individual parts are not supported
         path = path.splice(0, 3);
 
         const strand: Strand = this.strands[path[0]];
 
-        const L1 = splitPath(path[1]);
-
-        let L1Symbol: ClassSymbol;
-
-        switch (L1.identifier) {
-        case Identifier.Function:
-            L1Symbol = strand.functions[L1.name];
-            break;
-        case Identifier.MethodMap:
-            L1Symbol = strand.methodmaps[L1.name];
-            break;
-        case Identifier.EnumStruct:
-            L1Symbol = strand.enumstructs[L1.name];
-            break;
-        case Identifier.Constant:
-            L1Symbol = strand.constants[L1.name];
-            break;
-        case Identifier.Define:
-            L1Symbol = strand.defines[L1.name];
-            break;
-        case Identifier.Enumeration:
-            L1Symbol = strand.enums[L1.name];
-            break;
-        case Identifier.TypeSet:
-            L1Symbol = strand.typesets[L1.name];
-            break;
-        default:
-            L1Symbol = strand.typedefs[L1.name];
-            break;
-        }
-
-        if (path.length === 2) {
-            return L1Symbol;
-        } else {
-            if (![Identifier.MethodMap, Identifier.EnumStruct].includes(L1.identifier)) {
-                return L1Symbol;
-            }
-
-            const L2 = splitPath(path[2]);
-
-            const symbol = L1Symbol as MethodMap | EnumStruct;
-
-            switch (L2.identifier) {
-            case Identifier.MethodMapMethod:
-            case Identifier.Function:
-                return symbol.methods[L2.name];
-            case Identifier.EnumStructField:
-            case Identifier.Field:
-                return (symbol as EnumStruct).fields[L2.name];
-            // case Identifier.MethodMapProperty:
-            // case Identifier.Property:
-            default:
-                return (symbol as MethodMap).properties[L2.name];
-            }
-        }
+        return strand.getSymbolByPath(path.splice(1));
     }
 }
 
@@ -159,6 +106,66 @@ export class Strand implements IStrand, Searchable {
 
         // Return at least somewhat similar results
         return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
+    }
+
+    public getSymbolByPath(path: string[]): ClassSymbol {
+        path = path.filter(e => e.includes('.'))
+
+        const L1 = splitPath(path[0]);
+
+        let L1Symbol: ClassSymbol;
+
+        switch (L1.identifier) {
+        case Identifier.Function:
+            L1Symbol = this.functions[L1.name];
+            break;
+        case Identifier.MethodMap:
+            L1Symbol = this.methodmaps[L1.name];
+            break;
+        case Identifier.EnumStruct:
+            L1Symbol = this.enumstructs[L1.name];
+            break;
+        case Identifier.Constant:
+            L1Symbol = this.constants[L1.name];
+            break;
+        case Identifier.Define:
+            L1Symbol = this.defines[L1.name];
+            break;
+        case Identifier.Enumeration:
+            L1Symbol = this.enums[L1.name];
+            break;
+        case Identifier.TypeSet:
+            L1Symbol = this.typesets[L1.name];
+            break;
+        default:
+            L1Symbol = this.typedefs[L1.name];
+            break;
+        }
+
+        if (path.length === 1) {
+            return L1Symbol;
+        } else {
+            if (![Identifier.MethodMap, Identifier.EnumStruct].includes(L1.identifier)) {
+                return L1Symbol;
+            }
+
+            const L2 = splitPath(path[1]);
+
+            const symbol = L1Symbol as MethodMap | EnumStruct;
+
+            switch (L2.identifier) {
+            case Identifier.MethodMapMethod:
+            case Identifier.Function:
+                return symbol.methods[L2.name];
+            case Identifier.EnumStructField:
+            case Identifier.Field:
+                return (symbol as EnumStruct).fields[L2.name];
+            // case Identifier.MethodMapProperty:
+            // case Identifier.Property:
+            default:
+                return (symbol as MethodMap).properties[L2.name];
+            }
+        }
     }
 
     private static mapFibers<T, F>(fibers: Record<string, T>, symbol: new (...args: any[]) => F): Record<string, F> {
