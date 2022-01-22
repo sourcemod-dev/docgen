@@ -25,7 +25,7 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
 
         ret[0].score += 0.01;
         
-        localOptions.parents.push(this.name);
+        localOptions.parents.push(`${this.identifier}.${this.name}`);
 
         if (localOptions.l1Only !== true) {
             for (const entry of Object.values(this.entries)) {

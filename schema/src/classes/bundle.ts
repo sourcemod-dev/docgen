@@ -109,7 +109,13 @@ export class Strand implements IStrand, Searchable {
     }
 
     public getSymbolByPath(path: string[]): ClassSymbol {
-        path = path.filter(e => e.includes('.'))
+        path = path.filter(e => {
+            // Ignore Enum entries, as it's not a dedicated symbol
+            return e.includes('.') || [
+                Identifier.EnumerationEntry,
+                Identifier.Entry,
+            ].includes(splitPath(e).identifier)
+        });
 
         const L1 = splitPath(path[0]);
 
