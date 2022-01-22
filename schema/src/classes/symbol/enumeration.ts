@@ -6,14 +6,18 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
      * @brief Enum entries
      * @readonly
      */
-    readonly entries: Record<string, IEntry>;
+    readonly entries: Record<string, Entry>;
 
     readonly identifier: Identifier = Identifier.Enumeration;
 
     public constructor(enumeration: IEnumeration) {
         super(enumeration);
 
-        this.entries = enumeration.entries;
+        this.entries = Object.keys(enumeration.entries).reduce((acc, key) => {
+            acc[key] = new Entry(enumeration.entries[key]);
+
+            return acc;  
+        }, {} as Record<string, Entry>);
     }
 
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
@@ -24,7 +28,7 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         ];
 
         ret[0].score += 0.01;
-        
+
         localOptions.parents.push(`${this.identifier}.${this.name}`);
 
         if (localOptions.l1Only !== true) {
@@ -48,5 +52,20 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         }
 
         return ret;
+    }
+}
+
+export class Entry extends Declaration implements IEntry {
+    /**
+     * @brief Value that are explicitly set in code expressions
+     */
+    value?: string;
+
+    readonly identifier: Identifier = Identifier.EnumerationEntry;
+
+    constructor(entry: IEntry) {
+        super(entry);
+
+        this.value = entry.value;
     }
 }
