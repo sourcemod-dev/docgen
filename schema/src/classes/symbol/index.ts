@@ -6,3 +6,4 @@ export * from './function';
 export * from './method_map';
 export * from './type_def';
 export * from './type_set';
+export * from './types';
