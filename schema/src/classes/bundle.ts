@@ -48,9 +48,9 @@ export class Bundle implements IBundle, Searchable {
         return (await Promise.all(ret)).flat();
     }
 
-    public getSymbolByPath(path: string[]): ClassSymbol {
+    public getSymbolByPath(p: readonly string[]): ClassSymbol {
         // Currently only supports class symbols, individual parts are not supported
-        path = path.splice(0, 3);
+        const path = p.slice(0, 3);
 
         const strand: Strand = this.strands[path[0]];
 
@@ -108,7 +108,7 @@ export class Strand implements IStrand, Searchable {
         return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
     }
 
-    public getSymbolByPath(p: string[]): ClassSymbol {
+    public getSymbolByPath(p: readonly string[]): ClassSymbol {
         const path = p.filter(e => {
             // Ignore Enum entries, as it's not a dedicated symbol
             return e.includes('.') || [
