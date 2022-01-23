@@ -111,4 +111,5 @@ export const PRIMITIVE_TYPES = [
     'float',
     'float&',
     'float[]',
+    'any',
 ];
