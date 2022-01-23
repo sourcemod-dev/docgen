@@ -86,7 +86,7 @@ export class Strand implements IStrand, Searchable {
         this.typedefs = Strand.mapFibers(strand.typedefs, TypeDefinition);
     }
 
-    public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
+    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
         const ret: Promise<SearchResult[]>[] = [];
 
         const searchSymbolType = (member: Record<string, Searchable>) => {
@@ -108,8 +108,8 @@ export class Strand implements IStrand, Searchable {
         return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
     }
 
-    public getSymbolByPath(path: string[]): ClassSymbol {
-        path = path.filter(e => {
+    public getSymbolByPath(p: string[]): ClassSymbol {
+        const path = p.filter(e => {
             // Ignore Enum entries, as it's not a dedicated symbol
             return e.includes('.') || [
                 Identifier.EnumerationEntry,
