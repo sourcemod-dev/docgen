@@ -174,6 +174,19 @@ export class Strand implements IStrand, Searchable {
         }
     }
 
+    public isEmpty(): boolean {
+        return (
+            Object.keys(this.functions).length === 0 &&
+            Object.keys(this.methodmaps).length === 0 &&
+            Object.keys(this.enumstructs).length === 0 &&
+            Object.keys(this.constants).length === 0 &&
+            Object.keys(this.defines).length === 0 &&
+            Object.keys(this.enums).length === 0 &&
+            Object.keys(this.typesets).length === 0 &&
+            Object.keys(this.typedefs).length === 0
+        );
+    }
+
     private static mapFibers<T, F>(fibers: Record<string, T>, symbol: new (...args: any[]) => F): Record<string, F> {
         return Object.keys(fibers).reduce((acc, key) => {
             acc[key] = new symbol(fibers[key]);
