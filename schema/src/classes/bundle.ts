@@ -180,7 +180,7 @@ export class Strand implements IStrand, Searchable {
             Object.keys(this.methodmaps).length === 0 &&
             Object.keys(this.enumstructs).length === 0 &&
             Object.keys(this.constants).length === 0 &&
-            Object.keys(this.defines).length === 0 &&
+            // Don't include defines as it has include guards
             Object.keys(this.enums).length === 0 &&
             Object.keys(this.typesets).length === 0 &&
             Object.keys(this.typedefs).length === 0
