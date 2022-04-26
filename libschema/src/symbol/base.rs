@@ -5,7 +5,7 @@ use spdcp::Comment;
 
 use crate::metadata::Metadata;
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
     #[serde(default)]
@@ -32,6 +32,13 @@ impl ShlAssign for Documentation {
         self.doc_end = rhs.doc_end;
         self.docs = rhs.docs;
         // Don't update metadata
+    }
+}
+
+impl PartialEq for Documentation {
+    fn eq(&self, other: &Self) -> bool {
+        // Only compare against the docs
+        self.docs == other.docs
     }
 }
 
