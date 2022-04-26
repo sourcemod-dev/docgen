@@ -127,7 +127,7 @@ where
     }
 
     // If strand is not in the file_names, remove it
-    bundle.strands.retain(|key, _| file_names.contains(&key));
+    bundle.strands.retain(|key, _| file_names.contains(key));
 
     Ok((bundle, diffs))
 }
