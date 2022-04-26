@@ -5,7 +5,7 @@ use git2::{Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort};
 
 mod error;
 
-use error::Result;
+use error::{Result, WalkerError};
 
 pub struct Walker {
     repo: Repository,
@@ -67,13 +67,9 @@ impl Walker {
 
         revwalk.push_head()?;
 
-        let mut count = 0u64;
-
         let mut spec_diffs = Vec::new();
 
-        for oid in revwalk {
-            count += 1;
-
+        for (count, oid) in revwalk.enumerate() {
             let oid = oid?;
 
             let commit = self.repo.find_commit(oid)?;
@@ -111,7 +107,7 @@ impl Walker {
                     if !diff_stems.is_empty() {
                         spec_diffs.push(CommitDiffs {
                             commit: commit.id(),
-                            count,
+                            count: count as u64,
                             path_diffs: diff_stems,
                         });
                     }
@@ -127,6 +123,27 @@ impl Walker {
             spec_diffs,
             walker: self,
         })
+    }
+
+    pub fn latest_file_names(&mut self) -> Result<Vec<String>> {
+        let mut file_names = Vec::new();
+
+        let tree = self.repo.find_reference("HEAD")?.peel_to_tree()?;
+
+        let pathspec_entries = self.pathspec.match_tree(&tree, PathspecFlags::DEFAULT)?;
+
+        for entry in pathspec_entries.entries() {
+            let lossy_fmt = String::from_utf8_lossy(entry).into_owned();
+            let file_name = Path::new(&lossy_fmt)
+                .file_stem()
+                .ok_or(WalkerError::InvalidPath)?
+                .to_string_lossy()
+                .into_owned();
+
+            file_names.push(file_name);
+        }
+
+        Ok(file_names)
     }
 }
 
@@ -155,7 +172,7 @@ impl<'w> Iterator for DiffList<'w> {
         let mut bcs = Vec::new();
 
         for path in &spec_diff.path_diffs {
-            let te = tree.get_path(&path).ok()?;
+            let te = tree.get_path(path).ok()?;
 
             let obj = te.to_object(&self.walker.repo).ok()?;
 

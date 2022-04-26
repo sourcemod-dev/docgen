@@ -14,5 +14,6 @@ pub struct Chronicle {
     pub files: HashMap<String, Vec<u8>>,
 }
 
-/// Accessor returns an iterator that pulls from oldest to newest
-pub trait Accessor = Iterator<Item = Chronicle>;
+// Accessor returns an iterator that pulls from oldest to newest
+// Requires trait_alias feature that is not yet stable
+// pub trait Accessor = Iterator<Item = Chronicle>;

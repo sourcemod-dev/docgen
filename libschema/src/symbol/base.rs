@@ -5,7 +5,7 @@ use spdcp::Comment;
 
 use crate::metadata::Metadata;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Documentation {
     #[serde(default)]
@@ -35,13 +35,6 @@ impl ShlAssign for Documentation {
     }
 }
 
-impl PartialEq for Documentation {
-    fn eq(&self, _other: &Self) -> bool {
-        // Ignore difference, since we don't care about the documentation changes
-        self.docs == self.docs
-    }
-}
-
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 /// Base symbol declaration
@@ -59,29 +52,27 @@ impl ShlAssign for Declaration {
     }
 }
 
-impl Declaration {
-    pub fn metadata(&mut self) -> &mut Option<Metadata> {
+impl Metable for Declaration {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
         &mut self.documentation.metadata
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct DocLocation(i64);
 
-impl Default for DocLocation {
-    fn default() -> Self {
-        Self(0)
+impl From<DocLocation> for usize {
+    fn from(v: DocLocation) -> Self {
+        v.0 as usize
     }
 }
 
 impl From<usize> for DocLocation {
     fn from(v: usize) -> Self {
-        Self(v as i64)
+        DocLocation(v as i64)
     }
 }
 
-impl Into<usize> for DocLocation {
-    fn into(self) -> usize {
-        self.0 as usize
-    }
+pub trait Metable {
+    fn metadata(&mut self) -> &mut Option<Metadata>;
 }

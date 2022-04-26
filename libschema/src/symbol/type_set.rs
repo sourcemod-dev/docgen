@@ -1,9 +1,10 @@
-use std::ops::ShlAssign;
 use std::collections::HashMap;
+use std::ops::ShlAssign;
 
 use serde::{Deserialize, Serialize};
 
-use crate::symbol::{Declaration, Documentation, TypeSignature};
+use crate::metadata::Metadata;
+use crate::symbol::{Declaration, Documentation, Metable, TypeSignature};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -16,6 +17,12 @@ pub struct Type {
 
     /// Parsed function signature
     pub parsed_signature: Option<TypeSignature>,
+}
+
+impl Metable for Type {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.documentation.metadata
+    }
 }
 
 impl ShlAssign for Type {
@@ -34,6 +41,12 @@ pub struct TypeSet {
 
     /// Type signatures
     pub types: HashMap<String, Type>,
+}
+
+impl Metable for TypeSet {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.declaration.documentation.metadata
+    }
 }
 
 impl ShlAssign for TypeSet {
