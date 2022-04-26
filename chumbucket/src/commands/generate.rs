@@ -16,7 +16,7 @@ use schema::{
 
 use walker::Walker;
 
-use crate::accessors;
+use crate::accessors::{Chronicle, Git};
 use crate::utils::write_to_disk;
 
 /// Generate Subcommand
@@ -67,7 +67,7 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
                     .ok_or(anyhow!("Missing source patterns"))?,
             )?;
 
-            let git = accessors::Git::from_walker(from_time, &mut walker)?;
+            let git = Git::from_walker(from_time, &mut walker)?;
 
             let it_ret = iterate_chronicles(git, manifest, bundle).await?;
 
@@ -91,7 +91,7 @@ async fn iterate_chronicles<I>(
     bundle: Option<Bundle>,
 ) -> Result<(Bundle, u64)>
 where
-    I: accessors::Accessor,
+    I: Iterator<Item = Chronicle>,
 {
     let mut bundle = bundle.unwrap_or(Bundle {
         meta: manifest.meta,
