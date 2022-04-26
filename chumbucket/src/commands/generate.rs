@@ -1,18 +1,14 @@
 use std::collections::hash_map::{Entry, HashMap};
+use std::ops::ShlAssign;
 
 use anyhow::{anyhow, Result};
 
 use clap::ArgMatches;
 
-use schema::{
-    bundle::{Bundle, Strand},
-    manifest::{Manifest, SourceType},
-    metadata::{Metadata, Versioning},
-    symbol::{
-        Constant, Define, Entry as EnumEntry, EnumStruct, Enumeration, Field, Function, MethodMap,
-        Property, Type, TypeDefinition, TypeSet,
-    },
-};
+use schema::bundle::{Bundle, Strand};
+use schema::manifest::{Manifest, SourceType};
+use schema::metadata::{Metadata, Versioning};
+use schema::symbol::{EnumStruct, Enumeration, Metable, MethodMap, TypeSet};
 
 use walker::Walker;
 
@@ -79,7 +75,7 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
             }
         }
         // TODO: Implement direct
-        _ => (),
+        SourceType::Direct => {},
     };
 
     Ok(())
@@ -164,357 +160,206 @@ impl<'b> ChronicleProcessor<'b> {
     }
 
     pub fn process(&mut self) -> u64 {
-        let functions = self.dp_strand.functions.clone();
-
-        for (k, v) in &functions {
-            if let Entry::Vacant(entry) = self.strand.functions.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut function = self.strand.functions.remove(k).unwrap();
-
-            self.process_function(&mut function, v.clone());
-
-            self.strand.functions.insert(k.to_string(), function);
-        }
-
-        for (k, v) in &self.dp_strand.methodmaps.clone() {
-            if let Entry::Vacant(entry) = self.strand.methodmaps.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut mm = self.strand.methodmaps.remove(k).unwrap();
-
-            self.process_methodmap(&mut mm, v.clone());
-
-            self.strand.methodmaps.insert(k.to_string(), mm);
-        }
-
-        for (k, v) in &self.dp_strand.enumstructs.clone() {
-            if let Entry::Vacant(entry) = self.strand.enumstructs.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut es = self.strand.enumstructs.remove(k).unwrap();
-
-            self.process_enumstruct(&mut es, v.clone());
-
-            self.strand.enumstructs.insert(k.to_string(), es);
-        }
-
-        for (k, v) in &self.dp_strand.constants.clone() {
-            if let Entry::Vacant(entry) = self.strand.constants.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut c = self.strand.constants.remove(k).unwrap();
-
-            self.process_constant(&mut c, v.clone());
-
-            self.strand.constants.insert(k.to_string(), c);
-        }
-
-        for (k, v) in &self.dp_strand.defines.clone() {
-            if let Entry::Vacant(entry) = self.strand.defines.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut d = self.strand.defines.remove(k).unwrap();
-
-            self.process_define(&mut d, v.clone());
-
-            self.strand.defines.insert(k.to_string(), d);
-        }
-
-        for (k, v) in &self.dp_strand.enums.clone() {
-            if let Entry::Vacant(entry) = self.strand.enums.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut e = self.strand.enums.remove(k).unwrap();
-
-            self.process_enum(&mut e, v.clone());
-
-            self.strand.enums.insert(k.to_string(), e);
-        }
-
-        for (k, v) in &self.dp_strand.typesets.clone() {
-            if let Entry::Vacant(entry) = self.strand.typesets.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut ts = self.strand.typesets.remove(k).unwrap();
-
-            self.process_typeset(&mut ts, v.clone());
-
-            self.strand.typesets.insert(k.to_string(), ts);
-        }
-
-        for (k, v) in &self.dp_strand.typedefs.clone() {
-            if let Entry::Vacant(entry) = self.strand.typedefs.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut td = self.strand.typedefs.remove(k).unwrap();
-
-            self.process_typedef(&mut td, v.clone());
-
-            self.strand.typedefs.insert(k.to_string(), td);
-        }
+        // Functions
+        self.diffs += Self::process_fibers(
+            &mut self.strand.functions,
+            &self.dp_strand.functions,
+            self.version.clone(),
+        );
+        // Constants
+        self.diffs += Self::process_fibers(
+            &mut self.strand.constants,
+            &self.dp_strand.constants,
+            self.version.clone(),
+        );
+        // Defines
+        self.diffs += Self::process_fibers(
+            &mut self.strand.defines,
+            &self.dp_strand.defines,
+            self.version.clone(),
+        );
+        // Methodmaps
+        self.diffs += Self::process_methodmaps(
+            &mut self.strand.methodmaps,
+            &self.dp_strand.methodmaps,
+            self.version.clone(),
+        );
+        // Enumstructs
+        self.diffs += Self::process_enumstructs(
+            &mut self.strand.enumstructs,
+            &self.dp_strand.enumstructs,
+            self.version.clone(),
+        );
+        // Enums
+        self.diffs += Self::process_enums(
+            &mut self.strand.enums,
+            &self.dp_strand.enums,
+            self.version.clone(),
+        );
+        // Typesets
+        self.diffs += Self::process_typesets(
+            &mut self.strand.typesets,
+            &self.dp_strand.typesets,
+            self.version.clone(),
+        );
+        // Type definitions
+        self.diffs += Self::process_fibers(
+            &mut self.strand.typedefs,
+            &self.dp_strand.typedefs,
+            self.version.clone(),
+        );
 
         self.diffs
     }
 
-    fn process_function(&mut self, function: &mut Function, dp_function: Function) {
-        if *function != dp_function {
-            *function <<= dp_function;
+    fn process_methodmaps(
+        existing: &mut HashMap<String, MethodMap>,
+        new: &HashMap<String, MethodMap>,
+        version: Option<Versioning>,
+    ) -> u64 {
+        let mut diff = 0;
 
-            self.update_metadata(function.declaration.metadata(), true);
-        } else {
-            self.update_metadata(function.declaration.metadata(), false);
+        diff += Self::process_fibers(existing, new, version.clone());
+
+        for (k, v) in existing {
+            // Process methods
+            diff += Self::process_fibers(
+                &mut v.methods,
+                &new.get(k).unwrap().methods,
+                version.clone(),
+            );
+
+            // Process properties
+            diff += Self::process_fibers(
+                &mut v.properties,
+                &new.get(k).unwrap().properties,
+                version.clone(),
+            );
         }
+
+        diff
     }
 
-    fn process_methodmap(&mut self, methodmap: &mut MethodMap, dp_methodmap: MethodMap) {
-        if *methodmap != dp_methodmap {
-            *methodmap <<= dp_methodmap.clone();
+    fn process_enumstructs(
+        existing: &mut HashMap<String, EnumStruct>,
+        new: &HashMap<String, EnumStruct>,
+        version: Option<Versioning>,
+    ) -> u64 {
+        let mut diff = 0;
 
-            self.update_metadata(methodmap.declaration.metadata(), true);
-        } else {
-            self.update_metadata(methodmap.declaration.metadata(), false);
+        diff += Self::process_fibers(existing, new, version.clone());
+
+        for (k, v) in existing {
+            // Process methods
+            diff += Self::process_fibers(
+                &mut v.methods,
+                &new.get(k).unwrap().methods,
+                version.clone(),
+            );
+
+            // Process fields
+            diff +=
+                Self::process_fibers(&mut v.fields, &new.get(k).unwrap().fields, version.clone());
         }
 
-        let methods = dp_methodmap.methods.clone();
+        diff
+    }
 
-        for (k, v) in &methods {
-            if let Entry::Vacant(entry) = methodmap.methods.entry(k.clone()) {
+    fn process_enums(
+        existing: &mut HashMap<String, Enumeration>,
+        new: &HashMap<String, Enumeration>,
+        version: Option<Versioning>,
+    ) -> u64 {
+        let mut diff = 0;
+
+        diff += Self::process_fibers(existing, new, version.clone());
+
+        for (k, v) in existing {
+            // Process entries
+            diff += Self::process_fibers(
+                &mut v.entries,
+                &new.get(k).unwrap().entries,
+                version.clone(),
+            );
+        }
+
+        diff
+    }
+
+    fn process_typesets(
+        existing: &mut HashMap<String, TypeSet>,
+        new: &HashMap<String, TypeSet>,
+        version: Option<Versioning>,
+    ) -> u64 {
+        let mut diff = 0;
+
+        diff += Self::process_fibers(existing, new, version.clone());
+
+        for (k, v) in existing {
+            // Process types
+            diff += Self::process_fibers(&mut v.types, &new.get(k).unwrap().types, version.clone());
+        }
+
+        diff
+    }
+
+    fn process_fibers<T: Metable + Clone + ShlAssign + PartialEq>(
+        existing: &mut HashMap<String, T>,
+        new: &HashMap<String, T>,
+        version: Option<Versioning>,
+    ) -> u64 {
+        let mut diff = 0;
+
+        // Handle any new entries
+        for (k, v) in new {
+            if let Entry::Vacant(entry) = existing.entry(k.clone()) {
                 entry.insert(v.clone());
+                diff += 1;
+            }
+        }
 
-                self.diffs += 1;
+        let mut to_remove = Vec::new();
+
+        // Handle any deleted entries
+        for (k, _) in existing.iter() {
+            if !new.contains_key(k) {
+                to_remove.push(k.clone());
+            }
+        }
+
+        diff += to_remove.len() as u64;
+
+        for k in to_remove {
+            existing.remove(&k);
+        }
+
+        // At this point, both list should have the same keys, so we can safely iterate over them
+        // Handle any updated entries
+        for (k, v) in existing.iter_mut() {
+            let dp_v = new.get(k).unwrap();
+
+            let is_diff = v != dp_v;
+
+            if is_diff {
+                *v <<= dp_v.clone();
+                diff += 1;
             }
 
-            let mut method = methodmap.methods.remove(k).unwrap();
-
-            self.process_function(&mut method, v.clone());
-
-            methodmap.methods.insert(k.to_string(), method);
-        }
-
-        let properties = dp_methodmap.properties.clone();
-
-        for (k, v) in &properties {
-            if let Entry::Vacant(entry) = methodmap.properties.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
+            // Update the metadata
+            match v.metadata() {
+                Some(m) if is_diff => {
+                    m.last_updated = version.clone();
+                }
+                None if !is_diff => {
+                    *v.metadata() = Some(Metadata {
+                        last_updated: version.clone(),
+                        created: version.clone(),
+                    });
+                }
+                _ => {}
             }
-
-            let mut property = methodmap.properties.remove(k).unwrap();
-
-            self.process_property(&mut property, v.clone());
-
-            methodmap.properties.insert(k.to_string(), property);
-        }
-    }
-
-    fn process_enumstruct(&mut self, enumstruct: &mut EnumStruct, dp_enumstruct: EnumStruct) {
-        if *enumstruct != dp_enumstruct {
-            *enumstruct <<= dp_enumstruct.clone();
-
-            self.update_metadata(enumstruct.declaration.metadata(), true);
-        } else {
-            self.update_metadata(enumstruct.declaration.metadata(), false);
         }
 
-        let methods = dp_enumstruct.methods.clone();
-
-        for (k, v) in &methods {
-            if let Entry::Vacant(entry) = enumstruct.methods.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut method = enumstruct.methods.remove(k).unwrap();
-
-            self.process_function(&mut method, v.clone());
-
-            enumstruct.methods.insert(k.to_string(), method);
-        }
-
-        let fields = dp_enumstruct.fields.clone();
-
-        for (k, v) in &fields {
-            if let Entry::Vacant(entry) = enumstruct.fields.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut field = enumstruct.fields.remove(k).unwrap();
-
-            self.process_field(&mut field, v.clone());
-
-            enumstruct.fields.insert(k.to_string(), field);
-        }
-    }
-
-    fn process_constant(&mut self, constant: &mut Constant, dp_constant: Constant) {
-        if *constant != dp_constant {
-            *constant <<= dp_constant;
-
-            self.update_metadata(constant.declaration.metadata(), true);
-        } else {
-            self.update_metadata(constant.declaration.metadata(), false);
-        }
-    }
-
-    fn process_define(&mut self, define: &mut Define, dp_define: Define) {
-        if *define != dp_define {
-            *define <<= dp_define;
-
-            self.update_metadata(define.declaration.metadata(), true);
-        } else {
-            self.update_metadata(define.declaration.metadata(), false);
-        }
-    }
-
-    fn process_enum(&mut self, enum_: &mut Enumeration, dp_enum: Enumeration) {
-        if *enum_ != dp_enum {
-            *enum_ <<= dp_enum.clone();
-
-            self.update_metadata(enum_.declaration.metadata(), true);
-        } else {
-            self.update_metadata(enum_.declaration.metadata(), false);
-        }
-
-        let entries = dp_enum.entries.clone();
-
-        for (k, v) in &entries {
-            if let Entry::Vacant(entry) = enum_.entries.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut entry = enum_.entries.remove(k).unwrap();
-
-            self.process_enum_entry(&mut entry, v.clone());
-
-            enum_.entries.insert(k.to_string(), entry);
-        }
-    }
-
-    fn process_typeset(&mut self, typeset: &mut TypeSet, dp_typeset: TypeSet) {
-        if *typeset != dp_typeset {
-            *typeset <<= dp_typeset.clone();
-
-            self.update_metadata(typeset.declaration.metadata(), true);
-        } else {
-            self.update_metadata(typeset.declaration.metadata(), false);
-        }
-
-        let types = dp_typeset.types.clone();
-
-        for (k, v) in &types {
-            if let Entry::Vacant(entry) = typeset.types.entry(k.clone()) {
-                entry.insert(v.clone());
-
-                self.diffs += 1;
-            }
-
-            let mut type_ = typeset.types.remove(k).unwrap();
-
-            self.process_type(&mut type_, v.clone());
-
-            typeset.types.insert(k.to_string(), type_);
-        }
-    }
-
-    fn process_typedef(&mut self, typedef: &mut TypeDefinition, dp_typedef: TypeDefinition) {
-        if *typedef != dp_typedef {
-            *typedef <<= dp_typedef.clone();
-
-            self.update_metadata(typedef.declaration.metadata(), true);
-        } else {
-            self.update_metadata(typedef.declaration.metadata(), false);
-        }
-    }
-
-    fn process_property(&mut self, property: &mut Property, dp_property: Property) {
-        if *property != dp_property {
-            *property <<= dp_property;
-
-            self.update_metadata(property.declaration.metadata(), true);
-        } else {
-            self.update_metadata(property.declaration.metadata(), false);
-        }
-    }
-
-    fn process_field(&mut self, field: &mut Field, dp_field: Field) {
-        if *field != dp_field {
-            *field <<= dp_field;
-
-            self.update_metadata(field.declaration.metadata(), true);
-        } else {
-            self.update_metadata(field.declaration.metadata(), false);
-        }
-    }
-
-    fn process_enum_entry(&mut self, entry: &mut EnumEntry, dp_entry: EnumEntry) {
-        if *entry != dp_entry {
-            *entry <<= dp_entry;
-
-            self.update_metadata(entry.declaration.metadata(), true);
-        } else {
-            self.update_metadata(entry.declaration.metadata(), false);
-        }
-    }
-
-    fn process_type(&mut self, type_: &mut Type, dp_type: Type) {
-        if *type_ != dp_type {
-            *type_ <<= dp_type.clone();
-
-            self.update_metadata(&mut type_.documentation.metadata, true);
-        } else {
-            self.update_metadata(&mut type_.documentation.metadata, false);
-        }
-    }
-
-    fn update_metadata(&self, m: &mut Option<Metadata>, diff: bool) {
-        let t = if let Some(a) = self.version.clone() {
-            a
-        } else {
-            return;
-        };
-
-        match m {
-            Some(a) if diff => {
-                a.last_updated = Some(t);
-            }
-            None if !diff => {
-                *m = Some(Metadata {
-                    last_updated: Some(t.clone()),
-                    created: Some(t.clone()),
-                });
-            }
-            _ => {}
-        }
+        diff
     }
 }

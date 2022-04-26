@@ -2,7 +2,8 @@ use std::ops::ShlAssign;
 
 use serde::{Deserialize, Serialize};
 
-use crate::symbol::{Argument, Declaration};
+use crate::metadata::Metadata;
+use crate::symbol::{Argument, Declaration, Metable};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -18,6 +19,12 @@ pub struct Function {
 
     /// Arguments of the function
     pub arguments: Vec<Argument>,
+}
+
+impl Metable for Function {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.declaration.documentation.metadata
+    }
 }
 
 impl ShlAssign for Function {

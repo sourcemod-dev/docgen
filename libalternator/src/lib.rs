@@ -61,7 +61,7 @@ impl DPStrand {
         let mut alternator_strand = Strand::default();
 
         for m in &mut dp_strand.methodmaps {
-            Self::process_methodmap(m, &content).await;
+            Self::process_methodmap(m, content).await;
 
             let mut t = MethodMap {
                 declaration: m.declaration.clone(),
@@ -84,7 +84,7 @@ impl DPStrand {
         }
 
         for e in &mut dp_strand.enumstructs {
-            Self::process_enumstruct(e, &content).await;
+            Self::process_enumstruct(e, content).await;
 
             let mut t = EnumStruct {
                 declaration: e.declaration.clone(),
@@ -106,7 +106,7 @@ impl DPStrand {
         }
 
         for func in &mut dp_strand.functions {
-            Self::process_function(func, &content).await;
+            Self::process_function(func, content).await;
 
             alternator_strand
                 .functions
@@ -114,7 +114,7 @@ impl DPStrand {
         }
 
         for constant in &mut dp_strand.constants {
-            Self::process_constant(constant, &content).await;
+            Self::process_constant(constant, content).await;
 
             alternator_strand
                 .constants
@@ -122,7 +122,7 @@ impl DPStrand {
         }
 
         for define in &mut dp_strand.defines {
-            Self::process_define(define, &content).await;
+            Self::process_define(define, content).await;
 
             alternator_strand
                 .defines
@@ -130,7 +130,7 @@ impl DPStrand {
         }
 
         for r#enum in &mut dp_strand.enums {
-            Self::process_enum(r#enum, &content).await;
+            Self::process_enum(r#enum, content).await;
 
             let mut t = Enumeration {
                 declaration: r#enum.declaration.clone(),
@@ -147,7 +147,7 @@ impl DPStrand {
         }
 
         for typeset in &mut dp_strand.typesets {
-            Self::process_typeset(typeset, &content).await;
+            Self::process_typeset(typeset, content).await;
 
             let mut t = TypeSet {
                 declaration: typeset.declaration.clone(),
@@ -164,7 +164,7 @@ impl DPStrand {
         }
 
         for typedef in &mut dp_strand.typedefs {
-            Self::process_typedef(typedef, &content).await;
+            Self::process_typedef(typedef, content).await;
 
             alternator_strand
                 .typedefs

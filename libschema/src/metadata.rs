@@ -25,7 +25,8 @@ pub struct Versioning {
 // Skip versioning when comparing
 impl PartialEq for Versioning {
     fn eq(&self, _other: &Self) -> bool {
-        self.hash == self.hash
+        // Skip versioning when comparing
+        true
     }
 }
 

@@ -2,7 +2,8 @@ use std::ops::ShlAssign;
 
 use serde::{Deserialize, Serialize};
 
-use crate::symbol::{Argument, Declaration};
+use crate::metadata::Metadata;
+use crate::symbol::{Argument, Declaration, Metable};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -15,6 +16,12 @@ pub struct TypeDefinition {
 
     /// Parsed function signature
     pub parsed_signature: Option<TypeSignature>,
+}
+
+impl Metable for TypeDefinition {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.declaration.documentation.metadata
+    }
 }
 
 impl ShlAssign for TypeDefinition {

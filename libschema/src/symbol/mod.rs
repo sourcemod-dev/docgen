@@ -15,7 +15,7 @@ pub mod type_def;
 pub mod type_set;
 
 pub use self::argument::Argument;
-pub use self::base::{Declaration, DocLocation, Documentation};
+pub use self::base::{Declaration, DocLocation, Documentation, Metable};
 pub use self::constant::Constant;
 pub use self::define::Define;
 pub use self::enum_struct::{DPEnumStruct, EnumStruct, Field};

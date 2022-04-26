@@ -67,13 +67,9 @@ impl Walker {
 
         revwalk.push_head()?;
 
-        let mut count = 0u64;
-
         let mut spec_diffs = Vec::new();
 
-        for oid in revwalk {
-            count += 1;
-
+        for (count, oid) in revwalk.enumerate() {
             let oid = oid?;
 
             let commit = self.repo.find_commit(oid)?;
@@ -111,7 +107,7 @@ impl Walker {
                     if !diff_stems.is_empty() {
                         spec_diffs.push(CommitDiffs {
                             commit: commit.id(),
-                            count,
+                            count: count as u64,
                             path_diffs: diff_stems,
                         });
                     }
@@ -155,7 +151,7 @@ impl<'w> Iterator for DiffList<'w> {
         let mut bcs = Vec::new();
 
         for path in &spec_diff.path_diffs {
-            let te = tree.get_path(&path).ok()?;
+            let te = tree.get_path(path).ok()?;
 
             let obj = te.to_object(&self.walker.repo).ok()?;
 

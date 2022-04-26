@@ -3,7 +3,8 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::symbol::{Declaration, Function};
+use crate::metadata::Metadata;
+use crate::symbol::{Declaration, Function, Metable};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -22,6 +23,12 @@ impl ShlAssign for Field {
     }
 }
 
+impl Metable for Field {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.declaration.documentation.metadata
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EnumStruct {
@@ -33,6 +40,12 @@ pub struct EnumStruct {
 
     /// Fields within this enum struct
     pub fields: HashMap<String, Field>,
+}
+
+impl Metable for EnumStruct {
+    fn metadata(&mut self) -> &mut Option<Metadata> {
+        &mut self.declaration.documentation.metadata
+    }
 }
 
 impl ShlAssign for EnumStruct {
