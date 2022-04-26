@@ -313,13 +313,10 @@ impl<'b> ChronicleProcessor<'b> {
         new: &HashMap<String, T>,
         version: Option<Versioning>,
     ) -> u64 {
-        let mut diff = 0;
-
         // Handle any new entries
         for (k, v) in new {
             if let Entry::Vacant(entry) = existing.entry(k.clone()) {
                 entry.insert(v.clone());
-                diff += 1;
             }
         }
 
@@ -332,11 +329,11 @@ impl<'b> ChronicleProcessor<'b> {
             }
         }
 
-        diff += to_remove.len() as u64;
-
         for k in to_remove {
             existing.remove(&k);
         }
+
+        let mut diff = 0;
 
         // At this point, both list should have the same keys, so we can safely iterate over them
         // Handle any updated entries
