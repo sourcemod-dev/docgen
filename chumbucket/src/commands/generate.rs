@@ -66,8 +66,6 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
             let latest_file_names = walker.latest_file_names()?;
             let git = Git::from_walker(from_time, &mut walker)?;
 
-            println!("{:?}", latest_file_names);
-
             let it_ret = iterate_chronicles(git, manifest, bundle, latest_file_names).await?;
 
             // If there are differences, write to file
