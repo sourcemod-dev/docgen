@@ -1,10 +1,10 @@
-use std::ops::ShlAssign;
 use std::collections::HashMap;
+use std::ops::ShlAssign;
 
 use serde::{Deserialize, Serialize};
 
 use crate::metadata::Metadata;
-use crate::symbol::{Declaration, Function, Property, Metable};
+use crate::symbol::{Declaration, Function, Metable, Property};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]

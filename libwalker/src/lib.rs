@@ -5,7 +5,7 @@ use git2::{Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort};
 
 mod error;
 
-use error::Result;
+use error::{Result, WalkerError};
 
 pub struct Walker {
     repo: Repository,
@@ -123,6 +123,27 @@ impl Walker {
             spec_diffs,
             walker: self,
         })
+    }
+
+    pub fn latest_file_names(&mut self) -> Result<Vec<String>> {
+        let mut file_names = Vec::new();
+
+        let tree = self.repo.find_reference("HEAD")?.peel_to_tree()?;
+
+        let pathspec_entries = self.pathspec.match_tree(&tree, PathspecFlags::DEFAULT)?;
+
+        for entry in pathspec_entries.entries() {
+            let lossy_fmt = String::from_utf8_lossy(entry).into_owned();
+            let file_name = Path::new(&lossy_fmt)
+                .file_stem()
+                .ok_or(WalkerError::InvalidPath)?
+                .to_string_lossy()
+                .into_owned();
+
+            file_names.push(file_name);
+        }
+
+        Ok(file_names)
     }
 }
 

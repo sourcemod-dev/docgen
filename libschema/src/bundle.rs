@@ -27,7 +27,7 @@ pub struct Bundle {
     pub version: Option<Versioning>,
 }
 
-#[derive(Deserialize, Serialize, Default, Clone)]
+#[derive(Deserialize, Serialize, Default, Clone, Debug)]
 pub struct Strand {
     pub functions: HashMap<String, Function>,
 

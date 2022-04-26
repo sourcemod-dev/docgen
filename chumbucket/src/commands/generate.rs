@@ -63,9 +63,12 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
                     .ok_or(anyhow!("Missing source patterns"))?,
             )?;
 
+            let latest_file_names = walker.latest_file_names()?;
             let git = Git::from_walker(from_time, &mut walker)?;
 
-            let it_ret = iterate_chronicles(git, manifest, bundle).await?;
+            println!("{:?}", latest_file_names);
+
+            let it_ret = iterate_chronicles(git, manifest, bundle, latest_file_names).await?;
 
             // If there are differences, write to file
             // JSON object keys are not guaranteed to be in ordered each time
@@ -75,7 +78,7 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
             }
         }
         // TODO: Implement direct
-        SourceType::Direct => {},
+        SourceType::Direct => {}
     };
 
     Ok(())
@@ -85,6 +88,7 @@ async fn iterate_chronicles<I>(
     i: I,
     manifest: Manifest,
     bundle: Option<Bundle>,
+    file_names: Vec<String>,
 ) -> Result<(Bundle, u64)>
 where
     I: Iterator<Item = Chronicle>,
@@ -121,6 +125,9 @@ where
             bundle.version = version.clone();
         }
     }
+
+    // If strand is not in the file_names, remove it
+    bundle.strands.retain(|key, _| file_names.contains(&key));
 
     Ok((bundle, diffs))
 }
