@@ -82,8 +82,11 @@ export class Declaration implements IDeclaration, Searchable {
 }
 
 async function processAddition(metadata: Metadata, sr: SearchResult) {
+    if (RecentFinalized)
+        return;
+
     // Keep only the 20 highest created timestamp metadata
-    if (!RecentFinalized && RecentAdditions.length < 20) {
+    if (RecentAdditions.length < 20) {
         return RecentAdditions.push({
             sr,
             metadata,
