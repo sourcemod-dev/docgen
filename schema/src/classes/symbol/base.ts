@@ -9,6 +9,9 @@ let RecentAdditions: {
     metadata: Metadata,
 }[] = [];
 
+// If recent additions are computed already.
+let RecentFinalized = false;
+
 export class Declaration implements IDeclaration, Searchable {
     /**
      * @brief Declaration name
@@ -80,7 +83,7 @@ export class Declaration implements IDeclaration, Searchable {
 
 async function processAddition(metadata: Metadata, sr: SearchResult) {
     // Keep only the 20 highest created timestamp metadata
-    if (RecentAdditions.length < 20) {
+    if (!RecentFinalized && RecentAdditions.length < 20) {
         return RecentAdditions.push({
             sr,
             metadata,
@@ -107,6 +110,14 @@ export function getRecentAddtions(): {
     metadata: Metadata,
 }[] {
     return RecentAdditions;
+}
+
+export function setRecentFinalization(finalized: boolean) {
+    RecentFinalized = finalized;
+
+    if (!finalized) {
+        RecentAdditions = [];
+    }
 }
 
 export function calculateScore(a: string, b: string): number {
