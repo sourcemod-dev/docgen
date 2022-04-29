@@ -71,34 +71,34 @@ export class Declaration implements IDeclaration, Searchable {
         };
 
         if (this.metadata !== null && this.metadata.created !== null) {
-            this.processAddition(this.metadata, ret);
+            processAddition(this.metadata, ret);
         }
 
         return [ret];
     }
+}
 
-    protected async processAddition(metadata: Metadata, sr: SearchResult) {
-        // Keep only the 20 highest created timestamp metadata
-        if (RecentAdditions.length < 20) {
-            return RecentAdditions.push({
-                sr,
-                metadata,
-            });
-        }
-        
-        const sorted = RecentAdditions.sort((a, b) => {
-            return b.metadata.created!.count - a.metadata.created!.count;
+async function processAddition(metadata: Metadata, sr: SearchResult) {
+    // Keep only the 20 highest created timestamp metadata
+    if (RecentAdditions.length < 20) {
+        return RecentAdditions.push({
+            sr,
+            metadata,
         });
+    }
+    
+    const sorted = RecentAdditions.sort((a, b) => {
+        return b.metadata.created!.count - a.metadata.created!.count;
+    });
 
-        // If the oldest timestamp is older than the new one, replace it
-        if (sorted[sorted.length - 1].metadata.created!.count < metadata.created!.count) {
-            sorted [sorted.length - 1] = {
-                sr,
-                metadata,
-            };
+    // If the oldest timestamp is older than the new one, replace it
+    if (sorted[sorted.length - 1].metadata.created!.count < metadata.created!.count) {
+        sorted [sorted.length - 1] = {
+            sr,
+            metadata,
+        };
 
-            RecentAdditions = sorted;
-        }
+        RecentAdditions = sorted;
     }
 }
 
