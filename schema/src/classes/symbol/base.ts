@@ -1,5 +1,14 @@
 import { IDeclaration, Metadata, Comment, Searchable, SearchResult, SearchOptions, Identifier, Part } from '../../interfaces';
 
+/**
+ * When declaration is constructed,
+ * we can intercept some data and store top 50 most recent additions.
+ */
+let RecentAdditions: {
+    sr: SearchResult,
+    metadata: Metadata,
+}[] = [];
+
 export class Declaration implements IDeclaration, Searchable {
     /**
      * @brief Declaration name
@@ -53,14 +62,51 @@ export class Declaration implements IDeclaration, Searchable {
 
         const path = [...localOptions.parents, `${this.identifier}.${this.name}`];
 
-        return [{
+        const ret = {
             name: this.name,
             identifier: this.identifier,
             part: Part.Name,
             path,
             score: calculateScore(this.name, needle),
-        }]
+        };
+
+        if (this.metadata !== null && this.metadata.created !== null) {
+            this.processAddition(this.metadata, ret);
+        }
+
+        return [ret];
     }
+
+    protected async processAddition(metadata: Metadata, sr: SearchResult) {
+        // Keep only the 20 highest created timestamp metadata
+        if (RecentAdditions.length < 20) {
+            return RecentAdditions.push({
+                sr,
+                metadata,
+            });
+        }
+        
+        const sorted = RecentAdditions.sort((a, b) => {
+            return b.metadata.created!.count - a.metadata.created!.count;
+        });
+
+        // If the oldest timestamp is older than the new one, replace it
+        if (sorted[sorted.length - 1].metadata.created!.count < metadata.created!.count) {
+            sorted [sorted.length - 1] = {
+                sr,
+                metadata,
+            };
+
+            RecentAdditions = sorted;
+        }
+    }
+}
+
+export function getRecentAddtions(): {
+    sr: SearchResult,
+    metadata: Metadata,
+}[] {
+    return RecentAdditions;
 }
 
 export function calculateScore(a: string, b: string): number {

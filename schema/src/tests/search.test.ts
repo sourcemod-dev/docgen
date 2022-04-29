@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Bundle, IBundle, SearchResult } from '..';
+import { Bundle, IBundle, SearchResult, getRecentAddtions } from '..';
 
 test('test', async () => {
     const data: IBundle = (await axios.get('https://raw.githubusercontent.com/sourcemod-dev/manifest/bundles/core.bundle'))
@@ -23,4 +23,6 @@ test('test', async () => {
     const l = bundle.getSymbolByPath(ret[1].path);
 
     console.log(l);
+
+    console.log(getRecentAddtions());
 })
