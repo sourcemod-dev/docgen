@@ -79,12 +79,17 @@ export class Declaration implements IDeclaration, Searchable {
 }
 
 async function processAddition(metadata: Metadata, sr: SearchResult) {
+    const t = {
+        sr,
+        metadata,
+    };
+
     // Keep only the 20 highest created timestamp metadata
     if (RecentAdditions.length < 20) {
-        return RecentAdditions.push({
-            sr,
-            metadata,
-        });
+        if (RecentAdditions.includes(t))
+            return;
+
+        return RecentAdditions.push(t);
     }
     
     const sorted = RecentAdditions.sort((a, b) => {
