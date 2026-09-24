@@ -9,7 +9,7 @@ description = "SourcePawn include parser producing documentation strands"
 schema = { path = "../libschema" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-spdcp = { git = "https://github.com/rumblefrog/sp-dcp", rev = "584897c42a6e011d3c92e3e0db2f78f24de2f5f8", features = ["serde"] }
+spdcp = { version = "0.5", features = ["serde"] }
 thiserror = "1"
 tree-sitter = "0.26"
 tree-sitter-sourcepawn = "=0.8.0"
