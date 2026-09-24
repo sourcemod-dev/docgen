@@ -1,0 +1,944 @@
+{
+  "functions": {
+    "GetUserMessageName": {
+      "name": "GetUserMessageName",
+      "refLine": 121,
+      "docStart": 3309,
+      "docEnd": 3602,
+      "docs": {
+        "brief": "Retrieves the name of a message by ID.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name of a message by ID."
+          },
+          {
+            "tag": "param:msg_id",
+            "text": "Message index."
+          },
+          {
+            "tag": "param:msg",
+            "text": "Buffer to store the name of the message."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if message index is valid, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "UserMsg",
+          "name": "msg_id",
+          "decl": "UserMsg msg_id",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "msg",
+          "decl": "char[] msg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetUserMessageType": {
+      "name": "GetUserMessageType",
+      "refLine": 71,
+      "docStart": 2218,
+      "docEnd": 2358,
+      "docs": {
+        "brief": "Returns usermessage serialization type used for the current engine",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns usermessage serialization type used for the current engine"
+          },
+          {
+            "tag": "return",
+            "text": "The supported usermessage type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "UserMessageType",
+      "arguments": []
+    },
+    "HookUserMessage": {
+      "name": "HookUserMessage",
+      "refLine": 216,
+      "docStart": 7234,
+      "docEnd": 7693,
+      "docs": {
+        "brief": "Hooks a user message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks a user message."
+          },
+          {
+            "tag": "param:msg_id",
+            "text": "Message index."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function to use as a hook."
+          },
+          {
+            "tag": "param:intercept",
+            "text": "If intercept is true, message will be fully intercepted,\nallowing the user to block the message.  Otherwise,\nthe hook is normal and ignores the return value."
+          },
+          {
+            "tag": "param:post",
+            "text": "Notification function."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid message index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "UserMsg",
+          "name": "msg_id",
+          "decl": "UserMsg msg_id",
+          "default": null
+        },
+        {
+          "type": "MsgHook",
+          "name": "hook",
+          "decl": "MsgHook hook",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "intercept",
+          "decl": "bool intercept",
+          "default": "false"
+        },
+        {
+          "type": "MsgPostHook",
+          "name": "post",
+          "decl": "MsgPostHook post",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "StartMessage": {
+      "name": "StartMessage",
+      "refLine": 138,
+      "docStart": 3682,
+      "docEnd": 4374,
+      "docs": {
+        "brief": "Starts a usermessage (network message).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a usermessage (network message)."
+          },
+          {
+            "tag": "note",
+            "text": "Only one message can be active at a time."
+          },
+          {
+            "tag": "note",
+            "text": "It is illegal to send any message while a non-intercept hook is in progress."
+          },
+          {
+            "tag": "param:msgname",
+            "text": "Message name to start."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array containing player indexes to broadcast to."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of players in the array."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to set."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to a bf_write bit packing structure, or\nINVALID_HANDLE on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid message name, unable to start a message, invalid client,\nor client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "msgname",
+          "decl": "const char[] msgname",
+          "default": null
+        },
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "StartMessageEx": {
+      "name": "StartMessageEx",
+      "refLine": 155,
+      "docStart": 4479,
+      "docEnd": 5172,
+      "docs": {
+        "brief": "Starts a usermessage (network message).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a usermessage (network message)."
+          },
+          {
+            "tag": "note",
+            "text": "Only one message can be active at a time."
+          },
+          {
+            "tag": "note",
+            "text": "It is illegal to send any message while a non-intercept hook is in progress."
+          },
+          {
+            "tag": "param:msg",
+            "text": "Message index to start."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array containing player indexes to broadcast to."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of players in the array."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to set."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to a bf_write bit packing structure, or\nINVALID_HANDLE on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid message name, unable to start a message, invalid client,\nor client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "UserMsg",
+          "name": "msg",
+          "decl": "UserMsg msg",
+          "default": null
+        },
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "UserMessageToBfWrite": {
+      "name": "UserMessageToBfWrite",
+      "refLine": 84,
+      "docStart": 2568,
+      "docEnd": 2642,
+      "docs": {
+        "brief": "Make sure to only call this on writable buffers (eg from StartMessage).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Make sure to only call this on writable buffers (eg from StartMessage)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "BfWrite",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "msg",
+          "decl": "Handle msg",
+          "default": null
+        }
+      ]
+    },
+    "UserMessageToBfRead": {
+      "name": "UserMessageToBfRead",
+      "refLine": 95,
+      "docStart": 2801,
+      "docEnd": 2877,
+      "docs": {
+        "brief": "Make sure to only call this on readable buffers (eg from a message hook).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Make sure to only call this on readable buffers (eg from a message hook)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "BfRead",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "msg",
+          "decl": "Handle msg",
+          "default": null
+        }
+      ]
+    },
+    "UserMessageToProtobuf": {
+      "name": "UserMessageToProtobuf",
+      "refLine": 73,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Protobuf",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "msg",
+          "decl": "Handle msg",
+          "default": null
+        }
+      ]
+    },
+    "GetUserMessageId": {
+      "name": "GetUserMessageId",
+      "refLine": 111,
+      "docStart": 3034,
+      "docEnd": 3253,
+      "docs": {
+        "brief": "Returns the ID of a given message, or -1 on failure.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the ID of a given message, or -1 on failure."
+          },
+          {
+            "tag": "param:msg",
+            "text": "String containing message name (case sensitive)."
+          },
+          {
+            "tag": "return",
+            "text": "A message index, or INVALID_MESSAGE_ID on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "UserMsg",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "msg",
+          "decl": "const char[] msg",
+          "default": null
+        }
+      ]
+    },
+    "EndMessage": {
+      "name": "EndMessage",
+      "refLine": 160,
+      "docStart": 5270,
+      "docEnd": 5340,
+      "docs": {
+        "brief": "Ends a previously started user message (network message).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ends a previously started user message (network message)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "UnhookUserMessage": {
+      "name": "UnhookUserMessage",
+      "refLine": 226,
+      "docStart": 7814,
+      "docEnd": 8083,
+      "docs": {
+        "brief": "Removes one usermessage hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes one usermessage hook."
+          },
+          {
+            "tag": "param:msg_id",
+            "text": "Message index."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function used for the hook."
+          },
+          {
+            "tag": "param:intercept",
+            "text": "Specifies whether the hook was an intercept hook or not."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid message index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "UserMsg",
+          "name": "msg_id",
+          "decl": "UserMsg msg_id",
+          "default": null
+        },
+        {
+          "type": "MsgHook",
+          "name": "hook",
+          "decl": "MsgHook hook",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "intercept",
+          "decl": "bool intercept",
+          "default": "false"
+        }
+      ]
+    },
+    "StartMessageAll": {
+      "name": "StartMessageAll",
+      "refLine": 238,
+      "docStart": 8171,
+      "docEnd": 8532,
+      "docs": {
+        "brief": "Starts a usermessage (network message) that broadcasts to all clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a usermessage (network message) that broadcasts to all clients."
+          },
+          {
+            "tag": "note",
+            "text": "See StartMessage or StartMessageEx()."
+          },
+          {
+            "tag": "param:msgname",
+            "text": "Message name to start."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to set."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to a bf_write bit packing structure, or\nINVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "msgname",
+          "decl": "const char[] msgname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "StartMessageOne": {
+      "name": "StartMessageOne",
+      "refLine": 264,
+      "docStart": 8833,
+      "docEnd": 9230,
+      "docs": {
+        "brief": "Starts a simpler usermessage (network message) for one client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a simpler usermessage (network message) for one client."
+          },
+          {
+            "tag": "note",
+            "text": "See StartMessage or StartMessageEx()."
+          },
+          {
+            "tag": "param:msgname",
+            "text": "Message name to start."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to send to."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to set."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to a bf_write bit packing structure, or\nINVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "msgname",
+          "decl": "const char[] msgname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_eventsmsgs_included": {
+      "name": "_eventsmsgs_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "USERMSG_BLOCKHOOKS": {
+      "name": "USERMSG_BLOCKHOOKS",
+      "refLine": 60,
+      "docStart": 2114,
+      "docEnd": 2186,
+      "docs": {
+        "brief": "Prevents the message from triggering SourceMod and Metamod hooks",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prevents the message from triggering SourceMod and Metamod hooks"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<7)"
+    },
+    "USERMSG_RELIABLE": {
+      "name": "USERMSG_RELIABLE",
+      "refLine": 58,
+      "docStart": 1925,
+      "docEnd": 1975,
+      "docs": {
+        "brief": "Message will be set on the reliable stream",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Message will be set on the reliable stream"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "USERMSG_INITMSG": {
+      "name": "USERMSG_INITMSG",
+      "refLine": 59,
+      "docStart": 2019,
+      "docEnd": 2070,
+      "docs": {
+        "brief": "Message will be considered to be an initmsg",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Message will be considered to be an initmsg"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    }
+  },
+  "enums": {
+    "UserMsg": {
+      "name": "UserMsg",
+      "refLine": 41,
+      "docStart": 1645,
+      "docEnd": 1680,
+      "docs": {
+        "brief": "UserMsg helper values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "UserMsg helper values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "INVALID_MESSAGE_ID": {
+          "name": "INVALID_MESSAGE_ID",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    },
+    "UserMessageType": {
+      "name": "UserMessageType",
+      "refLine": 49,
+      "docStart": 1731,
+      "docEnd": 1781,
+      "docs": {
+        "brief": "UserMsg message serialization formats",
+        "tags": [
+          {
+            "tag": "",
+            "text": "UserMsg message serialization formats"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "UM_Protobuf": {
+          "name": "UM_Protobuf",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "UM_BitBuf": {
+          "name": "UM_BitBuf",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "MsgHook": {
+      "name": "MsgHook",
+      "refLine": 165,
+      "docStart": 5371,
+      "docEnd": 5421,
+      "docs": {
+        "brief": "Hook function types for user messages.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hook function types for user messages."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function Action(UserMsg msg_id, Protobuf msg, const int[] players, int playersNum, bool reliable, bool init)": {
+          "refLine": 194,
+          "docStart": 6219,
+          "docEnd": 6876,
+          "docs": {
+            "brief": "Called when a protobuf based usermessage is hooked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a protobuf based usermessage is hooked"
+              },
+              {
+                "tag": "param:msg_id",
+                "text": "Message index."
+              },
+              {
+                "tag": "param:msg",
+                "text": "Handle to the input protobuf."
+              },
+              {
+                "tag": "param:players",
+                "text": "Array containing player indexes."
+              },
+              {
+                "tag": "param:playersNum",
+                "text": "Number of players in the array."
+              },
+              {
+                "tag": "param:reliable",
+                "text": "True if message is reliable, false otherwise."
+              },
+              {
+                "tag": "param:init",
+                "text": "True if message is an initmsg, false otherwise."
+              },
+              {
+                "tag": "return",
+                "text": "Ignored for normal hooks.  For intercept hooks, Plugin_Handled\nblocks the message from being sent, and Plugin_Continue\nresumes normal functionality."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(UserMsg msg_id, Protobuf msg, const int[] players, int playersNum, bool reliable, bool init)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "UserMsg",
+                "name": "msg_id",
+                "decl": "UserMsg msg_id",
+                "default": null
+              },
+              {
+                "type": "Protobuf",
+                "name": "msg",
+                "decl": "Protobuf msg",
+                "default": null
+              },
+              {
+                "type": "const int[]",
+                "name": "players",
+                "decl": "const int[] players",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "playersNum",
+                "decl": "int playersNum",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "reliable",
+                "decl": "bool reliable",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "init",
+                "decl": "bool init",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(UserMsg msg_id, BfRead msg, const int[] players, int playersNum, bool reliable, bool init)": {
+          "refLine": 180,
+          "docStart": 5444,
+          "docEnd": 6105,
+          "docs": {
+            "brief": "Called when a bit buffer based usermessage is hooked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a bit buffer based usermessage is hooked"
+              },
+              {
+                "tag": "param:msg_id",
+                "text": "Message index."
+              },
+              {
+                "tag": "param:msg",
+                "text": "Handle to the input bit buffer."
+              },
+              {
+                "tag": "param:players",
+                "text": "Array containing player indexes."
+              },
+              {
+                "tag": "param:playersNum",
+                "text": "Number of players in the array."
+              },
+              {
+                "tag": "param:reliable",
+                "text": "True if message is reliable, false otherwise."
+              },
+              {
+                "tag": "param:init",
+                "text": "True if message is an initmsg, false otherwise."
+              },
+              {
+                "tag": "return",
+                "text": "Ignored for normal hooks.  For intercept hooks, Plugin_Handled\nblocks the message from being sent, and Plugin_Continue\nresumes normal functionality."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(UserMsg msg_id, BfRead msg, const int[] players, int playersNum, bool reliable, bool init)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "UserMsg",
+                "name": "msg_id",
+                "decl": "UserMsg msg_id",
+                "default": null
+              },
+              {
+                "type": "BfRead",
+                "name": "msg",
+                "decl": "BfRead msg",
+                "default": null
+              },
+              {
+                "type": "const int[]",
+                "name": "players",
+                "decl": "const int[] players",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "playersNum",
+                "decl": "int playersNum",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "reliable",
+                "decl": "bool reliable",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "init",
+                "decl": "bool init",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {
+    "MsgPostHook": {
+      "name": "MsgPostHook",
+      "refLine": 203,
+      "docStart": 6997,
+      "docEnd": 7164,
+      "docs": {
+        "brief": "Called when a message hook has completed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a message hook has completed."
+          },
+          {
+            "tag": "param:msg_id",
+            "text": "Message index."
+          },
+          {
+            "tag": "param:sent",
+            "text": "True if message was sent, false if blocked."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(UserMsg msg_id, bool sent)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "UserMsg",
+            "name": "msg_id",
+            "decl": "UserMsg msg_id",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "sent",
+            "decl": "bool sent",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

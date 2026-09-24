@@ -1,0 +1,627 @@
+{
+  "functions": {
+    "GetVectorVectors": {
+      "name": "GetVectorVectors",
+      "refLine": 110,
+      "docStart": 3742,
+      "docEnd": 3951,
+      "docs": {
+        "brief": "Returns direction vectors from a vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns direction vectors from a vector."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          },
+          {
+            "tag": "param:right",
+            "text": "Right vector buffer or NULL_VECTOR."
+          },
+          {
+            "tag": "param:up",
+            "text": "Up vector buffer or NULL_VECTOR."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "right",
+          "decl": "float right[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "up",
+          "decl": "float up[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetVectorCrossProduct": {
+      "name": "GetVectorCrossProduct",
+      "refLine": 74,
+      "docStart": 2562,
+      "docEnd": 2801,
+      "docs": {
+        "brief": "Computes the cross product of two vectors.  Any input array can be the same\nas the output array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Computes the cross product of two vectors.  Any input array can be the same\nas the output array."
+          },
+          {
+            "tag": "param:vec1",
+            "text": "First vector."
+          },
+          {
+            "tag": "param:vec2",
+            "text": "Second vector."
+          },
+          {
+            "tag": "param:result",
+            "text": "Resultant vector."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec1",
+          "decl": "const float vec1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec2",
+          "decl": "const float vec2[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "result",
+          "decl": "float result[3]",
+          "default": null
+        }
+      ]
+    },
+    "ScaleVector": {
+      "name": "ScaleVector",
+      "refLine": 148,
+      "docStart": 4901,
+      "docEnd": 5005,
+      "docs": {
+        "brief": "Scales a vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Scales a vector."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          },
+          {
+            "tag": "param:scale",
+            "text": "Scale value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "scale",
+          "decl": "float scale",
+          "default": null
+        }
+      ]
+    },
+    "GetVectorDistance": {
+      "name": "GetVectorDistance",
+      "refLine": 55,
+      "docStart": 1924,
+      "docEnd": 2187,
+      "docs": {
+        "brief": "Calculates the distance between two vectors.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the distance between two vectors."
+          },
+          {
+            "tag": "param:vec1",
+            "text": "First vector."
+          },
+          {
+            "tag": "param:vec2",
+            "text": "Second vector."
+          },
+          {
+            "tag": "param:squared",
+            "text": "If true, the result will be squared (for optimization)."
+          },
+          {
+            "tag": "return",
+            "text": "Vector distance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec1",
+          "decl": "const float vec1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec2",
+          "decl": "const float vec2[3]",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "squared",
+          "decl": "bool squared",
+          "default": "false"
+        }
+      ]
+    },
+    "NormalizeVector": {
+      "name": "NormalizeVector",
+      "refLine": 83,
+      "docStart": 2900,
+      "docEnd": 3107,
+      "docs": {
+        "brief": "Normalizes a vector.  The input array can be the same as the output array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normalizes a vector.  The input array can be the same as the output array."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          },
+          {
+            "tag": "param:result",
+            "text": "Resultant vector."
+          },
+          {
+            "tag": "return",
+            "text": "Vector length."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "result",
+          "decl": "float result[3]",
+          "default": null
+        }
+      ]
+    },
+    "AddVectors": {
+      "name": "AddVectors",
+      "refLine": 120,
+      "docStart": 4035,
+      "docEnd": 4252,
+      "docs": {
+        "brief": "Adds two vectors.  It is safe to use either input buffer as an output\nbuffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds two vectors.  It is safe to use either input buffer as an output\nbuffer."
+          },
+          {
+            "tag": "param:vec1",
+            "text": "First vector."
+          },
+          {
+            "tag": "param:vec2",
+            "text": "Second vector."
+          },
+          {
+            "tag": "param:result",
+            "text": "Result buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec1",
+          "decl": "const float vec1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec2",
+          "decl": "const float vec2[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "result",
+          "decl": "float result[3]",
+          "default": null
+        }
+      ]
+    },
+    "MakeVectorFromPoints": {
+      "name": "MakeVectorFromPoints",
+      "refLine": 174,
+      "docStart": 5301,
+      "docEnd": 5535,
+      "docs": {
+        "brief": "Builds a vector from two points by subtracting the points.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Builds a vector from two points by subtracting the points."
+          },
+          {
+            "tag": "param:pt1",
+            "text": "First point (to be subtracted from the second)."
+          },
+          {
+            "tag": "param:pt2",
+            "text": "Second point."
+          },
+          {
+            "tag": "param:output",
+            "text": "Output vector buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pt1",
+          "decl": "const float pt1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "pt2",
+          "decl": "const float pt2[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "output",
+          "decl": "float output[3]",
+          "default": null
+        }
+      ]
+    },
+    "NegateVector": {
+      "name": "NegateVector",
+      "refLine": 160,
+      "docStart": 5123,
+      "docEnd": 5192,
+      "docs": {
+        "brief": "Negatives a vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Negatives a vector."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetVectorLength": {
+      "name": "GetVectorLength",
+      "refLine": 45,
+      "docStart": 1637,
+      "docEnd": 1849,
+      "docs": {
+        "brief": "Calculates a vector's length.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates a vector's length."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          },
+          {
+            "tag": "param:squared",
+            "text": "If true, the result will be squared (for optimization)."
+          },
+          {
+            "tag": "return",
+            "text": "Vector length (magnitude)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "squared",
+          "decl": "bool squared",
+          "default": "false"
+        }
+      ]
+    },
+    "GetVectorAngles": {
+      "name": "GetVectorAngles",
+      "refLine": 101,
+      "docStart": 3554,
+      "docEnd": 3672,
+      "docs": {
+        "brief": "Returns angles from a vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns angles from a vector."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Angle buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "angle",
+          "decl": "float angle[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetAngleVectors": {
+      "name": "GetAngleVectors",
+      "refLine": 93,
+      "docStart": 3179,
+      "docEnd": 3455,
+      "docs": {
+        "brief": "Returns vectors in the direction of an angle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns vectors in the direction of an angle."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Angle."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Forward vector buffer or NULL_VECTOR."
+          },
+          {
+            "tag": "param:right",
+            "text": "Right vector buffer or NULL_VECTOR."
+          },
+          {
+            "tag": "param:up",
+            "text": "Up vector buffer or NULL_VECTOR."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "angle",
+          "decl": "const float angle[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "fwd",
+          "decl": "float fwd[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "right",
+          "decl": "float right[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "up",
+          "decl": "float up[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetVectorDotProduct": {
+      "name": "GetVectorDotProduct",
+      "refLine": 64,
+      "docStart": 2286,
+      "docEnd": 2481,
+      "docs": {
+        "brief": "Calculates the dot product of two vectors.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the dot product of two vectors."
+          },
+          {
+            "tag": "param:vec1",
+            "text": "First vector."
+          },
+          {
+            "tag": "param:vec2",
+            "text": "Second vector."
+          },
+          {
+            "tag": "return",
+            "text": "Dot product of the two vectors."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec1",
+          "decl": "const float vec1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec2",
+          "decl": "const float vec2[3]",
+          "default": null
+        }
+      ]
+    },
+    "SubtractVectors": {
+      "name": "SubtractVectors",
+      "refLine": 135,
+      "docStart": 4443,
+      "docEnd": 4705,
+      "docs": {
+        "brief": "Subtracts a vector from another vector.  It is safe to use either input\nbuffer as an output buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Subtracts a vector from another vector.  It is safe to use either input\nbuffer as an output buffer."
+          },
+          {
+            "tag": "param:vec1",
+            "text": "First vector."
+          },
+          {
+            "tag": "param:vec2",
+            "text": "Second vector to subtract from first."
+          },
+          {
+            "tag": "param:result",
+            "text": "Result buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec1",
+          "decl": "const float vec1[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec2",
+          "decl": "const float vec2[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "result",
+          "decl": "float result[3]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_vector_included": {
+      "name": "_vector_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

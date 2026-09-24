@@ -1,0 +1,1279 @@
+{
+  "functions": {
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 342,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ePlayerJoinLeave": {
+      "name": "ePlayerJoinLeave",
+      "refLine": 641,
+      "docStart": 14519,
+      "docEnd": 14554,
+      "docs": {
+        "brief": "player connect/disconnect events",
+        "tags": [
+          {
+            "tag": "",
+            "text": "player connect/disconnect events"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 332,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "Native_SendMessage": {
+      "name": "Native_SendMessage",
+      "refLine": 757,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_SendEvent": {
+      "name": "Native_SendEvent",
+      "refLine": 775,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Timer_Reconnect": {
+      "name": "Timer_Reconnect",
+      "refLine": 490,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        }
+      ]
+    },
+    "IsIPLocal": {
+      "name": "IsIPLocal",
+      "refLine": 926,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ip",
+          "decl": "int ip",
+          "default": null
+        }
+      ]
+    },
+    "SupportsHexColor": {
+      "name": "SupportsHexColor",
+      "refLine": 982,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "EngineVersion",
+          "name": "e",
+          "decl": "EngineVersion e",
+          "default": null
+        }
+      ]
+    },
+    "OnSocketDisconnected": {
+      "name": "OnSocketDisconnected",
+      "refLine": 505,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "arg",
+          "decl": "any arg",
+          "default": null
+        }
+      ]
+    },
+    "OnSocketError": {
+      "name": "OnSocketError",
+      "refLine": 512,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "errorType",
+          "decl": "int errorType",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "errorNum",
+          "decl": "int errorNum",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "ary",
+          "decl": "any ary",
+          "default": null
+        }
+      ]
+    },
+    "StripCharsByBytes": {
+      "name": "StripCharsByBytes",
+      "refLine": 811,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "sBuffer",
+          "decl": "char[] sBuffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSize",
+          "decl": "int iSize",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iMaxBytes",
+          "decl": "int iMaxBytes",
+          "default": "3"
+        }
+      ]
+    },
+    "Server_GetIPString": {
+      "name": "Server_GetIPString",
+      "refLine": 895,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "public_",
+          "decl": "bool public_",
+          "default": "true"
+        }
+      ]
+    },
+    "LongToIP": {
+      "name": "LongToIP",
+      "refLine": 953,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ip",
+          "decl": "int ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Client_IsValid": {
+      "name": "Client_IsValid",
+      "refLine": 965,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "checkConnected",
+          "decl": "bool checkConnected",
+          "default": "true"
+        }
+      ]
+    },
+    "DispatchMessage": {
+      "name": "DispatchMessage",
+      "refLine": 727,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sMessage",
+          "decl": "const char[] sMessage",
+          "default": null
+        }
+      ]
+    },
+    "Server_GetPort": {
+      "name": "Server_GetPort",
+      "refLine": 909,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "int",
+      "arguments": []
+    },
+    "StartReconnectTimer": {
+      "name": "StartReconnectTimer",
+      "refLine": 497,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GenerateRandomChars": {
+      "name": "GenerateRandomChars",
+      "refLine": 803,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "buffersize",
+          "decl": "int buffersize",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": null
+        }
+      ]
+    },
+    "OnSocketReceive": {
+      "name": "OnSocketReceive",
+      "refLine": 526,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "receiveData",
+          "decl": "const char[] receiveData",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "dataSize",
+          "decl": "int dataSize",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "arg",
+          "decl": "any arg",
+          "default": null
+        }
+      ]
+    },
+    "OnMapEnd": {
+      "name": "OnMapEnd",
+      "refLine": 688,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Server_GetIP": {
+      "name": "Server_GetIP",
+      "refLine": 854,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "public_",
+          "decl": "bool public_",
+          "default": "true"
+        }
+      ]
+    },
+    "OnSocketConnected": {
+      "name": "OnSocketConnected",
+      "refLine": 519,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "arg",
+          "decl": "any arg",
+          "default": null
+        }
+      ]
+    },
+    "HandlePackets": {
+      "name": "HandlePackets",
+      "refLine": 531,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sBuffer",
+          "decl": "const char[] sBuffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSize",
+          "decl": "int iSize",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSayCommand_Post": {
+      "name": "OnClientSayCommand_Post",
+      "refLine": 700,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    },
+    "ConnectRelay": {
+      "name": "ConnectRelay",
+      "refLine": 482,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 413,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {
+    "AuthenticateMessageResponse": {
+      "name": "AuthenticateMessageResponse",
+      "refLine": 188,
+      "docStart": 3248,
+      "docEnd": 3404,
+      "docs": {
+        "brief": "This message is only received from the server",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This message is only received from the server"
+          },
+          {
+            "tag": "field",
+            "text": "Response - byte - The state of the authentication request (enum AuthenticateResponse)"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "BaseMessage",
+      "methods": {},
+      "properties": {
+        "Response": {
+          "name": "Response",
+          "refLine": 190,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "AuthenticateResponse",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "BaseMessage": {
+      "name": "BaseMessage",
+      "refLine": 87,
+      "docStart": 1360,
+      "docEnd": 1592,
+      "docs": {
+        "brief": "Base message structure",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Base message structure"
+          },
+          {
+            "tag": "note",
+            "text": "The type is declared on every derived message type"
+          },
+          {
+            "tag": "field",
+            "text": "type - byte - The message type (enum MessageType)"
+          },
+          {
+            "tag": "field",
+            "text": "EntityName - string - Entity name that's sending the message"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "ByteBuffer",
+      "methods": {
+        "ReadDiscardString": {
+          "name": "ReadDiscardString",
+          "refLine": 104,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": []
+        },
+        "GetEntityName": {
+          "name": "GetEntityName",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sEntityName",
+              "decl": "char[] sEntityName",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        },
+        "WriteEntityName": {
+          "name": "WriteEntityName",
+          "refLine": 135,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "BaseMessage": {
+          "name": "BaseMessage",
+          "refLine": 89,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "BaseMessage",
+          "arguments": []
+        },
+        "Dispatch": {
+          "name": "Dispatch",
+          "refLine": 139,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "DataCursor": {
+          "name": "DataCursor",
+          "refLine": 119,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "Type": {
+          "name": "Type",
+          "refLine": 94,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "MessageType",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "AuthenticateMessage": {
+      "name": "AuthenticateMessage",
+      "refLine": 161,
+      "docStart": 2756,
+      "docEnd": 2850,
+      "docs": {
+        "brief": "Should only sent by clients",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Should only sent by clients"
+          },
+          {
+            "tag": "field",
+            "text": "Token - string - The authentication token"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "BaseMessage",
+      "methods": {
+        "AuthenticateMessage": {
+          "name": "AuthenticateMessage",
+          "refLine": 170,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "AuthenticateMessage",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "sToken",
+              "decl": "const char[] sToken",
+              "default": null
+            }
+          ]
+        },
+        "GetToken": {
+          "name": "GetToken",
+          "refLine": 163,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sToken",
+              "decl": "char[] sToken",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "EventMessage": {
+      "name": "EventMessage",
+      "refLine": 290,
+      "docStart": 5282,
+      "docEnd": 5419,
+      "docs": {
+        "brief": "Bi-directional event data",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Bi-directional event data"
+          },
+          {
+            "tag": "field",
+            "text": "Event - string - The name of the event"
+          },
+          {
+            "tag": "field",
+            "text": "Data - string - The data of the event"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "BaseMessage",
+      "methods": {
+        "GetData": {
+          "name": "GetData",
+          "refLine": 299,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sData",
+              "decl": "char[] sData",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        },
+        "EventMessage": {
+          "name": "EventMessage",
+          "refLine": 309,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "EventMessage",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "sEvent",
+              "decl": "const char[] sEvent",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "sData",
+              "decl": "const char[] sData",
+              "default": null
+            }
+          ]
+        },
+        "GetEvent": {
+          "name": "GetEvent",
+          "refLine": 292,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sEvent",
+              "decl": "char[] sEvent",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "ChatMessage": {
+      "name": "ChatMessage",
+      "refLine": 211,
+      "docStart": 3711,
+      "docEnd": 4009,
+      "docs": {
+        "brief": "Bi-directional messaging structure",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Bi-directional messaging structure"
+          },
+          {
+            "tag": "field",
+            "text": "IDType - byte - Type of ID (enum IdentificationType)"
+          },
+          {
+            "tag": "field",
+            "text": "ID - string - The unique identification of the user (SteamID/Discord Snowflake/etc)"
+          },
+          {
+            "tag": "field",
+            "text": "Username - string - The name of the user"
+          },
+          {
+            "tag": "field",
+            "text": "Message - string - The message"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "BaseMessage",
+      "methods": {
+        "GetUserID": {
+          "name": "GetUserID",
+          "refLine": 225,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sID",
+              "decl": "char[] sID",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        },
+        "GetMessage": {
+          "name": "GetMessage",
+          "refLine": 248,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sMessage",
+              "decl": "char[] sMessage",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        },
+        "GetUsername": {
+          "name": "GetUsername",
+          "refLine": 235,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "sUsername",
+              "decl": "char[] sUsername",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iSize",
+              "decl": "int iSize",
+              "default": null
+            }
+          ]
+        },
+        "ChatMessage": {
+          "name": "ChatMessage",
+          "refLine": 264,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "ChatMessage",
+          "arguments": [
+            {
+              "type": "IdentificationType",
+              "name": "IDType",
+              "decl": "IdentificationType IDType",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "sUserID",
+              "decl": "const char[] sUserID",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "sUsername",
+              "decl": "const char[] sUsername",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "sMessage",
+              "decl": "const char[] sMessage",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "IDType": {
+          "name": "IDType",
+          "refLine": 213,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "IdentificationType",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "PLUGIN_AUTHOR": {
+      "name": "PLUGIN_AUTHOR",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"Fishy\""
+    },
+    "MAX_EVENT_NAME_LENGTH": {
+      "name": "MAX_EVENT_NAME_LENGTH",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "128"
+    },
+    "MAX_COMMAND_LENGTH": {
+      "name": "MAX_COMMAND_LENGTH",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "512"
+    }
+  },
+  "enums": {
+    "IdentificationType": {
+      "name": "IdentificationType",
+      "refLine": 71,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "IdentificationInvalid": {
+          "name": "IdentificationInvalid",
+          "refLine": 73,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "IdentificationDiscord": {
+          "name": "IdentificationDiscord",
+          "refLine": 75,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "IdentificationTypeCount": {
+          "name": "IdentificationTypeCount",
+          "refLine": 76,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "IdentificationSteam": {
+          "name": "IdentificationSteam",
+          "refLine": 74,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "MessageType": {
+      "name": "MessageType",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "MessageInvalid": {
+          "name": "MessageInvalid",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "MessageAuthenticateResponse": {
+          "name": "MessageAuthenticateResponse",
+          "refLine": 57,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "MessageChat": {
+          "name": "MessageChat",
+          "refLine": 58,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "MessageTypeCount": {
+          "name": "MessageTypeCount",
+          "refLine": 60,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "MessageAuthenticate": {
+          "name": "MessageAuthenticate",
+          "refLine": 56,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "MessageEvent": {
+          "name": "MessageEvent",
+          "refLine": 59,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "AuthenticateResponse": {
+      "name": "AuthenticateResponse",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "AuthenticateInvalid": {
+          "name": "AuthenticateInvalid",
+          "refLine": 65,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "AuthenticateDenied": {
+          "name": "AuthenticateDenied",
+          "refLine": 67,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "AuthenticateResponseCount": {
+          "name": "AuthenticateResponseCount",
+          "refLine": 68,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "AuthenticateSuccess": {
+          "name": "AuthenticateSuccess",
+          "refLine": 66,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

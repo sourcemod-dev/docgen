@@ -42,17 +42,25 @@ pub struct TypeSignature {
     pub arguments: Vec<Argument>,
 }
 
-pub fn parse_type_signature(s: &str) -> TypeSignature {
-    let sig = &s[9..];
+/// Parses a `function <return>(<args>)` signature as rendered in `type`.
+///
+/// Returns `None` for anything that isn't a function signature,
+/// such as `typedef Address = int64;`.
+pub fn parse_type_signature(s: &str) -> Option<TypeSignature> {
+    let sig = s.strip_prefix("function ")?;
 
-    let param_start = sig.find('(').unwrap();
+    let param_start = sig.find('(')?;
+    let param_end = sig.rfind(')')?;
 
-    let return_type = &sig[..param_start as usize];
+    if param_end < param_start {
+        return None;
+    }
 
-    let mut param_section = &sig[param_start as usize..];
-    param_section = &param_section[1..param_section.len() - 1];
+    let return_type = &sig[..param_start];
 
-    TypeSignature {
+    let param_section = &sig[param_start + 1..param_end];
+
+    Some(TypeSignature {
         return_type: return_type.to_string(),
         arguments: {
             let mut args = Vec::new();
@@ -86,5 +94,27 @@ pub fn parse_type_signature(s: &str) -> TypeSignature {
 
             args
         },
+    })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parses_function_signatures() {
+        let sig = parse_type_signature("function Action(Handle timer, const char[] name)").unwrap();
+        assert_eq!(sig.return_type, "Action");
+        assert_eq!(sig.arguments.len(), 2);
+        assert_eq!(sig.arguments[1].r#type, "const char[]");
+        assert_eq!(sig.arguments[1].name, "name");
+
+        assert!(parse_type_signature("function void()").unwrap().arguments.is_empty());
+    }
+
+    #[test]
+    fn ignores_non_function_types() {
+        assert_eq!(parse_type_signature("int64"), None);
+        assert_eq!(parse_type_signature(""), None);
     }
 }

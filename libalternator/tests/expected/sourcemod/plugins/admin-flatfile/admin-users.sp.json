@@ -1,0 +1,191 @@
+{
+  "functions": {
+    "ReadUsers_NewSection": {
+      "name": "ReadUsers_NewSection",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ReadUsers": {
+      "name": "ReadUsers",
+      "refLine": 229,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadUsers_KeyValue": {
+      "name": "ReadUsers_KeyValue",
+      "refLine": 89,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "InitializeUserParser": {
+      "name": "InitializeUserParser",
+      "refLine": 215,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadUsers_CurrentLine": {
+      "name": "ReadUsers_CurrentLine",
+      "refLine": 208,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "line",
+          "decl": "const char[] line",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "lineno",
+          "decl": "int lineno",
+          "default": null
+        }
+      ]
+    },
+    "ReadUsers_EndSection": {
+      "name": "ReadUsers_EndSection",
+      "refLine": 147,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {
+    "UserState": {
+      "name": "UserState",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "UserState_Admins": {
+          "name": "UserState_Admins",
+          "refLine": 37,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "UserState_None": {
+          "name": "UserState_None",
+          "refLine": 36,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "UserState_InAdmin": {
+          "name": "UserState_InAdmin",
+          "refLine": 38,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

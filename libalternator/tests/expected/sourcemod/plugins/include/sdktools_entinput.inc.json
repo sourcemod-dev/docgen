@@ -1,0 +1,99 @@
+{
+  "functions": {
+    "AcceptEntityInput": {
+      "name": "AcceptEntityInput",
+      "refLine": 51,
+      "docStart": 1659,
+      "docEnd": 2254,
+      "docs": {
+        "brief": "Invokes a named input method on an entity.\n\nAfter completion (successful or not), the current global variant is re-initialized.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invokes a named input method on an entity.\n\nAfter completion (successful or not), the current global variant is re-initialized."
+          },
+          {
+            "tag": "param:dest",
+            "text": "Destination entity index."
+          },
+          {
+            "tag": "param:input",
+            "text": "Input action."
+          },
+          {
+            "tag": "param:activator",
+            "text": "Entity index which initiated the sequence of actions (-1 for a NULL entity)."
+          },
+          {
+            "tag": "param:caller",
+            "text": "Entity index from which this event is sent (-1 for a NULL entity)."
+          },
+          {
+            "tag": "param:outputid",
+            "text": "Unknown."
+          },
+          {
+            "tag": "return",
+            "text": "True if successful otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "dest",
+          "decl": "int dest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "activator",
+          "decl": "int activator",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "caller",
+          "decl": "int caller",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "outputid",
+          "decl": "int outputid",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_entinput_included": {
+      "name": "_sdktools_entinput_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

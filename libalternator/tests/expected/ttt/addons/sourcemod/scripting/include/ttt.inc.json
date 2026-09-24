@@ -1,0 +1,3618 @@
+{
+  "functions": {
+    "TTT_OnModelUpdate": {
+      "name": "TTT_OnModelUpdate",
+      "refLine": 184,
+      "docStart": 6491,
+      "docEnd": 6697,
+      "docs": {
+        "brief": "Called on updated player models\n(if ttt_update_client_model is true)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called on updated player models\n(if ttt_update_client_model is true)"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index after updated model"
+          },
+          {
+            "tag": "param:model",
+            "text": "Path of current model"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "model",
+          "decl": "const char[] model",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsRoundActive": {
+      "name": "TTT_IsRoundActive",
+      "refLine": 254,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "TTT_DisableRounds": {
+      "name": "TTT_DisableRounds",
+      "refLine": 432,
+      "docStart": 14452,
+      "docEnd": 14787,
+      "docs": {
+        "brief": "Disable the next TTT round. It has no effect if it's already set.\nIf you want to close the disabled round:\n- set status to false\n- terminate roundd with TTT_TerminateRound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Disable the next TTT round. It has no effect if it's already set.\nIf you want to close the disabled round:\n- set status to false\n- terminate roundd with TTT_TerminateRound"
+          },
+          {
+            "tag": "param:status",
+            "text": "If true, next round will be disabled.\nIf false, next round will be normal."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "status",
+          "decl": "bool status",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetClientKarma": {
+      "name": "TTT_SetClientKarma",
+      "refLine": 284,
+      "docStart": 9639,
+      "docEnd": 9777,
+      "docs": {
+        "brief": "Sets the karma of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the karma of a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:karma",
+            "text": "Karma for the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "karma",
+          "decl": "int karma",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddRoundSlays": {
+      "name": "TTT_AddRoundSlays",
+      "refLine": 336,
+      "docStart": 11031,
+      "docEnd": 11336,
+      "docs": {
+        "brief": "NO DESCRIPTION",
+        "tags": [
+          {
+            "tag": "",
+            "text": "NO DESCRIPTION"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:rounds",
+            "text": "The amount of rounds to add."
+          },
+          {
+            "tag": "param:force",
+            "text": "Begin directly if client is alive."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the amount of rounds, otherwise the client index is invalid"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "rounds",
+          "decl": "int rounds",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRoleSelection": {
+      "name": "TTT_OnRoleSelection",
+      "refLine": 238,
+      "docStart": 8188,
+      "docEnd": 8574,
+      "docs": {
+        "brief": "This forward is called PRIOR to the role selection done from the core TTT.\nThe purpose of this forward is to be able to override the original Role selector\nand write your own for potential custom modes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This forward is called PRIOR to the role selection done from the core TTT.\nThe purpose of this forward is to be able to override the original Role selector\nand write your own for potential custom modes."
+          },
+          {
+            "tag": "param:traitors",
+            "text": "Amount of traitors"
+          },
+          {
+            "tag": "param:detectives",
+            "text": "Amount of detectives"
+          },
+          {
+            "tag": "param:innocents",
+            "text": "Amount of innocents"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int&",
+          "name": "traitors",
+          "decl": "int& traitors",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "detectives",
+          "decl": "int& detectives",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "innocents",
+          "decl": "int& innocents",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRulesMenu": {
+      "name": "TTT_OnRulesMenu",
+      "refLine": 166,
+      "docStart": 5886,
+      "docEnd": 6123,
+      "docs": {
+        "brief": "Called before we create rules menu.\nIf want to change it use \"return Plugin_Changed;\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before we create rules menu.\nIf want to change it use \"return Plugin_Changed;\""
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:show",
+            "text": "True - Menu will be opened, False - Menu will not open"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "show",
+          "decl": "bool& show",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ClientOpenRules": {
+      "name": "TTT_ClientOpenRules",
+      "refLine": 365,
+      "docStart": 12238,
+      "docEnd": 12332,
+      "docs": {
+        "brief": "Open rules menu for the client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Open rules menu for the client"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoundTimeLeft": {
+      "name": "TTT_GetRoundTimeLeft",
+      "refLine": 956,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": []
+    },
+    "TTT_IsPlayerAlive": {
+      "name": "TTT_IsPlayerAlive",
+      "refLine": 616,
+      "docStart": 18840,
+      "docEnd": 19016,
+      "docs": {
+        "brief": "Returns if the client is alive or dead.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if the client is alive or dead."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "True if the client is alive, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_HasClientMelee": {
+      "name": "TTT_HasClientMelee",
+      "refLine": 1052,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientKarma": {
+      "name": "TTT_GetClientKarma",
+      "refLine": 268,
+      "docStart": 9300,
+      "docEnd": 9386,
+      "docs": {
+        "brief": "Retrieve a client's karma.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a client's karma."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "publicKarma",
+          "decl": "bool publicKarma",
+          "default": "true"
+        }
+      ]
+    },
+    "TTT_RemoveMeleeWeapons": {
+      "name": "TTT_RemoveMeleeWeapons",
+      "refLine": 1094,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_TargetInSightOfClient": {
+      "name": "TTT_TargetInSightOfClient",
+      "refLine": 1158,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "fMaxDistance",
+          "decl": "float fMaxDistance",
+          "default": "0.000000"
+        },
+        {
+          "type": "float",
+          "name": "fThreshold",
+          "decl": "float fThreshold",
+          "default": "0.730000"
+        }
+      ]
+    },
+    "TTT_IsWarmUp": {
+      "name": "TTT_IsWarmUp",
+      "refLine": 857,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "TTT_ShowOverlayToAll": {
+      "name": "TTT_ShowOverlayToAll",
+      "refLine": 777,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "overlaypath",
+          "decl": "const char[] overlaypath",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RespawnPlayerRandom": {
+      "name": "TTT_RespawnPlayerRandom",
+      "refLine": 414,
+      "docStart": 14070,
+      "docEnd": 14195,
+      "docs": {
+        "brief": "Respawns a player randomly as per CS_RespawnPlayer()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Respawns a player randomly as per CS_RespawnPlayer()"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsLoaded": {
+      "name": "TTT_IsLoaded",
+      "refLine": 621,
+      "docStart": 19064,
+      "docEnd": 19119,
+      "docs": {
+        "brief": "Check if TTT plugin is loaded and running.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if TTT plugin is loaded and running."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "TTT_IsWorldDamage": {
+      "name": "TTT_IsWorldDamage",
+      "refLine": 818,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iAttacker",
+          "decl": "int iAttacker",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "damagetype",
+          "decl": "int damagetype",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddClientKarma": {
+      "name": "TTT_AddClientKarma",
+      "refLine": 292,
+      "docStart": 9848,
+      "docEnd": 10006,
+      "docs": {
+        "brief": "Add karma to a client (currentKarma+karma).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add karma to a client (currentKarma+karma)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:karma",
+            "text": "Karma that will be added."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "karma",
+          "decl": "int karma",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        }
+      ]
+    },
+    "TTT_HasClientWeapon": {
+      "name": "TTT_HasClientWeapon",
+      "refLine": 1073,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sWeapon",
+          "decl": "const char[] sWeapon",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnPlayerDeath": {
+      "name": "TTT_OnPlayerDeath",
+      "refLine": 202,
+      "docStart": 7036,
+      "docEnd": 7172,
+      "docs": {
+        "brief": "Called before RDM will be handled.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before RDM will be handled."
+          },
+          {
+            "tag": "param:victim",
+            "text": "Person who died."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetClientRole": {
+      "name": "TTT_SetClientRole",
+      "refLine": 276,
+      "docStart": 9459,
+      "docEnd": 9582,
+      "docs": {
+        "brief": "Set a client's role.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a client's role."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:role",
+            "text": "The new role."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        }
+      ]
+    },
+    "SetPbParams": {
+      "name": "SetPbParams",
+      "refLine": 1258,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Protobuf",
+          "name": "pb",
+          "decl": "Protobuf pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        }
+      ]
+    },
+    "TraceASDF": {
+      "name": "TraceASDF",
+      "refLine": 1231,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        }
+      ]
+    },
+    "TTT_LoadTranslations": {
+      "name": "TTT_LoadTranslations",
+      "refLine": 1113,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "TTT_OnClientGetRole": {
+      "name": "TTT_OnClientGetRole",
+      "refLine": 129,
+      "docStart": 4729,
+      "docEnd": 4864,
+      "docs": {
+        "brief": "Called when a client's role is assigned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client's role is assigned."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:role",
+            "text": "Role."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRoundStart_Pre": {
+      "name": "TTT_OnRoundStart_Pre",
+      "refLine": 92,
+      "docStart": 3350,
+      "docEnd": 3529,
+      "docs": {
+        "brief": "Called before players roles are picked/assigned.\nReturn Plugin_Handled or higher to prevent round start.\nYou could slay players here to force them to sit out.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before players roles are picked/assigned.\nReturn Plugin_Handled or higher to prevent round start.\nYou could slay players here to force them to sit out."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": []
+    },
+    "TTT_ShowProgressbar": {
+      "name": "TTT_ShowProgressbar",
+      "refLine": 894,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "percentageSync",
+          "decl": "Handle percentageSync",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "textSync",
+          "decl": "Handle textSync",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "startTime",
+          "decl": "int startTime",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "endTime",
+          "decl": "int endTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sMessage",
+          "decl": "const char[] sMessage",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRoundSlay": {
+      "name": "TTT_OnRoundSlay",
+      "refLine": 452,
+      "docStart": 15039,
+      "docEnd": 15193,
+      "docs": {
+        "brief": "Called after a player was round slayed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a player was round slayed."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:remaining",
+            "text": "Amount of rounds left"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "remaining",
+          "decl": "int remaining",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ClientValidRole": {
+      "name": "TTT_ClientValidRole",
+      "refLine": 1268,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnCheckCommandAccess": {
+      "name": "TTT_OnCheckCommandAccess",
+      "refLine": 227,
+      "docStart": 7820,
+      "docEnd": 8077,
+      "docs": {
+        "brief": "This forward will be called when a client hasn't access to command (TTT_CheckCommandAccess)\nIt's possible to give a client access to an not accessible command\nYou must use 'return Plugin_Changed;' if you want to change the bool 'access'",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This forward will be called when a client hasn't access to command (TTT_CheckCommandAccess)\nIt's possible to give a client access to an not accessible command\nYou must use 'return Plugin_Changed;' if you want to change the bool 'access'"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "flags",
+          "decl": "const char[] flags",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "access",
+          "decl": "bool access",
+          "default": null
+        }
+      ]
+    },
+    "TTT_StopRoundTimer": {
+      "name": "TTT_StopRoundTimer",
+      "refLine": 476,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_GetShortRoleNameByID": {
+      "name": "TTT_GetShortRoleNameByID",
+      "refLine": 569,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "shortName",
+          "decl": "char[] shortName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "24"
+        }
+      ]
+    },
+    "TTT_OnClientDeath": {
+      "name": "TTT_OnClientDeath",
+      "refLine": 149,
+      "docStart": 5351,
+      "docEnd": 5590,
+      "docs": {
+        "brief": "Called when a client dies, after Karma process",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client dies, after Karma process"
+          },
+          {
+            "tag": "param:victim",
+            "text": "Person who died."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker."
+          },
+          {
+            "tag": "param:badAction",
+            "text": "If kill was a bad action (example: Innocent killed Detective)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "badAction",
+          "decl": "bool badAction",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRoundStart": {
+      "name": "TTT_OnRoundStart",
+      "refLine": 102,
+      "docStart": 3573,
+      "docEnd": 3875,
+      "docs": {
+        "brief": "Called when the actual TTT round starts (after selection time).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the actual TTT round starts (after selection time)."
+          },
+          {
+            "tag": "param:roundid",
+            "text": "ID of the current round"
+          },
+          {
+            "tag": "param:innocents",
+            "text": "Count of innocent players."
+          },
+          {
+            "tag": "param:traitors",
+            "text": "Count of traitor players."
+          },
+          {
+            "tag": "param:detectives",
+            "text": "Count of detective players."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "roundid",
+          "decl": "int roundid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "innocents",
+          "decl": "int innocents",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "traitors",
+          "decl": "int traitors",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "detectives",
+          "decl": "int detectives",
+          "default": null
+        }
+      ]
+    },
+    "tHasFlags": {
+      "name": "tHasFlags",
+      "refLine": 669,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "AdminFlag[24]",
+          "name": "flags",
+          "decl": "AdminFlag flags[24]",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ClearTimer": {
+      "name": "TTT_ClearTimer",
+      "refLine": 848,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle&",
+          "name": "timer",
+          "decl": "Handle &timer",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "autoClose",
+          "decl": "bool autoClose",
+          "default": "false"
+        }
+      ]
+    },
+    "TTT_OnTakeDamage": {
+      "name": "TTT_OnTakeDamage",
+      "refLine": 140,
+      "docStart": 4925,
+      "docEnd": 5247,
+      "docs": {
+        "brief": "Called when a client take damage",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client take damage"
+          },
+          {
+            "tag": "param:victim",
+            "text": "Person who take damage."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker."
+          },
+          {
+            "tag": "param:damage",
+            "text": "How much damage"
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Weapon index"
+          },
+          {
+            "tag": "param:badAction",
+            "text": "If damage was a bad action (example: Innocent damaged Detective)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "damage",
+          "decl": "float damage",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "badAction",
+          "decl": "bool badAction",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientName": {
+      "name": "TTT_GetClientName",
+      "refLine": 487,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_HasCVarFlags": {
+      "name": "TTT_HasCVarFlags",
+      "refLine": 649,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "ConVar",
+          "name": "cFlags",
+          "decl": "ConVar cFlags",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SafeRemoveWeapon": {
+      "name": "TTT_SafeRemoveWeapon",
+      "refLine": 710,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsClientStuck": {
+      "name": "TTT_IsClientStuck",
+      "refLine": 980,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_HasClientKnife": {
+      "name": "TTT_HasClientKnife",
+      "refLine": 1010,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_CheckCommandAccess": {
+      "name": "TTT_CheckCommandAccess",
+      "refLine": 396,
+      "docStart": 12609,
+      "docEnd": 13792,
+      "docs": {
+        "brief": "Returns whether a client has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom\nflags using the override system.\n\nNote: If cvar is not set/empty, it will always return false",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a client has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom\nflags using the override system.\n\nNote: If cvar is not set/empty, it will always return false"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name.  If the command is not found, the default\nflags are used."
+          },
+          {
+            "tag": "param:cvar",
+            "text": "Flag convar to use as a default, if the command or override\nis not found."
+          },
+          {
+            "tag": "param:override_only",
+            "text": "If true, SourceMod will not attempt to find a matching\ncommand, and it will only use the default flags specified.\nOtherwise, SourceMod will ignore the default flags if\nthere is a matching admin command."
+          },
+          {
+            "tag": "return",
+            "text": "True if the client has access, false otherwise.\n\nTHIS TEXT WAS COPIED FROM HERE: https://github.com/alliedmodders/sourcemod/blob/6c7e29cbdbe1fe17982a4531d839be65116abca2/plugins/include/console.inc#L479"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "ConVar",
+          "name": "cvar",
+          "decl": "ConVar cvar",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "override_only",
+          "decl": "bool override_only",
+          "default": "false"
+        }
+      ]
+    },
+    "TTT_GetRoleNameByShortName": {
+      "name": "TTT_GetRoleNameByShortName",
+      "refLine": 509,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "shortName",
+          "decl": "const char[] shortName",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "24"
+        }
+      ]
+    },
+    "TTT_IsTargetInSightCommon": {
+      "name": "TTT_IsTargetInSightCommon",
+      "refLine": 1182,
+      "docStart": 34269,
+      "docEnd": 34376,
+      "docs": {
+        "brief": "Based on this snippet:\nhttps://forums.alliedmods.net/showpost.php?p=973411&postcount=4",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Based on this snippet:\nhttps://forums.alliedmods.net/showpost.php?p=973411&postcount=4"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "fTargetPosition",
+          "decl": "float fTargetPosition[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "fMaxDistance",
+          "decl": "float fMaxDistance",
+          "default": "0.000000"
+        },
+        {
+          "type": "float",
+          "name": "fThreshold",
+          "decl": "float fThreshold",
+          "default": "0.730000"
+        }
+      ]
+    },
+    "TTT_OnRoundTimerStart_Pre": {
+      "name": "TTT_OnRoundTimerStart_Pre",
+      "refLine": 246,
+      "docStart": 8665,
+      "docEnd": 8915,
+      "docs": {
+        "brief": "",
+        "tags": [
+          {
+            "tag": "",
+            "text": ""
+          },
+          {
+            "tag": "param:startRoundTimer",
+            "text": "Start round timer (true - by default), or not"
+          },
+          {
+            "tag": "param:time",
+            "text": "Time in seconds in how many seconds the round should end\nNote: This will not modify the round time!"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "bool&",
+          "name": "startRoundTimer",
+          "decl": "bool& startRoundTimer",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "time",
+          "decl": "float& time",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RespawnPlayer": {
+      "name": "TTT_RespawnPlayer",
+      "refLine": 405,
+      "docStart": 13908,
+      "docEnd": 14022,
+      "docs": {
+        "brief": "Respawns a player on their body location.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Respawns a player on their body location."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsClientValid": {
+      "name": "TTT_IsClientValid",
+      "refLine": 629,
+      "docStart": 19190,
+      "docEnd": 19236,
+      "docs": {
+        "brief": "Check if a client index is valid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if a client index is valid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "PrintCenterText2": {
+      "name": "PrintCenterText2",
+      "refLine": 1236,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "title",
+          "decl": "const char[] title",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddRoundSlaysByID": {
+      "name": "TTT_AddRoundSlaysByID",
+      "refLine": 347,
+      "docStart": 11407,
+      "docEnd": 11709,
+      "docs": {
+        "brief": "NO DESCRIPTION",
+        "tags": [
+          {
+            "tag": "",
+            "text": "NO DESCRIPTION"
+          },
+          {
+            "tag": "param:id",
+            "text": "The player id."
+          },
+          {
+            "tag": "param:rounds",
+            "text": "The amount of rounds to add."
+          },
+          {
+            "tag": "param:force",
+            "text": "Begin directly if client is alive."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the amount of rounds, otherwise the client index is invalid"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "id",
+          "decl": "int id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "rounds",
+          "decl": "int rounds",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ShowOverlayToClient": {
+      "name": "TTT_ShowOverlayToClient",
+      "refLine": 768,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "overlaypath",
+          "decl": "const char[] overlaypath",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveWeaponByClassname": {
+      "name": "TTT_RemoveWeaponByClassname",
+      "refLine": 689,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoundID": {
+      "name": "TTT_GetRoundID",
+      "refLine": 454,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "TTT_RemoveClientKarma": {
+      "name": "TTT_RemoveClientKarma",
+      "refLine": 300,
+      "docStart": 10077,
+      "docEnd": 10231,
+      "docs": {
+        "brief": "Remove karma from a client (currentKarma-karma).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove karma from a client (currentKarma-karma)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:karma",
+            "text": "Karma to remove."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "karma",
+          "decl": "int karma",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsValidRole": {
+      "name": "TTT_IsValidRole",
+      "refLine": 862,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsPrimaryWeapon": {
+      "name": "TTT_IsPrimaryWeapon",
+      "refLine": 867,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        }
+      ]
+    },
+    "TTT_LogString": {
+      "name": "TTT_LogString",
+      "refLine": 307,
+      "docStart": 10305,
+      "docEnd": 10418,
+      "docs": {
+        "brief": "Log a String to the ingame Log.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Log a String to the ingame Log."
+          },
+          {
+            "tag": "param:string",
+            "text": "The message that should get logged."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnDetectiveMenu": {
+      "name": "TTT_OnDetectiveMenu",
+      "refLine": 175,
+      "docStart": 6184,
+      "docEnd": 6426,
+      "docs": {
+        "brief": "Called before we create detectives menu.\nIf want to change it use \"return Plugin_Changed;\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before we create detectives menu.\nIf want to change it use \"return Plugin_Changed;\""
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:show",
+            "text": "True - Menu will be opened, False - Menu will not open"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "show",
+          "decl": "bool& show",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoundTimeElapsed": {
+      "name": "TTT_GetRoundTimeElapsed",
+      "refLine": 969,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": []
+    },
+    "TTT_GetRoleIDByName": {
+      "name": "TTT_GetRoleIDByName",
+      "refLine": 529,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoundTime": {
+      "name": "TTT_GetRoundTime",
+      "refLine": 372,
+      "docStart": 12382,
+      "docEnd": 12564,
+      "docs": {
+        "brief": "Returns the time of a active rounds (-1 for inactive round/failed to start)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the time of a active rounds (-1 for inactive round/failed to start)"
+          },
+          {
+            "tag": "param:type",
+            "text": "Which type is needed? (0 - Time, 1 - Minutes, 2 - Seconds)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetShortRoleNameByName": {
+      "name": "TTT_GetShortRoleNameByName",
+      "refLine": 589,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "shortName",
+          "decl": "char[] shortName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "24"
+        }
+      ]
+    },
+    "TTT_GetRoundTimestamp": {
+      "name": "TTT_GetRoundTimestamp",
+      "refLine": 421,
+      "docStart": 14250,
+      "docEnd": 14411,
+      "docs": {
+        "brief": "Returns the timestamp where \"round_prestart\" was executed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the timestamp where \"round_prestart\" was executed."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the timestamp where \"round_prestart\" was executed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "TTT_ObserversOfTarget": {
+      "name": "TTT_ObserversOfTarget",
+      "refLine": 1129,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int[]",
+          "name": "observers",
+          "decl": "int observers[]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "fMaxDistance",
+          "decl": "float fMaxDistance",
+          "default": "0.000000"
+        },
+        {
+          "type": "float",
+          "name": "fThreshold",
+          "decl": "float fThreshold",
+          "default": "0.730000"
+        }
+      ]
+    },
+    "PrintCenterText2All": {
+      "name": "PrintCenterText2All",
+      "refLine": 1247,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "title",
+          "decl": "const char[] title",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnKarmaUpdate": {
+      "name": "TTT_OnKarmaUpdate",
+      "refLine": 220,
+      "docStart": 7530,
+      "docEnd": 7742,
+      "docs": {
+        "brief": "Called once Karma has been updated on a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once Karma has been updated on a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of update. (Enum above)"
+          },
+          {
+            "tag": "param:karma",
+            "text": "Amount of Karma."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "KarmaUpdate",
+          "name": "type",
+          "decl": "KarmaUpdate type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "karma",
+          "decl": "int karma",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetRoundStatus": {
+      "name": "TTT_SetRoundStatus",
+      "refLine": 474,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "RoundStatus",
+      "arguments": [
+        {
+          "type": "RoundStatus",
+          "name": "status",
+          "decl": "RoundStatus status",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientOfPlayerID": {
+      "name": "TTT_GetClientOfPlayerID",
+      "refLine": 472,
+      "docStart": 15487,
+      "docEnd": 15649,
+      "docs": {
+        "brief": "Returns the client index for the specific player id",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client index for the specific player id"
+          },
+          {
+            "tag": "param:id",
+            "text": "The player id"
+          },
+          {
+            "tag": "return",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "id",
+          "decl": "int id",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRoundEnd": {
+      "name": "TTT_OnRoundEnd",
+      "refLine": 121,
+      "docStart": 4414,
+      "docEnd": 4669,
+      "docs": {
+        "brief": "Called when the actual TTT round ended.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the actual TTT round ended."
+          },
+          {
+            "tag": "param:winner",
+            "text": "The Winning Team."
+          },
+          {
+            "tag": "param:array",
+            "text": "Round logs as handle (if you want ArrayList instead of Handle use this: `ArrayList aLogs = view_as<ArrayList>(array);´)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "winner",
+          "decl": "int winner",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ForceDetective": {
+      "name": "TTT_ForceDetective",
+      "refLine": 325,
+      "docStart": 10751,
+      "docEnd": 10982,
+      "docs": {
+        "brief": "Force a player to be detective next round. (If there are enough Detectives)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Force a player to be detective next round. (If there are enough Detectives)"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index to change."
+          },
+          {
+            "tag": "return",
+            "text": "False if the client's role is already forced for the next round."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ForceTraitor": {
+      "name": "TTT_ForceTraitor",
+      "refLine": 316,
+      "docStart": 10480,
+      "docEnd": 10704,
+      "docs": {
+        "brief": "Force a player to be traitor next round. (If there are enough Traitors)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Force a player to be traitor next round. (If there are enough Traitors)"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index to change."
+          },
+          {
+            "tag": "return",
+            "text": "False if the client's role already forced for the next round."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsClientReady": {
+      "name": "TTT_IsClientReady",
+      "refLine": 444,
+      "docStart": 14938,
+      "docEnd": 14991,
+      "docs": {
+        "brief": "Check if the client is ready to play",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if the client is ready to play"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_HasFlags": {
+      "name": "TTT_HasFlags",
+      "refLine": 661,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "flags",
+          "decl": "const char[] flags",
+          "default": null
+        }
+      ]
+    },
+    "FilterOnlyPlayers": {
+      "name": "FilterOnlyPlayers",
+      "refLine": 994,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "contentsMask",
+          "decl": "int contentsMask",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoundStatus": {
+      "name": "TTT_GetRoundStatus",
+      "refLine": 438,
+      "docStart": 14836,
+      "docEnd": 14892,
+      "docs": {
+        "brief": "Returns the current status of the round",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the current status of the round"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "RoundStatus",
+      "arguments": []
+    },
+    "TTT_OnPlayerRespawn": {
+      "name": "TTT_OnPlayerRespawn",
+      "refLine": 191,
+      "docStart": 6766,
+      "docEnd": 6867,
+      "docs": {
+        "brief": "Called after TTT_RespawnPlayer execute",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after TTT_RespawnPlayer execute"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnPreKarmaUpdate": {
+      "name": "TTT_OnPreKarmaUpdate",
+      "refLine": 211,
+      "docStart": 7237,
+      "docEnd": 7446,
+      "docs": {
+        "brief": "Called before Karma has been updated on a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before Karma has been updated on a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of update. (Enum above)"
+          },
+          {
+            "tag": "param:karma",
+            "text": "Amount of Karma"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "KarmaUpdate",
+          "name": "type",
+          "decl": "KarmaUpdate type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "karma",
+          "decl": "int karma",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoleIDByShortName": {
+      "name": "TTT_GetRoleIDByShortName",
+      "refLine": 549,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "shortName",
+          "decl": "const char[] shortName",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientRole": {
+      "name": "TTT_GetClientRole",
+      "refLine": 261,
+      "docStart": 9168,
+      "docEnd": 9253,
+      "docs": {
+        "brief": "Retrieve a client's role.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a client's role."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "IsStringNumeric": {
+      "name": "IsStringNumeric",
+      "refLine": 1280,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRandomPlayer": {
+      "name": "TTT_GetRandomPlayer",
+      "refLine": 788,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "alive",
+          "decl": "bool alive",
+          "default": "true"
+        },
+        {
+          "type": "int",
+          "name": "targetRole",
+          "decl": "int targetRole",
+          "default": "-1"
+        }
+      ]
+    },
+    "TTT_OnRoundStartFailed": {
+      "name": "TTT_OnRoundStartFailed",
+      "refLine": 113,
+      "docStart": 3969,
+      "docEnd": 4323,
+      "docs": {
+        "brief": "Called when round start is failed or prevented.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when round start is failed or prevented."
+          },
+          {
+            "tag": "param:players",
+            "text": "The amount of players we have.\n-1 if this round was prevented by\nanother plugin."
+          },
+          {
+            "tag": "param:requiredPlayers",
+            "text": "The amount of players we need."
+          },
+          {
+            "tag": "param:detective",
+            "text": "The amount needed for detective."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "players",
+          "decl": "int players",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "requiredPlayers",
+          "decl": "int requiredPlayers",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "detective",
+          "decl": "int detective",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnClientDeathPre": {
+      "name": "TTT_OnClientDeathPre",
+      "refLine": 157,
+      "docStart": 5669,
+      "docEnd": 5818,
+      "docs": {
+        "brief": "Called when a client dies, before Karma process",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client dies, before Karma process"
+          },
+          {
+            "tag": "param:victim",
+            "text": "Person who died."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetRoleNameByID": {
+      "name": "TTT_GetRoleNameByID",
+      "refLine": 489,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "24"
+        }
+      ]
+    },
+    "TTT_HasClientTaser": {
+      "name": "TTT_HasClientTaser",
+      "refLine": 1031,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_TerminateRound": {
+      "name": "TTT_TerminateRound",
+      "refLine": 485,
+      "docStart": 15797,
+      "docEnd": 15970,
+      "docs": {
+        "brief": "Forces round to end",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Forces round to end"
+          },
+          {
+            "tag": "param:delay",
+            "text": "Time (in seconds) to delay before new round starts"
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for the round ending"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": null
+        },
+        {
+          "type": "CSRoundEndReason",
+          "name": "reason",
+          "decl": "CSRoundEndReason reason",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnButtonPress": {
+      "name": "TTT_OnButtonPress",
+      "refLine": 193,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "button",
+          "decl": "int button",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetPlayerID": {
+      "name": "TTT_GetPlayerID",
+      "refLine": 463,
+      "docStart": 15286,
+      "docEnd": 15442,
+      "docs": {
+        "brief": "Returns the player id for the specific player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the player id for the specific player"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "return",
+            "text": "The player id"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnButtonRelease": {
+      "name": "TTT_OnButtonRelease",
+      "refLine": 194,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "button",
+          "decl": "int button",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetRoundSlays": {
+      "name": "TTT_SetRoundSlays",
+      "refLine": 358,
+      "docStart": 11781,
+      "docEnd": 12159,
+      "docs": {
+        "brief": "NO DESCRIPTION",
+        "tags": [
+          {
+            "tag": "",
+            "text": "NO DESCRIPTION"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:rounds",
+            "text": "The amount of rounds."
+          },
+          {
+            "tag": "param:force",
+            "text": "Begin directly if client is alive (Default: false).\nThis works now in a inactive round, when force is true"
+          },
+          {
+            "tag": "return",
+            "text": "Returns the amount of rounds, otherwise the client index is invalid"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "rounds",
+          "decl": "int rounds",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "TTT_TEAM_DETECTIVE": {
+      "name": "TTT_TEAM_DETECTIVE",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "CS_SLOT_MELEE": {
+      "name": "CS_SLOT_MELEE",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "CS_SLOT_KNIFE"
+    },
+    "_ttt_included": {
+      "name": "_ttt_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TTT_TEAM_TRAITOR": {
+      "name": "TTT_TEAM_TRAITOR",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "MAX_ITEM_LENGTH": {
+      "name": "MAX_ITEM_LENGTH",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "TTT_TEAM_UNASSIGNED": {
+      "name": "TTT_TEAM_UNASSIGNED",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "TTT_TEAM_INNOCENT": {
+      "name": "TTT_TEAM_INNOCENT",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "ROLE_LENGTH": {
+      "name": "ROLE_LENGTH",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "24"
+    },
+    "LoopValidClients": {
+      "name": "LoopValidClients",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "for(int %1 = 1; %1 <= MaxClients; %1++) if(TTT_IsClientValid(%1))"
+    },
+    "TTT_LOG_SIZE": {
+      "name": "TTT_LOG_SIZE",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "512"
+    }
+  },
+  "enums": {
+    "SolidType_t": {
+      "name": "SolidType_t",
+      "refLine": 75,
+      "docStart": 2664,
+      "docEnd": 2900,
+      "docs": {
+        "brief": "Solid type basically describes how the bounding volume of the object is represented\nNOTE: SOLID_BBOX MUST BE 2, and SOLID_VPHYSICS MUST BE 6\nNOTE: These numerical values are used in the FGD by the prop code (see prop_dynamic)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Solid type basically describes how the bounding volume of the object is represented\nNOTE: SOLID_BBOX MUST BE 2, and SOLID_VPHYSICS MUST BE 6\nNOTE: These numerical values are used in the FGD by the prop code (see prop_dynamic)"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SOLID_BBOX": {
+          "name": "SOLID_BBOX",
+          "refLine": 79,
+          "docStart": 3022,
+          "docEnd": 3032,
+          "docs": {
+            "brief": "an AABB",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an AABB"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "SOLID_VPHYSICS": {
+          "name": "SOLID_VPHYSICS",
+          "refLine": 83,
+          "docStart": 3250,
+          "docEnd": 3325,
+          "docs": {
+            "brief": "solid vphysics object, get vcollide from the model and collide with that",
+            "tags": [
+              {
+                "tag": "",
+                "text": "solid vphysics object, get vcollide from the model and collide with that"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "6"
+        },
+        "SOLID_CUSTOM": {
+          "name": "SOLID_CUSTOM",
+          "refLine": 82,
+          "docStart": 3183,
+          "docEnd": 3223,
+          "docs": {
+            "brief": "Always call into the entity for tests",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Always call into the entity for tests"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "5"
+        },
+        "SOLID_NONE": {
+          "name": "SOLID_NONE",
+          "refLine": 77,
+          "docStart": 2945,
+          "docEnd": 2962,
+          "docs": {
+            "brief": "no solid model",
+            "tags": [
+              {
+                "tag": "",
+                "text": "no solid model"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "SOLID_OBB_YAW": {
+          "name": "SOLID_OBB_YAW",
+          "refLine": 81,
+          "docStart": 3112,
+          "docEnd": 3158,
+          "docs": {
+            "brief": "an OBB, constrained so that it can only yaw",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an OBB, constrained so that it can only yaw"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "4"
+        },
+        "SOLID_OBB": {
+          "name": "SOLID_OBB",
+          "refLine": 80,
+          "docStart": 3055,
+          "docEnd": 3086,
+          "docs": {
+            "brief": "an OBB (not implemented yet)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an OBB (not implemented yet)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "SOLID_BSP": {
+          "name": "SOLID_BSP",
+          "refLine": 78,
+          "docStart": 2985,
+          "docEnd": 2998,
+          "docs": {
+            "brief": "a BSP tree",
+            "tags": [
+              {
+                "tag": "",
+                "text": "a BSP tree"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "SOLID_LAST": {
+          "name": "SOLID_LAST",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "RoundStatus": {
+      "name": "RoundStatus",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Round_Warmup": {
+          "name": "Round_Warmup",
+          "refLine": 33,
+          "docStart": 684,
+          "docEnd": 689,
+          "docs": {
+            "brief": "0",
+            "tags": [
+              {
+                "tag": "",
+                "text": "0"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Round_Active": {
+          "name": "Round_Active",
+          "refLine": 35,
+          "docStart": 752,
+          "docEnd": 757,
+          "docs": {
+            "brief": "2",
+            "tags": [
+              {
+                "tag": "",
+                "text": "2"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Round_Selection": {
+          "name": "Round_Selection",
+          "refLine": 34,
+          "docStart": 718,
+          "docEnd": 723,
+          "docs": {
+            "brief": "1",
+            "tags": [
+              {
+                "tag": "",
+                "text": "1"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Round_Ending": {
+          "name": "Round_Ending",
+          "refLine": 36,
+          "docStart": 786,
+          "docEnd": 791,
+          "docs": {
+            "brief": "3",
+            "tags": [
+              {
+                "tag": "",
+                "text": "3"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Round_Ended": {
+          "name": "Round_Ended",
+          "refLine": 37,
+          "docStart": 820,
+          "docEnd": 825,
+          "docs": {
+            "brief": "4",
+            "tags": [
+              {
+                "tag": "",
+                "text": "4"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Round_Inactive": {
+          "name": "Round_Inactive",
+          "refLine": 32,
+          "docStart": 650,
+          "docEnd": 655,
+          "docs": {
+            "brief": "-1",
+            "tags": [
+              {
+                "tag": "",
+                "text": "-1"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    },
+    "KarmaUpdate": {
+      "name": "KarmaUpdate",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Karma_Set": {
+          "name": "Karma_Set",
+          "refLine": 26,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Karma_Add": {
+          "name": "Karma_Add",
+          "refLine": 25,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Karma_Subtract": {
+          "name": "Karma_Subtract",
+          "refLine": 27,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "Collision_Group_t": {
+      "name": "Collision_Group_t",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "COLLISION_GROUP_NPC": {
+          "name": "COLLISION_GROUP_NPC",
+          "refLine": 52,
+          "docStart": 1565,
+          "docEnd": 1585,
+          "docs": {
+            "brief": "Generic NPC group",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Generic NPC group"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_NPC_ACTOR": {
+          "name": "COLLISION_GROUP_NPC_ACTOR",
+          "refLine": 62,
+          "docStart": 2255,
+          "docEnd": 2300,
+          "docs": {
+            "brief": "Used so NPCs in scripts ignore the player.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Used so NPCs in scripts ignore the player."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_DEBRIS": {
+          "name": "COLLISION_GROUP_DEBRIS",
+          "refLine": 43,
+          "docStart": 921,
+          "docEnd": 972,
+          "docs": {
+            "brief": "Collides with nothing but world and static stuff",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Collides with nothing but world and static stuff"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_WEAPON": {
+          "name": "COLLISION_GROUP_WEAPON",
+          "refLine": 54,
+          "docStart": 1686,
+          "docEnd": 1734,
+          "docs": {
+            "brief": "for any weapons that need collision detection",
+            "tags": [
+              {
+                "tag": "",
+                "text": "for any weapons that need collision detection"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_PLAYER_MOVEMENT": {
+          "name": "COLLISION_GROUP_PLAYER_MOVEMENT",
+          "refLine": 50,
+          "docStart": 1392,
+          "docEnd": 1536,
+          "docs": {
+            "brief": "For HL2, same as Collision_Group_Player, for\nTF2, this filters out other players and CBaseObjects",
+            "tags": [
+              {
+                "tag": "",
+                "text": "For HL2, same as Collision_Group_Player, for\nTF2, this filters out other players and CBaseObjects"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_BREAKABLE_GLASS": {
+          "name": "COLLISION_GROUP_BREAKABLE_GLASS",
+          "refLine": 48,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_DISSOLVING": {
+          "name": "COLLISION_GROUP_DISSOLVING",
+          "refLine": 59,
+          "docStart": 2082,
+          "docEnd": 2129,
+          "docs": {
+            "brief": "Things that are dissolving are in this group",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Things that are dissolving are in this group"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_NONE": {
+          "name": "COLLISION_GROUP_NONE",
+          "refLine": 42,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "COLLISION_GROUP_PLAYER": {
+          "name": "COLLISION_GROUP_PLAYER",
+          "refLine": 47,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_VEHICLE": {
+          "name": "COLLISION_GROUP_VEHICLE",
+          "refLine": 49,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_INTERACTIVE_DEBRIS": {
+          "name": "COLLISION_GROUP_INTERACTIVE_DEBRIS",
+          "refLine": 45,
+          "docStart": 1088,
+          "docEnd": 1157,
+          "docs": {
+            "brief": "Collides with everything except other interactive debris or debris",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Collides with everything except other interactive debris or debris"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_IN_VEHICLE": {
+          "name": "COLLISION_GROUP_IN_VEHICLE",
+          "refLine": 53,
+          "docStart": 1620,
+          "docEnd": 1654,
+          "docs": {
+            "brief": "for any entity inside a vehicle",
+            "tags": [
+              {
+                "tag": "",
+                "text": "for any entity inside a vehicle"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_DEBRIS_TRIGGER": {
+          "name": "COLLISION_GROUP_DEBRIS_TRIGGER",
+          "refLine": 44,
+          "docStart": 1010,
+          "docEnd": 1046,
+          "docs": {
+            "brief": "Same as debris, but hits triggers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Same as debris, but hits triggers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_DOOR_BLOCKER": {
+          "name": "COLLISION_GROUP_DOOR_BLOCKER",
+          "refLine": 57,
+          "docStart": 1906,
+          "docEnd": 1963,
+          "docs": {
+            "brief": "Blocks entities not permitted to get near moving doors",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Blocks entities not permitted to get near moving doors"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_PASSABLE_DOOR": {
+          "name": "COLLISION_GROUP_PASSABLE_DOOR",
+          "refLine": 58,
+          "docStart": 2000,
+          "docEnd": 2047,
+          "docs": {
+            "brief": "Doors that the player shouldn't collide with",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Doors that the player shouldn't collide with"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_PUSHAWAY": {
+          "name": "COLLISION_GROUP_PUSHAWAY",
+          "refLine": 60,
+          "docStart": 2162,
+          "docEnd": 2219,
+          "docs": {
+            "brief": "Nonsolid on client and server, pushaway in player code",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Nonsolid on client and server, pushaway in player code"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_NPC_SCRIPTED": {
+          "name": "COLLISION_GROUP_NPC_SCRIPTED",
+          "refLine": 63,
+          "docStart": 2336,
+          "docEnd": 2403,
+          "docs": {
+            "brief": "USed for NPCs in scripts that should not collide with each other",
+            "tags": [
+              {
+                "tag": "",
+                "text": "USed for NPCs in scripts that should not collide with each other"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "LAST_SHARED_COLLISION_GROUP": {
+          "name": "LAST_SHARED_COLLISION_GROUP",
+          "refLine": 65,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_INTERACTIVE": {
+          "name": "COLLISION_GROUP_INTERACTIVE",
+          "refLine": 46,
+          "docStart": 1192,
+          "docEnd": 1255,
+          "docs": {
+            "brief": "Collides with everything except interactive debris or debris",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Collides with everything except interactive debris or debris"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_PROJECTILE": {
+          "name": "COLLISION_GROUP_PROJECTILE",
+          "refLine": 56,
+          "docStart": 1855,
+          "docEnd": 1870,
+          "docs": {
+            "brief": "Projectiles!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Projectiles!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "COLLISION_GROUP_VEHICLE_CLIP": {
+          "name": "COLLISION_GROUP_VEHICLE_CLIP",
+          "refLine": 55,
+          "docStart": 1770,
+          "docEnd": 1820,
+          "docs": {
+            "brief": "vehicle clip brush to restrict vehicle movement",
+            "tags": [
+              {
+                "tag": "",
+                "text": "vehicle clip brush to restrict vehicle movement"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

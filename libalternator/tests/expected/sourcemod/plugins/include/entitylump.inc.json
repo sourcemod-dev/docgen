@@ -1,0 +1,601 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "EntityLumpEntry": {
+      "name": "EntityLumpEntry",
+      "refLine": 14,
+      "docStart": 82,
+      "docEnd": 416,
+      "docs": {
+        "brief": "An ordered list of key / value pairs for a map entity.\nIf the entry in the EntityLump is removed, the handle will error on all operations.\n(The handle will remain valid on the scripting side, and will still need to be deleted.)\n\nWrite operations (update, insert, erase, append) are only allowed during OnMapInit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "An ordered list of key / value pairs for a map entity.\nIf the entry in the EntityLump is removed, the handle will error on all operations.\n(The handle will remain valid on the scripting side, and will still need to be deleted.)\n\nWrite operations (update, insert, erase, append) are only allowed during OnMapInit."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Insert": {
+          "name": "Insert",
+          "refLine": 46,
+          "docStart": 1377,
+          "docEnd": 1748,
+          "docs": {
+            "brief": "Inserts a new key / value pair at the given index, shifting the pair at that index and beyond up.\nIf EntityLumpEntry.Length is passed in, this is an append operation.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Inserts a new key / value pair at the given index, shifting the pair at that index and beyond up.\nIf EntityLumpEntry.Length is passed in, this is an append operation."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "param:key",
+                "text": "New key name."
+              },
+              {
+                "tag": "param:value",
+                "text": "New value."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Update": {
+          "name": "Update",
+          "refLine": 35,
+          "docStart": 922,
+          "docEnd": 1268,
+          "docs": {
+            "brief": "Updates the key / value pair at the given index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Updates the key / value pair at the given index."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "param:key",
+                "text": "New key name, or NULL_STRING to preserve the existing key name."
+              },
+              {
+                "tag": "param:value",
+                "text": "New value, or NULL_STRING to preserve the existing value."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": "NULL_STRING"
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": "NULL_STRING"
+            }
+          ]
+        },
+        "Append": {
+          "name": "Append",
+          "refLine": 63,
+          "docStart": 2090,
+          "docEnd": 2306,
+          "docs": {
+            "brief": "Inserts a new key / value pair at the end of the entry's list.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Inserts a new key / value pair at the end of the entry's list."
+              },
+              {
+                "tag": "param:key",
+                "text": "New key name."
+              },
+              {
+                "tag": "param:value",
+                "text": "New value."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 25,
+          "docStart": 455,
+          "docEnd": 810,
+          "docs": {
+            "brief": "Copies the key / value at the given index into buffers.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Copies the key / value at the given index into buffers."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "param:keybuf",
+                "text": "Key name buffer."
+              },
+              {
+                "tag": "param:keylen",
+                "text": "Maximum length of the key name buffer."
+              },
+              {
+                "tag": "param:valbuf",
+                "text": "Value buffer."
+              },
+              {
+                "tag": "param:vallen",
+                "text": "Maximum length of the value buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "keybuf",
+              "decl": "char[] keybuf",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "keylen",
+              "decl": "int keylen",
+              "default": "0"
+            },
+            {
+              "type": "char[]",
+              "name": "valbuf",
+              "decl": "char[] valbuf",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "vallen",
+              "decl": "int vallen",
+              "default": "0"
+            }
+          ]
+        },
+        "Erase": {
+          "name": "Erase",
+          "refLine": 54,
+          "docStart": 1829,
+          "docEnd": 2048,
+          "docs": {
+            "brief": "Removes the key / value pair at the given index, shifting all entries past it down.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes the key / value pair at the given index, shifting all entries past it down."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetNextKey": {
+          "name": "GetNextKey",
+          "refLine": 96,
+          "docStart": 2965,
+          "docEnd": 3888,
+          "docs": {
+            "brief": "Searches the entry list for an index matching a key starting from a position.\nThis also copies the value from that index into the given buffer.\n\nThis can be used to find the first / only value matching a key, or to iterate over all\nthe values that match said key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Searches the entry list for an index matching a key starting from a position.\nThis also copies the value from that index into the given buffer.\n\nThis can be used to find the first / only value matching a key, or to iterate over all\nthe values that match said key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key name to search."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Value buffer.  This will contain the result of the next match, or empty\nif no match was found."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum length of the value buffer."
+              },
+              {
+                "tag": "param:start",
+                "text": "An index after which to begin searching from.  Use -1 to start from the\nfirst entry."
+              },
+              {
+                "tag": "return",
+                "text": "Position after start with an entry matching the given key, or -1 if no\nmatch was found."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid start position; must be a value between -1 and one less than the\nlength of the entry."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "start",
+              "decl": "int start",
+              "default": "-1"
+            }
+          ]
+        },
+        "FindKey": {
+          "name": "FindKey",
+          "refLine": 76,
+          "docStart": 2376,
+          "docEnd": 2899,
+          "docs": {
+            "brief": "Searches the entry list for an index matching a key starting from a position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Searches the entry list for an index matching a key starting from a position."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key name to search."
+              },
+              {
+                "tag": "param:start",
+                "text": "A position after which to begin searching from.  Use -1 to start from the\nfirst entry."
+              },
+              {
+                "tag": "return",
+                "text": "Position after start with an entry matching the given key, or -1 if no\nmatch was found."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid start position; must be a value between -1 and one less than the\nlength of the entry."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "start",
+              "decl": "int start",
+              "default": "-1"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 109,
+          "docStart": 4154,
+          "docEnd": 4222,
+          "docs": {
+            "brief": "Retrieves the number of key / value pairs in the entry.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the number of key / value pairs in the entry."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "EntityLump": {
+      "name": "EntityLump",
+      "refLine": 119,
+      "docStart": 4276,
+      "docEnd": 4466,
+      "docs": {
+        "brief": "A group of natives for a singleton entity lump, representing all the entities defined in the map.\n\nWrite operations (insert, erase, append) are only allowed during OnMapInit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A group of natives for a singleton entity lump, representing all the entities defined in the map.\n\nWrite operations (insert, erase, append) are only allowed during OnMapInit."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "Append": {
+          "name": "Append",
+          "refLine": 151,
+          "docStart": 5414,
+          "docEnd": 5525,
+          "docs": {
+            "brief": "Creates an empty EntityLumpEntry, returning its index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates an empty EntityLumpEntry, returning its index."
+              },
+              {
+                "tag": "error",
+                "text": "Entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 127,
+          "docStart": 4491,
+          "docEnd": 4701,
+          "docs": {
+            "brief": "Returns the EntityLumpEntry at the given index.\nThis handle should be freed by the calling plugin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the EntityLumpEntry at the given index.\nThis handle should be freed by the calling plugin."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "EntityLumpEntry",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "Insert": {
+          "name": "Insert",
+          "refLine": 144,
+          "docStart": 5127,
+          "docEnd": 5364,
+          "docs": {
+            "brief": "Inserts an empty EntityLumpEntry at the given index, shifting the existing entry and ones past it up.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Inserts an empty EntityLumpEntry at the given index, shifting the existing entry and ones past it up."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "Erase": {
+          "name": "Erase",
+          "refLine": 136,
+          "docStart": 4759,
+          "docEnd": 5078,
+          "docs": {
+            "brief": "Erases an EntityLumpEntry at the given index, shifting all entries past it down.\nAny handles referencing the erased EntityLumpEntry will throw on any operations aside from delete.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Erases an EntityLumpEntry at the given index, shifting all entries past it down.\nAny handles referencing the erased EntityLumpEntry will throw on any operations aside from delete."
+              },
+              {
+                "tag": "param:index",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "error",
+                "text": "Index is out of bounds or entity lump is read-only."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "Length": {
+          "name": "Length",
+          "refLine": 156,
+          "docStart": 5565,
+          "docEnd": 5631,
+          "docs": {
+            "brief": "Returns the number of entities currently in the lump.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of entities currently in the lump."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_entitylump_included": {
+      "name": "_entitylump_included",
+      "refLine": 5,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

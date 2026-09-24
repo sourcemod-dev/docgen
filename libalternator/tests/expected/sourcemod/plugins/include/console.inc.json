@@ -1,0 +1,3281 @@
+{
+  "functions": {
+    "RegAdminCmd": {
+      "name": "RegAdminCmd",
+      "refLine": 421,
+      "docStart": 17863,
+      "docEnd": 18757,
+      "docs": {
+        "brief": "Creates a console command as an administrative command.  If the command does not exist,\nit is created.  When this command is invoked, the access rights of the player are\nautomatically checked before allowing it to continue.\n\nAdmin commands are case sensitive from both the client and server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a console command as an administrative command.  If the command does not exist,\nit is created.  When this command is invoked, the access rights of the player are\nautomatically checked before allowing it to continue.\n\nAdmin commands are case sensitive from both the client and server."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "String containing command to register."
+          },
+          {
+            "tag": "param:callback",
+            "text": "A function to use as a callback for when the command is invoked."
+          },
+          {
+            "tag": "param:adminflags",
+            "text": "Administrative flags (bitstring) to use for permissions."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description to use for help."
+          },
+          {
+            "tag": "param:group",
+            "text": "String containing the command group to use.  If empty,\nthe plugin's filename will be used instead."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional console flags."
+          },
+          {
+            "tag": "error",
+            "text": "Command name is the same as an existing convar."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "ConCmd",
+          "name": "callback",
+          "decl": "ConCmd callback",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "adminflags",
+          "decl": "int adminflags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "group",
+          "decl": "const char[] group",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "FormatActivitySource": {
+      "name": "FormatActivitySource",
+      "refLine": 356,
+      "docStart": 14728,
+      "docEnd": 15584,
+      "docs": {
+        "brief": "Given an originating client and a target client, returns the string\nthat describes the originating client according to the sm_show_activity cvar.\n\nFor example, \"ADMIN\", \"PLAYER\", or a player's name could be placed in this buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given an originating client and a target client, returns the string\nthat describes the originating client according to the sm_show_activity cvar.\n\nFor example, \"ADMIN\", \"PLAYER\", or a player's name could be placed in this buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Originating client; may be 0 for server console."
+          },
+          {
+            "tag": "param:target",
+            "text": "Targeted client."
+          },
+          {
+            "tag": "param:namebuf",
+            "text": "Name buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the name buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if activity should be shown.  False otherwise.  In either\ncase, the name buffer is filled.  The return value can be used\nto broadcast a \"safe\" name to all players regardless of the\nsm_show_activity filters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "namebuf",
+          "decl": "const char[] namebuf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSayCommand_Post": {
+      "name": "OnClientSayCommand_Post",
+      "refLine": 819,
+      "docStart": 33992,
+      "docEnd": 34177,
+      "docs": {
+        "brief": "Global post listener for the chat commands.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Global post listener for the chat commands."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name."
+          },
+          {
+            "tag": "param:sArgs",
+            "text": "Chat argument string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    },
+    "ShowActivity2": {
+      "name": "ShowActivity2",
+      "refLine": 310,
+      "docStart": 13009,
+      "docEnd": 13528,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.  All users receive a message\nin their chat text, except for the originating client, who receives\nthe message based on the current ReplySource.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.  All users receive a message\nin their chat text, except for the originating client, who receives\nthe message based on the current ReplySource."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tag",
+            "text": "Tag to prepend to the message."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdArg": {
+      "name": "GetCmdArg",
+      "refLine": 446,
+      "docStart": 19209,
+      "docEnd": 19622,
+      "docs": {
+        "brief": "Retrieves a command argument given its index, from the current console or\nserver command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a command argument given its index, from the current console or\nserver command."
+          },
+          {
+            "tag": "note",
+            "text": "Argument indexes start at 1; 0 retrieves the command name."
+          },
+          {
+            "tag": "param:argnum",
+            "text": "Argument number to retrieve."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to use for storing the string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Length of string written to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "argnum",
+          "decl": "int argnum",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetCommandFlags": {
+      "name": "GetCommandFlags",
+      "refLine": 664,
+      "docStart": 27152,
+      "docEnd": 27413,
+      "docs": {
+        "brief": "Returns the bitstring of flags of a command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the bitstring of flags of a command."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the command."
+          },
+          {
+            "tag": "return",
+            "text": "A bitstring containing the FCVAR_* flags that are enabled\nor INVALID_FCVAR_FLAGS if command not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "ClientCommand": {
+      "name": "ClientCommand",
+      "refLine": 155,
+      "docStart": 7904,
+      "docEnd": 8263,
+      "docs": {
+        "brief": "Executes a client command.  Note that this will not work on clients unless\nthey have cl_restrict_server_commands set to 0.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a client command.  Note that this will not work on clients unless\nthey have cl_restrict_server_commands set to 0."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format of the client command."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format parameters"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "SetCmdReplySource": {
+      "name": "SetCmdReplySource",
+      "refLine": 269,
+      "docStart": 11780,
+      "docEnd": 12059,
+      "docs": {
+        "brief": "Sets the current reply source of a command.\n\nOnly use this if you know what you are doing.  You should save the old value\nand restore it once you are done.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current reply source of a command.\n\nOnly use this if you know what you are doing.  You should save the old value\nand restore it once you are done."
+          },
+          {
+            "tag": "param:source",
+            "text": "New ReplySource value."
+          },
+          {
+            "tag": "return",
+            "text": "Old ReplySource value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ReplySource",
+      "arguments": [
+        {
+          "type": "ReplySource",
+          "name": "source",
+          "decl": "ReplySource source",
+          "default": null
+        }
+      ]
+    },
+    "PrintToServer": {
+      "name": "PrintToServer",
+      "refLine": 201,
+      "docStart": 9964,
+      "docEnd": 10125,
+      "docs": {
+        "brief": "Sends a message to the server console.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a message to the server console."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetPublicChatTriggers": {
+      "name": "GetPublicChatTriggers",
+      "refLine": 287,
+      "docStart": 12365,
+      "docEnd": 12618,
+      "docs": {
+        "brief": "Get the list of characters used for public chat triggers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the list of characters used for public chat triggers."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to use for storing the string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Length of string written to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdArgString": {
+      "name": "GetCmdArgString",
+      "refLine": 522,
+      "docStart": 21856,
+      "docEnd": 22157,
+      "docs": {
+        "brief": "Retrieves the entire command argument string in one lump from the current\nconsole or server command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the entire command argument string in one lump from the current\nconsole or server command."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to use for storing the string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Length of string written to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "ReplyToCommand": {
+      "name": "ReplyToCommand",
+      "refLine": 251,
+      "docStart": 11094,
+      "docEnd": 11553,
+      "docs": {
+        "brief": "Replies to a message in a command.\n\nA client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used.\nIf the command was from chat, PrintToChat() is used.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a message in a command.\n\nA client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used.\nIf the command was from chat, PrintToChat() is used."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index, or 0 for server."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected or invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FindNextConCommand": {
+      "name": "FindNextConCommand",
+      "refLine": 713,
+      "docStart": 29088,
+      "docEnd": 29960,
+      "docs": {
+        "brief": "Reads the next entry in a ConCommandBase iterator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads the next entry in a ConCommandBase iterator."
+          },
+          {
+            "tag": "param:search",
+            "text": "ConCmdIter Handle to search."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store entry name."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "param:isCommand",
+            "text": "Variable to store whether the entry is a command.\nIf it is not a command, it is a ConVar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Variable to store entry flags."
+          },
+          {
+            "tag": "param:description",
+            "text": "Buffer to store the description, empty if no description present."
+          },
+          {
+            "tag": "param:descrmax_size",
+            "text": "Maximum size of the description buffer."
+          },
+          {
+            "tag": "return",
+            "text": "On success, the outputs are filled, the iterator is\nadvanced to the next entry, and true is returned.\nIf no more entries exist, false is returned, and the\ncontents of outputs is undefined."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "search",
+          "decl": "Handle search",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "isCommand",
+          "decl": "bool& isCommand",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "flags",
+          "decl": "int& flags",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "description",
+          "decl": "char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "descrmax_size",
+          "decl": "int descrmax_size",
+          "default": "0"
+        }
+      ]
+    },
+    "OnClientSayCommand": {
+      "name": "OnClientSayCommand",
+      "refLine": 810,
+      "docStart": 33513,
+      "docEnd": 33898,
+      "docs": {
+        "brief": "Global listener for the chat commands.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Global listener for the chat commands."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name."
+          },
+          {
+            "tag": "param:sArgs",
+            "text": "Chat argument string."
+          },
+          {
+            "tag": "return",
+            "text": "An Action value. Returning Plugin_Handled bypasses the game function call.\nReturning Plugin_Stop bypasses the post hook as well as the game function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    },
+    "PrintToConsole": {
+      "name": "PrintToConsole",
+      "refLine": 211,
+      "docStart": 10187,
+      "docEnd": 10468,
+      "docs": {
+        "brief": "Sends a message to a client's console.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a message to a client's console."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdReplySource": {
+      "name": "GetCmdReplySource",
+      "refLine": 258,
+      "docStart": 11628,
+      "docEnd": 11735,
+      "docs": {
+        "brief": "Returns the current reply source of a command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the current reply source of a command."
+          },
+          {
+            "tag": "return",
+            "text": "ReplySource value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ReplySource",
+      "arguments": []
+    },
+    "AddServerTag": {
+      "name": "AddServerTag",
+      "refLine": 724,
+      "docStart": 30116,
+      "docEnd": 30446,
+      "docs": {
+        "brief": "Adds an informational string to the server's public \"tags\".\nThis string should be a short, unique identifier.\n\nNote: Tags are automatically removed when a plugin unloads.\nNote: Currently, this function does nothing because of bugs in the Valve master.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds an informational string to the server's public \"tags\".\nThis string should be a short, unique identifier.\n\nNote: Tags are automatically removed when a plugin unloads.\nNote: Currently, this function does nothing because of bugs in the Valve master."
+          },
+          {
+            "tag": "param:tag",
+            "text": "Tag string to append."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        }
+      ]
+    },
+    "AddCommandListener": {
+      "name": "AddCommandListener",
+      "refLine": 778,
+      "docStart": 31949,
+      "docEnd": 32727,
+      "docs": {
+        "brief": "Adds a callback that will fire when a command is sent to the server.\n\nRegistering commands is designed to create a new command as part of the UI,\nwhereas this is a lightweight hook on a command string, existing or not.\nUsing Reg*Cmd to intercept is in poor practice, as it physically creates a\nnew command and can slow down dispatch in general.\n\nTo see if this feature is available, use FeatureType_Capability and\nFEATURECAP_COMMANDLISTENER.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a callback that will fire when a command is sent to the server.\n\nRegistering commands is designed to create a new command as part of the UI,\nwhereas this is a lightweight hook on a command string, existing or not.\nUsing Reg*Cmd to intercept is in poor practice, as it physically creates a\nnew command and can slow down dispatch in general.\n\nTo see if this feature is available, use FeatureType_Capability and\nFEATURECAP_COMMANDLISTENER."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command, or if not specified, a global listener.\nThe command is case insensitive."
+          },
+          {
+            "tag": "return",
+            "text": "True if this feature is available on the current game,\nfalse otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "CommandListener",
+          "name": "callback",
+          "decl": "CommandListener callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": "\"\""
+        }
+      ]
+    },
+    "GetCmdArgIntEx": {
+      "name": "GetCmdArgIntEx",
+      "refLine": 473,
+      "docStart": 20169,
+      "docEnd": 20570,
+      "docs": {
+        "brief": "Retrieves a numeric command argument given its index, from the current\nconsole or server command. Returns false if the argument can not be\ncompletely parsed as an integer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a numeric command argument given its index, from the current\nconsole or server command. Returns false if the argument can not be\ncompletely parsed as an integer."
+          },
+          {
+            "tag": "param:argnum",
+            "text": "Argument number to retrieve."
+          },
+          {
+            "tag": "param:value",
+            "text": "Populated with the value of the command argument."
+          },
+          {
+            "tag": "return",
+            "text": "Whether the argument was entirely a numeric value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "argnum",
+          "decl": "int argnum",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "value",
+          "decl": "int& value",
+          "default": null
+        }
+      ]
+    },
+    "InsertServerCommand": {
+      "name": "InsertServerCommand",
+      "refLine": 139,
+      "docStart": 7513,
+      "docEnd": 7707,
+      "docs": {
+        "brief": "Inserts a server command at the beginning of the server command buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Inserts a server command at the beginning of the server command buffer."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ServerExecute": {
+      "name": "ServerExecute",
+      "refLine": 144,
+      "docStart": 7775,
+      "docEnd": 7870,
+      "docs": {
+        "brief": "Executes every command in the server's command buffer, rather than once per frame.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes every command in the server's command buffer, rather than once per frame."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CheckCommandAccess": {
+      "name": "CheckCommandAccess",
+      "refLine": 630,
+      "docStart": 25007,
+      "docEnd": 25938,
+      "docs": {
+        "brief": "Returns whether a client has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom\nflags using the override system.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a client has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom\nflags using the override system."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name.  If the command is not found, the default\nflags are used."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flag string to use as a default, if the command or override\nis not found."
+          },
+          {
+            "tag": "param:override_only",
+            "text": "If true, SourceMod will not attempt to find a matching\ncommand, and it will only use the default flags specified.\nOtherwise, SourceMod will ignore the default flags if\nthere is a matching admin command."
+          },
+          {
+            "tag": "return",
+            "text": "True if the client has access, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "override_only",
+          "decl": "bool override_only",
+          "default": "false"
+        }
+      ]
+    },
+    "RemoveServerTag": {
+      "name": "RemoveServerTag",
+      "refLine": 731,
+      "docStart": 30495,
+      "docEnd": 30612,
+      "docs": {
+        "brief": "Removes a tag previously added by the calling plugin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a tag previously added by the calling plugin."
+          },
+          {
+            "tag": "param:tag",
+            "text": "Tag string to remove."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        }
+      ]
+    },
+    "ServerCommandEx": {
+      "name": "ServerCommandEx",
+      "refLine": 131,
+      "docStart": 6833,
+      "docEnd": 7422,
+      "docs": {
+        "brief": "Executes a server command as if it were on the server console (or RCON)\nand stores the printed text into buffer.\n\nWarning: This calls ServerExecute internally and may have issues if\ncertain commands are in the buffer, only use when you really need\nthe response.\nAlso, on L4D2 this will not print the command output to the server console.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a server command as if it were on the server console (or RCON)\nand stores the printed text into buffer.\n\nWarning: This calls ServerExecute internally and may have issues if\ncertain commands are in the buffer, only use when you really need\nthe response.\nAlso, on L4D2 this will not print the command output to the server console."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to store command result into."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Length of buffer."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FakeClientCommandEx": {
+      "name": "FakeClientCommandEx",
+      "refLine": 183,
+      "docStart": 9054,
+      "docEnd": 9501,
+      "docs": {
+        "brief": "Executes a client command on the server without being networked.  The\nexecution of the client command is delayed by one frame to prevent any\nre-entrancy issues that might surface with FakeClientCommand().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a client command on the server without being networked.  The\nexecution of the client command is delayed by one frame to prevent any\nre-entrancy issues that might surface with FakeClientCommand()."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format of the client command."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format parameters"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ShowActivity": {
+      "name": "ShowActivity",
+      "refLine": 326,
+      "docStart": 13620,
+      "docEnd": 14189,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nShowActivity2() is slightly more useful.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nShowActivity2() is slightly more useful."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdArgFloatEx": {
+      "name": "GetCmdArgFloatEx",
+      "refLine": 506,
+      "docStart": 21247,
+      "docEnd": 21659,
+      "docs": {
+        "brief": "Retrieves a float command argument given its index, from the current\nconsole or server command. Returns false if the argument can not be\ncompletely parsed as a floating point.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a float command argument given its index, from the current\nconsole or server command. Returns false if the argument can not be\ncompletely parsed as a floating point."
+          },
+          {
+            "tag": "param:argnum",
+            "text": "Argument number to retrieve."
+          },
+          {
+            "tag": "param:value",
+            "text": "Populated with the value of the command argument."
+          },
+          {
+            "tag": "return",
+            "text": "Whether the argument was entirely a floating point value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "argnum",
+          "decl": "int argnum",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "value",
+          "decl": "float& value",
+          "default": null
+        }
+      ]
+    },
+    "ReadCommandIterator": {
+      "name": "ReadCommandIterator",
+      "refLine": 606,
+      "docStart": 24315,
+      "docEnd": 24834,
+      "docs": {
+        "brief": "Reads a command iterator, then advances to the next command if any.\nOnly SourceMod specific commands are returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a command iterator, then advances to the next command if any.\nOnly SourceMod specific commands are returned."
+          },
+          {
+            "tag": "param:iter",
+            "text": "Command iterator Handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name buffer."
+          },
+          {
+            "tag": "param:nameLen",
+            "text": "Name buffer size."
+          },
+          {
+            "tag": "param:eflags",
+            "text": "Effective default flags of a command."
+          },
+          {
+            "tag": "param:desc",
+            "text": "Command description buffer."
+          },
+          {
+            "tag": "param:descLen",
+            "text": "Command description buffer size."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there are no more commands."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "iter",
+          "decl": "Handle iter",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nameLen",
+          "decl": "int nameLen",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "eflags",
+          "decl": "int& eflags",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "desc",
+          "decl": "char[] desc",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "descLen",
+          "decl": "int descLen",
+          "default": "0"
+        }
+      ]
+    },
+    "ShowActivityEx": {
+      "name": "ShowActivityEx",
+      "refLine": 338,
+      "docStart": 14262,
+      "docEnd": 14635,
+      "docs": {
+        "brief": "Same as ShowActivity(), except the tag parameter is used instead of\n\"[SM] \" (note that you must supply any spacing).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as ShowActivity(), except the tag parameter is used instead of\n\"[SM] \" (note that you must supply any spacing)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tag",
+            "text": "Tag to display with."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "RegServerCmd": {
+      "name": "RegServerCmd",
+      "refLine": 378,
+      "docStart": 16019,
+      "docEnd": 16525,
+      "docs": {
+        "brief": "Creates a server-only console command, or hooks an already existing one.\n\nServer commands are case sensitive.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a server-only console command, or hooks an already existing one.\n\nServer commands are case sensitive."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "Name of the command to hook or create."
+          },
+          {
+            "tag": "param:callback",
+            "text": "A function to use as a callback for when the command is invoked."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description to use for command creation."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to use for command creation."
+          },
+          {
+            "tag": "error",
+            "text": "Command name is the same as an existing convar."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "SrvCmd",
+          "name": "callback",
+          "decl": "SrvCmd callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "GetCmdArgs": {
+      "name": "GetCmdArgs",
+      "refLine": 434,
+      "docStart": 18938,
+      "docEnd": 19179,
+      "docs": {
+        "brief": "Returns the number of arguments from the current console or server command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of arguments from the current console or server command."
+          },
+          {
+            "tag": "note",
+            "text": "Unlike the HL2 engine call, this does not include the command itself."
+          },
+          {
+            "tag": "return",
+            "text": "Number of arguments to the current command."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "ServerCommand": {
+      "name": "ServerCommand",
+      "refLine": 115,
+      "docStart": 6577,
+      "docEnd": 6771,
+      "docs": {
+        "brief": "Executes a server command as if it were on the server console (or RCON)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a server command as if it were on the server console (or RCON)"
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "IsChatTrigger": {
+      "name": "IsChatTrigger",
+      "refLine": 278,
+      "docStart": 12122,
+      "docEnd": 12331,
+      "docs": {
+        "brief": "Returns whether the current say hook is a chat trigger.\n\nThis function is only meaningful inside say or say_team hooks.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether the current say hook is a chat trigger.\n\nThis function is only meaningful inside say or say_team hooks."
+          },
+          {
+            "tag": "return",
+            "text": "True if a chat trigger, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "GetSilentChatTriggers": {
+      "name": "GetSilentChatTriggers",
+      "refLine": 296,
+      "docStart": 12687,
+      "docEnd": 12940,
+      "docs": {
+        "brief": "Get the list of characters used for silent chat triggers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the list of characters used for silent chat triggers."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to use for storing the string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Length of string written to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "RegConsoleCmd": {
+      "name": "RegConsoleCmd",
+      "refLine": 403,
+      "docStart": 17050,
+      "docEnd": 17754,
+      "docs": {
+        "brief": "Creates a console command, or hooks an already existing one.\n\nConsole commands are case sensitive.  However, if the command already exists in the game,\na client may enter the command in any case.  SourceMod corrects for this automatically,\nand you should only hook the \"real\" version of the command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a console command, or hooks an already existing one.\n\nConsole commands are case sensitive.  However, if the command already exists in the game,\na client may enter the command in any case.  SourceMod corrects for this automatically,\nand you should only hook the \"real\" version of the command."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "Name of the command to hook or create."
+          },
+          {
+            "tag": "param:callback",
+            "text": "A function to use as a callback for when the command is invoked."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description to use for command creation."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional flags to use for command creation."
+          },
+          {
+            "tag": "error",
+            "text": "Command name is the same as an existing convar."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "ConCmd",
+          "name": "callback",
+          "decl": "ConCmd callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "CheckAccess": {
+      "name": "CheckAccess",
+      "refLine": 652,
+      "docStart": 26080,
+      "docEnd": 27017,
+      "docs": {
+        "brief": "Returns whether an admin has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom flags\nusing the override system.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether an admin has access to a given command string.  The string\ncan be any override string, as overrides can be independent of\ncommands.  This feature essentially allows you to create custom flags\nusing the override system."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId of the admin."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name.  If the command is not found, the default\nflags are used."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flag string to use as a default, if the command or override\nis not found."
+          },
+          {
+            "tag": "param:override_only",
+            "text": "If true, SourceMod will not attempt to find a matching\ncommand, and it will only use the default flags specified.\nOtherwise, SourceMod will ignore the default flags if\nthere is a matching admin command."
+          },
+          {
+            "tag": "return",
+            "text": "True if the admin has access, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "override_only",
+          "decl": "bool override_only",
+          "default": "false"
+        }
+      ]
+    },
+    "SetCommandFlags": {
+      "name": "SetCommandFlags",
+      "refLine": 673,
+      "docStart": 27465,
+      "docEnd": 27705,
+      "docs": {
+        "brief": "Sets the bitstring of flags of a command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the bitstring of flags of a command."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the command."
+          },
+          {
+            "tag": "param:flags",
+            "text": "A bitstring containing the FCVAR_* flags to enable."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "GetCommandIterator": {
+      "name": "GetCommandIterator",
+      "refLine": 592,
+      "docStart": 24149,
+      "docEnd": 24274,
+      "docs": {
+        "brief": "Gets a command iterator.  Must be freed with CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a command iterator.  Must be freed with CloseHandle()."
+          },
+          {
+            "tag": "return",
+            "text": "A new command iterator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "PrintToConsoleAll": {
+      "name": "PrintToConsoleAll",
+      "refLine": 220,
+      "docStart": 10545,
+      "docEnd": 10710,
+      "docs": {
+        "brief": "Sends a message to every client's console.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a message to every client's console."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FakeClientCommandKeyValues": {
+      "name": "FakeClientCommandKeyValues",
+      "refLine": 193,
+      "docStart": 9578,
+      "docEnd": 9893,
+      "docs": {
+        "brief": "Executes a KeyValues client command on the server without being networked.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a KeyValues client command on the server without being networked."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues data to be sent."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected,\nor unsupported on current game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "KeyValues",
+          "name": "kv",
+          "decl": "KeyValues kv",
+          "default": null
+        }
+      ]
+    },
+    "FakeClientCommand": {
+      "name": "FakeClientCommand",
+      "refLine": 171,
+      "docStart": 8334,
+      "docEnd": 8979,
+      "docs": {
+        "brief": "Executes a client command on the server without being networked.\n\nFakeClientCommand() overwrites the command tokenization buffer.  This can\ncause undesired effects because future calls to GetCmdArg* will return\ndata from the FakeClientCommand(), not the parent command.  If you are in\na hook where this matters (for example, a \"say\" hook), you should use\nFakeClientCommandEx() instead.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a client command on the server without being networked.\n\nFakeClientCommand() overwrites the command tokenization buffer.  This can\ncause undesired effects because future calls to GetCmdArg* will return\ndata from the FakeClientCommand(), not the parent command.  If you are in\na hook where this matters (for example, a \"say\" hook), you should use\nFakeClientCommandEx() instead."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format of the client command."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format parameters"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdArgInt": {
+      "name": "GetCmdArgInt",
+      "refLine": 456,
+      "docStart": 19691,
+      "docEnd": 20030,
+      "docs": {
+        "brief": "Retrieves a numeric command argument given its index, from the current\nconsole or server command. Will return 0 if the argument can not be\nparsed as a number. Use GetCmdArgIntEx to handle that explicitly.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a numeric command argument given its index, from the current\nconsole or server command. Will return 0 if the argument can not be\nparsed as a number. Use GetCmdArgIntEx to handle that explicitly."
+          },
+          {
+            "tag": "param:argnum",
+            "text": "Argument number to retrieve."
+          },
+          {
+            "tag": "return",
+            "text": "Value of the command argument."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "argnum",
+          "decl": "int argnum",
+          "default": null
+        }
+      ]
+    },
+    "FindFirstConCommand": {
+      "name": "FindFirstConCommand",
+      "refLine": 695,
+      "docStart": 27769,
+      "docEnd": 28944,
+      "docs": {
+        "brief": "Starts a ConCommandBase search, traversing the list of ConVars and\nConCommands.  If a Handle is returned, the next entry must be read\nvia FindNextConCommand().  The order of the list is undefined.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a ConCommandBase search, traversing the list of ConVars and\nConCommands.  If a Handle is returned, the next entry must be read\nvia FindNextConCommand().  The order of the list is undefined."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store entry name."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "param:isCommand",
+            "text": "Variable to store whether the entry is a command.\nIf it is not a command, it is a ConVar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Variable to store entry flags."
+          },
+          {
+            "tag": "param:description",
+            "text": "Buffer to store the description, empty if no description present."
+          },
+          {
+            "tag": "param:descrmax_size",
+            "text": "Maximum size of the description buffer."
+          },
+          {
+            "tag": "return",
+            "text": "On success, a ConCmdIter Handle is returned, which\ncan be read via FindNextConCommand(), and must be\nclosed via CloseHandle().  Additionally, the output\nparameters will be filled with information of the\nfirst ConCommandBase entry.\nOn failure, INVALID_HANDLE is returned, and the\ncontents of outputs is undefined."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "isCommand",
+          "decl": "bool& isCommand",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "flags",
+          "decl": "int& flags",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "description",
+          "decl": "char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "descrmax_size",
+          "decl": "int descrmax_size",
+          "default": "0"
+        }
+      ]
+    },
+    "CommandExists": {
+      "name": "CommandExists",
+      "refLine": 796,
+      "docStart": 33226,
+      "docEnd": 33397,
+      "docs": {
+        "brief": "Returns true if the supplied command exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns true if the supplied command exists."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command to find."
+          },
+          {
+            "tag": "return",
+            "text": "True if command is found, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        }
+      ]
+    },
+    "GetCmdArgFloat": {
+      "name": "GetCmdArgFloat",
+      "refLine": 489,
+      "docStart": 20761,
+      "docEnd": 21102,
+      "docs": {
+        "brief": "Retrieves a float command argument given its index, from the current\nconsole or server command. Will return 0.0 if the argument can not be\nparsed as a number. Use GetCmdArgFloatEx to handle that explicitly.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a float command argument given its index, from the current\nconsole or server command. Will return 0.0 if the argument can not be\nparsed as a number. Use GetCmdArgFloatEx to handle that explicitly."
+          },
+          {
+            "tag": "param:argnum",
+            "text": "Argument number to retrieve."
+          },
+          {
+            "tag": "return",
+            "text": "Value of the command argument."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "argnum",
+          "decl": "int argnum",
+          "default": null
+        }
+      ]
+    },
+    "RemoveCommandListener": {
+      "name": "RemoveCommandListener",
+      "refLine": 788,
+      "docStart": 32815,
+      "docEnd": 33135,
+      "docs": {
+        "brief": "Removes a previously added command listener, in reverse order of being added.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a previously added command listener, in reverse order of being added."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command, or if not specified, a global listener.\nThe command is case insensitive."
+          },
+          {
+            "tag": "error",
+            "text": "Callback has no active listeners."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "CommandListener",
+          "name": "callback",
+          "decl": "CommandListener callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": "\"\""
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "CommandIterator": {
+      "name": "CommandIterator",
+      "refLine": 524,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Next": {
+          "name": "Next",
+          "refLine": 539,
+          "docStart": 22607,
+          "docEnd": 22773,
+          "docs": {
+            "brief": "Determines if there is a next command. If one is found, the\niterator is advanced to it.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Determines if there is a next command. If one is found, the\niterator is advanced to it."
+              },
+              {
+                "tag": "return",
+                "text": "true if found and iterator is advanced."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "GetDescription": {
+          "name": "GetDescription",
+          "refLine": 546,
+          "docStart": 22807,
+          "docEnd": 23003,
+          "docs": {
+            "brief": "Retrieves the command's description.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the command's description."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid iterator position."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "CommandIterator": {
+          "name": "CommandIterator",
+          "refLine": 533,
+          "docStart": 22259,
+          "docEnd": 22567,
+          "docs": {
+            "brief": "Creates a new CommandIterator. Must be freed with delete or\nCloseHandle().\n\nThe CommandIterator can be used to iterate commands created by\nSourceMod plugins and allows inspection of properties associated\nwith the command.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new CommandIterator. Must be freed with delete or\nCloseHandle().\n\nThe CommandIterator can be used to iterate commands created by\nSourceMod plugins and allows inspection of properties associated\nwith the command."
+              },
+              {
+                "tag": "return",
+                "text": "New CommandIterator Handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "CommandIterator",
+          "arguments": []
+        },
+        "GetName": {
+          "name": "GetName",
+          "refLine": 553,
+          "docStart": 23072,
+          "docEnd": 23261,
+          "docs": {
+            "brief": "Retrieves the command's name.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the command's name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid iterator position."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Flags": {
+          "name": "Flags",
+          "refLine": 568,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "Plugin": {
+          "name": "Plugin",
+          "refLine": 558,
+          "docStart": 23323,
+          "docEnd": 23436,
+          "docs": {
+            "brief": "Retrieves the plugin handle of the command's creator",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the plugin handle of the command's creator"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid iterator position."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "Handle",
+          "getter": true,
+          "setter": false
+        },
+        "AdminFlags": {
+          "name": "AdminFlags",
+          "refLine": 575,
+          "docStart": 23817,
+          "docEnd": 23925,
+          "docs": {
+            "brief": "Retrieves the command's effective admin flags.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the command's effective admin flags."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid iterator position."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "ConVarFlags": {
+          "name": "ConVarFlags",
+          "refLine": 582,
+          "docStart": 23986,
+          "docEnd": 24085,
+          "docs": {
+            "brief": "Retrieves the command's convar flags.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the command's convar flags."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid iterator position."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "FCVAR_NOT_CONNECTED": {
+      "name": "FCVAR_NOT_CONNECTED",
+      "refLine": 93,
+      "docStart": 5338,
+      "docEnd": 5406,
+      "docs": {
+        "brief": "Cvar cannot be changed by a client that is connected to a server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cvar cannot be changed by a client that is connected to a server."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<22)"
+    },
+    "FCVAR_ARCHIVE_XBOX": {
+      "name": "FCVAR_ARCHIVE_XBOX",
+      "refLine": 95,
+      "docStart": 5572,
+      "docEnd": 5614,
+      "docs": {
+        "brief": "Cvar written to config.cfg on the Xbox.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cvar written to config.cfg on the Xbox."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<24)"
+    },
+    "FCVAR_UNLOGGED": {
+      "name": "FCVAR_UNLOGGED",
+      "refLine": 82,
+      "docStart": 4110,
+      "docEnd": 4208,
+      "docs": {
+        "brief": "If this is a FCVAR_SERVER, don't log changes to the log file / console if we are creating a log",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If this is a FCVAR_SERVER, don't log changes to the log file / console if we are creating a log"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<11)"
+    },
+    "FCVAR_CLIENTDLL": {
+      "name": "FCVAR_CLIENTDLL",
+      "refLine": 72,
+      "docStart": 3035,
+      "docEnd": 3064,
+      "docs": {
+        "brief": "Defined by the client DLL.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defined by the client DLL."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "FCVAR_NOTIFY": {
+      "name": "FCVAR_NOTIFY",
+      "refLine": 79,
+      "docStart": 3800,
+      "docEnd": 3833,
+      "docs": {
+        "brief": "Notifies players when changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Notifies players when changed."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<8)"
+    },
+    "FCVAR_SPONLY": {
+      "name": "FCVAR_SPONLY",
+      "refLine": 77,
+      "docStart": 3585,
+      "docEnd": 3661,
+      "docs": {
+        "brief": "This cvar cannot be changed by clients connected to a multiplayer server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This cvar cannot be changed by clients connected to a multiplayer server."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<6)"
+    },
+    "FCVAR_SERVER_CAN_EXECUTE": {
+      "name": "FCVAR_SERVER_CAN_EXECUTE",
+      "refLine": 98,
+      "docStart": 5886,
+      "docEnd": 5949,
+      "docs": {
+        "brief": "the server is allowed to execute this command on clients via",
+        "tags": [
+          {
+            "tag": "",
+            "text": "the server is allowed to execute this command on clients via"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<28)"
+    },
+    "FCVAR_USERINFO": {
+      "name": "FCVAR_USERINFO",
+      "refLine": 80,
+      "docStart": 3882,
+      "docEnd": 3918,
+      "docs": {
+        "brief": "Changes the client's info string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes the client's info string."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<9)"
+    },
+    "FCVAR_REPLICATED": {
+      "name": "FCVAR_REPLICATED",
+      "refLine": 84,
+      "docStart": 4338,
+      "docEnd": 4376,
+      "docs": {
+        "brief": "Server setting enforced on clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Server setting enforced on clients."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<13)"
+    },
+    "FCVAR_RELOAD_TEXTURES": {
+      "name": "FCVAR_RELOAD_TEXTURES",
+      "refLine": 92,
+      "docStart": 5232,
+      "docEnd": 5289,
+      "docs": {
+        "brief": "If this cvar changes, if forces a texture reload (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If this cvar changes, if forces a texture reload (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<21)"
+    },
+    "FEATURECAP_COMMANDLISTENER": {
+      "name": "FEATURECAP_COMMANDLISTENER",
+      "refLine": 759,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"command listener\""
+    },
+    "FCVAR_GAMEDLL": {
+      "name": "FCVAR_GAMEDLL",
+      "refLine": 71,
+      "docStart": 2959,
+      "docEnd": 2986,
+      "docs": {
+        "brief": "Defined by the game DLL.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defined by the game DLL."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "FCVAR_MATERIAL_SYSTEM": {
+      "name": "FCVAR_MATERIAL_SYSTEM",
+      "refLine": 73,
+      "docStart": 3113,
+      "docEnd": 3158,
+      "docs": {
+        "brief": "Defined by the material system. (EP1-only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defined by the material system. (EP1-only)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "FCVAR_MATERIAL_SYSTEM_THREAD": {
+      "name": "FCVAR_MATERIAL_SYSTEM_THREAD",
+      "refLine": 94,
+      "docStart": 5455,
+      "docEnd": 5523,
+      "docs": {
+        "brief": "Indicates this cvar is read from the material system thread (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Indicates this cvar is read from the material system thread (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<23)"
+    },
+    "INVALID_FCVAR_FLAGS": {
+      "name": "INVALID_FCVAR_FLAGS",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(-1)"
+    },
+    "FCVAR_PLUGIN": {
+      "name": "FCVAR_PLUGIN",
+      "refLine": 63,
+      "docStart": 2210,
+      "docEnd": 2277,
+      "docs": {
+        "brief": "Actual value is same as FCVAR_SS_ADDED in Left 4 Dead and later.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Actual value is same as FCVAR_SS_ADDED in Left 4 Dead and later."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "FCVAR_SS": {
+      "name": "FCVAR_SS",
+      "refLine": 86,
+      "docStart": 4539,
+      "docEnd": 4633,
+      "docs": {
+        "brief": "causes varnameN where N  2 through max splitscreen slots for mod to be autogenerated (L4D+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "causes varnameN where N  2 through max splitscreen slots for mod to be autogenerated (L4D+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<15)"
+    },
+    "FCVAR_PRINTABLEONLY": {
+      "name": "FCVAR_PRINTABLEONLY",
+      "refLine": 81,
+      "docStart": 3967,
+      "docEnd": 4061,
+      "docs": {
+        "brief": "This cvar's string cannot contain unprintable characters (e.g., used for player name, etc.)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This cvar's string cannot contain unprintable characters (e.g., used for player name, etc.)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<10)"
+    },
+    "FCVAR_SS_ADDED": {
+      "name": "FCVAR_SS_ADDED",
+      "refLine": 89,
+      "docStart": 4870,
+      "docEnd": 4953,
+      "docs": {
+        "brief": "This is one of the \"added\" FCVAR_SS variables for the splitscreen players (L4D+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This is one of the \"added\" FCVAR_SS variables for the splitscreen players (L4D+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<18)"
+    },
+    "FCVAR_ARCHIVE_GAMECONSOLE": {
+      "name": "FCVAR_ARCHIVE_GAMECONSOLE",
+      "refLine": 96,
+      "docStart": 5663,
+      "docEnd": 5705,
+      "docs": {
+        "brief": "Cvar written to config.cfg on the Xbox.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cvar written to config.cfg on the Xbox."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<24)"
+    },
+    "FCVAR_DONTRECORD": {
+      "name": "FCVAR_DONTRECORD",
+      "refLine": 88,
+      "docStart": 4777,
+      "docEnd": 4821,
+      "docs": {
+        "brief": "Don't record these command in demo files.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't record these command in demo files."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<17)"
+    },
+    "FCVAR_LAUNCHER": {
+      "name": "FCVAR_LAUNCHER",
+      "refLine": 65,
+      "docStart": 2477,
+      "docEnd": 2573,
+      "docs": {
+        "brief": "Same value as FCVAR_DEVELOPMENTONLY, which is what most usages of this were intending to use.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same value as FCVAR_DEVELOPMENTONLY, which is what most usages of this were intending to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "FCVAR_NEVER_AS_STRING": {
+      "name": "FCVAR_NEVER_AS_STRING",
+      "refLine": 83,
+      "docStart": 4257,
+      "docEnd": 4289,
+      "docs": {
+        "brief": "Never try to print that cvar.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Never try to print that cvar."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<12)"
+    },
+    "FCVAR_HIDDEN": {
+      "name": "FCVAR_HIDDEN",
+      "refLine": 74,
+      "docStart": 3207,
+      "docEnd": 3313,
+      "docs": {
+        "brief": "Hidden. Doesn't appear in find or autocomplete. Like DEVELOPMENTONLY, but can't be compiled out.1 (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hidden. Doesn't appear in find or autocomplete. Like DEVELOPMENTONLY, but can't be compiled out.1 (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "FCVAR_PROTECTED": {
+      "name": "FCVAR_PROTECTED",
+      "refLine": 75,
+      "docStart": 3362,
+      "docEnd": 3439,
+      "docs": {
+        "brief": "It's a server cvar, but we don't send the data since it's a password, etc.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "It's a server cvar, but we don't send the data since it's a password, etc."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<5)"
+    },
+    "_console_included": {
+      "name": "_console_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "FCVAR_DEVELOPMENTONLY": {
+      "name": "FCVAR_DEVELOPMENTONLY",
+      "refLine": 70,
+      "docStart": 2804,
+      "docEnd": 2910,
+      "docs": {
+        "brief": "Hidden in released products. Flag is removed automatically if ALLOW_DEVELOPMENT_CVARS is defined. (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hidden in released products. Flag is removed automatically if ALLOW_DEVELOPMENT_CVARS is defined. (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "FCVAR_NONE": {
+      "name": "FCVAR_NONE",
+      "refLine": 68,
+      "docStart": 2626,
+      "docEnd": 2657,
+      "docs": {
+        "brief": "The default, no flags at all",
+        "tags": [
+          {
+            "tag": "",
+            "text": "The default, no flags at all"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "FCVAR_CLIENTCMD_CAN_EXECUTE": {
+      "name": "FCVAR_CLIENTCMD_CAN_EXECUTE",
+      "refLine": 102,
+      "docStart": 6352,
+      "docEnd": 6417,
+      "docs": {
+        "brief": "IVEngineClient::ClientCmd is allowed to execute this command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "IVEngineClient::ClientCmd is allowed to execute this command."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<30)"
+    },
+    "FCVAR_ARCHIVE": {
+      "name": "FCVAR_ARCHIVE",
+      "refLine": 78,
+      "docStart": 3710,
+      "docEnd": 3751,
+      "docs": {
+        "brief": "Set to cause it to be saved to vars.rc",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set to cause it to be saved to vars.rc"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<7)"
+    },
+    "FCVAR_DEMO": {
+      "name": "FCVAR_DEMO",
+      "refLine": 87,
+      "docStart": 4682,
+      "docEnd": 4728,
+      "docs": {
+        "brief": "Record this cvar when starting a demo file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Record this cvar when starting a demo file."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<16)"
+    },
+    "FCVAR_RELOAD_MATERIALS": {
+      "name": "FCVAR_RELOAD_MATERIALS",
+      "refLine": 91,
+      "docStart": 5125,
+      "docEnd": 5183,
+      "docs": {
+        "brief": "If this cvar changes, it forces a material reload (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If this cvar changes, it forces a material reload (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<20)"
+    },
+    "FCVAR_RELEASE": {
+      "name": "FCVAR_RELEASE",
+      "refLine": 90,
+      "docStart": 5002,
+      "docEnd": 5076,
+      "docs": {
+        "brief": "Cvars tagged with this are the only cvars available to customers (L4D+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cvars tagged with this are the only cvars available to customers (L4D+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<19)"
+    },
+    "FCVAR_CHEAT": {
+      "name": "FCVAR_CHEAT",
+      "refLine": 85,
+      "docStart": 4425,
+      "docEnd": 4490,
+      "docs": {
+        "brief": "Only useable in singleplayer / debug / multiplayer & sv_cheats",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Only useable in singleplayer / debug / multiplayer & sv_cheats"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<14)"
+    },
+    "FCVAR_SERVER_CANNOT_QUERY": {
+      "name": "FCVAR_SERVER_CANNOT_QUERY",
+      "refLine": 100,
+      "docStart": 6123,
+      "docEnd": 6204,
+      "docs": {
+        "brief": "If this is set, then the server is not allowed to query this cvar's value (via",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If this is set, then the server is not allowed to query this cvar's value (via"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<29)"
+    },
+    "FCVAR_UNREGISTERED": {
+      "name": "FCVAR_UNREGISTERED",
+      "refLine": 69,
+      "docStart": 2706,
+      "docEnd": 2755,
+      "docs": {
+        "brief": "If this is set, don't add to linked list, etc.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If this is set, don't add to linked list, etc."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "FCVAR_ACCESSIBLE_FROM_THREADS": {
+      "name": "FCVAR_ACCESSIBLE_FROM_THREADS",
+      "refLine": 97,
+      "docStart": 5754,
+      "docEnd": 5837,
+      "docs": {
+        "brief": "used as a debugging tool necessary to check material system thread convars (OB+)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "used as a debugging tool necessary to check material system thread convars (OB+)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<25)"
+    }
+  },
+  "enums": {
+    "QueryCookie": {
+      "name": "QueryCookie",
+      "refLine": 43,
+      "docStart": 1676,
+      "docEnd": 1726,
+      "docs": {
+        "brief": "Console variable query helper values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Console variable query helper values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "QUERYCOOKIE_FAILED": {
+          "name": "QUERYCOOKIE_FAILED",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "ReplySource": {
+      "name": "ReplySource",
+      "refLine": 51,
+      "docStart": 1780,
+      "docEnd": 1820,
+      "docs": {
+        "brief": "Reply sources for commands.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reply sources for commands."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SM_REPLY_TO_CHAT": {
+          "name": "SM_REPLY_TO_CHAT",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        },
+        "SM_REPLY_TO_CONSOLE": {
+          "name": "SM_REPLY_TO_CONSOLE",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "ConCmd": {
+      "name": "ConCmd",
+      "refLine": 388,
+      "docStart": 16633,
+      "docEnd": 16988,
+      "docs": {
+        "brief": "Called when a generic console command is invoked.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a generic console command is invoked."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client, or 0 from the server."
+          },
+          {
+            "tag": "param:args",
+            "text": "Number of arguments that were in the argument string."
+          },
+          {
+            "tag": "return",
+            "text": "An Action value.  Not handling the command\nmeans that Source will report it as \"not found.\""
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(int client, int args)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "client",
+            "decl": "int client",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "args",
+            "decl": "int args",
+            "default": null
+          }
+        ]
+      }
+    },
+    "CommandListener": {
+      "name": "CommandListener",
+      "refLine": 757,
+      "docStart": 30664,
+      "docEnd": 31798,
+      "docs": {
+        "brief": "Callback for command listeners. This is invoked whenever any command\nreaches the server, from the server console itself or a player.\n\nClients may be in the process of connecting when they are executing commands\nIsClientConnected(client) is not guaranteed to return true.  Other functions\nsuch as GetClientIP() may not work at this point either.\n\nReturning Plugin_Handled or Plugin_Stop will prevent the original,\nbaseline code from running.\n\n-- TEXT BELOW IS IMPLEMENTATION, AND NOT GUARANTEED --\nEven if returning Plugin_Handled or Plugin_Stop, some callbacks will still\ntrigger. These are:\n* C++ command dispatch hooks from Metamod:Source plugins\n* Reg*Cmd() hooks that did not create new commands.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for command listeners. This is invoked whenever any command\nreaches the server, from the server console itself or a player.\n\nClients may be in the process of connecting when they are executing commands\nIsClientConnected(client) is not guaranteed to return true.  Other functions\nsuch as GetClientIP() may not work at this point either.\n\nReturning Plugin_Handled or Plugin_Stop will prevent the original,\nbaseline code from running.\n\n-- TEXT BELOW IS IMPLEMENTATION, AND NOT GUARANTEED --\nEven if returning Plugin_Handled or Plugin_Stop, some callbacks will still\ntrigger. These are:\n* C++ command dispatch hooks from Metamod:Source plugins\n* Reg*Cmd() hooks that did not create new commands."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client, or 0 for server.\nClient may not be connected or in game."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command name, lower case. To get name as typed, use\nGetCmdArg() and specify argument 0."
+          },
+          {
+            "tag": "param:argc",
+            "text": "Argument count."
+          },
+          {
+            "tag": "return",
+            "text": "Action to take (see extended notes above)."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(int client, const char[] command, int argc)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "client",
+            "decl": "int client",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "command",
+            "decl": "const char[] command",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "argc",
+            "decl": "int argc",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SrvCmd": {
+      "name": "SrvCmd",
+      "refLine": 365,
+      "docStart": 15684,
+      "docEnd": 15969,
+      "docs": {
+        "brief": "Called when a server-only command is invoked.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a server-only command is invoked."
+          },
+          {
+            "tag": "param:args",
+            "text": "Number of arguments that were in the argument string."
+          },
+          {
+            "tag": "return",
+            "text": "An Action value.  Not handling the command\nmeans that Source will report it as \"not found.\""
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(int args)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "args",
+            "decl": "int args",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

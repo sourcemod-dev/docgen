@@ -1,0 +1,1049 @@
+{
+  "functions": {
+    "GetTextFilePath": {
+      "name": "GetTextFilePath",
+      "refLine": 1311,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "char[]",
+      "arguments": []
+    },
+    "OnClientDisconnect": {
+      "name": "OnClientDisconnect",
+      "refLine": 289,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Native_InitiateVote": {
+      "name": "Native_InitiateVote",
+      "refLine": 1193,
+      "docStart": 33395,
+      "docEnd": 33479,
+      "docs": {
+        "brief": "native void InitiateMapChooserVote(MapChange when, ArrayList inputarray=null);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native void InitiateMapChooserVote(MapChange when, ArrayList inputarray=null);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "OnMapEnd": {
+      "name": "OnMapEnd",
+      "refLine": 263,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CheckWinLimit": {
+      "name": "CheckWinLimit",
+      "refLine": 511,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "winner_score",
+          "decl": "int winner_score",
+          "default": null
+        }
+      ]
+    },
+    "Handler_MapVoteFinished": {
+      "name": "Handler_MapVoteFinished",
+      "refLine": 835,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_votes",
+          "decl": "int num_votes",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_clients",
+          "decl": "int num_clients",
+          "default": null
+        },
+        {
+          "type": "const int[][]",
+          "name": "client_info",
+          "decl": "const int[][] client_info",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_items",
+          "decl": "int num_items",
+          "default": null
+        },
+        {
+          "type": "const int[][]",
+          "name": "item_info",
+          "decl": "const int[][] item_info",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 208,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Event_TeamPlayWinPanel": {
+      "name": "Event_TeamPlayWinPanel",
+      "refLine": 426,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Native_NominateMap": {
+      "name": "Native_NominateMap",
+      "refLine": 1106,
+      "docStart": 31485,
+      "docEnd": 31566,
+      "docs": {
+        "brief": "native NominateResult NominateMap(const char[] map, bool force, int owner);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native NominateResult NominateMap(const char[] map, bool force, int owner);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "InternalRemoveNominationByMap": {
+      "name": "InternalRemoveNominationByMap",
+      "refLine": 1122,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "map",
+          "decl": "char[] map",
+          "default": null
+        }
+      ]
+    },
+    "WritePreviousMapsToText": {
+      "name": "WritePreviousMapsToText",
+      "refLine": 1293,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CheckMaxRounds": {
+      "name": "CheckMaxRounds",
+      "refLine": 526,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "roundcount",
+          "decl": "int roundcount",
+          "default": null
+        }
+      ]
+    },
+    "Event_RoundEnd": {
+      "name": "Event_RoundEnd",
+      "refLine": 468,
+      "docStart": 14617,
+      "docEnd": 14709,
+      "docs": {
+        "brief": "You ask, why don't you just use team_score event? And I answer... Because CSS doesn't.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "You ask, why don't you just use team_score event? And I answer... Because CSS doesn't."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Native_RemoveNominationByMap": {
+      "name": "Native_RemoveNominationByMap",
+      "refLine": 1147,
+      "docStart": 32382,
+      "docEnd": 32440,
+      "docs": {
+        "brief": "native bool RemoveNominationByMap(const char[] map);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native bool RemoveNominationByMap(const char[] map);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Event_PlayerDeath": {
+      "name": "Event_PlayerDeath",
+      "refLine": 541,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Timer_StartMapVote": {
+      "name": "Timer_StartMapVote",
+      "refLine": 395,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "data",
+          "decl": "DataPack data",
+          "default": null
+        }
+      ]
+    },
+    "Handler_MapVoteMenu": {
+      "name": "Handler_MapVoteMenu",
+      "refLine": 882,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "Native_CheckVoteDone": {
+      "name": "Native_CheckVoteDone",
+      "refLine": 1211,
+      "docStart": 33929,
+      "docEnd": 33973,
+      "docs": {
+        "brief": "native bool HasEndOfMapVoteFinished();",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native bool HasEndOfMapVoteFinished();"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_GetNominatedMapList": {
+      "name": "Native_GetNominatedMapList",
+      "refLine": 1244,
+      "docStart": 34663,
+      "docEnd": 34750,
+      "docs": {
+        "brief": "native void GetNominatedMapList(ArrayList maparray, ArrayList ownerarray = null);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native void GetNominatedMapList(ArrayList maparray, ArrayList ownerarray = null);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "RemoveStringFromArray": {
+      "name": "RemoveStringFromArray",
+      "refLine": 985,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "ArrayList",
+          "name": "array",
+          "decl": "ArrayList array",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        }
+      ]
+    },
+    "Native_GetExcludeMapList": {
+      "name": "Native_GetExcludeMapList",
+      "refLine": 1223,
+      "docStart": 34234,
+      "docEnd": 34287,
+      "docs": {
+        "brief": "native void GetExcludeMapList(ArrayList array);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native void GetExcludeMapList(ArrayList array);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_RemoveNominationByOwner": {
+      "name": "Native_RemoveNominationByOwner",
+      "refLine": 1187,
+      "docStart": 33198,
+      "docEnd": 33251,
+      "docs": {
+        "brief": "native bool RemoveNominationByOwner(int owner);",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native bool RemoveNominationByOwner(int owner);"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Event_TFRestartRound": {
+      "name": "Event_TFRestartRound",
+      "refLine": 420,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Command_Mapvote": {
+      "name": "Command_Mapvote",
+      "refLine": 571,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_SetNextmap": {
+      "name": "Command_SetNextmap",
+      "refLine": 309,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Timer_ChangeMap": {
+      "name": "Timer_ChangeMap",
+      "refLine": 960,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hTimer",
+          "decl": "Handle hTimer",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dp",
+          "decl": "DataPack dp",
+          "default": null
+        }
+      ]
+    },
+    "InternalRemoveNominationByOwner": {
+      "name": "InternalRemoveNominationByOwner",
+      "refLine": 1163,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "SetupTimeleftTimer": {
+      "name": "SetupTimeleftTimer",
+      "refLine": 367,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "InitiateVote": {
+      "name": "InitiateVote",
+      "refLine": 585,
+      "docStart": 16812,
+      "docEnd": 17153,
+      "docs": {
+        "brief": "Starts a new map vote",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a new map vote"
+          },
+          {
+            "tag": "param:when",
+            "text": "When the resulting map change should occur."
+          },
+          {
+            "tag": "param:inputlist",
+            "text": "Optional list of maps to use for the vote, otherwise an internal list of nominations + random maps will be used."
+          },
+          {
+            "tag": "param:noSpecials",
+            "text": "Block special vote options like extend/nochange (upgrade this to bitflags instead?)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "MapChange",
+          "name": "when",
+          "decl": "MapChange when",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "inputlist",
+          "decl": "ArrayList inputlist",
+          "default": "null"
+        }
+      ]
+    },
+    "Native_CanVoteStart": {
+      "name": "Native_CanVoteStart",
+      "refLine": 1205,
+      "docStart": 33788,
+      "docEnd": 33831,
+      "docs": {
+        "brief": "native bool CanMapChooserStartVote();",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native bool CanMapChooserStartVote();"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 191,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "Native_EndOfMapVoteEnabled": {
+      "name": "Native_EndOfMapVoteEnabled",
+      "refLine": 1217,
+      "docStart": 34075,
+      "docEnd": 34115,
+      "docs": {
+        "brief": "native bool EndOfMapVoteEnabled();",
+        "tags": [
+          {
+            "tag": "",
+            "text": "native bool EndOfMapVoteEnabled();"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Handler_VoteFinishedGeneric": {
+      "name": "Handler_VoteFinishedGeneric",
+      "refLine": 739,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_votes",
+          "decl": "int num_votes",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_clients",
+          "decl": "int num_clients",
+          "default": null
+        },
+        {
+          "type": "const int[][]",
+          "name": "client_info",
+          "decl": "const int[][] client_info",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_items",
+          "decl": "int num_items",
+          "default": null
+        },
+        {
+          "type": "const int[][]",
+          "name": "item_info",
+          "decl": "const int[][] item_info",
+          "default": null
+        }
+      ]
+    },
+    "InternalNominateMap": {
+      "name": "InternalNominateMap",
+      "refLine": 1049,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "NominateResult",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "map",
+          "decl": "char[] map",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "OnMapTimeLeftChanged": {
+      "name": "OnMapTimeLeftChanged",
+      "refLine": 359,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 109,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CreateNextVote": {
+      "name": "CreateNextVote",
+      "refLine": 997,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CanVoteStart": {
+      "name": "CanVoteStart",
+      "refLine": 1039,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "Command_MapchooserRefresh": {
+      "name": "Command_MapchooserRefresh",
+      "refLine": 338,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ReadPreviousMapsFromText": {
+      "name": "ReadPreviousMapsFromText",
+      "refLine": 1271,
+      "docStart": 35386,
+      "docEnd": 35441,
+      "docs": {
+        "brief": "Add functions for persistent previous map storage",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add functions for persistent previous map storage"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "VOTE_DONTCHANGE": {
+      "name": "VOTE_DONTCHANGE",
+      "refLine": 107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"##dontchange##\""
+    },
+    "VOTE_EXTEND": {
+      "name": "VOTE_EXTEND",
+      "refLine": 106,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"##extend##\""
+    },
+    "MAXTEAMS": {
+      "name": "MAXTEAMS",
+      "refLine": 103,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "10"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

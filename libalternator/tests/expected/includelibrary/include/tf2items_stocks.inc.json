@@ -1,0 +1,276 @@
+{
+  "functions": {
+    "TF2Item_PrepareItemHandle": {
+      "name": "TF2Item_PrepareItemHandle",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "TF2Item",
+      "arguments": [
+        {
+          "type": "TF2Item",
+          "name": "hItem",
+          "decl": "TF2Item hItem",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "att",
+          "decl": "const char[] att",
+          "default": "\"\""
+        },
+        {
+          "type": "bool",
+          "name": "dontpreserve",
+          "decl": "bool dontpreserve",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "TF2Item": {
+      "name": "TF2Item",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "TF2Item": {
+          "name": "TF2Item",
+          "refLine": 9,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "TF2Item",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "iFlags",
+              "decl": "int iFlags",
+              "default": null
+            }
+          ]
+        },
+        "SetClassname": {
+          "name": "SetClassname",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "strClassName",
+              "decl": "char[] strClassName",
+              "default": null
+            }
+          ]
+        },
+        "GiveNamedItem": {
+          "name": "GiveNamedItem",
+          "refLine": 36,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "iClient",
+              "decl": "int iClient",
+              "default": null
+            }
+          ]
+        },
+        "SetAttribute": {
+          "name": "SetAttribute",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "iSlotIndex",
+              "decl": "int iSlotIndex",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iAttribDefIndex",
+              "decl": "int iAttribDefIndex",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "flValue",
+              "decl": "float flValue",
+              "default": null
+            }
+          ]
+        },
+        "GetAttribID": {
+          "name": "GetAttribID",
+          "refLine": 48,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "iSlotIndex",
+              "decl": "int iSlotIndex",
+              "default": null
+            }
+          ]
+        },
+        "GetClassname": {
+          "name": "GetClassname",
+          "refLine": 42,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "strDest",
+              "decl": "char[] strDest",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "iDestSize",
+              "decl": "int iDestSize",
+              "default": null
+            }
+          ]
+        },
+        "GetAttribValue": {
+          "name": "GetAttribValue",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "iSlotIndex",
+              "decl": "int iSlotIndex",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "iQuality": {
+          "name": "iQuality",
+          "refLine": 22,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "iItemIndex": {
+          "name": "iItemIndex",
+          "refLine": 18,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "iLevel": {
+          "name": "iLevel",
+          "refLine": 26,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "iFlags": {
+          "name": "iFlags",
+          "refLine": 14,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "iNumAttribs": {
+          "name": "iNumAttribs",
+          "refLine": 30,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_tf2items_stocks_included": {
+      "name": "_tf2items_stocks_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

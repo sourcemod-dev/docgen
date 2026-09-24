@@ -1,0 +1,831 @@
+{
+  "functions": {
+    "GeoipCountry": {
+      "name": "GeoipCountry",
+      "refLine": 104,
+      "docStart": 3512,
+      "docEnd": 3817,
+      "docs": {
+        "brief": "Gets the full country name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the full country name."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the country code."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the country name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GeoipTimezone": {
+      "name": "GeoipTimezone",
+      "refLine": 170,
+      "docStart": 6658,
+      "docEnd": 6946,
+      "docs": {
+        "brief": "Gets the timezone.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the timezone."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the timezone."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the timezone."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GeoipLongitude": {
+      "name": "GeoipLongitude",
+      "refLine": 186,
+      "docStart": 7254,
+      "docEnd": 7439,
+      "docs": {
+        "brief": "Gets the city's longitude",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the city's longitude"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the city longitude."
+          },
+          {
+            "tag": "return",
+            "text": "The result of the longitude, 0 if longitude is not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        }
+      ]
+    },
+    "GeoipCity": {
+      "name": "GeoipCity",
+      "refLine": 160,
+      "docStart": 5981,
+      "docEnd": 6568,
+      "docs": {
+        "brief": "Gets the city name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the city name."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the city code."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the city name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index in order to return the result in the player's language\n-1: the default language, which is english.\n0: the server language. You can use LANG_SERVER define.\n>=1: the player's language."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": "-1"
+        }
+      ]
+    },
+    "GeoipLatitude": {
+      "name": "GeoipLatitude",
+      "refLine": 178,
+      "docStart": 7023,
+      "docEnd": 7204,
+      "docs": {
+        "brief": "Gets the city's latitude",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the city's latitude"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the city latitude."
+          },
+          {
+            "tag": "return",
+            "text": "The result of the latitude, 0 if latitude is not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        }
+      ]
+    },
+    "__ext_geoip_SetNTVOptional": {
+      "name": "__ext_geoip_SetNTVOptional",
+      "refLine": 225,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GeoipContinentCode": {
+      "name": "GeoipContinentCode",
+      "refLine": 94,
+      "docStart": 3152,
+      "docEnd": 3438,
+      "docs": {
+        "brief": "Gets the two character continent code from an IP address. (EU, AS, etc)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the two character continent code from an IP address. (EU, AS, etc)"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the continent code."
+          },
+          {
+            "tag": "param:ccode",
+            "text": "Destination string buffer to store the code."
+          },
+          {
+            "tag": "return",
+            "text": "The continent id on success, 0 otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Continent",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[3]",
+          "name": "ccode",
+          "decl": "char ccode[3]",
+          "default": null
+        }
+      ]
+    },
+    "GeoipRegion": {
+      "name": "GeoipRegion",
+      "refLine": 146,
+      "docStart": 5291,
+      "docEnd": 5889,
+      "docs": {
+        "brief": "Gets the full region name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the full region name."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the region code."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the region name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index in order to return the result in the player's language\n-1: the default language, which is english.\n0: the server language. You can use LANG_SERVER define.\n>=1: the player's language."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": "-1"
+        }
+      ]
+    },
+    "GeoipCode2": {
+      "name": "GeoipCode2",
+      "refLine": 67,
+      "docStart": 2128,
+      "docEnd": 2402,
+      "docs": {
+        "brief": "Gets the two character country code from an IP address. (US, CA, etc)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the two character country code from an IP address. (US, CA, etc)"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the country code."
+          },
+          {
+            "tag": "param:ccode",
+            "text": "Destination string buffer to store the code."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[3]",
+          "name": "ccode",
+          "decl": "char ccode[3]",
+          "default": null
+        }
+      ]
+    },
+    "GeoipCountryEx": {
+      "name": "GeoipCountryEx",
+      "refLine": 118,
+      "docStart": 3893,
+      "docEnd": 4494,
+      "docs": {
+        "brief": "Gets the full country name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the full country name."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the country code."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the country name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index in order to return the result in the player's language\n-1: the default language, which is english.\n0: the server language. You can use LANG_SERVER define.\n>=1: the player's language."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": "-1"
+        }
+      ]
+    },
+    "GeoipContinent": {
+      "name": "GeoipContinent",
+      "refLine": 132,
+      "docStart": 4589,
+      "docEnd": 5196,
+      "docs": {
+        "brief": "Gets the full continent name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the full continent name."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the continent code."
+          },
+          {
+            "tag": "param:name",
+            "text": "Destination string buffer to store the continent name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index in order to return the result in the player's language\n-1: the default language, which is english.\n0: the server language. You can use LANG_SERVER define.\n>=1: the player's language."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": "-1"
+        }
+      ]
+    },
+    "GeoipRegionCode": {
+      "name": "GeoipRegionCode",
+      "refLine": 85,
+      "docStart": 2802,
+      "docEnd": 3085,
+      "docs": {
+        "brief": "Gets the region code with country code from an IP address. (US-IL, CH-CHE, etc)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the region code with country code from an IP address. (US-IL, CH-CHE, etc)"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the region code."
+          },
+          {
+            "tag": "param:ccode",
+            "text": "Destination string buffer to store the code."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[12]",
+          "name": "ccode",
+          "decl": "char ccode[12]",
+          "default": null
+        }
+      ]
+    },
+    "GeoipDistance": {
+      "name": "GeoipDistance",
+      "refLine": 199,
+      "docStart": 7490,
+      "docEnd": 7968,
+      "docs": {
+        "brief": "Calculate the distance between geographical coordinates, latitude and longitude.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculate the distance between geographical coordinates, latitude and longitude."
+          },
+          {
+            "tag": "param:lat1",
+            "text": "The first IP latitude."
+          },
+          {
+            "tag": "param:lon1",
+            "text": "The first IP longitude."
+          },
+          {
+            "tag": "param:lat2",
+            "text": "The second IP latitude."
+          },
+          {
+            "tag": "param:lon2",
+            "text": "The second IP longitude."
+          },
+          {
+            "tag": "param:system",
+            "text": "The system of measurement, 0 = Metric(kilometers) or 1 = English(miles)."
+          },
+          {
+            "tag": "return",
+            "text": "The distance as result in specified system of measurement."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "lat1",
+          "decl": "float lat1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "lon1",
+          "decl": "float lon1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "lat2",
+          "decl": "float lat2",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "lon2",
+          "decl": "float lon2",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "system",
+          "decl": "int system",
+          "default": "0"
+        }
+      ]
+    },
+    "GeoipCode3": {
+      "name": "GeoipCode3",
+      "refLine": 76,
+      "docStart": 2463,
+      "docEnd": 2741,
+      "docs": {
+        "brief": "Gets the three character country code from an IP address. (USA, CAN, etc)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the three character country code from an IP address. (USA, CAN, etc)"
+          },
+          {
+            "tag": "param:ip",
+            "text": "Ip to determine the country code."
+          },
+          {
+            "tag": "param:ccode",
+            "text": "Destination string buffer to store the code."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "char[4]",
+          "name": "ccode",
+          "decl": "char ccode[4]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_geoip_included": {
+      "name": "_geoip_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SYSTEM_METRIC": {
+      "name": "SYSTEM_METRIC",
+      "refLine": 51,
+      "docStart": 1959,
+      "docEnd": 1972,
+      "docs": {
+        "brief": "kilometers",
+        "tags": [
+          {
+            "tag": "",
+            "text": "kilometers"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "SYSTEM_IMPERIAL": {
+      "name": "SYSTEM_IMPERIAL",
+      "refLine": 52,
+      "docStart": 2000,
+      "docEnd": 2016,
+      "docs": {
+        "brief": "statute miles",
+        "tags": [
+          {
+            "tag": "",
+            "text": "statute miles"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    }
+  },
+  "enums": {
+    "Continent": {
+      "name": "Continent",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CONTINENT_ANTARCTICA": {
+          "name": "CONTINENT_ANTARCTICA",
+          "refLine": 42,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_EUROPE": {
+          "name": "CONTINENT_EUROPE",
+          "refLine": 44,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_NORTH_AMERICA": {
+          "name": "CONTINENT_NORTH_AMERICA",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_SOUTH_AMERICA": {
+          "name": "CONTINENT_SOUTH_AMERICA",
+          "refLine": 47,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_AFRICA": {
+          "name": "CONTINENT_AFRICA",
+          "refLine": 41,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_OCEANIA": {
+          "name": "CONTINENT_OCEANIA",
+          "refLine": 46,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_ASIA": {
+          "name": "CONTINENT_ASIA",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CONTINENT_UNKNOWN": {
+          "name": "CONTINENT_UNKNOWN",
+          "refLine": 40,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

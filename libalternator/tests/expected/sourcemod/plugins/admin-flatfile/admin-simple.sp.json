@@ -1,0 +1,70 @@
+{
+  "functions": {
+    "ReadAdminLine": {
+      "name": "ReadAdminLine",
+      "refLine": 120,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "line",
+          "decl": "const char[] line",
+          "default": null
+        }
+      ]
+    },
+    "ReadSimpleUsers": {
+      "name": "ReadSimpleUsers",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "DecodeAuthMethod": {
+      "name": "DecodeAuthMethod",
+      "refLine": 91,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        },
+        {
+          "type": "char[32]",
+          "name": "method",
+          "decl": "char method[32]",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "offset",
+          "decl": "int& offset",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

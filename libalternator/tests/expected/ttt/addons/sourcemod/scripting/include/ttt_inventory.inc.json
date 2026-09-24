@@ -1,0 +1,302 @@
+{
+  "functions": {
+    "TTT_OnInventoryReady": {
+      "name": "TTT_OnInventoryReady",
+      "refLine": 9,
+      "docStart": 90,
+      "docEnd": 173,
+      "docs": {
+        "brief": "Called when inventory has been reinitialised after the round has started.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when inventory has been reinitialised after the round has started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_RemoveInventoryItem": {
+      "name": "TTT_RemoveInventoryItem",
+      "refLine": 36,
+      "docStart": 858,
+      "docEnd": 1170,
+      "docs": {
+        "brief": "Removes an item in a player's inventory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an item in a player's inventory."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name of item."
+          },
+          {
+            "tag": "param:quantity",
+            "text": "The quantity to add (Default: 1)"
+          },
+          {
+            "tag": "return",
+            "text": "Returns true on success or item already not in inventory. False if it fails to remove item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "quantity",
+          "decl": "int quantity",
+          "default": "1"
+        }
+      ]
+    },
+    "TTT_OnInventoryMenuItemSelect": {
+      "name": "TTT_OnInventoryMenuItemSelect",
+      "refLine": 14,
+      "docStart": 212,
+      "docEnd": 317,
+      "docs": {
+        "brief": "Called when a player selects an item on their inventory. Expected behaviour is to use the item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a player selects an item on their inventory. Expected behaviour is to use the item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsItemInInventory": {
+      "name": "TTT_IsItemInInventory",
+      "refLine": 47,
+      "docStart": 1263,
+      "docEnd": 1567,
+      "docs": {
+        "brief": "Checks whether or not the item is in the player's inventory.\nIf you want to know how much, then you should use TTT_GetClientItemQuantity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether or not the item is in the player's inventory.\nIf you want to know how much, then you should use TTT_GetClientItemQuantity"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name of the item."
+          },
+          {
+            "tag": "return",
+            "text": "Returns true if item is in inventory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddInventoryItem": {
+      "name": "TTT_AddInventoryItem",
+      "refLine": 25,
+      "docStart": 399,
+      "docEnd": 768,
+      "docs": {
+        "brief": "Adds an item in a player's inventory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds an item in a player's inventory."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name for item."
+          },
+          {
+            "tag": "param:quantity",
+            "text": "The quantity to add (Default: 1)"
+          },
+          {
+            "tag": "return",
+            "text": "Returns item index in inventory if registered successfully or item already exists, else if unique item does not exist in shop or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "quantity",
+          "decl": "int quantity",
+          "default": "1"
+        }
+      ]
+    },
+    "TTT_GetClientItemQuantity": {
+      "name": "TTT_GetClientItemQuantity",
+      "refLine": 57,
+      "docStart": 1639,
+      "docEnd": 1952,
+      "docs": {
+        "brief": "Returns the quantity of a item in player's inventory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the quantity of a item in player's inventory."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name of the item."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the quantity of the item in players's inventory\nIf the return is -1 then the player has no inventory"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetInventoryListing": {
+      "name": "TTT_GetInventoryListing",
+      "refLine": 66,
+      "docStart": 2028,
+      "docEnd": 2284,
+      "docs": {
+        "brief": "Retrieves a map of the inventory items of a player. Note: Close Snapshot after use.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a map of the inventory items of a player. Note: Close Snapshot after use."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Snapshot of the client's inventory or null if client is not in game or has an empty inventory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "StringMapSnapshot",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_inventory_included": {
+      "name": "_ttt_inventory_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

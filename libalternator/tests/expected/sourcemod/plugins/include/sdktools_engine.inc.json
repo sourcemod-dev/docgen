@@ -1,0 +1,162 @@
+{
+  "functions": {
+    "SetLightStyle": {
+      "name": "SetLightStyle",
+      "refLine": 57,
+      "docStart": 1997,
+      "docEnd": 2238,
+      "docs": {
+        "brief": "Sets a light style.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a light style."
+          },
+          {
+            "tag": "param:style",
+            "text": "Light style (from 0 to MAX_LIGHTSTYLES-1)"
+          },
+          {
+            "tag": "param:value",
+            "text": "Light value string (see world.cpp/light.cpp in dlls)"
+          },
+          {
+            "tag": "error",
+            "text": "Light style index is out of range."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "style",
+          "decl": "int style",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "SetClientViewEntity": {
+      "name": "SetClientViewEntity",
+      "refLine": 48,
+      "docStart": 1686,
+      "docEnd": 1935,
+      "docs": {
+        "brief": "Sets a client's \"viewing entity.\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's \"viewing entity.\""
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or entity, lack of mod support, or client not in\ngame."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "GetClientEyePosition": {
+      "name": "GetClientEyePosition",
+      "refLine": 66,
+      "docStart": 2301,
+      "docEnd": 2559,
+      "docs": {
+        "brief": "Returns the client's eye position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's eye position."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Destination vector to store the client's eye position."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "pos",
+          "decl": "float pos[3]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MAX_LIGHTSTYLES": {
+      "name": "MAX_LIGHTSTYLES",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "_sdktools_engine_included": {
+      "name": "_sdktools_engine_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

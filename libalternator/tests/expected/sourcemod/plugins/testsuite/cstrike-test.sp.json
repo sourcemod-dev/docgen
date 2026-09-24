@@ -1,0 +1,262 @@
+{
+  "functions": {
+    "set_score": {
+      "name": "set_score",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "get_clantag": {
+      "name": "get_clantag",
+      "refLine": 94,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "get_mvps": {
+      "name": "get_mvps",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "get_teamscore": {
+      "name": "get_teamscore",
+      "refLine": 115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "set_teamscore": {
+      "name": "set_teamscore",
+      "refLine": 125,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "set_mvps": {
+      "name": "set_mvps",
+      "refLine": 26,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "set_clantag": {
+      "name": "set_clantag",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "set_assists": {
+      "name": "set_assists",
+      "refLine": 78,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "get_score": {
+      "name": "get_score",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 5,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "get_assists": {
+      "name": "get_assists",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argc",
+          "decl": "int argc",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

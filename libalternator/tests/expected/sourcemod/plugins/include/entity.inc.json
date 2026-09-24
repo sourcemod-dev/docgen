@@ -1,0 +1,2987 @@
+{
+  "functions": {
+    "GetEntData": {
+      "name": "GetEntData",
+      "refLine": 235,
+      "docStart": 8725,
+      "docEnd": 9128,
+      "docs": {
+        "brief": "Peeks into an entity's object data and retrieves the integer value at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and retrieves the integer value at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to read (valid values are 1, 2, or 4)."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given memory location."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        }
+      ]
+    },
+    "SetEntDataEnt2": {
+      "name": "SetEntDataEnt2",
+      "refLine": 340,
+      "docStart": 12833,
+      "docEnd": 13432,
+      "docs": {
+        "brief": "Peeks into an entity's object data and sets the entity index at the\ngiven offset.\n\nNote: This will only work on offsets that are stored as \"entity\nhandles\" (which usually looks like m_h* in properties).  These\nare not SourceMod Handles, but internal Source structures.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and sets the entity index at the\ngiven offset.\n\nNote: This will only work on offsets that are stored as \"entity\nhandles\" (which usually looks like m_h* in properties).  These\nare not SourceMod Handles, but internal Source structures."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:other",
+            "text": "Entity index to set, or -1 to clear."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "If true, change will be sent over the network."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid input entity, or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "other",
+          "decl": "int other",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GetEntDataString": {
+      "name": "GetEntDataString",
+      "refLine": 380,
+      "docStart": 14630,
+      "docEnd": 15061,
+      "docs": {
+        "brief": "Peeks into an entity's object data and retrieves the string at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and retrieves the string at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "GetEntPropFloat": {
+      "name": "GetEntPropFloat",
+      "refLine": 591,
+      "docStart": 22751,
+      "docEnd": 23303,
+      "docs": {
+        "brief": "Retrieves a float value from an entity's property.\n\nThis function is considered safer and more robust over GetEntDataFloat,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a float value from an entity's property.\n\nThis function is considered safer and more robust over GetEntDataFloat,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given property offset."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntPropVector": {
+      "name": "GetEntPropVector",
+      "refLine": 654,
+      "docStart": 25448,
+      "docEnd": 26078,
+      "docs": {
+        "brief": "Retrieves a vector of floats from an entity, given a named network property.\n\nThis function is considered safer and more robust over GetEntDataVector,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a vector of floats from an entity, given a named network property.\n\nThis function is considered safer and more robust over GetEntDataVector,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity, property not found, or property not\nactually a vector data type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntDataEnt2": {
+      "name": "GetEntDataEnt2",
+      "refLine": 324,
+      "docStart": 12143,
+      "docEnd": 12777,
+      "docs": {
+        "brief": "Peeks into an entity's object data and retrieves the entity index\nat the given offset.\n\nNote: This will only work on offsets that are stored as \"entity\nhandles\" (which usually looks like m_h* in properties).  These\nare not SourceMod Handles, but internal Source structures.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and retrieves the entity index\nat the given offset.\n\nNote: This will only work on offsets that are stored as \"entity\nhandles\" (which usually looks like m_h* in properties).  These\nare not SourceMod Handles, but internal Source structures."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index at the given location.  If there is no entity,\nor the stored entity is invalid, then -1 is returned."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid input entity, or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        }
+      ]
+    },
+    "GetEdictFlags": {
+      "name": "GetEdictFlags",
+      "refLine": 159,
+      "docStart": 5764,
+      "docEnd": 5982,
+      "docs": {
+        "brief": "Returns the flags on an edict.  These are not the same as entity flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the flags on an edict.  These are not the same as entity flags."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "return",
+            "text": "Edict flags."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid edict index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        }
+      ]
+    },
+    "FindDataMapOffs": {
+      "name": "FindDataMapOffs",
+      "refLine": 457,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "PropFieldType&",
+          "name": "type",
+          "decl": "PropFieldType& type",
+          "default": "view_as<PropFieldType>(0)"
+        },
+        {
+          "type": "int&",
+          "name": "num_bits",
+          "decl": "int& num_bits",
+          "default": "0"
+        }
+      ]
+    },
+    "ChangeEdictState": {
+      "name": "ChangeEdictState",
+      "refLine": 223,
+      "docStart": 8212,
+      "docEnd": 8663,
+      "docs": {
+        "brief": "Marks an entity as state changed.  This can be useful if you set an offset\nand wish for it to be immediately changed over the network.  By default this\nis not done for offset setting functions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Marks an entity as state changed.  This can be useful if you set an offset\nand wish for it to be immediately changed over the network.  By default this\nis not done for offset setting functions."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index to the edict."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to mark as changed.  If 0,\nthe entire edict is marked as changed."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": "0"
+        }
+      ]
+    },
+    "StoreEntityToHandleAddress": {
+      "name": "StoreEntityToHandleAddress",
+      "refLine": 785,
+      "docStart": 31068,
+      "docEnd": 31265,
+      "docs": {
+        "brief": "Interprets the address as an entity handle and sets the entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Interprets the address as an entity handle and sets the entity."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index to set, or -1 to clear."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntData": {
+      "name": "SetEntData",
+      "refLine": 248,
+      "docStart": 9192,
+      "docEnd": 9641,
+      "docs": {
+        "brief": "Peeks into an entity's object data and sets the integer value at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and sets the integer value at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to write (valid values are 1, 2, or 4)."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "If true, change will be sent over the network."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GetEntPropString": {
+      "name": "GetEntPropString",
+      "refLine": 684,
+      "docStart": 26910,
+      "docEnd": 27446,
+      "docs": {
+        "brief": "Gets a network property as a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a network property as a string."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity, offset out of reasonable bounds, or property is not a valid string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "RemoveEntity": {
+      "name": "RemoveEntity",
+      "refLine": 150,
+      "docStart": 5582,
+      "docEnd": 5721,
+      "docs": {
+        "brief": "Marks an entity for deletion.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Marks an entity for deletion."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "IsValidEntity": {
+      "name": "IsValidEntity",
+      "refLine": 111,
+      "docStart": 4491,
+      "docEnd": 4731,
+      "docs": {
+        "brief": "Returns whether or not an entity is valid.  Returns false\nif there is no matching CBaseEntity for this entity index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not an entity is valid.  Returns false\nif there is no matching CBaseEntity for this entity index."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "return",
+            "text": "True if valid, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntPropEnt": {
+      "name": "SetEntPropEnt",
+      "refLine": 638,
+      "docStart": 24797,
+      "docEnd": 25344,
+      "docs": {
+        "brief": "Sets an entity index in an entity's property.\n\nThis function is considered safer and more robust over SetEntDataEnt*,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity index in an entity's property.\n\nThis function is considered safer and more robust over SetEntDataEnt*,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:other",
+            "text": "Entity index to set, or -1 to unset."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "other",
+          "decl": "int other",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntityAddress": {
+      "name": "GetEntityAddress",
+      "refLine": 754,
+      "docStart": 29939,
+      "docEnd": 30121,
+      "docs": {
+        "brief": "Gets the memory address of an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the memory address of an entity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Address of the entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "GetEntDataVector": {
+      "name": "GetEntDataVector",
+      "refLine": 353,
+      "docStart": 13524,
+      "docEnd": 13964,
+      "docs": {
+        "brief": "Peeks into an entity's object data and retrieves the vector at the\ngiven offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and retrieves the vector at the\ngiven offset."
+          },
+          {
+            "tag": "note",
+            "text": "Both a Vector and a QAngle are three floats.  This is a\nconvenience function and will work with both types."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "CreateEdict": {
+      "name": "CreateEdict",
+      "refLine": 134,
+      "docStart": 5239,
+      "docEnd": 5370,
+      "docs": {
+        "brief": "Creates a new edict (the basis of a networkable entity)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new edict (the basis of a networkable entity)"
+          },
+          {
+            "tag": "return",
+            "text": "Index of the edict, 0 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "IsValidEdict": {
+      "name": "IsValidEdict",
+      "refLine": 119,
+      "docStart": 4775,
+      "docEnd": 4941,
+      "docs": {
+        "brief": "Returns whether or not an edict index is valid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not an edict index is valid."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the edict."
+          },
+          {
+            "tag": "return",
+            "text": "True if valid, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        }
+      ]
+    },
+    "FindSendPropInfo": {
+      "name": "FindSendPropInfo",
+      "refLine": 436,
+      "docStart": 16671,
+      "docEnd": 17656,
+      "docs": {
+        "brief": "Given a ServerClass name, finds a networkable send property offset.\nThis information is cached for future calls.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given a ServerClass name, finds a networkable send property offset.\nThis information is cached for future calls."
+          },
+          {
+            "tag": "param:cls",
+            "text": "Classname."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:type",
+            "text": "Optional parameter to store the type."
+          },
+          {
+            "tag": "param:num_bits",
+            "text": "Optional parameter to store the number of bits the field\nuses, if applicable (otherwise 0 is stored).  The number\nof bits varies for integers and floats, and is always 0\nfor strings."
+          },
+          {
+            "tag": "param:local_offset",
+            "text": "Optional parameter to store the local offset, as\nFindSendPropOffs() would return."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Optional parameter to store array size, 0 if not an array."
+          },
+          {
+            "tag": "return",
+            "text": "On success, returns an absolutely computed offset.\nIf no offset is available, 0 is returned.\nIf the property is not found, -1 is returned."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cls",
+          "decl": "const char[] cls",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "PropFieldType&",
+          "name": "type",
+          "decl": "PropFieldType& type",
+          "default": "view_as<PropFieldType>(0)"
+        },
+        {
+          "type": "int&",
+          "name": "num_bits",
+          "decl": "int& num_bits",
+          "default": "0"
+        },
+        {
+          "type": "int&",
+          "name": "local_offset",
+          "decl": "int& local_offset",
+          "default": "0"
+        },
+        {
+          "type": "int&",
+          "name": "array_size",
+          "decl": "int& array_size",
+          "default": "0"
+        }
+      ]
+    },
+    "SetEntDataVector": {
+      "name": "SetEntDataVector",
+      "refLine": 367,
+      "docStart": 14037,
+      "docEnd": 14527,
+      "docs": {
+        "brief": "Peeks into an entity's object data and sets the vector at the given\noffset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and sets the vector at the given\noffset."
+          },
+          {
+            "tag": "note",
+            "text": "Both a Vector and a QAngle are three floats.  This is a\nconvenience function and will work with both types."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector to set."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "If true, change will be sent over the network."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GetMaxEntities": {
+      "name": "GetMaxEntities",
+      "refLine": 91,
+      "docStart": 3855,
+      "docEnd": 4129,
+      "docs": {
+        "brief": "Returns the maximum number of networked entities.\n\nNote: For legacy reasons, this only returns the maximum\nnetworked entities (maximum edicts), rather than total\nmaximum entities.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the maximum number of networked entities.\n\nNote: For legacy reasons, this only returns the maximum\nnetworked entities (maximum edicts), rather than total\nmaximum entities."
+          },
+          {
+            "tag": "return",
+            "text": "Maximum number of networked entities."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetEntityCount": {
+      "name": "GetEntityCount",
+      "refLine": 102,
+      "docStart": 4163,
+      "docEnd": 4457,
+      "docs": {
+        "brief": "Returns the number of networked entities in the server.\n\nNote: For legacy reasons, this only returns the current count\nof networked entities (current edicts), rather than total\ncount of current entities.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of networked entities in the server.\n\nNote: For legacy reasons, this only returns the current count\nof networked entities (current edicts), rather than total\ncount of current entities."
+          },
+          {
+            "tag": "return",
+            "text": "Number of entities in the server."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetEntDataFloat": {
+      "name": "GetEntDataFloat",
+      "refLine": 259,
+      "docStart": 9741,
+      "docEnd": 10062,
+      "docs": {
+        "brief": "Peeks into an entity's object data and retrieves the float value at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and retrieves the float value at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given memory location."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        }
+      ]
+    },
+    "SetEntPropVector": {
+      "name": "SetEntPropVector",
+      "refLine": 670,
+      "docStart": 26188,
+      "docEnd": 26794,
+      "docs": {
+        "brief": "Sets a vector of floats in an entity, given a named network property.\n\nThis function is considered safer and more robust over SetEntDataVector,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a vector of floats in an entity, given a named network property.\n\nThis function is considered safer and more robust over SetEntDataVector,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector to set."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity, property not found, or property not\nactually a vector data type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "SetEntPropString": {
+      "name": "SetEntPropString",
+      "refLine": 697,
+      "docStart": 27568,
+      "docEnd": 28027,
+      "docs": {
+        "brief": "Sets a network property as a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a network property as a string."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to set."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity, offset out of reasonable bounds, or property is not a valid string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "SetEntDataEnt": {
+      "name": "SetEntDataEnt",
+      "refLine": 308,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "other",
+          "decl": "int other",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GetEntPropArraySize": {
+      "name": "GetEntPropArraySize",
+      "refLine": 708,
+      "docStart": 28143,
+      "docEnd": 28507,
+      "docs": {
+        "brief": "Retrieves the count of values that an entity property's array can store.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the count of values that an entity property's array can store."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "return",
+            "text": "Size of array (in elements) or 0 if property is not an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityClassname": {
+      "name": "GetEntityClassname",
+      "refLine": 766,
+      "docStart": 30171,
+      "docEnd": 30553,
+      "docs": {
+        "brief": "Retrieves the classname of an entity.\nThis is like GetEdictClassname(), except it works for ALL\nentities, not just edicts.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the classname of an entity.\nThis is like GetEdictClassname(), except it works for ALL\nentities, not just edicts."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "param:clsname",
+            "text": "Buffer to store the classname."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there is no classname set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "clsname",
+          "decl": "char[] clsname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetEntDataEnt": {
+      "name": "GetEntDataEnt",
+      "refLine": 290,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        }
+      ]
+    },
+    "SetEntPropFloat": {
+      "name": "SetEntPropFloat",
+      "refLine": 606,
+      "docStart": 23399,
+      "docEnd": 23922,
+      "docs": {
+        "brief": "Sets a float value in an entity's property.\n\nThis function is considered safer and more robust over SetEntDataFloat,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a float value in an entity's property.\n\nThis function is considered safer and more robust over SetEntDataFloat,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntityNetClass": {
+      "name": "GetEntityNetClass",
+      "refLine": 190,
+      "docStart": 6653,
+      "docEnd": 7097,
+      "docs": {
+        "brief": "Retrieves an entity's networkable serverclass name.\nThis is not the same as the classname and is used for networkable state changes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an entity's networkable serverclass name.\nThis is not the same as the classname and is used for networkable state changes."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "param:clsname",
+            "text": "Buffer to store the serverclass name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the edict is not networkable."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid edict index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "clsname",
+          "decl": "char[] clsname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "RemoveEdict": {
+      "name": "RemoveEdict",
+      "refLine": 142,
+      "docStart": 5401,
+      "docEnd": 5541,
+      "docs": {
+        "brief": "Removes an edict from the world.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an edict from the world."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the edict."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid edict index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        }
+      ]
+    },
+    "HasEntProp": {
+      "name": "HasEntProp",
+      "refLine": 521,
+      "docStart": 20353,
+      "docEnd": 20653,
+      "docs": {
+        "brief": "Checks if an entity property exists on an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if an entity property exists on an entity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "return",
+            "text": "Whether the property exists on the entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "SetEntDataFloat": {
+      "name": "SetEntDataFloat",
+      "refLine": 271,
+      "docStart": 10121,
+      "docEnd": 10487,
+      "docs": {
+        "brief": "Peeks into an entity's object data and sets the float value at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and sets the float value at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "If true, change will be sent over the network."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "FindDataMapInfo": {
+      "name": "FindDataMapInfo",
+      "refLine": 476,
+      "docStart": 18773,
+      "docEnd": 19450,
+      "docs": {
+        "brief": "Given an entity, finds a nested datamap property offset.\nThis information is cached for future calls.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given an entity, finds a nested datamap property offset.\nThis information is cached for future calls."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:type",
+            "text": "Optional parameter to store the type."
+          },
+          {
+            "tag": "param:num_bits",
+            "text": "Optional parameter to store the number of bits the field\nuses.  The bit count will either be 1 (for boolean) or\ndivisible by 8 (including 0 if unknown)."
+          },
+          {
+            "tag": "param:local_offset",
+            "text": "Optional parameter to store the local offset, as\nFindDataMapOffs() would return."
+          },
+          {
+            "tag": "return",
+            "text": "An offset, or -1 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "PropFieldType&",
+          "name": "type",
+          "decl": "PropFieldType& type",
+          "default": "view_as<PropFieldType>(0)"
+        },
+        {
+          "type": "int&",
+          "name": "num_bits",
+          "decl": "int& num_bits",
+          "default": "0"
+        },
+        {
+          "type": "int&",
+          "name": "local_offset",
+          "decl": "int& local_offset",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntDataArray": {
+      "name": "GetEntDataArray",
+      "refLine": 720,
+      "docStart": 28590,
+      "docEnd": 28983,
+      "docs": {
+        "brief": "Copies an array of cells from an entity at a given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies an array of cells from an entity at a given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to read into."
+          },
+          {
+            "tag": "param:arraySize",
+            "text": "Number of values to read."
+          },
+          {
+            "tag": "param:dataSize",
+            "text": "Size of each value in bytes (1, 2, or 4)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "array",
+          "decl": "any[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "arraySize",
+          "decl": "int arraySize",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "dataSize",
+          "decl": "int dataSize",
+          "default": "4"
+        }
+      ]
+    },
+    "LoadEntityFromHandleAddress": {
+      "name": "LoadEntityFromHandleAddress",
+      "refLine": 777,
+      "docStart": 30721,
+      "docEnd": 31009,
+      "docs": {
+        "brief": "Interprets the address as an entity handle and returns the associated entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Interprets the address as an entity handle and returns the associated entity."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index at the given location.  If there is no entity, or the stored entity is invalid, then -1 is returned."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        }
+      ]
+    },
+    "SetEdictFlags": {
+      "name": "SetEdictFlags",
+      "refLine": 168,
+      "docStart": 6024,
+      "docEnd": 6240,
+      "docs": {
+        "brief": "Sets the flags on an edict.  These are not the same as entity flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the flags on an edict.  These are not the same as entity flags."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags to set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid edict index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "SetEntProp": {
+      "name": "SetEntProp",
+      "refLine": 576,
+      "docStart": 21882,
+      "docEnd": 22638,
+      "docs": {
+        "brief": "Sets an integer value in an entity's property.\n\nThis function is considered safer and more robust over SetEntData,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an integer value in an entity's property.\n\nThis function is considered safer and more robust over SetEntData,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to write (valid values are 1, 2, or 4).\nThis value is auto-detected, and the size parameter is\nonly used as a fallback in case detection fails."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntProp": {
+      "name": "GetEntProp",
+      "refLine": 558,
+      "docStart": 21009,
+      "docEnd": 21781,
+      "docs": {
+        "brief": "Retrieves an integer value from an entity's property.\n\nThis function is considered safer and more robust over GetEntData,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an integer value from an entity's property.\n\nThis function is considered safer and more robust over GetEntData,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to write (valid values are 1, 2, or 4).\nThis value is auto-detected, and the size parameter is\nonly used as a fallback in case detection fails."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given property offset."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEntSendPropOffs": {
+      "name": "GetEntSendPropOffs",
+      "refLine": 492,
+      "docStart": 19635,
+      "docEnd": 20040,
+      "docs": {
+        "brief": "Wrapper function for finding a send property for a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wrapper function for finding a send property for a particular entity."
+          },
+          {
+            "tag": "param:ent",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:actual",
+            "text": "Defaults to false for backwards compatibility.\nIf true, the newer FindSendPropInfo() function\nis used instead."
+          },
+          {
+            "tag": "return",
+            "text": "An offset, or -1 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ent",
+          "decl": "int ent",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "actual",
+          "decl": "bool actual",
+          "default": "false"
+        }
+      ]
+    },
+    "GetEntPropEnt": {
+      "name": "GetEntPropEnt",
+      "refLine": 623,
+      "docStart": 24030,
+      "docEnd": 24705,
+      "docs": {
+        "brief": "Retrieves an entity index from an entity's property.\n\nThis function is considered safer and more robust over GetEntDataEnt*,\nbecause it performs strict offset checking and typing rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an entity index from an entity's property.\n\nThis function is considered safer and more robust over GetEntDataEnt*,\nbecause it performs strict offset checking and typing rules."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity/edict index."
+          },
+          {
+            "tag": "param:type",
+            "text": "Property type."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index at the given property.\nIf there is no entity, or the entity is not valid,\nthen -1 is returned."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "PropType",
+          "name": "type",
+          "decl": "PropType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "SetEntDataArray": {
+      "name": "SetEntDataArray",
+      "refLine": 739,
+      "docStart": 29200,
+      "docEnd": 29680,
+      "docs": {
+        "brief": "Copies an array of cells to an entity at a given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies an array of cells to an entity at a given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array of values to copy."
+          },
+          {
+            "tag": "param:arraySize",
+            "text": "Number of values to copy."
+          },
+          {
+            "tag": "param:dataSize",
+            "text": "Size of each value in bytes (1, 2, or 4)."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "True to set the network state as changed; false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "array",
+          "decl": "const any[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "arraySize",
+          "decl": "int arraySize",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "dataSize",
+          "decl": "int dataSize",
+          "default": "4"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "FindSendPropOffs": {
+      "name": "FindSendPropOffs",
+      "refLine": 416,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cls",
+          "decl": "const char[] cls",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "IsEntNetworkable": {
+      "name": "IsEntNetworkable",
+      "refLine": 127,
+      "docStart": 4983,
+      "docEnd": 5192,
+      "docs": {
+        "brief": "Returns whether or not an entity has a valid networkable edict.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not an entity has a valid networkable edict."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "return",
+            "text": "True if networkable, false if invalid or not networkable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "GetEdictClassname": {
+      "name": "GetEdictClassname",
+      "refLine": 178,
+      "docStart": 6294,
+      "docEnd": 6575,
+      "docs": {
+        "brief": "Retrieves an edict classname.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an edict classname."
+          },
+          {
+            "tag": "param:edict",
+            "text": "Index of the entity."
+          },
+          {
+            "tag": "param:clsname",
+            "text": "Buffer to store the classname."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there is no classname set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "edict",
+          "decl": "int edict",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "clsname",
+          "decl": "char[] clsname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SetEntDataString": {
+      "name": "SetEntDataString",
+      "refLine": 394,
+      "docStart": 15146,
+      "docEnd": 15626,
+      "docs": {
+        "brief": "Peeks into an entity's object data and sets the string at\nthe given offset.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Peeks into an entity's object data and sets the string at\nthe given offset."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Edict index."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to set."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of bytes to write."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "If true, change will be sent over the network."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or offset out of reasonable bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "FL_EDICT_CHANGED": {
+      "name": "FL_EDICT_CHANGED",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "_entity_included": {
+      "name": "_entity_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "FL_EDICT_FREE": {
+      "name": "FL_EDICT_FREE",
+      "refLine": 52,
+      "docStart": 2171,
+      "docEnd": 2207,
+      "docs": {
+        "brief": "this edict if free for reuse",
+        "tags": [
+          {
+            "tag": "",
+            "text": "this edict if free for reuse"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "FL_EDICT_PVSCHECK": {
+      "name": "FL_EDICT_PVSCHECK",
+      "refLine": 57,
+      "docStart": 2622,
+      "docEnd": 2674,
+      "docs": {
+        "brief": "always transmit entity, but cull against PVS",
+        "tags": [
+          {
+            "tag": "",
+            "text": "always transmit entity, but cull against PVS"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<5)"
+    },
+    "FL_EDICT_FULLCHECK": {
+      "name": "FL_EDICT_FULLCHECK",
+      "refLine": 54,
+      "docStart": 2343,
+      "docEnd": 2403,
+      "docs": {
+        "brief": "call ShouldTransmit() each time, this is a fake flag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "call ShouldTransmit() each time, this is a fake flag"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(0<<0)"
+    },
+    "FL_EDICT_DONTSEND": {
+      "name": "FL_EDICT_DONTSEND",
+      "refLine": 56,
+      "docStart": 2538,
+      "docEnd": 2572,
+      "docs": {
+        "brief": "don't transmit this entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "don't transmit this entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "FL_EDICT_PENDING_DORMANT_CHECK": {
+      "name": "FL_EDICT_PENDING_DORMANT_CHECK",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<6)"
+    },
+    "FL_EDICT_DIRTY_PVS_INFORMATION": {
+      "name": "FL_EDICT_DIRTY_PVS_INFORMATION",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<7)"
+    },
+    "FL_FULL_EDICT_CHANGED": {
+      "name": "FL_FULL_EDICT_CHANGED",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<8)"
+    },
+    "FL_EDICT_ALWAYS": {
+      "name": "FL_EDICT_ALWAYS",
+      "refLine": 55,
+      "docStart": 2453,
+      "docEnd": 2488,
+      "docs": {
+        "brief": "always transmit this entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "always transmit this entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "FL_EDICT_FULL": {
+      "name": "FL_EDICT_FULL",
+      "refLine": 53,
+      "docStart": 2257,
+      "docEnd": 2293,
+      "docs": {
+        "brief": "this is a full server entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "this is a full server entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    }
+  },
+  "enums": {
+    "PropType": {
+      "name": "PropType",
+      "refLine": 41,
+      "docStart": 1637,
+      "docEnd": 1678,
+      "docs": {
+        "brief": "Property types for entities.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Property types for entities."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Prop_Send": {
+          "name": "Prop_Send",
+          "refLine": 43,
+          "docStart": 1715,
+          "docEnd": 1750,
+          "docs": {
+            "brief": "This property is networked.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This property is networked."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "Prop_Data": {
+          "name": "Prop_Data",
+          "refLine": 44,
+          "docStart": 1769,
+          "docEnd": 1820,
+          "docs": {
+            "brief": "This property is for save game data fields.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This property is for save game data fields."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "PropFieldType": {
+      "name": "PropFieldType",
+      "refLine": 62,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "PropField_Vector": {
+          "name": "PropField_Vector",
+          "refLine": 68,
+          "docStart": 3172,
+          "docEnd": 3214,
+          "docs": {
+            "brief": "Valid for SendProp and Data fields",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for SendProp and Data fields"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_String_T": {
+          "name": "PropField_String_T",
+          "refLine": 70,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "PropField_Integer": {
+          "name": "PropField_Integer",
+          "refLine": 65,
+          "docStart": 2937,
+          "docEnd": 2979,
+          "docs": {
+            "brief": "Valid for SendProp and Data fields",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for SendProp and Data fields"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_Variant": {
+          "name": "PropField_Variant",
+          "refLine": 74,
+          "docStart": 3318,
+          "docEnd": 3623,
+          "docs": {
+            "brief": "Valid for Data fields.  Read only.\nNote that the size of a string_t is dynamic, and\nthus FindDataMapOffs() will return the constant size\nof the string_t container (which is 32 bits right now).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for Data fields.  Read only.\nNote that the size of a string_t is dynamic, and\nthus FindDataMapOffs() will return the constant size\nof the string_t container (which is 32 bits right now)."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_String": {
+          "name": "PropField_String",
+          "refLine": 69,
+          "docStart": 3245,
+          "docEnd": 3287,
+          "docs": {
+            "brief": "Valid for SendProp and Data fields",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for SendProp and Data fields"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_Entity": {
+          "name": "PropField_Entity",
+          "refLine": 67,
+          "docStart": 3083,
+          "docEnd": 3141,
+          "docs": {
+            "brief": "Valid for Data fields only (SendProp shows as int)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for Data fields only (SendProp shows as int)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_Float": {
+          "name": "PropField_Float",
+          "refLine": 66,
+          "docStart": 3010,
+          "docEnd": 3052,
+          "docs": {
+            "brief": "Valid for SendProp and Data fields",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Valid for SendProp and Data fields"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PropField_Unsupported": {
+          "name": "PropField_Unsupported",
+          "refLine": 64,
+          "docStart": 2874,
+          "docEnd": 2906,
+          "docs": {
+            "brief": "The type is unsupported.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The type is unsupported."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

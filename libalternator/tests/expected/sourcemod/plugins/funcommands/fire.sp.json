@@ -1,0 +1,388 @@
+{
+  "functions": {
+    "DisplayBurnMenu": {
+      "name": "DisplayBurnMenu",
+      "refLine": 251,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_FireBomb": {
+      "name": "MenuHandler_FireBomb",
+      "refLine": 326,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "PerformFireBomb": {
+      "name": "PerformFireBomb",
+      "refLine": 78,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_Burn": {
+      "name": "AdminMenu_Burn",
+      "refLine": 217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "topmenu",
+          "decl": "TopMenu topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "KillAllFireBombs": {
+      "name": "KillAllFireBombs",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Timer_FireBomb": {
+      "name": "Timer_FireBomb",
+      "refLine": 92,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "DisplayFireBombMenu": {
+      "name": "DisplayFireBombMenu",
+      "refLine": 265,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "PerformBurn": {
+      "name": "PerformBurn",
+      "refLine": 72,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "seconds",
+          "decl": "float seconds",
+          "default": null
+        }
+      ]
+    },
+    "CreateFireBomb": {
+      "name": "CreateFireBomb",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "KillFireBomb": {
+      "name": "KillFireBomb",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_FireBomb": {
+      "name": "AdminMenu_FireBomb",
+      "refLine": 234,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "topmenu",
+          "decl": "TopMenu topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Command_FireBomb": {
+      "name": "Command_FireBomb",
+      "refLine": 431,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_Burn": {
+      "name": "MenuHandler_Burn",
+      "refLine": 279,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "Command_Burn": {
+      "name": "Command_Burn",
+      "refLine": 374,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

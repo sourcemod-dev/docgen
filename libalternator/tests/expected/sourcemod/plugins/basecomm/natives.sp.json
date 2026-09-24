@@ -1,0 +1,107 @@
+{
+  "functions": {
+    "Native_IsClientMuted": {
+      "name": "Native_IsClientMuted",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_SetClientMute": {
+      "name": "Native_SetClientMute",
+      "refLine": 103,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_IsClientGagged": {
+      "name": "Native_IsClientGagged",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_SetClientGag": {
+      "name": "Native_SetClientGag",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

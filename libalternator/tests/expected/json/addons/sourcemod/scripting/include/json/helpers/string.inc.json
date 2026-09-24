@@ -1,0 +1,219 @@
+{
+  "functions": {
+    "json_escape_string": {
+      "name": "json_escape_string",
+      "refLine": 57,
+      "docStart": 1963,
+      "docEnd": 2101,
+      "docs": {
+        "brief": "Escapes a string in-place in a buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Escapes a string in-place in a buffer."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        }
+      ]
+    },
+    "json_cell_string": {
+      "name": "json_cell_string",
+      "refLine": 236,
+      "docStart": 7150,
+      "docEnd": 7367,
+      "docs": {
+        "brief": "Generates the JSON cell representation of a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Generates the JSON cell representation of a string."
+          },
+          {
+            "tag": "param:input",
+            "text": "Value to generate output for."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        }
+      ]
+    },
+    "json_cell_string_size": {
+      "name": "json_cell_string_size",
+      "refLine": 190,
+      "docStart": 5962,
+      "docEnd": 6164,
+      "docs": {
+        "brief": "Calculates the maximum buffer length required to\nstore the JSON cell representation of a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the maximum buffer length required to\nstore the JSON cell representation of a string."
+          },
+          {
+            "tag": "param:length",
+            "text": "The length of the string."
+          },
+          {
+            "tag": "return",
+            "text": "Maximum buffer length."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        }
+      ]
+    },
+    "json_unescape_string": {
+      "name": "json_unescape_string",
+      "refLine": 112,
+      "docStart": 3609,
+      "docEnd": 3749,
+      "docs": {
+        "brief": "Unescapes a string in-place in a buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unescapes a string in-place in a buffer."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        }
+      ]
+    },
+    "json_char_is_hex": {
+      "name": "json_char_is_hex",
+      "refLine": 174,
+      "docStart": 5610,
+      "docEnd": 5802,
+      "docs": {
+        "brief": "Checks whether the provided character is a valid hexadecimal character.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the provided character is a valid hexadecimal character."
+          },
+          {
+            "tag": "param:c",
+            "text": "Character to check."
+          },
+          {
+            "tag": "return",
+            "text": "True if c is a hexadecimal character, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "c",
+          "decl": "int c",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_helpers_string_included": {
+      "name": "_json_helpers_string_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,893 @@
+{
+  "functions": {
+    "check_array_remove": {
+      "name": "check_array_remove",
+      "refLine": 85,
+      "docStart": 2523,
+      "docEnd": 2633,
+      "docs": {
+        "brief": "Removes the specified index from the array and confirms\nthat the removed value no longer exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes the specified index from the array and confirms\nthat the removed value no longer exists."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "JSON_Array",
+          "name": "arr",
+          "decl": "JSON_Array arr",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "it_should_pretty_print_an_empty_array": {
+      "name": "it_should_pretty_print_an_empty_array",
+      "refLine": 538,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_merge_objects_with_replacement": {
+      "name": "it_should_merge_objects_with_replacement",
+      "refLine": 726,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_objects_with_ordered_keys": {
+      "name": "it_should_support_objects_with_ordered_keys",
+      "refLine": 323,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_pretty_print_with_custom_formatting": {
+      "name": "it_should_pretty_print_with_custom_formatting",
+      "refLine": 580,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_arrays_nested_in_arrays": {
+      "name": "it_should_support_arrays_nested_in_arrays",
+      "refLine": 490,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_not_decode": {
+      "name": "it_should_not_decode",
+      "refLine": 242,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "data",
+          "decl": "char[] data",
+          "default": null
+        }
+      ]
+    },
+    "check_key_at_index": {
+      "name": "check_key_at_index",
+      "refLine": 129,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "it_should_shift_array_down_after_removed_index": {
+      "name": "it_should_shift_array_down_after_removed_index",
+      "refLine": 691,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_export_strings": {
+      "name": "it_should_export_strings",
+      "refLine": 1165,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_unicode": {
+      "name": "it_should_support_unicode",
+      "refLine": 1180,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_read_and_write_files": {
+      "name": "it_should_read_and_write_files",
+      "refLine": 1255,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_maintain_hidden_on_renamed_object_keys": {
+      "name": "it_should_maintain_hidden_on_renamed_object_keys",
+      "refLine": 1232,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_pretty_print_an_empty_object": {
+      "name": "it_should_pretty_print_an_empty_object",
+      "refLine": 547,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_not_merge_using_array": {
+      "name": "it_should_not_merge_using_array",
+      "refLine": 712,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_return_default_values_for_missing_elements": {
+      "name": "it_should_return_default_values_for_missing_elements",
+      "refLine": 988,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_remove_meta_keys_from_arrays": {
+      "name": "it_should_remove_meta_keys_from_arrays",
+      "refLine": 653,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_copy_flat_objects": {
+      "name": "it_should_copy_flat_objects",
+      "refLine": 844,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_allow_single_quotes": {
+      "name": "it_should_allow_single_quotes",
+      "refLine": 957,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_autocleanup_merged_objects": {
+      "name": "it_should_autocleanup_merged_objects",
+      "refLine": 1013,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 1273,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_not_concat_using_object": {
+      "name": "it_should_not_concat_using_object",
+      "refLine": 786,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_preserve_ordered_keys_on_shallow_copy": {
+      "name": "it_should_preserve_ordered_keys_on_shallow_copy",
+      "refLine": 895,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_objects_nested_in_arrays": {
+      "name": "it_should_support_objects_nested_in_arrays",
+      "refLine": 461,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_import_strings": {
+      "name": "it_should_import_strings",
+      "refLine": 1109,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "_json_encode": {
+      "name": "_json_encode",
+      "refLine": 62,
+      "docStart": 1985,
+      "docEnd": 2040,
+      "docs": {
+        "brief": "Encodes a JSON_Object to a hardcoded output.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Encodes a JSON_Object to a hardcoded output."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        }
+      ]
+    },
+    "it_should_support_decoding_objects_with_ordered_keys": {
+      "name": "it_should_support_decoding_objects_with_ordered_keys",
+      "refLine": 379,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_arrays_nested_in_objects": {
+      "name": "it_should_support_arrays_nested_in_objects",
+      "refLine": 475,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_shallow_copy_objects": {
+      "name": "it_should_shallow_copy_objects",
+      "refLine": 880,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_objects": {
+      "name": "it_should_support_objects",
+      "refLine": 281,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_calculate_string_sizes_correctly": {
+      "name": "it_should_calculate_string_sizes_correctly",
+      "refLine": 1244,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_merge_objects_without_replacement": {
+      "name": "it_should_merge_objects_without_replacement",
+      "refLine": 756,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_basic_methodmaps": {
+      "name": "it_should_support_basic_methodmaps",
+      "refLine": 505,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_decoding_objects_with_duplicate_keys": {
+      "name": "it_should_support_decoding_objects_with_duplicate_keys",
+      "refLine": 389,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_enforce_types_in_arrays": {
+      "name": "it_should_enforce_types_in_arrays",
+      "refLine": 1049,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_not_enable_strict_type_on_inconsistent_array": {
+      "name": "it_should_not_enable_strict_type_on_inconsistent_array",
+      "refLine": 1063,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_export_bools": {
+      "name": "it_should_export_bools",
+      "refLine": 1151,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_export_ints": {
+      "name": "it_should_export_ints",
+      "refLine": 1121,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_shallow_copy_arrays": {
+      "name": "it_should_shallow_copy_arrays",
+      "refLine": 865,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_objects_nested_in_objects": {
+      "name": "it_should_support_objects_nested_in_objects",
+      "refLine": 446,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_trim_floats": {
+      "name": "it_should_trim_floats",
+      "refLine": 613,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_copy_flat_arrays": {
+      "name": "it_should_copy_flat_arrays",
+      "refLine": 823,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "print_json": {
+      "name": "print_json",
+      "refLine": 75,
+      "docStart": 2318,
+      "docEnd": 2384,
+      "docs": {
+        "brief": "Encodes a JSON_Object and prints it to the test output.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Encodes a JSON_Object and prints it to the test output."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        }
+      ]
+    },
+    "it_should_concat_arrays": {
+      "name": "it_should_concat_arrays",
+      "refLine": 797,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_deep_copy_objects": {
+      "name": "it_should_deep_copy_objects",
+      "refLine": 941,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_import_floats": {
+      "name": "it_should_import_floats",
+      "refLine": 1085,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_deep_copy_arrays": {
+      "name": "it_should_deep_copy_arrays",
+      "refLine": 927,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_import_bools": {
+      "name": "it_should_import_bools",
+      "refLine": 1097,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "check_no_key_at_index": {
+      "name": "check_no_key_at_index",
+      "refLine": 147,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "it_should_decode": {
+      "name": "it_should_decode",
+      "refLine": 234,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "data",
+          "decl": "char[] data",
+          "default": null
+        }
+      ]
+    },
+    "it_should_encode_empty_arrays": {
+      "name": "it_should_encode_empty_arrays",
+      "refLine": 272,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_encode_empty_objects": {
+      "name": "it_should_encode_empty_objects",
+      "refLine": 263,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_nested_methodmaps": {
+      "name": "it_should_support_nested_methodmaps",
+      "refLine": 519,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_rename_object_keys": {
+      "name": "it_should_rename_object_keys",
+      "refLine": 1210,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_pretty_print_with_nesting": {
+      "name": "it_should_pretty_print_with_nesting",
+      "refLine": 556,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_support_arrays": {
+      "name": "it_should_support_arrays",
+      "refLine": 401,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_import_ints": {
+      "name": "it_should_import_ints",
+      "refLine": 1073,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_export_floats": {
+      "name": "it_should_export_floats",
+      "refLine": 1136,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "it_should_remove_meta_keys_from_objects": {
+      "name": "it_should_remove_meta_keys_from_objects",
+      "refLine": 672,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {
+    "Player": {
+      "name": "Player",
+      "refLine": 196,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "JSON_Object",
+      "methods": {
+        "Player": {
+          "name": "Player",
+          "refLine": 198,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "Player",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "weapon": {
+          "name": "weapon",
+          "refLine": 216,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "Weapon",
+          "getter": true,
+          "setter": true
+        },
+        "id": {
+          "name": "id",
+          "refLine": 203,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    },
+    "Weapon": {
+      "name": "Weapon",
+      "refLine": 165,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "JSON_Object",
+      "methods": {
+        "SetName": {
+          "name": "SetName",
+          "refLine": 190,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Weapon": {
+          "name": "Weapon",
+          "refLine": 167,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "Weapon",
+          "arguments": []
+        },
+        "GetName": {
+          "name": "GetName",
+          "refLine": 185,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "name": "id",
+          "refLine": 172,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

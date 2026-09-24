@@ -1,0 +1,221 @@
+{
+  "functions": {},
+  "methodmaps": {},
+  "enumstructs": {
+    "Ragdoll": {
+      "name": "Ragdoll",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "GameTime": {
+          "name": "GameTime",
+          "refLine": 18,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "float"
+        },
+        "VictimRole": {
+          "name": "VictimRole",
+          "refLine": 11,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "AttackerName": {
+          "name": "AttackerName",
+          "refLine": 23,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[MAX_NAME_LENGTH]"
+        },
+        "AttackerSteamID64": {
+          "name": "AttackerSteamID64",
+          "refLine": 26,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "Found": {
+          "name": "Found",
+          "refLine": 16,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool"
+        },
+        "Attacker": {
+          "name": "Attacker",
+          "refLine": 10,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "AttackerSteam3": {
+          "name": "AttackerSteam3",
+          "refLine": 25,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "Model": {
+          "name": "Model",
+          "refLine": 28,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[]"
+        },
+        "EntityRef": {
+          "name": "EntityRef",
+          "refLine": 8,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "AttackerRole": {
+          "name": "AttackerRole",
+          "refLine": 12,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "Explode": {
+          "name": "Explode",
+          "refLine": 17,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool"
+        },
+        "VictimSteam2": {
+          "name": "VictimSteam2",
+          "refLine": 20,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "VictimSteamID64": {
+          "name": "VictimSteamID64",
+          "refLine": 22,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "AttackerSteam2": {
+          "name": "AttackerSteam2",
+          "refLine": 24,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "Weaponused": {
+          "name": "Weaponused",
+          "refLine": 27,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[32]"
+        },
+        "AttackerAccountID": {
+          "name": "AttackerAccountID",
+          "refLine": 14,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "Scanned": {
+          "name": "Scanned",
+          "refLine": 15,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool"
+        },
+        "Victim": {
+          "name": "Victim",
+          "refLine": 9,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "VictimSteam3": {
+          "name": "VictimSteam3",
+          "refLine": 21,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[24]"
+        },
+        "VictimName": {
+          "name": "VictimName",
+          "refLine": 19,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[MAX_NAME_LENGTH]"
+        },
+        "VictimAccountID": {
+          "name": "VictimAccountID",
+          "refLine": 13,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        }
+      }
+    }
+  },
+  "constants": {},
+  "defines": {
+    "_ttt_ragdoll_included": {
+      "name": "_ttt_ragdoll_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

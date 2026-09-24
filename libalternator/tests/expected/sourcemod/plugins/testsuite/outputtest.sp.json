@@ -1,0 +1,69 @@
+{
+  "functions": {
+    "OutputHook": {
+      "name": "OutputHook",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "caller",
+          "decl": "int caller",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "activator",
+          "decl": "int activator",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

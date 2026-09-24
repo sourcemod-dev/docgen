@@ -1,0 +1,111 @@
+{
+  "functions": {
+    "TTT_OnTased_Post": {
+      "name": "TTT_OnTased_Post",
+      "refLine": 21,
+      "docStart": 402,
+      "docEnd": 604,
+      "docs": {
+        "brief": "Called after a player is tased by another player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a player is tased by another player"
+          },
+          {
+            "tag": "param:attacker",
+            "text": "The client who tased another player"
+          },
+          {
+            "tag": "param:victim",
+            "text": "The client who was tased by another player"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnTased_Pre": {
+      "name": "TTT_OnTased_Pre",
+      "refLine": 13,
+      "docStart": 82,
+      "docEnd": 325,
+      "docs": {
+        "brief": "Called before a player is tased by another player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before a player is tased by another player."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "The client who tased another player"
+          },
+          {
+            "tag": "param:victim",
+            "text": "The client who was tased by another player"
+          },
+          {
+            "tag": "param:victimRole",
+            "text": "The victims role"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "victimRole",
+          "decl": "int& victimRole",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_taser_included": {
+      "name": "_ttt_taser_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

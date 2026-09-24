@@ -1,0 +1,2853 @@
+{
+  "functions": {
+    "ReadMapList": {
+      "name": "ReadMapList",
+      "refLine": 614,
+      "docStart": 20882,
+      "docEnd": 24045,
+      "docs": {
+        "brief": "Loads a map list to an ADT Array.\n\nA map list is a list of maps from a file.  SourceMod allows easy configuration of\nmaplists through addons/sourcemod/configs/maplists.cfg.  Each entry is given a\nname and a file (for example, \"rtv\" => \"rtv.cfg\"), or a name and a redirection\n(for example, \"rtv\" => \"default\").  This native will read a map list entry,\ncache the file, and return the list of maps it holds.\n\nSerial change numbers are used to identify if a map list has changed.  Thus, if\nyou pass a serial change number and it's equal to what SourceMod currently knows\nabout the map list, then SourceMod won't re-parse the file.\n\nIf the maps end up being read from the maps folder (MAPLIST_FLAG_MAPSFOLDER), they\nare automatically sorted in alphabetical, ascending order.\n\nArrays created by this function are temporary and must be freed via CloseHandle().\nModifying arrays created by this function will not affect future return values or\nor the contents of arrays returned to other plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Loads a map list to an ADT Array.\n\nA map list is a list of maps from a file.  SourceMod allows easy configuration of\nmaplists through addons/sourcemod/configs/maplists.cfg.  Each entry is given a\nname and a file (for example, \"rtv\" => \"rtv.cfg\"), or a name and a redirection\n(for example, \"rtv\" => \"default\").  This native will read a map list entry,\ncache the file, and return the list of maps it holds.\n\nSerial change numbers are used to identify if a map list has changed.  Thus, if\nyou pass a serial change number and it's equal to what SourceMod currently knows\nabout the map list, then SourceMod won't re-parse the file.\n\nIf the maps end up being read from the maps folder (MAPLIST_FLAG_MAPSFOLDER), they\nare automatically sorted in alphabetical, ascending order.\n\nArrays created by this function are temporary and must be freed via CloseHandle().\nModifying arrays created by this function will not affect future return values or\nor the contents of arrays returned to other plugins."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to store the map list.  If INVALID_HANDLE, a new blank\narray will be created.  The blocksize should be at least 16;\notherwise results may be truncated.  Items are added to the array\nas strings.  The array is never checked for duplicates, and it is\nnot read beforehand.  Only the serial number is used to detect\nchanges."
+          },
+          {
+            "tag": "param:serial",
+            "text": "Serial number to identify last known map list change.  If -1, the\nthe value will not be checked.  If the map list has since changed,\nthe serial is updated (even if -1 was passed).  If there is an error\nfinding a valid maplist, then the serial is set to -1."
+          },
+          {
+            "tag": "param:str",
+            "text": "Config name, or \"default\" for the default map list.  Config names\nshould be somewhat descriptive.  For example, the admin menu uses\na config name of \"admin menu\".  The list names can be configured\nby users in addons/sourcemod/configs/maplists.cfg."
+          },
+          {
+            "tag": "param:flags",
+            "text": "MAPLIST_FLAG flags."
+          },
+          {
+            "tag": "return",
+            "text": "On failure:\nINVALID_HANDLE is returned, the serial is set to -1, and the input\narray (if any) is left unchanged.\nOn no change:\nINVALID_HANDLE is returned, the serial is unchanged, and the input\narray (if any) is left unchanged.\nOn success:\nA valid array Handle is returned, containing at least one map string.\nIf an array was passed, the return value is equal to the passed Array\nHandle.  If the passed array was not cleared, it will have grown by at\nleast one item.  The serial number is updated to a positive number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid array Handle that is not INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": "INVALID_HANDLE"
+        },
+        {
+          "type": "int&",
+          "name": "serial",
+          "decl": "int& serial",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": "\"default\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "1 << 1"
+        }
+      ]
+    },
+    "GetFeatureStatus": {
+      "name": "GetFeatureStatus",
+      "refLine": 714,
+      "docStart": 26915,
+      "docEnd": 27117,
+      "docs": {
+        "brief": "Returns whether a feature exists, and if so, whether it is usable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a feature exists, and if so, whether it is usable."
+          },
+          {
+            "tag": "param:type",
+            "text": "Feature type."
+          },
+          {
+            "tag": "param:name",
+            "text": "Feature name."
+          },
+          {
+            "tag": "return",
+            "text": "Feature status."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "FeatureStatus",
+      "arguments": [
+        {
+          "type": "FeatureType",
+          "name": "type",
+          "decl": "FeatureType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "OnMapEnd": {
+      "name": "OnMapEnd",
+      "refLine": 210,
+      "docStart": 7488,
+      "docEnd": 7532,
+      "docs": {
+        "brief": "Called right before a map ends.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called right before a map ends."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnServerCfg": {
+      "name": "OnServerCfg",
+      "refLine": 241,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "RegPluginLibrary": {
+      "name": "RegPluginLibrary",
+      "refLine": 511,
+      "docStart": 18687,
+      "docEnd": 18821,
+      "docs": {
+        "brief": "Registers a library name for identifying as a dependency to\nother plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Registers a library name for identifying as a dependency to\nother plugins."
+          },
+          {
+            "tag": "param:name",
+            "text": "Library name."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "CanTestFeatures": {
+      "name": "CanTestFeatures",
+      "refLine": 702,
+      "docStart": 26513,
+      "docEnd": 26828,
+      "docs": {
+        "brief": "Returns whether \"GetFeatureStatus\" will work. Using this native\nor this function will not cause SourceMod to fail loading on older versions,\nhowever, GetFeatureStatus will only work if this function returns true.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether \"GetFeatureStatus\" will work. Using this native\nor this function will not cause SourceMod to fail loading on older versions,\nhowever, GetFeatureStatus will only work if this function returns true."
+          },
+          {
+            "tag": "return",
+            "text": "True if GetFeatureStatus will work, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "FormatTime": {
+      "name": "FormatTime",
+      "refLine": 423,
+      "docStart": 14452,
+      "docEnd": 15196,
+      "docs": {
+        "brief": "Produces a date and/or time string value for a timestamp.\n\nSee this URL for valid parameters:\nhttps://cplusplus.com/reference/ctime/strftime/\n\nNote that available parameters depends on support from your operating system.\nIn particular, ones highlighted in yellow on that page are not currently\navailable on Windows and should be avoided for portable plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Produces a date and/or time string value for a timestamp.\n\nSee this URL for valid parameters:\nhttps://cplusplus.com/reference/ctime/strftime/\n\nNote that available parameters depends on support from your operating system.\nIn particular, ones highlighted in yellow on that page are not currently\navailable on Windows and should be avoided for portable plugins."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules (passing NULL_STRING will use the rules defined in sm_datetime_format)."
+          },
+          {
+            "tag": "param:stamp",
+            "text": "Optional time stamp."
+          },
+          {
+            "tag": "error",
+            "text": "Buffer too small or invalid time format."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "stamp",
+          "decl": "int stamp",
+          "default": "-1"
+        }
+      ]
+    },
+    "OnLibraryRemoved": {
+      "name": "OnLibraryRemoved",
+      "refLine": 553,
+      "docStart": 20162,
+      "docEnd": 20353,
+      "docs": {
+        "brief": "Called right before a library is removed.\nA library is either a plugin name or extension name, as\nexposed via its include file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called right before a library is removed.\nA library is either a plugin name or extension name, as\nexposed via its include file."
+          },
+          {
+            "tag": "param:name",
+            "text": "Library name."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "LoadFromAddress": {
+      "name": "LoadFromAddress",
+      "refLine": 747,
+      "docStart": 27839,
+      "docEnd": 28230,
+      "docs": {
+        "brief": "Load up to 4 bytes from a memory address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Load up to 4 bytes from a memory address."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "param:size",
+            "text": "How many bytes should be read.\nIf loading a floating-point value, use NumberType_Int32."
+          },
+          {
+            "tag": "return",
+            "text": "The value that is stored at that address."
+          },
+          {
+            "tag": "error",
+            "text": "Address is null or pointing to reserved memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        },
+        {
+          "type": "NumberType",
+          "name": "size",
+          "decl": "NumberType size",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig": {
+      "name": "AutoExecConfig",
+      "refLine": 503,
+      "docStart": 17888,
+      "docEnd": 18577,
+      "docs": {
+        "brief": "Specifies that the given config file should be executed after plugin load.\nOnConfigsExecuted() will not be called until the config file has executed,\nbut it will be called if the execution fails.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Specifies that the given config file should be executed after plugin load.\nOnConfigsExecuted() will not be called until the config file has executed,\nbut it will be called if the execution fails."
+          },
+          {
+            "tag": "param:autoCreate",
+            "text": "If true, and the config file does not exist, such a config\nfile will be automatically created and populated with\ninformation from the plugin's registered cvars."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the config file, excluding the .cfg extension.\nIf empty, <plugin.filename.cfg> is assumed."
+          },
+          {
+            "tag": "param:folder",
+            "text": "Folder under cfg/ to use.  By default this is \"sourcemod.\""
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "autoCreate",
+          "decl": "bool autoCreate",
+          "default": "true"
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "folder",
+          "decl": "const char[] folder",
+          "default": "\"sourcemod\""
+        }
+      ]
+    },
+    "FindPluginByNumber": {
+      "name": "FindPluginByNumber",
+      "refLine": 357,
+      "docStart": 12186,
+      "docEnd": 12694,
+      "docs": {
+        "brief": "Finds a plugin by its order in the list from the \"plugins list\" server\n\"sm\" command.  You should not use this function to loop through all plugins,\nuse the iterator instead.  Looping through all plugins using this native\nis O(n^2), whereas using the iterator is O(n).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a plugin by its order in the list from the \"plugins list\" server\n\"sm\" command.  You should not use this function to loop through all plugins,\nuse the iterator instead.  Looping through all plugins using this native\nis O(n^2), whereas using the iterator is O(n)."
+          },
+          {
+            "tag": "param:order_num",
+            "text": "Number of the plugin as it appears in \"sm plugins list\"."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin Handle on success, INVALID_HANDLE if no plugin\nmatches the given number."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "order_num",
+          "decl": "int order_num",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad": {
+      "name": "AskPluginLoad",
+      "refLine": 149,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "IsPluginDebugging": {
+      "name": "IsPluginDebugging",
+      "refLine": 333,
+      "docStart": 11374,
+      "docEnd": 11631,
+      "docs": {
+        "brief": "Retrieves whether or not a plugin is being debugged.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves whether or not a plugin is being debugged."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Plugin Handle (INVALID_HANDLE uses the calling plugin)."
+          },
+          {
+            "tag": "return",
+            "text": "True if being debugged, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        }
+      ]
+    },
+    "GameConfGetOffset": {
+      "name": "GameConfGetOffset",
+      "refLine": 459,
+      "docStart": 16502,
+      "docEnd": 16708,
+      "docs": {
+        "brief": "Returns an offset value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns an offset value."
+          },
+          {
+            "tag": "param:gc",
+            "text": "Game config handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key to retrieve from the offset section."
+          },
+          {
+            "tag": "return",
+            "text": "An offset, or -1 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "gc",
+          "decl": "Handle gc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        }
+      ]
+    },
+    "LoadGameConfigFile": {
+      "name": "LoadGameConfigFile",
+      "refLine": 450,
+      "docStart": 16135,
+      "docEnd": 16442,
+      "docs": {
+        "brief": "Loads a game config file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Loads a game config file."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to load.  The path must be relative to the 'gamedata' folder under the config folder\nand the extension should be omitted."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to the game config file or INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GameData",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginPauseChange": {
+      "name": "OnPluginPauseChange",
+      "refLine": 185,
+      "docStart": 6852,
+      "docEnd": 6997,
+      "docs": {
+        "brief": "Called when the plugin's pause status is changing.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the plugin's pause status is changing."
+          },
+          {
+            "tag": "param:pause",
+            "text": "True if the plugin is being paused, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "pause",
+          "decl": "bool pause",
+          "default": null
+        }
+      ]
+    },
+    "OnAllPluginsLoaded": {
+      "name": "OnAllPluginsLoaded",
+      "refLine": 248,
+      "docStart": 8723,
+      "docEnd": 8903,
+      "docs": {
+        "brief": "Called after all plugins have been loaded.  This is called once for\nevery plugin.  If a plugin late loads, it will be called immediately\nafter OnPluginStart().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after all plugins have been loaded.  This is called once for\nevery plugin.  If a plugin late loads, it will be called immediately\nafter OnPluginStart()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnMapInit": {
+      "name": "OnMapInit",
+      "refLine": 198,
+      "docStart": 7221,
+      "docEnd": 7308,
+      "docs": {
+        "brief": "Called when the map starts loading.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the map starts loading."
+          },
+          {
+            "tag": "param:mapName",
+            "text": "Name of the map"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "mapName",
+          "decl": "const char[] mapName",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginEnd": {
+      "name": "OnPluginEnd",
+      "refLine": 178,
+      "docStart": 6574,
+      "docEnd": 6819,
+      "docs": {
+        "brief": "Called when the plugin is about to be unloaded.\n\nIt is not necessary to close any handles or remove hooks in this function.\nSourceMod guarantees that plugin shutdown automatically and correctly releases\nall resources.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the plugin is about to be unloaded.\n\nIt is not necessary to close any handles or remove hooks in this function.\nSourceMod guarantees that plugin shutdown automatically and correctly releases\nall resources."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GetPluginIterator": {
+      "name": "GetPluginIterator",
+      "refLine": 286,
+      "docStart": 9796,
+      "docEnd": 10026,
+      "docs": {
+        "brief": "Returns an iterator that can be used to search through plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns an iterator that can be used to search through plugins."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to iterate with.  Must be closed via\nCloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "GameConfGetAddress": {
+      "name": "GameConfGetAddress",
+      "refLine": 480,
+      "docStart": 17220,
+      "docEnd": 17546,
+      "docs": {
+        "brief": "Finds an address calculation in a GameConfig file,\nperforms LoadFromAddress on it as appropriate, then returns the final address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds an address calculation in a GameConfig file,\nperforms LoadFromAddress on it as appropriate, then returns the final address."
+          },
+          {
+            "tag": "param:gameconf",
+            "text": "Game config handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the property to find."
+          },
+          {
+            "tag": "return",
+            "text": "An address calculated on success, or 0 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "gameconf",
+          "decl": "Handle gameconf",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "LogStackTrace": {
+      "name": "LogStackTrace",
+      "refLine": 397,
+      "docStart": 13860,
+      "docEnd": 14135,
+      "docs": {
+        "brief": "Logs a stack trace from the current function call. Code\nexecution continues after the call",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs a stack trace from the current function call. Code\nexecution continues after the call"
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format string to send with the stack trace."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "error",
+            "text": "Always logs a stack trace."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetSysTickCount": {
+      "name": "GetSysTickCount",
+      "refLine": 489,
+      "docStart": 17622,
+      "docEnd": 17853,
+      "docs": {
+        "brief": "Returns the operating system's \"tick count,\" which is a number of\nmilliseconds since the operating system loaded.  This can be used\nfor basic benchmarks.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the operating system's \"tick count,\" which is a number of\nmilliseconds since the operating system loaded.  This can be used\nfor basic benchmarks."
+          },
+          {
+            "tag": "return",
+            "text": "Tick count in milliseconds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetPluginStatus": {
+      "name": "GetPluginStatus",
+      "refLine": 314,
+      "docStart": 10697,
+      "docEnd": 10915,
+      "docs": {
+        "brief": "Returns a plugin's status.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a plugin's status."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Plugin Handle (INVALID_HANDLE uses the calling plugin)."
+          },
+          {
+            "tag": "return",
+            "text": "Status code for the plugin."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "PluginStatus",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        }
+      ]
+    },
+    "OnGameFrame": {
+      "name": "OnGameFrame",
+      "refLine": 191,
+      "docStart": 7048,
+      "docEnd": 7188,
+      "docs": {
+        "brief": "Called before every server frame.  Note that you should avoid\ndoing expensive computations or declaring large local arrays.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before every server frame.  Note that you should avoid\ndoing expensive computations or declaring large local arrays."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GetPluginInfo": {
+      "name": "GetPluginInfo",
+      "refLine": 345,
+      "docStart": 11682,
+      "docEnd": 12092,
+      "docs": {
+        "brief": "Retrieves a plugin's public info.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a plugin's public info."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Plugin Handle (INVALID_HANDLE uses the calling plugin)."
+          },
+          {
+            "tag": "param:info",
+            "text": "Plugin info property to retrieve."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store info in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if property is not available."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "PluginInfo",
+          "name": "info",
+          "decl": "PluginInfo info",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetTime": {
+      "name": "GetTime",
+      "refLine": 405,
+      "docStart": 14194,
+      "docEnd": 14404,
+      "docs": {
+        "brief": "Gets the system time as a unix timestamp.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the system time as a unix timestamp."
+          },
+          {
+            "tag": "param:bigStamp",
+            "text": "Optional array to store the 64bit timestamp in."
+          },
+          {
+            "tag": "return",
+            "text": "32bit timestamp (number of seconds since unix epoch)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int[2]",
+          "name": "bigStamp",
+          "decl": "int bigStamp[2]",
+          "default": "{ 0, 0 }"
+        }
+      ]
+    },
+    "OnLibraryAdded": {
+      "name": "OnLibraryAdded",
+      "refLine": 544,
+      "docStart": 19927,
+      "docEnd": 20109,
+      "docs": {
+        "brief": "Called after a library is added.\nA library is either a plugin name or extension name, as\nexposed via its include file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a library is added.\nA library is either a plugin name or extension name, as\nexposed via its include file."
+          },
+          {
+            "tag": "param:name",
+            "text": "Library name."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "SetMapListCompatBind": {
+      "name": "SetMapListCompatBind",
+      "refLine": 627,
+      "docStart": 24266,
+      "docEnd": 24649,
+      "docs": {
+        "brief": "Makes a compatibility binding for map lists.  For example, if a function previously used\n\"clam.cfg\" for map lists, this function will insert a \"fake\" binding to \"clam.cfg\" that\nwill be overridden if it's in the maplists.cfg file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Makes a compatibility binding for map lists.  For example, if a function previously used\n\"clam.cfg\" for map lists, this function will insert a \"fake\" binding to \"clam.cfg\" that\nwill be overridden if it's in the maplists.cfg file."
+          },
+          {
+            "tag": "param:name",
+            "text": "Configuration name that would be used with ReadMapList()."
+          },
+          {
+            "tag": "param:file",
+            "text": "Default file to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "LibraryExists": {
+      "name": "LibraryExists",
+      "refLine": 522,
+      "docStart": 18875,
+      "docEnd": 19254,
+      "docs": {
+        "brief": "Returns whether a library exists.  This function should be considered\nexpensive; it should only be called on plugin to determine availability\nof resources.  Use OnLibraryAdded()/OnLibraryRemoved() to detect changes\nin libraries.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a library exists.  This function should be considered\nexpensive; it should only be called on plugin to determine availability\nof resources.  Use OnLibraryAdded()/OnLibraryRemoved() to detect changes\nin libraries."
+          },
+          {
+            "tag": "param:name",
+            "text": "Library name of a plugin or extension."
+          },
+          {
+            "tag": "return",
+            "text": "True if exists, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 169,
+      "docStart": 5345,
+      "docEnd": 6485,
+      "docs": {
+        "brief": "Called before OnPluginStart, in case the plugin wants to check for load failure.\nThis is called even if the plugin type is \"private.\"  Any natives from modules are\nnot available at this point.  Thus, this forward should only be used for explicit\npre-emptive things, such as adding dynamic natives, setting certain types of load\nfilters (such as not loading the plugin for certain games).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before OnPluginStart, in case the plugin wants to check for load failure.\nThis is called even if the plugin type is \"private.\"  Any natives from modules are\nnot available at this point.  Thus, this forward should only be used for explicit\npre-emptive things, such as adding dynamic natives, setting certain types of load\nfilters (such as not loading the plugin for certain games)."
+          },
+          {
+            "tag": "note",
+            "text": "It is not safe to call externally resolved natives until OnPluginStart()."
+          },
+          {
+            "tag": "note",
+            "text": "Any sort of RTE in this function will cause the plugin to fail loading."
+          },
+          {
+            "tag": "note",
+            "text": "If you do not return anything, it is treated like returning success."
+          },
+          {
+            "tag": "note",
+            "text": "If a plugin has an AskPluginLoad2(), AskPluginLoad() will not be called."
+          },
+          {
+            "tag": "param:myself",
+            "text": "Handle to the plugin."
+          },
+          {
+            "tag": "param:late",
+            "text": "Whether or not the plugin was loaded \"late\" (after map load)."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error message buffer in case load failed."
+          },
+          {
+            "tag": "param:err_max",
+            "text": "Maximum number of characters for error message buffer."
+          },
+          {
+            "tag": "return",
+            "text": "APLRes_Success for load success, APLRes_Failure or APLRes_SilentFailure otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "SetFailState": {
+      "name": "SetFailState",
+      "refLine": 376,
+      "docStart": 12748,
+      "docEnd": 13471,
+      "docs": {
+        "brief": "Causes the plugin to enter a failed state.  An error will be thrown and\nthe plugin will be paused until it is unloaded or reloaded.\n\nFor backwards compatibility, if no extra arguments are passed, no\nformatting is applied.  If one or more additional arguments is passed,\nthe string is formatted using Format().  If any errors are encountered\nduring formatting, both the format specifier string and an additional\nerror message are written.\n\nThis function does not return, and no further code in the plugin is\nexecuted.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Causes the plugin to enter a failed state.  An error will be thrown and\nthe plugin will be paused until it is unloaded or reloaded.\n\nFor backwards compatibility, if no extra arguments are passed, no\nformatting is applied.  If one or more additional arguments is passed,\nthe string is formatted using Format().  If any errors are encountered\nduring formatting, both the format specifier string and an additional\nerror message are written.\n\nThis function does not return, and no further code in the plugin is\nexecuted."
+          },
+          {
+            "tag": "param:string",
+            "text": "Format specifier string."
+          },
+          {
+            "tag": "param:...",
+            "text": "Formatting arguments."
+          },
+          {
+            "tag": "error",
+            "text": "Always throws SP_ERROR_ABORT."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "string",
+          "decl": "const char[] string",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ThrowError": {
+      "name": "ThrowError",
+      "refLine": 387,
+      "docStart": 13532,
+      "docEnd": 13804,
+      "docs": {
+        "brief": "Aborts the current callback and throws an error.  This function\ndoes not return in that no code is executed following it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Aborts the current callback and throws an error.  This function\ndoes not return in that no code is executed following it."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "error",
+            "text": "Always!"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "OnClientFloodCheck": {
+      "name": "OnClientFloodCheck",
+      "refLine": 639,
+      "docStart": 24726,
+      "docEnd": 25135,
+      "docs": {
+        "brief": "Called when a client has sent chat text.  This must return either true or\nfalse to indicate that a client is or is not spamming the server.\n\nThe return value is a hint only.  Core or another plugin may decide\notherwise.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client has sent chat text.  This must return either true or\nfalse to indicate that a client is or is not spamming the server.\n\nThe return value is a hint only.  Core or another plugin may decide\notherwise."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index.  The server (0) will never be passed."
+          },
+          {
+            "tag": "return",
+            "text": "True if client is spamming the server, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "ReadPlugin": {
+      "name": "ReadPlugin",
+      "refLine": 305,
+      "docStart": 10352,
+      "docEnd": 10653,
+      "docs": {
+        "brief": "Returns the current plugin in the iterator and advances the iterator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the current plugin in the iterator and advances the iterator."
+          },
+          {
+            "tag": "param:iter",
+            "text": "Handle to the plugin iterator."
+          },
+          {
+            "tag": "return",
+            "text": "Current plugin the iterator is at, before\nthe iterator is advanced."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "iter",
+          "decl": "Handle iter",
+          "default": null
+        }
+      ]
+    },
+    "OnClientFloodResult": {
+      "name": "OnClientFloodResult",
+      "refLine": 652,
+      "docStart": 25185,
+      "docEnd": 25670,
+      "docs": {
+        "brief": "Called after a client's flood check has been computed.  This can be used\nby antiflood algorithms to decay/increase flooding weights.\n\nSince the result from \"OnClientFloodCheck\" isn't guaranteed to be the\nfinal result, it is generally a good idea to use this to play with other\nalgorithms nicely.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a client's flood check has been computed.  This can be used\nby antiflood algorithms to decay/increase flooding weights.\n\nSince the result from \"OnClientFloodCheck\" isn't guaranteed to be the\nfinal result, it is generally a good idea to use this to play with other\nalgorithms nicely."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index.  The server (0) will never be passed."
+          },
+          {
+            "tag": "param:blocked",
+            "text": "True if client flooded last \"say\", false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "blocked",
+          "decl": "bool blocked",
+          "default": null
+        }
+      ]
+    },
+    "StoreToAddress": {
+      "name": "StoreToAddress",
+      "refLine": 760,
+      "docStart": 28294,
+      "docEnd": 28900,
+      "docs": {
+        "brief": "Store up to 4 bytes to a memory address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Store up to 4 bytes to a memory address."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "param:data",
+            "text": "Value to store at the address."
+          },
+          {
+            "tag": "param:size",
+            "text": "How many bytes should be written.\nIf storing a floating-point value, use NumberType_Int32."
+          },
+          {
+            "tag": "param:updateMemAccess",
+            "text": "If true, SourceMod will set read / write / exec permissions\non the memory page being written to."
+          },
+          {
+            "tag": "error",
+            "text": "Address is null or pointing to reserved memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "NumberType",
+          "name": "size",
+          "decl": "NumberType size",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "updateMemAccess",
+          "decl": "bool updateMemAccess",
+          "default": "true"
+        }
+      ]
+    },
+    "RequireFeature": {
+      "name": "RequireFeature",
+      "refLine": 725,
+      "docStart": 27198,
+      "docEnd": 27536,
+      "docs": {
+        "brief": "Requires that a given feature is available. If it is not, SetFailState()\nis called with the given message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Requires that a given feature is available. If it is not, SetFailState()\nis called with the given message."
+          },
+          {
+            "tag": "param:type",
+            "text": "Feature type."
+          },
+          {
+            "tag": "param:name",
+            "text": "Feature name."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Message format string, or empty to use default."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message format parameters, if any."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "FeatureType",
+          "name": "type",
+          "decl": "FeatureType type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": "\"\""
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "LoadAddressFromAddress": {
+      "name": "LoadAddressFromAddress",
+      "refLine": 769,
+      "docStart": 29003,
+      "docEnd": 29258,
+      "docs": {
+        "brief": "Load sizeof(void*) from a memory address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Load sizeof(void*) from a memory address."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "return",
+            "text": "The address that is stored at that address."
+          },
+          {
+            "tag": "error",
+            "text": "Address is null or pointing to reserved memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 141,
+      "docStart": 4660,
+      "docEnd": 4965,
+      "docs": {
+        "brief": "Called when the plugin is fully initialized and all known external references\nare resolved. This is only called once in the lifetime of the plugin, and is\npaired with OnPluginEnd().\n\nIf any run-time error is thrown during this callback, the plugin will be marked\nas failed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the plugin is fully initialized and all known external references\nare resolved. This is only called once in the lifetime of the plugin, and is\npaired with OnPluginEnd().\n\nIf any run-time error is thrown during this callback, the plugin will be marked\nas failed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnAutoConfigsBuffered": {
+      "name": "OnAutoConfigsBuffered",
+      "refLine": 235,
+      "docStart": 7964,
+      "docEnd": 8529,
+      "docs": {
+        "brief": "This is called once, right after OnMapStart() but any time before\nOnConfigsExecuted().  It is called after the \"exec sourcemod.cfg\"\ncommand and all AutoExecConfig() exec commands have been added to\nthe ServerCommand() buffer.\n\nIf you need to load per-map settings that override default values,\nadding commands to the ServerCommand() buffer here will guarantee\nthat they're set before OnConfigsExecuted().\n\nUnlike OnMapStart() and OnConfigsExecuted(), this is not called on\nlate loads that occur after OnMapStart().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This is called once, right after OnMapStart() but any time before\nOnConfigsExecuted().  It is called after the \"exec sourcemod.cfg\"\ncommand and all AutoExecConfig() exec commands have been added to\nthe ServerCommand() buffer.\n\nIf you need to load per-map settings that override default values,\nadding commands to the ServerCommand() buffer here will guarantee\nthat they're set before OnConfigsExecuted().\n\nUnlike OnMapStart() and OnConfigsExecuted(), this is not called on\nlate loads that occur after OnMapStart()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "StoreAddressToAddress": {
+      "name": "StoreAddressToAddress",
+      "refLine": 780,
+      "docStart": 29316,
+      "docEnd": 29769,
+      "docs": {
+        "brief": "Store sizeof(void*) bytes to a memory address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Store sizeof(void*) bytes to a memory address."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address to a memory location."
+          },
+          {
+            "tag": "param:data",
+            "text": "Address to store at that location."
+          },
+          {
+            "tag": "param:updateMemAccess",
+            "text": "If true, SourceMod will set read / write / exec permissions\non the memory page being written to."
+          },
+          {
+            "tag": "error",
+            "text": "Address is null or pointing to reserved memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        },
+        {
+          "type": "Address",
+          "name": "data",
+          "decl": "Address data",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "updateMemAccess",
+          "decl": "bool updateMemAccess",
+          "default": "true"
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 205,
+      "docStart": 7359,
+      "docEnd": 7456,
+      "docs": {
+        "brief": "Called when the map is loaded.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the map is loaded."
+          },
+          {
+            "tag": "note",
+            "text": "On late load this will be called again."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnNotifyPluginUnloaded": {
+      "name": "OnNotifyPluginUnloaded",
+      "refLine": 560,
+      "docStart": 20408,
+      "docEnd": 20508,
+      "docs": {
+        "brief": "Called when a plugin unloaded.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a plugin unloaded."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Plugin Handle who unloaded."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        }
+      ]
+    },
+    "MorePlugins": {
+      "name": "MorePlugins",
+      "refLine": 295,
+      "docStart": 10066,
+      "docEnd": 10309,
+      "docs": {
+        "brief": "Returns whether there are more plugins available in the iterator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether there are more plugins available in the iterator."
+          },
+          {
+            "tag": "param:iter",
+            "text": "Handle to the plugin iterator."
+          },
+          {
+            "tag": "return",
+            "text": "True on more plugins, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "iter",
+          "decl": "Handle iter",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 220,
+      "docStart": 7562,
+      "docEnd": 7925,
+      "docs": {
+        "brief": "Called when the map has loaded, servercfgfile (server.cfg) has been\nexecuted, and all plugin configs are done executing.  This is the best\nplace to initialize plugin functions which are based on cvar data.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the map has loaded, servercfgfile (server.cfg) has been\nexecuted, and all plugin configs are done executing.  This is the best\nplace to initialize plugin functions which are based on cvar data."
+          },
+          {
+            "tag": "note",
+            "text": "This will always be called once and only once per map, after\nOnMapStart(). On late load it will be called again."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GetMyHandle": {
+      "name": "GetMyHandle",
+      "refLine": 255,
+      "docStart": 8943,
+      "docEnd": 9051,
+      "docs": {
+        "brief": "Returns the calling plugin's Handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the calling plugin's Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Handle of the calling plugin."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "GetExtensionFileStatus": {
+      "name": "GetExtensionFileStatus",
+      "refLine": 535,
+      "docStart": 19305,
+      "docEnd": 19834,
+      "docs": {
+        "brief": "Returns the status of an extension, by filename.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the status of an extension, by filename."
+          },
+          {
+            "tag": "param:name",
+            "text": "Extension name (like \"sdktools.ext\")."
+          },
+          {
+            "tag": "param:error",
+            "text": "Optional error message buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Length of optional error message buffer."
+          },
+          {
+            "tag": "return",
+            "text": "-2 if the extension was not found.\n-1 if the extension was found but failed to load.\n0 if the extension loaded but reported an error.\n1 if the extension is running without error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": "0"
+        }
+      ]
+    },
+    "ParseTime": {
+      "name": "ParseTime",
+      "refLine": 441,
+      "docStart": 15290,
+      "docEnd": 16064,
+      "docs": {
+        "brief": "Parses a string representing a date and/or time into a unix timestamp.\nThe timezone is always interpreted as UTC/GMT.\n\nSee this URL for valid parameters:\nhttps://en.cppreference.com/w/cpp/io/manip/get_time\n\nNote that available parameters depends on support from your operating system.\nIn particular, ones highlighted in yellow on that page are not currently\navailable on Windows and should be avoided for portable plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Parses a string representing a date and/or time into a unix timestamp.\nThe timezone is always interpreted as UTC/GMT.\n\nSee this URL for valid parameters:\nhttps://en.cppreference.com/w/cpp/io/manip/get_time\n\nNote that available parameters depends on support from your operating system.\nIn particular, ones highlighted in yellow on that page are not currently\navailable on Windows and should be avoided for portable plugins."
+          },
+          {
+            "tag": "param:dateTime",
+            "text": "Date and/or time string."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules (passing NULL_STRING will use the rules defined in sm_datetime_format)."
+          },
+          {
+            "tag": "return",
+            "text": "32bit timestamp (number of seconds since unix epoch)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid date/time string or time format."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "dateTime",
+          "decl": "const char[] dateTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        }
+      ]
+    },
+    "GetPluginFilename": {
+      "name": "GetPluginFilename",
+      "refLine": 324,
+      "docStart": 10972,
+      "docEnd": 11293,
+      "docs": {
+        "brief": "Retrieves a plugin's file name relative to the plugins folder.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a plugin's file name relative to the plugins folder."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Plugin Handle (INVALID_HANDLE uses the calling plugin)."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to the store the file name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the name buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GameConfGetKeyValue": {
+      "name": "GameConfGetKeyValue",
+      "refLine": 470,
+      "docStart": 16772,
+      "docEnd": 17126,
+      "docs": {
+        "brief": "Gets the value of a key from the \"Keys\" section.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the value of a key from the \"Keys\" section."
+          },
+          {
+            "tag": "param:gc",
+            "text": "Game config handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key to retrieve from the Keys section."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if key existed, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "gc",
+          "decl": "Handle gc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "GameData": {
+      "name": "GameData",
+      "refLine": 96,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GameData": {
+          "name": "GameData",
+          "refLine": 103,
+          "docStart": 3130,
+          "docEnd": 3421,
+          "docs": {
+            "brief": "Loads a game config file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Loads a game config file."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to load.  The path must be relative to the 'gamedata' folder under the config folder\nand the extension should be omitted."
+              },
+              {
+                "tag": "return",
+                "text": "A handle to the game config file or null on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "GameData",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            }
+          ]
+        },
+        "GetKeyValue": {
+          "name": "GetKeyValue",
+          "refLine": 117,
+          "docStart": 3679,
+          "docEnd": 3983,
+          "docs": {
+            "brief": "Gets the value of a key from the \"Keys\" section.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the value of a key from the \"Keys\" section."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve from the Keys section."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination string buffer."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum length of output string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True if key existed, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "GetOffset": {
+          "name": "GetOffset",
+          "refLine": 109,
+          "docStart": 3471,
+          "docEnd": 3625,
+          "docs": {
+            "brief": "Returns an offset value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns an offset value."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve from the offset section."
+              },
+              {
+                "tag": "return",
+                "text": "An offset, or -1 on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetAddress": {
+          "name": "GetAddress",
+          "refLine": 124,
+          "docStart": 4067,
+          "docEnd": 4342,
+          "docs": {
+            "brief": "Finds an address calculation in a GameConfig file,\nperforms LoadFromAddress on it as appropriate, then returns the final address.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds an address calculation in a GameConfig file,\nperforms LoadFromAddress on it as appropriate, then returns the final address."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the property to find."
+              },
+              {
+                "tag": "return",
+                "text": "An address calculated on success, or 0 on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Address",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        },
+        "GetMemSig": {
+          "name": "GetMemSig",
+          "refLine": 130,
+          "docStart": 4402,
+          "docEnd": 4598,
+          "docs": {
+            "brief": "Returns a function address calculated from a signature.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns a function address calculated from a signature."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the property to find."
+              },
+              {
+                "tag": "return",
+                "text": "An address calculated on success, or 0 on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Address",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "FrameIterator": {
+      "name": "FrameIterator",
+      "refLine": 782,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Next": {
+          "name": "Next",
+          "refLine": 790,
+          "docStart": 30063,
+          "docEnd": 30260,
+          "docs": {
+            "brief": "Advances the iterator to the next stack frame.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Advances the iterator to the next stack frame."
+              },
+              {
+                "tag": "return",
+                "text": "True if another frame was fetched and data can be successfully read."
+              },
+              {
+                "tag": "error",
+                "text": "No next element exception."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "Reset": {
+          "name": "Reset",
+          "refLine": 793,
+          "docStart": 30294,
+          "docEnd": 30348,
+          "docs": {
+            "brief": "Resets the iterator back to it's starting position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Resets the iterator back to it's starting position."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "GetFilePath": {
+          "name": "GetFilePath",
+          "refLine": 810,
+          "docStart": 30715,
+          "docEnd": 30861,
+          "docs": {
+            "brief": "Gets the file path to the current call in the call stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the file path to the current call in the call stack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Max size of the buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "FrameIterator": {
+          "name": "FrameIterator",
+          "refLine": 785,
+          "docStart": 29903,
+          "docEnd": 30025,
+          "docs": {
+            "brief": "Creates a stack frame iterator to build your own stack traces.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a stack frame iterator to build your own stack traces."
+              },
+              {
+                "tag": "return",
+                "text": "New handle to a FrameIterator."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "FrameIterator",
+          "arguments": []
+        },
+        "GetFunctionName": {
+          "name": "GetFunctionName",
+          "refLine": 804,
+          "docStart": 30500,
+          "docEnd": 30645,
+          "docs": {
+            "brief": "Gets the name of the current function in the call stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the name of the current function in the call stack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Max size of the buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "LineNumber": {
+          "name": "LineNumber",
+          "refLine": 796,
+          "docStart": 30383,
+          "docEnd": 30439,
+          "docs": {
+            "brief": "Returns the line number of the current function call.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the line number of the current function call."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "PluginIterator": {
+      "name": "PluginIterator",
+      "refLine": 257,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "PluginIterator": {
+          "name": "PluginIterator",
+          "refLine": 262,
+          "docStart": 9124,
+          "docEnd": 9255,
+          "docs": {
+            "brief": "Returns an iterator that can be used to search through plugins.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns an iterator that can be used to search through plugins."
+              },
+              {
+                "tag": "return",
+                "text": "A new Handle to a PluginIterator."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "PluginIterator",
+          "arguments": []
+        },
+        "Next": {
+          "name": "Next",
+          "refLine": 268,
+          "docStart": 9294,
+          "docEnd": 9547,
+          "docs": {
+            "brief": "Advances the iterator. Returns whether there are more plugins available in the iterator.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Advances the iterator. Returns whether there are more plugins available in the iterator."
+              },
+              {
+                "tag": "return",
+                "text": "True on more plugins, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle, or called when the iterator is already exhausted."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "Plugin": {
+          "name": "Plugin",
+          "refLine": 274,
+          "docStart": 9581,
+          "docEnd": 9734,
+          "docs": {
+            "brief": "Returns the current plugin in the iterator.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the current plugin in the iterator."
+              },
+              {
+                "tag": "return",
+                "text": "Current plugin the iterator is at"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "Handle",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {
+    "Plugin": {
+      "name": "Plugin",
+      "refLine": 41,
+      "docStart": 1643,
+      "docEnd": 1682,
+      "docs": {
+        "brief": "Plugin public information.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Plugin public information."
+          }
+        ]
+      },
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "url": {
+          "name": "url",
+          "refLine": 47,
+          "docStart": 1978,
+          "docEnd": 1996,
+          "docs": {
+            "brief": "Plugin URL",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin URL"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "description": {
+          "name": "description",
+          "refLine": 44,
+          "docStart": 1795,
+          "docEnd": 1821,
+          "docs": {
+            "brief": "Plugin Description",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin Description"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "version": {
+          "name": "version",
+          "refLine": 46,
+          "docStart": 1918,
+          "docEnd": 1940,
+          "docs": {
+            "brief": "Plugin Version",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin Version"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "author": {
+          "name": "author",
+          "refLine": 45,
+          "docStart": 1859,
+          "docEnd": 1880,
+          "docs": {
+            "brief": "Plugin Author",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin Author"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "name": {
+          "name": "name",
+          "refLine": 43,
+          "docStart": 1738,
+          "docEnd": 1757,
+          "docs": {
+            "brief": "Plugin Name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin Name"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        }
+      }
+    }
+  },
+  "constants": {},
+  "defines": {
+    "MAPLIST_FLAG_CLEARARRAY": {
+      "name": "MAPLIST_FLAG_CLEARARRAY",
+      "refLine": 563,
+      "docStart": 20709,
+      "docEnd": 20772,
+      "docs": {
+        "brief": "If an input array is specified, clear it before adding.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If an input array is specified, clear it before adding."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "MAPLIST_FLAG_NO_DEFAULT": {
+      "name": "MAPLIST_FLAG_NO_DEFAULT",
+      "refLine": 564,
+      "docStart": 20819,
+      "docEnd": 20878,
+      "docs": {
+        "brief": "Do not read \"default\" or \"mapcyclefile\" on failure.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do not read \"default\" or \"mapcyclefile\" on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "_sourcemod_included": {
+      "name": "_sourcemod_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MAPLIST_FLAG_MAPSFOLDER": {
+      "name": "MAPLIST_FLAG_MAPSFOLDER",
+      "refLine": 562,
+      "docStart": 20610,
+      "docEnd": 20662,
+      "docs": {
+        "brief": "On failure, use all maps in the maps folder.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "On failure, use all maps in the maps folder."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    }
+  },
+  "enums": {
+    "NumberType": {
+      "name": "NumberType",
+      "refLine": 731,
+      "docStart": 27664,
+      "docEnd": 27744,
+      "docs": {
+        "brief": "Represents how many bytes we can read from an address with one load",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Represents how many bytes we can read from an address with one load"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "NumberType_Int8": {
+          "name": "NumberType_Int8",
+          "refLine": 733,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "NumberType_Int16": {
+          "name": "NumberType_Int16",
+          "refLine": 734,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "NumberType_Int32": {
+          "name": "NumberType_Int32",
+          "refLine": 735,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "FeatureStatus": {
+      "name": "FeatureStatus",
+      "refLine": 677,
+      "docStart": 26232,
+      "docEnd": 26262,
+      "docs": {
+        "brief": "Feature statuses.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Feature statuses."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "FeatureStatus_Unknown": {
+          "name": "FeatureStatus_Unknown",
+          "refLine": 692,
+          "docStart": 26438,
+          "docEnd": 26481,
+          "docs": {
+            "brief": "Feature is not known at all.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Feature is not known at all."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FeatureStatus_Available": {
+          "name": "FeatureStatus_Available",
+          "refLine": 682,
+          "docStart": 26288,
+          "docEnd": 26332,
+          "docs": {
+            "brief": "Feature is available for use.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Feature is available for use."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FeatureStatus_Unavailable": {
+          "name": "FeatureStatus_Unavailable",
+          "refLine": 687,
+          "docStart": 26364,
+          "docEnd": 26404,
+          "docs": {
+            "brief": "Feature is not available.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Feature is not available."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "APLRes": {
+      "name": "APLRes",
+      "refLine": 89,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "APLRes_Success": {
+          "name": "APLRes_Success",
+          "refLine": 91,
+          "docStart": 2904,
+          "docEnd": 2930,
+          "docs": {
+            "brief": "Plugin should load",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin should load"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "APLRes_SilentFailure": {
+          "name": "APLRes_SilentFailure",
+          "refLine": 93,
+          "docStart": 3041,
+          "docEnd": 3089,
+          "docs": {
+            "brief": "Plugin shouldn't load but do so silently",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin shouldn't load but do so silently"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "APLRes_Failure": {
+          "name": "APLRes_Failure",
+          "refLine": 92,
+          "docStart": 2957,
+          "docEnd": 3014,
+          "docs": {
+            "brief": "Plugin shouldn't load and should display an error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin shouldn't load and should display an error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "FeatureType": {
+      "name": "FeatureType",
+      "refLine": 657,
+      "docStart": 25735,
+      "docEnd": 25762,
+      "docs": {
+        "brief": "Feature types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Feature types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "FeatureType_Native": {
+          "name": "FeatureType_Native",
+          "refLine": 662,
+          "docStart": 25786,
+          "docEnd": 25824,
+          "docs": {
+            "brief": "A native function call.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A native function call."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FeatureType_Capability": {
+          "name": "FeatureType_Capability",
+          "refLine": 671,
+          "docStart": 25851,
+          "docEnd": 26199,
+          "docs": {
+            "brief": "A named capability. This is distinctly different from checking for a\nnative, because the underlying functionality could be enabled on-demand\nto improve loading time. Thus a native may appear to exist, but it might\nbe part of a set of features that are not compatible with the current game\nor version of SourceMod.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A named capability. This is distinctly different from checking for a\nnative, because the underlying functionality could be enabled on-demand\nto improve loading time. Thus a native may appear to exist, but it might\nbe part of a set of features that are not compatible with the current game\nor version of SourceMod."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "Address": {
+      "name": "Address",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "type": "int64",
+      "parsedSignature": null
+    }
+  }
+}

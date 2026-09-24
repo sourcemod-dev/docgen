@@ -1,0 +1,4105 @@
+{
+  "functions": {
+    "FlagBitsToArray": {
+      "name": "FlagBitsToArray",
+      "refLine": 672,
+      "docStart": 25688,
+      "docEnd": 25967,
+      "docs": {
+        "brief": "Converts a bit string to an array of flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a bit string to an array of flags."
+          },
+          {
+            "tag": "param:bits",
+            "text": "Bit string containing the flags."
+          },
+          {
+            "tag": "param:array",
+            "text": "Output array to write flags."
+          },
+          {
+            "tag": "param:maxSize",
+            "text": "Maximum size of the flag array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of flags written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "bits",
+          "decl": "int bits",
+          "default": null
+        },
+        {
+          "type": "AdminFlag[]",
+          "name": "array",
+          "decl": "AdminFlag[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxSize",
+          "decl": "int maxSize",
+          "default": null
+        }
+      ]
+    },
+    "FlagBitsToString": {
+      "name": "FlagBitsToString",
+      "refLine": 813,
+      "docStart": 29971,
+      "docEnd": 30266,
+      "docs": {
+        "brief": "Converts a bit string to a string of flag characters.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a bit string to a string of flag characters."
+          },
+          {
+            "tag": "param:bits",
+            "text": "Bit string containing the flags."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Output array to write a string of flag characters."
+          },
+          {
+            "tag": "param:maxSize",
+            "text": "Maximum size of the string array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of flag characters written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const int",
+          "name": "bits",
+          "decl": "const int bits",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "flags",
+          "decl": "char[] flags",
+          "default": null
+        },
+        {
+          "type": "const int",
+          "name": "maxSize",
+          "decl": "const int maxSize",
+          "default": null
+        }
+      ]
+    },
+    "GetCommandOverride": {
+      "name": "GetCommandOverride",
+      "refLine": 385,
+      "docStart": 15167,
+      "docEnd": 15512,
+      "docs": {
+        "brief": "Returns a command override.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a command override."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "String containing command name (case sensitive)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Override type (specific command or group)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "By-reference cell to store the flag (undefined if not found)."
+          },
+          {
+            "tag": "return",
+            "text": "True if there is an override, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "OverrideType",
+          "name": "type",
+          "decl": "OverrideType type",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "flags",
+          "decl": "int& flags",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupImmuneFrom": {
+      "name": "GetAdmGroupImmuneFrom",
+      "refLine": 475,
+      "docStart": 18188,
+      "docEnd": 18472,
+      "docs": {
+        "brief": "Returns a group that this group is immune to given an index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a group that this group is immune to given an index."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:number",
+            "text": "Index from 0 to N-1, from GetAdmGroupImmuneCount()."
+          },
+          {
+            "tag": "return",
+            "text": "GroupId that this group is immune to, or INVALID_GROUP_ID on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GroupId",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "number",
+          "decl": "int number",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminPassword": {
+      "name": "GetAdminPassword",
+      "refLine": 615,
+      "docStart": 23581,
+      "docEnd": 23957,
+      "docs": {
+        "brief": "Gets an admin's password.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an admin's password."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Optional buffer to store the admin's password."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the output name buffer.\nNote: This will safely chop UTF-8 strings."
+          },
+          {
+            "tag": "return",
+            "text": "True if there was a password set, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": "0"
+        }
+      ]
+    },
+    "BindAdminIdentity": {
+      "name": "BindAdminIdentity",
+      "refLine": 536,
+      "docStart": 20525,
+      "docEnd": 21000,
+      "docs": {
+        "brief": "Binds an admin to an identity for fast lookup later on.  The bind must be unique.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Binds an admin to an identity for fast lookup later on.  The bind must be unique."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId of the admin."
+          },
+          {
+            "tag": "param:auth",
+            "text": "Auth method to use, predefined or from RegisterAuthIdentType()."
+          },
+          {
+            "tag": "param:ident",
+            "text": "String containing the arbitrary, unique identity."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the auth method was not found,\nident was already taken, or ident invalid for auth method."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "ident",
+          "decl": "const char[] ident",
+          "default": null
+        }
+      ]
+    },
+    "UnsetCommandOverride": {
+      "name": "UnsetCommandOverride",
+      "refLine": 393,
+      "docStart": 15598,
+      "docEnd": 15783,
+      "docs": {
+        "brief": "Unsets a command override.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unsets a command override."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "String containing command name (case sensitive)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Override type (specific command or group)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "OverrideType",
+          "name": "type",
+          "decl": "OverrideType type",
+          "default": null
+        }
+      ]
+    },
+    "SetAdminImmunityLevel": {
+      "name": "SetAdminImmunityLevel",
+      "refLine": 764,
+      "docStart": 28919,
+      "docEnd": 29100,
+      "docs": {
+        "brief": "Sets an admin's immunity level.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an admin's immunity level."
+          },
+          {
+            "tag": "param:id",
+            "text": "Admin Id."
+          },
+          {
+            "tag": "param:level",
+            "text": "Immunity level value."
+          },
+          {
+            "tag": "return",
+            "text": "Old immunity level value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": null
+        }
+      ]
+    },
+    "DumpAdminCache": {
+      "name": "DumpAdminCache",
+      "refLine": 365,
+      "docStart": 14442,
+      "docEnd": 14669,
+      "docs": {
+        "brief": "Tells the admin system to dump a portion of the cache.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tells the admin system to dump a portion of the cache."
+          },
+          {
+            "tag": "param:part",
+            "text": "Part of the cache to dump.  Specifying groups also dumps admins."
+          },
+          {
+            "tag": "param:rebuild",
+            "text": "If true, the rebuild forwards will fire."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "rebuild",
+          "decl": "bool rebuild",
+          "default": null
+        }
+      ]
+    },
+    "FlagToBit": {
+      "name": "FlagToBit",
+      "refLine": 780,
+      "docStart": 29343,
+      "docEnd": 29493,
+      "docs": {
+        "brief": "Converts a flag to its single bit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a flag to its single bit."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Flag to convert."
+          },
+          {
+            "tag": "return",
+            "text": "Bit representation of the flag."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminGroupCount": {
+      "name": "GetAdminGroupCount",
+      "refLine": 582,
+      "docStart": 22450,
+      "docEnd": 22644,
+      "docs": {
+        "brief": "Returns the number of groups this admin is a member of.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of groups this admin is a member of."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "return",
+            "text": "Number of groups this admin is a member of."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupImmunityLevel": {
+      "name": "GetAdmGroupImmunityLevel",
+      "refLine": 755,
+      "docStart": 28719,
+      "docEnd": 28864,
+      "docs": {
+        "brief": "Gets a group's immunity level (defaults to 0).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a group's immunity level (defaults to 0)."
+          },
+          {
+            "tag": "param:gid",
+            "text": "Group Id."
+          },
+          {
+            "tag": "return",
+            "text": "Immunity level value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "gid",
+          "decl": "GroupId gid",
+          "default": null
+        }
+      ]
+    },
+    "AdminInheritGroup": {
+      "name": "AdminInheritGroup",
+      "refLine": 574,
+      "docStart": 22053,
+      "docEnd": 22389,
+      "docs": {
+        "brief": "Adds a group to an admin's inherited group list.  Any flags the group has\nwill be added to the admin's effective flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a group to an admin's inherited group list.  Any flags the group has\nwill be added to the admin's effective flags."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:gid",
+            "text": "GroupId index of the group."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on invalid input or duplicate membership."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "GroupId",
+          "name": "gid",
+          "decl": "GroupId gid",
+          "default": null
+        }
+      ]
+    },
+    "FindAdminByIdentity": {
+      "name": "FindAdminByIdentity",
+      "refLine": 624,
+      "docStart": 24039,
+      "docEnd": 24294,
+      "docs": {
+        "brief": "Attempts to find an admin by an auth method and an identity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Attempts to find an admin by an auth method and an identity."
+          },
+          {
+            "tag": "param:auth",
+            "text": "Auth method to try."
+          },
+          {
+            "tag": "param:identity",
+            "text": "Identity string to look up."
+          },
+          {
+            "tag": "return",
+            "text": "An AdminId index if found, INVALID_ADMIN_ID otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "AdminId",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "identity",
+          "decl": "const char[] identity",
+          "default": null
+        }
+      ]
+    },
+    "CanAdminTarget": {
+      "name": "CanAdminTarget",
+      "refLine": 729,
+      "docStart": 27204,
+      "docEnd": 28117,
+      "docs": {
+        "brief": "Tests whether one admin can target another.\n\nThe heuristics for this check are as follows:\n0. If the targeting AdminId is INVALID_ADMIN_ID, targeting fails.\n1. If the targeted AdminId is INVALID_ADMIN_ID, targeting succeeds.\n2. If the targeted AdminId is the same as the targeting AdminId,\n(self) targeting succeeds.\n3. If the targeting admin is root, targeting succeeds.\n4. If the targeted admin has access higher (as interpreted by\n(sm_immunity_mode) than the targeting admin, then targeting fails.\n5. If the targeted admin has specific immunity from the\ntargeting admin via group immunities, targeting fails.\n6. Targeting succeeds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tests whether one admin can target another.\n\nThe heuristics for this check are as follows:\n0. If the targeting AdminId is INVALID_ADMIN_ID, targeting fails.\n1. If the targeted AdminId is INVALID_ADMIN_ID, targeting succeeds.\n2. If the targeted AdminId is the same as the targeting AdminId,\n(self) targeting succeeds.\n3. If the targeting admin is root, targeting succeeds.\n4. If the targeted admin has access higher (as interpreted by\n(sm_immunity_mode) than the targeting admin, then targeting fails.\n5. If the targeted admin has specific immunity from the\ntargeting admin via group immunities, targeting fails.\n6. Targeting succeeds."
+          },
+          {
+            "tag": "param:admin",
+            "text": "Admin doing the targetting (may be INVALID_ADMIN_ID)."
+          },
+          {
+            "tag": "param:target",
+            "text": "Target admin (may be INVALID_ADMIN_ID)."
+          },
+          {
+            "tag": "return",
+            "text": "True if targetable, false if immune."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "admin",
+          "decl": "AdminId admin",
+          "default": null
+        },
+        {
+          "type": "AdminId",
+          "name": "target",
+          "decl": "AdminId target",
+          "default": null
+        }
+      ]
+    },
+    "SetAdminFlag": {
+      "name": "SetAdminFlag",
+      "refLine": 545,
+      "docStart": 21087,
+      "docEnd": 21310,
+      "docs": {
+        "brief": "Sets whether or not a flag is enabled on an admin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether or not a flag is enabled on an admin."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Admin flag to use."
+          },
+          {
+            "tag": "param:enabled",
+            "text": "True to enable, false to disable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "enabled",
+          "decl": "bool enabled",
+          "default": null
+        }
+      ]
+    },
+    "SetAdmGroupImmuneFrom": {
+      "name": "SetAdmGroupImmuneFrom",
+      "refLine": 458,
+      "docStart": 17769,
+      "docEnd": 17913,
+      "docs": {
+        "brief": "Adds immunity to a specific group.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds immunity to a specific group."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:other_id",
+            "text": "Group id to receive immunity to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "GroupId",
+          "name": "other_id",
+          "decl": "GroupId other_id",
+          "default": null
+        }
+      ]
+    },
+    "SetAdminPassword": {
+      "name": "SetAdminPassword",
+      "refLine": 604,
+      "docStart": 23356,
+      "docEnd": 23511,
+      "docs": {
+        "brief": "Sets a password on an admin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a password on an admin."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:password",
+            "text": "String containing the password."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "password",
+          "decl": "const char[] password",
+          "default": null
+        }
+      ]
+    },
+    "FlagBitArrayToBits": {
+      "name": "FlagBitArrayToBits",
+      "refLine": 653,
+      "docStart": 25053,
+      "docEnd": 25307,
+      "docs": {
+        "brief": "Converts a flag array to a bit string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a flag array to a bit string."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array containing true or false for each AdminFlag."
+          },
+          {
+            "tag": "param:maxSize",
+            "text": "Maximum size of the flag array."
+          },
+          {
+            "tag": "return",
+            "text": "A bit string composed of the array bits."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const bool[]",
+          "name": "array",
+          "decl": "const bool[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxSize",
+          "decl": "int maxSize",
+          "default": null
+        }
+      ]
+    },
+    "RemoveAdmin": {
+      "name": "RemoveAdmin",
+      "refLine": 634,
+      "docStart": 24377,
+      "docEnd": 24616,
+      "docs": {
+        "brief": "Removes an admin entry from the cache.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an admin entry from the cache."
+          },
+          {
+            "tag": "note",
+            "text": "This will remove any bindings to a specific user."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index to remove/invalidate."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupImmuneCount": {
+      "name": "GetAdmGroupImmuneCount",
+      "refLine": 466,
+      "docStart": 17983,
+      "docEnd": 18136,
+      "docs": {
+        "brief": "Returns the number of specific group immunities.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of specific group immunities."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "return",
+            "text": "Number of group immunities."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        }
+      ]
+    },
+    "SetAdmGroupAddFlag": {
+      "name": "SetAdmGroupAddFlag",
+      "refLine": 419,
+      "docStart": 16343,
+      "docEnd": 16635,
+      "docs": {
+        "brief": "Adds or removes a flag from a group's flag set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds or removes a flag from a group's flag set."
+          },
+          {
+            "tag": "note",
+            "text": "These are called \"add flags\" because they add to a user's flags."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Admin flag to toggle."
+          },
+          {
+            "tag": "param:enabled",
+            "text": "True to set the flag, false to unset/disable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "enabled",
+          "decl": "bool enabled",
+          "default": null
+        }
+      ]
+    },
+    "CreateAdmin": {
+      "name": "CreateAdmin",
+      "refLine": 513,
+      "docStart": 19688,
+      "docEnd": 20024,
+      "docs": {
+        "brief": "Creates a new admin entry in the permissions cache and returns the generated AdminId index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new admin entry in the permissions cache and returns the generated AdminId index."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name for this entry (does not have to be unique).\nSpecify an empty string for an anonymous admin."
+          },
+          {
+            "tag": "return",
+            "text": "New AdminId index or INVALID_ADMIN_ID if name is empty"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "AdminId",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": "\"\""
+        }
+      ]
+    },
+    "CreateAuthMethod": {
+      "name": "CreateAuthMethod",
+      "refLine": 738,
+      "docStart": 28181,
+      "docEnd": 28417,
+      "docs": {
+        "brief": "Creates an admin auth method.  This does not need to be called more than once\nper method, ever.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates an admin auth method.  This does not need to be called more than once\nper method, ever."
+          },
+          {
+            "tag": "param:method",
+            "text": "Name of the authentication method."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "method",
+          "decl": "const char[] method",
+          "default": null
+        }
+      ]
+    },
+    "AddCommandOverride": {
+      "name": "AddCommandOverride",
+      "refLine": 375,
+      "docStart": 14737,
+      "docEnd": 15082,
+      "docs": {
+        "brief": "Adds a global command flag override.  Any command registered with this name\nwill assume the new flag.  This is applied retroactively as well.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a global command flag override.  Any command registered with this name\nwill assume the new flag.  This is applied retroactively as well."
+          },
+          {
+            "tag": "param:cmd",
+            "text": "String containing command name (case sensitive)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Override type (specific command or group)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "New admin flag."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cmd",
+          "decl": "const char[] cmd",
+          "default": null
+        },
+        {
+          "type": "OverrideType",
+          "name": "type",
+          "decl": "OverrideType type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "FindAdmGroup": {
+      "name": "FindAdmGroup",
+      "refLine": 409,
+      "docStart": 16115,
+      "docEnd": 16284,
+      "docs": {
+        "brief": "Finds a group by name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a group by name."
+          },
+          {
+            "tag": "param:group_name",
+            "text": "String containing the group name."
+          },
+          {
+            "tag": "return",
+            "text": "A group id, or INVALID_GROUP_ID if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GroupId",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "group_name",
+          "decl": "const char[] group_name",
+          "default": null
+        }
+      ]
+    },
+    "RegisterAuthIdentType": {
+      "name": "RegisterAuthIdentType",
+      "refLine": 504,
+      "docStart": 19423,
+      "docEnd": 19629,
+      "docs": {
+        "brief": "Registers an authentication identity type.  You normally never need to call this except for\nvery specific systems.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Registers an authentication identity type.  You normally never need to call this except for\nvery specific systems."
+          },
+          {
+            "tag": "param:name",
+            "text": "Codename to use for your authentication type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "SetAdmGroupImmunity": {
+      "name": "SetAdmGroupImmunity",
+      "refLine": 444,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "ImmunityType",
+          "name": "type",
+          "decl": "ImmunityType type",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "enabled",
+          "decl": "bool enabled",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminFlag": {
+      "name": "GetAdminFlag",
+      "refLine": 555,
+      "docStart": 21383,
+      "docEnd": 21656,
+      "docs": {
+        "brief": "Returns whether or not a flag is enabled on an admin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not a flag is enabled on an admin."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Admin flag to use."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Access mode to check."
+          },
+          {
+            "tag": "return",
+            "text": "True if enabled, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        },
+        {
+          "type": "AdmAccessMode",
+          "name": "mode",
+          "decl": "AdmAccessMode mode",
+          "default": "Access_Effective"
+        }
+      ]
+    },
+    "GetAdminUsername": {
+      "name": "GetAdminUsername",
+      "refLine": 525,
+      "docStart": 20079,
+      "docEnd": 20451,
+      "docs": {
+        "brief": "Retrieves an admin's user name as made with CreateAdmin().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an admin's user name as made with CreateAdmin()."
+          },
+          {
+            "tag": "note",
+            "text": "This function can return UTF-8 strings, and will safely chop UTF-8 strings."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId of the admin."
+          },
+          {
+            "tag": "param:name",
+            "text": "String buffer to store name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FindFlagByName": {
+      "name": "FindFlagByName",
+      "refLine": 681,
+      "docStart": 26042,
+      "docEnd": 26271,
+      "docs": {
+        "brief": "Finds a flag by its string name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a flag by its string name."
+          },
+          {
+            "tag": "param:name",
+            "text": "Flag name (like \"kick\"), case sensitive."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Variable to store flag in."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "AdminFlag&",
+          "name": "flag",
+          "decl": "AdminFlag& flag",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminGroup": {
+      "name": "GetAdminGroup",
+      "refLine": 596,
+      "docStart": 22692,
+      "docEnd": 23270,
+      "docs": {
+        "brief": "Returns group information from an admin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns group information from an admin."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:index",
+            "text": "Group number to retrieve, from 0 to N-1, where N\nis the value of GetAdminGroupCount(id)."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the group's name.\nNote: This will safely chop UTF-8 strings."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the output name buffer."
+          },
+          {
+            "tag": "return",
+            "text": "A GroupId index and a name pointer, or\nINVALID_GROUP_ID and NULL if an error occurred."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GroupId",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FindFlagByChar": {
+      "name": "FindFlagByChar",
+      "refLine": 690,
+      "docStart": 26340,
+      "docEnd": 26558,
+      "docs": {
+        "brief": "Finds a flag by a given character.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a flag by a given character."
+          },
+          {
+            "tag": "param:c",
+            "text": "Flag ASCII character/token."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Variable to store flag in."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "c",
+          "decl": "int c",
+          "default": null
+        },
+        {
+          "type": "AdminFlag&",
+          "name": "flag",
+          "decl": "AdminFlag& flag",
+          "default": null
+        }
+      ]
+    },
+    "SetAdmGroupImmunityLevel": {
+      "name": "SetAdmGroupImmunityLevel",
+      "refLine": 747,
+      "docStart": 28473,
+      "docEnd": 28653,
+      "docs": {
+        "brief": "Sets a group's immunity level.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a group's immunity level."
+          },
+          {
+            "tag": "param:gid",
+            "text": "Group Id."
+          },
+          {
+            "tag": "param:level",
+            "text": "Immunity level value."
+          },
+          {
+            "tag": "return",
+            "text": "Old immunity level value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "gid",
+          "decl": "GroupId gid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": null
+        }
+      ]
+    },
+    "CreateAdmGroup": {
+      "name": "CreateAdmGroup",
+      "refLine": 401,
+      "docStart": 15859,
+      "docEnd": 16054,
+      "docs": {
+        "brief": "Adds a new group.  Name must be unique.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a new group.  Name must be unique."
+          },
+          {
+            "tag": "param:group_name",
+            "text": "String containing the group name."
+          },
+          {
+            "tag": "return",
+            "text": "A new group id, INVALID_GROUP_ID if it already exists."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GroupId",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "group_name",
+          "decl": "const char[] group_name",
+          "default": null
+        }
+      ]
+    },
+    "BitToFlag": {
+      "name": "BitToFlag",
+      "refLine": 792,
+      "docStart": 29576,
+      "docEnd": 29789,
+      "docs": {
+        "brief": "Converts a bit to an AdminFlag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a bit to an AdminFlag."
+          },
+          {
+            "tag": "param:bit",
+            "text": "Bit to convert."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Stores the converted flag by reference."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "bit",
+          "decl": "int bit",
+          "default": null
+        },
+        {
+          "type": "AdminFlag&",
+          "name": "flag",
+          "decl": "AdminFlag& flag",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupAddFlags": {
+      "name": "GetAdmGroupAddFlags",
+      "refLine": 438,
+      "docStart": 17070,
+      "docEnd": 17336,
+      "docs": {
+        "brief": "Returns the flag set that is added to a user from their group.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the flag set that is added to a user from their group."
+          },
+          {
+            "tag": "note",
+            "text": "These are called \"add flags\" because they add to a user's flags."
+          },
+          {
+            "tag": "param:id",
+            "text": "GroupId of the group."
+          },
+          {
+            "tag": "return",
+            "text": "Bitstring containing the flags enabled."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        }
+      ]
+    },
+    "FindFlagChar": {
+      "name": "FindFlagChar",
+      "refLine": 699,
+      "docStart": 26615,
+      "docEnd": 26833,
+      "docs": {
+        "brief": "Finds the flag char for a given admin flag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds the flag char for a given admin flag."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Flag to look up."
+          },
+          {
+            "tag": "param:c",
+            "text": "Variable to store flag char."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "c",
+          "decl": "int& c",
+          "default": null
+        }
+      ]
+    },
+    "AddAdmGroupCmdOverride": {
+      "name": "AddAdmGroupCmdOverride",
+      "refLine": 485,
+      "docStart": 18539,
+      "docEnd": 18823,
+      "docs": {
+        "brief": "Adds a group-specific override type.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a group-specific override type."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:name",
+            "text": "String containing command name (case sensitive)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Override type (specific command or group)."
+          },
+          {
+            "tag": "param:rule",
+            "text": "Override allow/deny setting."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "OverrideType",
+          "name": "type",
+          "decl": "OverrideType type",
+          "default": null
+        },
+        {
+          "type": "OverrideRule",
+          "name": "rule",
+          "decl": "OverrideRule rule",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminFlags": {
+      "name": "GetAdminFlags",
+      "refLine": 564,
+      "docStart": 21752,
+      "docEnd": 21990,
+      "docs": {
+        "brief": "Returns the bitstring of access flags on an admin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the bitstring of access flags on an admin."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId index of the admin."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Access mode to use."
+          },
+          {
+            "tag": "return",
+            "text": "A bitstring containing which flags are enabled."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "AdmAccessMode",
+          "name": "mode",
+          "decl": "AdmAccessMode mode",
+          "default": null
+        }
+      ]
+    },
+    "FlagArrayToBits": {
+      "name": "FlagArrayToBits",
+      "refLine": 662,
+      "docStart": 25376,
+      "docEnd": 25616,
+      "docs": {
+        "brief": "Converts an array of flags to bits.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an array of flags to bits."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array containing flags that are enabled."
+          },
+          {
+            "tag": "param:numFlags",
+            "text": "Number of flags in the array."
+          },
+          {
+            "tag": "return",
+            "text": "A bit string composed of the array flags."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const AdminFlag[]",
+          "name": "array",
+          "decl": "const AdminFlag[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numFlags",
+          "decl": "int numFlags",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminImmunityLevel": {
+      "name": "GetAdminImmunityLevel",
+      "refLine": 772,
+      "docStart": 29162,
+      "docEnd": 29292,
+      "docs": {
+        "brief": "Gets an admin's immunity level.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an admin's immunity level."
+          },
+          {
+            "tag": "param:id",
+            "text": "Admin Id."
+          },
+          {
+            "tag": "return",
+            "text": "Immunity level value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupAddFlag": {
+      "name": "GetAdmGroupAddFlag",
+      "refLine": 429,
+      "docStart": 16714,
+      "docEnd": 17005,
+      "docs": {
+        "brief": "Gets the set value of an add flag on a group's flag set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the set value of an add flag on a group's flag set."
+          },
+          {
+            "tag": "note",
+            "text": "These are called \"add flags\" because they add to a user's flags."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Admin flag to retrieve."
+          },
+          {
+            "tag": "return",
+            "text": "True if enabled, false otherwise,"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "AdminFlag",
+          "name": "flag",
+          "decl": "AdminFlag flag",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupImmunity": {
+      "name": "GetAdmGroupImmunity",
+      "refLine": 450,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "ImmunityType",
+          "name": "type",
+          "decl": "ImmunityType type",
+          "default": null
+        }
+      ]
+    },
+    "FlagBitsToBitArray": {
+      "name": "FlagBitsToBitArray",
+      "refLine": 644,
+      "docStart": 24658,
+      "docEnd": 24980,
+      "docs": {
+        "brief": "Converts a flag bit string to a bit array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a flag bit string to a bit array."
+          },
+          {
+            "tag": "param:bits",
+            "text": "Bit string containing the flags."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to write the flags to.  Enabled flags will be 'true'."
+          },
+          {
+            "tag": "param:maxSize",
+            "text": "Maximum number of flags the array can store."
+          },
+          {
+            "tag": "return",
+            "text": "Number of flags written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "bits",
+          "decl": "int bits",
+          "default": null
+        },
+        {
+          "type": "bool[]",
+          "name": "array",
+          "decl": "bool[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxSize",
+          "decl": "int maxSize",
+          "default": null
+        }
+      ]
+    },
+    "ReadFlagString": {
+      "name": "ReadFlagString",
+      "refLine": 708,
+      "docStart": 26888,
+      "docEnd": 27135,
+      "docs": {
+        "brief": "Converts a string of flag characters to a bit string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string of flag characters to a bit string."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flag ASCII string."
+          },
+          {
+            "tag": "param:numchars",
+            "text": "Optional variable to store the number of bytes read."
+          },
+          {
+            "tag": "return",
+            "text": "Bit string of ADMFLAG values."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "flags",
+          "decl": "const char[] flags",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "numchars",
+          "decl": "int& numchars",
+          "default": "0"
+        }
+      ]
+    },
+    "OnRebuildAdminCache": {
+      "name": "OnRebuildAdminCache",
+      "refLine": 357,
+      "docStart": 14254,
+      "docEnd": 14382,
+      "docs": {
+        "brief": "Called when part of the cache needs to be rebuilt.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when part of the cache needs to be rebuilt."
+          },
+          {
+            "tag": "param:part",
+            "text": "Part of the admin cache to rebuild."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmGroupCmdOverride": {
+      "name": "GetAdmGroupCmdOverride",
+      "refLine": 496,
+      "docStart": 18933,
+      "docEnd": 19312,
+      "docs": {
+        "brief": "Retrieves a group-specific command override.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a group-specific command override."
+          },
+          {
+            "tag": "param:id",
+            "text": "Group id."
+          },
+          {
+            "tag": "param:name",
+            "text": "String containing command name (case sensitive)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Override type (specific command or group)."
+          },
+          {
+            "tag": "param:rule",
+            "text": "Optional pointer to store allow/deny setting."
+          },
+          {
+            "tag": "return",
+            "text": "True if an override exists, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "OverrideType",
+          "name": "type",
+          "decl": "OverrideType type",
+          "default": null
+        },
+        {
+          "type": "OverrideRule&",
+          "name": "rule",
+          "decl": "OverrideRule& rule",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "AdminId": {
+      "name": "AdminId",
+      "refLine": 170,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "HasFlag": {
+          "name": "HasFlag",
+          "refLine": 213,
+          "docStart": 8482,
+          "docEnd": 8696,
+          "docs": {
+            "brief": "Returns whether or not a flag is enabled on an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a flag is enabled on an admin."
+              },
+              {
+                "tag": "param:flag",
+                "text": "Admin flag to use."
+              },
+              {
+                "tag": "param:mode",
+                "text": "Access mode to check."
+              },
+              {
+                "tag": "return",
+                "text": "True if enabled, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "AdminFlag",
+              "name": "flag",
+              "decl": "AdminFlag flag",
+              "default": null
+            },
+            {
+              "type": "AdmAccessMode",
+              "name": "mode",
+              "decl": "AdmAccessMode mode",
+              "default": "Access_Effective"
+            }
+          ]
+        },
+        "GetUsername": {
+          "name": "GetUsername",
+          "refLine": 178,
+          "docStart": 6900,
+          "docEnd": 7221,
+          "docs": {
+            "brief": "Retrieves an admin's user name as made with CreateAdmin().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an admin's user name as made with CreateAdmin()."
+              },
+              {
+                "tag": "note",
+                "text": "This function can return UTF-8 strings, and will safely chop UTF-8 strings."
+              },
+              {
+                "tag": "param:name",
+                "text": "String buffer to store name."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "BindIdentity": {
+          "name": "BindIdentity",
+          "refLine": 186,
+          "docStart": 7287,
+          "docEnd": 7710,
+          "docs": {
+            "brief": "Binds an admin to an identity for fast lookup later on.  The bind must be unique.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Binds an admin to an identity for fast lookup later on.  The bind must be unique."
+              },
+              {
+                "tag": "param:authMethod",
+                "text": "Auth method to use, predefined or from RegisterAuthIdentType()."
+              },
+              {
+                "tag": "param:ident",
+                "text": "String containing the arbitrary, unique identity."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the auth method was not found,\nident was already taken, or ident invalid for auth method."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "authMethod",
+              "decl": "const char[] authMethod",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "ident",
+              "decl": "const char[] ident",
+              "default": null
+            }
+          ]
+        },
+        "InheritGroup": {
+          "name": "InheritGroup",
+          "refLine": 226,
+          "docStart": 9017,
+          "docEnd": 9294,
+          "docs": {
+            "brief": "Adds a group to an admin's inherited group list.  Any flags the group has\nwill be added to the admin's effective flags.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a group to an admin's inherited group list.  Any flags the group has\nwill be added to the admin's effective flags."
+              },
+              {
+                "tag": "param:gid",
+                "text": "GroupId index of the group."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on invalid input or duplicate membership."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "GroupId",
+              "name": "gid",
+              "decl": "GroupId gid",
+              "default": null
+            }
+          ]
+        },
+        "SetPassword": {
+          "name": "SetPassword",
+          "refLine": 242,
+          "docStart": 9949,
+          "docEnd": 10043,
+          "docs": {
+            "brief": "Sets a password on an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a password on an admin."
+              },
+              {
+                "tag": "param:password",
+                "text": "String containing the password."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "password",
+              "decl": "const char[] password",
+              "default": null
+            }
+          ]
+        },
+        "GetPassword": {
+          "name": "GetPassword",
+          "refLine": 250,
+          "docStart": 10105,
+          "docEnd": 10423,
+          "docs": {
+            "brief": "Gets an admin's password.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets an admin's password."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Optional buffer to store the admin's password."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the output name buffer.\nNote: This will safely chop UTF-8 strings."
+              },
+              {
+                "tag": "return",
+                "text": "True if there was a password set, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": "0"
+            }
+          ]
+        },
+        "CanTarget": {
+          "name": "CanTarget",
+          "refLine": 268,
+          "docStart": 10497,
+          "docEnd": 11336,
+          "docs": {
+            "brief": "Tests whether one admin can target another.\n\nThe heuristics for this check are as follows:\n0. If the targeting AdminId is INVALID_ADMIN_ID, targeting fails.\n1. If the targeted AdminId is INVALID_ADMIN_ID, targeting succeeds.\n2. If the targeted AdminId is the same as the targeting AdminId,\n(self) targeting succeeds.\n3. If the targeting admin is root, targeting succeeds.\n4. If the targeted admin has access higher (as interpreted by\n(sm_immunity_mode) than the targeting admin, then targeting fails.\n5. If the targeted admin has specific immunity from the\ntargeting admin via group immunities, targeting fails.\n6. Targeting succeeds.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Tests whether one admin can target another.\n\nThe heuristics for this check are as follows:\n0. If the targeting AdminId is INVALID_ADMIN_ID, targeting fails.\n1. If the targeted AdminId is INVALID_ADMIN_ID, targeting succeeds.\n2. If the targeted AdminId is the same as the targeting AdminId,\n(self) targeting succeeds.\n3. If the targeting admin is root, targeting succeeds.\n4. If the targeted admin has access higher (as interpreted by\n(sm_immunity_mode) than the targeting admin, then targeting fails.\n5. If the targeted admin has specific immunity from the\ntargeting admin via group immunities, targeting fails.\n6. Targeting succeeds."
+              },
+              {
+                "tag": "param:target",
+                "text": "Target admin (may be INVALID_ADMIN_ID)."
+              },
+              {
+                "tag": "return",
+                "text": "True if targetable, false if immune."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "AdminId",
+              "name": "other",
+              "decl": "AdminId other",
+              "default": null
+            }
+          ]
+        },
+        "SetFlag": {
+          "name": "SetFlag",
+          "refLine": 192,
+          "docStart": 7795,
+          "docEnd": 7958,
+          "docs": {
+            "brief": "Sets whether or not a flag is enabled on an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether or not a flag is enabled on an admin."
+              },
+              {
+                "tag": "param:flag",
+                "text": "Admin flag to use."
+              },
+              {
+                "tag": "param:enabled",
+                "text": "True to enable, false to disable."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "AdminFlag",
+              "name": "flag",
+              "decl": "AdminFlag flag",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "enabled",
+              "decl": "bool enabled",
+              "default": null
+            }
+          ]
+        },
+        "SetBitFlags": {
+          "name": "SetBitFlags",
+          "refLine": 198,
+          "docStart": 8023,
+          "docEnd": 8225,
+          "docs": {
+            "brief": "Sets multiple bitwise flags to be enabled/disabled on an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets multiple bitwise flags to be enabled/disabled on an admin."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Bitwise admin flags (ADMFLAG_*)."
+              },
+              {
+                "tag": "param:enabled",
+                "text": "True to set the flag, false to unset/disable."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "enabled",
+              "decl": "bool enabled",
+              "default": null
+            }
+          ]
+        },
+        "GetGroup": {
+          "name": "GetGroup",
+          "refLine": 237,
+          "docStart": 9347,
+          "docEnd": 9871,
+          "docs": {
+            "brief": "Returns group information from an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns group information from an admin."
+              },
+              {
+                "tag": "param:index",
+                "text": "Group number to retrieve, from 0 to N-1, where N\nis the value of the GroupCount property."
+              },
+              {
+                "tag": "param:name",
+                "text": "Buffer to store the group's name.\nNote: This will safely chop UTF-8 strings."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the output name buffer."
+              },
+              {
+                "tag": "return",
+                "text": "A GroupId index and a name pointer, or\nINVALID_GROUP_ID and NULL if an error occurred."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "GroupId",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "GetFlags": {
+          "name": "GetFlags",
+          "refLine": 219,
+          "docStart": 8784,
+          "docEnd": 8962,
+          "docs": {
+            "brief": "Returns the bitstring of access flags on an admin.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the bitstring of access flags on an admin."
+              },
+              {
+                "tag": "param:mode",
+                "text": "Access mode to use."
+              },
+              {
+                "tag": "return",
+                "text": "A bitstring containing which flags are enabled."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "AdmAccessMode",
+              "name": "mode",
+              "decl": "AdmAccessMode mode",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "ImmunityLevel": {
+          "name": "ImmunityLevel",
+          "refLine": 276,
+          "docStart": 11505,
+          "docEnd": 11543,
+          "docs": {
+            "brief": "Immunity level used for targetting.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Immunity level used for targetting."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "GroupCount": {
+          "name": "GroupCount",
+          "refLine": 271,
+          "docStart": 11388,
+          "docEnd": 11444,
+          "docs": {
+            "brief": "The number of groups of which this admin is a member.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The number of groups of which this admin is a member."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "GroupId": {
+      "name": "GroupId",
+      "refLine": 282,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "GetCommandOverride": {
+          "name": "GetCommandOverride",
+          "refLine": 331,
+          "docStart": 13219,
+          "docEnd": 13558,
+          "docs": {
+            "brief": "Retrieves a group-specific command override.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a group-specific command override."
+              },
+              {
+                "tag": "param:name",
+                "text": "String containing command name (case sensitive)."
+              },
+              {
+                "tag": "param:type",
+                "text": "Override type (specific command or group)."
+              },
+              {
+                "tag": "param:rule",
+                "text": "Optional pointer to store allow/deny setting."
+              },
+              {
+                "tag": "return",
+                "text": "True if an override exists, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "OverrideType",
+              "name": "type",
+              "decl": "OverrideType type",
+              "default": null
+            },
+            {
+              "type": "OverrideRule&",
+              "name": "rule",
+              "decl": "OverrideRule& rule",
+              "default": null
+            }
+          ]
+        },
+        "GetFlags": {
+          "name": "GetFlags",
+          "refLine": 312,
+          "docStart": 12592,
+          "docEnd": 12726,
+          "docs": {
+            "brief": "Returns the flag set that is added to users from this group.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the flag set that is added to users from this group."
+              },
+              {
+                "tag": "return",
+                "text": "Bitstring containing the flags enabled."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "HasFlag": {
+          "name": "HasFlag",
+          "refLine": 287,
+          "docStart": 11664,
+          "docEnd": 11842,
+          "docs": {
+            "brief": "Gets whether or not a flag is enabled on a group's flag set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets whether or not a flag is enabled on a group's flag set."
+              },
+              {
+                "tag": "param:flag",
+                "text": "Admin flag to retrieve."
+              },
+              {
+                "tag": "return",
+                "text": "True if enabled, false otherwise,"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "AdminFlag",
+              "name": "flag",
+              "decl": "AdminFlag flag",
+              "default": null
+            }
+          ]
+        },
+        "GetGroupImmunity": {
+          "name": "GetGroupImmunity",
+          "refLine": 318,
+          "docStart": 12763,
+          "docEnd": 13001,
+          "docs": {
+            "brief": "Returns a group that this group is immune to given an index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns a group that this group is immune to given an index."
+              },
+              {
+                "tag": "param:number",
+                "text": "Index from 0 to N-1, from GroupImmunitiesCount."
+              },
+              {
+                "tag": "return",
+                "text": "GroupId that this group is immune to, or INVALID_GROUP_ID on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "GroupId",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "SetBitFlags": {
+          "name": "SetBitFlags",
+          "refLine": 299,
+          "docStart": 12133,
+          "docEnd": 12335,
+          "docs": {
+            "brief": "Adds or removes multiple bitwise flags from a group's flag set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds or removes multiple bitwise flags from a group's flag set."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Bitwise admin flags (ADMFLAG_*)."
+              },
+              {
+                "tag": "param:enabled",
+                "text": "True to set the flag, false to unset/disable."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "enabled",
+              "decl": "bool enabled",
+              "default": null
+            }
+          ]
+        },
+        "AddCommandOverride": {
+          "name": "AddCommandOverride",
+          "refLine": 338,
+          "docStart": 13662,
+          "docEnd": 13905,
+          "docs": {
+            "brief": "Adds a group-specific override type.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a group-specific override type."
+              },
+              {
+                "tag": "param:name",
+                "text": "String containing command name (case sensitive)."
+              },
+              {
+                "tag": "param:type",
+                "text": "Override type (specific command or group)."
+              },
+              {
+                "tag": "param:rule",
+                "text": "Override allow/deny setting."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "OverrideType",
+              "name": "type",
+              "decl": "OverrideType type",
+              "default": null
+            },
+            {
+              "type": "OverrideRule",
+              "name": "rule",
+              "decl": "OverrideRule rule",
+              "default": null
+            }
+          ]
+        },
+        "AddGroupImmunity": {
+          "name": "AddGroupImmunity",
+          "refLine": 323,
+          "docStart": 13059,
+          "docEnd": 13160,
+          "docs": {
+            "brief": "Adds immunity to a specific group.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds immunity to a specific group."
+              },
+              {
+                "tag": "param:other",
+                "text": "Group id to receive immunity to."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "GroupId",
+              "name": "other",
+              "decl": "GroupId other",
+              "default": null
+            }
+          ]
+        },
+        "SetFlag": {
+          "name": "SetFlag",
+          "refLine": 293,
+          "docStart": 11893,
+          "docEnd": 12068,
+          "docs": {
+            "brief": "Adds or removes a flag from a group's flag set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds or removes a flag from a group's flag set."
+              },
+              {
+                "tag": "param:flag",
+                "text": "Admin flag to toggle."
+              },
+              {
+                "tag": "param:enabled",
+                "text": "True to set the flag, false to unset/disable."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "AdminFlag",
+              "name": "flag",
+              "decl": "AdminFlag flag",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "enabled",
+              "decl": "bool enabled",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "ImmunityLevel": {
+          "name": "ImmunityLevel",
+          "refLine": 346,
+          "docStart": 14117,
+          "docEnd": 14155,
+          "docs": {
+            "brief": "Immunity level used for targetting.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Immunity level used for targetting."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "GroupImmunitiesCount": {
+          "name": "GroupImmunitiesCount",
+          "refLine": 341,
+          "docStart": 14008,
+          "docEnd": 14046,
+          "docs": {
+            "brief": "Number of specific group immunities",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Number of specific group immunities"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_admin_included": {
+      "name": "_admin_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "ADMFLAG_BAN": {
+      "name": "ADMFLAG_BAN",
+      "refLine": 74,
+      "docStart": 3389,
+      "docEnd": 3441,
+      "docs": {
+        "brief": "Convenience macro for Admin_Ban as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Ban as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "AdminFlags_TOTAL": {
+      "name": "AdminFlags_TOTAL",
+      "refLine": 66,
+      "docStart": 2916,
+      "docEnd": 2951,
+      "docs": {
+        "brief": "Total number of admin flags",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Total number of admin flags"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "21"
+    },
+    "ADMFLAG_GENERIC": {
+      "name": "ADMFLAG_GENERIC",
+      "refLine": 72,
+      "docStart": 3180,
+      "docEnd": 3236,
+      "docs": {
+        "brief": "Convenience macro for Admin_Generic as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Generic as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "ADMFLAG_CONFIG": {
+      "name": "ADMFLAG_CONFIG",
+      "refLine": 79,
+      "docStart": 3912,
+      "docEnd": 3967,
+      "docs": {
+        "brief": "Convenience macro for Admin_Config as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Config as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<8)"
+    },
+    "ADMFLAG_UNBAN": {
+      "name": "ADMFLAG_UNBAN",
+      "refLine": 75,
+      "docStart": 3491,
+      "docEnd": 3545,
+      "docs": {
+        "brief": "Convenience macro for Admin_Unban as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Unban as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "ADMFLAG_CHAT": {
+      "name": "ADMFLAG_CHAT",
+      "refLine": 80,
+      "docStart": 4017,
+      "docEnd": 4070,
+      "docs": {
+        "brief": "Convenience macro for Admin_Chat as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Chat as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<9)"
+    },
+    "ADMFLAG_PASSWORD": {
+      "name": "ADMFLAG_PASSWORD",
+      "refLine": 82,
+      "docStart": 4223,
+      "docEnd": 4280,
+      "docs": {
+        "brief": "Convenience macro for Admin_Password as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Password as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<11)"
+    },
+    "ADMFLAG_RCON": {
+      "name": "ADMFLAG_RCON",
+      "refLine": 83,
+      "docStart": 4330,
+      "docEnd": 4383,
+      "docs": {
+        "brief": "Convenience macro for Admin_RCON as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_RCON as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<12)"
+    },
+    "ADMFLAG_VOTE": {
+      "name": "ADMFLAG_VOTE",
+      "refLine": 81,
+      "docStart": 4120,
+      "docEnd": 4173,
+      "docs": {
+        "brief": "Convenience macro for Admin_Vote as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Vote as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<10)"
+    },
+    "ADMFLAG_ROOT": {
+      "name": "ADMFLAG_ROOT",
+      "refLine": 85,
+      "docStart": 4538,
+      "docEnd": 4591,
+      "docs": {
+        "brief": "Convenience macro for Admin_Root as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Root as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<14)"
+    },
+    "ADMFLAG_CUSTOM1": {
+      "name": "ADMFLAG_CUSTOM1",
+      "refLine": 86,
+      "docStart": 4641,
+      "docEnd": 4697,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom1 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom1 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<15)"
+    },
+    "ADMFLAG_CONVARS": {
+      "name": "ADMFLAG_CONVARS",
+      "refLine": 78,
+      "docStart": 3806,
+      "docEnd": 3862,
+      "docs": {
+        "brief": "Convenience macro for Admin_Convars as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Convars as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<7)"
+    },
+    "ADMFLAG_CHEATS": {
+      "name": "ADMFLAG_CHEATS",
+      "refLine": 84,
+      "docStart": 4433,
+      "docEnd": 4488,
+      "docs": {
+        "brief": "Convenience macro for Admin_Cheats as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Cheats as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<13)"
+    },
+    "ADMFLAG_CUSTOM2": {
+      "name": "ADMFLAG_CUSTOM2",
+      "refLine": 87,
+      "docStart": 4747,
+      "docEnd": 4803,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom2 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom2 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<16)"
+    },
+    "ADMFLAG_CUSTOM3": {
+      "name": "ADMFLAG_CUSTOM3",
+      "refLine": 88,
+      "docStart": 4853,
+      "docEnd": 4909,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom3 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom3 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<17)"
+    },
+    "ADMFLAG_SLAY": {
+      "name": "ADMFLAG_SLAY",
+      "refLine": 76,
+      "docStart": 3595,
+      "docEnd": 3648,
+      "docs": {
+        "brief": "Convenience macro for Admin_Slay as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Slay as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<5)"
+    },
+    "ADMFLAG_KICK": {
+      "name": "ADMFLAG_KICK",
+      "refLine": 73,
+      "docStart": 3286,
+      "docEnd": 3339,
+      "docs": {
+        "brief": "Convenience macro for Admin_Kick as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Kick as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "ADMFLAG_CUSTOM6": {
+      "name": "ADMFLAG_CUSTOM6",
+      "refLine": 91,
+      "docStart": 5171,
+      "docEnd": 5227,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom6 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom6 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<20)"
+    },
+    "AUTHMETHOD_IP": {
+      "name": "AUTHMETHOD_IP",
+      "refLine": 101,
+      "docStart": 5449,
+      "docEnd": 5480,
+      "docs": {
+        "brief": "IP based authentication",
+        "tags": [
+          {
+            "tag": "",
+            "text": "IP based authentication"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "\"ip\""
+    },
+    "ADMFLAG_CUSTOM5": {
+      "name": "ADMFLAG_CUSTOM5",
+      "refLine": 90,
+      "docStart": 5065,
+      "docEnd": 5121,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom5 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom5 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<19)"
+    },
+    "ADMFLAG_CHANGEMAP": {
+      "name": "ADMFLAG_CHANGEMAP",
+      "refLine": 77,
+      "docStart": 3698,
+      "docEnd": 3756,
+      "docs": {
+        "brief": "Convenience macro for Admin_Changemap as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Changemap as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<6)"
+    },
+    "ADMFLAG_RESERVATION": {
+      "name": "ADMFLAG_RESERVATION",
+      "refLine": 71,
+      "docStart": 3070,
+      "docEnd": 3130,
+      "docs": {
+        "brief": "Convenience macro for Admin_Reservation as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Reservation as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "AUTHMETHOD_STEAM": {
+      "name": "AUTHMETHOD_STEAM",
+      "refLine": 100,
+      "docStart": 5363,
+      "docEnd": 5399,
+      "docs": {
+        "brief": "SteamID based authentication",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SteamID based authentication"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "\"steam\""
+    },
+    "AUTHMETHOD_NAME": {
+      "name": "AUTHMETHOD_NAME",
+      "refLine": 102,
+      "docStart": 5530,
+      "docEnd": 5563,
+      "docs": {
+        "brief": "Name based authentication",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Name based authentication"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "\"name\""
+    },
+    "ADMFLAG_CUSTOM4": {
+      "name": "ADMFLAG_CUSTOM4",
+      "refLine": 89,
+      "docStart": 4959,
+      "docEnd": 5015,
+      "docs": {
+        "brief": "Convenience macro for Admin_Custom4 as a FlagBit",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Convenience macro for Admin_Custom4 as a FlagBit"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<18)"
+    }
+  },
+  "enums": {
+    "OverrideRule": {
+      "name": "OverrideRule",
+      "refLine": 120,
+      "docStart": 5750,
+      "docEnd": 5785,
+      "docs": {
+        "brief": "Access override rules.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Access override rules."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Command_Deny": {
+          "name": "Command_Deny",
+          "refLine": 122,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "Command_Allow": {
+          "name": "Command_Allow",
+          "refLine": 123,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "AdminCachePart": {
+      "name": "AdminCachePart",
+      "refLine": 163,
+      "docStart": 6592,
+      "docEnd": 6642,
+      "docs": {
+        "brief": "Represents the various cache regions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Represents the various cache regions."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "AdminCache_Admins": {
+          "name": "AdminCache_Admins",
+          "refLine": 167,
+          "docStart": 6852,
+          "docEnd": 6870,
+          "docs": {
+            "brief": "All admins",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All admins"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "AdminCache_Groups": {
+          "name": "AdminCache_Groups",
+          "refLine": 166,
+          "docStart": 6760,
+          "docEnd": 6817,
+          "docs": {
+            "brief": "All groups (automatically invalidates admins too)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All groups (automatically invalidates admins too)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "AdminCache_Overrides": {
+          "name": "AdminCache_Overrides",
+          "refLine": 165,
+          "docStart": 6701,
+          "docEnd": 6725,
+          "docs": {
+            "brief": "Global overrides",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Global overrides"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "GroupId": {
+      "name": "GroupId",
+      "refLine": 138,
+      "docStart": 6013,
+      "docEnd": 6107,
+      "docs": {
+        "brief": "Identifies a unique entry in the group permissions cache.  These are not Handles.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Identifies a unique entry in the group permissions cache.  These are not Handles."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "INVALID_GROUP_ID": {
+          "name": "INVALID_GROUP_ID",
+          "refLine": 140,
+          "docStart": 6151,
+          "docEnd": 6188,
+          "docs": {
+            "brief": "An invalid/non-existent group",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An invalid/non-existent group"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    },
+    "AdminFlag": {
+      "name": "AdminFlag",
+      "refLine": 41,
+      "docStart": 1635,
+      "docEnd": 1681,
+      "docs": {
+        "brief": "Access levels (flags) for admins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Access levels (flags) for admins."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Admin_Custom4": {
+          "name": "Admin_Custom4",
+          "refLine": 61,
+          "docStart": 2727,
+          "docEnd": 2758,
+          "docs": {
+            "brief": "Fourth custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fourth custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Cheats": {
+          "name": "Admin_Cheats",
+          "refLine": 56,
+          "docStart": 2427,
+          "docEnd": 2472,
+          "docs": {
+            "brief": "Change sv_cheats and use its commands",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change sv_cheats and use its commands"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Custom6": {
+          "name": "Admin_Custom6",
+          "refLine": 63,
+          "docStart": 2842,
+          "docEnd": 2872,
+          "docs": {
+            "brief": "Sixth custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sixth custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Config": {
+          "name": "Admin_Config",
+          "refLine": 51,
+          "docStart": 2157,
+          "docEnd": 2185,
+          "docs": {
+            "brief": "Change configuration",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change configuration"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Custom1": {
+          "name": "Admin_Custom1",
+          "refLine": 58,
+          "docStart": 2555,
+          "docEnd": 2585,
+          "docs": {
+            "brief": "First custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "First custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Custom2": {
+          "name": "Admin_Custom2",
+          "refLine": 59,
+          "docStart": 2612,
+          "docEnd": 2643,
+          "docs": {
+            "brief": "Second custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Second custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Ban": {
+          "name": "Admin_Ban",
+          "refLine": 46,
+          "docStart": 1885,
+          "docEnd": 1909,
+          "docs": {
+            "brief": "Ban another user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Ban another user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Generic": {
+          "name": "Admin_Generic",
+          "refLine": 44,
+          "docStart": 1775,
+          "docEnd": 1806,
+          "docs": {
+            "brief": "Generic admin abilities",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Generic admin abilities"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Reservation": {
+          "name": "Admin_Reservation",
+          "refLine": 43,
+          "docStart": 1727,
+          "docEnd": 1748,
+          "docs": {
+            "brief": "Reserved slot",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reserved slot"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "Admin_Password": {
+          "name": "Admin_Password",
+          "refLine": 54,
+          "docStart": 2328,
+          "docEnd": 2357,
+          "docs": {
+            "brief": "Set a server password",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set a server password"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Changemap": {
+          "name": "Admin_Changemap",
+          "refLine": 49,
+          "docStart": 2053,
+          "docEnd": 2075,
+          "docs": {
+            "brief": "Change the map",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change the map"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Vote": {
+          "name": "Admin_Vote",
+          "refLine": 53,
+          "docStart": 2270,
+          "docEnd": 2301,
+          "docs": {
+            "brief": "Special vote privileges",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Special vote privileges"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Unban": {
+          "name": "Admin_Unban",
+          "refLine": 47,
+          "docStart": 1936,
+          "docEnd": 1962,
+          "docs": {
+            "brief": "Unban another user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Unban another user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Chat": {
+          "name": "Admin_Chat",
+          "refLine": 52,
+          "docStart": 2212,
+          "docEnd": 2243,
+          "docs": {
+            "brief": "Special chat privileges",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Special chat privileges"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Convars": {
+          "name": "Admin_Convars",
+          "refLine": 50,
+          "docStart": 2102,
+          "docEnd": 2130,
+          "docs": {
+            "brief": "Change basic convars",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change basic convars"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Root": {
+          "name": "Admin_Root",
+          "refLine": 57,
+          "docStart": 2499,
+          "docEnd": 2528,
+          "docs": {
+            "brief": "All access by default",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All access by default"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Slay": {
+          "name": "Admin_Slay",
+          "refLine": 48,
+          "docStart": 1989,
+          "docEnd": 2026,
+          "docs": {
+            "brief": "Slay/kill/damage another user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Slay/kill/damage another user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_RCON": {
+          "name": "Admin_RCON",
+          "refLine": 55,
+          "docStart": 2384,
+          "docEnd": 2400,
+          "docs": {
+            "brief": "Use RCON",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Use RCON"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Custom3": {
+          "name": "Admin_Custom3",
+          "refLine": 60,
+          "docStart": 2670,
+          "docEnd": 2700,
+          "docs": {
+            "brief": "Third custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Third custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Custom5": {
+          "name": "Admin_Custom5",
+          "refLine": 62,
+          "docStart": 2785,
+          "docEnd": 2815,
+          "docs": {
+            "brief": "Fifth custom flag type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fifth custom flag type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Admin_Kick": {
+          "name": "Admin_Kick",
+          "refLine": 45,
+          "docStart": 1833,
+          "docEnd": 1858,
+          "docs": {
+            "brief": "Kick another user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Kick another user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "AdminId": {
+      "name": "AdminId",
+      "refLine": 146,
+      "docStart": 6196,
+      "docEnd": 6290,
+      "docs": {
+        "brief": "Identifies a unique entry in the admin permissions cache.  These are not Handles.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Identifies a unique entry in the admin permissions cache.  These are not Handles."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "INVALID_ADMIN_ID": {
+          "name": "INVALID_ADMIN_ID",
+          "refLine": 148,
+          "docStart": 6334,
+          "docEnd": 6371,
+          "docs": {
+            "brief": "An invalid/non-existent admin",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An invalid/non-existent admin"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    },
+    "ImmunityType": {
+      "name": "ImmunityType",
+      "refLine": 129,
+      "docStart": 5855,
+      "docEnd": 5891,
+      "docs": {
+        "brief": "DEPRECATED, do not use.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "DEPRECATED, do not use."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Immunity_Default": {
+          "name": "Immunity_Default",
+          "refLine": 131,
+          "docStart": 5940,
+          "docEnd": 5959,
+          "docs": {
+            "brief": "Deprecated.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deprecated."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "Immunity_Global": {
+          "name": "Immunity_Global",
+          "refLine": 132,
+          "docStart": 5986,
+          "docEnd": 6005,
+          "docs": {
+            "brief": "Deprecated.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deprecated."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "AdmAccessMode": {
+      "name": "AdmAccessMode",
+      "refLine": 154,
+      "docStart": 6379,
+      "docEnd": 6432,
+      "docs": {
+        "brief": "Methods of computing access permissions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Methods of computing access permissions."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Access_Effective": {
+          "name": "Access_Effective",
+          "refLine": 157,
+          "docStart": 6539,
+          "docEnd": 6584,
+          "docs": {
+            "brief": "Access the user has from their groups",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Access the user has from their groups"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Access_Real": {
+          "name": "Access_Real",
+          "refLine": 156,
+          "docStart": 6478,
+          "docEnd": 6516,
+          "docs": {
+            "brief": "Access the user has inherently",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Access the user has inherently"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "OverrideType": {
+      "name": "OverrideType",
+      "refLine": 111,
+      "docStart": 5595,
+      "docEnd": 5630,
+      "docs": {
+        "brief": "Access override types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Access override types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Override_CommandGroup": {
+          "name": "Override_CommandGroup",
+          "refLine": 114,
+          "docStart": 5721,
+          "docEnd": 5742,
+          "docs": {
+            "brief": "Command group",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Command group"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Override_Command": {
+          "name": "Override_Command",
+          "refLine": 113,
+          "docStart": 5679,
+          "docEnd": 5694,
+          "docs": {
+            "brief": "Command",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Command"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

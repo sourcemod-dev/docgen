@@ -1,0 +1,74 @@
+{
+  "functions": {
+    "TTT_OnSQLConnect": {
+      "name": "TTT_OnSQLConnect",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "TTT_Query": {
+      "name": "TTT_Query",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "debugname",
+          "decl": "const char[] debugname",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetSQLConnection": {
+      "name": "TTT_GetSQLConnection",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Database",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_sql_included": {
+      "name": "_ttt_sql_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

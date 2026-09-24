@@ -1,0 +1,1180 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "JSON_Object": {
+      "name": "JSON_Object",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "MetaStringMap",
+      "methods": {
+        "DeepCopy": {
+          "name": "DeepCopy",
+          "refLine": 695,
+          "docStart": 20415,
+          "docEnd": 20535,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_copy_deep"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Object",
+          "arguments": []
+        },
+        "Encode": {
+          "name": "Encode",
+          "refLine": 662,
+          "docStart": 19664,
+          "docEnd": 19781,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_encode"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "output",
+              "decl": "char[] output",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "options",
+              "decl": "int options",
+              "default": "JSON_NONE"
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 443,
+          "docStart": 13128,
+          "docEnd": 13332,
+          "docs": {
+            "brief": "Sets the float stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the float stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to float value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "GetObject": {
+          "name": "GetObject",
+          "refLine": 383,
+          "docStart": 11391,
+          "docEnd": 11653,
+          "docs": {
+            "brief": "Retrieves the JSON object stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the JSON object stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve object value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Object",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSON_Object",
+              "name": "default_value",
+              "decl": "JSON_Object default_value",
+              "default": "null"
+            }
+          ]
+        },
+        "ShallowCopy": {
+          "name": "ShallowCopy",
+          "refLine": 684,
+          "docStart": 20200,
+          "docEnd": 20320,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_copy_deep"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Object",
+          "arguments": []
+        },
+        "GetSize": {
+          "name": "GetSize",
+          "refLine": 121,
+          "docStart": 3452,
+          "docEnd": 3694,
+          "docs": {
+            "brief": "Gets the size of the string stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the size of the string stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to get buffer size for."
+              },
+              {
+                "tag": "return",
+                "text": "Buffer size for string at key provided,\nor -1 if it is not a string/does not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetIndex": {
+          "name": "GetIndex",
+          "refLine": 143,
+          "docStart": 4145,
+          "docEnd": 4311,
+          "docs": {
+            "brief": "Gets the index of a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the index of a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to get index of."
+              },
+              {
+                "tag": "return",
+                "text": "Index of the key provided, or -1 if it does not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "UntrackKey": {
+          "name": "UntrackKey",
+          "refLine": 310,
+          "docStart": 9337,
+          "docEnd": 9530,
+          "docs": {
+            "brief": "Untracks a key, cleaning up all it's meta and indexing data.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Untracks a key, cleaning up all it's meta and indexing data."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to untrack."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "TrackKey": {
+          "name": "TrackKey",
+          "refLine": 263,
+          "docStart": 7556,
+          "docEnd": 8101,
+          "docs": {
+            "brief": "Tracks a key, setting it's type and index where necessary.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Tracks a key, setting it's type and index where necessary."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to track. If the key already\nexists, it's index will not be changed."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type to set key to. If a valid type is\nprovided, the key's type will be updated."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to set key to. If the index is not\nprovided (-1), the object length will be used."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSONCellType",
+              "name": "type",
+              "decl": "JSONCellType type",
+              "default": "JSON_Type_Invalid"
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 401,
+          "docStart": 11888,
+          "docEnd": 12094,
+          "docs": {
+            "brief": "Sets the string stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the string stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to string value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "GetMeta": {
+          "name": "GetMeta",
+          "refLine": 88,
+          "docStart": 2391,
+          "docEnd": 2701,
+          "docs": {
+            "brief": "Gets the requested meta info for a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the requested meta info for a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to get meta info for."
+              },
+              {
+                "tag": "param:meta",
+                "text": "Meta info to get."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if meta does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "The meta value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "default_value",
+              "decl": "any default_value",
+              "default": null
+            }
+          ]
+        },
+        "GetType": {
+          "name": "GetType",
+          "refLine": 107,
+          "docStart": 3050,
+          "docEnd": 3270,
+          "docs": {
+            "brief": "Gets the cell type stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the cell type stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to get value type for."
+              },
+              {
+                "tag": "return",
+                "text": "Value type for key provided,\nor JSON_Type_Invalid if it does not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSONCellType",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetHidden": {
+          "name": "GetHidden",
+          "refLine": 132,
+          "docStart": 3821,
+          "docEnd": 4009,
+          "docs": {
+            "brief": "Gets whether the key should be hidden from encoding.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets whether the key should be hidden from encoding."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to get hidden state for."
+              },
+              {
+                "tag": "return",
+                "text": "Whether or not the key should be hidden."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "SetMeta": {
+          "name": "SetMeta",
+          "refLine": 211,
+          "docStart": 6034,
+          "docEnd": 6289,
+          "docs": {
+            "brief": "Sets meta info on a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets meta info on a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set meta info for."
+              },
+              {
+                "tag": "param:meta",
+                "text": "Meta info to set."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "GetKey": {
+          "name": "GetKey",
+          "refLine": 158,
+          "docStart": 4440,
+          "docEnd": 4839,
+          "docs": {
+            "brief": "Gets the key stored at an index.\nIf an array, will convert the index to its string value.\nIf an array, will return false if the index is not between [0, length].",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the key stored at an index.\nIf an array, will convert the index to its string value.\nIf an array, will return false if the index is not between [0, length]."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index of key."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store key at."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of value buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            }
+          ]
+        },
+        "RemoveMeta": {
+          "name": "RemoveMeta",
+          "refLine": 228,
+          "docStart": 6589,
+          "docEnd": 6810,
+          "docs": {
+            "brief": "Removes meta info from a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes meta info from a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to remove meta info from."
+              },
+              {
+                "tag": "param:meta",
+                "text": "Meta info to remove."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            }
+          ]
+        },
+        "SetHidden": {
+          "name": "SetHidden",
+          "refLine": 244,
+          "docStart": 7093,
+          "docEnd": 7347,
+          "docs": {
+            "brief": "Sets whether the key should be hidden from encoding.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether the key should be hidden from encoding."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set hidden state for."
+              },
+              {
+                "tag": "param:hidden",
+                "text": "Whether or not the key should be hidden."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "hidden",
+              "decl": "bool hidden",
+              "default": null
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 415,
+          "docStart": 12345,
+          "docEnd": 12545,
+          "docs": {
+            "brief": "Sets the int stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the int stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to int value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 456,
+          "docStart": 13505,
+          "docEnd": 13707,
+          "docs": {
+            "brief": "Sets the bool stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the bool stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to bool value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 485,
+          "docStart": 14307,
+          "docEnd": 14496,
+          "docs": {
+            "brief": "Removes an item from the object by key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an item from the object by key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key of object to remove."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the value was never set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "Rename": {
+          "name": "Rename",
+          "refLine": 498,
+          "docStart": 14618,
+          "docEnd": 14910,
+          "docs": {
+            "brief": "Renames the key of an existing item in the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Renames the key of an existing item in the object."
+              },
+              {
+                "tag": "param:from",
+                "text": "Existing key to rename."
+              },
+              {
+                "tag": "param:to",
+                "text": "New key."
+              },
+              {
+                "tag": "param:replace",
+                "text": "Should the 'to' key should be replaced if it exists?"
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "from",
+              "decl": "const char[] from",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "to",
+              "decl": "const char[] to",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "Merge": {
+          "name": "Merge",
+          "refLine": 566,
+          "docStart": 16433,
+          "docEnd": 16867,
+          "docs": {
+            "brief": "Merges in the entries from the specified object,\noptionally replacing existing entries with the same key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Merges in the entries from the specified object,\noptionally replacing existing entries with the same key."
+              },
+              {
+                "tag": "param:from",
+                "text": "Object to merge entries from."
+              },
+              {
+                "tag": "param:options",
+                "text": "Bitwise combination of `JSON_MERGE_*` options."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "If the object being merged is an array,\nan error will be thrown."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSON_Object",
+              "name": "from",
+              "decl": "JSON_Object from",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "options",
+              "decl": "int options",
+              "default": "JSON_MERGE_REPLACE"
+            }
+          ]
+        },
+        "EncodeSize": {
+          "name": "EncodeSize",
+          "refLine": 651,
+          "docStart": 19425,
+          "docEnd": 19547,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_encode_size"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "options",
+              "decl": "int options",
+              "default": "JSON_NONE"
+            }
+          ]
+        },
+        "WriteToFile": {
+          "name": "WriteToFile",
+          "refLine": 673,
+          "docStart": 19930,
+          "docEnd": 20054,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_write_to_file"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "path",
+              "decl": "const char[] path",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "options",
+              "decl": "int options",
+              "default": "JSON_NONE"
+            }
+          ]
+        },
+        "Cleanup": {
+          "name": "Cleanup",
+          "refLine": 706,
+          "docStart": 20624,
+          "docEnd": 20742,
+          "docs": {
+            "brief": "Makes a global call with this\ninstance passed as the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a global call with this\ninstance passed as the object."
+              },
+              {
+                "tag": "see",
+                "text": "json_cleanup"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "SetObject": {
+          "name": "SetObject",
+          "refLine": 469,
+          "docStart": 13876,
+          "docEnd": 14087,
+          "docs": {
+            "brief": "Sets the JSON object stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the JSON object stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to object value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSON_Object",
+              "name": "value",
+              "decl": "JSON_Object value",
+              "default": null
+            }
+          ]
+        },
+        "JSON_Object": {
+          "name": "JSON_Object",
+          "refLine": 720,
+          "docStart": 20859,
+          "docEnd": 20950,
+          "docs": {
+            "brief": "Creates a new JSON_Object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new JSON_Object."
+              },
+              {
+                "tag": "return",
+                "text": "A new JSON_Object."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Object",
+          "arguments": []
+        },
+        "GetKeySize": {
+          "name": "GetKeySize",
+          "refLine": 185,
+          "docStart": 5441,
+          "docEnd": 5637,
+          "docs": {
+            "brief": "Returns the buffer size required to store the key at the specified index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the buffer size required to store the key at the specified index."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index of key."
+              },
+              {
+                "tag": "return",
+                "text": "Buffer size required to store key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Super": {
+          "name": "Super",
+          "refLine": 53,
+          "docStart": 1871,
+          "docEnd": 1956,
+          "docs": {
+            "brief": "Views the instance as its superclass to access overridden methods.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Views the instance as its superclass to access overridden methods."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "MetaStringMap",
+          "getter": true,
+          "setter": false
+        },
+        "IsArray": {
+          "name": "IsArray",
+          "refLine": 64,
+          "docStart": 2097,
+          "docEnd": 2155,
+          "docs": {
+            "brief": "Whether the current object is an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Whether the current object is an array."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_object_included": {
+      "name": "_json_object_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,641 @@
+{
+  "functions": {
+    "CCC_ResetTag": {
+      "name": "CCC_ResetTag",
+      "refLine": 90,
+      "docStart": 2370,
+      "docEnd": 2552,
+      "docs": {
+        "brief": "Resets a client's tag to the value in the config file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resets a client's tag to the value in the config file."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "noreturn",
+            "text": "On error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CCC_GetTag": {
+      "name": "CCC_GetTag",
+      "refLine": 58,
+      "docStart": 1539,
+      "docEnd": 1771,
+      "docs": {
+        "brief": "Gets a client's tag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's tag"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the tag in"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum buffer length"
+          },
+          {
+            "tag": "noreturn",
+            "text": "On error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnUserConfigPreLoaded": {
+      "name": "CCC_OnUserConfigPreLoaded",
+      "refLine": 150,
+      "docStart": 4574,
+      "docEnd": 4850,
+      "docs": {
+        "brief": "Called when a client's colors and tag are about to be loaded from the config file\nAt this point, the client has NO COLORS",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client's colors and tag are about to be loaded from the config file\nAt this point, the client has NO COLORS"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled or Plugin_Stop to prevent loading, Plugin_Continue or Plugin_Changed to allow"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ccc_SetNTVOptional": {
+      "name": "__pl_ccc_SetNTVOptional",
+      "refLine": 178,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CCC_SetColor": {
+      "name": "CCC_SetColor",
+      "refLine": 46,
+      "docStart": 986,
+      "docEnd": 1456,
+      "docs": {
+        "brief": "Sets a client's color as a hexadecimal integer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's color as a hexadecimal integer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Color type to set"
+          },
+          {
+            "tag": "param:color",
+            "text": "Integer representation of the color (use StringToInt(input, 16) to convert a hexadecimal string) or one of the color defines"
+          },
+          {
+            "tag": "param:alpha",
+            "text": "Are you specifying a color with alpha?"
+          },
+          {
+            "tag": "return",
+            "text": "True if the color is updated successfully, false otherwise\n\nOn error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "CCC_ColorType",
+          "name": "type",
+          "decl": "CCC_ColorType type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "color",
+          "decl": "int color",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "alpha",
+          "decl": "bool alpha",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnColor": {
+      "name": "CCC_OnColor",
+      "refLine": 131,
+      "docStart": 3661,
+      "docEnd": 4148,
+      "docs": {
+        "brief": "Called when a client's name is about to be tagged\nDO NOT START A NEW USERMESSAGE (i.e. PrintToChat, PrintToChatAll) WITHIN THIS FORWARD",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client's name is about to be tagged\nDO NOT START A NEW USERMESSAGE (i.e. PrintToChat, PrintToChatAll) WITHIN THIS FORWARD"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:message",
+            "text": "Chat message that will be printed"
+          },
+          {
+            "tag": "param:type",
+            "text": "What type of color will be applied. If this is CCC_TagColor, it controls whether the tag will be applied at all, not whether the tag will be colored."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to prevent coloring, Plugin_Continue to allow coloring"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "CCC_ColorType",
+          "name": "type",
+          "decl": "CCC_ColorType type",
+          "default": null
+        }
+      ]
+    },
+    "CCC_SetTag": {
+      "name": "CCC_SetTag",
+      "refLine": 69,
+      "docStart": 1836,
+      "docEnd": 2029,
+      "docs": {
+        "brief": "Sets a client's tag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's tag"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:tag",
+            "text": "String containing the new tag"
+          },
+          {
+            "tag": "noreturn",
+            "text": "On error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnChatMessage": {
+      "name": "CCC_OnChatMessage",
+      "refLine": 141,
+      "docStart": 4232,
+      "docEnd": 4500,
+      "docs": {
+        "brief": "Called when a message has been fully colored and will be sent, unless further plugins modify it through Simple Chat Processor",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a message has been fully colored and will be sent, unless further plugins modify it through Simple Chat Processor"
+          },
+          {
+            "tag": "param:author",
+            "text": "Author client index"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of message buffer"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "message",
+          "decl": "char[] message",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnConfigReloaded": {
+      "name": "CCC_OnConfigReloaded",
+      "refLine": 165,
+      "docStart": 5090,
+      "docEnd": 5193,
+      "docs": {
+        "brief": "Called when the configuration file is reloaded with the sm_reloadccc command",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the configuration file is reloaded with the sm_reloadccc command"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CCC_OnUserConfigLoaded": {
+      "name": "CCC_OnUserConfigLoaded",
+      "refLine": 158,
+      "docStart": 4906,
+      "docEnd": 5039,
+      "docs": {
+        "brief": "Called when a client's colors and tag have been loaded from the config file",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client's colors and tag have been loaded from the config file"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnNameColor": {
+      "name": "CCC_OnNameColor",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CCC_ResetColor": {
+      "name": "CCC_ResetColor",
+      "refLine": 80,
+      "docStart": 2085,
+      "docEnd": 2308,
+      "docs": {
+        "brief": "Resets a client's color to the value in the config file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resets a client's color to the value in the config file."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Color type to restore"
+          },
+          {
+            "tag": "noreturn",
+            "text": "On error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "CCC_ColorType",
+          "name": "type",
+          "decl": "CCC_ColorType type",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnChatColor": {
+      "name": "CCC_OnChatColor",
+      "refLine": 110,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CCC_OnTagApplied": {
+      "name": "CCC_OnTagApplied",
+      "refLine": 120,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CCC_GetColor": {
+      "name": "CCC_GetColor",
+      "refLine": 33,
+      "docStart": 450,
+      "docEnd": 906,
+      "docs": {
+        "brief": "Gets a client's color as a hexadecimal integer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's color as a hexadecimal integer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Color type to retreive"
+          },
+          {
+            "tag": "param:alpha",
+            "text": "Pass a boolean variable by reference here and it will be true if the color has alpha specified or false if it doesn't (or is a stock color)"
+          },
+          {
+            "tag": "return",
+            "text": "Color as a hexadecimal integer (use %X in formatting to get a hexadecimal string)\n\nOn error/errors:  Invalid client index or client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "CCC_ColorType",
+          "name": "type",
+          "decl": "CCC_ColorType type",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "alpha",
+          "decl": "bool& alpha",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ccc_included": {
+      "name": "_ccc_included",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "COLOR_OLIVE": {
+      "name": "COLOR_OLIVE",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-3"
+    },
+    "COLOR_GREEN": {
+      "name": "COLOR_GREEN",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-2"
+    },
+    "COLOR_TEAM": {
+      "name": "COLOR_TEAM",
+      "refLine": 21,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-4"
+    },
+    "COLOR_NONE": {
+      "name": "COLOR_NONE",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    }
+  },
+  "enums": {
+    "CCC_ColorType": {
+      "name": "CCC_ColorType",
+      "refLine": 12,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CCC_ChatColor": {
+          "name": "CCC_ChatColor",
+          "refLine": 15,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CCC_NameColor": {
+          "name": "CCC_NameColor",
+          "refLine": 14,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CCC_TagColor": {
+          "name": "CCC_TagColor",
+          "refLine": 13,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

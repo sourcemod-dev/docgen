@@ -1,0 +1,4254 @@
+{
+  "functions": {
+    "SteamWorks_SetMapName": {
+      "name": "SteamWorks_SetMapName",
+      "refLine": 221,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sMapName",
+          "decl": "const char[] sMapName",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SteamServersConnected": {
+      "name": "SteamWorks_SteamServersConnected",
+      "refLine": 297,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SteamWorks_ClearRules": {
+      "name": "SteamWorks_ClearRules",
+      "refLine": 224,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "SteamWorks_SetHTTPRequestHeaderValue": {
+      "name": "SteamWorks_SetHTTPRequestHeaderValue",
+      "refLine": 243,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sName",
+          "decl": "const char[] sName",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sValue",
+          "decl": "const char[] sValue",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_RequestStats": {
+      "name": "SteamWorks_RequestStats",
+      "refLine": 234,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "appid",
+          "decl": "int appid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetUserGroupStatusAuthID": {
+      "name": "SteamWorks_GetUserGroupStatusAuthID",
+      "refLine": 227,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "groupid",
+          "decl": "int groupid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetUserGroupStatus": {
+      "name": "SteamWorks_GetUserGroupStatus",
+      "refLine": 226,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "groupid",
+          "decl": "int groupid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetPublicIP": {
+      "name": "SteamWorks_GetPublicIP",
+      "refLine": 217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int[4]",
+          "name": "ipaddr",
+          "decl": "int ipaddr[4]",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_HasLicenseForAppId": {
+      "name": "SteamWorks_HasLicenseForAppId",
+      "refLine": 230,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "EUserHasLicenseForAppResult",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "app",
+          "decl": "int app",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetClientSteamID": {
+      "name": "SteamWorks_GetClientSteamID",
+      "refLine": 231,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sSteamID",
+          "decl": "char[] sSteamID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_RequestStatsAuthID": {
+      "name": "SteamWorks_RequestStatsAuthID",
+      "refLine": 233,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "appid",
+          "decl": "int appid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPStreamingResponseBodyData": {
+      "name": "SteamWorks_GetHTTPStreamingResponseBodyData",
+      "refLine": 280,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cOffset",
+          "decl": "int cOffset",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sBody",
+          "decl": "char[] sBody",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPRequestWasTimedOut": {
+      "name": "SteamWorks_GetHTTPRequestWasTimedOut",
+      "refLine": 282,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "bWasTimedOut",
+          "decl": "bool& bWasTimedOut",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_OnClientGroupStatus": {
+      "name": "SteamWorks_OnClientGroupStatus",
+      "refLine": 304,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "groupid",
+          "decl": "int groupid",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "isMember",
+          "decl": "bool isMember",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "isOfficer",
+          "decl": "bool isOfficer",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPResponseHeaderSize": {
+      "name": "SteamWorks_GetHTTPResponseHeaderSize",
+      "refLine": 276,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sHeader",
+          "decl": "const char[] sHeader",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "size",
+          "decl": "int& size",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_ForceHeartbeat": {
+      "name": "SteamWorks_ForceHeartbeat",
+      "refLine": 225,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "SteamWorks_GetHTTPDownloadProgressPct": {
+      "name": "SteamWorks_GetHTTPDownloadProgressPct",
+      "refLine": 281,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "percent",
+          "decl": "float& percent",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPResponseBodyCallback": {
+      "name": "SteamWorks_GetHTTPResponseBodyCallback",
+      "refLine": 292,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "SteamWorksHTTPBodyCallback",
+          "name": "fCallback",
+          "decl": "SteamWorksHTTPBodyCallback fCallback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "SteamWorks_TokenRequested": {
+      "name": "SteamWorks_TokenRequested",
+      "refLine": 302,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "sToken",
+          "decl": "char[] sToken",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "__ext_SteamWorks_SetNTVOptional": {
+      "name": "__ext_SteamWorks_SetNTVOptional",
+      "refLine": 329,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SteamWorks_SendHTTPRequest": {
+      "name": "SteamWorks_SendHTTPRequest",
+      "refLine": 272,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_WriteHTTPResponseBodyToFile": {
+      "name": "SteamWorks_WriteHTTPResponseBodyToFile",
+      "refLine": 293,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sFileName",
+          "decl": "const char[] sFileName",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPCallbacks": {
+      "name": "SteamWorks_SetHTTPCallbacks",
+      "refLine": 271,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "SteamWorksHTTPRequestCompleted",
+          "name": "fCompleted",
+          "decl": "SteamWorksHTTPRequestCompleted fCompleted",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "SteamWorksHTTPHeadersReceived",
+          "name": "fHeaders",
+          "decl": "SteamWorksHTTPHeadersReceived fHeaders",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "SteamWorksHTTPDataReceived",
+          "name": "fData",
+          "decl": "SteamWorksHTTPDataReceived fData",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "Handle",
+          "name": "hCalling",
+          "decl": "Handle hCalling",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "SteamWorks_IsLoaded": {
+      "name": "SteamWorks_IsLoaded",
+      "refLine": 219,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "SteamWorks_SetHTTPRequestNetworkActivityTimeout": {
+      "name": "SteamWorks_SetHTTPRequestNetworkActivityTimeout",
+      "refLine": 242,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "timeout",
+          "decl": "int timeout",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_IsVACEnabled": {
+      "name": "SteamWorks_IsVACEnabled",
+      "refLine": 216,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "SteamWorks_GetHTTPResponseHeaderValue": {
+      "name": "SteamWorks_GetHTTPResponseHeaderValue",
+      "refLine": 277,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sHeader",
+          "decl": "const char[] sHeader",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sValue",
+          "decl": "char[] sValue",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SendHTTPRequestAndStreamResponse": {
+      "name": "SteamWorks_SendHTTPRequestAndStreamResponse",
+      "refLine": 273,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestRawPostBody": {
+      "name": "SteamWorks_SetHTTPRequestRawPostBody",
+      "refLine": 283,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sContentType",
+          "decl": "const char[] sContentType",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sBody",
+          "decl": "const char[] sBody",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bodylen",
+          "decl": "int bodylen",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetStatAuthIDFloat": {
+      "name": "SteamWorks_GetStatAuthIDFloat",
+      "refLine": 238,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sKey",
+          "decl": "const char[] sKey",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "value",
+          "decl": "float& value",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetStatCell": {
+      "name": "SteamWorks_GetStatCell",
+      "refLine": 235,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sKey",
+          "decl": "const char[] sKey",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "value",
+          "decl": "int& value",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestUserAgentInfo": {
+      "name": "SteamWorks_SetHTTPRequestUserAgentInfo",
+      "refLine": 245,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sUserAgentInfo",
+          "decl": "const char[] sUserAgentInfo",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestGetOrPostParameter": {
+      "name": "SteamWorks_SetHTTPRequestGetOrPostParameter",
+      "refLine": 244,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sName",
+          "decl": "const char[] sName",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sValue",
+          "decl": "const char[] sValue",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestAbsoluteTimeoutMS": {
+      "name": "SteamWorks_SetHTTPRequestAbsoluteTimeoutMS",
+      "refLine": 247,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "unMilliseconds",
+          "decl": "int unMilliseconds",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SteamServersDisconnected": {
+      "name": "SteamWorks_SteamServersDisconnected",
+      "refLine": 299,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "EResult",
+          "name": "result",
+          "decl": "EResult result",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestRequiresVerifiedCertificate": {
+      "name": "SteamWorks_SetHTTPRequestRequiresVerifiedCertificate",
+      "refLine": 246,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bRequireVerifiedCertificate",
+          "decl": "bool bRequireVerifiedCertificate",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_HasLicenseForApp": {
+      "name": "SteamWorks_HasLicenseForApp",
+      "refLine": 229,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "EUserHasLicenseForAppResult",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "app",
+          "decl": "int app",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GCRetrieveMessage": {
+      "name": "SteamWorks_GCRetrieveMessage",
+      "refLine": 308,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "EGCResults",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "punMsgType",
+          "decl": "int punMsgType",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "pubDest",
+          "decl": "const char[] pubDest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cubDest",
+          "decl": "int cubDest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "pcubMsgSize",
+          "decl": "int pcubMsgSize",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GCSendMessage": {
+      "name": "SteamWorks_GCSendMessage",
+      "refLine": 306,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "EGCResults",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "unMsgType",
+          "decl": "int unMsgType",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "pubData",
+          "decl": "const char[] pubData",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cubData",
+          "decl": "int cubData",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_IsConnected": {
+      "name": "SteamWorks_IsConnected",
+      "refLine": 222,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "SteamWorks_GetPublicIPCell": {
+      "name": "SteamWorks_GetPublicIPCell",
+      "refLine": 218,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "SteamWorks_SetGameDescription": {
+      "name": "SteamWorks_SetGameDescription",
+      "refLine": 220,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sDesc",
+          "decl": "const char[] sDesc",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_DeferHTTPRequest": {
+      "name": "SteamWorks_DeferHTTPRequest",
+      "refLine": 274,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_CreateHTTPRequest": {
+      "name": "SteamWorks_CreateHTTPRequest",
+      "refLine": 240,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "EHTTPMethod",
+          "name": "method",
+          "decl": "EHTTPMethod method",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sURL",
+          "decl": "const char[] sURL",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_PrioritizeHTTPRequest": {
+      "name": "SteamWorks_PrioritizeHTTPRequest",
+      "refLine": 275,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPResponseBodySize": {
+      "name": "SteamWorks_GetHTTPResponseBodySize",
+      "refLine": 278,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "size",
+          "decl": "int& size",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetHTTPResponseBodyData": {
+      "name": "SteamWorks_GetHTTPResponseBodyData",
+      "refLine": 279,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hRequest",
+          "decl": "Handle hRequest",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sBody",
+          "decl": "char[] sBody",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SteamServersConnectFailure": {
+      "name": "SteamWorks_SteamServersConnectFailure",
+      "refLine": 298,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "EResult",
+          "name": "result",
+          "decl": "EResult result",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_RestartRequested": {
+      "name": "SteamWorks_RestartRequested",
+      "refLine": 301,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SteamWorks_GetStatAuthIDCell": {
+      "name": "SteamWorks_GetStatAuthIDCell",
+      "refLine": 236,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sKey",
+          "decl": "const char[] sKey",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "value",
+          "decl": "int& value",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SendMessageToGC": {
+      "name": "SteamWorks_SendMessageToGC",
+      "refLine": 310,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "EGCResults",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "unMsgType",
+          "decl": "int unMsgType",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "pubData",
+          "decl": "const char[] pubData",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cubData",
+          "decl": "int cubData",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_OnValidateClient": {
+      "name": "SteamWorks_OnValidateClient",
+      "refLine": 296,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ownerauthid",
+          "decl": "int ownerauthid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GetStatFloat": {
+      "name": "SteamWorks_GetStatFloat",
+      "refLine": 237,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sKey",
+          "decl": "const char[] sKey",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "value",
+          "decl": "float& value",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetRule": {
+      "name": "SteamWorks_SetRule",
+      "refLine": 223,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sKey",
+          "decl": "const char[] sKey",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sValue",
+          "decl": "const char[] sValue",
+          "default": null
+        }
+      ]
+    },
+    "SW_OnValidateClient": {
+      "name": "SW_OnValidateClient",
+      "refLine": 295,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ownerauthid",
+          "decl": "int ownerauthid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "authid",
+          "decl": "int authid",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_GCMsgAvailable": {
+      "name": "SteamWorks_GCMsgAvailable",
+      "refLine": 307,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "cubData",
+          "decl": "int cubData",
+          "default": null
+        }
+      ]
+    },
+    "SteamWorks_SetHTTPRequestContextValue": {
+      "name": "SteamWorks_SetHTTPRequestContextValue",
+      "refLine": 241,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hHandle",
+          "decl": "Handle hHandle",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data1",
+          "decl": "any data1",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data2",
+          "decl": "any data2",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_SteamWorks_Included": {
+      "name": "_SteamWorks_Included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "EHTTPMethod": {
+      "name": "EHTTPMethod",
+      "refLine": 126,
+      "docStart": 10946,
+      "docEnd": 11026,
+      "docs": {
+        "brief": "This enum is used in client API methods, do not re-number existing values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This enum is used in client API methods, do not re-number existing values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "k_EHTTPMethodPUT": {
+          "name": "k_EHTTPMethodPUT",
+          "refLine": 132,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "k_EHTTPMethodGET": {
+          "name": "k_EHTTPMethodGET",
+          "refLine": 129,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "k_EHTTPMethodDELETE": {
+          "name": "k_EHTTPMethodDELETE",
+          "refLine": 133,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "k_EHTTPMethodOPTIONS": {
+          "name": "k_EHTTPMethodOPTIONS",
+          "refLine": 134,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "k_EHTTPMethodHEAD": {
+          "name": "k_EHTTPMethodHEAD",
+          "refLine": 130,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "k_EHTTPMethodInvalid": {
+          "name": "k_EHTTPMethodInvalid",
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "k_EHTTPMethodPOST": {
+          "name": "k_EHTTPMethodPOST",
+          "refLine": 131,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "EHTTPStatusCode": {
+      "name": "EHTTPStatusCode",
+      "refLine": 146,
+      "docStart": 11455,
+      "docEnd": 11590,
+      "docs": {
+        "brief": "HTTP Status codes that the server can send in response to a request, see rfc2616 section 10.3 for descriptions\nof each of these.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "HTTP Status codes that the server can send in response to a request, see rfc2616 section 10.3 for descriptions\nof each of these."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "k_EHTTPStatusCode415UnsupportedMediaType": {
+          "name": "k_EHTTPStatusCode415UnsupportedMediaType",
+          "refLine": 190,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "415"
+        },
+        "k_EHTTPStatusCode502BadGateway": {
+          "name": "k_EHTTPStatusCode502BadGateway",
+          "refLine": 199,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "502"
+        },
+        "k_EHTTPStatusCode202Accepted": {
+          "name": "k_EHTTPStatusCode202Accepted",
+          "refLine": 158,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "202"
+        },
+        "k_EHTTPStatusCode303SeeOther": {
+          "name": "k_EHTTPStatusCode303SeeOther",
+          "refLine": 168,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "303"
+        },
+        "k_EHTTPStatusCode409Conflict": {
+          "name": "k_EHTTPStatusCode409Conflict",
+          "refLine": 184,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "409"
+        },
+        "k_EHTTPStatusCode413RequestEntityTooLarge": {
+          "name": "k_EHTTPStatusCode413RequestEntityTooLarge",
+          "refLine": 188,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "413"
+        },
+        "k_EHTTPStatusCode305UseProxy": {
+          "name": "k_EHTTPStatusCode305UseProxy",
+          "refLine": 170,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "305"
+        },
+        "k_EHTTPStatusCode304NotModified": {
+          "name": "k_EHTTPStatusCode304NotModified",
+          "refLine": 169,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "304"
+        },
+        "k_EHTTPStatusCode414RequestURITooLong": {
+          "name": "k_EHTTPStatusCode414RequestURITooLong",
+          "refLine": 189,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "414"
+        },
+        "k_EHTTPStatusCode405MethodNotAllowed": {
+          "name": "k_EHTTPStatusCode405MethodNotAllowed",
+          "refLine": 180,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "405"
+        },
+        "k_EHTTPStatusCode403Forbidden": {
+          "name": "k_EHTTPStatusCode403Forbidden",
+          "refLine": 178,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "403"
+        },
+        "k_EHTTPStatusCode301MovedPermanently": {
+          "name": "k_EHTTPStatusCode301MovedPermanently",
+          "refLine": 166,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "301"
+        },
+        "k_EHTTPStatusCodeInvalid": {
+          "name": "k_EHTTPStatusCodeInvalid",
+          "refLine": 149,
+          "docStart": 11615,
+          "docEnd": 11702,
+          "docs": {
+            "brief": "Invalid status code (this isn't defined in HTTP, used to indicate unset in our code)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Invalid status code (this isn't defined in HTTP, used to indicate unset in our code)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "k_EHTTPStatusCode5xxUnknown": {
+          "name": "k_EHTTPStatusCode5xxUnknown",
+          "refLine": 203,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "599"
+        },
+        "k_EHTTPStatusCode204NoContent": {
+          "name": "k_EHTTPStatusCode204NoContent",
+          "refLine": 160,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "204"
+        },
+        "k_EHTTPStatusCode302Found": {
+          "name": "k_EHTTPStatusCode302Found",
+          "refLine": 167,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "302"
+        },
+        "k_EHTTPStatusCode504GatewayTimeout": {
+          "name": "k_EHTTPStatusCode504GatewayTimeout",
+          "refLine": 201,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "504"
+        },
+        "k_EHTTPStatusCode406NotAcceptable": {
+          "name": "k_EHTTPStatusCode406NotAcceptable",
+          "refLine": 181,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "406"
+        },
+        "k_EHTTPStatusCode408RequestTimeout": {
+          "name": "k_EHTTPStatusCode408RequestTimeout",
+          "refLine": 183,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "408"
+        },
+        "k_EHTTPStatusCode400BadRequest": {
+          "name": "k_EHTTPStatusCode400BadRequest",
+          "refLine": 175,
+          "docStart": 12844,
+          "docEnd": 12858,
+          "docs": {
+            "brief": "Error codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Error codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "400"
+        },
+        "k_EHTTPStatusCode100Continue": {
+          "name": "k_EHTTPStatusCode100Continue",
+          "refLine": 152,
+          "docStart": 11762,
+          "docEnd": 11784,
+          "docs": {
+            "brief": "Informational codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Informational codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "100"
+        },
+        "k_EHTTPStatusCode206PartialContent": {
+          "name": "k_EHTTPStatusCode206PartialContent",
+          "refLine": 162,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "206"
+        },
+        "k_EHTTPStatusCode417ExpectationFailed": {
+          "name": "k_EHTTPStatusCode417ExpectationFailed",
+          "refLine": 192,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "417"
+        },
+        "k_EHTTPStatusCode501NotImplemented": {
+          "name": "k_EHTTPStatusCode501NotImplemented",
+          "refLine": 198,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "501"
+        },
+        "k_EHTTPStatusCode500InternalServerError": {
+          "name": "k_EHTTPStatusCode500InternalServerError",
+          "refLine": 197,
+          "docStart": 14286,
+          "docEnd": 14307,
+          "docs": {
+            "brief": "Server error codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Server error codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "500"
+        },
+        "k_EHTTPStatusCode503ServiceUnavailable": {
+          "name": "k_EHTTPStatusCode503ServiceUnavailable",
+          "refLine": 200,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "503"
+        },
+        "k_EHTTPStatusCode412PreconditionFailed": {
+          "name": "k_EHTTPStatusCode412PreconditionFailed",
+          "refLine": 187,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "412"
+        },
+        "k_EHTTPStatusCode505HTTPVersionNotSupported": {
+          "name": "k_EHTTPStatusCode505HTTPVersionNotSupported",
+          "refLine": 202,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "505"
+        },
+        "k_EHTTPStatusCode205ResetContent": {
+          "name": "k_EHTTPStatusCode205ResetContent",
+          "refLine": 161,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "205"
+        },
+        "k_EHTTPStatusCode404NotFound": {
+          "name": "k_EHTTPStatusCode404NotFound",
+          "refLine": 179,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "404"
+        },
+        "k_EHTTPStatusCode411LengthRequired": {
+          "name": "k_EHTTPStatusCode411LengthRequired",
+          "refLine": 186,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "411"
+        },
+        "k_EHTTPStatusCode300MultipleChoices": {
+          "name": "k_EHTTPStatusCode300MultipleChoices",
+          "refLine": 165,
+          "docStart": 12319,
+          "docEnd": 12339,
+          "docs": {
+            "brief": "Redirection codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Redirection codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "300"
+        },
+        "k_EHTTPStatusCode101SwitchingProtocols": {
+          "name": "k_EHTTPStatusCode101SwitchingProtocols",
+          "refLine": 153,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "101"
+        },
+        "k_EHTTPStatusCode201Created": {
+          "name": "k_EHTTPStatusCode201Created",
+          "refLine": 157,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "201"
+        },
+        "k_EHTTPStatusCode401Unauthorized": {
+          "name": "k_EHTTPStatusCode401Unauthorized",
+          "refLine": 176,
+          "docStart": 12973,
+          "docEnd": 13130,
+          "docs": {
+            "brief": "You probably want 403 or something else. 401 implies you're sending a WWW-Authenticate header and the client can sent an Authorization header in response.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "You probably want 403 or something else. 401 implies you're sending a WWW-Authenticate header and the client can sent an Authorization header in response."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "401"
+        },
+        "k_EHTTPStatusCode307TemporaryRedirect": {
+          "name": "k_EHTTPStatusCode307TemporaryRedirect",
+          "refLine": 172,
+          "docStart": 12682,
+          "docEnd": 12784,
+          "docs": {
+            "brief": "k_EHTTPStatusCode306Unused =                       306, // used in old HTTP spec, now unused in 1.1",
+            "tags": [
+              {
+                "tag": "",
+                "text": "k_EHTTPStatusCode306Unused =                       306, // used in old HTTP spec, now unused in 1.1"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "307"
+        },
+        "k_EHTTPStatusCode410Gone": {
+          "name": "k_EHTTPStatusCode410Gone",
+          "refLine": 185,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "410"
+        },
+        "k_EHTTPStatusCode4xxUnknown": {
+          "name": "k_EHTTPStatusCode4xxUnknown",
+          "refLine": 193,
+          "docStart": 14175,
+          "docEnd": 14226,
+          "docs": {
+            "brief": "418 is reserved, so we'll use it to mean unknown",
+            "tags": [
+              {
+                "tag": "",
+                "text": "418 is reserved, so we'll use it to mean unknown"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "418"
+        },
+        "k_EHTTPStatusCode429TooManyRequests": {
+          "name": "k_EHTTPStatusCode429TooManyRequests",
+          "refLine": 194,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "429"
+        },
+        "k_EHTTPStatusCode402PaymentRequired": {
+          "name": "k_EHTTPStatusCode402PaymentRequired",
+          "refLine": 177,
+          "docStart": 13188,
+          "docEnd": 13262,
+          "docs": {
+            "brief": "This is reserved for future HTTP specs, not really supported by clients",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This is reserved for future HTTP specs, not really supported by clients"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "402"
+        },
+        "k_EHTTPStatusCode203NonAuthoritative": {
+          "name": "k_EHTTPStatusCode203NonAuthoritative",
+          "refLine": 159,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "203"
+        },
+        "k_EHTTPStatusCode416RequestedRangeNotSatisfiable": {
+          "name": "k_EHTTPStatusCode416RequestedRangeNotSatisfiable",
+          "refLine": 191,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "416"
+        },
+        "k_EHTTPStatusCode200OK": {
+          "name": "k_EHTTPStatusCode200OK",
+          "refLine": 156,
+          "docStart": 11901,
+          "docEnd": 11917,
+          "docs": {
+            "brief": "Success codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Success codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "200"
+        },
+        "k_EHTTPStatusCode407ProxyAuthRequired": {
+          "name": "k_EHTTPStatusCode407ProxyAuthRequired",
+          "refLine": 182,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "407"
+        }
+      }
+    },
+    "EUserHasLicenseForAppResult": {
+      "name": "EUserHasLicenseForAppResult",
+      "refLine": 9,
+      "docStart": 124,
+      "docEnd": 163,
+      "docs": {
+        "brief": "results from UserHasLicenseForApp",
+        "tags": [
+          {
+            "tag": "",
+            "text": "results from UserHasLicenseForApp"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "k_EUserHasLicenseResultNoAuth": {
+          "name": "k_EUserHasLicenseResultNoAuth",
+          "refLine": 13,
+          "docStart": 461,
+          "docEnd": 495,
+          "docs": {
+            "brief": "User has not been authenticated",
+            "tags": [
+              {
+                "tag": "",
+                "text": "User has not been authenticated"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "k_EUserHasLicenseResultHasLicense": {
+          "name": "k_EUserHasLicenseResultHasLicense",
+          "refLine": 11,
+          "docStart": 255,
+          "docEnd": 294,
+          "docs": {
+            "brief": "User has a license for specified app",
+            "tags": [
+              {
+                "tag": "",
+                "text": "User has a license for specified app"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "k_EUserHasLicenseResultDoesNotHaveLicense": {
+          "name": "k_EUserHasLicenseResultDoesNotHaveLicense",
+          "refLine": 12,
+          "docStart": 351,
+          "docEnd": 404,
+          "docs": {
+            "brief": "User does not have a license for the specified app",
+            "tags": [
+              {
+                "tag": "",
+                "text": "User does not have a license for the specified app"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "EGCResults": {
+      "name": "EGCResults",
+      "refLine": 207,
+      "docStart": 14711,
+      "docEnd": 14782,
+      "docs": {
+        "brief": "list of possible return values from the ISteamGameCoordinator API",
+        "tags": [
+          {
+            "tag": "",
+            "text": "list of possible return values from the ISteamGameCoordinator API"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "k_EGCResultNoMessage": {
+          "name": "k_EGCResultNoMessage",
+          "refLine": 210,
+          "docStart": 14915,
+          "docEnd": 14950,
+          "docs": {
+            "brief": "There is no message in the queue",
+            "tags": [
+              {
+                "tag": "",
+                "text": "There is no message in the queue"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "k_EGCResultNotLoggedOn": {
+          "name": "k_EGCResultNotLoggedOn",
+          "refLine": 212,
+          "docStart": 15118,
+          "docEnd": 15156,
+          "docs": {
+            "brief": "The client is not logged onto Steam",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The client is not logged onto Steam"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "k_EGCResultInvalidMessage": {
+          "name": "k_EGCResultInvalidMessage",
+          "refLine": 213,
+          "docStart": 15214,
+          "docEnd": 15281,
+          "docs": {
+            "brief": "Something was wrong with the message being sent with SendMessage",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Something was wrong with the message being sent with SendMessage"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "4"
+        },
+        "k_EGCResultOK": {
+          "name": "k_EGCResultOK",
+          "refLine": 209,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "k_EGCResultBufferTooSmall": {
+          "name": "k_EGCResultBufferTooSmall",
+          "refLine": 211,
+          "docStart": 15008,
+          "docEnd": 15060,
+          "docs": {
+            "brief": "The buffer is too small for the requested message",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The buffer is too small for the requested message"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        }
+      }
+    },
+    "EResult": {
+      "name": "EResult",
+      "refLine": 17,
+      "docStart": 500,
+      "docEnd": 526,
+      "docs": {
+        "brief": "General result codes",
+        "tags": [
+          {
+            "tag": "",
+            "text": "General result codes"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "k_EResultIllegalPassword": {
+          "name": "k_EResultIllegalPassword",
+          "refLine": 79,
+          "docStart": 6443,
+          "docEnd": 6485,
+          "docs": {
+            "brief": "The requested new password is not legal",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The requested new password is not legal"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "61"
+        },
+        "k_EResultIPTInitError": {
+          "name": "k_EResultIPTInitError",
+          "refLine": 86,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "68"
+        },
+        "k_EResultLoggedInElsewhere": {
+          "name": "k_EResultLoggedInElsewhere",
+          "refLine": 24,
+          "docStart": 995,
+          "docEnd": 1027,
+          "docs": {
+            "brief": "same user logged in elsewhere",
+            "tags": [
+              {
+                "tag": "",
+                "text": "same user logged in elsewhere"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "6"
+        },
+        "k_EResultNoConnection": {
+          "name": "k_EResultNoConnection",
+          "refLine": 21,
+          "docStart": 741,
+          "docEnd": 852,
+          "docs": {
+            "brief": "no/failed network connection\nk_EResultNoConnectionRetry =                        4, // OBSOLETE - removed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "no/failed network connection\nk_EResultNoConnectionRetry =                        4, // OBSOLETE - removed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "k_EResultContentVersion": {
+          "name": "k_EResultContentVersion",
+          "refLine": 65,
+          "docStart": 4714,
+          "docEnd": 4785,
+          "docs": {
+            "brief": "A Version mismatch in content transmitted within the Steam protocol.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A Version mismatch in content transmitted within the Steam protocol."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "47"
+        },
+        "k_EResultExpired": {
+          "name": "k_EResultExpired",
+          "refLine": 45,
+          "docStart": 2827,
+          "docEnd": 2888,
+          "docs": {
+            "brief": "License/Guest pass the user is trying to access is expired",
+            "tags": [
+              {
+                "tag": "",
+                "text": "License/Guest pass the user is trying to access is expired"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "27"
+        },
+        "k_EResultExpiredLoginAuthCode": {
+          "name": "k_EResultExpiredLoginAuthCode",
+          "refLine": 89,
+          "docStart": 7467,
+          "docEnd": 7515,
+          "docs": {
+            "brief": "account login denied due to auth code expired",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account login denied due to auth code expired"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "71"
+        },
+        "k_EResultRestrictedDevice": {
+          "name": "k_EResultRestrictedDevice",
+          "refLine": 100,
+          "docStart": 8483,
+          "docEnd": 8545,
+          "docs": {
+            "brief": "The device being used is not allowed to perform this action",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The device being used is not allowed to perform this action"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "82"
+        },
+        "k_EResultRefundToWallet": {
+          "name": "k_EResultRefundToWallet",
+          "refLine": 116,
+          "docStart": 10207,
+          "docEnd": 10258,
+          "docs": {
+            "brief": "Cannot refund to payment method, must use wallet",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Cannot refund to payment method, must use wallet"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "98"
+        },
+        "k_EResultAccountLockedDown": {
+          "name": "k_EResultAccountLockedDown",
+          "refLine": 91,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "73"
+        },
+        "k_EResultPasswordRequiredToKickSession": {
+          "name": "k_EResultPasswordRequiredToKickSession",
+          "refLine": 67,
+          "docStart": 4982,
+          "docEnd": 5062,
+          "docs": {
+            "brief": "You are already logged in elsewhere, this cached credential login has failed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "You are already logged in elsewhere, this cached credential login has failed."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "49"
+        },
+        "k_EResultDuplicateName": {
+          "name": "k_EResultDuplicateName",
+          "refLine": 32,
+          "docStart": 1680,
+          "docEnd": 1701,
+          "docs": {
+            "brief": "name is not unique",
+            "tags": [
+              {
+                "tag": "",
+                "text": "name is not unique"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "14"
+        },
+        "k_EResultParentalControlRestricted": {
+          "name": "k_EResultParentalControlRestricted",
+          "refLine": 87,
+          "docStart": 7245,
+          "docEnd": 7318,
+          "docs": {
+            "brief": "operation failed due to parental control restrictions for current user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "operation failed due to parental control restrictions for current user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "69"
+        },
+        "k_EResultFacebookQueryError": {
+          "name": "k_EResultFacebookQueryError",
+          "refLine": 88,
+          "docStart": 7375,
+          "docEnd": 7410,
+          "docs": {
+            "brief": "Facebook query returned an error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Facebook query returned an error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "70"
+        },
+        "k_EResultDisabled": {
+          "name": "k_EResultDisabled",
+          "refLine": 98,
+          "docStart": 8244,
+          "docEnd": 8306,
+          "docs": {
+            "brief": "The requested service has been configured to be unavailable",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The requested service has been configured to be unavailable"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "80"
+        },
+        "k_EResultAccountLoginDeniedThrottle": {
+          "name": "k_EResultAccountLoginDeniedThrottle",
+          "refLine": 105,
+          "docStart": 9092,
+          "docEnd": 9162,
+          "docs": {
+            "brief": "login attempt failed, try to throttle response to possible attacker",
+            "tags": [
+              {
+                "tag": "",
+                "text": "login attempt failed, try to throttle response to possible attacker"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "87"
+        },
+        "k_EResultRemoteDisconnect": {
+          "name": "k_EResultRemoteDisconnect",
+          "refLine": 56,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "38"
+        },
+        "k_EResultAccountLogonDenied": {
+          "name": "k_EResultAccountLogonDenied",
+          "refLine": 81,
+          "docStart": 6669,
+          "docEnd": 6733,
+          "docs": {
+            "brief": "account login denied due to 2nd factor authentication failure",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account login denied due to 2nd factor authentication failure"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "63"
+        },
+        "k_EResultNotModified": {
+          "name": "k_EResultNotModified",
+          "refLine": 109,
+          "docStart": 9516,
+          "docEnd": 9536,
+          "docs": {
+            "brief": "data not modified",
+            "tags": [
+              {
+                "tag": "",
+                "text": "data not modified"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "91"
+        },
+        "k_EResultAccountDisabled": {
+          "name": "k_EResultAccountDisabled",
+          "refLine": 61,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "43"
+        },
+        "k_EResultNeedCaptcha": {
+          "name": "k_EResultNeedCaptcha",
+          "refLine": 119,
+          "docStart": 10503,
+          "docEnd": 10538,
+          "docs": {
+            "brief": "Needs to provide a valid captcha",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Needs to provide a valid captcha"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "101"
+        },
+        "k_EResultInvalidLoginAuthCode": {
+          "name": "k_EResultInvalidLoginAuthCode",
+          "refLine": 83,
+          "docStart": 6889,
+          "docEnd": 6937,
+          "docs": {
+            "brief": "account login denied due to auth code invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account login denied due to auth code invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "65"
+        },
+        "k_EResultExternalAccountUnlinked": {
+          "name": "k_EResultExternalAccountUnlinked",
+          "refLine": 75,
+          "docStart": 5897,
+          "docEnd": 5972,
+          "docs": {
+            "brief": "External account (int PSN, Facebook...) is not linked to a Steam account",
+            "tags": [
+              {
+                "tag": "",
+                "text": "External account (int PSN, Facebook...) is not linked to a Steam account"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "57"
+        },
+        "k_EResultHardwareNotCapableOfIPT": {
+          "name": "k_EResultHardwareNotCapableOfIPT",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "67"
+        },
+        "k_EResultAdministratorOK": {
+          "name": "k_EResultAdministratorOK",
+          "refLine": 64,
+          "docStart": 4590,
+          "docEnd": 4657,
+          "docs": {
+            "brief": "allowed to take this action, but only because requester is admin",
+            "tags": [
+              {
+                "tag": "",
+                "text": "allowed to take this action, but only because requester is admin"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "46"
+        },
+        "k_EResultUnexpectedError": {
+          "name": "k_EResultUnexpectedError",
+          "refLine": 97,
+          "docStart": 8129,
+          "docEnd": 8187,
+          "docs": {
+            "brief": "something happened that we didn't expect to ever happen",
+            "tags": [
+              {
+                "tag": "",
+                "text": "something happened that we didn't expect to ever happen"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "79"
+        },
+        "k_EResultAccountLoginDeniedNeedTwoFactor": {
+          "name": "k_EResultAccountLoginDeniedNeedTwoFactor",
+          "refLine": 103,
+          "docStart": 8894,
+          "docEnd": 8926,
+          "docs": {
+            "brief": "Need two-factor code to login",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Need two-factor code to login"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "85"
+        },
+        "k_EResultPending": {
+          "name": "k_EResultPending",
+          "refLine": 40,
+          "docStart": 2330,
+          "docEnd": 2398,
+          "docs": {
+            "brief": "Request is pending (may be in process, or waiting on third party)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Request is pending (may be in process, or waiting on third party)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "22"
+        },
+        "k_EResultValueOutOfRange": {
+          "name": "k_EResultValueOutOfRange",
+          "refLine": 96,
+          "docStart": 8020,
+          "docEnd": 8072,
+          "docs": {
+            "brief": "the value entered is outside the acceptable range",
+            "tags": [
+              {
+                "tag": "",
+                "text": "the value entered is outside the acceptable range"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "78"
+        },
+        "k_EResultTwoFactorActivationCodeMismatch": {
+          "name": "k_EResultTwoFactorActivationCodeMismatch",
+          "refLine": 107,
+          "docStart": 9303,
+          "docEnd": 9349,
+          "docs": {
+            "brief": "activation code for two-factor didn't match",
+            "tags": [
+              {
+                "tag": "",
+                "text": "activation code for two-factor didn't match"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "89"
+        },
+        "k_EResultAccountAssociatedToMultiplePartners": {
+          "name": "k_EResultAccountAssociatedToMultiplePartners",
+          "refLine": 108,
+          "docStart": 9406,
+          "docEnd": 9459,
+          "docs": {
+            "brief": "account has been associated with multiple partners",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account has been associated with multiple partners"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "90"
+        },
+        "k_EResultBusy": {
+          "name": "k_EResultBusy",
+          "refLine": 28,
+          "docStart": 1335,
+          "docEnd": 1375,
+          "docs": {
+            "brief": "called method busy - action not taken",
+            "tags": [
+              {
+                "tag": "",
+                "text": "called method busy - action not taken"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "10"
+        },
+        "k_EResultInvalidCEGSubmission": {
+          "name": "k_EResultInvalidCEGSubmission",
+          "refLine": 99,
+          "docStart": 8363,
+          "docEnd": 8426,
+          "docs": {
+            "brief": "The set of files submitted to the CEG server are not valid !",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The set of files submitted to the CEG server are not valid !"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "81"
+        },
+        "k_EResultAccountLogonDeniedNoMail": {
+          "name": "k_EResultAccountLogonDeniedNoMail",
+          "refLine": 84,
+          "docStart": 6994,
+          "docEnd": 7076,
+          "docs": {
+            "brief": "account login denied due to 2nd factor auth failure - and no mail has been sent",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account login denied due to 2nd factor auth failure - and no mail has been sent"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "66"
+        },
+        "k_EResultIOFailure": {
+          "name": "k_EResultIOFailure",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "37"
+        },
+        "k_EResultAccountLimitExceeded": {
+          "name": "k_EResultAccountLimitExceeded",
+          "refLine": 113,
+          "docStart": 9927,
+          "docEnd": 9968,
+          "docs": {
+            "brief": "Too many accounts access this resource",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Too many accounts access this resource"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "95"
+        },
+        "k_EResultOK": {
+          "name": "k_EResultOK",
+          "refLine": 19,
+          "docStart": 598,
+          "docEnd": 608,
+          "docs": {
+            "brief": "success",
+            "tags": [
+              {
+                "tag": "",
+                "text": "success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "k_EResultRemoteCallFailed": {
+          "name": "k_EResultRemoteCallFailed",
+          "refLine": 73,
+          "docStart": 5688,
+          "docEnd": 5724,
+          "docs": {
+            "brief": "an remote call or IPC call failed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an remote call or IPC call failed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "55"
+        },
+        "k_EResultConnectFailed": {
+          "name": "k_EResultConnectFailed",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "35"
+        },
+        "k_EResultLimitExceeded": {
+          "name": "k_EResultLimitExceeded",
+          "refLine": 43,
+          "docStart": 2628,
+          "docEnd": 2655,
+          "docs": {
+            "brief": "Too much of a good thing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Too much of a good thing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "25"
+        },
+        "k_EResultNotLoggedOn": {
+          "name": "k_EResultNotLoggedOn",
+          "refLine": 39,
+          "docStart": 2245,
+          "docEnd": 2273,
+          "docs": {
+            "brief": "The user is not logged on",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The user is not logged on"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "21"
+        },
+        "k_EResultShoppingCartNotFound": {
+          "name": "k_EResultShoppingCartNotFound",
+          "refLine": 57,
+          "docStart": 3937,
+          "docEnd": 3982,
+          "docs": {
+            "brief": "failed to find the shopping cart requested",
+            "tags": [
+              {
+                "tag": "",
+                "text": "failed to find the shopping cart requested"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "39"
+        },
+        "k_EResultSameAsPreviousValue": {
+          "name": "k_EResultSameAsPreviousValue",
+          "refLine": 80,
+          "docStart": 6542,
+          "docEnd": 6612,
+          "docs": {
+            "brief": "new value is the same as the old one ( secret question and answer )",
+            "tags": [
+              {
+                "tag": "",
+                "text": "new value is the same as the old one ( secret question and answer )"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "62"
+        },
+        "k_EResultIPLoginRestrictionFailed": {
+          "name": "k_EResultIPLoginRestrictionFailed",
+          "refLine": 90,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "72"
+        },
+        "k_EResultPhoneActivityLimitExceeded": {
+          "name": "k_EResultPhoneActivityLimitExceeded",
+          "refLine": 115,
+          "docStart": 10117,
+          "docEnd": 10150,
+          "docs": {
+            "brief": "Too many changes to this phone",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Too many changes to this phone"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "97"
+        },
+        "k_EResultTwoFactorCodeMismatch": {
+          "name": "k_EResultTwoFactorCodeMismatch",
+          "refLine": 106,
+          "docStart": 9219,
+          "docEnd": 9246,
+          "docs": {
+            "brief": "two factor code mismatch",
+            "tags": [
+              {
+                "tag": "",
+                "text": "two factor code mismatch"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "88"
+        },
+        "k_EResultInvalidSteamID": {
+          "name": "k_EResultInvalidSteamID",
+          "refLine": 37,
+          "docStart": 2061,
+          "docEnd": 2082,
+          "docs": {
+            "brief": "steamID is invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "steamID is invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "19"
+        },
+        "k_EResultTimeNotSynced": {
+          "name": "k_EResultTimeNotSynced",
+          "refLine": 111,
+          "docStart": 9713,
+          "docEnd": 9763,
+          "docs": {
+            "brief": "the time presented is out of range or tolerance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "the time presented is out of range or tolerance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "93"
+        },
+        "k_EResultServiceUnavailable": {
+          "name": "k_EResultServiceUnavailable",
+          "refLine": 38,
+          "docStart": 2139,
+          "docEnd": 2188,
+          "docs": {
+            "brief": "The requested service is currently unavailable",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The requested service is currently unavailable"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "20"
+        },
+        "k_EResultRateLimitExceeded": {
+          "name": "k_EResultRateLimitExceeded",
+          "refLine": 102,
+          "docStart": 8726,
+          "docEnd": 8837,
+          "docs": {
+            "brief": "Temporary rate limit exceeded, try again later, different from k_EResultLimitExceeded which may be permanent",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Temporary rate limit exceeded, try again later, different from k_EResultLimitExceeded which may be permanent"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "84"
+        },
+        "k_EResultAccessDenied": {
+          "name": "k_EResultAccessDenied",
+          "refLine": 33,
+          "docStart": 1758,
+          "docEnd": 1777,
+          "docs": {
+            "brief": "access is denied",
+            "tags": [
+              {
+                "tag": "",
+                "text": "access is denied"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "15"
+        },
+        "k_EResultBanned": {
+          "name": "k_EResultBanned",
+          "refLine": 35,
+          "docStart": 1913,
+          "docEnd": 1927,
+          "docs": {
+            "brief": "VAC2 banned",
+            "tags": [
+              {
+                "tag": "",
+                "text": "VAC2 banned"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "17"
+        },
+        "k_EResultAlreadyLoggedInElsewhere": {
+          "name": "k_EResultAlreadyLoggedInElsewhere",
+          "refLine": 68,
+          "docStart": 5119,
+          "docEnd": 5172,
+          "docs": {
+            "brief": "You are already logged in elsewhere, you must wait",
+            "tags": [
+              {
+                "tag": "",
+                "text": "You are already logged in elsewhere, you must wait"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "50"
+        },
+        "k_EResultRevoked": {
+          "name": "k_EResultRevoked",
+          "refLine": 44,
+          "docStart": 2712,
+          "docEnd": 2770,
+          "docs": {
+            "brief": "Access has been revoked (used for revoked guest passes)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Access has been revoked (used for revoked guest passes)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "26"
+        },
+        "k_EResultEmailSendFailure": {
+          "name": "k_EResultEmailSendFailure",
+          "refLine": 117,
+          "docStart": 10315,
+          "docEnd": 10338,
+          "docs": {
+            "brief": "Cannot send an email",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Cannot send an email"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "99"
+        },
+        "k_EResultInvalidPassword": {
+          "name": "k_EResultInvalidPassword",
+          "refLine": 23,
+          "docStart": 909,
+          "docEnd": 938,
+          "docs": {
+            "brief": "password/ticket is invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "password/ticket is invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "5"
+        },
+        "k_EResultItemDeleted": {
+          "name": "k_EResultItemDeleted",
+          "refLine": 104,
+          "docStart": 8983,
+          "docEnd": 9035,
+          "docs": {
+            "brief": "The thing we're trying to access has been deleted",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The thing we're trying to access has been deleted"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "86"
+        },
+        "k_EResultGSOwnerDenied": {
+          "name": "k_EResultGSOwnerDenied",
+          "refLine": 121,
+          "docStart": 10724,
+          "docEnd": 10825,
+          "docs": {
+            "brief": "game server owner is denied for other reason (account lock, community ban, vac ban, missing phone)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "game server owner is denied for other reason (account lock, community ban, vac ban, missing phone)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "103"
+        },
+        "k_EResultNoMobileDevice": {
+          "name": "k_EResultNoMobileDevice",
+          "refLine": 110,
+          "docStart": 9593,
+          "docEnd": 9656,
+          "docs": {
+            "brief": "the account does not have a mobile device associated with it",
+            "tags": [
+              {
+                "tag": "",
+                "text": "the account does not have a mobile device associated with it"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "92"
+        },
+        "k_EResultHandshakeFailed": {
+          "name": "k_EResultHandshakeFailed",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "36"
+        },
+        "k_EResultTimeout": {
+          "name": "k_EResultTimeout",
+          "refLine": 34,
+          "docStart": 1834,
+          "docEnd": 1856,
+          "docs": {
+            "brief": "operation timed out",
+            "tags": [
+              {
+                "tag": "",
+                "text": "operation timed out"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "16"
+        },
+        "k_EResultRemoteFileConflict": {
+          "name": "k_EResultRemoteFileConflict",
+          "refLine": 78,
+          "docStart": 6308,
+          "docEnd": 6386,
+          "docs": {
+            "brief": "The sync cannot resume due to a conflict between the local and remote files",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The sync cannot resume due to a conflict between the local and remote files"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "60"
+        },
+        "k_EResultInvalidName": {
+          "name": "k_EResultInvalidName",
+          "refLine": 30,
+          "docStart": 1529,
+          "docEnd": 1547,
+          "docs": {
+            "brief": "name is invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "name is invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "12"
+        },
+        "k_EResultDiskFull": {
+          "name": "k_EResultDiskFull",
+          "refLine": 72,
+          "docStart": 5585,
+          "docEnd": 5631,
+          "docs": {
+            "brief": "Operation canceled - not enough disk space.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Operation canceled - not enough disk space."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "54"
+        },
+        "k_EResultAccountNotFound": {
+          "name": "k_EResultAccountNotFound",
+          "refLine": 36,
+          "docStart": 1984,
+          "docEnd": 2004,
+          "docs": {
+            "brief": "account not found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account not found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "18"
+        },
+        "k_EResultRegionLocked": {
+          "name": "k_EResultRegionLocked",
+          "refLine": 101,
+          "docStart": 8602,
+          "docEnd": 8669,
+          "docs": {
+            "brief": "The action could not be complete because it is region restricted",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The action could not be complete because it is region restricted"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "83"
+        },
+        "k_EResultSmsCodeFailed": {
+          "name": "k_EResultSmsCodeFailed",
+          "refLine": 112,
+          "docStart": 9820,
+          "docEnd": 9870,
+          "docs": {
+            "brief": "SMS code failure (no match, none pending, etc.)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "SMS code failure (no match, none pending, etc.)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "94"
+        },
+        "k_EResultInvalidParam": {
+          "name": "k_EResultInvalidParam",
+          "refLine": 26,
+          "docStart": 1173,
+          "docEnd": 1200,
+          "docs": {
+            "brief": "a parameter is incorrect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "a parameter is incorrect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "8"
+        },
+        "k_EResultInvalidProtocolVer": {
+          "name": "k_EResultInvalidProtocolVer",
+          "refLine": 25,
+          "docStart": 1084,
+          "docEnd": 1116,
+          "docs": {
+            "brief": "protocol version is incorrect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "protocol version is incorrect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "7"
+        },
+        "k_EResultExternalAccountAlreadyLinked": {
+          "name": "k_EResultExternalAccountAlreadyLinked",
+          "refLine": 77,
+          "docStart": 6111,
+          "docEnd": 6251,
+          "docs": {
+            "brief": "External account (int PSN, Facebook...) is already linked to some other account, must explicitly request to replace/delete the link first",
+            "tags": [
+              {
+                "tag": "",
+                "text": "External account (int PSN, Facebook...) is already linked to some other account, must explicitly request to replace/delete the link first"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "59"
+        },
+        "k_EResultAccountNotFeatured": {
+          "name": "k_EResultAccountNotFeatured",
+          "refLine": 63,
+          "docStart": 4471,
+          "docEnd": 4533,
+          "docs": {
+            "brief": "account doesn't have value, so this feature isn't available",
+            "tags": [
+              {
+                "tag": "",
+                "text": "account doesn't have value, so this feature isn't available"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "45"
+        },
+        "k_EResultNoMatch": {
+          "name": "k_EResultNoMatch",
+          "refLine": 60,
+          "docStart": 4206,
+          "docEnd": 4243,
+          "docs": {
+            "brief": "nothing matching the request found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "nothing matching the request found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "42"
+        },
+        "k_EResultCannotUseOldPassword": {
+          "name": "k_EResultCannotUseOldPassword",
+          "refLine": 82,
+          "docStart": 6790,
+          "docEnd": 6832,
+          "docs": {
+            "brief": "The requested new password is not legal",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The requested new password is not legal"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "64"
+        },
+        "k_EResultAccountLogonDeniedVerifiedEmailRequired": {
+          "name": "k_EResultAccountLogonDeniedVerifiedEmailRequired",
+          "refLine": 92,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "74"
+        },
+        "k_EResultDataCorruption": {
+          "name": "k_EResultDataCorruption",
+          "refLine": 71,
+          "docStart": 5463,
+          "docEnd": 5528,
+          "docs": {
+            "brief": "Operation canceled because data is ill formed or unrecoverable",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Operation canceled because data is ill formed or unrecoverable"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "53"
+        },
+        "k_EResultTryAnotherCM": {
+          "name": "k_EResultTryAnotherCM",
+          "refLine": 66,
+          "docStart": 4842,
+          "docEnd": 4925,
+          "docs": {
+            "brief": "The current CM can't service the user making a request, user should try another.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The current CM can't service the user making a request, user should try another."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "48"
+        },
+        "k_EResultAccountActivityLimitExceeded": {
+          "name": "k_EResultAccountActivityLimitExceeded",
+          "refLine": 114,
+          "docStart": 10025,
+          "docEnd": 10060,
+          "docs": {
+            "brief": "Too many changes to this account",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Too many changes to this account"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "96"
+        },
+        "k_EResultServiceReadOnly": {
+          "name": "k_EResultServiceReadOnly",
+          "refLine": 62,
+          "docStart": 4356,
+          "docEnd": 4414,
+          "docs": {
+            "brief": "this service is not accepting content changes right now",
+            "tags": [
+              {
+                "tag": "",
+                "text": "this service is not accepting content changes right now"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "44"
+        },
+        "k_EResultNotSettled": {
+          "name": "k_EResultNotSettled",
+          "refLine": 118,
+          "docStart": 10395,
+          "docEnd": 10446,
+          "docs": {
+            "brief": "Can't perform operation till payment has settled",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Can't perform operation till payment has settled"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "100"
+        },
+        "k_EResultGSLTDenied": {
+          "name": "k_EResultGSLTDenied",
+          "refLine": 120,
+          "docStart": 10595,
+          "docEnd": 10667,
+          "docs": {
+            "brief": "a game server login token owned by this token's owner has been banned",
+            "tags": [
+              {
+                "tag": "",
+                "text": "a game server login token owned by this token's owner has been banned"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "102"
+        },
+        "k_EResultAlreadyOwned": {
+          "name": "k_EResultAlreadyOwned",
+          "refLine": 48,
+          "docStart": 3228,
+          "docEnd": 3312,
+          "docs": {
+            "brief": "All the games in this guest pass redemption request are already owned by the user",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All the games in this guest pass redemption request are already owned by the user"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "30"
+        },
+        "k_EResultPSNTicketInvalid": {
+          "name": "k_EResultPSNTicketInvalid",
+          "refLine": 76,
+          "docStart": 6029,
+          "docEnd": 6054,
+          "docs": {
+            "brief": "PSN ticket was invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "PSN ticket was invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "58"
+        },
+        "k_EResultFileNotFound": {
+          "name": "k_EResultFileNotFound",
+          "refLine": 27,
+          "docStart": 1257,
+          "docEnd": 1278,
+          "docs": {
+            "brief": "file was not found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "file was not found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "9"
+        },
+        "k_EResultNoMatchingURL": {
+          "name": "k_EResultNoMatchingURL",
+          "refLine": 93,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "75"
+        },
+        "k_EResultBlocked": {
+          "name": "k_EResultBlocked",
+          "refLine": 58,
+          "docStart": 4039,
+          "docEnd": 4064,
+          "docs": {
+            "brief": "a user didn't allow it",
+            "tags": [
+              {
+                "tag": "",
+                "text": "a user didn't allow it"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "40"
+        },
+        "k_EResultIPNotFound": {
+          "name": "k_EResultIPNotFound",
+          "refLine": 49,
+          "docStart": 3369,
+          "docEnd": 3392,
+          "docs": {
+            "brief": "IP address not found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "IP address not found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "31"
+        },
+        "k_EResultFail": {
+          "name": "k_EResultFail",
+          "refLine": 20,
+          "docStart": 665,
+          "docEnd": 684,
+          "docs": {
+            "brief": "generic failure",
+            "tags": [
+              {
+                "tag": "",
+                "text": "generic failure"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "k_EResultInvalidEmail": {
+          "name": "k_EResultInvalidEmail",
+          "refLine": 31,
+          "docStart": 1604,
+          "docEnd": 1623,
+          "docs": {
+            "brief": "email is invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "email is invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "13"
+        },
+        "k_EResultInsufficientPrivilege": {
+          "name": "k_EResultInsufficientPrivilege",
+          "refLine": 42,
+          "docStart": 2546,
+          "docEnd": 2571,
+          "docs": {
+            "brief": "Insufficient privilege",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Insufficient privilege"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "24"
+        },
+        "k_EResultDuplicateRequest": {
+          "name": "k_EResultDuplicateRequest",
+          "refLine": 47,
+          "docStart": 3075,
+          "docEnd": 3171,
+          "docs": {
+            "brief": "The request is a duplicate and the action has already occurred in the past, ignored this time",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The request is a duplicate and the action has already occurred in the past, ignored this time"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "29"
+        },
+        "k_EResultBadResponse": {
+          "name": "k_EResultBadResponse",
+          "refLine": 94,
+          "docStart": 7796,
+          "docEnd": 7833,
+          "docs": {
+            "brief": "parse failure, missing field, etc.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "parse failure, missing field, etc."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "76"
+        },
+        "k_EResultLockingFailed": {
+          "name": "k_EResultLockingFailed",
+          "refLine": 51,
+          "docStart": 3549,
+          "docEnd": 3600,
+          "docs": {
+            "brief": "failed to acquire access lock for this operation",
+            "tags": [
+              {
+                "tag": "",
+                "text": "failed to acquire access lock for this operation"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "33"
+        },
+        "k_EResultPasswordUnset": {
+          "name": "k_EResultPasswordUnset",
+          "refLine": 74,
+          "docStart": 5781,
+          "docEnd": 5840,
+          "docs": {
+            "brief": "Password could not be verified as it's unset server side",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Password could not be verified as it's unset server side"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "56"
+        },
+        "k_EResultEncryptionFailure": {
+          "name": "k_EResultEncryptionFailure",
+          "refLine": 41,
+          "docStart": 2455,
+          "docEnd": 2489,
+          "docs": {
+            "brief": "Encryption or Decryption failed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Encryption or Decryption failed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "23"
+        },
+        "k_EResultLogonSessionReplaced": {
+          "name": "k_EResultLogonSessionReplaced",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "34"
+        },
+        "k_EResultPersistFailed": {
+          "name": "k_EResultPersistFailed",
+          "refLine": 50,
+          "docStart": 3449,
+          "docEnd": 3492,
+          "docs": {
+            "brief": "failed to write change to the data store",
+            "tags": [
+              {
+                "tag": "",
+                "text": "failed to write change to the data store"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "32"
+        },
+        "k_EResultCancelled": {
+          "name": "k_EResultCancelled",
+          "refLine": 70,
+          "docStart": 5347,
+          "docEnd": 5406,
+          "docs": {
+            "brief": "Operation canceled (typically by user: content download)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Operation canceled (typically by user: content download)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "52"
+        },
+        "k_EResultInvalidState": {
+          "name": "k_EResultInvalidState",
+          "refLine": 29,
+          "docStart": 1432,
+          "docEnd": 1472,
+          "docs": {
+            "brief": "called object was in an invalid state",
+            "tags": [
+              {
+                "tag": "",
+                "text": "called object was in an invalid state"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "11"
+        },
+        "k_EResultInvalidItemType": {
+          "name": "k_EResultInvalidItemType",
+          "refLine": 122,
+          "docStart": 10882,
+          "docEnd": 10941,
+          "docs": {
+            "brief": "the type of thing we were requested to act on is invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "the type of thing we were requested to act on is invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "104"
+        },
+        "k_EResultSuspended": {
+          "name": "k_EResultSuspended",
+          "refLine": 69,
+          "docStart": 5229,
+          "docEnd": 5290,
+          "docs": {
+            "brief": "Long running operation (content download) suspended/paused",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Long running operation (content download) suspended/paused"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "51"
+        },
+        "k_EResultAlreadyRedeemed": {
+          "name": "k_EResultAlreadyRedeemed",
+          "refLine": 46,
+          "docStart": 2945,
+          "docEnd": 3018,
+          "docs": {
+            "brief": "Guest pass has already been redeemed by account, cannot be acked again",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Guest pass has already been redeemed by account, cannot be acked again"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "28"
+        },
+        "k_EResultRequirePasswordReEntry": {
+          "name": "k_EResultRequirePasswordReEntry",
+          "refLine": 95,
+          "docStart": 7890,
+          "docEnd": 7963,
+          "docs": {
+            "brief": "The user cannot complete the action until they re-enter their password",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The user cannot complete the action until they re-enter their password"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "77"
+        },
+        "k_EResultIgnored": {
+          "name": "k_EResultIgnored",
+          "refLine": 59,
+          "docStart": 4121,
+          "docEnd": 4149,
+          "docs": {
+            "brief": "target is ignoring sender",
+            "tags": [
+              {
+                "tag": "",
+                "text": "target is ignoring sender"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "41"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "SteamWorksHTTPDataReceived": {
+      "name": "SteamWorksHTTPDataReceived",
+      "refLine": 264,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived)": {
+          "refLine": 266,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "offset",
+                "decl": "int offset",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "bytesreceived",
+                "decl": "int bytesreceived",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived, any data1)": {
+          "refLine": 267,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived, any data1)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "offset",
+                "decl": "int offset",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "bytesreceived",
+                "decl": "int bytesreceived",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived, any data1, any data2)": {
+          "refLine": 268,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, int offset, int bytesreceived, any data1, any data2)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "offset",
+                "decl": "int offset",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "bytesreceived",
+                "decl": "int bytesreceived",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data2",
+                "decl": "any data2",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "SteamWorksHTTPRequestCompleted": {
+      "name": "SteamWorksHTTPRequestCompleted",
+      "refLine": 250,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode)": {
+          "refLine": 252,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bRequestSuccessful",
+                "decl": "bool bRequestSuccessful",
+                "default": null
+              },
+              {
+                "type": "EHTTPStatusCode",
+                "name": "eStatusCode",
+                "decl": "EHTTPStatusCode eStatusCode",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode, any data1, any data2)": {
+          "refLine": 254,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode, any data1, any data2)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bRequestSuccessful",
+                "decl": "bool bRequestSuccessful",
+                "default": null
+              },
+              {
+                "type": "EHTTPStatusCode",
+                "name": "eStatusCode",
+                "decl": "EHTTPStatusCode eStatusCode",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data2",
+                "decl": "any data2",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode, any data1)": {
+          "refLine": 253,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, bool bRequestSuccessful, EHTTPStatusCode eStatusCode, any data1)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bRequestSuccessful",
+                "decl": "bool bRequestSuccessful",
+                "default": null
+              },
+              {
+                "type": "EHTTPStatusCode",
+                "name": "eStatusCode",
+                "decl": "EHTTPStatusCode eStatusCode",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "SteamWorksHTTPBodyCallback": {
+      "name": "SteamWorksHTTPBodyCallback",
+      "refLine": 285,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(const int[] data, any value, int datalen)": {
+          "refLine": 289,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const int[] data, any value, int datalen)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const int[]",
+                "name": "data",
+                "decl": "const int[] data",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "datalen",
+                "decl": "int datalen",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(const char[] sData)": {
+          "refLine": 287,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const char[] sData)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "sData",
+                "decl": "const char[] sData",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(const char[] sData, any value)": {
+          "refLine": 288,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const char[] sData, any value)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "sData",
+                "decl": "const char[] sData",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "SteamWorksHTTPHeadersReceived": {
+      "name": "SteamWorksHTTPHeadersReceived",
+      "refLine": 257,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Handle hRequest, bool bFailure, any data1, any data2)": {
+          "refLine": 261,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, any data1, any data2)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data2",
+                "decl": "any data2",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure)": {
+          "refLine": 259,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hRequest, bool bFailure, any data1)": {
+          "refLine": 260,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hRequest, bool bFailure, any data1)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hRequest",
+                "decl": "Handle hRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bFailure",
+                "decl": "bool bFailure",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data1",
+                "decl": "any data1",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

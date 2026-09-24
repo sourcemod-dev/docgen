@@ -1,0 +1,84 @@
+{
+  "functions": {
+    "SBPP_IsValidServerIpOverride": {
+      "name": "SBPP_IsValidServerIpOverride",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_ResolveServerIp": {
+      "name": "SBPP_ResolveServerIp",
+      "refLine": 56,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "hostIp",
+          "decl": "ConVar hostIp",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "configuredIp",
+          "decl": "const char[] configuredIp",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxLength",
+          "decl": "int maxLength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sbpp_server_ip_included": {
+      "name": "_sbpp_server_ip_included",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SBPP_SERVER_IP_LENGTH": {
+      "name": "SBPP_SERVER_IP_LENGTH",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "16"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,551 @@
+{
+  "functions": {
+    "json_extract_until_end": {
+      "name": "json_extract_until_end",
+      "refLine": 345,
+      "docStart": 10574,
+      "docEnd": 11142,
+      "docs": {
+        "brief": "Extracts a JSON cell from the buffer until a valid end point is reached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Extracts a JSON cell from the buffer until a valid end point is reached."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position to increment."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:output_max_size",
+            "text": "Maximum size of output string buffer."
+          },
+          {
+            "tag": "param:is_array",
+            "text": "Whether the decoder is processing an array."
+          },
+          {
+            "tag": "return",
+            "text": "True if pos has not reached the end\nof the buffer, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "pos",
+          "decl": "int& pos",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "output_max_size",
+          "decl": "int output_max_size",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "is_array",
+          "decl": "bool is_array",
+          "default": null
+        }
+      ]
+    },
+    "json_is_whitespace": {
+      "name": "json_is_whitespace",
+      "refLine": 53,
+      "docStart": 1780,
+      "docEnd": 2025,
+      "docs": {
+        "brief": "Checks whether the character at the beginning of the buffer is whitespace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the character at the beginning of the buffer is whitespace."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "return",
+            "text": "True if the first character in the buffer\nis whitespace, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "json_is_int": {
+      "name": "json_is_int",
+      "refLine": 81,
+      "docStart": 2746,
+      "docEnd": 2923,
+      "docs": {
+        "brief": "Checks whether the buffer provided contains an int.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the buffer provided contains an int."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "return",
+            "text": "True if buffer contains an int, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "json_extract_until_end_size": {
+      "name": "json_extract_until_end_size",
+      "refLine": 311,
+      "docStart": 9551,
+      "docEnd": 10127,
+      "docs": {
+        "brief": "Calculates the size of the buffer required to store the next\nJSON cell stored in the provided buffer at the provided position.\nThis function is quite forgiving of malformed input and shouldn't be\nrelied upon as proof that the input is valid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the size of the buffer required to store the next\nJSON cell stored in the provided buffer at the provided position.\nThis function is quite forgiving of malformed input and shouldn't be\nrelied upon as proof that the input is valid."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position to increment."
+          },
+          {
+            "tag": "param:is_array",
+            "text": "Whether the decoder is processing an array."
+          },
+          {
+            "tag": "return",
+            "text": "The size of the buffer required to store the cell."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "pos",
+          "decl": "int pos",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "is_array",
+          "decl": "bool is_array",
+          "default": null
+        }
+      ]
+    },
+    "json_skip_whitespace": {
+      "name": "json_skip_whitespace",
+      "refLine": 290,
+      "docStart": 8987,
+      "docEnd": 9352,
+      "docs": {
+        "brief": "Moves the position until it reaches a non-whitespace\ncharacter or the end of the buffer's maximum size.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Moves the position until it reaches a non-whitespace\ncharacter or the end of the buffer's maximum size."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position to increment."
+          },
+          {
+            "tag": "return",
+            "text": "True if pos has not reached the end\nof the buffer, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "pos",
+          "decl": "int& pos",
+          "default": null
+        }
+      ]
+    },
+    "json_extract_string": {
+      "name": "json_extract_string",
+      "refLine": 442,
+      "docStart": 13514,
+      "docEnd": 14084,
+      "docs": {
+        "brief": "Extracts a JSON string from the buffer until a valid end point is reached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Extracts a JSON string from the buffer until a valid end point is reached."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position to increment."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:output_max_size",
+            "text": "Maximum size of output string buffer."
+          },
+          {
+            "tag": "param:is_array",
+            "text": "Whether the decoder is processing an array."
+          },
+          {
+            "tag": "return",
+            "text": "True if pos has not reached the end\nof the buffer, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "pos",
+          "decl": "int& pos",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "output_max_size",
+          "decl": "int output_max_size",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "is_array",
+          "decl": "bool is_array",
+          "default": null
+        }
+      ]
+    },
+    "json_is_float": {
+      "name": "json_is_float",
+      "refLine": 158,
+      "docStart": 4738,
+      "docEnd": 4917,
+      "docs": {
+        "brief": "Checks whether the buffer provided contains a float.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the buffer provided contains a float."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "return",
+            "text": "True if buffer contains a float, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "json_is_at_end": {
+      "name": "json_is_at_end",
+      "refLine": 269,
+      "docStart": 8236,
+      "docEnd": 8732,
+      "docs": {
+        "brief": "Checks whether the character at the beginning of the buffer\nis considered a valid 'end point' for an element,\nsuch as a colon (indicating the end of a key),\na comma (indicating the end of an element),\nor the end of an object or array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the character at the beginning of the buffer\nis considered a valid 'end point' for an element,\nsuch as a colon (indicating the end of a key),\na comma (indicating the end of an element),\nor the end of an object or array."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:is_array",
+            "text": "Whether the decoder is processing an array."
+          },
+          {
+            "tag": "return",
+            "text": "True if the first character in the buffer\nis a valid element end point, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "is_array",
+          "decl": "bool is_array",
+          "default": null
+        }
+      ]
+    },
+    "json_extract_string_size": {
+      "name": "json_extract_string_size",
+      "refLine": 395,
+      "docStart": 12107,
+      "docEnd": 12615,
+      "docs": {
+        "brief": "Calculates the size of the buffer required to store the next\nJSON string stored in the provided buffer at the provided position.\nThis function is quite forgiving of malformed input and shouldn't be\nrelied upon as proof that the input is valid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the size of the buffer required to store the next\nJSON string stored in the provided buffer at the provided position.\nThis function is quite forgiving of malformed input and shouldn't be\nrelied upon as proof that the input is valid."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position to increment."
+          },
+          {
+            "tag": "return",
+            "text": "The size of the buffer required to store the string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "pos",
+          "decl": "int pos",
+          "default": null
+        }
+      ]
+    },
+    "json_is_string": {
+      "name": "json_is_string",
+      "refLine": 70,
+      "docStart": 2198,
+      "docEnd": 2584,
+      "docs": {
+        "brief": "Checks whether the character at the beginning\nof the buffer is the start of a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether the character at the beginning\nof the buffer is the start of a string."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer of data."
+          },
+          {
+            "tag": "param:allow_single_quotes",
+            "text": "Should strings using single quotes be accepted?"
+          },
+          {
+            "tag": "return",
+            "text": "True if the first character in the buffer\nis the start of a string, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "allow_single_quotes",
+          "decl": "bool allow_single_quotes",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_helpers_decode_included": {
+      "name": "_json_helpers_decode_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

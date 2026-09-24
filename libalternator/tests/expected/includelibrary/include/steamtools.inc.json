@@ -1,0 +1,1987 @@
+{
+  "functions": {
+    "Steam_SetHTTPRequestNetworkActivityTimeout": {
+      "name": "Steam_SetHTTPRequestNetworkActivityTimeout",
+      "refLine": 277,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "timeoutSeconds",
+          "decl": "int timeoutSeconds",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GroupStatusResult": {
+      "name": "Steam_GroupStatusResult",
+      "refLine": 73,
+      "docStart": 1334,
+      "docEnd": 1914,
+      "docs": {
+        "brief": "Called when a response to a group status request is recieved.\nThis is called for all responses recieved, not just ones requested by\nyour plugin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a response to a group status request is recieved.\nThis is called for all responses recieved, not just ones requested by\nyour plugin."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:groupAccountID",
+            "text": "32-bit account ID of group. Make sure to check\nthis agaist the ID you are expecting."
+          },
+          {
+            "tag": "param:groupMember",
+            "text": "Whether or not the client is a member in the\nspecified group."
+          },
+          {
+            "tag": "param:groupMember",
+            "text": "Whether or not the client is an officer in the\nspecified group."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "groupAccountID",
+          "decl": "int groupAccountID",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "groupMember",
+          "decl": "bool groupMember",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "groupOfficer",
+          "decl": "bool groupOfficer",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetNumClientDLCs": {
+      "name": "Steam_GetNumClientDLCs",
+      "refLine": 160,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Steam_RenderedIDToCSteamID": {
+      "name": "Steam_RenderedIDToCSteamID",
+      "refLine": 196,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "renderedID",
+          "decl": "const char[] renderedID",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "steamID",
+          "decl": "char[] steamID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetHTTPResponseHeaderValue": {
+      "name": "Steam_GetHTTPResponseHeaderValue",
+      "refLine": 284,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "headerName",
+          "decl": "const char[] headerName",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "headerValueBuffer",
+          "decl": "char[] headerValueBuffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bufferSize",
+          "decl": "int bufferSize",
+          "default": null
+        }
+      ]
+    },
+    "__ext_SteamTools_SetNTVOptional": {
+      "name": "__ext_SteamTools_SetNTVOptional",
+      "refLine": 310,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_GetHTTPResponseBodyData": {
+      "name": "Steam_GetHTTPResponseBodyData",
+      "refLine": 286,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "bodyDataBuffer",
+          "decl": "char[] bodyDataBuffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bufferSize",
+          "decl": "int bufferSize",
+          "default": null
+        }
+      ]
+    },
+    "Steam_IsVACEnabled": {
+      "name": "Steam_IsVACEnabled",
+      "refLine": 23,
+      "docStart": 310,
+      "docEnd": 424,
+      "docs": {
+        "brief": "Gets the current status of VAC on the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current status of VAC on the server."
+          },
+          {
+            "tag": "return",
+            "text": "A bool representing the current VAC status."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "Steam_IsAchieved": {
+      "name": "Steam_IsAchieved",
+      "refLine": 154,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "achievementName",
+          "decl": "const char[] achievementName",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SendHTTPRequest": {
+      "name": "Steam_SendHTTPRequest",
+      "refLine": 280,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "HTTPRequestComplete",
+          "name": "callbackFunction",
+          "decl": "HTTPRequestComplete callbackFunction",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "contextData",
+          "decl": "any contextData",
+          "default": "0"
+        }
+      ]
+    },
+    "Steam_RequestGameplayStats": {
+      "name": "Steam_RequestGameplayStats",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_WriteHTTPResponseBody": {
+      "name": "Steam_WriteHTTPResponseBody",
+      "refLine": 287,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "filePath",
+          "decl": "const char[] filePath",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetCustomSteamID": {
+      "name": "Steam_GetCustomSteamID",
+      "refLine": 194,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "renderedID",
+          "decl": "char[] renderedID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Steam_ClearRules": {
+      "name": "Steam_ClearRules",
+      "refLine": 133,
+      "docStart": 3558,
+      "docEnd": 3742,
+      "docs": {
+        "brief": "Clears the server's list of rules. This list is used to build the\nresponse to the A2S_RULES query and is generally known as the list of\npublic convars.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clears the server's list of rules. This list is used to build the\nresponse to the A2S_RULES query and is generally known as the list of\npublic convars."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_CheckClientSubscription": {
+      "name": "Steam_CheckClientSubscription",
+      "refLine": 163,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "subid",
+          "decl": "int subid",
+          "default": null
+        }
+      ]
+    },
+    "Steam_ForceHeartbeat": {
+      "name": "Steam_ForceHeartbeat",
+      "refLine": 136,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_SteamServersDisconnected": {
+      "name": "Steam_SteamServersDisconnected",
+      "refLine": 110,
+      "docStart": 2745,
+      "docEnd": 3048,
+      "docs": {
+        "brief": "Fired upon disconnection from Steam.\nIs also fired for late-loaded plugins.\n\nFor plugins loaded with the server, this will normally be fired right\nafter Steam_FullyLoaded, closly followed by Steam_SteamServersConnected\nif a successfull connection is established.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fired upon disconnection from Steam.\nIs also fired for late-loaded plugins.\n\nFor plugins loaded with the server, this will normally be fired right\nafter Steam_FullyLoaded, closly followed by Steam_SteamServersConnected\nif a successfull connection is established."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_GetStatFloat": {
+      "name": "Steam_GetStatFloat",
+      "refLine": 153,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "statName",
+          "decl": "const char[] statName",
+          "default": null
+        }
+      ]
+    },
+    "Steam_CSteamIDToGroupID": {
+      "name": "Steam_CSteamIDToGroupID",
+      "refLine": 200,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "steamID",
+          "decl": "const char[] steamID",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetPublicIP": {
+      "name": "Steam_GetPublicIP",
+      "refLine": 33,
+      "docStart": 460,
+      "docEnd": 654,
+      "docs": {
+        "brief": "Gets the server's external IP address, as reported by Steam.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the server's external IP address, as reported by Steam."
+          },
+          {
+            "tag": "param:octets",
+            "text": "Reference to an array to be filled with the octets of\nthe IP address."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int[4]",
+          "name": "octets",
+          "decl": "int octets[4]",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetHTTPRequestRawPostBody": {
+      "name": "Steam_SetHTTPRequestRawPostBody",
+      "refLine": 290,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "data",
+          "decl": "const char[] data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "dataLength",
+          "decl": "int dataLength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "contentType",
+          "decl": "const char[] contentType",
+          "default": "\"text/plain\""
+        }
+      ]
+    },
+    "Steam_RemoveMasterServer": {
+      "name": "Steam_RemoveMasterServer",
+      "refLine": 141,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "serverAddress",
+          "decl": "const char[] serverAddress",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetNumMasterServers": {
+      "name": "Steam_GetNumMasterServers",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "Steam_GameplayStats": {
+      "name": "Steam_GameplayStats",
+      "refLine": 77,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "rank",
+          "decl": "int rank",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "totalConnects",
+          "decl": "int totalConnects",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "totalMinutesPlayed",
+          "decl": "int totalMinutesPlayed",
+          "default": null
+        }
+      ]
+    },
+    "Steam_RequestStats": {
+      "name": "Steam_RequestStats",
+      "refLine": 149,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Steam_CreateHTTPRequest": {
+      "name": "Steam_CreateHTTPRequest",
+      "refLine": 276,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "HTTPRequestHandle",
+      "arguments": [
+        {
+          "type": "HTTPMethod",
+          "name": "HTTPRequestMethod",
+          "decl": "HTTPMethod HTTPRequestMethod",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "absoluteURL",
+          "decl": "const char[] absoluteURL",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetHTTPResponseBodySize": {
+      "name": "Steam_GetHTTPResponseBodySize",
+      "refLine": 285,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        }
+      ]
+    },
+    "Steam_RequestServerReputation": {
+      "name": "Steam_RequestServerReputation",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_Reputation": {
+      "name": "Steam_Reputation",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "reputationScore",
+          "decl": "int reputationScore",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "banned",
+          "decl": "bool banned",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bannedIP",
+          "decl": "int bannedIP",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bannedPort",
+          "decl": "int bannedPort",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bannedGameID",
+          "decl": "int bannedGameID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "banExpires",
+          "decl": "int banExpires",
+          "default": null
+        }
+      ]
+    },
+    "Steam_CheckClientDLC": {
+      "name": "Steam_CheckClientDLC",
+      "refLine": 177,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "appid",
+          "decl": "int appid",
+          "default": null
+        }
+      ]
+    },
+    "Steam_Shutdown": {
+      "name": "Steam_Shutdown",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_PrioritizeHTTPRequest": {
+      "name": "Steam_PrioritizeHTTPRequest",
+      "refLine": 282,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetCustomSteamID": {
+      "name": "Steam_SetCustomSteamID",
+      "refLine": 193,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "renderedID",
+          "decl": "const char[] renderedID",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetHTTPRequestGetOrPostParameter": {
+      "name": "Steam_SetHTTPRequestGetOrPostParameter",
+      "refLine": 279,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "paramName",
+          "decl": "const char[] paramName",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "paramValue",
+          "decl": "const char[] paramValue",
+          "default": null
+        }
+      ]
+    },
+    "Steam_IsConnected": {
+      "name": "Steam_IsConnected",
+      "refLine": 90,
+      "docStart": 2411,
+      "docEnd": 2550,
+      "docs": {
+        "brief": "Gets the current Steam connection state, the forwards below fire\nwhenever this changes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current Steam connection state, the forwards below fire\nwhenever this changes."
+          },
+          {
+            "tag": "return",
+            "text": "Steam connection state."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "Steam_GetClientSubscription": {
+      "name": "Steam_GetClientSubscription",
+      "refLine": 158,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetMasterServerAddress": {
+      "name": "Steam_GetMasterServerAddress",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "server",
+          "decl": "int server",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "serverAddress",
+          "decl": "char[] serverAddress",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetClientDLC": {
+      "name": "Steam_GetClientDLC",
+      "refLine": 161,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetStat": {
+      "name": "Steam_GetStat",
+      "refLine": 152,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "statName",
+          "decl": "const char[] statName",
+          "default": null
+        }
+      ]
+    },
+    "Steam_FullyLoaded": {
+      "name": "Steam_FullyLoaded",
+      "refLine": 14,
+      "docStart": 111,
+      "docEnd": 242,
+      "docs": {
+        "brief": "Called after SteamTools has completely finished loading.\nNo features are available before this point.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after SteamTools has completely finished loading.\nNo features are available before this point."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_RequestGroupStatus": {
+      "name": "Steam_RequestGroupStatus",
+      "refLine": 56,
+      "docStart": 961,
+      "docEnd": 1262,
+      "docs": {
+        "brief": "Requests a client's status in a Steam group.\nResponse is returned in Steam_GroupStatusResult forward.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Requests a client's status in a Steam group.\nResponse is returned in Steam_GroupStatusResult forward."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:groupAccountID",
+            "text": "32-bit account ID of group."
+          },
+          {
+            "tag": "return",
+            "text": "A bool representing whether or not the request was sent to\nSteam."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "groupAccountID",
+          "decl": "int groupAccountID",
+          "default": null
+        }
+      ]
+    },
+    "Steam_StatsReceived": {
+      "name": "Steam_StatsReceived",
+      "refLine": 150,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Steam_AddMasterServer": {
+      "name": "Steam_AddMasterServer",
+      "refLine": 139,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "serverAddress",
+          "decl": "const char[] serverAddress",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetCSteamIDForClient": {
+      "name": "Steam_GetCSteamIDForClient",
+      "refLine": 191,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "steamID",
+          "decl": "char[] steamID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetGameDescription": {
+      "name": "Steam_SetGameDescription",
+      "refLine": 147,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "gameDescription",
+          "decl": "char[] gameDescription",
+          "default": null
+        }
+      ]
+    },
+    "Steam_StatsUnloaded": {
+      "name": "Steam_StatsUnloaded",
+      "refLine": 151,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Steam_DeferHTTPRequest": {
+      "name": "Steam_DeferHTTPRequest",
+      "refLine": 281,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetRule": {
+      "name": "Steam_SetRule",
+      "refLine": 124,
+      "docStart": 3097,
+      "docEnd": 3491,
+      "docs": {
+        "brief": "Sets an entry in the server's list of rules. This list is used to\nbuild the response to the A2S_RULES query and is generally known as\nthe list of public convars.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entry in the server's list of rules. This list is used to\nbuild the response to the A2S_RULES query and is generally known as\nthe list of public convars."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key to set, is created if it does not already\nexist."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value of the key to set, the named key is removed if this\nis blank."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetHTTPDownloadProgressPercent": {
+      "name": "Steam_GetHTTPDownloadProgressPercent",
+      "refLine": 289,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GroupIDToCSteamID": {
+      "name": "Steam_GroupIDToCSteamID",
+      "refLine": 199,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "groupID",
+          "decl": "int groupID",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "steamID",
+          "decl": "char[] steamID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetHTTPResponseHeaderSize": {
+      "name": "Steam_GetHTTPResponseHeaderSize",
+      "refLine": 283,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "headerName",
+          "decl": "const char[] headerName",
+          "default": null
+        }
+      ]
+    },
+    "Steam_GetNumClientSubscriptions": {
+      "name": "Steam_GetNumClientSubscriptions",
+      "refLine": 157,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Steam_SetHTTPRequestRawPostBodyFile": {
+      "name": "Steam_SetHTTPRequestRawPostBodyFile",
+      "refLine": 291,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "filePath",
+          "decl": "const char[] filePath",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "contentType",
+          "decl": "const char[] contentType",
+          "default": "\"text/plain\""
+        }
+      ]
+    },
+    "Steam_ReleaseHTTPRequest": {
+      "name": "Steam_ReleaseHTTPRequest",
+      "refLine": 288,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        }
+      ]
+    },
+    "Steam_RestartRequested": {
+      "name": "Steam_RestartRequested",
+      "refLine": 43,
+      "docStart": 703,
+      "docEnd": 917,
+      "docs": {
+        "brief": "Is fired when the Steam master servers report that your server is\noutdated",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Is fired when the Steam master servers report that your server is\noutdated"
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue to continue normal operation or Plugin_Handled\nto block the regular console message."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": []
+    },
+    "Steam_SteamServersConnected": {
+      "name": "Steam_SteamServersConnected",
+      "refLine": 98,
+      "docStart": 2585,
+      "docEnd": 2699,
+      "docs": {
+        "brief": "Fired upon a successfull connection to Steam.\nIs also fired for late-loaded plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fired upon a successfull connection to Steam.\nIs also fired for late-loaded plugins."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Steam_SetHTTPRequestHeaderValue": {
+      "name": "Steam_SetHTTPRequestHeaderValue",
+      "refLine": 278,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPRequestHandle",
+          "name": "HTTPRequest",
+          "decl": "HTTPRequestHandle HTTPRequest",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "headerName",
+          "decl": "const char[] headerName",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "headerValue",
+          "decl": "const char[] headerValue",
+          "default": null
+        }
+      ]
+    },
+    "Steam_CSteamIDToRenderedID": {
+      "name": "Steam_CSteamIDToRenderedID",
+      "refLine": 197,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "steamID",
+          "decl": "const char[] steamID",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "renderedID",
+          "decl": "char[] renderedID",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_steamtools_included": {
+      "name": "_steamtools_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "USE_CUSTOM_STEAMID": {
+      "name": "USE_CUSTOM_STEAMID",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    }
+  },
+  "enums": {
+    "HTTPMethod": {
+      "name": "HTTPMethod",
+      "refLine": 207,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "HTTPMethod_HEAD": {
+          "name": "HTTPMethod_HEAD",
+          "refLine": 211,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HTTPMethod_POST": {
+          "name": "HTTPMethod_POST",
+          "refLine": 212,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HTTPMethod_GET": {
+          "name": "HTTPMethod_GET",
+          "refLine": 210,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HTTPMethod_Invalid": {
+          "name": "HTTPMethod_Invalid",
+          "refLine": 209,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "HTTPStatusCode": {
+      "name": "HTTPStatusCode",
+      "refLine": 215,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "HTTPStatusCode_RequestEntityTooLarge": {
+          "name": "HTTPStatusCode_RequestEntityTooLarge",
+          "refLine": 255,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "413"
+        },
+        "HTTPStatusCode_Gone": {
+          "name": "HTTPStatusCode_Gone",
+          "refLine": 252,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "410"
+        },
+        "HTTPStatusCode_Continue": {
+          "name": "HTTPStatusCode_Continue",
+          "refLine": 220,
+          "docStart": 6125,
+          "docEnd": 6147,
+          "docs": {
+            "brief": "Informational codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Informational codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "100"
+        },
+        "HTTPStatusCode_SwitchingProtocols": {
+          "name": "HTTPStatusCode_SwitchingProtocols",
+          "refLine": 221,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "101"
+        },
+        "HTTPStatusCode_ResetContent": {
+          "name": "HTTPStatusCode_ResetContent",
+          "refLine": 229,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "205"
+        },
+        "HTTPStatusCode_MethodNotAllowed": {
+          "name": "HTTPStatusCode_MethodNotAllowed",
+          "refLine": 247,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "405"
+        },
+        "HTTPStatusCode_NotImplemented": {
+          "name": "HTTPStatusCode_NotImplemented",
+          "refLine": 263,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "501"
+        },
+        "HTTPStatusCode_GatewayTimeout": {
+          "name": "HTTPStatusCode_GatewayTimeout",
+          "refLine": 266,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "504"
+        },
+        "HTTPStatusCode_Conflict": {
+          "name": "HTTPStatusCode_Conflict",
+          "refLine": 251,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "409"
+        },
+        "HTTPStatusCode_MultipleChoices": {
+          "name": "HTTPStatusCode_MultipleChoices",
+          "refLine": 233,
+          "docStart": 6520,
+          "docEnd": 6540,
+          "docs": {
+            "brief": "Redirection codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Redirection codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "300"
+        },
+        "HTTPStatusCode_BadGateway": {
+          "name": "HTTPStatusCode_BadGateway",
+          "refLine": 264,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "502"
+        },
+        "HTTPStatusCode_PreconditionFailed": {
+          "name": "HTTPStatusCode_PreconditionFailed",
+          "refLine": 254,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "412"
+        },
+        "HTTPStatusCode_LengthRequired": {
+          "name": "HTTPStatusCode_LengthRequired",
+          "refLine": 253,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "411"
+        },
+        "HTTPStatusCode_Forbidden": {
+          "name": "HTTPStatusCode_Forbidden",
+          "refLine": 245,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "403"
+        },
+        "HTTPStatusCode_SeeOther": {
+          "name": "HTTPStatusCode_SeeOther",
+          "refLine": 236,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "303"
+        },
+        "HTTPStatusCode_OK": {
+          "name": "HTTPStatusCode_OK",
+          "refLine": 224,
+          "docStart": 6232,
+          "docEnd": 6248,
+          "docs": {
+            "brief": "Success codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Success codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "200"
+        },
+        "HTTPStatusCode_TemporaryRedirect": {
+          "name": "HTTPStatusCode_TemporaryRedirect",
+          "refLine": 239,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "307"
+        },
+        "HTTPStatusCode_BadRequest": {
+          "name": "HTTPStatusCode_BadRequest",
+          "refLine": 242,
+          "docStart": 6820,
+          "docEnd": 6834,
+          "docs": {
+            "brief": "Error codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Error codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "400"
+        },
+        "HTTPStatusCode_NotModified": {
+          "name": "HTTPStatusCode_NotModified",
+          "refLine": 237,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "304"
+        },
+        "HTTPStatusCode_RequestedRangeNotSatisfiable": {
+          "name": "HTTPStatusCode_RequestedRangeNotSatisfiable",
+          "refLine": 258,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "416"
+        },
+        "HTTPStatusCode_Created": {
+          "name": "HTTPStatusCode_Created",
+          "refLine": 225,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "201"
+        },
+        "HTTPStatusCode_Unauthorized": {
+          "name": "HTTPStatusCode_Unauthorized",
+          "refLine": 243,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "401"
+        },
+        "HTTPStatusCode_NonAuthoritative": {
+          "name": "HTTPStatusCode_NonAuthoritative",
+          "refLine": 227,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "203"
+        },
+        "HTTPStatusCode_PartialContent": {
+          "name": "HTTPStatusCode_PartialContent",
+          "refLine": 230,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "206"
+        },
+        "HTTPStatusCode_Found": {
+          "name": "HTTPStatusCode_Found",
+          "refLine": 235,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "302"
+        },
+        "HTTPStatusCode_RequestTimeout": {
+          "name": "HTTPStatusCode_RequestTimeout",
+          "refLine": 250,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "408"
+        },
+        "HTTPStatusCode_Invalid": {
+          "name": "HTTPStatusCode_Invalid",
+          "refLine": 217,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "HTTPStatusCode_MovedPermanently": {
+          "name": "HTTPStatusCode_MovedPermanently",
+          "refLine": 234,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "301"
+        },
+        "HTTPStatusCode_ExpectationFailed": {
+          "name": "HTTPStatusCode_ExpectationFailed",
+          "refLine": 259,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "417"
+        },
+        "HTTPStatusCode_NotFound": {
+          "name": "HTTPStatusCode_NotFound",
+          "refLine": 246,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "404"
+        },
+        "HTTPStatusCode_PaymentRequired": {
+          "name": "HTTPStatusCode_PaymentRequired",
+          "refLine": 244,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "402"
+        },
+        "HTTPStatusCode_RequestURITooLong": {
+          "name": "HTTPStatusCode_RequestURITooLong",
+          "refLine": 256,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "414"
+        },
+        "HTTPStatusCode_InternalServerError": {
+          "name": "HTTPStatusCode_InternalServerError",
+          "refLine": 262,
+          "docStart": 7594,
+          "docEnd": 7615,
+          "docs": {
+            "brief": "Server error codes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Server error codes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "500"
+        },
+        "HTTPStatusCode_NotAcceptable": {
+          "name": "HTTPStatusCode_NotAcceptable",
+          "refLine": 248,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "406"
+        },
+        "HTTPStatusCode_Accepted": {
+          "name": "HTTPStatusCode_Accepted",
+          "refLine": 226,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "202"
+        },
+        "HTTPStatusCode_ServiceUnavailable": {
+          "name": "HTTPStatusCode_ServiceUnavailable",
+          "refLine": 265,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "503"
+        },
+        "HTTPStatusCode_HTTPVersionNotSupported": {
+          "name": "HTTPStatusCode_HTTPVersionNotSupported",
+          "refLine": 267,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "505"
+        },
+        "HTTPStatusCode_ProxyAuthRequired": {
+          "name": "HTTPStatusCode_ProxyAuthRequired",
+          "refLine": 249,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "407"
+        },
+        "HTTPStatusCode_UseProxy": {
+          "name": "HTTPStatusCode_UseProxy",
+          "refLine": 238,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "305"
+        },
+        "HTTPStatusCode_NoContent": {
+          "name": "HTTPStatusCode_NoContent",
+          "refLine": 228,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "204"
+        },
+        "HTTPStatusCode_UnsupportedMediaType": {
+          "name": "HTTPStatusCode_UnsupportedMediaType",
+          "refLine": 257,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "415"
+        }
+      }
+    },
+    "HTTPRequestHandle": {
+      "name": "HTTPRequestHandle",
+      "refLine": 202,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "INVALID_HTTP_HANDLE": {
+          "name": "INVALID_HTTP_HANDLE",
+          "refLine": 204,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "HTTPRequestComplete": {
+      "name": "HTTPRequestComplete",
+      "refLine": 270,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(HTTPRequestHandle HTTPRequest, bool requestSuccessful, HTTPStatusCode statusCode, any contextData)": {
+          "refLine": 273,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPRequestHandle HTTPRequest, bool requestSuccessful, HTTPStatusCode statusCode, any contextData)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPRequestHandle",
+                "name": "HTTPRequest",
+                "decl": "HTTPRequestHandle HTTPRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "requestSuccessful",
+                "decl": "bool requestSuccessful",
+                "default": null
+              },
+              {
+                "type": "HTTPStatusCode",
+                "name": "statusCode",
+                "decl": "HTTPStatusCode statusCode",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "contextData",
+                "decl": "any contextData",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(HTTPRequestHandle HTTPRequest, bool requestSuccessful, HTTPStatusCode statusCode)": {
+          "refLine": 272,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPRequestHandle HTTPRequest, bool requestSuccessful, HTTPStatusCode statusCode)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPRequestHandle",
+                "name": "HTTPRequest",
+                "decl": "HTTPRequestHandle HTTPRequest",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "requestSuccessful",
+                "decl": "bool requestSuccessful",
+                "default": null
+              },
+              {
+                "type": "HTTPStatusCode",
+                "name": "statusCode",
+                "decl": "HTTPStatusCode statusCode",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

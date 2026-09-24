@@ -1,0 +1,159 @@
+{
+  "functions": {
+    "json_utf8_to_ascii_size": {
+      "name": "json_utf8_to_ascii_size",
+      "refLine": 48,
+      "docStart": 1761,
+      "docEnd": 1982,
+      "docs": {
+        "brief": "Calculates how many bytes will be required to store the ASCII\nrepresentation of a UTF-8 character.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates how many bytes will be required to store the ASCII\nrepresentation of a UTF-8 character."
+          },
+          {
+            "tag": "param:c",
+            "text": "The UTF-8 character."
+          },
+          {
+            "tag": "return",
+            "text": "The number of bytes required, or -1 if c is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "c",
+          "decl": "int c",
+          "default": null
+        }
+      ]
+    },
+    "json_utf8_to_ascii": {
+      "name": "json_utf8_to_ascii",
+      "refLine": 78,
+      "docStart": 2347,
+      "docEnd": 2631,
+      "docs": {
+        "brief": "Converts a UTF-8 character to its ASCII representation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a UTF-8 character to its ASCII representation."
+          },
+          {
+            "tag": "param:c",
+            "text": "The UTF-8 character."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "The number of bytes written, or -1 if c is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "c",
+          "decl": "int c",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        }
+      ]
+    },
+    "json_ascii_to_utf8": {
+      "name": "json_ascii_to_utf8",
+      "refLine": 128,
+      "docStart": 3520,
+      "docEnd": 3724,
+      "docs": {
+        "brief": "Converts bytes to their UTF-8 int representation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts bytes to their UTF-8 int representation."
+          },
+          {
+            "tag": "param:ascii",
+            "text": "The ascii/bytes to convert."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of ascii."
+          },
+          {
+            "tag": "return",
+            "text": "The UTF-8 int representation."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "ascii",
+          "decl": "const char[] ascii",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "size",
+          "decl": "int& size",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_helpers_unicode_included": {
+      "name": "_json_helpers_unicode_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

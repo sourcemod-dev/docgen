@@ -1,0 +1,50 @@
+{
+  "functions": {
+    "TTT_IsClientKnockout": {
+      "name": "TTT_IsClientKnockout",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_knockout_SetNTVOptional": {
+      "name": "__pl_ttt_knockout_SetNTVOptional",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_knockout_included": {
+      "name": "_ttt_knockout_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

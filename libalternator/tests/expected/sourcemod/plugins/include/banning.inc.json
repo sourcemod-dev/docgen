@@ -1,0 +1,577 @@
+{
+  "functions": {
+    "OnBanClient": {
+      "name": "OnBanClient",
+      "refLine": 57,
+      "docStart": 1972,
+      "docEnd": 2700,
+      "docs": {
+        "brief": "Called for calls to BanClient() with a non-empty command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called for calls to BanClient() with a non-empty command."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client being banned."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time the client is being banned for (0 = permanent)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "One if AUTHID or IP will be enabled.  If AUTO is also\nenabled, it means Core autodetected which to use."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason passed via BanClient()."
+          },
+          {
+            "tag": "param:kick_message",
+            "text": "Kick message passed via BanClient()."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the ban source."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source value passed via BanClient()."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the actual server banning.\nKicking will still occur."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "kick_message",
+          "decl": "const char[] kick_message",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": null
+        }
+      ]
+    },
+    "OnRemoveBan": {
+      "name": "OnRemoveBan",
+      "refLine": 92,
+      "docStart": 3656,
+      "docEnd": 4078,
+      "docs": {
+        "brief": "Called for calls to RemoveBan() with a non-empty command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called for calls to RemoveBan() with a non-empty command."
+          },
+          {
+            "tag": "param:identity",
+            "text": "Identity string being banned (authstring or ip)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Ban flags (only IP or AUTHID are valid here)."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the ban source."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source value passed via BanIdentity()."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the actual unbanning."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "identity",
+          "decl": "const char[] identity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": null
+        }
+      ]
+    },
+    "OnBanIdentity": {
+      "name": "OnBanIdentity",
+      "refLine": 76,
+      "docStart": 2912,
+      "docEnd": 3477,
+      "docs": {
+        "brief": "Called for calls to BanIdentity() with a non-empty command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called for calls to BanIdentity() with a non-empty command."
+          },
+          {
+            "tag": "param:identity",
+            "text": "Identity string being banned (authstring or ip)."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time the client is being banned for (0 = permanent)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Ban flags (only IP or AUTHID are valid here)."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason passed via BanIdentity()."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the ban source."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source value passed via BanIdentity()."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the actual server banning."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "identity",
+          "decl": "const char[] identity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": null
+        }
+      ]
+    },
+    "BanClient": {
+      "name": "BanClient",
+      "refLine": 114,
+      "docStart": 4209,
+      "docEnd": 5135,
+      "docs": {
+        "brief": "Bans a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Bans a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client being banned."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time (in minutes) to ban (0 = permanent)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags for controlling the ban mechanism.  If AUTHID\nis set and no AUTHID is available, the ban will fail\nunless AUTO is also flagged."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason to ban the client for."
+          },
+          {
+            "tag": "param:kick_message",
+            "text": "Message to display to the user when kicking."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the source.  If this is left\nempty, then the OnBanClient forward will not be called."
+          },
+          {
+            "tag": "param:source",
+            "text": "A source value that could be interpreted as a player\nindex of any sort (not actually checked by Core)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "kick_message",
+          "decl": "const char[] kick_message",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": "\"\""
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": "0"
+        }
+      ]
+    },
+    "BanIdentity": {
+      "name": "BanIdentity",
+      "refLine": 135,
+      "docStart": 5339,
+      "docEnd": 6024,
+      "docs": {
+        "brief": "Bans an identity (either an IP address or auth string).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Bans an identity (either an IP address or auth string)."
+          },
+          {
+            "tag": "param:identity",
+            "text": "String to ban (ip or authstring)."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time to ban for (0 = permanent)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags (only IP and AUTHID are valid flags here)."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Ban reason string."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the source.  If this is left\nempty, then the OnBanIdentity forward will not be called."
+          },
+          {
+            "tag": "param:source",
+            "text": "A source value that could be interpreted as a player\nindex of any sort (not actually checked by Core)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "identity",
+          "decl": "const char[] identity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": "\"\""
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": "0"
+        }
+      ]
+    },
+    "RemoveBan": {
+      "name": "RemoveBan",
+      "refLine": 153,
+      "docStart": 6196,
+      "docEnd": 6788,
+      "docs": {
+        "brief": "Removes a ban that was written to the server (either in memory or on disk).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a ban that was written to the server (either in memory or on disk)."
+          },
+          {
+            "tag": "param:identity",
+            "text": "String to unban (ip or authstring)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags (only IP and AUTHID are valid flags here)."
+          },
+          {
+            "tag": "param:command",
+            "text": "Command string to identify the source.  If this is left\nempty, then OnRemoveBan will not be called."
+          },
+          {
+            "tag": "param:source",
+            "text": "A source value that could be interpreted as a player\nindex of any sort (not actually checked by Core)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "identity",
+          "decl": "const char[] identity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": "\"\""
+        },
+        {
+          "type": "any",
+          "name": "source",
+          "decl": "any source",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_banning_included": {
+      "name": "_banning_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "BANFLAG_AUTHID": {
+      "name": "BANFLAG_AUTHID",
+      "refLine": 40,
+      "docStart": 1836,
+      "docEnd": 1898,
+      "docs": {
+        "brief": "Always ban by authstring (for BanIdentity) if possible",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Always ban by authstring (for BanIdentity) if possible"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "BANFLAG_IP": {
+      "name": "BANFLAG_IP",
+      "refLine": 39,
+      "docStart": 1766,
+      "docEnd": 1798,
+      "docs": {
+        "brief": "Always ban by IP address",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Always ban by IP address"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "BANFLAG_AUTO": {
+      "name": "BANFLAG_AUTO",
+      "refLine": 38,
+      "docStart": 1676,
+      "docEnd": 1728,
+      "docs": {
+        "brief": "Auto-detects whether to ban by steamid or IP",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Auto-detects whether to ban by steamid or IP"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "BANFLAG_NOKICK": {
+      "name": "BANFLAG_NOKICK",
+      "refLine": 41,
+      "docStart": 1936,
+      "docEnd": 1968,
+      "docs": {
+        "brief": "Does not kick the client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Does not kick the client"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

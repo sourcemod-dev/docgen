@@ -1,0 +1,3156 @@
+{
+  "functions": {
+    "SetRandomSeed": {
+      "name": "SetRandomSeed",
+      "refLine": 131,
+      "docStart": 6454,
+      "docEnd": 6568,
+      "docs": {
+        "brief": "Sets the seed value for the global Half-Life 2 Random Stream.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the seed value for the global Half-Life 2 Random Stream."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Seed value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "seed",
+          "decl": "int seed",
+          "default": null
+        }
+      ]
+    },
+    "ShowSyncHudText": {
+      "name": "ShowSyncHudText",
+      "refLine": 584,
+      "docStart": 22819,
+      "docEnd": 23421,
+      "docs": {
+        "brief": "Shows a synchronized HUD message to a client.\n\nAs of this writing, only TF, HL2MP, and SourceForts support HUD Text.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shows a synchronized HUD message to a client.\n\nAs of this writing, only TF, HL2MP, and SourceForts support HUD Text."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to send the message to."
+          },
+          {
+            "tag": "param:sync",
+            "text": "Synchronization object."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message text or formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message formatting parameters."
+          },
+          {
+            "tag": "return",
+            "text": "-1 on failure, anything else on success.\nThis function fails if the mod does not support it."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or sync object not valid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "sync",
+          "decl": "Handle sync",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ClearSyncHud": {
+      "name": "ClearSyncHud",
+      "refLine": 602,
+      "docStart": 23510,
+      "docEnd": 24173,
+      "docs": {
+        "brief": "Clears the text on a synchronized HUD channel.\n\nThis is not the same as sending \"\" because it guarantees that it won't\noverwrite text on another channel.  For example, consider the scenario:\n\n1. Your synchronized message goes to channel 3.\n2. Someone else's non-synchronized message goes to channel 3.\n\nIf you were to simply send \"\" on your synchronized message,\nthen someone else's text could be overwritten.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clears the text on a synchronized HUD channel.\n\nThis is not the same as sending \"\" because it guarantees that it won't\noverwrite text on another channel.  For example, consider the scenario:\n\n1. Your synchronized message goes to channel 3.\n2. Someone else's non-synchronized message goes to channel 3.\n\nIf you were to simply send \"\" on your synchronized message,\nthen someone else's text could be overwritten."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to send the message to."
+          },
+          {
+            "tag": "param:sync",
+            "text": "Synchronization object."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or sync object not valid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "sync",
+          "decl": "Handle sync",
+          "default": null
+        }
+      ]
+    },
+    "PrintToChat": {
+      "name": "PrintToChat",
+      "refLine": 377,
+      "docStart": 15045,
+      "docEnd": 15332,
+      "docs": {
+        "brief": "Prints a message to a specific client in the chat area.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the chat area."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetEngineTime": {
+      "name": "GetEngineTime",
+      "refLine": 201,
+      "docStart": 9236,
+      "docEnd": 9368,
+      "docs": {
+        "brief": "Returns a high-precision time value for profiling the engine.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a high-precision time value for profiling the engine."
+          },
+          {
+            "tag": "return",
+            "text": "A floating point time value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": []
+    },
+    "SetHudTextParamsEx": {
+      "name": "SetHudTextParamsEx",
+      "refLine": 567,
+      "docStart": 21590,
+      "docEnd": 22613,
+      "docs": {
+        "brief": "Sets the HUD parameters for drawing text.  These parameters are stored\nglobally, although nothing other than this function and SetHudTextParams\nmodify them.\n\nThis is the same as SetHudTextParams(), except it lets you set the alternate\ncolor for when effects require it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the HUD parameters for drawing text.  These parameters are stored\nglobally, although nothing other than this function and SetHudTextParams\nmodify them.\n\nThis is the same as SetHudTextParams(), except it lets you set the alternate\ncolor for when effects require it."
+          },
+          {
+            "tag": "param:x",
+            "text": "x coordinate, from 0 to 1.  -1.0 is the center."
+          },
+          {
+            "tag": "param:y",
+            "text": "y coordinate, from 0 to 1.  -1.0 is the center."
+          },
+          {
+            "tag": "param:holdTime",
+            "text": "Number of seconds to hold the text."
+          },
+          {
+            "tag": "param:color1",
+            "text": "First color set, array values being [red, green, blue, alpha]"
+          },
+          {
+            "tag": "param:color2",
+            "text": "Second color set, array values being [red, green, blue, alpha]"
+          },
+          {
+            "tag": "param:effect",
+            "text": "0/1 causes the text to fade in and fade out.\n2 causes the text to flash[?]."
+          },
+          {
+            "tag": "param:fxTime",
+            "text": "Duration of chosen effect (may not apply to all effects)."
+          },
+          {
+            "tag": "param:fadeIn",
+            "text": "Number of seconds to spend fading in."
+          },
+          {
+            "tag": "param:fadeOut",
+            "text": "Number of seconds to spend fading out."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "x",
+          "decl": "float x",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "y",
+          "decl": "float y",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "holdTime",
+          "decl": "float holdTime",
+          "default": null
+        },
+        {
+          "type": "int[4]",
+          "name": "color1",
+          "decl": "int color1[4]",
+          "default": null
+        },
+        {
+          "type": "int[4]",
+          "name": "color2",
+          "decl": "int color2[4]",
+          "default": "{ 255, 255, 255, 0 }"
+        },
+        {
+          "type": "int",
+          "name": "effect",
+          "decl": "int effect",
+          "default": "0"
+        },
+        {
+          "type": "float",
+          "name": "fxTime",
+          "decl": "float fxTime",
+          "default": "6.000000"
+        },
+        {
+          "type": "float",
+          "name": "fadeIn",
+          "decl": "float fadeIn",
+          "default": "0.100000"
+        },
+        {
+          "type": "float",
+          "name": "fadeOut",
+          "decl": "float fadeOut",
+          "default": "0.200000"
+        }
+      ]
+    },
+    "FindMap": {
+      "name": "FindMap",
+      "refLine": 169,
+      "docStart": 7453,
+      "docEnd": 8003,
+      "docs": {
+        "brief": "Returns whether a full or partial map name is found or can be resolved",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a full or partial map name is found or can be resolved"
+          },
+          {
+            "tag": "param:map",
+            "text": "Map name (usually same as map path relative to maps/ dir,\nexcluding .bsp extension)."
+          },
+          {
+            "tag": "param:foundmap",
+            "text": "Resolved map name. If the return is FindMap_FuzzyMatch\nor FindMap_NonCanonical the buffer will be the full path."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length to write to map var."
+          },
+          {
+            "tag": "return",
+            "text": "Result of the find operation. Not all result types are supported on all games."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "FindMapResult",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "foundmap",
+          "decl": "char[] foundmap",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CreateHudSynchronizer": {
+      "name": "CreateHudSynchronizer",
+      "refLine": 520,
+      "docStart": 18459,
+      "docEnd": 20176,
+      "docs": {
+        "brief": "Creates a HUD synchronization object.  This object is used to automatically assign and\nre-use channels for a set of messages.\n\nThe HUD has a hardcoded number of channels (usually 6) for displaying\ntext.  You can use any channel for any area of the screen.  Text on\ndifferent channels can overlap, but text on the same channel will\nerase the old text first.  This overlapping and overwriting gets problematic.\n\nA HUD synchronization object automatically selects channels for you based on\nthe following heuristics:\n- If channel X was last used by the object, and hasn't been modified again,\nchannel X gets re-used.\n- Otherwise, a new channel is chosen based on the least-recently-used channel.\n\nThis ensures that if you display text on a sync object, that the previous text\ndisplayed on it will always be cleared first.  This is because your new text\nwill either overwrite the old text on the same channel, or because another\nchannel has already erased your text.\n\nNote that messages can still overlap if they are on different synchronization\nobjects, or they are displayed to manual channels.\n\nThese are particularly useful for displaying repeating or refreshing HUD text, in\naddition to displaying multiple message sets in one area of the screen (for example,\ncenter-say messages that may pop up randomly that you don't want to overlap each\nother).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a HUD synchronization object.  This object is used to automatically assign and\nre-use channels for a set of messages.\n\nThe HUD has a hardcoded number of channels (usually 6) for displaying\ntext.  You can use any channel for any area of the screen.  Text on\ndifferent channels can overlap, but text on the same channel will\nerase the old text first.  This overlapping and overwriting gets problematic.\n\nA HUD synchronization object automatically selects channels for you based on\nthe following heuristics:\n- If channel X was last used by the object, and hasn't been modified again,\nchannel X gets re-used.\n- Otherwise, a new channel is chosen based on the least-recently-used channel.\n\nThis ensures that if you display text on a sync object, that the previous text\ndisplayed on it will always be cleared first.  This is because your new text\nwill either overwrite the old text on the same channel, or because another\nchannel has already erased your text.\n\nNote that messages can still overlap if they are on different synchronization\nobjects, or they are displayed to manual channels.\n\nThese are particularly useful for displaying repeating or refreshing HUD text, in\naddition to displaying multiple message sets in one area of the screen (for example,\ncenter-say messages that may pop up randomly that you don't want to overlap each\nother)."
+          },
+          {
+            "tag": "return",
+            "text": "New HUD synchronization object.\nThe Handle can be closed with CloseHandle().\nIf HUD text is not supported on this mod, then\nINVALID_HANDLE is returned."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "PrecacheSound": {
+      "name": "PrecacheSound",
+      "refLine": 320,
+      "docStart": 12886,
+      "docEnd": 13150,
+      "docs": {
+        "brief": "Precaches a given sound.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precaches a given sound."
+          },
+          {
+            "tag": "param:sound",
+            "text": "Name of the sound to precache."
+          },
+          {
+            "tag": "param:preload",
+            "text": "If preload is true the file will be precached before level startup."
+          },
+          {
+            "tag": "return",
+            "text": "True if successfully precached, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sound",
+          "decl": "const char[] sound",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "preload",
+          "decl": "bool preload",
+          "default": "false"
+        }
+      ]
+    },
+    "EntRefToEntIndex": {
+      "name": "EntRefToEntIndex",
+      "refLine": 688,
+      "docStart": 27469,
+      "docEnd": 27784,
+      "docs": {
+        "brief": "Retrieves the entity index from a reference or validates an entity index.\nThe input ref is checked that it is still valid and refers to the same entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the entity index from a reference or validates an entity index.\nThe input ref is checked that it is still valid and refers to the same entity."
+          },
+          {
+            "tag": "param:ref",
+            "text": "Entity reference or index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index or returns INVALID_ENT_REFERENCE if ref is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ref",
+          "decl": "int ref",
+          "default": null
+        }
+      ]
+    },
+    "IsMapValid": {
+      "name": "IsMapValid",
+      "refLine": 157,
+      "docStart": 7233,
+      "docEnd": 7406,
+      "docs": {
+        "brief": "Returns whether a map is valid or not.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a map is valid or not."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map name, excluding .bsp extension."
+          },
+          {
+            "tag": "return",
+            "text": "True if valid, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        }
+      ]
+    },
+    "IsDedicatedServer": {
+      "name": "IsDedicatedServer",
+      "refLine": 194,
+      "docStart": 9080,
+      "docEnd": 9198,
+      "docs": {
+        "brief": "Returns whether the server is dedicated.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether the server is dedicated."
+          },
+          {
+            "tag": "return",
+            "text": "True if dedicated, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "MakeCompatEntRef": {
+      "name": "MakeCompatEntRef",
+      "refLine": 696,
+      "docStart": 27827,
+      "docEnd": 27988,
+      "docs": {
+        "brief": "Converts a reference into a backwards compatible version.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a reference into a backwards compatible version."
+          },
+          {
+            "tag": "param:ref",
+            "text": "Entity reference."
+          },
+          {
+            "tag": "return",
+            "text": "Bcompat reference."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ref",
+          "decl": "int ref",
+          "default": null
+        }
+      ]
+    },
+    "GetGameTime": {
+      "name": "GetGameTime",
+      "refLine": 208,
+      "docStart": 9403,
+      "docEnd": 9506,
+      "docs": {
+        "brief": "Returns the game time based on the game tick.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the game time based on the game tick."
+          },
+          {
+            "tag": "return",
+            "text": "Game tick time."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": []
+    },
+    "GetServerAuthId": {
+      "name": "GetServerAuthId",
+      "refLine": 727,
+      "docStart": 28635,
+      "docEnd": 29152,
+      "docs": {
+        "brief": "Retrieves the server's authentication string (SteamID).\n\nNote: If called before server is connected to Steam, auth id\nwill be invalid ([I:0:1], 1, etc.)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the server's authentication string (SteamID).\n\nNote: If called before server is connected to Steam, auth id\nwill be invalid ([I:0:1], 1, etc.)"
+          },
+          {
+            "tag": "param:authType",
+            "text": "Auth id type and format to use.\n(Only AuthId_Steam3 and AuthId_SteamID64 are supported)"
+          },
+          {
+            "tag": "param:auth",
+            "text": "Buffer to store the server's auth id."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid AuthIdType given."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AuthIdType",
+          "name": "authType",
+          "decl": "AuthIdType authType",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "auth",
+          "decl": "char[] auth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "GetRandomInt": {
+      "name": "GetRandomInt",
+      "refLine": 149,
+      "docStart": 6937,
+      "docEnd": 7183,
+      "docs": {
+        "brief": "Returns a random number from the Half-Life 2 Random Stream.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a random number from the Half-Life 2 Random Stream."
+          },
+          {
+            "tag": "param:nmin",
+            "text": "Minimum random bound."
+          },
+          {
+            "tag": "param:nmax",
+            "text": "Maximum random bound."
+          },
+          {
+            "tag": "return",
+            "text": "A random number between (inclusive) nmin and nmax."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "nmin",
+          "decl": "int nmin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nmax",
+          "decl": "int nmax",
+          "default": null
+        }
+      ]
+    },
+    "GetClientsInRange": {
+      "name": "GetClientsInRange",
+      "refLine": 713,
+      "docStart": 28112,
+      "docEnd": 28525,
+      "docs": {
+        "brief": "Find clients that are potentially in range of a position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Find clients that are potentially in range of a position."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Coordinates from which to test range."
+          },
+          {
+            "tag": "param:rangeType",
+            "text": "Range type to use for filtering clients."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array to which found client indexes will be written."
+          },
+          {
+            "tag": "param:size",
+            "text": "Maximum size of clients array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of client indexes written to clients array."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": null
+        },
+        {
+          "type": "ClientRangeType",
+          "name": "rangeType",
+          "decl": "ClientRangeType rangeType",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "clients",
+          "decl": "int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "GuessSDKVersion": {
+      "name": "GuessSDKVersion",
+      "refLine": 357,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "SetHudTextParams": {
+      "name": "SetHudTextParams",
+      "refLine": 545,
+      "docStart": 20220,
+      "docEnd": 21415,
+      "docs": {
+        "brief": "Sets the HUD parameters for drawing text.  These parameters are stored\nglobally, although nothing other than this function and SetHudTextParamsEx\nmodify them.\n\nYou must call this function before drawing text.  If you are drawing\ntext to multiple clients, you can set the parameters once, since\nthey won't be modified.  However, as soon as you pass control back\nto other plugins, you must reset the parameters next time you draw.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the HUD parameters for drawing text.  These parameters are stored\nglobally, although nothing other than this function and SetHudTextParamsEx\nmodify them.\n\nYou must call this function before drawing text.  If you are drawing\ntext to multiple clients, you can set the parameters once, since\nthey won't be modified.  However, as soon as you pass control back\nto other plugins, you must reset the parameters next time you draw."
+          },
+          {
+            "tag": "param:x",
+            "text": "x coordinate, from 0 to 1.  -1.0 is the center."
+          },
+          {
+            "tag": "param:y",
+            "text": "y coordinate, from 0 to 1.  -1.0 is the center."
+          },
+          {
+            "tag": "param:holdTime",
+            "text": "Number of seconds to hold the text."
+          },
+          {
+            "tag": "param:r",
+            "text": "Red color value."
+          },
+          {
+            "tag": "param:g",
+            "text": "Green color value."
+          },
+          {
+            "tag": "param:b",
+            "text": "Blue color value."
+          },
+          {
+            "tag": "param:a",
+            "text": "Alpha transparency value."
+          },
+          {
+            "tag": "param:effect",
+            "text": "0/1 causes the text to fade in and fade out.\n2 causes the text to flash[?]."
+          },
+          {
+            "tag": "param:fxTime",
+            "text": "Duration of chosen effect (may not apply to all effects)."
+          },
+          {
+            "tag": "param:fadeIn",
+            "text": "Number of seconds to spend fading in."
+          },
+          {
+            "tag": "param:fadeOut",
+            "text": "Number of seconds to spend fading out."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "x",
+          "decl": "float x",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "y",
+          "decl": "float y",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "holdTime",
+          "decl": "float holdTime",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "r",
+          "decl": "int r",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "g",
+          "decl": "int g",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "b",
+          "decl": "int b",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "a",
+          "decl": "int a",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "effect",
+          "decl": "int effect",
+          "default": "0"
+        },
+        {
+          "type": "float",
+          "name": "fxTime",
+          "decl": "float fxTime",
+          "default": "6.000000"
+        },
+        {
+          "type": "float",
+          "name": "fadeIn",
+          "decl": "float fadeIn",
+          "default": "0.100000"
+        },
+        {
+          "type": "float",
+          "name": "fadeOut",
+          "decl": "float fadeOut",
+          "default": "0.200000"
+        }
+      ]
+    },
+    "PrintCenterTextAll": {
+      "name": "PrintCenterTextAll",
+      "refLine": 420,
+      "docStart": 16327,
+      "docEnd": 16510,
+      "docs": {
+        "brief": "Prints a message to all clients in the center of the screen.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the center of the screen."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ShowMOTDPanel": {
+      "name": "ShowMOTDPanel",
+      "refLine": 634,
+      "docStart": 25232,
+      "docEnd": 25770,
+      "docs": {
+        "brief": "Shows a MOTD panel to a specific client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shows a MOTD panel to a specific client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:title",
+            "text": "Title of the panel (printed on the top border of the window)."
+          },
+          {
+            "tag": "param:msg",
+            "text": "Contents of the panel, it can be treated as an url, filename or plain text\ndepending on the type parameter (WARNING: msg has to be 192 bytes maximum!)"
+          },
+          {
+            "tag": "param:type",
+            "text": "Determines the way to treat the message body of the panel."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "title",
+          "decl": "const char[] title",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "msg",
+          "decl": "const char[] msg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": "1"
+        }
+      ]
+    },
+    "PrintToChatAll": {
+      "name": "PrintToChatAll",
+      "refLine": 385,
+      "docStart": 15404,
+      "docEnd": 15576,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "PrintHintTextToAll": {
+      "name": "PrintHintTextToAll",
+      "refLine": 455,
+      "docStart": 17255,
+      "docEnd": 17426,
+      "docs": {
+        "brief": "Prints a message to all clients with a hint box.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients with a hint box."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ShowHudText": {
+      "name": "ShowHudText",
+      "refLine": 622,
+      "docStart": 24229,
+      "docEnd": 25147,
+      "docs": {
+        "brief": "Shows a HUD message to a client on the given channel.\n\nNote: while many games support HUD Text, not all do.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shows a HUD message to a client on the given channel.\n\nNote: while many games support HUD Text, not all do."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to send the message to."
+          },
+          {
+            "tag": "param:channel",
+            "text": "A channel number.\nIf -1, then a channel will automatically be selected\nbased on the least-recently-used channel.  If the\nchannel is any other number, it will be modulo'd with\nthe channel count to get a final channel number."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message text or formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message formatting parameters."
+          },
+          {
+            "tag": "return",
+            "text": "-1 on failure (lack of mod support).\nAny other return value is the channel number that was\nused to render the text."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CreateDialog": {
+      "name": "CreateDialog",
+      "refLine": 344,
+      "docStart": 13581,
+      "docEnd": 14194,
+      "docs": {
+        "brief": "Creates different types of ingame messages.\n\nNote: On many newer games (Left 4 Dead/2008+), the display of this to clients is broken.\nAdditionally, as of 2018, some games also require the client to have cl_showpluginmessages\nset to 1, a non-default value, for this to function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates different types of ingame messages.\n\nNote: On many newer games (Left 4 Dead/2008+), the display of this to clients is broken.\nAdditionally, as of 2018, some games also require the client to have cl_showpluginmessages\nset to 1, a non-default value, for this to function."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues handle to set the menu keys and options. (Check iserverplugin.h for more information)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Message type to display ingame."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "DialogType",
+          "name": "type",
+          "decl": "DialogType type",
+          "default": null
+        }
+      ]
+    },
+    "PrecacheModel": {
+      "name": "PrecacheModel",
+      "refLine": 260,
+      "docStart": 10890,
+      "docEnd": 11143,
+      "docs": {
+        "brief": "Precaches a given model.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precaches a given model."
+          },
+          {
+            "tag": "param:model",
+            "text": "Name of the model to precache."
+          },
+          {
+            "tag": "param:preload",
+            "text": "If preload is true the file will be precached before level startup."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the model index, 0 for error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "model",
+          "decl": "const char[] model",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "preload",
+          "decl": "bool preload",
+          "default": "false"
+        }
+      ]
+    },
+    "PrintHintText": {
+      "name": "PrintHintText",
+      "refLine": 447,
+      "docStart": 16895,
+      "docEnd": 17181,
+      "docs": {
+        "brief": "Prints a message to a specific client with a hint box.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client with a hint box."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "PrecacheGeneric": {
+      "name": "PrecacheGeneric",
+      "refLine": 287,
+      "docStart": 11862,
+      "docEnd": 12121,
+      "docs": {
+        "brief": "Precaches a given generic file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precaches a given generic file."
+          },
+          {
+            "tag": "param:generic",
+            "text": "Name of the generic file to precache."
+          },
+          {
+            "tag": "param:preload",
+            "text": "If preload is true the file will be precached before level startup."
+          },
+          {
+            "tag": "return",
+            "text": "Returns a generic file index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "generic",
+          "decl": "const char[] generic",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "preload",
+          "decl": "bool preload",
+          "default": "false"
+        }
+      ]
+    },
+    "EntIndexToEntRef": {
+      "name": "EntIndexToEntRef",
+      "refLine": 679,
+      "docStart": 27171,
+      "docEnd": 27423,
+      "docs": {
+        "brief": "Converts an entity index into a serial encoded entity reference.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an entity index into a serial encoded entity reference."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity reference or -1 on invalid entity."
+          },
+          {
+            "tag": "error",
+            "text": "Entity index >= GetMaxEntities() or < 0"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "IsModelPrecached": {
+      "name": "IsModelPrecached",
+      "refLine": 295,
+      "docStart": 12196,
+      "docEnd": 12365,
+      "docs": {
+        "brief": "Returns if a given model is precached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a given model is precached."
+          },
+          {
+            "tag": "param:model",
+            "text": "Name of the model to check."
+          },
+          {
+            "tag": "return",
+            "text": "True if precached, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "model",
+          "decl": "const char[] model",
+          "default": null
+        }
+      ]
+    },
+    "GetMapDisplayName": {
+      "name": "GetMapDisplayName",
+      "refLine": 187,
+      "docStart": 8085,
+      "docEnd": 8994,
+      "docs": {
+        "brief": "Get the display name of a workshop map.\n\nNote: You do not need to call FindMap first.  This native will call FindMap internally.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the display name of a workshop map.\n\nNote: You do not need to call FindMap first.  This native will call FindMap internally."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map name (usually same as map path relative to maps/ dir,\nexcluding .bsp extension)."
+          },
+          {
+            "tag": "param:displayName",
+            "text": "Map's display name, i.e. cp_mymapname or de_mymapname.\nIf FindMap returns FindMap_PossiblyAvailable or FindMap_NotFound,\nthe map cannot be resolved and this native will return false,\nbut displayName will be a copy of map."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length to write to displayName var."
+          },
+          {
+            "tag": "return",
+            "text": "true if FindMap returns FindMap_Found, FindMap_FuzzyMatch, or\nFindMap_NonCanonical.\nfalse if FindMap returns FindMap_PossiblyAvailable or FindMap_NotFound."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "displayName",
+          "decl": "char[] displayName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "GetRandomFloat": {
+      "name": "GetRandomFloat",
+      "refLine": 140,
+      "docStart": 6610,
+      "docEnd": 6871,
+      "docs": {
+        "brief": "Returns a random floating point number from the Half-Life 2 Random Stream.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a random floating point number from the Half-Life 2 Random Stream."
+          },
+          {
+            "tag": "param:fMin",
+            "text": "Minimum random bound."
+          },
+          {
+            "tag": "param:fMax",
+            "text": "Maximum random bound."
+          },
+          {
+            "tag": "return",
+            "text": "A random number between (inclusive) fMin and fMax."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "fMin",
+          "decl": "float fMin",
+          "default": "0.000000"
+        },
+        {
+          "type": "float",
+          "name": "fMax",
+          "decl": "float fMax",
+          "default": "1.000000"
+        }
+      ]
+    },
+    "GetCurrentMap": {
+      "name": "GetCurrentMap",
+      "refLine": 251,
+      "docStart": 10618,
+      "docEnd": 10829,
+      "docs": {
+        "brief": "Returns the current map name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the current map name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store map name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written (UTF-8 safe)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "IsDecalPrecached": {
+      "name": "IsDecalPrecached",
+      "refLine": 303,
+      "docStart": 12420,
+      "docEnd": 12589,
+      "docs": {
+        "brief": "Returns if a given decal is precached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a given decal is precached."
+          },
+          {
+            "tag": "param:decal",
+            "text": "Name of the decal to check."
+          },
+          {
+            "tag": "return",
+            "text": "True if precached, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "decal",
+          "decl": "const char[] decal",
+          "default": null
+        }
+      ]
+    },
+    "GetGameDescription": {
+      "name": "GetGameDescription",
+      "refLine": 233,
+      "docStart": 9827,
+      "docEnd": 10217,
+      "docs": {
+        "brief": "Returns the game description from the mod.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the game description from the mod."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the description."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "param:original",
+            "text": "If true, retrieves the original game description,\nignoring any potential hooks from plugins."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (UTF-8 safe)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "original",
+          "decl": "bool original",
+          "default": "false"
+        }
+      ]
+    },
+    "PrintCenterText": {
+      "name": "PrintCenterText",
+      "refLine": 412,
+      "docStart": 15953,
+      "docEnd": 16251,
+      "docs": {
+        "brief": "Prints a message to a specific client in the center of the screen.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the center of the screen."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "DisplayAskConnectBox": {
+      "name": "DisplayAskConnectBox",
+      "refLine": 660,
+      "docStart": 26122,
+      "docEnd": 26792,
+      "docs": {
+        "brief": "Displays a panel asking the client to connect to a specified IP.\n\nNote: On many newer games (Left 4 Dead/2008+), the display of this to clients is broken.\nAdditionally, as of 2018, some games also require the client to have cl_showpluginmessages\nset to 1, a non-default value, for this to function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays a panel asking the client to connect to a specified IP.\n\nNote: On many newer games (Left 4 Dead/2008+), the display of this to clients is broken.\nAdditionally, as of 2018, some games also require the client to have cl_showpluginmessages\nset to 1, a non-default value, for this to function."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:time",
+            "text": "Duration to hold the panel on the client's screen."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Destination IP."
+          },
+          {
+            "tag": "param:password",
+            "text": "Password to connect to the destination IP. The client will be able to see this."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "time",
+          "decl": "float time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "password",
+          "decl": "const char[] password",
+          "default": "\"\""
+        }
+      ]
+    },
+    "GetGameTickCount": {
+      "name": "GetGameTickCount",
+      "refLine": 215,
+      "docStart": 9539,
+      "docEnd": 9637,
+      "docs": {
+        "brief": "Returns the game's internal tick count.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the game's internal tick count."
+          },
+          {
+            "tag": "return",
+            "text": "Game tick count."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "PrecacheSentenceFile": {
+      "name": "PrecacheSentenceFile",
+      "refLine": 269,
+      "docStart": 11214,
+      "docEnd": 11476,
+      "docs": {
+        "brief": "Precaches a given sentence file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precaches a given sentence file."
+          },
+          {
+            "tag": "param:file",
+            "text": "Name of the sentence file to precache."
+          },
+          {
+            "tag": "param:preload",
+            "text": "If preload is true the file will be precached before level startup."
+          },
+          {
+            "tag": "return",
+            "text": "Returns a sentence file index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "preload",
+          "decl": "bool preload",
+          "default": "false"
+        }
+      ]
+    },
+    "IsGenericPrecached": {
+      "name": "IsGenericPrecached",
+      "refLine": 311,
+      "docStart": 12644,
+      "docEnd": 12827,
+      "docs": {
+        "brief": "Returns if a given generic file is precached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a given generic file is precached."
+          },
+          {
+            "tag": "param:generic",
+            "text": "Name of the generic file to check."
+          },
+          {
+            "tag": "return",
+            "text": "True if precached, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "generic",
+          "decl": "const char[] generic",
+          "default": null
+        }
+      ]
+    },
+    "ShowVGUIPanel": {
+      "name": "ShowVGUIPanel",
+      "refLine": 485,
+      "docStart": 17809,
+      "docEnd": 18354,
+      "docs": {
+        "brief": "Shows a VGUI panel to a specific client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shows a VGUI panel to a specific client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:name",
+            "text": "Panel type name (Check viewport_panel_names.h to see a list of\nsome panel names)."
+          },
+          {
+            "tag": "param:Kv",
+            "text": "KeyValues handle with all the data for the panel setup (Depends\non the panel type and may be unused)."
+          },
+          {
+            "tag": "param:show",
+            "text": "True to show the panel, or false to remove it from the client screen."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "Kv",
+          "decl": "Handle Kv",
+          "default": "INVALID_HANDLE"
+        },
+        {
+          "type": "bool",
+          "name": "show",
+          "decl": "bool show",
+          "default": "true"
+        }
+      ]
+    },
+    "GetGameFrameTime": {
+      "name": "GetGameFrameTime",
+      "refLine": 222,
+      "docStart": 9673,
+      "docEnd": 9789,
+      "docs": {
+        "brief": "Returns the time the Game took processing the last frame.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the time the Game took processing the last frame."
+          },
+          {
+            "tag": "return",
+            "text": "Game frame time."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": []
+    },
+    "GetServerSteamAccountId": {
+      "name": "GetServerSteamAccountId",
+      "refLine": 734,
+      "docStart": 29232,
+      "docEnd": 29352,
+      "docs": {
+        "brief": "Returns the server's Steam account ID.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the server's Steam account ID."
+          },
+          {
+            "tag": "return",
+            "text": "Steam account ID or 0 if not available."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "LogToGame": {
+      "name": "LogToGame",
+      "refLine": 124,
+      "docStart": 6257,
+      "docEnd": 6396,
+      "docs": {
+        "brief": "Logs a generic message to the HL2 logs.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs a generic message to the HL2 logs."
+          },
+          {
+            "tag": "param:format",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "IsSoundPrecached": {
+      "name": "IsSoundPrecached",
+      "refLine": 330,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sound",
+          "decl": "const char[] sound",
+          "default": null
+        }
+      ]
+    },
+    "GetEngineVersion": {
+      "name": "GetEngineVersion",
+      "refLine": 367,
+      "docStart": 14721,
+      "docEnd": 14999,
+      "docs": {
+        "brief": "Gets the engine version that the currently-loaded SM core was compiled against.\n\nThe engine version values are not guaranteed to be in any particular order,\nand should only be compared by (in)equality.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the engine version that the currently-loaded SM core was compiled against.\n\nThe engine version values are not guaranteed to be in any particular order,\nand should only be compared by (in)equality."
+          },
+          {
+            "tag": "return",
+            "text": "An EngineVersion value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "EngineVersion",
+      "arguments": []
+    },
+    "PrecacheDecal": {
+      "name": "PrecacheDecal",
+      "refLine": 278,
+      "docStart": 11553,
+      "docEnd": 11791,
+      "docs": {
+        "brief": "Precaches a given decal.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precaches a given decal."
+          },
+          {
+            "tag": "param:decal",
+            "text": "Name of the decal to precache."
+          },
+          {
+            "tag": "param:preload",
+            "text": "If preload is true the file will be precached before level startup."
+          },
+          {
+            "tag": "return",
+            "text": "Returns a decal index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "decal",
+          "decl": "const char[] decal",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "preload",
+          "decl": "bool preload",
+          "default": "false"
+        }
+      ]
+    },
+    "GetGameFolderName": {
+      "name": "GetGameFolderName",
+      "refLine": 242,
+      "docStart": 10304,
+      "docEnd": 10553,
+      "docs": {
+        "brief": "Returns the name of the game's directory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the name of the game's directory."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the directory name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (UTF-8 safe)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SOURCE_SDK_ORIGINAL": {
+      "name": "SOURCE_SDK_ORIGINAL",
+      "refLine": 39,
+      "docStart": 1777,
+      "docEnd": 1834,
+      "docs": {
+        "brief": "Original Source engine (still used by \"The Ship\")",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Original Source engine (still used by \"The Ship\")"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "10"
+    },
+    "SOURCE_SDK_CSS": {
+      "name": "SOURCE_SDK_CSS",
+      "refLine": 45,
+      "docStart": 2431,
+      "docEnd": 2520,
+      "docs": {
+        "brief": "Sometime-older version of Source 2009 SDK+Engine, used for Counter-Strike: Source",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sometime-older version of Source 2009 SDK+Engine, used for Counter-Strike: Source"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "34"
+    },
+    "SOURCE_SDK_EPISODE2": {
+      "name": "SOURCE_SDK_EPISODE2",
+      "refLine": 42,
+      "docStart": 2088,
+      "docEnd": 2142,
+      "docs": {
+        "brief": "SDK+Engine released after Episode 2/Orange Box",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SDK+Engine released after Episode 2/Orange Box"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "30"
+    },
+    "MOTDPANEL_TYPE_FILE": {
+      "name": "MOTDPANEL_TYPE_FILE",
+      "refLine": 56,
+      "docStart": 3421,
+      "docEnd": 3465,
+      "docs": {
+        "brief": "Treat msg as a filename to be opened",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Treat msg as a filename to be opened"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "3"
+    },
+    "SOURCE_SDK_BLOODYGOODTIME": {
+      "name": "SOURCE_SDK_BLOODYGOODTIME",
+      "refLine": 43,
+      "docStart": 2188,
+      "docEnd": 2260,
+      "docs": {
+        "brief": "Modified version of ep2 engine used by Bloody Good Time (no SDK)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Modified version of ep2 engine used by Bloody Good Time (no SDK)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "32"
+    },
+    "SOURCE_SDK_DOTA": {
+      "name": "SOURCE_SDK_DOTA",
+      "refLine": 51,
+      "docStart": 3083,
+      "docEnd": 3128,
+      "docs": {
+        "brief": "Engine released after Dota 2 (no SDK)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Engine released after Dota 2 (no SDK)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "90"
+    },
+    "SOURCE_SDK_DARKMESSIAH": {
+      "name": "SOURCE_SDK_DARKMESSIAH",
+      "refLine": 40,
+      "docStart": 1880,
+      "docEnd": 1953,
+      "docs": {
+        "brief": "Modified version of original engine used by Dark Messiah (no SDK)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Modified version of original engine used by Dark Messiah (no SDK)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "15"
+    },
+    "SOURCE_SDK_CSGO": {
+      "name": "SOURCE_SDK_CSGO",
+      "refLine": 50,
+      "docStart": 2989,
+      "docEnd": 3037,
+      "docs": {
+        "brief": "Engine released after CS:GO (no SDK yet)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Engine released after CS:GO (no SDK yet)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "80"
+    },
+    "MOTDPANEL_TYPE_TEXT": {
+      "name": "MOTDPANEL_TYPE_TEXT",
+      "refLine": 53,
+      "docStart": 3176,
+      "docEnd": 3207,
+      "docs": {
+        "brief": "Treat msg as plain text",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Treat msg as plain text"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "SOURCE_SDK_UNKNOWN": {
+      "name": "SOURCE_SDK_UNKNOWN",
+      "refLine": 38,
+      "docStart": 1685,
+      "docEnd": 1731,
+      "docs": {
+        "brief": "Could not determine the engine version",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Could not determine the engine version"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "SOURCE_SDK_LEFT4DEAD2": {
+      "name": "SOURCE_SDK_LEFT4DEAD2",
+      "refLine": 48,
+      "docStart": 2796,
+      "docEnd": 2852,
+      "docs": {
+        "brief": "Engine released after Left 4 Dead 2 (no SDK yet)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Engine released after Left 4 Dead 2 (no SDK yet)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "50"
+    },
+    "MOTDPANEL_TYPE_INDEX": {
+      "name": "MOTDPANEL_TYPE_INDEX",
+      "refLine": 54,
+      "docStart": 3253,
+      "docEnd": 3297,
+      "docs": {
+        "brief": "Msg is auto determined by the engine",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Msg is auto determined by the engine"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "MOTDPANEL_TYPE_URL": {
+      "name": "MOTDPANEL_TYPE_URL",
+      "refLine": 55,
+      "docStart": 3343,
+      "docEnd": 3375,
+      "docs": {
+        "brief": "Treat msg as an URL link",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Treat msg as an URL link"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "_halflife_included": {
+      "name": "_halflife_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SOURCE_SDK_EYE": {
+      "name": "SOURCE_SDK_EYE",
+      "refLine": 44,
+      "docStart": 2306,
+      "docEnd": 2385,
+      "docs": {
+        "brief": "Modified version of ep2 engine used by E.Y.E Divine Cybermancy (no SDK)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Modified version of ep2 engine used by E.Y.E Divine Cybermancy (no SDK)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "33"
+    },
+    "SOURCE_SDK_EPISODE2VALVE": {
+      "name": "SOURCE_SDK_EPISODE2VALVE",
+      "refLine": 46,
+      "docStart": 2566,
+      "docEnd": 2650,
+      "docs": {
+        "brief": "SDK+Engine released after Episode 2/Orange Box, \"Source 2009\" or \"Source MP\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SDK+Engine released after Episode 2/Orange Box, \"Source 2009\" or \"Source MP\""
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "35"
+    },
+    "SOURCE_SDK_LEFT4DEAD": {
+      "name": "SOURCE_SDK_LEFT4DEAD",
+      "refLine": 47,
+      "docStart": 2696,
+      "docEnd": 2750,
+      "docs": {
+        "brief": "Engine released after Left 4 Dead (no SDK yet)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Engine released after Left 4 Dead (no SDK yet)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "40"
+    },
+    "INVALID_ENT_REFERENCE": {
+      "name": "INVALID_ENT_REFERENCE",
+      "refLine": 116,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0xFFFFFFFF"
+    },
+    "SOURCE_SDK_ALIENSWARM": {
+      "name": "SOURCE_SDK_ALIENSWARM",
+      "refLine": 49,
+      "docStart": 2898,
+      "docEnd": 2943,
+      "docs": {
+        "brief": "SDK+Engine released after Alien Swarm",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SDK+Engine released after Alien Swarm"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "60"
+    },
+    "SOURCE_SDK_EPISODE1": {
+      "name": "SOURCE_SDK_EPISODE1",
+      "refLine": 41,
+      "docStart": 1999,
+      "docEnd": 2042,
+      "docs": {
+        "brief": "SDK+Engine released after Episode 1",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SDK+Engine released after Episode 1"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "20"
+    }
+  },
+  "enums": {
+    "EngineVersion": {
+      "name": "EngineVersion",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Engine_Left4Dead": {
+          "name": "Engine_Left4Dead",
+          "refLine": 73,
+          "docStart": 4153,
+          "docEnd": 4172,
+          "docs": {
+            "brief": "Left 4 Dead",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Left 4 Dead"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_SourceSDK2007": {
+          "name": "Engine_SourceSDK2007",
+          "refLine": 72,
+          "docStart": 4072,
+          "docEnd": 4122,
+          "docs": {
+            "brief": "Orange Box Source Engine (third major SDK)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Orange Box Source Engine (third major SDK)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_DarkMessiah": {
+          "name": "Engine_DarkMessiah",
+          "refLine": 74,
+          "docStart": 4203,
+          "docEnd": 4262,
+          "docs": {
+            "brief": "Dark Messiah Multiplayer (based on original engine)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Dark Messiah Multiplayer (based on original engine)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Blade": {
+          "name": "Engine_Blade",
+          "refLine": 88,
+          "docStart": 5038,
+          "docEnd": 5060,
+          "docs": {
+            "brief": "Blade Symphony",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Blade Symphony"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Left4Dead2": {
+          "name": "Engine_Left4Dead2",
+          "refLine": 75,
+          "docStart": 4293,
+          "docEnd": 4314,
+          "docs": {
+            "brief": "Left 4 Dead 2",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Left 4 Dead 2"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "7"
+        },
+        "Engine_DOI": {
+          "name": "Engine_DOI",
+          "refLine": 92,
+          "docStart": 5270,
+          "docEnd": 5291,
+          "docs": {
+            "brief": "Day of Infamy",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Day of Infamy"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_MCV": {
+          "name": "Engine_MCV",
+          "refLine": 94,
+          "docStart": 5393,
+          "docEnd": 5427,
+          "docs": {
+            "brief": "Military Conflict: Vietnam",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Military Conflict: Vietnam"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_BlackMesa": {
+          "name": "Engine_BlackMesa",
+          "refLine": 91,
+          "docStart": 5209,
+          "docEnd": 5239,
+          "docs": {
+            "brief": "Black Mesa Multiplayer",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Black Mesa Multiplayer"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_SourceSDK2006": {
+          "name": "Engine_SourceSDK2006",
+          "refLine": 71,
+          "docStart": 3991,
+          "docEnd": 4041,
+          "docs": {
+            "brief": "Episode 1 Source Engine (second major SDK)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Episode 1 Source Engine (second major SDK)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Insurgency": {
+          "name": "Engine_Insurgency",
+          "refLine": 89,
+          "docStart": 5091,
+          "docEnd": 5130,
+          "docs": {
+            "brief": "Insurgency (2013 Retail version)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Insurgency (2013 Retail version)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Original": {
+          "name": "Engine_Original",
+          "refLine": 70,
+          "docStart": 3911,
+          "docEnd": 3960,
+          "docs": {
+            "brief": "Original Source Engine (used by The Ship)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Original Source Engine (used by The Ship)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_AlienSwarm": {
+          "name": "Engine_AlienSwarm",
+          "refLine": 76,
+          "docStart": 4345,
+          "docEnd": 4386,
+          "docs": {
+            "brief": "Alien Swarm (and Alien Swarm SDK)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Alien Swarm (and Alien Swarm SDK)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_SDK2013": {
+          "name": "Engine_SDK2013",
+          "refLine": 87,
+          "docStart": 4984,
+          "docEnd": 5007,
+          "docs": {
+            "brief": "Source SDK 2013",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Source SDK 2013"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_TF2": {
+          "name": "Engine_TF2",
+          "refLine": 85,
+          "docStart": 4879,
+          "docEnd": 4902,
+          "docs": {
+            "brief": "Team Fortress 2",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Team Fortress 2"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_EYE": {
+          "name": "Engine_EYE",
+          "refLine": 78,
+          "docStart": 4472,
+          "docEnd": 4503,
+          "docs": {
+            "brief": "E.Y.E Divine Cybermancy",
+            "tags": [
+              {
+                "tag": "",
+                "text": "E.Y.E Divine Cybermancy"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_PVKII": {
+          "name": "Engine_PVKII",
+          "refLine": 93,
+          "docStart": 5322,
+          "docEnd": 5362,
+          "docs": {
+            "brief": "Pirates, Vikings, and Knights II",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pirates, Vikings, and Knights II"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "26"
+        },
+        "Engine_DOTA": {
+          "name": "Engine_DOTA",
+          "refLine": 82,
+          "docStart": 4713,
+          "docEnd": 4727,
+          "docs": {
+            "brief": "Dota 2",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Dota 2"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_HL2DM": {
+          "name": "Engine_HL2DM",
+          "refLine": 83,
+          "docStart": 4758,
+          "docEnd": 4788,
+          "docs": {
+            "brief": "Half-Life 2 Deathmatch",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Half-Life 2 Deathmatch"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Unknown": {
+          "name": "Engine_Unknown",
+          "refLine": 69,
+          "docStart": 3834,
+          "docEnd": 3880,
+          "docs": {
+            "brief": "Could not determine the engine version",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Could not determine the engine version"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_CSS": {
+          "name": "Engine_CSS",
+          "refLine": 81,
+          "docStart": 4652,
+          "docEnd": 4682,
+          "docs": {
+            "brief": "Counter-Strike: Source",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Counter-Strike: Source"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_BloodyGoodTime": {
+          "name": "Engine_BloodyGoodTime",
+          "refLine": 77,
+          "docStart": 4417,
+          "docEnd": 4441,
+          "docs": {
+            "brief": "Bloody Good Time",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Bloody Good Time"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_DODS": {
+          "name": "Engine_DODS",
+          "refLine": 84,
+          "docStart": 4819,
+          "docEnd": 4848,
+          "docs": {
+            "brief": "Day of Defeat: Source",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Day of Defeat: Source"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_NuclearDawn": {
+          "name": "Engine_NuclearDawn",
+          "refLine": 86,
+          "docStart": 4933,
+          "docEnd": 4953,
+          "docs": {
+            "brief": "Nuclear Dawn",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Nuclear Dawn"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Portal2": {
+          "name": "Engine_Portal2",
+          "refLine": 79,
+          "docStart": 4534,
+          "docEnd": 4550,
+          "docs": {
+            "brief": "Portal 2",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Portal 2"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_Contagion": {
+          "name": "Engine_Contagion",
+          "refLine": 90,
+          "docStart": 5161,
+          "docEnd": 5178,
+          "docs": {
+            "brief": "Contagion",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Contagion"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Engine_CSGO": {
+          "name": "Engine_CSGO",
+          "refLine": 80,
+          "docStart": 4581,
+          "docEnd": 4621,
+          "docs": {
+            "brief": "Counter-Strike: Global Offensive",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Counter-Strike: Global Offensive"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "FindMapResult": {
+      "name": "FindMapResult",
+      "refLine": 97,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "FindMap_Found": {
+          "name": "FindMap_Found",
+          "refLine": 100,
+          "docStart": 5459,
+          "docEnd": 5500,
+          "docs": {
+            "brief": "A direct match for this name was found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A direct match for this name was found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FindMap_FuzzyMatch": {
+          "name": "FindMap_FuzzyMatch",
+          "refLine": 106,
+          "docStart": 5588,
+          "docEnd": 5787,
+          "docs": {
+            "brief": "A fuzzy match for this map name was found.\nEx: cp_dust -> cp_dustbowl, c1m1 -> c1m1_hotel\nOnly supported for maps that the engine knows about. (This excludes workshop maps on Orangebox).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A fuzzy match for this map name was found.\nEx: cp_dust -> cp_dustbowl, c1m1 -> c1m1_hotel\nOnly supported for maps that the engine knows about. (This excludes workshop maps on Orangebox)."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FindMap_NotFound": {
+          "name": "FindMap_NotFound",
+          "refLine": 102,
+          "docStart": 5520,
+          "docEnd": 5565,
+          "docs": {
+            "brief": "No match for this map name could be found.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No match for this map name could be found."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FindMap_PossiblyAvailable": {
+          "name": "FindMap_PossiblyAvailable",
+          "refLine": 113,
+          "docStart": 6017,
+          "docEnd": 6177,
+          "docs": {
+            "brief": "No currently available match for this map name could be found, but it may be possible to load\nOnly supported on \"Orangebox\" games with workshop support.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No currently available match for this map name could be found, but it may be possible to load\nOnly supported on \"Orangebox\" games with workshop support."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "FindMap_NonCanonical": {
+          "name": "FindMap_NonCanonical",
+          "refLine": 110,
+          "docStart": 5812,
+          "docEnd": 5990,
+          "docs": {
+            "brief": "A non-canonical match for this map name was found.\nEx: workshop/1234 -> workshop/cp_qualified_name.ugc1234\nOnly supported on \"Orangebox\" games with workshop support.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A non-canonical match for this map name was found.\nEx: workshop/1234 -> workshop/cp_qualified_name.ugc1234\nOnly supported on \"Orangebox\" games with workshop support."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "DialogType": {
+      "name": "DialogType",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "DialogType_AskConnect": {
+          "name": "DialogType_AskConnect",
+          "refLine": 64,
+          "docStart": 3723,
+          "docEnd": 3774,
+          "docs": {
+            "brief": "ask the client to connect to a specified IP",
+            "tags": [
+              {
+                "tag": "",
+                "text": "ask the client to connect to a specified IP"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DialogType_Menu": {
+          "name": "DialogType_Menu",
+          "refLine": 61,
+          "docStart": 3574,
+          "docEnd": 3597,
+          "docs": {
+            "brief": "an options menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an options menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DialogType_Msg": {
+          "name": "DialogType_Msg",
+          "refLine": 60,
+          "docStart": 3514,
+          "docEnd": 3547,
+          "docs": {
+            "brief": "just an on screen message",
+            "tags": [
+              {
+                "tag": "",
+                "text": "just an on screen message"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "DialogType_Text": {
+          "name": "DialogType_Text",
+          "refLine": 62,
+          "docStart": 3624,
+          "docEnd": 3649,
+          "docs": {
+            "brief": "a richtext dialog",
+            "tags": [
+              {
+                "tag": "",
+                "text": "a richtext dialog"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DialogType_Entry": {
+          "name": "DialogType_Entry",
+          "refLine": 63,
+          "docStart": 3676,
+          "docEnd": 3696,
+          "docs": {
+            "brief": "an entry box",
+            "tags": [
+              {
+                "tag": "",
+                "text": "an entry box"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "ClientRangeType": {
+      "name": "ClientRangeType",
+      "refLine": 698,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "RangeType_Visibility": {
+          "name": "RangeType_Visibility",
+          "refLine": 700,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "RangeType_Audibility": {
+          "name": "RangeType_Audibility",
+          "refLine": 701,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

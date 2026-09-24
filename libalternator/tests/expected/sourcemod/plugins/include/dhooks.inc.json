@@ -1,0 +1,5056 @@
+{
+  "functions": {
+    "DHookGetReturnString": {
+      "name": "DHookGetReturnString",
+      "refLine": 891,
+      "docStart": 36714,
+      "docEnd": 37016,
+      "docs": {
+        "brief": "Get return string value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get return string value"
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer to store result in. (In pre hooks will be default value \"\")"
+          },
+          {
+            "tag": "param:size",
+            "text": "String buffer size"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "DHookCreateDetour": {
+      "name": "DHookCreateDetour",
+      "refLine": 666,
+      "docStart": 26047,
+      "docEnd": 26600,
+      "docs": {
+        "brief": "Creates a detour",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a detour"
+          },
+          {
+            "tag": "param:funcaddr",
+            "text": "The address of the function to detour.\nCan be Address_Null if you want to load the address from gamedata using DHookSetFromConf."
+          },
+          {
+            "tag": "param:callConv",
+            "text": "Calling convention of the function."
+          },
+          {
+            "tag": "param:returnType",
+            "text": "Type of the return value."
+          },
+          {
+            "tag": "param:thisType",
+            "text": "Type of this pointer or ignore (ignore can be used if not needed)"
+          },
+          {
+            "tag": "return",
+            "text": "Setup handle for the detour."
+          },
+          {
+            "tag": "error",
+            "text": "Failed to create detour setup handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DynamicDetour",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "funcaddr",
+          "decl": "Address funcaddr",
+          "default": null
+        },
+        {
+          "type": "CallingConvention",
+          "name": "callConv",
+          "decl": "CallingConvention callConv",
+          "default": null
+        },
+        {
+          "type": "ReturnType",
+          "name": "returntype",
+          "decl": "ReturnType returntype",
+          "default": null
+        },
+        {
+          "type": "ThisPointerType",
+          "name": "thisType",
+          "decl": "ThisPointerType thisType",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetParam": {
+      "name": "DHookGetParam",
+      "refLine": 797,
+      "docStart": 32805,
+      "docEnd": 33338,
+      "docs": {
+        "brief": "Get param value (Use only for: int, entity, edict, bool or float param types)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get param value (Use only for: int, entity, edict, bool or float param types)"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get. (Example if the function has 2 params and you need the value of the first\nparam num would be 1. 0 Will return the number of params stored)"
+          },
+          {
+            "tag": "return",
+            "text": "value if num greater than 0. If 0 returns paramcount."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "DHookCreateFromConf": {
+      "name": "DHookCreateFromConf",
+      "refLine": 678,
+      "docStart": 26737,
+      "docEnd": 27263,
+      "docs": {
+        "brief": "Setup a detour or hook for a function as described in a \"Functions\" section in gamedata.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Setup a detour or hook for a function as described in a \"Functions\" section in gamedata."
+          },
+          {
+            "tag": "param:gameconf",
+            "text": "GameConfig handle"
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the function in the gamedata to load."
+          },
+          {
+            "tag": "return",
+            "text": "Setup handle for the detour or INVALID_HANDLE if offset/signature/address wasn't found."
+          },
+          {
+            "tag": "error",
+            "text": "Failed to create detour setup handle, invalid gamedata handle, invalid callback function or\nfailed to find function in gamedata."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DHookSetup",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "gameconf",
+          "decl": "Handle gameconf",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "__ext_dhooks_SetNTVOptional": {
+      "name": "__ext_dhooks_SetNTVOptional",
+      "refLine": 1033,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "DHookGetParamObjectPtrVar": {
+      "name": "DHookGetParamObjectPtrVar",
+      "refLine": 938,
+      "docStart": 38127,
+      "docEnd": 38625,
+      "docs": {
+        "brief": "Gets an objects variable value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an objects variable value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get, 0 for param \"this\"."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset within the object to the var to get."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of var it is"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type. Invalid Object type."
+          },
+          {
+            "tag": "return",
+            "text": "Value of the objects var. If EHANDLE type or entity returns entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "ObjectValueType",
+          "name": "type",
+          "decl": "ObjectValueType type",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetReturn": {
+      "name": "DHookSetReturn",
+      "refLine": 903,
+      "docStart": 37093,
+      "docEnd": 37427,
+      "docs": {
+        "brief": "Set return value (Use only for: int, entity, bool or float return types)\n\nAn entity return type can be set to NULL using INVALID_ENT_REFERENCE (-1).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set return value (Use only for: int, entity, bool or float return types)\n\nAn entity return type can be set to NULL using INVALID_ENT_REFERENCE (-1)."
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set return as"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "DHookGamerules": {
+      "name": "DHookGamerules",
+      "refLine": 760,
+      "docStart": 30690,
+      "docEnd": 31480,
+      "docs": {
+        "brief": "Hook gamerules",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hook gamerules"
+          },
+          {
+            "tag": "param:setup",
+            "text": "Setup handle to use to add the hook."
+          },
+          {
+            "tag": "param:post",
+            "text": "true to make the hook a post hook. (If you need to change the return value or need the return\nvalue use a post hook! If you need to change params and return use a pre and post hook!)"
+          },
+          {
+            "tag": "param:removalcb",
+            "text": "Callback for when the hook is removed (Game rules hooks are auto-removed on map end and will\ncall this callback)"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Optional callback function, if not set here must be set when creating the hook."
+          },
+          {
+            "tag": "return",
+            "text": "INVALID_HOOK_ID on fail a hookid on success"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "post",
+          "decl": "bool post",
+          "default": null
+        },
+        {
+          "type": "DHookRemovalCB",
+          "name": "removalcb",
+          "decl": "DHookRemovalCB removalcb",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "DHookGetReturnVector": {
+      "name": "DHookGetReturnVector",
+      "refLine": 880,
+      "docStart": 36382,
+      "docEnd": 36648,
+      "docs": {
+        "brief": "Get return vector value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get return vector value"
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector buffer to store result in. (In pre hooks will be default value (0.0,0.0,0.0))"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookRemoveEntityListener": {
+      "name": "DHookRemoveEntityListener",
+      "refLine": 638,
+      "docStart": 25051,
+      "docEnd": 25284,
+      "docs": {
+        "brief": "Removes an entity listener hook",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an entity listener hook"
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of listener to remove"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback this listener was using"
+          },
+          {
+            "tag": "return",
+            "text": "true if one was removed, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "ListenType",
+          "name": "type",
+          "decl": "ListenType type",
+          "default": null
+        },
+        {
+          "type": "ListenCB",
+          "name": "callback",
+          "decl": "ListenCB callback",
+          "default": null
+        }
+      ]
+    },
+    "DHookEntity": {
+      "name": "DHookEntity",
+      "refLine": 745,
+      "docStart": 29698,
+      "docEnd": 30543,
+      "docs": {
+        "brief": "Hook entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hook entity"
+          },
+          {
+            "tag": "param:setup",
+            "text": "Setup handle to use to add the hook."
+          },
+          {
+            "tag": "param:post",
+            "text": "true to make the hook a post hook. (If you need to change the return value or need the return\nvalue use a post hook! If you need to change params and return use a pre and post hook!)"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index to hook on."
+          },
+          {
+            "tag": "param:removalcb",
+            "text": "Callback for when the hook is removed (Entity hooks are auto-removed on entity destroyed and\nwill call this callback)"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Optional callback function, if not set here must be set when creating the hook."
+          },
+          {
+            "tag": "return",
+            "text": "INVALID_HOOK_ID on fail a hookid on success"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "post",
+          "decl": "bool post",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "DHookRemovalCB",
+          "name": "removalcb",
+          "decl": "DHookRemovalCB removalcb",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "DHookIsNullParam": {
+      "name": "DHookIsNullParam",
+      "refLine": 1002,
+      "docStart": 41105,
+      "docEnd": 41366,
+      "docs": {
+        "brief": "Checks if a pointer param is null",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a pointer param is null"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to check."
+          },
+          {
+            "tag": "return",
+            "text": "true if null, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Non pointer param"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetParamString": {
+      "name": "DHookGetParamString",
+      "refLine": 822,
+      "docStart": 33878,
+      "docEnd": 34330,
+      "docs": {
+        "brief": "Get string param value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get string param value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get. (Example if the function has 2 params and you need the value of the first\nparam num would be 1.)"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer to store result"
+          },
+          {
+            "tag": "param:size",
+            "text": "Buffer size"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetParamObjectPtrVarVector": {
+      "name": "DHookSetParamObjectPtrVarVector",
+      "refLine": 977,
+      "docStart": 39876,
+      "docEnd": 40343,
+      "docs": {
+        "brief": "Sets an objects vector variable value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an objects vector variable value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to set, 0 for param \"this\"."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset within the object to the var to set."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of var it is"
+          },
+          {
+            "tag": "param:value",
+            "text": "The value to set the vector var to."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type. Invalid Object type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "ObjectValueType",
+          "name": "type",
+          "decl": "ObjectValueType type",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "value",
+          "decl": "float value[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookEnableDetour": {
+      "name": "DHookEnableDetour",
+      "refLine": 704,
+      "docStart": 27909,
+      "docEnd": 28466,
+      "docs": {
+        "brief": "Enable the detour of the function described in the hook setup handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enable the detour of the function described in the hook setup handle."
+          },
+          {
+            "tag": "param:setup",
+            "text": "Hook setup handle"
+          },
+          {
+            "tag": "param:post",
+            "text": "true to make the hook a post hook. (If you need to change the return value or need the return\nvalue use a post hook! If you need to change params and return use a pre and post hook!)"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback function"
+          },
+          {
+            "tag": "return",
+            "text": "true if detour was enabled, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Hook handle is not setup for a detour."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "post",
+          "decl": "bool post",
+          "default": null
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": null
+        }
+      ]
+    },
+    "DHookAddParam": {
+      "name": "DHookAddParam",
+      "refLine": 729,
+      "docStart": 29036,
+      "docEnd": 29533,
+      "docs": {
+        "brief": "Adds param to a hook setup",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds param to a hook setup"
+          },
+          {
+            "tag": "param:setup",
+            "text": "Setup handle to add the param to."
+          },
+          {
+            "tag": "param:type",
+            "text": "Param type"
+          },
+          {
+            "tag": "param:size",
+            "text": "Used for Objects (not Object ptr) to define the size of the object."
+          },
+          {
+            "tag": "param:flag",
+            "text": "Used to change the pass type."
+          },
+          {
+            "tag": "param:custom_register",
+            "text": "The register this argument is passed in instead of the stack."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid setup handle or too many params added (request upping the max in thread)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "HookParamType",
+          "name": "type",
+          "decl": "HookParamType type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        },
+        {
+          "type": "DHookPassFlag",
+          "name": "flag",
+          "decl": "DHookPassFlag flag",
+          "default": "DHookPass_ByVal"
+        },
+        {
+          "type": "DHookRegister",
+          "name": "custom_register",
+          "decl": "DHookRegister custom_register",
+          "default": "DHookRegister_Default"
+        }
+      ]
+    },
+    "DHookSetParamObjectPtrVar": {
+      "name": "DHookSetParamObjectPtrVar",
+      "refLine": 951,
+      "docStart": 38724,
+      "docEnd": 39177,
+      "docs": {
+        "brief": "Sets an objects variable value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an objects variable value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to set, 0 for param \"this\"."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset within the object to the var to set."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of var it is"
+          },
+          {
+            "tag": "param:value",
+            "text": "The value to set the var to."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type. Invalid Object type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "ObjectValueType",
+          "name": "type",
+          "decl": "ObjectValueType type",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetParamAddress": {
+      "name": "DHookGetParamAddress",
+      "refLine": 1014,
+      "docStart": 41423,
+      "docEnd": 41858,
+      "docs": {
+        "brief": "Get param address (Use only for ptr param types)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get param address (Use only for ptr param types)"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get. (Example if the function has 2 params and you need the value of the first\nparam num would be 1.)"
+          },
+          {
+            "tag": "return",
+            "text": "Address of the parameter."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "DHookDisableDetour": {
+      "name": "DHookDisableDetour",
+      "refLine": 716,
+      "docStart": 28548,
+      "docEnd": 28953,
+      "docs": {
+        "brief": "Disable the detour of the function described in the hook setup handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Disable the detour of the function described in the hook setup handle."
+          },
+          {
+            "tag": "param:setup",
+            "text": "Hook setup handle"
+          },
+          {
+            "tag": "param:post",
+            "text": "true to disable a post hook."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback function"
+          },
+          {
+            "tag": "return",
+            "text": "true if detour was disabled, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Hook handle is not setup for a detour or function is not detoured."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "post",
+          "decl": "bool post",
+          "default": null
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetParamObjectPtrString": {
+      "name": "DHookGetParamObjectPtrString",
+      "refLine": 991,
+      "docStart": 40465,
+      "docEnd": 40977,
+      "docs": {
+        "brief": "Gets an objects string variable value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an objects string variable value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get, 0 for param \"this\"."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset within the object to the var to get."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of var it is"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the result vector"
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of the buffer"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type. Invalid Object type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "ObjectValueType",
+          "name": "type",
+          "decl": "ObjectValueType type",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "DHookCreate": {
+      "name": "DHookCreate",
+      "refLine": 652,
+      "docStart": 25361,
+      "docEnd": 25892,
+      "docs": {
+        "brief": "Creates a hook",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a hook"
+          },
+          {
+            "tag": "param:offset",
+            "text": "vtable offset of function to hook"
+          },
+          {
+            "tag": "param:hooktype",
+            "text": "Type of hook"
+          },
+          {
+            "tag": "param:returntype",
+            "text": "Type of return value"
+          },
+          {
+            "tag": "param:thistype",
+            "text": "Type of this pointer or ignore (ignore can be used if not needed)"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Optional callback function, if not set here must be set when hooking."
+          },
+          {
+            "tag": "return",
+            "text": "Returns setup handle for the hook."
+          },
+          {
+            "tag": "error",
+            "text": "Failed to create hook setup handle or invalid callback function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DynamicHook",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "HookType",
+          "name": "hooktype",
+          "decl": "HookType hooktype",
+          "default": null
+        },
+        {
+          "type": "ReturnType",
+          "name": "returntype",
+          "decl": "ReturnType returntype",
+          "default": null
+        },
+        {
+          "type": "ThisPointerType",
+          "name": "thistype",
+          "decl": "ThisPointerType thistype",
+          "default": null
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "DHookGetParamVector": {
+      "name": "DHookGetParamVector",
+      "refLine": 809,
+      "docStart": 33391,
+      "docEnd": 33804,
+      "docs": {
+        "brief": "Get vector param value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get vector param value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get. (Example if the function has 2 params and you need the value of the first\nparam num would be 1.)"
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector buffer to store result."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetReturnString": {
+      "name": "DHookSetReturnString",
+      "refLine": 923,
+      "docStart": 37761,
+      "docEnd": 37972,
+      "docs": {
+        "brief": "Set return string value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set return string value"
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set return string as"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetReturnVector": {
+      "name": "DHookSetReturnVector",
+      "refLine": 913,
+      "docStart": 37484,
+      "docEnd": 37695,
+      "docs": {
+        "brief": "Set return vector value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set return vector value"
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "param:vec",
+            "text": "Value to set return vector as"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetParamObjectPtrVarVector": {
+      "name": "DHookGetParamObjectPtrVarVector",
+      "refLine": 964,
+      "docStart": 39288,
+      "docEnd": 39753,
+      "docs": {
+        "brief": "Gets an objects vector variable value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an objects vector variable value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to get, 0 for param \"this\"."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset within the object to the var to get."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of var it is"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the result vector"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type. Invalid Object type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": null
+        },
+        {
+          "type": "ObjectValueType",
+          "name": "type",
+          "decl": "ObjectValueType type",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "buffer",
+          "decl": "float buffer[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookAddEntityListener": {
+      "name": "DHookAddEntityListener",
+      "refLine": 628,
+      "docStart": 24839,
+      "docEnd": 24977,
+      "docs": {
+        "brief": "Adds an entity listener hook",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds an entity listener hook"
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of listener to add"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback to use"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ListenType",
+          "name": "type",
+          "decl": "ListenType type",
+          "default": null
+        },
+        {
+          "type": "ListenCB",
+          "name": "callback",
+          "decl": "ListenCB callback",
+          "default": null
+        }
+      ]
+    },
+    "DHookRaw": {
+      "name": "DHookRaw",
+      "refLine": 776,
+      "docStart": 31618,
+      "docEnd": 32468,
+      "docs": {
+        "brief": "Hook a raw pointer",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hook a raw pointer"
+          },
+          {
+            "tag": "param:setup",
+            "text": "Setup handle to use to add the hook."
+          },
+          {
+            "tag": "param:post",
+            "text": "true to make the hook a post hook. (If you need to change the return value or need the return\nvalue use a post hook! If you need to change params and return use a pre and post hook!)"
+          },
+          {
+            "tag": "param:addr",
+            "text": "This pointer address."
+          },
+          {
+            "tag": "param:removalcb",
+            "text": "Callback for when the hook is removed (Entity hooks are auto-removed on entity destroyed and\nwill call this callback)"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Optional callback function, if not set here must be set when creating the hook."
+          },
+          {
+            "tag": "return",
+            "text": "INVALID_HOOK_ID on fail a hookid on success"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "post",
+          "decl": "bool post",
+          "default": null
+        },
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        },
+        {
+          "type": "DHookRemovalCB",
+          "name": "removalcb",
+          "decl": "DHookRemovalCB removalcb",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "DHookCallback",
+          "name": "callback",
+          "decl": "DHookCallback callback",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "DHookSetParamVector": {
+      "name": "DHookSetParamVector",
+      "refLine": 848,
+      "docStart": 35067,
+      "docEnd": 35479,
+      "docs": {
+        "brief": "Set vector param value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set vector param value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to set (Example if the function has 2 params and you need to set the value of the\nfirst param num would be 1.)"
+          },
+          {
+            "tag": "param:vec",
+            "text": "Value to set vector as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetFromConf": {
+      "name": "DHookSetFromConf",
+      "refLine": 691,
+      "docStart": 27340,
+      "docEnd": 27801,
+      "docs": {
+        "brief": "Load details for a vhook or detour from a gamedata file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Load details for a vhook or detour from a gamedata file."
+          },
+          {
+            "tag": "param:setup",
+            "text": "Hook setup handle to set the offset or address on."
+          },
+          {
+            "tag": "param:gameconf",
+            "text": "GameConfig handle"
+          },
+          {
+            "tag": "param:source",
+            "text": "Whether to look in Offsets or Signatures."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the property to find."
+          },
+          {
+            "tag": "return",
+            "text": "true on success, false if nothing was found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid setup or gamedata handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "setup",
+          "decl": "Handle setup",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "gameconf",
+          "decl": "Handle gameconf",
+          "default": null
+        },
+        {
+          "type": "SDKFuncConfSource",
+          "name": "source",
+          "decl": "SDKFuncConfSource source",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "DHookGetReturn": {
+      "name": "DHookGetReturn",
+      "refLine": 870,
+      "docStart": 36039,
+      "docEnd": 36337,
+      "docs": {
+        "brief": "Get return value (Use only for: int, entity, bool or float return types)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get return value (Use only for: int, entity, bool or float return types)"
+          },
+          {
+            "tag": "param:hReturn",
+            "text": "Handle to return structure"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid type."
+          },
+          {
+            "tag": "return",
+            "text": "Returns default value if prehook returns actual value if post hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hReturn",
+          "decl": "Handle hReturn",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetParam": {
+      "name": "DHookSetParam",
+      "refLine": 836,
+      "docStart": 34415,
+      "docEnd": 35002,
+      "docs": {
+        "brief": "Set param value (Use only for: int, entity, edict, bool or float param types)\n\nAn entity param type can be set to NULL using INVALID_ENT_REFERENCE (-1).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set param value (Use only for: int, entity, edict, bool or float param types)\n\nAn entity param type can be set to NULL using INVALID_ENT_REFERENCE (-1)."
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to set (Example if the function has 2 params and you need to set the value of the\nfirst param num would be 1.)"
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set it as (only pass int, bool, float or entity index)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "DHookSetParamString": {
+      "name": "DHookSetParamString",
+      "refLine": 860,
+      "docStart": 35553,
+      "docEnd": 35965,
+      "docs": {
+        "brief": "Set string param value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set string param value"
+          },
+          {
+            "tag": "param:hParams",
+            "text": "Handle to params structure"
+          },
+          {
+            "tag": "param:num",
+            "text": "Param number to set (Example if the function has 2 params and you need to set the value of the\nfirst param num would be 1.)"
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set string as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle. Invalid param number. Invalid param type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hParams",
+          "decl": "Handle hParams",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        }
+      ]
+    },
+    "DHookRemoveHookID": {
+      "name": "DHookRemoveHookID",
+      "refLine": 785,
+      "docStart": 32614,
+      "docEnd": 32760,
+      "docs": {
+        "brief": "Remove hook by hook id",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove hook by hook id"
+          },
+          {
+            "tag": "param:hookid",
+            "text": "Hook id to remove"
+          },
+          {
+            "tag": "return",
+            "text": "true on success, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "hookid",
+          "decl": "int hookid",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "DynamicDetour": {
+      "name": "DynamicDetour",
+      "refLine": 572,
+      "docStart": 21348,
+      "docEnd": 22051,
+      "docs": {
+        "brief": "A DynamicDetour is a way to hook and block any function in memory.\nGiven the address of a function, it can call a callback in your script whenever\nthe function gets called. The callback has access to all parameters of the function\nas well as the return value.\n\nInternally this works by replacing the first instructions of the function\nwith a jump to our own code. This means that the signature used to find\nthe function address in the first place might not match anymore after a detour.\nIf you need to detour the same function in different plugins make sure to\nwildcard \\x2a the first 6 bytes of the signature to accommodate for the patched\njump introduced by the detour.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A DynamicDetour is a way to hook and block any function in memory.\nGiven the address of a function, it can call a callback in your script whenever\nthe function gets called. The callback has access to all parameters of the function\nas well as the return value.\n\nInternally this works by replacing the first instructions of the function\nwith a jump to our own code. This means that the signature used to find\nthe function address in the first place might not match anymore after a detour.\nIf you need to detour the same function in different plugins make sure to\nwildcard \\x2a the first 6 bytes of the signature to accommodate for the patched\njump introduced by the detour."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "DHookSetup",
+      "methods": {
+        "Disable": {
+          "name": "Disable",
+          "refLine": 619,
+          "docStart": 24417,
+          "docEnd": 24766,
+          "docs": {
+            "brief": "Disable the detour of the function described in this detour setup.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Disable the detour of the function described in this detour setup."
+              },
+              {
+                "tag": "param:mode",
+                "text": "The hook mode to disable - pre or post."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback function."
+              },
+              {
+                "tag": "return",
+                "text": "true if detour was disabled, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Hook handle is not setup for a detour or function is not detoured."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "HookMode",
+              "name": "mode",
+              "decl": "HookMode mode",
+              "default": null
+            },
+            {
+              "type": "DHookCallback",
+              "name": "callback",
+              "decl": "DHookCallback callback",
+              "default": null
+            }
+          ]
+        },
+        "FromConf": {
+          "name": "FromConf",
+          "refLine": 596,
+          "docStart": 22770,
+          "docEnd": 23478,
+          "docs": {
+            "brief": "Setup a detour for a function as described in a \"Functions\" section in gamedata.\nThe \"Functions\" section is parsed once the gamedata file is loaded and cached globally.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Setup a detour for a function as described in a \"Functions\" section in gamedata.\nThe \"Functions\" section is parsed once the gamedata file is loaded and cached globally."
+              },
+              {
+                "tag": "param:gameconf",
+                "text": "GameData handle to use for address lookup.\nDoesn't have to be the same as the one with the \"Functions\" section."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the function in a \"Functions\" section to load."
+              },
+              {
+                "tag": "return",
+                "text": "Setup handle for the detour or null if offset wasn't found."
+              },
+              {
+                "tag": "error",
+                "text": "Failed to create detour setup handle, invalid gamedata handle,\ninvalid callback function or failed to find function in cached \"Functions\" sections."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DynamicDetour",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "gameconf",
+              "decl": "Handle gameconf",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        },
+        "Enable": {
+          "name": "Enable",
+          "refLine": 610,
+          "docStart": 23563,
+          "docEnd": 24347,
+          "docs": {
+            "brief": "Enable the detour of the function described in this detour setup.\nIf you need to read the return value of the function, choose a post hook.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Enable the detour of the function described in this detour setup.\nIf you need to read the return value of the function, choose a post hook."
+              },
+              {
+                "tag": "param:mode",
+                "text": "The desired hook mode - pre or post.\nA pre hook calls your callback BEFORE the original function is called.\nYou can access the parameters, set the return value, and skip the original function.\nA post hook calls your callback AFTER the original function executed.\nYou can access the parameters and get/set the return value."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback function."
+              },
+              {
+                "tag": "return",
+                "text": "true if detour was enabled, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Hook handle is not setup for a detour."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "HookMode",
+              "name": "mode",
+              "decl": "HookMode mode",
+              "default": null
+            },
+            {
+              "type": "DHookCallback",
+              "name": "callback",
+              "decl": "DHookCallback callback",
+              "default": null
+            }
+          ]
+        },
+        "DynamicDetour": {
+          "name": "DynamicDetour",
+          "refLine": 584,
+          "docStart": 22092,
+          "docEnd": 22623,
+          "docs": {
+            "brief": "Creates a detour.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a detour."
+              },
+              {
+                "tag": "param:funcaddr",
+                "text": "The address of the function to detour.\nCan be Address_Null if you want to load the address from gamedata using DHookSetFromConf."
+              },
+              {
+                "tag": "param:callConv",
+                "text": "Calling convention of the function."
+              },
+              {
+                "tag": "param:returnType",
+                "text": "Type of the return value."
+              },
+              {
+                "tag": "param:thisType",
+                "text": "Type of this pointer or ignore (ignore can be used if not needed).\nOnly used for thiscall detours."
+              },
+              {
+                "tag": "error",
+                "text": "Failed to create detour setup handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DynamicDetour",
+          "arguments": [
+            {
+              "type": "Address",
+              "name": "funcaddr",
+              "decl": "Address funcaddr",
+              "default": null
+            },
+            {
+              "type": "CallingConvention",
+              "name": "callConv",
+              "decl": "CallingConvention callConv",
+              "default": null
+            },
+            {
+              "type": "ReturnType",
+              "name": "returntype",
+              "decl": "ReturnType returntype",
+              "default": null
+            },
+            {
+              "type": "ThisPointerType",
+              "name": "thisType",
+              "decl": "ThisPointerType thisType",
+              "default": "ThisPointer_Ignore"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "DHookParam": {
+      "name": "DHookParam",
+      "refLine": 241,
+      "docStart": 6603,
+      "docEnd": 6655,
+      "docs": {
+        "brief": "Represents the parameters of the hooked function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Represents the parameters of the hooked function."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "SetObjectVarVector": {
+          "name": "SetObjectVarVector",
+          "refLine": 366,
+          "docStart": 11875,
+          "docEnd": 12430,
+          "docs": {
+            "brief": "Sets an object's vector variable value.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an object's vector variable value.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to set, 0 for param \"this\", other parameters start from 1."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Byte offset within the object to the var to set."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of var it is."
+              },
+              {
+                "tag": "param:vec",
+                "text": "The value to set the vector var to."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number, invalid param type or invalid Object type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "ObjectValueType",
+              "name": "type",
+              "decl": "ObjectValueType type",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "SetVector": {
+          "name": "SetVector",
+          "refLine": 297,
+          "docStart": 8597,
+          "docEnd": 9017,
+          "docs": {
+            "brief": "Set the value of a vector parameter.\nUse only for: vector or vectorptr parameter types.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the value of a vector parameter.\nUse only for: vector or vectorptr parameter types.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to set, starting at 1."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Value to set vector as."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "IsNull": {
+          "name": "IsNull",
+          "refLine": 376,
+          "docStart": 12612,
+          "docEnd": 12832,
+          "docs": {
+            "brief": "Checks if a pointer parameter is null.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Checks if a pointer parameter is null."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to check, starting at 1."
+              },
+              {
+                "tag": "return",
+                "text": "true if null, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Non-pointer parameter."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 271,
+          "docStart": 7573,
+          "docEnd": 7928,
+          "docs": {
+            "brief": "Get the value of a string parameter.\nUse only for: string, stringptr or charptr parameter types.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get the value of a string parameter.\nUse only for: string, stringptr or charptr parameter types."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, starting at 1."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store result."
+              },
+              {
+                "tag": "param:size",
+                "text": "Buffer size."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 252,
+          "docStart": 6689,
+          "docEnd": 7172,
+          "docs": {
+            "brief": "Get the value of a parameter.\nUse only for: int, entity, edict, bool or float parameter types.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get the value of a parameter.\nUse only for: int, entity, edict, bool or float parameter types."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, starting at 1. Parameter number 0 returns\nthe number of parameters."
+              },
+              {
+                "tag": "return",
+                "text": "Value if num greater than 0. If 0 returns parameter count.\nIf CBaseEntity returns entity index."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        },
+        "Set": {
+          "name": "Set",
+          "refLine": 285,
+          "docStart": 7996,
+          "docEnd": 8549,
+          "docs": {
+            "brief": "Set the value of a parameter.\nUse only for: int, entity, edict, bool or float parameter types.\n\nAn entity parameter type can be set to NULL using INVALID_ENT_REFERENCE (-1).\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the value of a parameter.\nUse only for: int, entity, edict, bool or float parameter types.\n\nAn entity parameter type can be set to NULL using INVALID_ENT_REFERENCE (-1).\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to set starting at 1."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set it as (only pass int, bool, float or entity index)."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "GetObjectVarString": {
+          "name": "GetObjectVarString",
+          "refLine": 340,
+          "docStart": 10652,
+          "docEnd": 11132,
+          "docs": {
+            "brief": "Gets an object's string variable value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets an object's string variable value."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, 0 for param \"this\", other parameters start from 1."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Byte offset within the object to the var to get."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of var it is."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the result string."
+              },
+              {
+                "tag": "param:size",
+                "text": "Size of the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number, invalid param type or invalid Object type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "ObjectValueType",
+              "name": "type",
+              "decl": "ObjectValueType type",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "SetObjectVar": {
+          "name": "SetObjectVar",
+          "refLine": 353,
+          "docStart": 11243,
+          "docEnd": 11784,
+          "docs": {
+            "brief": "Sets an object's variable value.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an object's variable value.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to set, 0 for param \"this\", other parameters start from 1."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Byte offset within the object to the var to set."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of var it is."
+              },
+              {
+                "tag": "param:value",
+                "text": "The value to set the var to."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number, invalid param type or invalid Object type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "ObjectValueType",
+              "name": "type",
+              "decl": "ObjectValueType type",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 309,
+          "docStart": 9080,
+          "docEnd": 9509,
+          "docs": {
+            "brief": "Set the value of a string parameter.\nUse only for: string, stringptr or charptr parameter types.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the value of a string parameter.\nUse only for: string, stringptr or charptr parameter types.\n\nThe changes are only applied when MRES_ChangedHandled or MRES_ChangedOverride\nis returned in the callback."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to set, starting at 1."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set string as."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "GetObjectVar": {
+          "name": "GetObjectVar",
+          "refLine": 319,
+          "docStart": 9572,
+          "docEnd": 10038,
+          "docs": {
+            "brief": "Gets an object's variable value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets an object's variable value."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, 0 for param \"this\", other parameters start from 1"
+              },
+              {
+                "tag": "param:offset",
+                "text": "Byte offset within the object to the var to get."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of var it is."
+              },
+              {
+                "tag": "return",
+                "text": "Value of the objects var. If EHANDLE type or entity returns entity index."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number, invalid param type or invalid Object type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "ObjectValueType",
+              "name": "type",
+              "decl": "ObjectValueType type",
+              "default": null
+            }
+          ]
+        },
+        "GetObjectVarVector": {
+          "name": "GetObjectVarVector",
+          "refLine": 329,
+          "docStart": 10117,
+          "docEnd": 10552,
+          "docs": {
+            "brief": "Gets an object's vector variable value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets an object's vector variable value."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, 0 for param \"this\", other parameters start from 1."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Byte offset within the object to the var to get."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of var it is."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Buffer to store the result vector."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number, invalid param type or invalid Object type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "ObjectValueType",
+              "name": "type",
+              "decl": "ObjectValueType type",
+              "default": null
+            },
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "GetVector": {
+          "name": "GetVector",
+          "refLine": 261,
+          "docStart": 7208,
+          "docEnd": 7516,
+          "docs": {
+            "brief": "Get the value of a vector parameter.\nUse only for: vector or vectorptr parameter types.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get the value of a vector parameter.\nUse only for: vector or vectorptr parameter types."
+              },
+              {
+                "tag": "param:num",
+                "text": "Parameter number to get, starting at 1."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector buffer to store result."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle, invalid param number or invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            },
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "GetAddress": {
+          "name": "GetAddress",
+          "refLine": 385,
+          "docStart": 12872,
+          "docEnd": 13233,
+          "docs": {
+            "brief": "Get param address (Use only for ptr param types)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get param address (Use only for ptr param types)"
+              },
+              {
+                "tag": "param:num",
+                "text": "Param number to get. (Example if the function has 2 params and you need the value\nof the first param num would be 1.)"
+              },
+              {
+                "tag": "return",
+                "text": "Address of the parameter."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handle. Invalid param number. Invalid param type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Address",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "DHookReturn": {
+      "name": "DHookReturn",
+      "refLine": 390,
+      "docStart": 13283,
+      "docEnd": 13337,
+      "docs": {
+        "brief": "Represents the return value of the hooked function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Represents the return value of the hooked function."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetVector": {
+          "name": "GetVector",
+          "refLine": 413,
+          "docStart": 13808,
+          "docEnd": 14046,
+          "docs": {
+            "brief": "Get return vector value.\nUse only for: vector or vectorptr return types.\n\nOnly useful in post hooks.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get return vector value.\nUse only for: vector or vectorptr return types.\n\nOnly useful in post hooks."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector buffer to store result in."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or invalid type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 424,
+          "docStart": 14094,
+          "docEnd": 14386,
+          "docs": {
+            "brief": "Get return string value.\nUse only for: string, stringptr or charptr return types.\n\nOnly useful in post hooks.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get return string value.\nUse only for: string, stringptr or charptr return types.\n\nOnly useful in post hooks."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store result in."
+              },
+              {
+                "tag": "param:size",
+                "text": "String buffer size."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or invalid type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 446,
+          "docStart": 14804,
+          "docEnd": 15118,
+          "docs": {
+            "brief": "Set return string value.\nUse only for: string, stringptr or charptr return types.\n\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set return string value.\nUse only for: string, stringptr or charptr return types.\n\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Value to set return string to."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or invalid type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "buffer",
+              "decl": "const char[] buffer",
+              "default": null
+            }
+          ]
+        },
+        "SetVector": {
+          "name": "SetVector",
+          "refLine": 435,
+          "docStart": 14445,
+          "docEnd": 14750,
+          "docs": {
+            "brief": "Set return vector value.\nUse only for: vector or vectorptr return types.\n\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set return vector value.\nUse only for: vector or vectorptr return types.\n\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Value to set return vector to."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or invalid type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Value": {
+          "name": "Value",
+          "refLine": 400,
+          "docStart": 13373,
+          "docEnd": 13725,
+          "docs": {
+            "brief": "Retrieves or sets the return value.\nUse only for: int, entity, edict, bool or float return types.\n\nAn entity return type can be set to NULL using INVALID_ENT_REFERENCE (-1).\n\nThe return value is only readable in a post hook.\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves or sets the return value.\nUse only for: int, entity, edict, bool or float return types.\n\nAn entity return type can be set to NULL using INVALID_ENT_REFERENCE (-1).\n\nThe return value is only readable in a post hook.\nThe value is only applied when MRES_Override or MRES_Supercede is returned\nin the callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "any",
+          "getter": true,
+          "setter": true
+        }
+      }
+    },
+    "DynamicHook": {
+      "name": "DynamicHook",
+      "refLine": 479,
+      "docStart": 16414,
+      "docEnd": 16799,
+      "docs": {
+        "brief": "A DynamicHook allows to hook a virtual function on any C++ object.\nCurrently CBaseEntity and CGameRules have a convenience API for easy entity hooking,\nbut it's possible to provide a raw this-pointer to hook any object in memory too.\n\nInternally this intercepts function calls by replacing the function pointer\nin the virtual table of the object with our own function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A DynamicHook allows to hook a virtual function on any C++ object.\nCurrently CBaseEntity and CGameRules have a convenience API for easy entity hooking,\nbut it's possible to provide a raw this-pointer to hook any object in memory too.\n\nInternally this intercepts function calls by replacing the function pointer\nin the virtual table of the object with our own function."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "DHookSetup",
+      "methods": {
+        "HookRaw": {
+          "name": "HookRaw",
+          "refLine": 551,
+          "docStart": 20240,
+          "docEnd": 21072,
+          "docs": {
+            "brief": "Hook a raw this-pointer.\nIf you need to read the return value of the function, choose a post hook.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook a raw this-pointer.\nIf you need to read the return value of the function, choose a post hook."
+              },
+              {
+                "tag": "param:mode",
+                "text": "The desired hook mode - pre or post.\nA pre hook calls your callback BEFORE the original function is called.\nYou can access the parameters, set the return value, and skip the original function.\nA post hook calls your callback AFTER the original function executed.\nYou can access the parameters and get/set the return value."
+              },
+              {
+                "tag": "param:addr",
+                "text": "This pointer address."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback function."
+              },
+              {
+                "tag": "return",
+                "text": "A hookid on success, INVALID_HOOK_ID otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "HookMode",
+              "name": "mode",
+              "decl": "HookMode mode",
+              "default": null
+            },
+            {
+              "type": "Address",
+              "name": "addr",
+              "decl": "Address addr",
+              "default": null
+            },
+            {
+              "type": "DHookCallback",
+              "name": "callback",
+              "decl": "DHookCallback callback",
+              "default": null
+            }
+          ]
+        },
+        "RemoveHook": {
+          "name": "RemoveHook",
+          "refLine": 558,
+          "docStart": 21156,
+          "docEnd": 21292,
+          "docs": {
+            "brief": "Remove hook by hook id.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Remove hook by hook id."
+              },
+              {
+                "tag": "param:hookid",
+                "text": "Hook id to remove."
+              },
+              {
+                "tag": "return",
+                "text": "true on success, false otherwise"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "hookid",
+              "decl": "int hookid",
+              "default": null
+            }
+          ]
+        },
+        "HookEntity": {
+          "name": "HookEntity",
+          "refLine": 519,
+          "docStart": 18116,
+          "docEnd": 19083,
+          "docs": {
+            "brief": "Hook an entity.\n\nEntity hooks are auto-removed when the entity is destroyed.\nIf you need to read the return value of the function, choose a post hook.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook an entity.\n\nEntity hooks are auto-removed when the entity is destroyed.\nIf you need to read the return value of the function, choose a post hook."
+              },
+              {
+                "tag": "param:mode",
+                "text": "The desired hook mode - pre or post.\nA pre hook calls your callback BEFORE the original function is called.\nYou can access the parameters, set the return value, and skip the original function.\nA post hook calls your callback AFTER the original function executed.\nYou can access the parameters and get/set the return value."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity index to hook on."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback function."
+              },
+              {
+                "tag": "param:removalcb",
+                "text": "Optional callback for when the hook is removed."
+              },
+              {
+                "tag": "return",
+                "text": "A hookid on success, INVALID_HOOK_ID otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "HookMode",
+              "name": "mode",
+              "decl": "HookMode mode",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "entity",
+              "decl": "int entity",
+              "default": null
+            },
+            {
+              "type": "DHookCallback",
+              "name": "callback",
+              "decl": "DHookCallback callback",
+              "default": null
+            },
+            {
+              "type": "DHookRemovalCB",
+              "name": "removalcb",
+              "decl": "DHookRemovalCB removalcb",
+              "default": "INVALID_FUNCTION"
+            }
+          ]
+        },
+        "DynamicHook": {
+          "name": "DynamicHook",
+          "refLine": 489,
+          "docStart": 16838,
+          "docEnd": 17209,
+          "docs": {
+            "brief": "Creates a vtable hook.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a vtable hook."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Virtual table offset of function to hook."
+              },
+              {
+                "tag": "param:hooktype",
+                "text": "Type of hook."
+              },
+              {
+                "tag": "param:returntype",
+                "text": "Type of return value."
+              },
+              {
+                "tag": "param:thistype",
+                "text": "Type of this pointer or ignore (ignore can be used if not needed)."
+              },
+              {
+                "tag": "error",
+                "text": "Failed to create hook setup handle or invalid callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DynamicHook",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": null
+            },
+            {
+              "type": "HookType",
+              "name": "hooktype",
+              "decl": "HookType hooktype",
+              "default": null
+            },
+            {
+              "type": "ReturnType",
+              "name": "returntype",
+              "decl": "ReturnType returntype",
+              "default": null
+            },
+            {
+              "type": "ThisPointerType",
+              "name": "thistype",
+              "decl": "ThisPointerType thistype",
+              "default": null
+            }
+          ]
+        },
+        "FromConf": {
+          "name": "FromConf",
+          "refLine": 501,
+          "docStart": 17320,
+          "docEnd": 18033,
+          "docs": {
+            "brief": "Setup a vtable hook for a function as described in a \"Functions\" section in gamedata.\nThe \"Functions\" section is parsed once the gamedata file is loaded and cached globally.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Setup a vtable hook for a function as described in a \"Functions\" section in gamedata.\nThe \"Functions\" section is parsed once the gamedata file is loaded and cached globally."
+              },
+              {
+                "tag": "param:gameconf",
+                "text": "GameData handle to use for address lookup.\nDoesn't have to be the same as the one with the \"Functions\" section."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the function in a \"Functions\" section to load."
+              },
+              {
+                "tag": "return",
+                "text": "Setup handle for the detour or null if offset wasn't found."
+              },
+              {
+                "tag": "error",
+                "text": "Failed to create detour setup handle, invalid gamedata handle,\ninvalid callback function or failed to find function in cached \"Functions\" sections."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DynamicHook",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "gameconf",
+              "decl": "Handle gameconf",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        },
+        "HookGamerules": {
+          "name": "HookGamerules",
+          "refLine": 536,
+          "docStart": 19211,
+          "docEnd": 20121,
+          "docs": {
+            "brief": "Hook gamerules object.\n\nGame rules hooks are auto-removed on map end.\nIf you need to read the return value of the function, choose a post hook.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook gamerules object.\n\nGame rules hooks are auto-removed on map end.\nIf you need to read the return value of the function, choose a post hook."
+              },
+              {
+                "tag": "param:mode",
+                "text": "The desired hook mode - pre or post.\nA pre hook calls your callback BEFORE the original function is called.\nYou can access the parameters, set the return value, and skip the original function.\nA post hook calls your callback AFTER the original function executed.\nYou can access the parameters and get/set the return value."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback function."
+              },
+              {
+                "tag": "param:removalcb",
+                "text": "Optional callback for when the hook is removed."
+              },
+              {
+                "tag": "return",
+                "text": "A hookid on success, INVALID_HOOK_ID otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid setup handle, invalid address, invalid hook type or invalid callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "HookMode",
+              "name": "mode",
+              "decl": "HookMode mode",
+              "default": null
+            },
+            {
+              "type": "DHookCallback",
+              "name": "callback",
+              "decl": "DHookCallback callback",
+              "default": null
+            },
+            {
+              "type": "DHookRemovalCB",
+              "name": "removalcb",
+              "decl": "DHookRemovalCB removalcb",
+              "default": "INVALID_FUNCTION"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "DHookSetup": {
+      "name": "DHookSetup",
+      "refLine": 450,
+      "docStart": 15175,
+      "docEnd": 15249,
+      "docs": {
+        "brief": "Base method map for common functions between virtual hooks and detours.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Base method map for common functions between virtual hooks and detours."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "SetFromConf": {
+          "name": "SetFromConf",
+          "refLine": 460,
+          "docStart": 15283,
+          "docEnd": 15671,
+          "docs": {
+            "brief": "Load address or offset for a vtable hook or detour from a gamedata file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Load address or offset for a vtable hook or detour from a gamedata file."
+              },
+              {
+                "tag": "param:gameconf",
+                "text": "GameData handle."
+              },
+              {
+                "tag": "param:source",
+                "text": "Whether to look in Offsets, Signatures, or Addresses."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the property to find."
+              },
+              {
+                "tag": "return",
+                "text": "true on success, false if nothing was found."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid setup or gamedata handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "gameconf",
+              "decl": "Handle gameconf",
+              "default": null
+            },
+            {
+              "type": "SDKFuncConfSource",
+              "name": "source",
+              "decl": "SDKFuncConfSource source",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        },
+        "AddParam": {
+          "name": "AddParam",
+          "refLine": 470,
+          "docStart": 15769,
+          "docEnd": 16257,
+          "docs": {
+            "brief": "Adds a parameter to a hook setup.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a parameter to a hook setup."
+              },
+              {
+                "tag": "param:type",
+                "text": "Parameter type."
+              },
+              {
+                "tag": "param:size",
+                "text": "Used for Objects (not Object ptr) to define the size of the object."
+              },
+              {
+                "tag": "param:flag",
+                "text": "Used to change the pass type (ignored by detours)."
+              },
+              {
+                "tag": "param:custom_register",
+                "text": "The register this argument is passed in instead of the stack (ignored by vhooks)."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid setup handle or too many params added (request upping the max in thread)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "HookParamType",
+              "name": "type",
+              "decl": "HookParamType type",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            },
+            {
+              "type": "DHookPassFlag",
+              "name": "flag",
+              "decl": "DHookPassFlag flag",
+              "default": "DHookPass_ByVal"
+            },
+            {
+              "type": "DHookRegister",
+              "name": "custom_register",
+              "decl": "DHookRegister custom_register",
+              "default": "DHookRegister_Default"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "INVALID_HOOK_ID": {
+      "name": "INVALID_HOOK_ID",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "_dhooks_included": {
+      "name": "_dhooks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "ReturnType": {
+      "name": "ReturnType",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "ReturnType_String": {
+          "name": "ReturnType_String",
+          "refLine": 73,
+          "docStart": 2266,
+          "docEnd": 2292,
+          "docs": {
+            "brief": "Note this is a string_t",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Note this is a string_t"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_VectorPtr": {
+          "name": "ReturnType_VectorPtr",
+          "refLine": 77,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_CBaseEntity": {
+          "name": "ReturnType_CBaseEntity",
+          "refLine": 78,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Unknown": {
+          "name": "ReturnType_Unknown",
+          "refLine": 68,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_StringPtr": {
+          "name": "ReturnType_StringPtr",
+          "refLine": 74,
+          "docStart": 2316,
+          "docEnd": 2344,
+          "docs": {
+            "brief": "Note this is a string_t *",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Note this is a string_t *"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Float": {
+          "name": "ReturnType_Float",
+          "refLine": 72,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_CharPtr": {
+          "name": "ReturnType_CharPtr",
+          "refLine": 75,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Void": {
+          "name": "ReturnType_Void",
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Edict": {
+          "name": "ReturnType_Edict",
+          "refLine": 79,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Int": {
+          "name": "ReturnType_Int",
+          "refLine": 70,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Bool": {
+          "name": "ReturnType_Bool",
+          "refLine": 71,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ReturnType_Vector": {
+          "name": "ReturnType_Vector",
+          "refLine": 76,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "ListenType": {
+      "name": "ListenType",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "ListenType_Deleted": {
+          "name": "ListenType_Deleted",
+          "refLine": 63,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ListenType_Created": {
+          "name": "ListenType_Created",
+          "refLine": 62,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "ObjectValueType": {
+      "name": "ObjectValueType",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "ObjectValueType_Int": {
+          "name": "ObjectValueType_Int",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "ObjectValueType_Ehandle": {
+          "name": "ObjectValueType_Ehandle",
+          "refLine": 47,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_IntPtr": {
+          "name": "ObjectValueType_IntPtr",
+          "refLine": 50,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_CBaseEntityPtr": {
+          "name": "ObjectValueType_CBaseEntityPtr",
+          "refLine": 49,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_EhandlePtr": {
+          "name": "ObjectValueType_EhandlePtr",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_VectorPtr": {
+          "name": "ObjectValueType_VectorPtr",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_Vector": {
+          "name": "ObjectValueType_Vector",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_CharPtr": {
+          "name": "ObjectValueType_CharPtr",
+          "refLine": 56,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_String": {
+          "name": "ObjectValueType_String",
+          "refLine": 57,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_FloatPtr": {
+          "name": "ObjectValueType_FloatPtr",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_Float": {
+          "name": "ObjectValueType_Float",
+          "refLine": 48,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_Bool": {
+          "name": "ObjectValueType_Bool",
+          "refLine": 46,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ObjectValueType_BoolPtr": {
+          "name": "ObjectValueType_BoolPtr",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "HookType": {
+      "name": "HookType",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "HookType_Entity": {
+          "name": "HookType_Entity",
+          "refLine": 107,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookType_Raw": {
+          "name": "HookType_Raw",
+          "refLine": 109,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookType_GameRules": {
+          "name": "HookType_GameRules",
+          "refLine": 108,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "MRESReturn": {
+      "name": "MRESReturn",
+      "refLine": 126,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "MRES_ChangedOverride": {
+          "name": "MRES_ChangedOverride",
+          "refLine": 129,
+          "docStart": 3429,
+          "docEnd": 3480,
+          "docs": {
+            "brief": "Use changed values and return MRES_Override",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Use changed values and return MRES_Override"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MRES_Handled": {
+          "name": "MRES_Handled",
+          "refLine": 131,
+          "docStart": 3577,
+          "docEnd": 3647,
+          "docs": {
+            "brief": "plugin did something, but real function should still be called",
+            "tags": [
+              {
+                "tag": "",
+                "text": "plugin did something, but real function should still be called"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MRES_Supercede": {
+          "name": "MRES_Supercede",
+          "refLine": 133,
+          "docStart": 3758,
+          "docEnd": 3805,
+          "docs": {
+            "brief": "skip real function; use my return value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "skip real function; use my return value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MRES_ChangedHandled": {
+          "name": "MRES_ChangedHandled",
+          "refLine": 128,
+          "docStart": 3349,
+          "docEnd": 3399,
+          "docs": {
+            "brief": "Use changed values and return MRES_Handled",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Use changed values and return MRES_Handled"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-2"
+        },
+        "MRES_Ignored": {
+          "name": "MRES_Ignored",
+          "refLine": 130,
+          "docStart": 3510,
+          "docEnd": 3547,
+          "docs": {
+            "brief": "plugin didn't take any action",
+            "tags": [
+              {
+                "tag": "",
+                "text": "plugin didn't take any action"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MRES_Override": {
+          "name": "MRES_Override",
+          "refLine": 132,
+          "docStart": 3677,
+          "docEnd": 3728,
+          "docs": {
+            "brief": "call real function, but use my return value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "call real function, but use my return value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "CallingConvention": {
+      "name": "CallingConvention",
+      "refLine": 112,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CallConv_STDCALL": {
+          "name": "CallConv_STDCALL",
+          "refLine": 116,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CallConv_THISCALL": {
+          "name": "CallConv_THISCALL",
+          "refLine": 115,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CallConv_CDECL": {
+          "name": "CallConv_CDECL",
+          "refLine": 114,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CallConv_FASTCALL": {
+          "name": "CallConv_FASTCALL",
+          "refLine": 117,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "HookMode": {
+      "name": "HookMode",
+      "refLine": 120,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Hook_Post": {
+          "name": "Hook_Post",
+          "refLine": 123,
+          "docStart": 3235,
+          "docEnd": 3297,
+          "docs": {
+            "brief": "Callback will be executed AFTER the original function.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Callback will be executed AFTER the original function."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Hook_Pre": {
+          "name": "Hook_Pre",
+          "refLine": 122,
+          "docStart": 3142,
+          "docEnd": 3205,
+          "docs": {
+            "brief": "Callback will be executed BEFORE the original function.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Callback will be executed BEFORE the original function."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "DHookPassFlag": {
+      "name": "DHookPassFlag",
+      "refLine": 136,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "DHookPass_OCTOR": {
+          "name": "DHookPass_OCTOR",
+          "refLine": 141,
+          "docStart": 4053,
+          "docEnd": 4085,
+          "docs": {
+            "brief": "Object has a constructor",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Object has a constructor"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 3"
+        },
+        "DHookPass_OASSIGNOP": {
+          "name": "DHookPass_OASSIGNOP",
+          "refLine": 142,
+          "docStart": 4120,
+          "docEnd": 4161,
+          "docs": {
+            "brief": "Object has an assignment operator",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Object has an assignment operator"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 4"
+        },
+        "DHookPass_ODTOR": {
+          "name": "DHookPass_ODTOR",
+          "refLine": 140,
+          "docStart": 3987,
+          "docEnd": 4018,
+          "docs": {
+            "brief": "Object has a destructor",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Object has a destructor"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 2"
+        },
+        "DHookPass_ByVal": {
+          "name": "DHookPass_ByVal",
+          "refLine": 138,
+          "docStart": 3865,
+          "docEnd": 3889,
+          "docs": {
+            "brief": "Passing by value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Passing by value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 0"
+        },
+        "DHookPass_ByRef": {
+          "name": "DHookPass_ByRef",
+          "refLine": 139,
+          "docStart": 3924,
+          "docEnd": 3952,
+          "docs": {
+            "brief": "Passing by reference",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Passing by reference"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 1"
+        }
+      }
+    },
+    "DHookRegister": {
+      "name": "DHookRegister",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "DHookRegister_XMM4": {
+          "name": "DHookRegister_XMM4",
+          "refLine": 175,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_Default": {
+          "name": "DHookRegister_Default",
+          "refLine": 148,
+          "docStart": 4188,
+          "docEnd": 4264,
+          "docs": {
+            "brief": "Don't change the register and use the default for the calling convention.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Don't change the register and use the default for the calling convention."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_AH": {
+          "name": "DHookRegister_AH",
+          "refLine": 155,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_EAX": {
+          "name": "DHookRegister_EAX",
+          "refLine": 161,
+          "docStart": 4480,
+          "docEnd": 4515,
+          "docs": {
+            "brief": "32-bit general purpose registers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "32-bit general purpose registers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_CH": {
+          "name": "DHookRegister_CH",
+          "refLine": 156,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_DH": {
+          "name": "DHookRegister_DH",
+          "refLine": 157,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_ESI": {
+          "name": "DHookRegister_ESI",
+          "refLine": 167,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM2": {
+          "name": "DHookRegister_XMM2",
+          "refLine": 173,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM5": {
+          "name": "DHookRegister_XMM5",
+          "refLine": 176,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_DL": {
+          "name": "DHookRegister_DL",
+          "refLine": 153,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM6": {
+          "name": "DHookRegister_XMM6",
+          "refLine": 177,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM7": {
+          "name": "DHookRegister_XMM7",
+          "refLine": 178,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM0": {
+          "name": "DHookRegister_XMM0",
+          "refLine": 171,
+          "docStart": 4678,
+          "docEnd": 4702,
+          "docs": {
+            "brief": "128-bit XMM registers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "128-bit XMM registers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM3": {
+          "name": "DHookRegister_XMM3",
+          "refLine": 174,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_EDI": {
+          "name": "DHookRegister_EDI",
+          "refLine": 168,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_BH": {
+          "name": "DHookRegister_BH",
+          "refLine": 158,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_AL": {
+          "name": "DHookRegister_AL",
+          "refLine": 151,
+          "docStart": 4291,
+          "docEnd": 4325,
+          "docs": {
+            "brief": "8-bit general purpose registers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "8-bit general purpose registers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_XMM1": {
+          "name": "DHookRegister_XMM1",
+          "refLine": 172,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_BL": {
+          "name": "DHookRegister_BL",
+          "refLine": 154,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_CL": {
+          "name": "DHookRegister_CL",
+          "refLine": 152,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_EDX": {
+          "name": "DHookRegister_EDX",
+          "refLine": 163,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_ST0": {
+          "name": "DHookRegister_ST0",
+          "refLine": 181,
+          "docStart": 4873,
+          "docEnd": 4896,
+          "docs": {
+            "brief": "80-bit FPU registers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "80-bit FPU registers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_ECX": {
+          "name": "DHookRegister_ECX",
+          "refLine": 162,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_EBX": {
+          "name": "DHookRegister_EBX",
+          "refLine": 164,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_ESP": {
+          "name": "DHookRegister_ESP",
+          "refLine": 165,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DHookRegister_EBP": {
+          "name": "DHookRegister_EBP",
+          "refLine": 166,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "ThisPointerType": {
+      "name": "ThisPointerType",
+      "refLine": 98,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "ThisPointer_Ignore": {
+          "name": "ThisPointer_Ignore",
+          "refLine": 100,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ThisPointer_Address": {
+          "name": "ThisPointer_Address",
+          "refLine": 102,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ThisPointer_CBaseEntity": {
+          "name": "ThisPointer_CBaseEntity",
+          "refLine": 101,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "HookParamType": {
+      "name": "HookParamType",
+      "refLine": 82,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "HookParamType_Object": {
+          "name": "HookParamType_Object",
+          "refLine": 95,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_Unknown": {
+          "name": "HookParamType_Unknown",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_Float": {
+          "name": "HookParamType_Float",
+          "refLine": 87,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_String": {
+          "name": "HookParamType_String",
+          "refLine": 88,
+          "docStart": 2590,
+          "docEnd": 2616,
+          "docs": {
+            "brief": "Note this is a string_t",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Note this is a string_t"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_VectorPtr": {
+          "name": "HookParamType_VectorPtr",
+          "refLine": 91,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_CBaseEntity": {
+          "name": "HookParamType_CBaseEntity",
+          "refLine": 92,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_Int": {
+          "name": "HookParamType_Int",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_Edict": {
+          "name": "HookParamType_Edict",
+          "refLine": 94,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_Bool": {
+          "name": "HookParamType_Bool",
+          "refLine": 86,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_StringPtr": {
+          "name": "HookParamType_StringPtr",
+          "refLine": 89,
+          "docStart": 2643,
+          "docEnd": 2671,
+          "docs": {
+            "brief": "Note this is a string_t *",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Note this is a string_t *"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_ObjectPtr": {
+          "name": "HookParamType_ObjectPtr",
+          "refLine": 93,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "HookParamType_CharPtr": {
+          "name": "HookParamType_CharPtr",
+          "refLine": 90,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {
+    "DHookCallback": {
+      "name": "DHookCallback",
+      "refLine": 198,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function MRESReturn(Address pThis)": {
+          "refLine": 227,
+          "docStart": 6092,
+          "docEnd": 6154,
+          "docs": {
+            "brief": "Function Example: void Ham::Test() with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test() with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(Address pThis)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "Address",
+                "name": "pThis",
+                "decl": "Address pThis",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(int pThis)": {
+          "refLine": 204,
+          "docStart": 5223,
+          "docEnd": 5285,
+          "docs": {
+            "brief": "Function Example: void Ham::Test() with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test() with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(int pThis)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "pThis",
+                "decl": "int pThis",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(Address pThis, DHookReturn hReturn, DHookParam hParams)": {
+          "refLine": 236,
+          "docStart": 6449,
+          "docEnd": 6518,
+          "docs": {
+            "brief": "Function Example: int Ham::Test(int cake) with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test(int cake) with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(Address pThis, DHookReturn hReturn, DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "Address",
+                "name": "pThis",
+                "decl": "Address pThis",
+                "default": null
+              },
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              },
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(Address pThis, DHookReturn hReturn)": {
+          "refLine": 233,
+          "docStart": 6326,
+          "docEnd": 6387,
+          "docs": {
+            "brief": "Function Example: int Ham::Test() with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test() with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(Address pThis, DHookReturn hReturn)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "Address",
+                "name": "pThis",
+                "decl": "Address pThis",
+                "default": null
+              },
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(int pThis, DHookReturn hReturn)": {
+          "refLine": 216,
+          "docStart": 5673,
+          "docEnd": 5734,
+          "docs": {
+            "brief": "Function Example: int Ham::Test() with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test() with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(int pThis, DHookReturn hReturn)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "pThis",
+                "decl": "int pThis",
+                "default": null
+              },
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(DHookReturn hReturn, DHookParam hParams)": {
+          "refLine": 219,
+          "docStart": 5792,
+          "docEnd": 5861,
+          "docs": {
+            "brief": "Function Example: int Ham::Test(int cake) with this pointer ignore",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test(int cake) with this pointer ignore"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(DHookReturn hReturn, DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              },
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(int pThis, DHookParam hParams)": {
+          "refLine": 210,
+          "docStart": 5438,
+          "docEnd": 5508,
+          "docs": {
+            "brief": "Function Example: void Ham::Test(int cake) with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test(int cake) with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(int pThis, DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "pThis",
+                "decl": "int pThis",
+                "default": null
+              },
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(DHookParam hParams)": {
+          "refLine": 207,
+          "docStart": 5322,
+          "docEnd": 5392,
+          "docs": {
+            "brief": "Function Example: void Ham::Test(int cake) with this pointer ignore",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test(int cake) with this pointer ignore"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(int pThis, DHookReturn hReturn, DHookParam hParams)": {
+          "refLine": 222,
+          "docStart": 5928,
+          "docEnd": 5997,
+          "docs": {
+            "brief": "Function Example: int Ham::Test(int cake) with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test(int cake) with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(int pThis, DHookReturn hReturn, DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "pThis",
+                "decl": "int pThis",
+                "default": null
+              },
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              },
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(Address pThis, DHookParam hParams)": {
+          "refLine": 230,
+          "docStart": 6195,
+          "docEnd": 6265,
+          "docs": {
+            "brief": "Function Example: void Ham::Test(int cake) with this pointer passed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test(int cake) with this pointer passed"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(Address pThis, DHookParam hParams)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "Address",
+                "name": "pThis",
+                "decl": "Address pThis",
+                "default": null
+              },
+              {
+                "type": "DHookParam",
+                "name": "hParams",
+                "decl": "DHookParam hParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn(DHookReturn hReturn)": {
+          "refLine": 213,
+          "docStart": 5565,
+          "docEnd": 5626,
+          "docs": {
+            "brief": "Function Example: int Ham::Test() with this pointer ignore",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: int Ham::Test() with this pointer ignore"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn(DHookReturn hReturn)",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": [
+              {
+                "type": "DHookReturn",
+                "name": "hReturn",
+                "decl": "DHookReturn hReturn",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function MRESReturn()": {
+          "refLine": 201,
+          "docStart": 5133,
+          "docEnd": 5195,
+          "docs": {
+            "brief": "Function Example: void Ham::Test() with this pointer ignore",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Function Example: void Ham::Test() with this pointer ignore"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function MRESReturn()",
+          "parsedSignature": {
+            "returnType": "MRESReturn",
+            "arguments": []
+          }
+        }
+      }
+    },
+    "ListenCB": {
+      "name": "ListenCB",
+      "refLine": 184,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(int entity)": {
+          "refLine": 187,
+          "docStart": 4940,
+          "docEnd": 4950,
+          "docs": {
+            "brief": "Deleted",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deleted"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int entity)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int entity, const char[] classname)": {
+          "refLine": 190,
+          "docStart": 4982,
+          "docEnd": 4992,
+          "docs": {
+            "brief": "Created",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Created"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int entity, const char[] classname)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "classname",
+                "decl": "const char[] classname",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "DHookRemovalCB": {
+      "name": "DHookRemovalCB",
+      "refLine": 193,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(int hookid)": {
+          "refLine": 195,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(int hookid)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "hookid",
+                "decl": "int hookid",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

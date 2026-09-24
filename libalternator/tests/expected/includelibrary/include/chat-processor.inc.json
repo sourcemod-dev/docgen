@@ -1,0 +1,277 @@
+{
+  "functions": {
+    "OnChatMessage": {
+      "name": "OnChatMessage",
+      "refLine": 50,
+      "docStart": 742,
+      "docEnd": 1426,
+      "docs": {
+        "brief": "Called while sending a chat message before It's sent.\nLimits on the name and message strings can be found above.\n\nparam author   Author that created the message.\nparam recipients  Array of clients who will receive the message.\nparam flag   Determines which type of message is being sent.\nparam name   Name string of the author to be pushed.\nparam message   Message string from the author to be pushed.\n\nreturn types\n- Plugin_Continue Stops the message.\n- Plugin_Stop  Stops the message.\n- Plugin_Changed  Fires the post-forward below and prints out a message.\n- Plugin_Handled  Fires the post-forward below but doesn't print a message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called while sending a chat message before It's sent.\nLimits on the name and message strings can be found above.\n\nparam author   Author that created the message.\nparam recipients  Array of clients who will receive the message.\nparam flag   Determines which type of message is being sent.\nparam name   Name string of the author to be pushed.\nparam message   Message string from the author to be pushed.\n\nreturn types\n- Plugin_Continue Stops the message.\n- Plugin_Stop  Stops the message.\n- Plugin_Changed  Fires the post-forward below and prints out a message.\n- Plugin_Handled  Fires the post-forward below but doesn't print a message."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int&",
+          "name": "author",
+          "decl": "int& author",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "recipients",
+          "decl": "ArrayList recipients",
+          "default": null
+        },
+        {
+          "type": "eChatFlags&",
+          "name": "flag",
+          "decl": "eChatFlags& flag",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "message",
+          "decl": "char[] message",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "bProcessColors",
+          "decl": "bool& bProcessColors",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "bRemoveColors",
+          "decl": "bool& bRemoveColors",
+          "default": null
+        }
+      ]
+    },
+    "OnChatMessagePost": {
+      "name": "OnChatMessagePost",
+      "refLine": 63,
+      "docStart": 1583,
+      "docEnd": 1946,
+      "docs": {
+        "brief": "Called after the chat message is sent to the designated clients by the author.\n\nparam author   Author that sent the message.\nparam recipients  Array of clients who received the message.\nparam flag   Determines which type of message was sent.\nparam name   Name string of the author.\nparam message   Message string from the author.\n\nnoreturn",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after the chat message is sent to the designated clients by the author.\n\nparam author   Author that sent the message.\nparam recipients  Array of clients who received the message.\nparam flag   Determines which type of message was sent.\nparam name   Name string of the author.\nparam message   Message string from the author.\n\nnoreturn"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "recipients",
+          "decl": "ArrayList recipients",
+          "default": null
+        },
+        {
+          "type": "eChatFlags",
+          "name": "flag",
+          "decl": "eChatFlags flag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bProcessColors",
+          "decl": "bool bProcessColors",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bRemoveColors",
+          "decl": "bool bRemoveColors",
+          "default": null
+        }
+      ]
+    },
+    "__pl_chat_processor_SetNTVOptional": {
+      "name": "__pl_chat_processor_SetNTVOptional",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ChatProcessor_GetChatFlagString": {
+      "name": "ChatProcessor_GetChatFlagString",
+      "refLine": 31,
+      "docStart": 289,
+      "docEnd": 645,
+      "docs": {
+        "brief": "Retrieves the current format string assigned to a chat flag.\nExample: ChatFlag_Dead = ' *DEAD* {1} :  {2} '\nYou can find the config formats in either the translations or the configs.\n\nparam flag   Flag to retrieve the format string for.\nparam sFormatString String Buffer.\nparam iSize   Size of the String Buffer.\n\nnoreturn",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the current format string assigned to a chat flag.\nExample: ChatFlag_Dead = ' *DEAD* {1} :  {2} '\nYou can find the config formats in either the translations or the configs.\n\nparam flag   Flag to retrieve the format string for.\nparam sFormatString String Buffer.\nparam iSize   Size of the String Buffer.\n\nnoreturn"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "eChatFlags",
+          "name": "flag",
+          "decl": "eChatFlags flag",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sFormatString",
+          "decl": "char[] sFormatString",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSize",
+          "decl": "int iSize",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_chat_processor_included": {
+      "name": "_chat_processor_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MAXLENGTH_NAME": {
+      "name": "MAXLENGTH_NAME",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "MAXLENGTH_INPUT": {
+      "name": "MAXLENGTH_INPUT",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "128"
+    },
+    "MAXLENGTH_MESSAGE": {
+      "name": "MAXLENGTH_MESSAGE",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "256"
+    }
+  },
+  "enums": {
+    "eChatFlags": {
+      "name": "eChatFlags",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "ChatFlag_Invalid": {
+          "name": "ChatFlag_Invalid",
+          "refLine": 12,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ChatFlag_Spec": {
+          "name": "ChatFlag_Spec",
+          "refLine": 15,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ChatFlag_Dead": {
+          "name": "ChatFlag_Dead",
+          "refLine": 16,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ChatFlag_All": {
+          "name": "ChatFlag_All",
+          "refLine": 13,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ChatFlag_Team": {
+          "name": "ChatFlag_Team",
+          "refLine": 14,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

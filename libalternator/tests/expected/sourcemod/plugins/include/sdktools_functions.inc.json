@@ -1,0 +1,1828 @@
+{
+  "functions": {
+    "TeleportEntity": {
+      "name": "TeleportEntity",
+      "refLine": 99,
+      "docStart": 3500,
+      "docEnd": 3866,
+      "docs": {
+        "brief": "Teleports an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Teleports an entity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:origin",
+            "text": "New origin, or NULL_VECTOR for no change."
+          },
+          {
+            "tag": "param:angles",
+            "text": "New angles, or NULL_VECTOR for no change."
+          },
+          {
+            "tag": "param:velocity",
+            "text": "New velocity, or NULL_VECTOR for no change."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "angles",
+          "decl": "const float angles[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "velocity",
+          "decl": "const float velocity[3]",
+          "default": "NULL_VECTOR"
+        }
+      ]
+    },
+    "GetPlayerWeaponSlot": {
+      "name": "GetPlayerWeaponSlot",
+      "refLine": 68,
+      "docStart": 2452,
+      "docEnd": 2760,
+      "docs": {
+        "brief": "Returns the weapon in a player's slot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the weapon in a player's slot."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:slot",
+            "text": "Slot index (mod specific)."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index on success, -1 if no weapon existed."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "GetTeamCount": {
+      "name": "GetTeamCount",
+      "refLine": 230,
+      "docStart": 8833,
+      "docEnd": 9004,
+      "docs": {
+        "brief": "Returns the total number of teams in a game.\nNote: This native should not be called before OnMapStart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the total number of teams in a game.\nNote: This native should not be called before OnMapStart."
+          },
+          {
+            "tag": "return",
+            "text": "Total number of teams."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "SetTeamScore": {
+      "name": "SetTeamScore",
+      "refLine": 261,
+      "docStart": 9706,
+      "docEnd": 9956,
+      "docs": {
+        "brief": "Sets the score of a team based on a team index.\nNote: This native should not be called before OnMapStart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the score of a team based on a team index.\nNote: This native should not be called before OnMapStart."
+          },
+          {
+            "tag": "param:index",
+            "text": "Team index."
+          },
+          {
+            "tag": "param:value",
+            "text": "New score value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "SetClientName": {
+      "name": "SetClientName",
+      "refLine": 358,
+      "docStart": 12998,
+      "docEnd": 13208,
+      "docs": {
+        "brief": "Changes a client's name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes a client's name."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:name",
+            "text": "New name."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "DispatchKeyValueFloat": {
+      "name": "DispatchKeyValueFloat",
+      "refLine": 199,
+      "docStart": 7460,
+      "docEnd": 7815,
+      "docs": {
+        "brief": "Dispatches a KeyValue into given entity using a floating point value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dispatches a KeyValue into given entity using a floating point value."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Destination entity index."
+          },
+          {
+            "tag": "param:keyName",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point value."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "keyName",
+          "decl": "const char[] keyName",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "RemovePlayerItem": {
+      "name": "RemovePlayerItem",
+      "refLine": 47,
+      "docStart": 1661,
+      "docEnd": 1977,
+      "docs": {
+        "brief": "Removes a player's item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a player's item."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:item",
+            "text": "CBaseCombatWeapon entity index."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or entity, lack of mod support, or client not in\ngame."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "item",
+          "decl": "int item",
+          "default": null
+        }
+      ]
+    },
+    "GetTeamName": {
+      "name": "GetTeamName",
+      "refLine": 241,
+      "docStart": 9036,
+      "docEnd": 9353,
+      "docs": {
+        "brief": "Retrieves the team name based on a team index.\nNote: This native should not be called before OnMapStart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the team name based on a team index.\nNote: This native should not be called before OnMapStart."
+          },
+          {
+            "tag": "param:index",
+            "text": "Team index."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "ExtinguishEntity": {
+      "name": "ExtinguishEntity",
+      "refLine": 88,
+      "docStart": 3271,
+      "docEnd": 3453,
+      "docs": {
+        "brief": "Extinguishes an entity that is on fire.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Extinguishes an entity that is on fire."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "GetTeamClientCount": {
+      "name": "GetTeamClientCount",
+      "refLine": 271,
+      "docStart": 10009,
+      "docEnd": 10276,
+      "docs": {
+        "brief": "Retrieves the number of players in a certain team.\nNote: This native should not be called before OnMapStart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the number of players in a certain team.\nNote: This native should not be called before OnMapStart."
+          },
+          {
+            "tag": "param:index",
+            "text": "Team index."
+          },
+          {
+            "tag": "return",
+            "text": "Number of players in the team."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "GetTeamEntity": {
+      "name": "GetTeamEntity",
+      "refLine": 280,
+      "docStart": 10323,
+      "docEnd": 10504,
+      "docs": {
+        "brief": "Returns the entity index of a team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the entity index of a team."
+          },
+          {
+            "tag": "param:teamIndex",
+            "text": "Team index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index of team."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "teamIndex",
+          "decl": "int teamIndex",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityModel": {
+      "name": "SetEntityModel",
+      "refLine": 289,
+      "docStart": 10550,
+      "docEnd": 10746,
+      "docs": {
+        "brief": "Sets the model to a given entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the model to a given entity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:model",
+            "text": "Model name."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "model",
+          "decl": "const char[] model",
+          "default": null
+        }
+      ]
+    },
+    "GetServerNetStats": {
+      "name": "GetServerNetStats",
+      "refLine": 320,
+      "docStart": 11685,
+      "docEnd": 11943,
+      "docs": {
+        "brief": "Returns the average server network traffic in bytes/sec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the average server network traffic in bytes/sec."
+          },
+          {
+            "tag": "param:in",
+            "text": "Buffer to store the input traffic velocity."
+          },
+          {
+            "tag": "param:out",
+            "text": "Buffer to store the output traffic velocity."
+          },
+          {
+            "tag": "error",
+            "text": "Lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float&",
+          "name": "inAmount",
+          "decl": "float& inAmount",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "outAmout",
+          "decl": "float& outAmout",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityAttachment": {
+      "name": "GetEntityAttachment",
+      "refLine": 419,
+      "docStart": 15175,
+      "docEnd": 15638,
+      "docs": {
+        "brief": "Returns the world location and world angles of an attachment.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the world location and world angles of an attachment."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "param:attachment",
+            "text": "The attachment index."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Destination vector to store the attachment's origin vector."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Destination vector to store the attachment's position angle."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attachment",
+          "decl": "int attachment",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "origin",
+          "decl": "float origin[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "angles",
+          "decl": "float angles[3]",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityCollisionGroup": {
+      "name": "SetEntityCollisionGroup",
+      "refLine": 380,
+      "docStart": 13859,
+      "docEnd": 14114,
+      "docs": {
+        "brief": "Changes an entity's collision group (CBaseEntity::SetCollisionGroup).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes an entity's collision group (CBaseEntity::SetCollisionGroup)."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "param:collisionGroup",
+            "text": "Collision group to use."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "collisionGroup",
+          "decl": "int collisionGroup",
+          "default": null
+        }
+      ]
+    },
+    "FindEntityByClassname": {
+      "name": "FindEntityByClassname",
+      "refLine": 129,
+      "docStart": 4684,
+      "docEnd": 5081,
+      "docs": {
+        "brief": "Searches for an entity by classname.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Searches for an entity by classname."
+          },
+          {
+            "tag": "param:startEnt",
+            "text": "A valid entity's index after which to begin searching from.\nUse -1 to start from the first entity."
+          },
+          {
+            "tag": "param:classname",
+            "text": "Classname of the entity to find."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index >= 0 if found, -1 otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid start entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "startEnt",
+          "decl": "int startEnt",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        }
+      ]
+    },
+    "DispatchSpawn": {
+      "name": "DispatchSpawn",
+      "refLine": 160,
+      "docStart": 6202,
+      "docEnd": 6440,
+      "docs": {
+        "brief": "Spawns an entity into the game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Spawns an entity into the game."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index of the created entity."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "DispatchKeyValue": {
+      "name": "DispatchKeyValue",
+      "refLine": 171,
+      "docStart": 6484,
+      "docEnd": 6823,
+      "docs": {
+        "brief": "Dispatches a KeyValue into given entity using a string value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dispatches a KeyValue into given entity using a string value."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Destination entity index."
+          },
+          {
+            "tag": "param:keyName",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "keyName",
+          "decl": "const char[] keyName",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetPlayerDecalFile": {
+      "name": "GetPlayerDecalFile",
+      "refLine": 300,
+      "docStart": 10811,
+      "docEnd": 11170,
+      "docs": {
+        "brief": "Retrieves the decal file name associated with a given client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the decal file name associated with a given client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:hex",
+            "text": "Buffer to store the logo filename."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "hex",
+          "decl": "char[] hex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetPlayerJingleFile": {
+      "name": "GetPlayerJingleFile",
+      "refLine": 311,
+      "docStart": 11246,
+      "docEnd": 11608,
+      "docs": {
+        "brief": "Retrieves the jingle file name associated with a given client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the jingle file name associated with a given client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:hex",
+            "text": "Buffer to store the jingle filename."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "hex",
+          "decl": "char[] hex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "LookupEntityAttachment": {
+      "name": "LookupEntityAttachment",
+      "refLine": 407,
+      "docStart": 14784,
+      "docEnd": 15104,
+      "docs": {
+        "brief": "Returns the index number of a given named attachment.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the index number of a given named attachment."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "param:name",
+            "text": "The attachment name."
+          },
+          {
+            "tag": "return",
+            "text": "An attachment index, or 0 if the attachment name is invalid or unused."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "GivePlayerAmmo": {
+      "name": "GivePlayerAmmo",
+      "refLine": 371,
+      "docStart": 13271,
+      "docEnd": 13763,
+      "docs": {
+        "brief": "Gives ammo of a certain type to a player.\nThis natives obeys the maximum amount of ammo a player can carry per ammo type.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gives ammo of a certain type to a player.\nThis natives obeys the maximum amount of ammo a player can carry per ammo type."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:amount",
+            "text": "Amount of ammo to give. Is capped at ammotype's limit."
+          },
+          {
+            "tag": "param:ammotype",
+            "text": "Type of ammo to give to player."
+          },
+          {
+            "tag": "param:suppressSound",
+            "text": "If true, don't play the ammo pickup sound."
+          },
+          {
+            "tag": "return",
+            "text": "Amount of ammo actually given."
+          },
+          {
+            "tag": "error",
+            "text": "Lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "amount",
+          "decl": "int amount",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ammotype",
+          "decl": "int ammotype",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "suppressSound",
+          "decl": "bool suppressSound",
+          "default": "false"
+        }
+      ]
+    },
+    "GetClientAimTarget": {
+      "name": "GetClientAimTarget",
+      "refLine": 222,
+      "docStart": 8336,
+      "docEnd": 8761,
+      "docs": {
+        "brief": "Returns the entity a client is aiming at.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the entity a client is aiming at."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client performing the aiming."
+          },
+          {
+            "tag": "param:only_clients",
+            "text": "True to exclude all entities but clients."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index being aimed at.\n-1 if no entity is being aimed at.\n-2 if the function is not supported."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "only_clients",
+          "decl": "bool only_clients",
+          "default": "true"
+        }
+      ]
+    },
+    "SetClientInfo": {
+      "name": "SetClientInfo",
+      "refLine": 349,
+      "docStart": 12543,
+      "docEnd": 12916,
+      "docs": {
+        "brief": "Sets values to client info buffer keys and notifies the engine of the change.\nThe change does not get propagated to mods until the next frame.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets values to client info buffer keys and notifies the engine of the change.\nThe change does not get propagated to mods until the next frame."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value string."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetClientEyeAngles": {
+      "name": "GetClientEyeAngles",
+      "refLine": 139,
+      "docStart": 5158,
+      "docEnd": 5477,
+      "docs": {
+        "brief": "Returns the client's eye angles.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's eye angles."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:ang",
+            "text": "Destination vector to store the client's eye angles."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "ang",
+          "decl": "float ang[3]",
+          "default": null
+        }
+      ]
+    },
+    "CreateEntityByName": {
+      "name": "CreateEntityByName",
+      "refLine": 151,
+      "docStart": 5540,
+      "docEnd": 6118,
+      "docs": {
+        "brief": "Creates an entity by string name, but does not spawn it (see DispatchSpawn).\nIf ForceEdictIndex is not -1, then it will use the edict by that index. If the index is\ninvalid or there is already an edict using that index, it will error out.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates an entity by string name, but does not spawn it (see DispatchSpawn).\nIf ForceEdictIndex is not -1, then it will use the edict by that index. If the index is\ninvalid or there is already an edict using that index, it will error out."
+          },
+          {
+            "tag": "param:classname",
+            "text": "Entity classname."
+          },
+          {
+            "tag": "param:ForceEdictIndex",
+            "text": "Edict index used by the created entity (ignored on Orangebox and above)."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index on success, or -1 on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid edict index, no map is running, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ForceEdictIndex",
+          "decl": "int ForceEdictIndex",
+          "default": "-1"
+        }
+      ]
+    },
+    "ActivateEntity": {
+      "name": "ActivateEntity",
+      "refLine": 338,
+      "docStart": 12332,
+      "docEnd": 12498,
+      "docs": {
+        "brief": "Activates an entity (CBaseAnimating::Activate)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Activates an entity (CBaseAnimating::Activate)"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "ForcePlayerSuicide": {
+      "name": "ForcePlayerSuicide",
+      "refLine": 108,
+      "docStart": 4024,
+      "docEnd": 4255,
+      "docs": {
+        "brief": "Forces a player to commit suicide.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Forces a player to commit suicide."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:explode",
+            "text": "If true, explode the player."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "explode",
+          "decl": "bool explode",
+          "default": "false"
+        }
+      ]
+    },
+    "DispatchKeyValueInt": {
+      "name": "DispatchKeyValueInt",
+      "refLine": 182,
+      "docStart": 6912,
+      "docEnd": 7254,
+      "docs": {
+        "brief": "Dispatches a KeyValue into given entity using an integer value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dispatches a KeyValue into given entity using an integer value."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Destination entity index."
+          },
+          {
+            "tag": "param:keyName",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "param:value",
+            "text": "Integer value."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "keyName",
+          "decl": "const char[] keyName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "EquipPlayerWeapon": {
+      "name": "EquipPlayerWeapon",
+      "refLine": 330,
+      "docStart": 12013,
+      "docEnd": 12272,
+      "docs": {
+        "brief": "Equip's a player's weapon.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Equip's a player's weapon."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "CBaseCombatWeapon entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or entity, lack of mod support, or client not in\ngame."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        }
+      ]
+    },
+    "GivePlayerItem": {
+      "name": "GivePlayerItem",
+      "refLine": 58,
+      "docStart": 2034,
+      "docEnd": 2373,
+      "docs": {
+        "brief": "Gives a named item to a player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gives a named item to a player."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:item",
+            "text": "Item classname (such as weapon_ak47)."
+          },
+          {
+            "tag": "param:iSubType",
+            "text": "Unknown."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index on success, or -1 on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSubType",
+          "decl": "int iSubType",
+          "default": "0"
+        }
+      ]
+    },
+    "IgniteEntity": {
+      "name": "IgniteEntity",
+      "refLine": 80,
+      "docStart": 2819,
+      "docEnd": 3166,
+      "docs": {
+        "brief": "Ignites an entity on fire.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ignites an entity on fire."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:time",
+            "text": "Number of seconds to set on fire."
+          },
+          {
+            "tag": "param:npc",
+            "text": "True to only affect NPCs."
+          },
+          {
+            "tag": "param:size",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:level",
+            "text": "Unknown."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "time",
+          "decl": "float time",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "npc",
+          "decl": "bool npc",
+          "default": "false"
+        },
+        {
+          "type": "float",
+          "name": "size",
+          "decl": "float size",
+          "default": "0.000000"
+        },
+        {
+          "type": "bool",
+          "name": "level",
+          "decl": "bool level",
+          "default": "false"
+        }
+      ]
+    },
+    "DispatchKeyValueVector": {
+      "name": "DispatchKeyValueVector",
+      "refLine": 210,
+      "docStart": 7902,
+      "docEnd": 8241,
+      "docs": {
+        "brief": "Dispatches a KeyValue into given entity using a vector value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dispatches a KeyValue into given entity using a vector value."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Destination entity index."
+          },
+          {
+            "tag": "param:keyName",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "keyName",
+          "decl": "const char[] keyName",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetTeamScore": {
+      "name": "GetTeamScore",
+      "refLine": 251,
+      "docStart": 9422,
+      "docEnd": 9665,
+      "docs": {
+        "brief": "Returns the score of a team based on a team index.\nNote: This native should not be called before OnMapStart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the score of a team based on a team index.\nNote: This native should not be called before OnMapStart."
+          },
+          {
+            "tag": "param:index",
+            "text": "Team index."
+          },
+          {
+            "tag": "return",
+            "text": "Score."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "EntityCollisionRulesChanged": {
+      "name": "EntityCollisionRulesChanged",
+      "refLine": 388,
+      "docStart": 14188,
+      "docEnd": 14393,
+      "docs": {
+        "brief": "Recaculates entity collision rules (CBaseEntity::CollisionRulesChanged).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Recaculates entity collision rules (CBaseEntity::CollisionRulesChanged)."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityOwner": {
+      "name": "SetEntityOwner",
+      "refLine": 397,
+      "docStart": 14451,
+      "docEnd": 14706,
+      "docs": {
+        "brief": "Sets an entity's owner (CBaseEntity::SetEntityOwner).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's owner (CBaseEntity::SetEntityOwner)."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "param:owner",
+            "text": "The owner entity index, can be invalid."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": "INVALID_ENT_REFERENCE"
+        }
+      ]
+    },
+    "SlapPlayer": {
+      "name": "SlapPlayer",
+      "refLine": 118,
+      "docStart": 4326,
+      "docEnd": 4612,
+      "docs": {
+        "brief": "Slaps a player in a random direction.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Slaps a player in a random direction."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:health",
+            "text": "Health to subtract."
+          },
+          {
+            "tag": "param:sound",
+            "text": "False to disable the sound effects."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "health",
+          "decl": "int health",
+          "default": "5"
+        },
+        {
+          "type": "bool",
+          "name": "sound",
+          "decl": "bool sound",
+          "default": "true"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_functions_included": {
+      "name": "_sdktools_functions_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

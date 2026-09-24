@@ -1,0 +1,171 @@
+{
+  "functions": {
+    "Benchmark": {
+      "name": "Benchmark",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "StringBench": {
+      "name": "StringBench",
+      "refLine": 107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "MathBench": {
+      "name": "MathBench",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "KEY5": {
+      "name": "KEY5",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"RMZCVWIEY\""
+    },
+    "KEY6": {
+      "name": "KEY6",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"ZHPU\""
+    },
+    "MATH_INT_LOOPS": {
+      "name": "MATH_INT_LOOPS",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "STRING_ML_LOOPS": {
+      "name": "STRING_ML_LOOPS",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "STRING_OP_LOOPS": {
+      "name": "STRING_OP_LOOPS",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "KEY4": {
+      "name": "KEY4",
+      "refLine": 103,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"EPRHAFCIUOIG\""
+    },
+    "KEY2": {
+      "name": "KEY2",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"IDYCVNWEOWNND\""
+    },
+    "STRING_FMT_LOOPS": {
+      "name": "STRING_FMT_LOOPS",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "STRING_RPLC_LOOPS": {
+      "name": "STRING_RPLC_LOOPS",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "MATH_FLOAT_LOOPS": {
+      "name": "MATH_FLOAT_LOOPS",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2000"
+    },
+    "KEY3": {
+      "name": "KEY3",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"UZWTRNHY\""
+    },
+    "KEY1": {
+      "name": "KEY1",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"LVWANBAGVXSXUGB\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

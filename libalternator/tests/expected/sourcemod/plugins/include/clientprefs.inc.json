@@ -1,0 +1,1551 @@
+{
+  "functions": {
+    "GetCookieAccess": {
+      "name": "GetCookieAccess",
+      "refLine": 377,
+      "docStart": 13067,
+      "docEnd": 13278,
+      "docs": {
+        "brief": "Returns the access level of a cookie",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the access level of a cookie"
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Client preference cookie handle."
+          },
+          {
+            "tag": "return",
+            "text": "CookieAccess access level."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CookieAccess",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        }
+      ]
+    },
+    "RegClientCookie": {
+      "name": "RegClientCookie",
+      "refLine": 251,
+      "docStart": 8323,
+      "docEnd": 8893,
+      "docs": {
+        "brief": "Creates a new Client preference cookie.\n\nHandles returned by RegClientCookie can be closed via CloseHandle() when\nno longer needed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new Client preference cookie.\n\nHandles returned by RegClientCookie can be closed via CloseHandle() when\nno longer needed."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the new preference cookie."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description of the preference cookie."
+          },
+          {
+            "tag": "param:access",
+            "text": "What CookieAccess level to assign to this cookie."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to the newly created cookie. If the cookie already\nexists, a handle to it will still be returned."
+          },
+          {
+            "tag": "error",
+            "text": "Cookie name is blank."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Cookie",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": null
+        },
+        {
+          "type": "CookieAccess",
+          "name": "access",
+          "decl": "CookieAccess access",
+          "default": null
+        }
+      ]
+    },
+    "GetCookieIterator": {
+      "name": "GetCookieIterator",
+      "refLine": 350,
+      "docStart": 12273,
+      "docEnd": 12396,
+      "docs": {
+        "brief": "Gets a cookie iterator.  Must be freed with CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a cookie iterator.  Must be freed with CloseHandle()."
+          },
+          {
+            "tag": "return",
+            "text": "A new cookie iterator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "SetCookieMenuItem": {
+      "name": "SetCookieMenuItem",
+      "refLine": 336,
+      "docStart": 11653,
+      "docEnd": 12038,
+      "docs": {
+        "brief": "Adds a new item to the client cookie settings menu.\n\nNote: This only adds the top level menu item. You need to handle any submenus from the callback.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a new item to the client cookie settings menu.\n\nNote: This only adds the top level menu item. You need to handle any submenus from the callback."
+          },
+          {
+            "tag": "param:handler",
+            "text": "A MenuHandler callback function."
+          },
+          {
+            "tag": "param:info",
+            "text": "Data to pass to the callback."
+          },
+          {
+            "tag": "param:display",
+            "text": "Text to show on the menu."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "CookieMenuHandler",
+          "name": "handler",
+          "decl": "CookieMenuHandler handler",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "info",
+          "decl": "any info",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "display",
+          "decl": "const char[] display",
+          "default": null
+        }
+      ]
+    },
+    "GetClientCookieTime": {
+      "name": "GetClientCookieTime",
+      "refLine": 386,
+      "docStart": 13335,
+      "docEnd": 13534,
+      "docs": {
+        "brief": "Returns the last updated timestamp for a client cookie",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the last updated timestamp for a client cookie"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Cookie handle."
+          },
+          {
+            "tag": "return",
+            "text": "Last updated timestamp."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        }
+      ]
+    },
+    "FindClientCookie": {
+      "name": "FindClientCookie",
+      "refLine": 263,
+      "docStart": 8995,
+      "docEnd": 9287,
+      "docs": {
+        "brief": "Searches for a Client preference cookie.\n\nHandles returned by FindClientCookie can be closed via CloseHandle() when\nno longer needed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Searches for a Client preference cookie.\n\nHandles returned by FindClientCookie can be closed via CloseHandle() when\nno longer needed."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of cookie to find."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to the cookie if it is found, null otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Cookie",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "SetClientCookie": {
+      "name": "SetClientCookie",
+      "refLine": 273,
+      "docStart": 9343,
+      "docEnd": 9619,
+      "docs": {
+        "brief": "Set the value of a Client preference cookie.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set the value of a Client preference cookie."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Client preference cookie handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle or invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "ShowCookieMenu": {
+      "name": "ShowCookieMenu",
+      "refLine": 343,
+      "docStart": 12133,
+      "docEnd": 12228,
+      "docs": {
+        "brief": "Displays the settings menu to a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays the settings menu to a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientCookiesCached": {
+      "name": "OnClientCookiesCached",
+      "refLine": 310,
+      "docStart": 10801,
+      "docEnd": 10929,
+      "docs": {
+        "brief": "Called once a client's saved cookies have been loaded from the database.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once a client's saved cookies have been loaded from the database."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "__ext_cprefs_SetNTVOptional": {
+      "name": "__ext_cprefs_SetNTVOptional",
+      "refLine": 408,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SetAuthIdCookie": {
+      "name": "SetAuthIdCookie",
+      "refLine": 294,
+      "docStart": 10130,
+      "docEnd": 10434,
+      "docs": {
+        "brief": "Sets the value of a Client preference cookie based on an authID string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the value of a Client preference cookie based on an authID string."
+          },
+          {
+            "tag": "param:authID",
+            "text": "String Auth/STEAM ID of player to set."
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Client preference cookie handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "authID",
+          "decl": "const char[] authID",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetClientCookie": {
+      "name": "GetClientCookie",
+      "refLine": 284,
+      "docStart": 9700,
+      "docEnd": 10042,
+      "docs": {
+        "brief": "Retrieve the value of a Client preference cookie.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the value of a Client preference cookie."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Client preference cookie handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Copyback buffer for value."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle or invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "AreClientCookiesCached": {
+      "name": "AreClientCookiesCached",
+      "refLine": 303,
+      "docStart": 10524,
+      "docEnd": 10748,
+      "docs": {
+        "brief": "Checks if a clients cookies have been loaded from the database.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a clients cookies have been loaded from the database."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "True if loaded, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SetCookiePrefabMenu": {
+      "name": "SetCookiePrefabMenu",
+      "refLine": 324,
+      "docStart": 10982,
+      "docEnd": 11505,
+      "docs": {
+        "brief": "Add a new prefab item to the client cookie settings menu.\n\nNote: This handles everything automatically and does not require a callback",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a new prefab item to the client cookie settings menu.\n\nNote: This handles everything automatically and does not require a callback"
+          },
+          {
+            "tag": "param:cookie",
+            "text": "Client preference cookie handle."
+          },
+          {
+            "tag": "param:type",
+            "text": "A CookieMenu prefab menu type."
+          },
+          {
+            "tag": "param:display",
+            "text": "Text to show on the menu."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Optional handler callback for translations and output on selection"
+          },
+          {
+            "tag": "param:info",
+            "text": "Info data to pass to the callback."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid cookie handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "cookie",
+          "decl": "Handle cookie",
+          "default": null
+        },
+        {
+          "type": "CookieMenu",
+          "name": "type",
+          "decl": "CookieMenu type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "display",
+          "decl": "const char[] display",
+          "default": null
+        },
+        {
+          "type": "CookieMenuHandler",
+          "name": "handler",
+          "decl": "CookieMenuHandler handler",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "any",
+          "name": "info",
+          "decl": "any info",
+          "default": "0"
+        }
+      ]
+    },
+    "ReadCookieIterator": {
+      "name": "ReadCookieIterator",
+      "refLine": 363,
+      "docStart": 12436,
+      "docEnd": 12889,
+      "docs": {
+        "brief": "Reads a cookie iterator, then advances to the next cookie if any.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a cookie iterator, then advances to the next cookie if any."
+          },
+          {
+            "tag": "param:iter",
+            "text": "Cookie iterator Handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name buffer."
+          },
+          {
+            "tag": "param:nameLen",
+            "text": "Name buffer size."
+          },
+          {
+            "tag": "param:access",
+            "text": "Access level of the cookie."
+          },
+          {
+            "tag": "param:desc",
+            "text": "Cookie description buffer."
+          },
+          {
+            "tag": "param:descLen",
+            "text": "Cookie description buffer size."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there are no more commands."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "iter",
+          "decl": "Handle iter",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nameLen",
+          "decl": "int nameLen",
+          "default": null
+        },
+        {
+          "type": "CookieAccess&",
+          "name": "access",
+          "decl": "CookieAccess& access",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "desc",
+          "decl": "char[] desc",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "descLen",
+          "decl": "int descLen",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Cookie": {
+      "name": "Cookie",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 174,
+          "docStart": 6037,
+          "docEnd": 6265,
+          "docs": {
+            "brief": "Retrieve the integer value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the integer value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value of cookie"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "defaultValue",
+              "decl": "int defaultValue",
+              "default": "0"
+            }
+          ]
+        },
+        "Set": {
+          "name": "Set",
+          "refLine": 134,
+          "docStart": 4655,
+          "docEnd": 4867,
+          "docs": {
+            "brief": "Set the value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to set."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "SetPrefabMenu": {
+          "name": "SetPrefabMenu",
+          "refLine": 221,
+          "docStart": 7300,
+          "docEnd": 7763,
+          "docs": {
+            "brief": "Add a new prefab item to the client cookie settings menu.\n\nNote: This handles everything automatically and does not require a callback",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add a new prefab item to the client cookie settings menu.\n\nNote: This handles everything automatically and does not require a callback"
+              },
+              {
+                "tag": "param:type",
+                "text": "A CookieMenu prefab menu type."
+              },
+              {
+                "tag": "param:display",
+                "text": "Text to show on the menu."
+              },
+              {
+                "tag": "param:handler",
+                "text": "Optional handler callback for translations and output on selection"
+              },
+              {
+                "tag": "param:info",
+                "text": "Info data to pass to the callback."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "CookieMenu",
+              "name": "type",
+              "decl": "CookieMenu type",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "display",
+              "decl": "const char[] display",
+              "default": null
+            },
+            {
+              "type": "CookieMenuHandler",
+              "name": "handler",
+              "decl": "CookieMenuHandler handler",
+              "default": "INVALID_FUNCTION"
+            },
+            {
+              "type": "any",
+              "name": "info",
+              "decl": "any info",
+              "default": "0"
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 153,
+          "docStart": 5308,
+          "docEnd": 5525,
+          "docs": {
+            "brief": "Set the float value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the float value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Float value to set."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "GetClientTime": {
+          "name": "GetClientTime",
+          "refLine": 227,
+          "docStart": 7899,
+          "docEnd": 8051,
+          "docs": {
+            "brief": "Returns the last updated timestamp for a client cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the last updated timestamp for a client cookie"
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "return",
+                "text": "Last updated timestamp."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 192,
+          "docStart": 6505,
+          "docEnd": 6729,
+          "docs": {
+            "brief": "Retrieve the float value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the float value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "return",
+                "text": "Float value of cookie"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "defaultValue",
+              "decl": "float defaultValue",
+              "default": "0.000000"
+            }
+          ]
+        },
+        "Cookie": {
+          "name": "Cookie",
+          "refLine": 117,
+          "docStart": 3666,
+          "docEnd": 4217,
+          "docs": {
+            "brief": "Creates a new Client preference cookie.\n\nHandles returned can be closed via CloseHandle() when\nno longer needed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new Client preference cookie.\n\nHandles returned can be closed via CloseHandle() when\nno longer needed."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the new preference cookie."
+              },
+              {
+                "tag": "param:description",
+                "text": "Optional description of the preference cookie."
+              },
+              {
+                "tag": "param:access",
+                "text": "What CookieAccess level to assign to this cookie."
+              },
+              {
+                "tag": "return",
+                "text": "A handle to the newly created cookie. If the cookie already\nexists, a handle to it will still be returned."
+              },
+              {
+                "tag": "error",
+                "text": "Cookie name is blank."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Cookie",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "description",
+              "decl": "const char[] description",
+              "default": null
+            },
+            {
+              "type": "CookieAccess",
+              "name": "access",
+              "decl": "CookieAccess access",
+              "default": null
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 167,
+          "docStart": 5688,
+          "docEnd": 5967,
+          "docs": {
+            "brief": "Retrieve the value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Copyback buffer for value."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum length of the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 141,
+          "docStart": 4931,
+          "docEnd": 5152,
+          "docs": {
+            "brief": "Set the integer value of a Client preference cookie.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the integer value of a Client preference cookie."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Integer value to set."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle or invalid client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetByAuthId": {
+          "name": "SetByAuthId",
+          "refLine": 210,
+          "docStart": 6981,
+          "docEnd": 7220,
+          "docs": {
+            "brief": "Set the value of a Client preference cookie based on an authID string.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the value of a Client preference cookie based on an authID string."
+              },
+              {
+                "tag": "param:authID",
+                "text": "String Auth/STEAM ID of player to set."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to set."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "authID",
+              "decl": "const char[] authID",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Find": {
+          "name": "Find",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Cookie",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "AccessLevel": {
+          "name": "AccessLevel",
+          "refLine": 233,
+          "docStart": 8103,
+          "docEnd": 8249,
+          "docs": {
+            "brief": "Returns the access level of a cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the access level of a cookie"
+              },
+              {
+                "tag": "return",
+                "text": "CookieAccess access level."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid cookie handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "CookieAccess",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_clientprefs_included": {
+      "name": "_clientprefs_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "COOKIE_MAX_DESCRIPTION_LENGTH": {
+      "name": "COOKIE_MAX_DESCRIPTION_LENGTH",
+      "refLine": 78,
+      "docStart": 2848,
+      "docEnd": 2890,
+      "docs": {
+        "brief": "Maximum Cookie description length.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum Cookie description length."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "255"
+    },
+    "COOKIE_MAX_NAME_LENGTH": {
+      "name": "COOKIE_MAX_NAME_LENGTH",
+      "refLine": 77,
+      "docStart": 2768,
+      "docEnd": 2803,
+      "docs": {
+        "brief": "Maximum Cookie name length.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum Cookie name length."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "30"
+    }
+  },
+  "enums": {
+    "CookieMenu": {
+      "name": "CookieMenu",
+      "refLine": 51,
+      "docStart": 1932,
+      "docEnd": 1969,
+      "docs": {
+        "brief": "Cookie Prefab menu types",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cookie Prefab menu types"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "CookieMenu_YesNo": {
+          "name": "CookieMenu_YesNo",
+          "refLine": 53,
+          "docStart": 2020,
+          "docEnd": 2085,
+          "docs": {
+            "brief": "Yes/No menu with \"yes\"/\"no\" results saved into the cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Yes/No menu with \"yes\"/\"no\" results saved into the cookie"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CookieMenu_OnOff": {
+          "name": "CookieMenu_OnOff",
+          "refLine": 55,
+          "docStart": 2197,
+          "docEnd": 2262,
+          "docs": {
+            "brief": "On/Off menu with \"on\"/\"off\" results saved into the cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "On/Off menu with \"on\"/\"off\" results saved into the cookie"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CookieMenu_OnOff_Int": {
+          "name": "CookieMenu_OnOff_Int",
+          "refLine": 56,
+          "docStart": 2293,
+          "docEnd": 2343,
+          "docs": {
+            "brief": "On/Off menu with 1/0 saved into the cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "On/Off menu with 1/0 saved into the cookie"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CookieMenu_YesNo_Int": {
+          "name": "CookieMenu_YesNo_Int",
+          "refLine": 54,
+          "docStart": 2116,
+          "docEnd": 2166,
+          "docs": {
+            "brief": "Yes/No menu with 1/0 saved into the cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Yes/No menu with 1/0 saved into the cookie"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "CookieMenuAction": {
+      "name": "CookieMenuAction",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CookieMenuAction_DisplayOption": {
+          "name": "CookieMenuAction_DisplayOption",
+          "refLine": 67,
+          "docStart": 2378,
+          "docEnd": 2539,
+          "docs": {
+            "brief": "An option is being drawn for a menu.\n\nINPUT : Client index and data if available.\nOUTPUT: Buffer for rendering, maxlength of buffer.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An option is being drawn for a menu.\n\nINPUT : Client index and data if available.\nOUTPUT: Buffer for rendering, maxlength of buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "CookieMenuAction_SelectOption": {
+          "name": "CookieMenuAction_SelectOption",
+          "refLine": 74,
+          "docStart": 2583,
+          "docEnd": 2688,
+          "docs": {
+            "brief": "A menu option has been selected.\n\nINPUT : Client index and any data if available.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu option has been selected.\n\nINPUT : Client index and any data if available."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "CookieAccess": {
+      "name": "CookieAccess",
+      "refLine": 41,
+      "docStart": 1649,
+      "docEnd": 1700,
+      "docs": {
+        "brief": "Cookie access types for client viewing",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cookie access types for client viewing"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "CookieAccess_Public": {
+          "name": "CookieAccess_Public",
+          "refLine": 43,
+          "docStart": 1757,
+          "docEnd": 1796,
+          "docs": {
+            "brief": "Visible and Changeable by users",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Visible and Changeable by users"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CookieAccess_Private": {
+          "name": "CookieAccess_Private",
+          "refLine": 45,
+          "docStart": 1892,
+          "docEnd": 1924,
+          "docs": {
+            "brief": "Completely hidden cookie",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Completely hidden cookie"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CookieAccess_Protected": {
+          "name": "CookieAccess_Protected",
+          "refLine": 44,
+          "docStart": 1831,
+          "docEnd": 1857,
+          "docs": {
+            "brief": "Read only to users",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Read only to users"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "CookieMenuHandler": {
+      "name": "CookieMenuHandler",
+      "refLine": 89,
+      "docStart": 2894,
+      "docEnd": 3180,
+      "docs": {
+        "brief": "Cookie Menu Callback prototype",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cookie Menu Callback prototype"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:action",
+            "text": "CookieMenuAction being performed."
+          },
+          {
+            "tag": "param:info",
+            "text": "Info data passed."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Outbut buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Max length of the output buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(int client, CookieMenuAction action, any info, char[] buffer, int maxlen)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "client",
+            "decl": "int client",
+            "default": null
+          },
+          {
+            "type": "CookieMenuAction",
+            "name": "action",
+            "decl": "CookieMenuAction action",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "info",
+            "decl": "any info",
+            "default": null
+          },
+          {
+            "type": "char[]",
+            "name": "buffer",
+            "decl": "char[] buffer",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "maxlen",
+            "decl": "int maxlen",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

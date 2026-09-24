@@ -1,0 +1,856 @@
+{
+  "functions": {
+    "GameRules_GetPropString": {
+      "name": "GameRules_GetPropString",
+      "refLine": 176,
+      "docStart": 6788,
+      "docEnd": 7215,
+      "docs": {
+        "brief": "Gets a gamerules property as a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a gamerules property as a string."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a string, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_SetPropVector": {
+      "name": "GameRules_SetPropVector",
+      "refLine": 164,
+      "docStart": 6285,
+      "docEnd": 6668,
+      "docs": {
+        "brief": "Sets a vector of floats in the gamerules entity, given a named network property.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a vector of floats in the gamerules entity, given a named network property."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector to set."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a vector, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GameRules_GetPropFloat": {
+      "name": "GameRules_GetPropFloat",
+      "refLine": 109,
+      "docStart": 3916,
+      "docEnd": 4251,
+      "docs": {
+        "brief": "Retrieves a float value from a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a float value from a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given property offset."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a float, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_SetPropFloat": {
+      "name": "GameRules_SetPropFloat",
+      "refLine": 120,
+      "docStart": 4327,
+      "docEnd": 4686,
+      "docs": {
+        "brief": "Sets a float value for a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a float value for a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a float, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GameRules_SetPropString": {
+      "name": "GameRules_SetPropString",
+      "refLine": 188,
+      "docStart": 7317,
+      "docEnd": 7719,
+      "docs": {
+        "brief": "Sets a gamerules property as a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a gamerules property as a string."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to set."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a string, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_GetProp": {
+      "name": "GameRules_GetProp",
+      "refLine": 85,
+      "docStart": 2543,
+      "docEnd": 3118,
+      "docs": {
+        "brief": "Retrieves an integer value from a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an integer value from a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to read (valid values are 1, 2, or 4).\nThis value is auto-detected, and the size parameter is\nonly used as a fallback in case detection fails."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Value at the given property offset."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not an integer, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_SetProp": {
+      "name": "GameRules_SetProp",
+      "refLine": 99,
+      "docStart": 3199,
+      "docEnd": 3799,
+      "docs": {
+        "brief": "Sets an integer value for a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an integer value for a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to write (valid values are 1, 2, or 4).\nThis value is auto-detected, and the size parameter is\nonly used as a fallback in case detection fails."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not an integer, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "4"
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    },
+    "GameRules_GetPropEnt": {
+      "name": "GameRules_GetPropEnt",
+      "refLine": 132,
+      "docStart": 4798,
+      "docEnd": 5258,
+      "docs": {
+        "brief": "Retrieves a entity index from a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a entity index from a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index at the given property.\nIf there is no entity, or the entity is not valid,\nthen -1 is returned."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not an entity, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_GetPropVector": {
+      "name": "GameRules_GetPropVector",
+      "refLine": 153,
+      "docStart": 5840,
+      "docEnd": 6195,
+      "docs": {
+        "brief": "Retrieves a vector of floats from the gamerules entity, given a named network property.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a vector of floats from the gamerules entity, given a named network property."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not a vector, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        }
+      ]
+    },
+    "GameRules_GetRoundState": {
+      "name": "GameRules_GetRoundState",
+      "refLine": 196,
+      "docStart": 7839,
+      "docEnd": 7982,
+      "docs": {
+        "brief": "Gets the current round state.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current round state."
+          },
+          {
+            "tag": "return",
+            "text": "Round state."
+          },
+          {
+            "tag": "error",
+            "text": "Game doesn't support round state."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "RoundState",
+      "arguments": []
+    },
+    "GameRules_SetPropEnt": {
+      "name": "GameRules_SetPropEnt",
+      "refLine": 143,
+      "docStart": 5330,
+      "docEnd": 5732,
+      "docs": {
+        "brief": "Sets an entity index for a property of the gamerules entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity index for a property of the gamerules entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property name."
+          },
+          {
+            "tag": "param:other",
+            "text": "Entity index to set, or -1 to unset."
+          },
+          {
+            "tag": "param:element",
+            "text": "Element # (starting from 0) if property is an array."
+          },
+          {
+            "tag": "param:changeState",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "error",
+            "text": "Prop type is not an entity, invalid entity, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "other",
+          "decl": "int other",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "element",
+          "decl": "int element",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "changeState",
+          "decl": "bool changeState",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_gamerules_included": {
+      "name": "_sdktools_gamerules_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "RoundState": {
+      "name": "RoundState",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "RoundState_Restart": {
+          "name": "RoundState_Restart",
+          "refLine": 59,
+          "docStart": 2213,
+          "docEnd": 2269,
+          "docs": {
+            "brief": "Noone has won, manually restart the game, reset scores",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Noone has won, manually restart the game, reset scores"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_TeamWin": {
+          "name": "RoundState_TeamWin",
+          "refLine": 56,
+          "docStart": 2159,
+          "docEnd": 2186,
+          "docs": {
+            "brief": "Someone has won the round",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Someone has won the round"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_Stalemate": {
+          "name": "RoundState_Stalemate",
+          "refLine": 62,
+          "docStart": 2296,
+          "docEnd": 2329,
+          "docs": {
+            "brief": "Noone has won, restart the game",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Noone has won, restart the game"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_Init": {
+          "name": "RoundState_Init",
+          "refLine": 40,
+          "docStart": 1681,
+          "docEnd": 1717,
+          "docs": {
+            "brief": "initialize the game, create teams",
+            "tags": [
+              {
+                "tag": "",
+                "text": "initialize the game, create teams"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_Preround": {
+          "name": "RoundState_Preround",
+          "refLine": 50,
+          "docStart": 2024,
+          "docEnd": 2068,
+          "docs": {
+            "brief": "All players are respawned, frozen in place",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All players are respawned, frozen in place"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_GameOver": {
+          "name": "RoundState_GameOver",
+          "refLine": 65,
+          "docStart": 2358,
+          "docEnd": 2400,
+          "docs": {
+            "brief": "Game is over, showing the scoreboard etc",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Game is over, showing the scoreboard etc"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_BetweenRounds": {
+          "name": "RoundState_BetweenRounds",
+          "refLine": 71,
+          "docStart": 2492,
+          "docEnd": 2508,
+          "docs": {
+            "brief": "Between rounds",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Between rounds"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_StartGame": {
+          "name": "RoundState_StartGame",
+          "refLine": 47,
+          "docStart": 1936,
+          "docEnd": 1995,
+          "docs": {
+            "brief": "The game is about to start, wait a bit and spawn everyone",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The game is about to start, wait a bit and spawn everyone"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_Pregame": {
+          "name": "RoundState_Pregame",
+          "refLine": 44,
+          "docStart": 1741,
+          "docEnd": 1909,
+          "docs": {
+            "brief": "Before players have joined the game. Periodically checks to see if enough players are ready\nto start a game. Also reverts to this when there are no active players",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Before players have joined the game. Periodically checks to see if enough players are ready\nto start a game. Also reverts to this when there are no active players"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_RoundRunning": {
+          "name": "RoundState_RoundRunning",
+          "refLine": 53,
+          "docStart": 2096,
+          "docEnd": 2127,
+          "docs": {
+            "brief": "Round is on, playing normally",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Round is on, playing normally"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RoundState_Bonus": {
+          "name": "RoundState_Bonus",
+          "refLine": 68,
+          "docStart": 2428,
+          "docEnd": 2467,
+          "docs": {
+            "brief": "Game is over, doing bonus round stuff",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Game is over, doing bonus round stuff"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

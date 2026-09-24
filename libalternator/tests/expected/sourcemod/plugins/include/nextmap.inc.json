@@ -1,0 +1,246 @@
+{
+  "functions": {
+    "GetMapHistorySize": {
+      "name": "GetMapHistorySize",
+      "refLine": 69,
+      "docStart": 2526,
+      "docEnd": 2634,
+      "docs": {
+        "brief": "Gets the current number of maps in the map history",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current number of maps in the map history"
+          },
+          {
+            "tag": "return",
+            "text": "Number of maps."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetMapHistory": {
+      "name": "GetMapHistory",
+      "refLine": 82,
+      "docStart": 2671,
+      "docEnd": 3133,
+      "docs": {
+        "brief": "Retrieves a map from the map history list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a map from the map history list."
+          },
+          {
+            "tag": "param:item",
+            "text": "Item number. Must be 0 or greater and less than GetMapHistorySize()."
+          },
+          {
+            "tag": "param:map",
+            "text": "Buffer to store the map name."
+          },
+          {
+            "tag": "param:mapLen",
+            "text": "Length of map buffer."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Buffer to store the change reason."
+          },
+          {
+            "tag": "param:reasonLen",
+            "text": "Length of the reason buffer."
+          },
+          {
+            "tag": "param:startTime",
+            "text": "Time the map started."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid item number."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "item",
+          "decl": "int item",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "map",
+          "decl": "char[] map",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mapLen",
+          "decl": "int mapLen",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "reason",
+          "decl": "char[] reason",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "reasonLen",
+          "decl": "int reasonLen",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "startTime",
+          "decl": "int& startTime",
+          "default": null
+        }
+      ]
+    },
+    "GetNextMap": {
+      "name": "GetNextMap",
+      "refLine": 54,
+      "docStart": 1933,
+      "docEnd": 2218,
+      "docs": {
+        "brief": "Returns SourceMod's internal nextmap.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns SourceMod's internal nextmap."
+          },
+          {
+            "tag": "param:map",
+            "text": "Buffer to store the nextmap name."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of the map buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if a Map was found and copied, false if no nextmap is set (map will be unchanged)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "map",
+          "decl": "char[] map",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "SetNextMap": {
+      "name": "SetNextMap",
+      "refLine": 45,
+      "docStart": 1641,
+      "docEnd": 1886,
+      "docs": {
+        "brief": "Sets SourceMod's internal nextmap.\nEquivalent to changing sm_nextmap but with an added validity check.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets SourceMod's internal nextmap.\nEquivalent to changing sm_nextmap but with an added validity check."
+          },
+          {
+            "tag": "param:map",
+            "text": "Next map to set."
+          },
+          {
+            "tag": "return",
+            "text": "True if the nextmap was set, false if map was invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        }
+      ]
+    },
+    "ForceChangeLevel": {
+      "name": "ForceChangeLevel",
+      "refLine": 62,
+      "docStart": 2271,
+      "docEnd": 2452,
+      "docs": {
+        "brief": "Changes the current map and records the reason for the change with maphistory",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes the current map and records the reason for the change with maphistory"
+          },
+          {
+            "tag": "param:map",
+            "text": "Map to change to."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for change."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_nextmap_included_": {
+      "name": "_nextmap_included_",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

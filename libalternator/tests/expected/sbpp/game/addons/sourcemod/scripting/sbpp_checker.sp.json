@@ -1,0 +1,748 @@
+{
+  "functions": {
+    "ReadConfig_NewSection": {
+      "name": "ReadConfig_NewSection",
+      "refLine": 668,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "CheckDBConnection": {
+      "name": "CheckDBConnection",
+      "refLine": 721,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        }
+      ]
+    },
+    "OnListComms": {
+      "name": "OnListComms",
+      "refLine": 474,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "OnReloadCmd": {
+      "name": "OnReloadCmd",
+      "refLine": 94,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig": {
+      "name": "ReadConfig",
+      "refLine": 622,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "LateLoading": {
+      "name": "LateLoading",
+      "refLine": 701,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 71,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Native_SBCheckerGetClientsComms": {
+      "name": "Native_SBCheckerGetClientsComms",
+      "refLine": 163,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "OnClientAuthorized": {
+      "name": "OnClientAuthorized",
+      "refLine": 181,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        }
+      ]
+    },
+    "OnConnectBanCheck": {
+      "name": "OnConnectBanCheck",
+      "refLine": 209,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "userid",
+          "decl": "any userid",
+          "default": null
+        }
+      ]
+    },
+    "Timer_ReconnectDB": {
+      "name": "Timer_ReconnectDB",
+      "refLine": 714,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        }
+      ]
+    },
+    "OnListSourceCommsCmd": {
+      "name": "OnListSourceCommsCmd",
+      "refLine": 419,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnListSourceBansCmd": {
+      "name": "OnListSourceBansCmd",
+      "refLine": 252,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_EndSection": {
+      "name": "ReadConfig_EndSection",
+      "refLine": 696,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 89,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "Native_SBCheckerGetClientsBans": {
+      "name": "Native_SBCheckerGetClientsBans",
+      "refLine": 157,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_SBCheckerGetClientsGags": {
+      "name": "Native_SBCheckerGetClientsGags",
+      "refLine": 175,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "OnListBans": {
+      "name": "OnListBans",
+      "refLine": 308,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "InitializeConfigParser": {
+      "name": "InitializeConfigParser",
+      "refLine": 646,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "InternalReadConfig": {
+      "name": "InternalReadConfig",
+      "refLine": 657,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        }
+      ]
+    },
+    "DB_Connect": {
+      "name": "DB_Connect",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "OnDatabaseConnected": {
+      "name": "OnDatabaseConnected",
+      "refLine": 122,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "Native_SBCheckerGetClientsMutes": {
+      "name": "Native_SBCheckerGetClientsMutes",
+      "refLine": 169,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "PrintListResponse": {
+      "name": "PrintListResponse",
+      "refLine": 592,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "userid",
+          "decl": "int userid",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "PrintToBanAdmins": {
+      "name": "PrintToBanAdmins",
+      "refLine": 607,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_KeyValue": {
+      "name": "ReadConfig_KeyValue",
+      "refLine": 673,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "VERSION": {
+      "name": "VERSION",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "SB_VERSION"
+    },
+    "INVALID_TARGET": {
+      "name": "INVALID_TARGET",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    },
+    "LISTBANS_USAGE": {
+      "name": "LISTBANS_USAGE",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"sm_listbans <#userid|name> - Lists a user's prior bans from Sourcebans\""
+    },
+    "LISTCOMMS_USAGE": {
+      "name": "LISTCOMMS_USAGE",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"sm_listcomms <#userid|name> - Lists a user's prior comms from Sourcebans\""
+    },
+    "Prefix": {
+      "name": "Prefix",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"\\x04[SourceBans++]\\x01 \""
+    }
+  },
+  "enums": {
+    "DatabaseState": {
+      "name": "DatabaseState",
+      "refLine": 47,
+      "docStart": 1700,
+      "docEnd": 1731,
+      "docs": {
+        "brief": "Database connection state",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Database connection state"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DatabaseState_Connecting": {
+          "name": "DatabaseState_Connecting",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_Wait": {
+          "name": "DatabaseState_Wait",
+          "refLine": 50,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_None": {
+          "name": "DatabaseState_None",
+          "refLine": 49,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "DatabaseState_Connected": {
+          "name": "DatabaseState_Connected",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,541 @@
+{
+  "functions": {
+    "NominateMap": {
+      "name": "NominateMap",
+      "refLine": 62,
+      "docStart": 2284,
+      "docEnd": 2720,
+      "docs": {
+        "brief": "Attempt to add a map to the mapchooser map list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Attempt to add a map to the mapchooser map list."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map to add."
+          },
+          {
+            "tag": "param:force",
+            "text": "Should we force the map in even if it requires overwriting an existing nomination?"
+          },
+          {
+            "tag": "param:owner",
+            "text": "Client index of the nominator. If the client disconnects the nomination will be removed.\nUse 0 for constant nominations"
+          },
+          {
+            "tag": "return",
+            "text": "Nominate Result of the outcome"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "NominateResult",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "HasEndOfMapVoteFinished": {
+      "name": "HasEndOfMapVoteFinished",
+      "refLine": 118,
+      "docStart": 4521,
+      "docEnd": 4651,
+      "docs": {
+        "brief": "Checks if MapChooser's end of map vote has completed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if MapChooser's end of map vote has completed."
+          },
+          {
+            "tag": "return",
+            "text": "True if complete, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "EndOfMapVoteEnabled": {
+      "name": "EndOfMapVoteEnabled",
+      "refLine": 125,
+      "docStart": 4695,
+      "docEnd": 4825,
+      "docs": {
+        "brief": "Checks if MapChooser is set to run an end of map vote.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if MapChooser is set to run an end of map vote."
+          },
+          {
+            "tag": "return",
+            "text": "True if enabled, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "GetExcludeMapList": {
+      "name": "GetExcludeMapList",
+      "refLine": 85,
+      "docStart": 3374,
+      "docEnd": 3502,
+      "docs": {
+        "brief": "Gets the current list of excluded maps.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current list of excluded maps."
+          },
+          {
+            "tag": "param:array",
+            "text": "An ADT array handle to add the map strings to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ArrayList",
+          "name": "array",
+          "decl": "ArrayList array",
+          "default": null
+        }
+      ]
+    },
+    "CanMapChooserStartVote": {
+      "name": "CanMapChooserStartVote",
+      "refLine": 100,
+      "docStart": 3865,
+      "docEnd": 4023,
+      "docs": {
+        "brief": "Checks if MapChooser will allow a vote",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if MapChooser will allow a vote"
+          },
+          {
+            "tag": "return",
+            "text": "True if a vote can be held, or false if mapchooser is already holding a vote."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "RemoveNominationByMap": {
+      "name": "RemoveNominationByMap",
+      "refLine": 70,
+      "docStart": 2801,
+      "docEnd": 3024,
+      "docs": {
+        "brief": "Attempt to remove a map from the mapchooser map list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Attempt to remove a map from the mapchooser map list."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map to remove."
+          },
+          {
+            "tag": "return",
+            "text": "True if the nomination was found and removed, or false if the nomination was not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        }
+      ]
+    },
+    "__pl_mapchooser_SetNTVOptional": {
+      "name": "__pl_mapchooser_SetNTVOptional",
+      "refLine": 152,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "InitiateMapChooserVote": {
+      "name": "InitiateMapChooserVote",
+      "refLine": 111,
+      "docStart": 4066,
+      "docEnd": 4437,
+      "docs": {
+        "brief": "Initiates a MapChooser map vote\n\nNote: If no input array is specified mapchooser will use its internal list. This includes\nany nominations and excluded maps (as per mapchoosers convars).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Initiates a MapChooser map vote\n\nNote: If no input array is specified mapchooser will use its internal list. This includes\nany nominations and excluded maps (as per mapchoosers convars)."
+          },
+          {
+            "tag": "param:when",
+            "text": "MapChange consant of when the resulting mapchange should occur."
+          },
+          {
+            "tag": "param:inputarray",
+            "text": "ADT array list of maps to add to the vote."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "MapChange",
+          "name": "when",
+          "decl": "MapChange when",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "inputarray",
+          "decl": "ArrayList inputarray",
+          "default": "null"
+        }
+      ]
+    },
+    "OnMapVoteStarted": {
+      "name": "OnMapVoteStarted",
+      "refLine": 136,
+      "docStart": 5071,
+      "docEnd": 5125,
+      "docs": {
+        "brief": "Called when mapchooser starts a Map Vote.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when mapchooser starts a Map Vote."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnNominationRemoved": {
+      "name": "OnNominationRemoved",
+      "refLine": 131,
+      "docStart": 4865,
+      "docEnd": 5003,
+      "docs": {
+        "brief": "Called when mapchooser removes a nomination from its list.\nNominations cleared on map start will not trigger this forward",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when mapchooser removes a nomination from its list.\nNominations cleared on map start will not trigger this forward"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "RemoveNominationByOwner": {
+      "name": "RemoveNominationByOwner",
+      "refLine": 78,
+      "docStart": 3082,
+      "docEnd": 3321,
+      "docs": {
+        "brief": "Attempt to remove a map from the mapchooser map list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Attempt to remove a map from the mapchooser map list."
+          },
+          {
+            "tag": "param:owner",
+            "text": "Client index of the nominator."
+          },
+          {
+            "tag": "return",
+            "text": "True if the nomination was found and removed, or false if the nomination was not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "GetNominatedMapList": {
+      "name": "GetNominatedMapList",
+      "refLine": 93,
+      "docStart": 3555,
+      "docEnd": 3778,
+      "docs": {
+        "brief": "Gets the current list of nominated maps.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the current list of nominated maps."
+          },
+          {
+            "tag": "param:maparray",
+            "text": "An ADT array handle to add the map strings to."
+          },
+          {
+            "tag": "param:ownerarray",
+            "text": "An optional ADT array handle to add the nominator client indexes to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ArrayList",
+          "name": "maparray",
+          "decl": "ArrayList maparray",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "ownerarray",
+          "decl": "ArrayList ownerarray",
+          "default": "null"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_mapchooser_included_": {
+      "name": "_mapchooser_included_",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "NominateResult": {
+      "name": "NominateResult",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Nominate_AlreadyInVote": {
+          "name": "Nominate_AlreadyInVote",
+          "refLine": 41,
+          "docStart": 1842,
+          "docEnd": 1886,
+          "docs": {
+            "brief": "Specified map was already in the vote",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Specified map was already in the vote"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Nominate_InvalidMap": {
+          "name": "Nominate_InvalidMap",
+          "refLine": 42,
+          "docStart": 1913,
+          "docEnd": 1956,
+          "docs": {
+            "brief": "Mapname specified wasn't a valid map",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Mapname specified wasn't a valid map"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Nominate_Added": {
+          "name": "Nominate_Added",
+          "refLine": 39,
+          "docStart": 1694,
+          "docEnd": 1739,
+          "docs": {
+            "brief": "The map was added to the nominate list",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The map was added to the nominate list"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Nominate_Replaced": {
+          "name": "Nominate_Replaced",
+          "refLine": 40,
+          "docStart": 1766,
+          "docEnd": 1815,
+          "docs": {
+            "brief": "A clients existing nomination was replaced",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A clients existing nomination was replaced"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Nominate_VoteFull": {
+          "name": "Nominate_VoteFull",
+          "refLine": 43,
+          "docStart": 1983,
+          "docEnd": 2036,
+          "docs": {
+            "brief": "This will only occur if force was set to false",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This will only occur if force was set to false"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "MapChange": {
+      "name": "MapChange",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "MapChange_MapEnd": {
+          "name": "MapChange_MapEnd",
+          "refLine": 50,
+          "docStart": 2243,
+          "docEnd": 2276,
+          "docs": {
+            "brief": "Change the sm_nextmap cvar",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change the sm_nextmap cvar"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MapChange_RoundEnd": {
+          "name": "MapChange_RoundEnd",
+          "refLine": 49,
+          "docStart": 2175,
+          "docEnd": 2216,
+          "docs": {
+            "brief": "Change map at the end of the round",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change map at the end of the round"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MapChange_Instant": {
+          "name": "MapChange_Instant",
+          "refLine": 48,
+          "docStart": 2088,
+          "docEnd": 2148,
+          "docs": {
+            "brief": "Change map as soon as the voting results have come in",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Change map as soon as the voting results have come in"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

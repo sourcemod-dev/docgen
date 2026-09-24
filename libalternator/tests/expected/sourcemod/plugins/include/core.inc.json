@@ -1,0 +1,796 @@
+{
+  "functions": {
+    "MarkNativeAsOptional": {
+      "name": "MarkNativeAsOptional",
+      "refLine": 182,
+      "docStart": 5473,
+      "docEnd": 5709,
+      "docs": {
+        "brief": "Sets a native as optional, such that if it is unloaded, removed,\nor otherwise non-existent, the plugin will still work.  Calling\nremoved natives results in a run-time error.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a native as optional, such that if it is unloaded, removed,\nor otherwise non-existent, the plugin will still work.  Calling\nremoved natives results in a run-time error."
+          },
+          {
+            "tag": "param:name",
+            "text": "Native name."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "__ext_core_SetNTVOptional": {
+      "name": "__ext_core_SetNTVOptional",
+      "refLine": 184,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "VerifyCoreVersion": {
+      "name": "VerifyCoreVersion",
+      "refLine": 173,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "IsNullString": {
+      "name": "IsNullString",
+      "refLine": 160,
+      "docStart": 5081,
+      "docEnd": 5239,
+      "docs": {
+        "brief": "Check if the given string is the NULL_STRING.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if the given string is the NULL_STRING."
+          },
+          {
+            "tag": "param:str",
+            "text": "The string to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if NULL_STRING, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "IsNullVector": {
+      "name": "IsNullVector",
+      "refLine": 152,
+      "docStart": 4872,
+      "docEnd": 5030,
+      "docs": {
+        "brief": "Check if the given vector is the NULL_VECTOR.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if the given vector is the NULL_VECTOR."
+          },
+          {
+            "tag": "param:vec",
+            "text": "The vector to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if NULL_VECTOR, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {
+    "SharedPlugin": {
+      "name": "SharedPlugin",
+      "refLine": 136,
+      "docStart": 4405,
+      "docEnd": 4479,
+      "docs": {
+        "brief": "Defines how a plugin must expose itself for native requiring.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines how a plugin must expose itself for native requiring."
+          }
+        ]
+      },
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "name": {
+          "name": "name",
+          "refLine": 138,
+          "docStart": 4534,
+          "docEnd": 4552,
+          "docs": {
+            "brief": "Short name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Short name"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "file": {
+          "name": "file",
+          "refLine": 139,
+          "docStart": 4583,
+          "docEnd": 4600,
+          "docs": {
+            "brief": "File name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "File name"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "required": {
+          "name": "required",
+          "refLine": 140,
+          "docStart": 4631,
+          "docEnd": 4664,
+          "docs": {
+            "brief": "Whether or not to require",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Whether or not to require"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool"
+        }
+      }
+    },
+    "Extension": {
+      "name": "Extension",
+      "refLine": 125,
+      "docStart": 4068,
+      "docEnd": 4141,
+      "docs": {
+        "brief": "Defines how an extension must expose itself for autoloading.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines how an extension must expose itself for autoloading."
+          }
+        ]
+      },
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "autoload": {
+          "name": "autoload",
+          "refLine": 129,
+          "docStart": 4298,
+          "docEnd": 4333,
+          "docs": {
+            "brief": "Whether or not to auto-load",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Whether or not to auto-load"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool"
+        },
+        "name": {
+          "name": "name",
+          "refLine": 127,
+          "docStart": 4193,
+          "docEnd": 4211,
+          "docs": {
+            "brief": "Short name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Short name"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "file": {
+          "name": "file",
+          "refLine": 128,
+          "docStart": 4242,
+          "docEnd": 4267,
+          "docs": {
+            "brief": "Default file name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Default file name"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "required": {
+          "name": "required",
+          "refLine": 130,
+          "docStart": 4364,
+          "docEnd": 4397,
+          "docs": {
+            "brief": "Whether or not to require",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Whether or not to require"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool"
+        }
+      }
+    },
+    "PlVers": {
+      "name": "PlVers",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "time": {
+          "name": "time",
+          "refLine": 48,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "version": {
+          "name": "version",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "filevers": {
+          "name": "filevers",
+          "refLine": 46,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "const char[]"
+        },
+        "date": {
+          "name": "date",
+          "refLine": 47,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "const char[]"
+        }
+      }
+    }
+  },
+  "constants": {},
+  "defines": {
+    "REQUIRE_EXTENSIONS": {
+      "name": "REQUIRE_EXTENSIONS",
+      "refLine": 319,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "AUTOLOAD_EXTENSIONS": {
+      "name": "AUTOLOAD_EXTENSIONS",
+      "refLine": 318,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SOURCEMOD_PLUGINAPI_VERSION": {
+      "name": "SOURCEMOD_PLUGINAPI_VERSION",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "7"
+    },
+    "_core_included": {
+      "name": "_core_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "REQUIRE_PLUGIN": {
+      "name": "REQUIRE_PLUGIN",
+      "refLine": 320,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "Action": {
+      "name": "Action",
+      "refLine": 54,
+      "docStart": 1913,
+      "docEnd": 1970,
+      "docs": {
+        "brief": "Specifies what to do after a hook completes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Specifies what to do after a hook completes."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Plugin_Stop": {
+          "name": "Plugin_Stop",
+          "refLine": 59,
+          "docStart": 2249,
+          "docEnd": 2312,
+          "docs": {
+            "brief": "Immediately stop the hook chain and handle the original",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Immediately stop the hook chain and handle the original"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "4"
+        },
+        "Plugin_Handled": {
+          "name": "Plugin_Handled",
+          "refLine": 58,
+          "docStart": 2170,
+          "docEnd": 2222,
+          "docs": {
+            "brief": "Handle the action at the end (don't call it)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Handle the action at the end (don't call it)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "Plugin_Changed": {
+          "name": "Plugin_Changed",
+          "refLine": 57,
+          "docStart": 2081,
+          "docEnd": 2143,
+          "docs": {
+            "brief": "Inputs or outputs have been overridden with new values",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Inputs or outputs have been overridden with new values"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "Plugin_Continue": {
+          "name": "Plugin_Continue",
+          "refLine": 56,
+          "docStart": 2013,
+          "docEnd": 2054,
+          "docs": {
+            "brief": "Continue with the original action",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Continue with the original action"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "PluginInfo": {
+      "name": "PluginInfo",
+      "refLine": 113,
+      "docStart": 3365,
+      "docEnd": 3799,
+      "docs": {
+        "brief": "Plugin information properties. Plugins can declare a global variable with\ntheir info. Example,\n\npublic Plugin myinfo = {\nname = \"Admin Help\",\nauthor = \"AlliedModders LLC\",\ndescription = \"Display command information\",\nversion = \"1.0\",\nurl = \"http://www.sourcemod.net/\"\n};\n\nSourceMod will display this information when a user inspects plugins in the\nconsole.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Plugin information properties. Plugins can declare a global variable with\ntheir info. Example,\n\npublic Plugin myinfo = {\nname = \"Admin Help\",\nauthor = \"AlliedModders LLC\",\ndescription = \"Display command information\",\nversion = \"1.0\",\nurl = \"http://www.sourcemod.net/\"\n};\n\nSourceMod will display this information when a user inspects plugins in the\nconsole."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "PlInfo_Author": {
+          "name": "PlInfo_Author",
+          "refLine": 116,
+          "docStart": 3892,
+          "docEnd": 3913,
+          "docs": {
+            "brief": "Plugin author",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin author"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PlInfo_URL": {
+          "name": "PlInfo_URL",
+          "refLine": 119,
+          "docStart": 4042,
+          "docEnd": 4060,
+          "docs": {
+            "brief": "Plugin URL",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin URL"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PlInfo_Version": {
+          "name": "PlInfo_Version",
+          "refLine": 118,
+          "docStart": 3993,
+          "docEnd": 4015,
+          "docs": {
+            "brief": "Plugin version",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin version"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PlInfo_Name": {
+          "name": "PlInfo_Name",
+          "refLine": 115,
+          "docStart": 3846,
+          "docEnd": 3865,
+          "docs": {
+            "brief": "Plugin name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin name"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "PlInfo_Description": {
+          "name": "PlInfo_Description",
+          "refLine": 117,
+          "docStart": 3940,
+          "docEnd": 3966,
+          "docs": {
+            "brief": "Plugin description",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin description"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "PluginStatus": {
+      "name": "PluginStatus",
+      "refLine": 83,
+      "docStart": 2600,
+      "docEnd": 2634,
+      "docs": {
+        "brief": "Plugin status values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Plugin status values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Plugin_Paused": {
+          "name": "Plugin_Paused",
+          "refLine": 87,
+          "docStart": 2791,
+          "docEnd": 2826,
+          "docs": {
+            "brief": "Plugin is loaded but paused",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin is loaded but paused"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Failed": {
+          "name": "Plugin_Failed",
+          "refLine": 91,
+          "docStart": 3053,
+          "docEnd": 3087,
+          "docs": {
+            "brief": "Plugin has a fatal failure",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin has a fatal failure"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_BadLoad": {
+          "name": "Plugin_BadLoad",
+          "refLine": 94,
+          "docStart": 3258,
+          "docEnd": 3287,
+          "docs": {
+            "brief": "Plugin failed to load",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin failed to load"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Error": {
+          "name": "Plugin_Error",
+          "refLine": 88,
+          "docStart": 2853,
+          "docEnd": 2945,
+          "docs": {
+            "brief": "Plugin is loaded but errored/locked\nAll states below do not have all natives",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin is loaded but errored/locked"
+              },
+              {
+                "tag": "",
+                "text": "All states below do not have all natives"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Loaded": {
+          "name": "Plugin_Loaded",
+          "refLine": 90,
+          "docStart": 2972,
+          "docEnd": 3026,
+          "docs": {
+            "brief": "Plugin has passed loading and can be finalized",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin has passed loading and can be finalized"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Uncompiled": {
+          "name": "Plugin_Uncompiled",
+          "refLine": 93,
+          "docStart": 3186,
+          "docEnd": 3231,
+          "docs": {
+            "brief": "Plugin is not yet compiled by the JIT",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin is not yet compiled by the JIT"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Running": {
+          "name": "Plugin_Running",
+          "refLine": 85,
+          "docStart": 2683,
+          "docEnd": 2764,
+          "docs": {
+            "brief": "Plugin is running\nAll states below are \"temporarily\" unexecutable",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin is running"
+              },
+              {
+                "tag": "",
+                "text": "All states below are \"temporarily\" unexecutable"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "Plugin_Evicted": {
+          "name": "Plugin_Evicted",
+          "refLine": 95,
+          "docStart": 3314,
+          "docEnd": 3357,
+          "docs": {
+            "brief": "Plugin was unloaded due to an error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin was unloaded due to an error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Plugin_Created": {
+          "name": "Plugin_Created",
+          "refLine": 92,
+          "docStart": 3114,
+          "docEnd": 3159,
+          "docs": {
+            "brief": "Plugin is created but not initialized",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Plugin is created but not initialized"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "Identity": {
+      "name": "Identity",
+      "refLine": 65,
+      "docStart": 2320,
+      "docEnd": 2358,
+      "docs": {
+        "brief": "Specifies identity types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Specifies identity types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Identity_Extension": {
+          "name": "Identity_Extension",
+          "refLine": 68,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        },
+        "Identity_Plugin": {
+          "name": "Identity_Plugin",
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "2"
+        },
+        "Identity_Core": {
+          "name": "Identity_Core",
+          "refLine": 67,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

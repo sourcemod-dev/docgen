@@ -1,0 +1,374 @@
+{
+  "functions": {
+    "CreateByteBuffer": {
+      "name": "CreateByteBuffer",
+      "refLine": 210,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "ByteBuffer",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "littleEndian",
+          "decl": "bool littleEndian",
+          "default": "true"
+        },
+        {
+          "type": "const char[]",
+          "name": "data",
+          "decl": "const char[] data",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "dataSize",
+          "decl": "int dataSize",
+          "default": "0"
+        }
+      ]
+    },
+    "CheckBuffer": {
+      "name": "CheckBuffer",
+      "refLine": 242,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ByteBuffer",
+          "name": "index",
+          "decl": "ByteBuffer index",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "ByteBuffer": {
+      "name": "ByteBuffer",
+      "refLine": 26,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "WriteInt": {
+          "name": "WriteInt",
+          "refLine": 80,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "Append": {
+          "name": "Append",
+          "refLine": 174,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "ByteBuffer",
+              "name": "buffer",
+              "decl": "ByteBuffer buffer",
+              "default": null
+            }
+          ]
+        },
+        "WriteShort": {
+          "name": "WriteShort",
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "WriteString": {
+          "name": "WriteString",
+          "refLine": 95,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "input",
+              "decl": "const char[] input",
+              "default": null
+            }
+          ]
+        },
+        "ReadShort": {
+          "name": "ReadShort",
+          "refLine": 112,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": []
+        },
+        "Dump": {
+          "name": "Dump",
+          "refLine": 159,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "output",
+              "decl": "char[] output",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "ReadInt": {
+          "name": "ReadInt",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": []
+        },
+        "WriteByte": {
+          "name": "WriteByte",
+          "refLine": 63,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "Extract": {
+          "name": "Extract",
+          "refLine": 187,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "ByteBuffer",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "length",
+              "decl": "int length",
+              "default": null
+            }
+          ]
+        },
+        "ReadByte": {
+          "name": "ReadByte",
+          "refLine": 105,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": []
+        },
+        "Reset": {
+          "name": "Reset",
+          "refLine": 199,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "Close": {
+          "name": "Close",
+          "refLine": 204,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "ReadString": {
+          "name": "ReadString",
+          "refLine": 146,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "output",
+              "decl": "char[] output",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "LittleEndian": {
+          "name": "LittleEndian",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "BigEndian": {
+          "name": "BigEndian",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "Cursor": {
+          "name": "Cursor",
+          "refLine": 27,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_bytebuffer_included": {
+      "name": "_bytebuffer_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MAX_BUFFER_LENGTH": {
+      "name": "MAX_BUFFER_LENGTH",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1024"
+    },
+    "BYTEBUFFER_VERSION": {
+      "name": "BYTEBUFFER_VERSION",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "MAX_BUFFERS": {
+      "name": "MAX_BUFFERS",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    }
+  },
+  "enums": {
+    "ByteBuffer": {
+      "name": "ByteBuffer",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "INVALID_BUFFER": {
+          "name": "INVALID_BUFFER",
+          "refLine": 17,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,1570 @@
+{
+  "functions": {
+    "CancelCreatedEvent": {
+      "name": "CancelCreatedEvent",
+      "refLine": 231,
+      "docStart": 9333,
+      "docEnd": 9513,
+      "docs": {
+        "brief": "Cancels a previously created game event that has not been fired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cancels a previously created game event that has not been fired."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handled to the event."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        }
+      ]
+    },
+    "HookEvent": {
+      "name": "HookEvent",
+      "refLine": 177,
+      "docStart": 6975,
+      "docEnd": 7286,
+      "docs": {
+        "brief": "Creates a hook for when a game event is fired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a hook for when a game event is fired."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of event."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EventHook function pointer."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Optional EventHookMode determining the type of hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid event name or invalid callback function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "EventHook",
+          "name": "callback",
+          "decl": "EventHook callback",
+          "default": null
+        },
+        {
+          "type": "EventHookMode",
+          "name": "mode",
+          "decl": "EventHookMode mode",
+          "default": "EventHookMode_Post"
+        }
+      ]
+    },
+    "HookEventEx": {
+      "name": "HookEventEx",
+      "refLine": 188,
+      "docStart": 7392,
+      "docEnd": 7773,
+      "docs": {
+        "brief": "Creates a hook for when a game event is fired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a hook for when a game event is fired."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of event."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EventHook function pointer."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Optional EventHookMode determining the type of hook."
+          },
+          {
+            "tag": "return",
+            "text": "True if event exists and was hooked successfully, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid callback function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "EventHook",
+          "name": "callback",
+          "decl": "EventHook callback",
+          "default": null
+        },
+        {
+          "type": "EventHookMode",
+          "name": "mode",
+          "decl": "EventHookMode mode",
+          "default": "EventHookMode_Post"
+        }
+      ]
+    },
+    "SetEventInt": {
+      "name": "SetEventInt",
+      "refLine": 278,
+      "docStart": 10764,
+      "docEnd": 11266,
+      "docs": {
+        "brief": "Sets the integer value of a game event's key.\n\nInteger value refers to anything that can be reduced to an integer.\nThe various size specifiers, such as \"byte\" and \"short\" are still\nintegers, and only refer to how much data will actually be sent\nover the network (if applicable).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the integer value of a game event's key.\n\nInteger value refers to anything that can be reduced to an integer.\nThe various size specifiers, such as \"byte\" and \"short\" are still\nintegers, and only refer to how much data will actually be sent\nover the network (if applicable)."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:value",
+            "text": "New integer value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "SetEventString": {
+      "name": "SetEventString",
+      "refLine": 321,
+      "docStart": 12680,
+      "docEnd": 12926,
+      "docs": {
+        "brief": "Sets the string value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the string value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:value",
+            "text": "New string value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetEventFloat": {
+      "name": "GetEventFloat",
+      "refLine": 289,
+      "docStart": 11339,
+      "docEnd": 11711,
+      "docs": {
+        "brief": "Returns the floating point value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the floating point value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "return",
+            "text": "The floating point value of the specified event key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "defValue",
+          "decl": "float defValue",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "SetEventBroadcast": {
+      "name": "SetEventBroadcast",
+      "refLine": 343,
+      "docStart": 13361,
+      "docEnd": 13719,
+      "docs": {
+        "brief": "Sets whether an event's broadcasting will be disabled or not.\n\nThis has no effect on events Handles that are not from HookEvent\nor HookEventEx callbacks.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether an event's broadcasting will be disabled or not.\n\nThis has no effect on events Handles that are not from HookEvent\nor HookEventEx callbacks."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to an event from an event hook."
+          },
+          {
+            "tag": "param:dontBroadcast",
+            "text": "True to disable broadcasting, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "SetEventFloat": {
+      "name": "SetEventFloat",
+      "refLine": 299,
+      "docStart": 11796,
+      "docEnd": 12058,
+      "docs": {
+        "brief": "Sets the floating point value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the floating point value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:value",
+            "text": "New floating point value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "GetEventInt": {
+      "name": "GetEventInt",
+      "refLine": 263,
+      "docStart": 10329,
+      "docEnd": 10687,
+      "docs": {
+        "brief": "Returns the integer value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the integer value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "return",
+            "text": "The integer value of the specified event key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "defValue",
+          "decl": "int defValue",
+          "default": "0"
+        }
+      ]
+    },
+    "GetEventString": {
+      "name": "GetEventString",
+      "refLine": 311,
+      "docStart": 12135,
+      "docEnd": 12560,
+      "docs": {
+        "brief": "Retrieves the string value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the string value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store the value of the specified event key."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defvalue",
+          "decl": "const char[] defvalue",
+          "default": "\"\""
+        }
+      ]
+    },
+    "CreateEvent": {
+      "name": "CreateEvent",
+      "refLine": 212,
+      "docStart": 8316,
+      "docEnd": 8900,
+      "docs": {
+        "brief": "Creates a game event to be fired later.\n\nThe Handle should not be closed via CloseHandle().  It must be closed via\nevent.Fire() or event.Cancel().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a game event to be fired later.\n\nThe Handle should not be closed via CloseHandle().  It must be closed via\nevent.Fire() or event.Cancel()."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of event."
+          },
+          {
+            "tag": "param:force",
+            "text": "If set to true, this forces the event to be created even if it's not being hooked.\nNote that this will not force it if the event doesn't exist at all."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to event. INVALID_HANDLE is returned if the event doesn't exist or isn't\nbeing hooked (unless force is true)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Event",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "force",
+          "decl": "bool force",
+          "default": "false"
+        }
+      ]
+    },
+    "GetEventName": {
+      "name": "GetEventName",
+      "refLine": 331,
+      "docStart": 13011,
+      "docEnd": 13288,
+      "docs": {
+        "brief": "Retrieves the name of a game event.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name of a game event."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the name of the event."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "UnhookEvent": {
+      "name": "UnhookEvent",
+      "refLine": 198,
+      "docStart": 7881,
+      "docEnd": 8208,
+      "docs": {
+        "brief": "Removes a hook for when a game event is fired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a hook for when a game event is fired."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of event."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EventHook function pointer."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Optional EventHookMode determining the type of hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid callback function or no active hook for specified event."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "EventHook",
+          "name": "callback",
+          "decl": "EventHook callback",
+          "default": null
+        },
+        {
+          "type": "EventHookMode",
+          "name": "mode",
+          "decl": "EventHookMode mode",
+          "default": "EventHookMode_Post"
+        }
+      ]
+    },
+    "GetEventBool": {
+      "name": "GetEventBool",
+      "refLine": 242,
+      "docStart": 9564,
+      "docEnd": 9922,
+      "docs": {
+        "brief": "Returns the boolean value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the boolean value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "return",
+            "text": "The boolean value of the specified event key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "defValue",
+          "decl": "bool defValue",
+          "default": "false"
+        }
+      ]
+    },
+    "FireEvent": {
+      "name": "FireEvent",
+      "refLine": 223,
+      "docStart": 8968,
+      "docEnd": 9265,
+      "docs": {
+        "brief": "Fires a game event.\n\nThis function closes the event Handle after completing.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fires a game event.\n\nThis function closes the event Handle after completing."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:dontBroadcast",
+            "text": "Optional boolean that determines if event should be broadcast to clients."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": "false"
+        }
+      ]
+    },
+    "SetEventBool": {
+      "name": "SetEventBool",
+      "refLine": 252,
+      "docStart": 10006,
+      "docEnd": 10254,
+      "docs": {
+        "brief": "Sets the boolean value of a game event's key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the boolean value of a game event's key."
+          },
+          {
+            "tag": "param:event",
+            "text": "Handle to the event."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of event key."
+          },
+          {
+            "tag": "param:value",
+            "text": "New boolean value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Event": {
+      "name": "Event",
+      "refLine": 75,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 100,
+          "docStart": 3948,
+          "docEnd": 4199,
+          "docs": {
+            "brief": "Returns the boolean value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the boolean value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:defValue",
+                "text": "Optional default value to use if the key is not found."
+              },
+              {
+                "tag": "return",
+                "text": "The boolean value of the specified event key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "defValue",
+              "decl": "bool defValue",
+              "default": "false"
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 131,
+          "docStart": 5260,
+          "docEnd": 5525,
+          "docs": {
+            "brief": "Returns the floating point value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the floating point value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:defValue",
+                "text": "Optional default value to use if the key is not found."
+              },
+              {
+                "tag": "return",
+                "text": "The floating point value of the specified event key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "defValue",
+              "decl": "float defValue",
+              "default": "0.000000"
+            }
+          ]
+        },
+        "Fire": {
+          "name": "Fire",
+          "refLine": 82,
+          "docStart": 3276,
+          "docEnd": 3469,
+          "docs": {
+            "brief": "Fires a game event.\n\nThis function closes the event Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fires a game event.\n\nThis function closes the event Handle after completing."
+              },
+              {
+                "tag": "param:dontBroadcast",
+                "text": "Optional boolean that determines if event should be broadcast to clients."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "dontBroadcast",
+              "decl": "bool dontBroadcast",
+              "default": "false"
+            }
+          ]
+        },
+        "FireToClient": {
+          "name": "FireToClient",
+          "refLine": 89,
+          "docStart": 3528,
+          "docEnd": 3719,
+          "docs": {
+            "brief": "Fires a game event to only the specified client.\n\nUnlike Fire, this function DOES NOT close the event Handle.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fires a game event to only the specified client.\n\nUnlike Fire, this function DOES NOT close the event Handle."
+              },
+              {
+                "tag": "param:client",
+                "text": "Index of client to receive the event.."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            }
+          ]
+        },
+        "Cancel": {
+          "name": "Cancel",
+          "refLine": 93,
+          "docStart": 3771,
+          "docEnd": 3912,
+          "docs": {
+            "brief": "Cancels a previously created game event that has not been fired. This\nis necessary to avoid leaking memory when an event isn't fired.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Cancels a previously created game event that has not been fired. This\nis necessary to avoid leaking memory when an event isn't fired."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 137,
+          "docStart": 5600,
+          "docEnd": 5755,
+          "docs": {
+            "brief": "Sets the floating point value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the floating point value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:value",
+                "text": "New floating point value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 145,
+          "docStart": 5822,
+          "docEnd": 6140,
+          "docs": {
+            "brief": "Retrieves the string value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the string value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store the value of the specified event key."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              },
+              {
+                "tag": "param:defValue",
+                "text": "Optional default value to use if the key is not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "defvalue",
+              "decl": "const char[] defvalue",
+              "default": "\"\""
+            }
+          ]
+        },
+        "GetName": {
+          "name": "GetName",
+          "refLine": 157,
+          "docStart": 6464,
+          "docEnd": 6629,
+          "docs": {
+            "brief": "Retrieves the name of a game event.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the name of a game event."
+              },
+              {
+                "tag": "param:name",
+                "text": "Buffer to store the name of the event."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 106,
+          "docStart": 4273,
+          "docEnd": 4414,
+          "docs": {
+            "brief": "Sets the boolean value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the boolean value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:value",
+                "text": "New boolean value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 113,
+          "docStart": 4479,
+          "docEnd": 4730,
+          "docs": {
+            "brief": "Returns the integer value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the integer value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:defValue",
+                "text": "Optional default value to use if the key is not found."
+              },
+              {
+                "tag": "return",
+                "text": "The integer value of the specified event key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "defValue",
+              "decl": "int defValue",
+              "default": "0"
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 124,
+          "docStart": 4797,
+          "docEnd": 5197,
+          "docs": {
+            "brief": "Sets the integer value of a game event's key.\n\nInteger value refers to anything that can be reduced to an integer.\nThe various size specifiers, such as \"byte\" and \"short\" are still\nintegers, and only refer to how much data will actually be sent\nover the network (if applicable).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the integer value of a game event's key.\n\nInteger value refers to anything that can be reduced to an integer.\nThe various size specifiers, such as \"byte\" and \"short\" are still\nintegers, and only refer to how much data will actually be sent\nover the network (if applicable)."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:value",
+                "text": "New integer value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 151,
+          "docStart": 6250,
+          "docEnd": 6389,
+          "docs": {
+            "brief": "Sets the string value of a game event's key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the string value of a game event's key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of event key."
+              },
+              {
+                "tag": "param:value",
+                "text": "New string value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "BroadcastDisabled": {
+          "name": "BroadcastDisabled",
+          "refLine": 163,
+          "docStart": 6692,
+          "docEnd": 6862,
+          "docs": {
+            "brief": "Sets whether an event's broadcasting will be disabled or not.\n\nThis has no effect on events Handles that are not from HookEvent\nor HookEventEx callbacks.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether an event's broadcasting will be disabled or not.\n\nThis has no effect on events Handles that are not from HookEvent\nor HookEventEx callbacks."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_events_included": {
+      "name": "_events_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "EventHookMode": {
+      "name": "EventHookMode",
+      "refLine": 41,
+      "docStart": 1655,
+      "docEnd": 1726,
+      "docs": {
+        "brief": "Event hook modes determining how hooking should be handled",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Event hook modes determining how hooking should be handled"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "EventHookMode_Pre": {
+          "name": "EventHookMode_Pre",
+          "refLine": 43,
+          "docStart": 1788,
+          "docEnd": 1836,
+          "docs": {
+            "brief": "Hook callback fired before event is fired */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook callback fired before event is fired */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "EventHookMode_Post": {
+          "name": "EventHookMode_Post",
+          "refLine": 44,
+          "docStart": 1875,
+          "docEnd": 1922,
+          "docs": {
+            "brief": "Hook callback fired after event is fired */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook callback fired after event is fired */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "EventHookMode_PostNoCopy": {
+          "name": "EventHookMode_PostNoCopy",
+          "refLine": 45,
+          "docStart": 1961,
+          "docEnd": 2040,
+          "docs": {
+            "brief": "Hook callback fired after event is fired, but event data won't be copied */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hook callback fired after event is fired, but event data won't be copied */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {
+    "EventHook": {
+      "name": "EventHook",
+      "refLine": 51,
+      "docStart": 2048,
+      "docEnd": 2092,
+      "docs": {
+        "brief": "Hook function types for events.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hook function types for events."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function Action(Event event, const char[] name, bool dontBroadcast)": {
+          "refLine": 62,
+          "docStart": 2117,
+          "docEnd": 2701,
+          "docs": {
+            "brief": "Called when a game event is fired.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a game event is fired."
+              },
+              {
+                "tag": "param:event",
+                "text": "Handle to event. This could be INVALID_HANDLE if every plugin hooking\nthis event has set the hook mode EventHookMode_PostNoCopy."
+              },
+              {
+                "tag": "param:name",
+                "text": "String containing the name of the event."
+              },
+              {
+                "tag": "param:dontBroadcast",
+                "text": "True if event was not broadcast to clients, false otherwise.\nMay not correspond to the real value. Use the property BroadcastDisabled."
+              },
+              {
+                "tag": "return",
+                "text": "Ignored for post hooks. Plugin_Handled will block event if hooked as pre."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(Event event, const char[] name, bool dontBroadcast)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "Event",
+                "name": "event",
+                "decl": "Event event",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "name",
+                "decl": "const char[] name",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "dontBroadcast",
+                "decl": "bool dontBroadcast",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Event event, const char[] name, bool dontBroadcast)": {
+          "refLine": 72,
+          "docStart": 2779,
+          "docEnd": 3168,
+          "docs": {
+            "brief": "Called when a game event is fired.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a game event is fired."
+              },
+              {
+                "tag": "param:event",
+                "text": "Handle to event. This could be INVALID_HANDLE if every plugin hooking\nthis event has set the hook mode EventHookMode_PostNoCopy."
+              },
+              {
+                "tag": "param:name",
+                "text": "String containing the name of the event."
+              },
+              {
+                "tag": "param:dontBroadcast",
+                "text": "True if event was not broadcast to clients, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Event event, const char[] name, bool dontBroadcast)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Event",
+                "name": "event",
+                "decl": "Event event",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "name",
+                "decl": "const char[] name",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "dontBroadcast",
+                "decl": "bool dontBroadcast",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

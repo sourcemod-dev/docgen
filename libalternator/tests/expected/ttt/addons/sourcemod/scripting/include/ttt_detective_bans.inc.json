@@ -1,0 +1,246 @@
+{
+  "functions": {
+    "__pl_ttt_detective_bans_SetNTVOptional": {
+      "name": "__pl_ttt_detective_bans_SetNTVOptional",
+      "refLine": 62,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_IsDetectiveBanned": {
+      "name": "TTT_IsDetectiveBanned",
+      "refLine": 29,
+      "docStart": 582,
+      "docEnd": 761,
+      "docs": {
+        "brief": "Check if client is banned for playing in detectives team",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if client is banned for playing in detectives team"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "return",
+            "text": "True if banned, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnDetectiveBan": {
+      "name": "TTT_OnDetectiveBan",
+      "refLine": 13,
+      "docStart": 100,
+      "docEnd": 327,
+      "docs": {
+        "brief": "Called when the player receives ban for playing on detectives team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the player receives ban for playing on detectives team."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "param:time",
+            "text": "Ban time in seconds"
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason why he was banned"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddDetectiveBan": {
+      "name": "TTT_AddDetectiveBan",
+      "refLine": 39,
+      "docStart": 810,
+      "docEnd": 1044,
+      "docs": {
+        "brief": "Ban player for playing in detectives team",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ban player for playing in detectives team"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "param:target",
+            "text": "The target index"
+          },
+          {
+            "tag": "param:time",
+            "text": "Ban length in seconds"
+          },
+          {
+            "tag": "param:reason",
+            "text": "Ban reason"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnDetectiveUnBan": {
+      "name": "TTT_OnDetectiveUnBan",
+      "refLine": 20,
+      "docStart": 405,
+      "docEnd": 533,
+      "docs": {
+        "brief": "Called when the player receives unban for playing on detectives team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the player receives unban for playing on detectives team."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveDetectiveBan": {
+      "name": "TTT_RemoveDetectiveBan",
+      "refLine": 47,
+      "docStart": 1134,
+      "docEnd": 1281,
+      "docs": {
+        "brief": "Unban player for playing in detectives team",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unban player for playing in detectives team"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "param:target",
+            "text": "The target index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_detective_bans_included": {
+      "name": "_ttt_detective_bans_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

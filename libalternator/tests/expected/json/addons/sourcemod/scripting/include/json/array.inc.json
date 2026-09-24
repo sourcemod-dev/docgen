@@ -1,0 +1,1541 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "JSON_Array": {
+      "name": "JSON_Array",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "JSON_Object",
+      "methods": {
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 366,
+          "docStart": 9972,
+          "docEnd": 10100,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetInt"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "JSON_Array": {
+          "name": "JSON_Array",
+          "refLine": 947,
+          "docStart": 25212,
+          "docEnd": 25420,
+          "docs": {
+            "brief": "Creates a new JSON_Array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new JSON_Array."
+              },
+              {
+                "tag": "param:type",
+                "text": "The type to enforce for this array, or\nJSON_Type_Invalid for no enforced type."
+              },
+              {
+                "tag": "return",
+                "text": "A new JSON_Array."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Array",
+          "arguments": [
+            {
+              "type": "JSONCellType",
+              "name": "type",
+              "decl": "JSONCellType type",
+              "default": "JSON_Type_Invalid"
+            }
+          ]
+        },
+        "GetType": {
+          "name": "GetType",
+          "refLine": 133,
+          "docStart": 3734,
+          "docEnd": 3973,
+          "docs": {
+            "brief": "Gets the cell type stored at an index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the cell type stored at an index."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to get value type for."
+              },
+              {
+                "tag": "return",
+                "text": "Value type for index provided,\nor JSON_Type_Invalid if it does not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSONCellType",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetMeta": {
+          "name": "GetMeta",
+          "refLine": 116,
+          "docStart": 3296,
+          "docEnd": 3444,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetMeta"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "default_value",
+              "decl": "any default_value",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 425,
+          "docStart": 11390,
+          "docEnd": 11519,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetBool"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "ImportValues": {
+          "name": "ImportValues",
+          "refLine": 840,
+          "docStart": 22289,
+          "docEnd": 22550,
+          "docs": {
+            "brief": "Imports a native array's values into the instance.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Imports a native array's values into the instance."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of native values."
+              },
+              {
+                "tag": "param:values",
+                "text": "Array of values."
+              },
+              {
+                "tag": "param:size",
+                "text": "Size of array."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSONCellType",
+              "name": "type",
+              "decl": "JSONCellType type",
+              "default": null
+            },
+            {
+              "type": "any[]",
+              "name": "values",
+              "decl": "any[] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "Concat": {
+          "name": "Concat",
+          "refLine": 714,
+          "docStart": 18710,
+          "docEnd": 19134,
+          "docs": {
+            "brief": "Concatenates the entries from the specified array\non to the end of this array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Concatenates the entries from the specified array\non to the end of this array."
+              },
+              {
+                "tag": "param:from",
+                "text": "Array to concat entries from."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "If the object being merged is an object or the\narrays being merged don't have the same strict\ntype set, an error will be thrown."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSON_Array",
+              "name": "from",
+              "decl": "JSON_Array from",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 406,
+          "docStart": 10927,
+          "docEnd": 11057,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetFloat"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "IndexOf": {
+          "name": "IndexOf",
+          "refLine": 570,
+          "docStart": 14647,
+          "docEnd": 14835,
+          "docs": {
+            "brief": "Finds the index of a value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds the index of a value in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to search for."
+              },
+              {
+                "tag": "return",
+                "text": "The index of the value if it is found, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "SetObject": {
+          "name": "SetObject",
+          "refLine": 444,
+          "docStart": 11848,
+          "docEnd": 11979,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetObject"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSON_Object",
+              "name": "value",
+              "decl": "JSON_Object value",
+              "default": null
+            }
+          ]
+        },
+        "RemoveMeta": {
+          "name": "RemoveMeta",
+          "refLine": 189,
+          "docStart": 5327,
+          "docEnd": 5476,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.RemoveMeta"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 251,
+          "docStart": 6976,
+          "docEnd": 7109,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetString"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 266,
+          "docStart": 7403,
+          "docEnd": 7533,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetInt"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "default_value",
+              "decl": "int default_value",
+              "default": "-1"
+            }
+          ]
+        },
+        "PushString": {
+          "name": "PushString",
+          "refLine": 468,
+          "docStart": 12362,
+          "docEnd": 12537,
+          "docs": {
+            "brief": "Pushes a string to the end of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a string to the end of the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "The element's index on success, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "IndexOfString": {
+          "name": "IndexOfString",
+          "refLine": 589,
+          "docStart": 15123,
+          "docEnd": 15314,
+          "docs": {
+            "brief": "Finds the index of a string in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds the index of a string in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to search for."
+              },
+              {
+                "tag": "return",
+                "text": "The index of the string if it is found, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 641,
+          "docStart": 16452,
+          "docEnd": 16696,
+          "docs": {
+            "brief": "Removes an index and its related meta-keys from the array,\nand shifts down all following element indices.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an index and its related meta-keys from the array,\nand shifts down all following element indices."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to remove."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the value was never set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "ContainsString": {
+          "name": "ContainsString",
+          "refLine": 625,
+          "docStart": 16108,
+          "docEnd": 16297,
+          "docs": {
+            "brief": "Determines whether the array contains a string.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Determines whether the array contains a string."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to search for."
+              },
+              {
+                "tag": "return",
+                "text": "True if the string is found, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "GetValue": {
+          "name": "GetValue",
+          "refLine": 220,
+          "docStart": 6162,
+          "docEnd": 6294,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetValue"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "any&",
+              "name": "value",
+              "decl": "any& value",
+              "default": null
+            }
+          ]
+        },
+        "GetOptionalValue": {
+          "name": "GetOptionalValue",
+          "refLine": 236,
+          "docStart": 6539,
+          "docEnd": 6696,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetOptionalValue"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "default_value",
+              "decl": "any default_value",
+              "default": "-1"
+            }
+          ]
+        },
+        "CanUseType": {
+          "name": "CanUseType",
+          "refLine": 90,
+          "docStart": 2632,
+          "docEnd": 2827,
+          "docs": {
+            "brief": "Checks whether the array accepts the type provided.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Checks whether the array accepts the type provided."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type to check for enforcement."
+              },
+              {
+                "tag": "return",
+                "text": "True if the type can be used, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSONCellType",
+              "name": "type",
+              "decl": "JSONCellType type",
+              "default": null
+            }
+          ]
+        },
+        "GetObject": {
+          "name": "GetObject",
+          "refLine": 328,
+          "docStart": 9032,
+          "docEnd": 9165,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetObject"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Object",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSON_Object",
+              "name": "default_value",
+              "decl": "JSON_Object default_value",
+              "default": "null"
+            }
+          ]
+        },
+        "ShallowCopy": {
+          "name": "ShallowCopy",
+          "refLine": 925,
+          "docStart": 24874,
+          "docEnd": 24909,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "JSON_Object.ShallowCopy"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Array",
+          "arguments": []
+        },
+        "PushInt": {
+          "name": "PushInt",
+          "refLine": 484,
+          "docStart": 12736,
+          "docEnd": 12909,
+          "docs": {
+            "brief": "Pushes an int to the end of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes an int to the end of the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "The element's index on success, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "HasKey": {
+          "name": "HasKey",
+          "refLine": 101,
+          "docStart": 2959,
+          "docEnd": 3144,
+          "docs": {
+            "brief": "Checks whether the object has an index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Checks whether the object has an index."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to check existence of."
+              },
+              {
+                "tag": "return",
+                "text": "True if the index exists, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetSize": {
+          "name": "GetSize",
+          "refLine": 147,
+          "docStart": 4150,
+          "docEnd": 4409,
+          "docs": {
+            "brief": "Gets the length of the string stored at an index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the length of the string stored at an index."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to get string length for."
+              },
+              {
+                "tag": "return",
+                "text": "Length of string at index provided,\nor -1 if it is not a string/does not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetHidden": {
+          "name": "GetHidden",
+          "refLine": 158,
+          "docStart": 4531,
+          "docEnd": 4733,
+          "docs": {
+            "brief": "Gets whether the index should be hidden from encoding.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets whether the index should be hidden from encoding."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to get hidden state for."
+              },
+              {
+                "tag": "return",
+                "text": "Whether or not the index should be hidden."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "SetMeta": {
+          "name": "SetMeta",
+          "refLine": 173,
+          "docStart": 4914,
+          "docEnd": 5060,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetMeta"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSONMetaInfo",
+              "name": "meta",
+              "decl": "JSONMetaInfo meta",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 347,
+          "docStart": 9498,
+          "docEnd": 9629,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "JSON_Object.SetString"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "PushBool": {
+          "name": "PushBool",
+          "refLine": 534,
+          "docStart": 13861,
+          "docEnd": 14034,
+          "docs": {
+            "brief": "Pushes a bool to the end of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a bool to the end of the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "The element's index on success, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "Contains": {
+          "name": "Contains",
+          "refLine": 614,
+          "docStart": 15826,
+          "docEnd": 16012,
+          "docs": {
+            "brief": "Determines whether the array contains a value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Determines whether the array contains a value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to search for."
+              },
+              {
+                "tag": "return",
+                "text": "True if the value is found, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "PushFloat": {
+          "name": "PushFloat",
+          "refLine": 518,
+          "docStart": 13497,
+          "docEnd": 13671,
+          "docs": {
+            "brief": "Pushes a float to the end of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a float to the end of the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "The element's index on success, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "ImportStrings": {
+          "name": "ImportStrings",
+          "refLine": 870,
+          "docStart": 23310,
+          "docEnd": 23526,
+          "docs": {
+            "brief": "Imports a native array's strings into the instance.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Imports a native array's strings into the instance."
+              },
+              {
+                "tag": "param:strings",
+                "text": "Array of strings."
+              },
+              {
+                "tag": "param:size",
+                "text": "Size of array."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[][]",
+              "name": "strings",
+              "decl": "const char[][] strings",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "DeepCopy": {
+          "name": "DeepCopy",
+          "refLine": 931,
+          "docStart": 25025,
+          "docEnd": 25057,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "JSON_Object.DeepCopy"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "JSON_Array",
+          "arguments": []
+        },
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 313,
+          "docStart": 8626,
+          "docEnd": 8757,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetBool"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "default_value",
+              "decl": "bool default_value",
+              "default": "false"
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 298,
+          "docStart": 8216,
+          "docEnd": 8348,
+          "docs": {
+            "brief": "Converts index to a string ('key') and calls the relevant Super method.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts index to a string ('key') and calls the relevant Super method."
+              },
+              {
+                "tag": "see",
+                "text": "MetaStringMap.GetFloat"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "default_value",
+              "decl": "float default_value",
+              "default": "-1.000000"
+            }
+          ]
+        },
+        "ExportStrings": {
+          "name": "ExportStrings",
+          "refLine": 905,
+          "docStart": 24233,
+          "docEnd": 24481,
+          "docs": {
+            "brief": "Exports the instance's strings into a native array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Exports the instance's strings into a native array."
+              },
+              {
+                "tag": "param:values",
+                "text": "Array to export to."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of array."
+              },
+              {
+                "tag": "param:max_string_size",
+                "text": "Maximum size of array elements."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[][]",
+              "name": "values",
+              "decl": "char[][] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_string_size",
+              "decl": "int max_string_size",
+              "default": null
+            }
+          ]
+        },
+        "ExportValues": {
+          "name": "ExportValues",
+          "refLine": 886,
+          "docStart": 23783,
+          "docEnd": 23950,
+          "docs": {
+            "brief": "Exports the instance's values into a native array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Exports the instance's values into a native array."
+              },
+              {
+                "tag": "param:values",
+                "text": "Array to export to."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of array."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any[]",
+              "name": "values",
+              "decl": "any[] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            }
+          ]
+        },
+        "SetHidden": {
+          "name": "SetHidden",
+          "refLine": 206,
+          "docStart": 5731,
+          "docEnd": 5991,
+          "docs": {
+            "brief": "Sets whether the index should be hidden from encoding.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether the index should be hidden from encoding."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index to set hidden state for."
+              },
+              {
+                "tag": "param:hidden",
+                "text": "Whether or not the index should be hidden."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "hidden",
+              "decl": "bool hidden",
+              "default": null
+            }
+          ]
+        },
+        "PushObject": {
+          "name": "PushObject",
+          "refLine": 550,
+          "docStart": 14221,
+          "docEnd": 14401,
+          "docs": {
+            "brief": "Pushes a JSON object to the end of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a JSON object to the end of the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "The element's index on success, -1 otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "JSON_Object",
+              "name": "value",
+              "decl": "JSON_Object value",
+              "default": null
+            }
+          ]
+        },
+        "EnforceType": {
+          "name": "EnforceType",
+          "refLine": 812,
+          "docStart": 21595,
+          "docEnd": 21890,
+          "docs": {
+            "brief": "Sets the array to enforce a specific type.\nThis will fail if there are any existing elements\nin the array which are not of the same type.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the array to enforce a specific type.\nThis will fail if there are any existing elements\nin the array which are not of the same type."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type to enforce."
+              },
+              {
+                "tag": "return",
+                "text": "True if the type was enforced successfully, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSONCellType",
+              "name": "type",
+              "decl": "JSONCellType type",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Super": {
+          "name": "Super",
+          "refLine": 53,
+          "docStart": 1848,
+          "docEnd": 1933,
+          "docs": {
+            "brief": "Views the instance as its superclass to access overridden methods.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Views the instance as its superclass to access overridden methods."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "JSON_Object",
+          "getter": true,
+          "setter": false
+        },
+        "MaxStringLength": {
+          "name": "MaxStringLength",
+          "refLine": 782,
+          "docStart": 21014,
+          "docEnd": 21079,
+          "docs": {
+            "brief": "The length of the longest string in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The length of the longest string in the array."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "Type": {
+          "name": "Type",
+          "refLine": 64,
+          "docStart": 2070,
+          "docEnd": 2120,
+          "docs": {
+            "brief": "The enforced type of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The enforced type of the array."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "JSONCellType",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_array_included": {
+      "name": "_json_array_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

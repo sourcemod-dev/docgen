@@ -1,0 +1,5041 @@
+{
+  "functions": {
+    "CancelClientMenu": {
+      "name": "CancelClientMenu",
+      "refLine": 971,
+      "docStart": 37028,
+      "docEnd": 37444,
+      "docs": {
+        "brief": "Cancels a menu on a client.  This will only affect non-external menus.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cancels a menu on a client.  This will only affect non-external menus."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:autoIgnore",
+            "text": "If true, no menus can be re-drawn on the client during\nthe cancellation process."
+          },
+          {
+            "tag": "param:hStyle",
+            "text": "MenuStyle Handle, or INVALID_HANDLE to use the default style."
+          },
+          {
+            "tag": "return",
+            "text": "True if a menu was cancelled, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "autoIgnore",
+          "decl": "bool autoIgnore",
+          "default": "false"
+        },
+        {
+          "type": "Handle",
+          "name": "hStyle",
+          "decl": "Handle hStyle",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "CreatePanel": {
+      "name": "CreatePanel",
+      "refLine": 935,
+      "docStart": 35460,
+      "docEnd": 35847,
+      "docs": {
+        "brief": "Creates a MenuPanel from a MenuStyle.  Panels are used for drawing raw\nmenus without any extra helper functions.  The Handle must be closed\nwith CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a MenuPanel from a MenuStyle.  Panels are used for drawing raw\nmenus without any extra helper functions.  The Handle must be closed\nwith CloseHandle()."
+          },
+          {
+            "tag": "param:hStyle",
+            "text": "MenuStyle Handle, or INVALID_HANDLE to use the default style."
+          },
+          {
+            "tag": "return",
+            "text": "A new MenuPanel Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Panel",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hStyle",
+          "decl": "Handle hStyle",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "GetMenuStyle": {
+      "name": "GetMenuStyle",
+      "refLine": 646,
+      "docStart": 25977,
+      "docEnd": 26219,
+      "docs": {
+        "brief": "Returns a menu's MenuStyle Handle.  The Handle\nis global and cannot be freed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a menu's MenuStyle Handle.  The Handle\nis global and cannot be freed."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Handle to the menu."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to the menu's draw style."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "InsertMenuItem": {
+      "name": "InsertMenuItem",
+      "refLine": 527,
+      "docStart": 21625,
+      "docEnd": 22248,
+      "docs": {
+        "brief": "Inserts an item into the menu before a certain position; the new item will\nbe at the given position and all next items pushed forward.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Inserts an item into the menu before a certain position; the new item will\nbe at the given position and all next items pushed forward."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:position",
+            "text": "Position, starting from 0."
+          },
+          {
+            "tag": "param:info",
+            "text": "Item information string."
+          },
+          {
+            "tag": "param:display",
+            "text": "Default item display string."
+          },
+          {
+            "tag": "param:style",
+            "text": "Drawing style flags.  Anything other than DEFAULT or\nDISABLED will be completely ignored when paginating."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or menu position."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "position",
+          "decl": "int position",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "info",
+          "decl": "const char[] info",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "display",
+          "decl": "const char[] display",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "style",
+          "decl": "int style",
+          "default": "0"
+        }
+      ]
+    },
+    "GetMenuVoteInfo": {
+      "name": "GetMenuVoteInfo",
+      "refLine": 1139,
+      "docStart": 43684,
+      "docEnd": 43949,
+      "docs": {
+        "brief": "Retrieves voting information from MenuAction_VoteEnd.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves voting information from MenuAction_VoteEnd."
+          },
+          {
+            "tag": "param:param2",
+            "text": "Second parameter of MenuAction_VoteEnd."
+          },
+          {
+            "tag": "param:winningVotes",
+            "text": "Number of votes received by the winning option."
+          },
+          {
+            "tag": "param:totalVotes",
+            "text": "Number of total votes received."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "winningVotes",
+          "decl": "int& winningVotes",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "totalVotes",
+          "decl": "int& totalVotes",
+          "default": null
+        }
+      ]
+    },
+    "DrawPanelItem": {
+      "name": "DrawPanelItem",
+      "refLine": 1013,
+      "docStart": 38471,
+      "docEnd": 38997,
+      "docs": {
+        "brief": "Draws an item on a panel.  If the item takes up a slot, the position\nis returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Draws an item on a panel.  If the item takes up a slot, the position\nis returned."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:text",
+            "text": "Display text to use.  If not a raw line,\nthe style may automatically add color markup.\nNo numbering or newlines are needed."
+          },
+          {
+            "tag": "param:style",
+            "text": "ITEMDRAW style flags."
+          },
+          {
+            "tag": "return",
+            "text": "A slot position, or 0 if item was a rawline or could not be drawn."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "style",
+          "decl": "int style",
+          "default": "0"
+        }
+      ]
+    },
+    "VoteMenu": {
+      "name": "VoteMenu",
+      "refLine": 813,
+      "docStart": 31190,
+      "docEnd": 31986,
+      "docs": {
+        "brief": "Broadcasts a menu to a list of clients.  The most selected item will be\nreturned through MenuAction_End.  On a tie, a random item will be returned\nfrom a list of the tied items.\n\nNote that MenuAction_VoteEnd and MenuAction_VoteStart are both\ndefault callbacks and do not need to be enabled.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Broadcasts a menu to a list of clients.  The most selected item will be\nreturned through MenuAction_End.  On a tie, a random item will be returned\nfrom a list of the tied items.\n\nNote that MenuAction_VoteEnd and MenuAction_VoteStart are both\ndefault callbacks and do not need to be enabled."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array of clients to broadcast to."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of clients in the array."
+          },
+          {
+            "tag": "param:time",
+            "text": "Maximum time to leave menu on the screen."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional voting flags."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if this menu already has a vote session\nin progress."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, or a vote is already in progress."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "clients",
+          "decl": "int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "InternalShowMenu": {
+      "name": "InternalShowMenu",
+      "refLine": 1130,
+      "docStart": 42666,
+      "docEnd": 43558,
+      "docs": {
+        "brief": "This function is provided for legacy code only.  Some older plugins may use\nnetwork messages instead of the panel API.  This function wraps the panel\nAPI for eased portability into the SourceMod menu system.\n\nThis function is only usable with the Radio Menu style.  You do not need to\nsplit up your menu into multiple packets; SourceMod will break the string\nup internally.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This function is provided for legacy code only.  Some older plugins may use\nnetwork messages instead of the panel API.  This function wraps the panel\nAPI for eased portability into the SourceMod menu system.\n\nThis function is only usable with the Radio Menu style.  You do not need to\nsplit up your menu into multiple packets; SourceMod will break the string\nup internally."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:str",
+            "text": "Full menu string as would be passed over the network."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time to hold the menu for."
+          },
+          {
+            "tag": "param:keys",
+            "text": "Selectable key bitstring."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Optional handler function, with the same rules as\nSendPanelToClient()."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or radio menus not supported."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "keys",
+          "decl": "int keys",
+          "default": "-1"
+        },
+        {
+          "type": "MenuHandler",
+          "name": "handler",
+          "decl": "MenuHandler handler",
+          "default": "INVALID_FUNCTION"
+        }
+      ]
+    },
+    "SetPanelCurrentKey": {
+      "name": "SetPanelCurrentKey",
+      "refLine": 1102,
+      "docStart": 42000,
+      "docEnd": 42348,
+      "docs": {
+        "brief": "Sets the next key position.  This cannot be used\nto traverse backwards.",
+        "tags": [
+          {
+            "tag": "",
+            "text": ""
+          },
+          {
+            "tag": "brief",
+            "text": "Sets the next key position.  This cannot be used\nto traverse backwards."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key that is greater or equal to\nGetPanelCurrentKey()."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "key",
+          "decl": "int key",
+          "default": null
+        }
+      ]
+    },
+    "CancelMenu": {
+      "name": "CancelMenu",
+      "refLine": 757,
+      "docStart": 29638,
+      "docEnd": 30088,
+      "docs": {
+        "brief": "Cancels a menu from displaying on all clients.  While the\ncancellation is in progress, this menu cannot be re-displayed\nto any clients.\n\nThe menu may still exist on the client's screen after this command.\nThis simply verifies that the menu is not being used anywhere.\n\nIf any vote is in progress on a menu, it will be cancelled.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cancels a menu from displaying on all clients.  While the\ncancellation is in progress, this menu cannot be re-displayed\nto any clients.\n\nThe menu may still exist on the client's screen after this command.\nThis simply verifies that the menu is not being used anywhere.\n\nIf any vote is in progress on a menu, it will be cancelled."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "CreatePanelFromMenu": {
+      "name": "CreatePanelFromMenu",
+      "refLine": 677,
+      "docStart": 26937,
+      "docEnd": 27182,
+      "docs": {
+        "brief": "Creates a raw MenuPanel based off the menu's style.\nThe Handle must be freed with CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a raw MenuPanel based off the menu's style.\nThe Handle must be freed with CloseHandle()."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "return",
+            "text": "A new MenuPanel Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Panel",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "SetPanelKeys": {
+      "name": "SetPanelKeys",
+      "refLine": 1047,
+      "docStart": 39910,
+      "docEnd": 40353,
+      "docs": {
+        "brief": "Sets the selectable key map of a panel.  This is not supported by\nall styles (only by Radio, as of this writing).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the selectable key map of a panel.  This is not supported by\nall styles (only by Radio, as of this writing)."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:keys",
+            "text": "An integer where each bit N allows key\nN+1 to be selected.  If no keys are selectable,\nthen key 0 (bit 9) is automatically set."
+          },
+          {
+            "tag": "return",
+            "text": "True if supported, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "keys",
+          "decl": "int keys",
+          "default": null
+        }
+      ]
+    },
+    "IsNewVoteAllowed": {
+      "name": "IsNewVoteAllowed",
+      "refLine": 1153,
+      "docStart": 44098,
+      "docEnd": 44444,
+      "docs": {
+        "brief": "Quick stock to determine whether voting is allowed.  This doesn't let you\nfine-tune a reason for not voting, so it's not recommended for lazily\ntelling clients that voting isn't allowed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Quick stock to determine whether voting is allowed.  This doesn't let you\nfine-tune a reason for not voting, so it's not recommended for lazily\ntelling clients that voting isn't allowed."
+          },
+          {
+            "tag": "return",
+            "text": "True if voting is allowed, false if voting is in progress\nor the cooldown is active."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "CancelVote": {
+      "name": "CancelVote",
+      "refLine": 794,
+      "docStart": 31061,
+      "docEnd": 31159,
+      "docs": {
+        "brief": "Cancels the vote in progress.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cancels the vote in progress."
+          },
+          {
+            "tag": "error",
+            "text": "If no vote is in progress."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CanPanelDrawFlags": {
+      "name": "CanPanelDrawFlags",
+      "refLine": 1035,
+      "docStart": 39548,
+      "docEnd": 39849,
+      "docs": {
+        "brief": "Returns whether or not the given drawing flags are supported by\nthe menu style.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not the given drawing flags are supported by\nthe menu style."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:style",
+            "text": "ITEMDRAW style flags."
+          },
+          {
+            "tag": "return",
+            "text": "True if item is drawable, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "style",
+          "decl": "int style",
+          "default": null
+        }
+      ]
+    },
+    "GetMenuExitButton": {
+      "name": "GetMenuExitButton",
+      "refLine": 687,
+      "docStart": 27234,
+      "docEnd": 27503,
+      "docs": {
+        "brief": "Returns whether or not the menu has an exit button.\nBy default, menus have an exit button.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not the menu has an exit button.\nBy default, menus have an exit button."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if the menu has an exit button; false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuNoVoteButton": {
+      "name": "SetMenuNoVoteButton",
+      "refLine": 742,
+      "docStart": 29232,
+      "docEnd": 29574,
+      "docs": {
+        "brief": "Sets whether or not the menu has a \"no vote\" button in slot 1.\nBy default, menus do not have a no vote button.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether or not the menu has a \"no vote\" button in slot 1.\nBy default, menus do not have a no vote button."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:button",
+            "text": "True to enable the button, false to remove it."
+          },
+          {
+            "tag": "return",
+            "text": "True if allowed; false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "button",
+          "decl": "bool button",
+          "default": null
+        }
+      ]
+    },
+    "IsVoteInProgress": {
+      "name": "IsVoteInProgress",
+      "refLine": 787,
+      "docStart": 30817,
+      "docEnd": 30998,
+      "docs": {
+        "brief": "Returns whether a vote is in progress.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a vote is in progress."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Deprecated; no longer used."
+          },
+          {
+            "tag": "return",
+            "text": "True if a vote is in progress, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "AddMenuItem": {
+      "name": "AddMenuItem",
+      "refLine": 509,
+      "docStart": 21014,
+      "docEnd": 21492,
+      "docs": {
+        "brief": "Appends a new item to the end of a menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Appends a new item to the end of a menu."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:info",
+            "text": "Item information string."
+          },
+          {
+            "tag": "param:display",
+            "text": "Default item display string."
+          },
+          {
+            "tag": "param:style",
+            "text": "Drawing style flags.  Anything other than DEFAULT or\nDISABLED will be completely ignored when paginating."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or item limit reached."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "info",
+          "decl": "const char[] info",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "display",
+          "decl": "const char[] display",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "style",
+          "decl": "int style",
+          "default": "0"
+        }
+      ]
+    },
+    "CheckVoteDelay": {
+      "name": "CheckVoteDelay",
+      "refLine": 893,
+      "docStart": 34008,
+      "docEnd": 34262,
+      "docs": {
+        "brief": "Returns the number of seconds you should \"wait\" before displaying\na publicly invocable menu.  This number is the time remaining until\n(last_vote + sm_vote_delay).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of seconds you should \"wait\" before displaying\na publicly invocable menu.  This number is the time remaining until\n(last_vote + sm_vote_delay)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of seconds to wait, or 0 for none."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "RedrawMenuItem": {
+      "name": "RedrawMenuItem",
+      "refLine": 1110,
+      "docStart": 42408,
+      "docEnd": 42615,
+      "docs": {
+        "brief": "Redraws menu text from inside a MenuAction_DisplayItem callback.",
+        "tags": [
+          {
+            "tag": "",
+            "text": ""
+          },
+          {
+            "tag": "brief",
+            "text": "Redraws menu text from inside a MenuAction_DisplayItem callback."
+          },
+          {
+            "tag": "param:text",
+            "text": "Menu text to draw."
+          },
+          {
+            "tag": "return",
+            "text": "Item position; must be returned via the callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        }
+      ]
+    },
+    "GetPanelTextRemaining": {
+      "name": "GetPanelTextRemaining",
+      "refLine": 1081,
+      "docStart": 41214,
+      "docEnd": 41693,
+      "docs": {
+        "brief": "Returns the amount of text the menu can still hold.  If this is\nlimit is reached or overflowed, the text is silently truncated.\n\nRadio menus: Currently 511 characters (512 bytes).\nValve menus: Currently -1 (no meaning).",
+        "tags": [
+          {
+            "tag": "",
+            "text": ""
+          },
+          {
+            "tag": "brief",
+            "text": "Returns the amount of text the menu can still hold.  If this is\nlimit is reached or overflowed, the text is silently truncated.\n\nRadio menus: Currently 511 characters (512 bytes).\nValve menus: Currently -1 (no meaning)."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters that the menu can still hold,\nor -1 if there is no known limit."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        }
+      ]
+    },
+    "VoteMenuToAll": {
+      "name": "VoteMenuToAll",
+      "refLine": 825,
+      "docStart": 32080,
+      "docEnd": 32488,
+      "docs": {
+        "brief": "Sends a vote menu to all clients.  See VoteMenu() for more information.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a vote menu to all clients.  See VoteMenu() for more information."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:time",
+            "text": "Maximum time to leave menu on the screen."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional voting flags."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if this menu already has a vote session\nin progress."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        }
+      ]
+    },
+    "RemoveMenuItem": {
+      "name": "RemoveMenuItem",
+      "refLine": 541,
+      "docStart": 22405,
+      "docEnd": 22660,
+      "docs": {
+        "brief": "Removes an item from the menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an item from the menu."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:position",
+            "text": "Position, starting from 0."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or menu position."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "position",
+          "decl": "int position",
+          "default": null
+        }
+      ]
+    },
+    "SendPanelToClient": {
+      "name": "SendPanelToClient",
+      "refLine": 1067,
+      "docStart": 40408,
+      "docEnd": 41121,
+      "docs": {
+        "brief": "Sends a panel to a client.  Unlike full menus, the handler\nfunction will only receive the following actions, both of\nwhich will have INVALID_HANDLE for a menu, and the client\nas param1.\n\nMenuAction_Select (param2 will be the key pressed)\nMenuAction_Cancel (param2 will be the reason)\n\nAlso, if the menu fails to display, no callbacks will be called.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a panel to a client.  Unlike full menus, the handler\nfunction will only receive the following actions, both of\nwhich will have INVALID_HANDLE for a menu, and the client\nas param1.\n\nMenuAction_Select (param2 will be the key pressed)\nMenuAction_Cancel (param2 will be the reason)\n\nAlso, if the menu fails to display, no callbacks will be called."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "A client to draw to."
+          },
+          {
+            "tag": "param:handler",
+            "text": "The MenuHandler function to catch actions with."
+          },
+          {
+            "tag": "param:time",
+            "text": "Time to hold the menu for."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "MenuHandler",
+          "name": "handler",
+          "decl": "MenuHandler handler",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "GetMenuOptionFlags": {
+      "name": "GetMenuOptionFlags",
+      "refLine": 766,
+      "docStart": 30130,
+      "docEnd": 30313,
+      "docs": {
+        "brief": "Retrieves a menu's option flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a menu's option flags."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "return",
+            "text": "A bitstring of MENUFLAG bits."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "GetMenuSelectionPosition": {
+      "name": "GetMenuSelectionPosition",
+      "refLine": 604,
+      "docStart": 24422,
+      "docEnd": 24910,
+      "docs": {
+        "brief": "Returns the first item on the page of a currently selected menu.\n\nThis is only valid inside a MenuAction_Select callback.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the first item on the page of a currently selected menu.\n\nThis is only valid inside a MenuAction_Select callback."
+          },
+          {
+            "tag": "return",
+            "text": "First item number on the page the client was viewing\nbefore selecting the item in the callback.  This can\nbe used to re-display the menu from the original\nposition."
+          },
+          {
+            "tag": "error",
+            "text": "Not called from inside a MenuAction_Select callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetClientMenu": {
+      "name": "GetClientMenu",
+      "refLine": 960,
+      "docStart": 36670,
+      "docEnd": 36958,
+      "docs": {
+        "brief": "Returns whether a client is viewing a menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a client is viewing a menu."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:hStyle",
+            "text": "MenuStyle Handle, or INVALID_HANDLE to use the default style."
+          },
+          {
+            "tag": "return",
+            "text": "A MenuSource value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than null."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "MenuSource",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hStyle",
+          "decl": "Handle hStyle",
+          "default": "null"
+        }
+      ]
+    },
+    "MenuShufflePerClient": {
+      "name": "MenuShufflePerClient",
+      "refLine": 581,
+      "docStart": 23753,
+      "docEnd": 24022,
+      "docs": {
+        "brief": "Generates a per-client random mapping for the current vote options.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Generates a per-client random mapping for the current vote options."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:start",
+            "text": "Menu item index to start randomizing from."
+          },
+          {
+            "tag": "param:stop",
+            "text": "Menu item index to stop randomizing at. -1 = infinite"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "start",
+          "decl": "int start",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "stop",
+          "decl": "int stop",
+          "default": "-1"
+        }
+      ]
+    },
+    "GetMenuTitle": {
+      "name": "GetMenuTitle",
+      "refLine": 667,
+      "docStart": 26580,
+      "docEnd": 26864,
+      "docs": {
+        "brief": "Returns the text of a menu's title.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the text of a menu's title."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store title."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle/"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "DisplayMenu": {
+      "name": "DisplayMenu",
+      "refLine": 484,
+      "docStart": 20149,
+      "docEnd": 20461,
+      "docs": {
+        "brief": "Displays a menu to a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays a menu to a client."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:time",
+            "text": "Maximum time to leave menu on the screen."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "GetMenuItem": {
+      "name": "GetMenuItem",
+      "refLine": 565,
+      "docStart": 22913,
+      "docEnd": 23550,
+      "docs": {
+        "brief": "Retrieves information about a menu item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves information about a menu item."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:position",
+            "text": "Position, starting from 0."
+          },
+          {
+            "tag": "param:infoBuf",
+            "text": "Info buffer."
+          },
+          {
+            "tag": "param:infoBufLen",
+            "text": "Maximum length of the info buffer."
+          },
+          {
+            "tag": "param:style",
+            "text": "By-reference variable to store drawing flags."
+          },
+          {
+            "tag": "param:dispBuf",
+            "text": "Display buffer."
+          },
+          {
+            "tag": "param:dispBufLen",
+            "text": "Maximum length of the display buffer."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index. Must be specified if menu is per-client random shuffled, -1 to ignore."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if position is invalid."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "position",
+          "decl": "int position",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "infoBuf",
+          "decl": "char[] infoBuf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "infoBufLen",
+          "decl": "int infoBufLen",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "style",
+          "decl": "int& style",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "dispBuf",
+          "decl": "char[] dispBuf",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "dispBufLen",
+          "decl": "int dispBufLen",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": "0"
+        }
+      ]
+    },
+    "DisplayMenuAtItem": {
+      "name": "DisplayMenuAtItem",
+      "refLine": 496,
+      "docStart": 20526,
+      "docEnd": 20927,
+      "docs": {
+        "brief": "Displays a menu to a client, starting from the given item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays a menu to a client, starting from the given item."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:first_item",
+            "text": "First item to begin drawing from."
+          },
+          {
+            "tag": "param:time",
+            "text": "Maximum time to leave menu on the screen."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "first_item",
+          "decl": "int first_item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "GetMenuExitBackButton": {
+      "name": "GetMenuExitBackButton",
+      "refLine": 718,
+      "docStart": 28261,
+      "docEnd": 28695,
+      "docs": {
+        "brief": "Returns whether or not the menu has an \"exit back\" button.  By default,\nmenus do not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not the menu has an \"exit back\" button.  By default,\nmenus do not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if the menu has an exit back button; false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuExitBackButton": {
+      "name": "SetMenuExitBackButton",
+      "refLine": 731,
+      "docStart": 28748,
+      "docEnd": 29166,
+      "docs": {
+        "brief": "Sets whether or not the menu has an \"exit back\" button. By default, menus\ndo not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether or not the menu has an \"exit back\" button. By default, menus\ndo not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:button",
+            "text": "True to enable the button, false to remove it."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "button",
+          "decl": "bool button",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuExitButton": {
+      "name": "SetMenuExitButton",
+      "refLine": 705,
+      "docStart": 27552,
+      "docEnd": 28199,
+      "docs": {
+        "brief": "Sets whether or not the menu has an exit button.  By default, paginated menus\nhave an exit button.\n\nIf a menu's pagination is changed to MENU_NO_PAGINATION, and the pagination\nwas previously a different value, then the Exit button status is changed to\nfalse.  It must be explicitly re-enabled afterwards.\n\nIf a non-paginated menu has an exit button, then at most 9 items will be\ndisplayed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether or not the menu has an exit button.  By default, paginated menus\nhave an exit button.\n\nIf a menu's pagination is changed to MENU_NO_PAGINATION, and the pagination\nwas previously a different value, then the Exit button status is changed to\nfalse.  It must be explicitly re-enabled afterwards.\n\nIf a non-paginated menu has an exit button, then at most 9 items will be\ndisplayed."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:button",
+            "text": "True to enable the button, false to remove it."
+          },
+          {
+            "tag": "return",
+            "text": "True if allowed; false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "button",
+          "decl": "bool button",
+          "default": null
+        }
+      ]
+    },
+    "IsClientInVotePool": {
+      "name": "IsClientInVotePool",
+      "refLine": 904,
+      "docStart": 34296,
+      "docEnd": 34671,
+      "docs": {
+        "brief": "Returns whether a client is in the pool of clients allowed\nto participate in the current vote.  This is determined by\nthe client list passed to VoteMenu().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a client is in the pool of clients allowed\nto participate in the current vote.  This is determined by\nthe client list passed to VoteMenu()."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "True if client is allowed to vote, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "If no vote is in progress or client index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetPanelStyle": {
+      "name": "GetPanelStyle",
+      "refLine": 989,
+      "docStart": 37868,
+      "docEnd": 38076,
+      "docs": {
+        "brief": "Returns a MenuPanel's parent style.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a MenuPanel's parent style."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "return",
+            "text": "The MenuStyle Handle that created the panel."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        }
+      ]
+    },
+    "SetPanelTitle": {
+      "name": "SetPanelTitle",
+      "refLine": 999,
+      "docStart": 38124,
+      "docEnd": 38382,
+      "docs": {
+        "brief": "Sets the panel's title.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the panel's title."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "param:text",
+            "text": "Text to set as the title."
+          },
+          {
+            "tag": "param:onlyIfEmpty",
+            "text": "If true, the title will only be set if no title is set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "onlyIfEmpty",
+          "decl": "bool onlyIfEmpty",
+          "default": "false"
+        }
+      ]
+    },
+    "RemoveAllMenuItems": {
+      "name": "RemoveAllMenuItems",
+      "refLine": 549,
+      "docStart": 22720,
+      "docEnd": 22863,
+      "docs": {
+        "brief": "Removes all items from a menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes all items from a menu."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or menu position."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "MenuSetClientMapping": {
+      "name": "MenuSetClientMapping",
+      "refLine": 591,
+      "docStart": 24100,
+      "docEnd": 24333,
+      "docs": {
+        "brief": "Fills the client vote option mapping with user supplied values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fills the client vote option mapping with user supplied values."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:array",
+            "text": "Integer array with mapping."
+          },
+          {
+            "tag": "param:length",
+            "text": "Length of array."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "array",
+          "decl": "int[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "DrawPanelText": {
+      "name": "DrawPanelText",
+      "refLine": 1024,
+      "docStart": 39089,
+      "docEnd": 39483,
+      "docs": {
+        "brief": "Draws a raw line of text on a panel, without any markup other than a newline.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Draws a raw line of text on a panel, without any markup other than a newline."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle, or INVALID_HANDLE if inside a\nMenuAction_DisplayItem callback."
+          },
+          {
+            "tag": "param:text",
+            "text": "Display text to use."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if raw lines are not supported."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuPagination": {
+      "name": "SetMenuPagination",
+      "refLine": 627,
+      "docStart": 25189,
+      "docEnd": 25678,
+      "docs": {
+        "brief": "Sets whether the menu should be paginated or not.\n\nIf itemsPerPage is MENU_NO_PAGINATION, and the exit button flag is set,\nthen the exit button flag is removed.  It can be re-applied if desired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether the menu should be paginated or not.\n\nIf itemsPerPage is MENU_NO_PAGINATION, and the exit button flag is set,\nthen the exit button flag is removed.  It can be re-applied if desired."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Handle to the menu."
+          },
+          {
+            "tag": "param:itemsPerPage",
+            "text": "Number of items per page, or MENU_NO_PAGINATION."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if pagination is too high or\nlow."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "itemsPerPage",
+          "decl": "int itemsPerPage",
+          "default": null
+        }
+      ]
+    },
+    "RedrawClientVoteMenu": {
+      "name": "RedrawClientVoteMenu",
+      "refLine": 916,
+      "docStart": 34720,
+      "docEnd": 35169,
+      "docs": {
+        "brief": "Redraws the current vote menu to a client in the voting pool.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Redraws the current vote menu to a client in the voting pool."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:revotes",
+            "text": "True to allow revotes, false otherwise."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the client is in the vote pool\nbut cannot vote again."
+          },
+          {
+            "tag": "error",
+            "text": "No vote in progress, int client is not in the voting pool,\nor client index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "revotes",
+          "decl": "bool revotes",
+          "default": "true"
+        }
+      ]
+    },
+    "GetMenuStyleHandle": {
+      "name": "GetMenuStyleHandle",
+      "refLine": 924,
+      "docStart": 35239,
+      "docEnd": 35404,
+      "docs": {
+        "brief": "Returns a style's global Handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a style's global Handle."
+          },
+          {
+            "tag": "param:style",
+            "text": "Menu Style."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle, or INVALID_HANDLE if not found or unusable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "MenuStyle",
+          "name": "style",
+          "decl": "MenuStyle style",
+          "default": null
+        }
+      ]
+    },
+    "GetPanelCurrentKey": {
+      "name": "GetPanelCurrentKey",
+      "refLine": 1090,
+      "docStart": 41746,
+      "docEnd": 41950,
+      "docs": {
+        "brief": "Returns the current key position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": ""
+          },
+          {
+            "tag": "brief",
+            "text": "Returns the current key position."
+          },
+          {
+            "tag": "param:panel",
+            "text": "A MenuPanel Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Current key position starting at 1."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "panel",
+          "decl": "Handle panel",
+          "default": null
+        }
+      ]
+    },
+    "CreateMenuEx": {
+      "name": "CreateMenuEx",
+      "refLine": 950,
+      "docStart": 35908,
+      "docEnd": 36547,
+      "docs": {
+        "brief": "Creates a Menu from a MenuStyle.  The Handle must be closed with\nCloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a Menu from a MenuStyle.  The Handle must be closed with\nCloseHandle()."
+          },
+          {
+            "tag": "param:hStyle",
+            "text": "MenuStyle Handle, or INVALID_HANDLE to use the default style."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Function which will receive menu actions."
+          },
+          {
+            "tag": "param:actions",
+            "text": "Optionally set which actions to receive.  Select,\nCancel, and End will always be received regardless\nof whether they are set or not.  They are also\nthe only default actions."
+          },
+          {
+            "tag": "return",
+            "text": "A new menu Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Menu",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hStyle",
+          "decl": "Handle hStyle",
+          "default": "INVALID_HANDLE"
+        },
+        {
+          "type": "MenuHandler",
+          "name": "handler",
+          "decl": "MenuHandler handler",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "actions",
+          "decl": "MenuAction actions",
+          "default": "MenuAction_Select | MenuAction_Cancel | MenuAction_End"
+        }
+      ]
+    },
+    "GetMaxPageItems": {
+      "name": "GetMaxPageItems",
+      "refLine": 980,
+      "docStart": 37544,
+      "docEnd": 37805,
+      "docs": {
+        "brief": "Returns a style's maximum items per page.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a style's maximum items per page."
+          },
+          {
+            "tag": "param:hStyle",
+            "text": "MenuStyle Handle, or INVALID_HANDLE to use the default style."
+          },
+          {
+            "tag": "return",
+            "text": "Maximum items per page."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hStyle",
+          "decl": "Handle hStyle",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "GetMenuPagination": {
+      "name": "GetMenuPagination",
+      "refLine": 636,
+      "docStart": 25745,
+      "docEnd": 25929,
+      "docs": {
+        "brief": "Returns a menu's pagination setting.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a menu's pagination setting."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Handle to the menu."
+          },
+          {
+            "tag": "return",
+            "text": "Pagination setting."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "CreateMenu": {
+      "name": "CreateMenu",
+      "refLine": 473,
+      "docStart": 19606,
+      "docEnd": 20058,
+      "docs": {
+        "brief": "Creates a new, empty menu using the default style.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new, empty menu using the default style."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Function which will receive menu actions."
+          },
+          {
+            "tag": "param:actions",
+            "text": "Optionally set which actions to receive.  Select,\nCancel, and End will always be received regardless\nof whether they are set or not.  They are also\nthe only default actions."
+          },
+          {
+            "tag": "return",
+            "text": "A new menu Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Menu",
+      "arguments": [
+        {
+          "type": "MenuHandler",
+          "name": "handler",
+          "decl": "MenuHandler handler",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "actions",
+          "decl": "MenuAction actions",
+          "default": "MenuAction_Select | MenuAction_Cancel | MenuAction_End"
+        }
+      ]
+    },
+    "GetMenuItemCount": {
+      "name": "GetMenuItemCount",
+      "refLine": 613,
+      "docStart": 24954,
+      "docEnd": 25142,
+      "docs": {
+        "brief": "Returns the number of items in a menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of items in a menu."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of items in the menu."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuOptionFlags": {
+      "name": "SetMenuOptionFlags",
+      "refLine": 779,
+      "docStart": 30362,
+      "docEnd": 30756,
+      "docs": {
+        "brief": "Sets a menu's option flags.\n\nIf a certain bit is not supported, it will be stripped before being set.\nSee SetMenuExitButton() for information on Exit buttons.\nSee SetMenuExitBackButton() for information on Exit Back buttons.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a menu's option flags.\n\nIf a certain bit is not supported, it will be stripped before being set.\nSee SetMenuExitButton() for information on Exit buttons.\nSee SetMenuExitBackButton() for information on Exit Back buttons."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "A new bitstring of MENUFLAG bits."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "SetVoteResultCallback": {
+      "name": "SetVoteResultCallback",
+      "refLine": 884,
+      "docStart": 33672,
+      "docEnd": 33933,
+      "docs": {
+        "brief": "Sets an advanced vote handling callback.  If this callback is set,\nMenuAction_VoteEnd will not be called.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an advanced vote handling callback.  If this callback is set,\nMenuAction_VoteEnd will not be called."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback function."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "VoteHandler",
+          "name": "callback",
+          "decl": "VoteHandler callback",
+          "default": null
+        }
+      ]
+    },
+    "SetMenuTitle": {
+      "name": "SetMenuTitle",
+      "refLine": 656,
+      "docStart": 26265,
+      "docEnd": 26509,
+      "docs": {
+        "brief": "Sets the menu's default title/instruction message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the menu's default title/instruction message."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Message string format"
+          },
+          {
+            "tag": "param:...",
+            "text": "Message string arguments."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Panel": {
+      "name": "Panel",
+      "refLine": 163,
+      "docStart": 7591,
+      "docEnd": 7723,
+      "docs": {
+        "brief": "Panels are used for drawing raw menus without any extra helper functions.\nHandles must be closed via delete or CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Panels are used for drawing raw menus without any extra helper functions.\nHandles must be closed via delete or CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "DrawItem": {
+          "name": "DrawItem",
+          "refLine": 184,
+          "docStart": 8163,
+          "docEnd": 8600,
+          "docs": {
+            "brief": "Draws an item on a panel.  If the item takes up a slot, the position\nis returned.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Draws an item on a panel.  If the item takes up a slot, the position\nis returned."
+              },
+              {
+                "tag": "param:text",
+                "text": "Display text to use.  If not a raw line,\nthe style may automatically add color markup.\nNo numbering or newlines are needed."
+              },
+              {
+                "tag": "param:style",
+                "text": "ITEMDRAW style flags."
+              },
+              {
+                "tag": "return",
+                "text": "A slot position, or 0 if item was a rawline or could not be drawn."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "text",
+              "decl": "const char[] text",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "style",
+              "decl": "int style",
+              "default": "0"
+            }
+          ]
+        },
+        "DrawText": {
+          "name": "DrawText",
+          "refLine": 191,
+          "docStart": 8682,
+          "docEnd": 8900,
+          "docs": {
+            "brief": "Draws a raw line of text on a panel, without any markup other than a\nnewline.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Draws a raw line of text on a panel, without any markup other than a\nnewline."
+              },
+              {
+                "tag": "param:text",
+                "text": "Display text to use."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if raw lines are not supported."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "text",
+              "decl": "const char[] text",
+              "default": null
+            }
+          ]
+        },
+        "SetTitle": {
+          "name": "SetTitle",
+          "refLine": 174,
+          "docStart": 7919,
+          "docEnd": 8084,
+          "docs": {
+            "brief": "Sets the panel's title.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the panel's title."
+              },
+              {
+                "tag": "param:text",
+                "text": "Text to set as the title."
+              },
+              {
+                "tag": "param:onlyIfEmpty",
+                "text": "If true, the title will only be set if no title is set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "text",
+              "decl": "const char[] text",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "onlyIfEmpty",
+              "decl": "bool onlyIfEmpty",
+              "default": "false"
+            }
+          ]
+        },
+        "Send": {
+          "name": "Send",
+          "refLine": 222,
+          "docStart": 9654,
+          "docEnd": 10269,
+          "docs": {
+            "brief": "Sends a panel to a client.  Unlike full menus, the handler\nfunction will only receive the following actions, both of\nwhich will have null for a menu, and the client as param1.\n\nMenuAction_Select (param2 will be the key pressed)\nMenuAction_Cancel (param2 will be the reason)\n\nAlso, if the menu fails to display, no callbacks will be called.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sends a panel to a client.  Unlike full menus, the handler\nfunction will only receive the following actions, both of\nwhich will have null for a menu, and the client as param1.\n\nMenuAction_Select (param2 will be the key pressed)\nMenuAction_Cancel (param2 will be the reason)\n\nAlso, if the menu fails to display, no callbacks will be called."
+              },
+              {
+                "tag": "param:client",
+                "text": "A client to draw to."
+              },
+              {
+                "tag": "param:handler",
+                "text": "The MenuHandler function to catch actions with."
+              },
+              {
+                "tag": "param:time",
+                "text": "Time to hold the menu for."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "MenuHandler",
+              "name": "handler",
+              "decl": "MenuHandler handler",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "time",
+              "decl": "int time",
+              "default": null
+            }
+          ]
+        },
+        "CanDrawFlags": {
+          "name": "CanDrawFlags",
+          "refLine": 198,
+          "docStart": 8955,
+          "docEnd": 9164,
+          "docs": {
+            "brief": "Returns whether or not the given drawing flags are supported by\nthe menu style.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not the given drawing flags are supported by\nthe menu style."
+              },
+              {
+                "tag": "param:style",
+                "text": "ITEMDRAW style flags."
+              },
+              {
+                "tag": "return",
+                "text": "True if item is drawable, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "style",
+              "decl": "int style",
+              "default": null
+            }
+          ]
+        },
+        "SetKeys": {
+          "name": "SetKeys",
+          "refLine": 207,
+          "docStart": 9215,
+          "docEnd": 9609,
+          "docs": {
+            "brief": "Sets the selectable key map of a panel.  This is not supported by\nall styles (only by Radio, as of this writing).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the selectable key map of a panel.  This is not supported by\nall styles (only by Radio, as of this writing)."
+              },
+              {
+                "tag": "param:keys",
+                "text": "An integer where each bit N allows key\nN+1 to be selected.  If no keys are selectable,\nthen key 0 (bit 9) is automatically set."
+              },
+              {
+                "tag": "return",
+                "text": "True if supported, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "keys",
+              "decl": "int keys",
+              "default": null
+            }
+          ]
+        },
+        "Panel": {
+          "name": "Panel",
+          "refLine": 168,
+          "docStart": 7755,
+          "docEnd": 7869,
+          "docs": {
+            "brief": "Constructor for a new Panel.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Constructor for a new Panel."
+              },
+              {
+                "tag": "param:hStyle",
+                "text": "MenuStyle Handle, or null to use the default style."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Panel",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "hStyle",
+              "decl": "Handle hStyle",
+              "default": "null"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "TextRemaining": {
+          "name": "TextRemaining",
+          "refLine": 229,
+          "docStart": 10344,
+          "docEnd": 10585,
+          "docs": {
+            "brief": "Returns the amount of text the menu can still hold.  If this is\nlimit is reached or overflowed, the text is silently truncated.\n\nRadio menus: Currently 511 characters (512 bytes).\nValve menus: Currently -1 (no meaning).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the amount of text the menu can still hold.  If this is\nlimit is reached or overflowed, the text is silently truncated.\n\nRadio menus: Currently 511 characters (512 bytes).\nValve menus: Currently -1 (no meaning)."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "CurrentKey": {
+          "name": "CurrentKey",
+          "refLine": 235,
+          "docStart": 10649,
+          "docEnd": 10756,
+          "docs": {
+            "brief": "Returns or sets the current key position, starting at 1. This cannot be\nused to traverse backwards.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns or sets the current key position, starting at 1. This cannot be\nused to traverse backwards."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "Style": {
+          "name": "Style",
+          "refLine": 241,
+          "docStart": 10848,
+          "docEnd": 10924,
+          "docs": {
+            "brief": "Returns the panel's style. Style handles are global and cannot be closed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the panel's style. Style handles are global and cannot be closed."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "Handle",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "Menu": {
+      "name": "Menu",
+      "refLine": 247,
+      "docStart": 10986,
+      "docEnd": 11042,
+      "docs": {
+        "brief": "A menu is a helper object for managing in-game menus.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A menu is a helper object for managing in-game menus."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Menu": {
+          "name": "Menu",
+          "refLine": 256,
+          "docStart": 11073,
+          "docEnd": 11477,
+          "docs": {
+            "brief": "Creates a new, empty menu using the default style.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new, empty menu using the default style."
+              },
+              {
+                "tag": "param:handler",
+                "text": "Function which will receive menu actions."
+              },
+              {
+                "tag": "param:actions",
+                "text": "Optionally set which actions to receive.  Select,\nCancel, and End will always be received regardless\nof whether they are set or not.  They are also\nthe only default actions."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Menu",
+          "arguments": [
+            {
+              "type": "MenuHandler",
+              "name": "handler",
+              "decl": "MenuHandler handler",
+              "default": null
+            },
+            {
+              "type": "MenuAction",
+              "name": "actions",
+              "decl": "MenuAction actions",
+              "default": "MenuAction_Select | MenuAction_Cancel | MenuAction_End"
+            }
+          ]
+        },
+        "DisplayAt": {
+          "name": "DisplayAt",
+          "refLine": 274,
+          "docStart": 11874,
+          "docEnd": 12221,
+          "docs": {
+            "brief": "Displays a menu to a client, starting from the given item.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Displays a menu to a client, starting from the given item."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:first_item",
+                "text": "First item to begin drawing from."
+              },
+              {
+                "tag": "param:time",
+                "text": "Maximum time to leave menu on the screen."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Client not in game."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "first_item",
+              "decl": "int first_item",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "time",
+              "decl": "int time",
+              "default": null
+            }
+          ]
+        },
+        "AddItem": {
+          "name": "AddItem",
+          "refLine": 284,
+          "docStart": 12296,
+          "docEnd": 12715,
+          "docs": {
+            "brief": "Appends a new item to the end of a menu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Appends a new item to the end of a menu."
+              },
+              {
+                "tag": "param:info",
+                "text": "Item information string."
+              },
+              {
+                "tag": "param:display",
+                "text": "Default item display string."
+              },
+              {
+                "tag": "param:style",
+                "text": "Drawing style flags.  Anything other than DEFAULT or\nDISABLED will be completely ignored when paginating."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Item limit reached."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "info",
+              "decl": "const char[] info",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "display",
+              "decl": "const char[] display",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "style",
+              "decl": "int style",
+              "default": "0"
+            }
+          ]
+        },
+        "GetTitle": {
+          "name": "GetTitle",
+          "refLine": 346,
+          "docStart": 15376,
+          "docEnd": 15575,
+          "docs": {
+            "brief": "Returns the text of a menu's title.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the text of a menu's title."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store title."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "Display": {
+          "name": "Display",
+          "refLine": 264,
+          "docStart": 11566,
+          "docEnd": 11817,
+          "docs": {
+            "brief": "Displays a menu to a client.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Displays a menu to a client."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:time",
+                "text": "Maximum time to leave menu on the screen."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Client not in game."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "time",
+              "decl": "int time",
+              "default": null
+            }
+          ]
+        },
+        "RemoveItem": {
+          "name": "RemoveItem",
+          "refLine": 304,
+          "docStart": 13546,
+          "docEnd": 13747,
+          "docs": {
+            "brief": "Removes an item from the menu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an item from the menu."
+              },
+              {
+                "tag": "param:position",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid menu position."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "position",
+              "decl": "int position",
+              "default": null
+            }
+          ]
+        },
+        "SetClientMapping": {
+          "name": "SetClientMapping",
+          "refLine": 333,
+          "docStart": 14884,
+          "docEnd": 15074,
+          "docs": {
+            "brief": "Fills the client vote option mapping with user supplied values.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fills the client vote option mapping with user supplied values."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:array",
+                "text": "Integer array with mapping."
+              },
+              {
+                "tag": "param:length",
+                "text": "Length of array."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "int[]",
+              "name": "array",
+              "decl": "int[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "length",
+              "decl": "int length",
+              "default": null
+            }
+          ]
+        },
+        "Cancel": {
+          "name": "Cancel",
+          "refLine": 362,
+          "docStart": 15838,
+          "docEnd": 16202,
+          "docs": {
+            "brief": "Cancels a menu from displaying on all clients.  While the\ncancellation is in progress, this menu cannot be re-displayed\nto any clients.\n\nThe menu may still exist on the client's screen after this command.\nThis simply verifies that the menu is not being used anywhere.\n\nIf any vote is in progress on a menu, it will be cancelled.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Cancels a menu from displaying on all clients.  While the\ncancellation is in progress, this menu cannot be re-displayed\nto any clients.\n\nThe menu may still exist on the client's screen after this command.\nThis simply verifies that the menu is not being used anywhere.\n\nIf any vote is in progress on a menu, it will be cancelled."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "InsertItem": {
+          "name": "InsertItem",
+          "refLine": 296,
+          "docStart": 12819,
+          "docEnd": 13393,
+          "docs": {
+            "brief": "Inserts an item into the menu before a certain position; the new item will\nbe at the given position and all next items pushed forward.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Inserts an item into the menu before a certain position; the new item will\nbe at the given position and all next items pushed forward."
+              },
+              {
+                "tag": "param:position",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "param:info",
+                "text": "Item information string."
+              },
+              {
+                "tag": "param:display",
+                "text": "Default item display string."
+              },
+              {
+                "tag": "param:style",
+                "text": "Drawing style flags.  Anything other than DEFAULT or\nDISABLED will be completely ignored when paginating."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid menu position."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "position",
+              "decl": "int position",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "info",
+              "decl": "const char[] info",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "display",
+              "decl": "const char[] display",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "style",
+              "decl": "int style",
+              "default": "0"
+            }
+          ]
+        },
+        "GetItem": {
+          "name": "GetItem",
+          "refLine": 319,
+          "docStart": 13876,
+          "docEnd": 14433,
+          "docs": {
+            "brief": "Retrieves information about a menu item.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves information about a menu item."
+              },
+              {
+                "tag": "param:position",
+                "text": "Position, starting from 0."
+              },
+              {
+                "tag": "param:infoBuf",
+                "text": "Info buffer."
+              },
+              {
+                "tag": "param:infoBufLen",
+                "text": "Maximum length of the info buffer."
+              },
+              {
+                "tag": "param:style",
+                "text": "By-reference variable to store drawing flags."
+              },
+              {
+                "tag": "param:dispBuf",
+                "text": "Display buffer."
+              },
+              {
+                "tag": "param:dispBufLen",
+                "text": "Maximum length of the display buffer."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index. Must be specified if menu is per-client random shuffled, -1 to ignore."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if position is invalid."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "position",
+              "decl": "int position",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "infoBuf",
+              "decl": "char[] infoBuf",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "infoBufLen",
+              "decl": "int infoBufLen",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "style",
+              "decl": "int& style",
+              "default": "0"
+            },
+            {
+              "type": "char[]",
+              "name": "dispBuf",
+              "decl": "char[] dispBuf",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "dispBufLen",
+              "decl": "int dispBufLen",
+              "default": "0"
+            },
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": "0"
+            }
+          ]
+        },
+        "RemoveAllItems": {
+          "name": "RemoveAllItems",
+          "refLine": 307,
+          "docStart": 13799,
+          "docEnd": 13832,
+          "docs": {
+            "brief": "Removes all items from a menu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes all items from a menu."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "SetTitle": {
+          "name": "SetTitle",
+          "refLine": 339,
+          "docStart": 15155,
+          "docEnd": 15313,
+          "docs": {
+            "brief": "Sets the menu's default title/instruction message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the menu's default title/instruction message."
+              },
+              {
+                "tag": "param:fmt",
+                "text": "Message string format"
+              },
+              {
+                "tag": "param:...",
+                "text": "Message string arguments."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "fmt",
+              "decl": "const char[] fmt",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "ToPanel": {
+          "name": "ToPanel",
+          "refLine": 352,
+          "docStart": 15641,
+          "docEnd": 15800,
+          "docs": {
+            "brief": "Creates a raw MenuPanel based off the menu's style.\nThe Handle must be freed with CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a raw MenuPanel based off the menu's style.\nThe Handle must be freed with CloseHandle()."
+              },
+              {
+                "tag": "return",
+                "text": "A new MenuPanel Handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Panel",
+          "arguments": []
+        },
+        "ShufflePerClient": {
+          "name": "ShufflePerClient",
+          "refLine": 326,
+          "docStart": 14590,
+          "docEnd": 14814,
+          "docs": {
+            "brief": "Generates a per-client random mapping for the current vote options.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Generates a per-client random mapping for the current vote options."
+              },
+              {
+                "tag": "param:start",
+                "text": "Menu item index to start randomizing from."
+              },
+              {
+                "tag": "param:stop",
+                "text": "Menu item index to stop randomizing at. -1 = infinite"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "start",
+              "decl": "int start",
+              "default": "0"
+            },
+            {
+              "type": "int",
+              "name": "stop",
+              "decl": "int stop",
+              "default": "-1"
+            }
+          ]
+        },
+        "DisplayVote": {
+          "name": "DisplayVote",
+          "refLine": 378,
+          "docStart": 16238,
+          "docEnd": 16980,
+          "docs": {
+            "brief": "Broadcasts a menu to a list of clients.  The most selected item will be\nreturned through MenuAction_End.  On a tie, a random item will be returned\nfrom a list of the tied items.\n\nNote that MenuAction_VoteEnd and MenuAction_VoteStart are both\ndefault callbacks and do not need to be enabled.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Broadcasts a menu to a list of clients.  The most selected item will be\nreturned through MenuAction_End.  On a tie, a random item will be returned\nfrom a list of the tied items.\n\nNote that MenuAction_VoteEnd and MenuAction_VoteStart are both\ndefault callbacks and do not need to be enabled."
+              },
+              {
+                "tag": "param:clients",
+                "text": "Array of clients to broadcast to."
+              },
+              {
+                "tag": "param:numClients",
+                "text": "Number of clients in the array."
+              },
+              {
+                "tag": "param:time",
+                "text": "Maximum time to leave menu on the screen."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Optional voting flags."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if this menu already has a\nvote session in progress."
+              },
+              {
+                "tag": "error",
+                "text": "A vote is already in progress."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int[]",
+              "name": "clients",
+              "decl": "int[] clients",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "numClients",
+              "decl": "int numClients",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "time",
+              "decl": "int time",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "DisplayVoteToAll": {
+          "name": "DisplayVoteToAll",
+          "refLine": 386,
+          "docStart": 17073,
+          "docEnd": 17397,
+          "docs": {
+            "brief": "Sends a vote menu to all clients.  See VoteMenu() for more information.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sends a vote menu to all clients.  See VoteMenu() for more information."
+              },
+              {
+                "tag": "param:time",
+                "text": "Maximum time to leave menu on the screen."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Optional voting flags."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if this menu already has a\nvote session in progress."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "time",
+              "decl": "int time",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "VoteResultCallback": {
+          "name": "VoteResultCallback",
+          "refLine": 441,
+          "docStart": 18974,
+          "docEnd": 19086,
+          "docs": {
+            "brief": "Sets an advanced vote handling callback. If this callback is set,\nMenuAction_VoteEnd will not be called.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an advanced vote handling callback. If this callback is set,\nMenuAction_VoteEnd will not be called."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "VoteHandler",
+          "getter": false,
+          "setter": true
+        },
+        "Style": {
+          "name": "Style",
+          "refLine": 451,
+          "docStart": 19283,
+          "docEnd": 19352,
+          "docs": {
+            "brief": "Returns the menu style. The Handle is global and cannot be closed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the menu style. The Handle is global and cannot be closed."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "Handle",
+          "getter": true,
+          "setter": false
+        },
+        "Selection": {
+          "name": "Selection",
+          "refLine": 458,
+          "docStart": 19411,
+          "docEnd": 19544,
+          "docs": {
+            "brief": "Returns the first item on the page of a currently selected menu.\n\nThis is only valid inside a MenuAction_Select callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the first item on the page of a currently selected menu.\n\nThis is only valid inside a MenuAction_Select callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "ExitBackButton": {
+          "name": "ExitBackButton",
+          "refLine": 428,
+          "docStart": 18421,
+          "docEnd": 18682,
+          "docs": {
+            "brief": "Controls whether or not the menu has an \"exit back\" button. By default,\nmenus do not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Controls whether or not the menu has an \"exit back\" button. By default,\nmenus do not have an exit back button.\n\nExit Back buttons appear as \"Back\" on page 1 of paginated menus and have\nfunctionality defined by the user in MenuEnd_ExitBack."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "ItemCount": {
+          "name": "ItemCount",
+          "refLine": 446,
+          "docStart": 19182,
+          "docEnd": 19223,
+          "docs": {
+            "brief": "Returns the number of items in a menu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of items in a menu."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "ExitButton": {
+          "name": "ExitButton",
+          "refLine": 418,
+          "docStart": 18227,
+          "docEnd": 18325,
+          "docs": {
+            "brief": "Returns whether or not the menu has an exit button. By default, menus\nhave an exit button.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not the menu has an exit button. By default, menus\nhave an exit button."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "Pagination": {
+          "name": "Pagination",
+          "refLine": 403,
+          "docStart": 17725,
+          "docEnd": 17917,
+          "docs": {
+            "brief": "Get or set the menu's pagination.\n\nIf pagination is MENU_NO_PAGINATION, and the exit button flag is set,\nthen the exit button flag is removed. It can be re-applied if desired.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get or set the menu's pagination.\n\nIf pagination is MENU_NO_PAGINATION, and the exit button flag is set,\nthen the exit button flag is removed. It can be re-applied if desired."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "OptionFlags": {
+          "name": "OptionFlags",
+          "refLine": 411,
+          "docStart": 18011,
+          "docEnd": 18132,
+          "docs": {
+            "brief": "Get or set the menu's option flags.\n\nIf a certain bit is not supported, it will be stripped before being set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get or set the menu's option flags.\n\nIf a certain bit is not supported, it will be stripped before being set."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "NoVoteButton": {
+          "name": "NoVoteButton",
+          "refLine": 435,
+          "docStart": 18782,
+          "docEnd": 18900,
+          "docs": {
+            "brief": "Sets whether or not the menu has a \"no vote\" button in slot 1.\nBy default, menus do not have a no vote button.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether or not the menu has a \"no vote\" button in slot 1.\nBy default, menus do not have a no vote button."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": false,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {
+    "MenuCancel_Timeout": {
+      "name": "MenuCancel_Timeout",
+      "refLine": 107,
+      "docStart": 5784,
+      "docEnd": 5806,
+      "docs": {
+        "brief": "Menu timed out",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu timed out"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_VotingDone": {
+      "name": "MenuEnd_VotingDone",
+      "refLine": 126,
+      "docStart": 6298,
+      "docEnd": 6321,
+      "docs": {
+        "brief": "Voting finished",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Voting finished"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_VotingCancelled": {
+      "name": "MenuEnd_VotingCancelled",
+      "refLine": 127,
+      "docStart": 6356,
+      "docEnd": 6384,
+      "docs": {
+        "brief": "Voting was cancelled",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Voting was cancelled"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_ExitBack": {
+      "name": "MenuEnd_ExitBack",
+      "refLine": 130,
+      "docStart": 6576,
+      "docEnd": 6618,
+      "docs": {
+        "brief": "Menu was cleanly exited via \"back\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu was cleanly exited via \"back\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuCancel_Interrupted": {
+      "name": "MenuCancel_Interrupted",
+      "refLine": 104,
+      "docStart": 5550,
+      "docEnd": 5598,
+      "docs": {
+        "brief": "Client was interrupted with another menu",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client was interrupted with another menu"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "VoteCancel_Generic": {
+      "name": "VoteCancel_Generic",
+      "refLine": 116,
+      "docStart": 6017,
+      "docEnd": 6056,
+      "docs": {
+        "brief": "Vote was generically cancelled.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Vote was generically cancelled."
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "VoteCancel_NoVotes": {
+      "name": "VoteCancel_NoVotes",
+      "refLine": 117,
+      "docStart": 6091,
+      "docEnd": 6130,
+      "docs": {
+        "brief": "Vote did not receive any votes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Vote did not receive any votes."
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_Cancelled": {
+      "name": "MenuEnd_Cancelled",
+      "refLine": 128,
+      "docStart": 6419,
+      "docEnd": 6464,
+      "docs": {
+        "brief": "Menu was cancelled (reason in param2)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu was cancelled (reason in param2)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_Exit": {
+      "name": "MenuEnd_Exit",
+      "refLine": 129,
+      "docStart": 6499,
+      "docEnd": 6541,
+      "docs": {
+        "brief": "Menu was cleanly exited via \"exit\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu was cleanly exited via \"exit\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuCancel_Exit": {
+      "name": "MenuCancel_Exit",
+      "refLine": 105,
+      "docStart": 5633,
+      "docEnd": 5665,
+      "docs": {
+        "brief": "Client exited via \"exit\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client exited via \"exit\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuCancel_NoDisplay": {
+      "name": "MenuCancel_NoDisplay",
+      "refLine": 106,
+      "docStart": 5700,
+      "docEnd": 5749,
+      "docs": {
+        "brief": "Menu could not be displayed to the client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu could not be displayed to the client"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuCancel_ExitBack": {
+      "name": "MenuCancel_ExitBack",
+      "refLine": 108,
+      "docStart": 5841,
+      "docEnd": 5896,
+      "docs": {
+        "brief": "Client selected \"exit back\" on a paginated menu",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client selected \"exit back\" on a paginated menu"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuCancel_Disconnected": {
+      "name": "MenuCancel_Disconnected",
+      "refLine": 103,
+      "docStart": 5477,
+      "docEnd": 5515,
+      "docs": {
+        "brief": "Client dropped from the server",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client dropped from the server"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "MenuEnd_Selected": {
+      "name": "MenuEnd_Selected",
+      "refLine": 125,
+      "docStart": 6233,
+      "docEnd": 6263,
+      "docs": {
+        "brief": "Menu item was selected",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu item was selected"
+          }
+        ]
+      },
+      "metadata": null
+    }
+  },
+  "defines": {
+    "ITEMDRAW_IGNORE": {
+      "name": "ITEMDRAW_IGNORE",
+      "refLine": 83,
+      "docStart": 4447,
+      "docEnd": 4507,
+      "docs": {
+        "brief": "Item should be completely ignored (rawline + notext)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item should be completely ignored (rawline + notext)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "((1<<1)|(1<<2))"
+    },
+    "ITEMDRAW_RAWLINE": {
+      "name": "ITEMDRAW_RAWLINE",
+      "refLine": 80,
+      "docStart": 4176,
+      "docEnd": 4225,
+      "docs": {
+        "brief": "Item should be a raw line, without a slot",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item should be a raw line, without a slot"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "MENUFLAG_BUTTON_EXIT": {
+      "name": "MENUFLAG_BUTTON_EXIT",
+      "refLine": 86,
+      "docStart": 4646,
+      "docEnd": 4702,
+      "docs": {
+        "brief": "Menu has an \"exit\" button (default if paginated)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu has an \"exit\" button (default if paginated)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "MENUFLAG_NO_SOUND": {
+      "name": "MENUFLAG_NO_SOUND",
+      "refLine": 88,
+      "docStart": 4832,
+      "docEnd": 4876,
+      "docs": {
+        "brief": "Menu will not have any select sounds",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu will not have any select sounds"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "MENUFLAG_BUTTON_NOVOTE": {
+      "name": "MENUFLAG_BUTTON_NOVOTE",
+      "refLine": 89,
+      "docStart": 4922,
+      "docEnd": 4967,
+      "docs": {
+        "brief": "Menu has a \"No Vote\" button at slot 1",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu has a \"No Vote\" button at slot 1"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "ITEMDRAW_CONTROL": {
+      "name": "ITEMDRAW_CONTROL",
+      "refLine": 84,
+      "docStart": 4553,
+      "docEnd": 4598,
+      "docs": {
+        "brief": "Item is control text (back/next/exit)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item is control text (back/next/exit)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "MENU_TIME_FOREVER": {
+      "name": "MENU_TIME_FOREVER",
+      "refLine": 76,
+      "docStart": 3907,
+      "docEnd": 3959,
+      "docs": {
+        "brief": "Menu should be displayed as long as possible",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu should be displayed as long as possible"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "ITEMDRAW_SPACER": {
+      "name": "ITEMDRAW_SPACER",
+      "refLine": 82,
+      "docStart": 4348,
+      "docEnd": 4401,
+      "docs": {
+        "brief": "Item should be drawn as a spacer, if possible",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item should be drawn as a spacer, if possible"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "_menus_included": {
+      "name": "_menus_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MENU_ACTIONS_ALL": {
+      "name": "MENU_ACTIONS_ALL",
+      "refLine": 73,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "view_as<MenuAction>(0xFFFFFFFF)"
+    },
+    "ITEMDRAW_DISABLED": {
+      "name": "ITEMDRAW_DISABLED",
+      "refLine": 79,
+      "docStart": 4090,
+      "docEnd": 4130,
+      "docs": {
+        "brief": "Item is drawn but not selectable",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item is drawn but not selectable"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "MENU_ACTIONS_DEFAULT": {
+      "name": "MENU_ACTIONS_DEFAULT",
+      "refLine": 71,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "MenuAction_Select|MenuAction_Cancel|MenuAction_End"
+    },
+    "ITEMDRAW_DEFAULT": {
+      "name": "ITEMDRAW_DEFAULT",
+      "refLine": 78,
+      "docStart": 4007,
+      "docEnd": 4044,
+      "docs": {
+        "brief": "Item should be drawn normally",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item should be drawn normally"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(0)"
+    },
+    "MENU_NO_PAGINATION": {
+      "name": "MENU_NO_PAGINATION",
+      "refLine": 75,
+      "docStart": 3810,
+      "docEnd": 3861,
+      "docs": {
+        "brief": "Menu should not be paginated (10 items max)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu should not be paginated (10 items max)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "MENUFLAG_BUTTON_EXITBACK": {
+      "name": "MENUFLAG_BUTTON_EXITBACK",
+      "refLine": 87,
+      "docStart": 4748,
+      "docEnd": 4786,
+      "docs": {
+        "brief": "Menu has an \"exit back\" button",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Menu has an \"exit back\" button"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "VOTEINFO_CLIENT_INDEX": {
+      "name": "VOTEINFO_CLIENT_INDEX",
+      "refLine": 91,
+      "docStart": 5015,
+      "docEnd": 5035,
+      "docs": {
+        "brief": "Client index",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "VOTEINFO_CLIENT_ITEM": {
+      "name": "VOTEINFO_CLIENT_ITEM",
+      "refLine": 92,
+      "docStart": 5081,
+      "docEnd": 5129,
+      "docs": {
+        "brief": "Item the client selected, or -1 for none",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item the client selected, or -1 for none"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "VOTEFLAG_NO_REVOTES": {
+      "name": "VOTEFLAG_NO_REVOTES",
+      "refLine": 96,
+      "docStart": 5323,
+      "docEnd": 5364,
+      "docs": {
+        "brief": "Players cannot change their votes",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Players cannot change their votes"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "ITEMDRAW_NOTEXT": {
+      "name": "ITEMDRAW_NOTEXT",
+      "refLine": 81,
+      "docStart": 4271,
+      "docEnd": 4302,
+      "docs": {
+        "brief": "No text should be drawn",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No text should be drawn"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "VOTEINFO_ITEM_INDEX": {
+      "name": "VOTEINFO_ITEM_INDEX",
+      "refLine": 93,
+      "docStart": 5175,
+      "docEnd": 5193,
+      "docs": {
+        "brief": "Item index",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item index"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "VOTEINFO_ITEM_VOTES": {
+      "name": "VOTEINFO_ITEM_VOTES",
+      "refLine": 94,
+      "docStart": 5239,
+      "docEnd": 5275,
+      "docs": {
+        "brief": "Number of votes for the item",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Number of votes for the item"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    }
+  },
+  "enums": {
+    "MenuStyle": {
+      "name": "MenuStyle",
+      "refLine": 41,
+      "docStart": 1651,
+      "docEnd": 1700,
+      "docs": {
+        "brief": "Low-level drawing style of the menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Low-level drawing style of the menu."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "MenuStyle_Valve": {
+          "name": "MenuStyle_Valve",
+          "refLine": 44,
+          "docStart": 1825,
+          "docEnd": 1878,
+          "docs": {
+            "brief": "The Valve provided menu style (Used on HL2DM)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The Valve provided menu style (Used on HL2DM)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "MenuStyle_Radio": {
+          "name": "MenuStyle_Radio",
+          "refLine": 45,
+          "docStart": 1909,
+          "docEnd": 1961,
+          "docs": {
+            "brief": "The simpler menu style commonly used on CS:S",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The simpler menu style commonly used on CS:S"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "MenuStyle_Default": {
+          "name": "MenuStyle_Default",
+          "refLine": 43,
+          "docStart": 1750,
+          "docEnd": 1794,
+          "docs": {
+            "brief": "The \"default\" menu style for the mod",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The \"default\" menu style for the mod"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "MenuAction": {
+      "name": "MenuAction",
+      "refLine": 51,
+      "docStart": 1969,
+      "docEnd": 2028,
+      "docs": {
+        "brief": "Different actions for the menu \"pump\" callback",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Different actions for the menu \"pump\" callback"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "MenuAction_End": {
+          "name": "MenuAction_End",
+          "refLine": 57,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1 << 4"
+        },
+        "MenuAction_DrawItem": {
+          "name": "MenuAction_DrawItem",
+          "refLine": 64,
+          "docStart": 3174,
+          "docEnd": 3255,
+          "docs": {
+            "brief": "An item is being drawn; return the new style (param1=client, param2=item)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An item is being drawn; return the new style (param1=client, param2=item)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 8"
+        },
+        "MenuAction_Display": {
+          "name": "MenuAction_Display",
+          "refLine": 54,
+          "docStart": 2166,
+          "docEnd": 2246,
+          "docs": {
+            "brief": "A menu is about to be displayed (param1=client, param2=MenuPanel Handle)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu is about to be displayed (param1=client, param2=MenuPanel Handle)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 1"
+        },
+        "MenuAction_VoteStart": {
+          "name": "MenuAction_VoteStart",
+          "refLine": 62,
+          "docStart": 2749,
+          "docEnd": 2933,
+          "docs": {
+            "brief": "(VOTE ONLY): A vote sequence has succeeded (param1=chosen item)\nThis is not called if SetVoteResultCallback has been used on the menu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "(VOTE ONLY): A vote sequence has succeeded (param1=chosen item)\nThis is not called if SetVoteResultCallback has been used on the menu."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 6"
+        },
+        "MenuAction_Start": {
+          "name": "MenuAction_Start",
+          "refLine": 53,
+          "docStart": 2083,
+          "docEnd": 2131,
+          "docs": {
+            "brief": "A menu has been started (nothing passed)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu has been started (nothing passed)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 0"
+        },
+        "MenuAction_Select": {
+          "name": "MenuAction_Select",
+          "refLine": 55,
+          "docStart": 2281,
+          "docEnd": 2338,
+          "docs": {
+            "brief": "An item was selected (param1=client, param2=item)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An item was selected (param1=client, param2=item)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 2"
+        },
+        "MenuAction_VoteEnd": {
+          "name": "MenuAction_VoteEnd",
+          "refLine": 60,
+          "docStart": 2469,
+          "docEnd": 2714,
+          "docs": {
+            "brief": "A menu display has fully ended.\nparam1 is the MenuEnd reason, and if it's MenuEnd_Cancelled, then\nparam2 is the MenuCancel reason from MenuAction_Cancel.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu display has fully ended.\nparam1 is the MenuEnd reason, and if it's MenuEnd_Cancelled, then\nparam2 is the MenuCancel reason from MenuAction_Cancel."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 5"
+        },
+        "MenuAction_DisplayItem": {
+          "name": "MenuAction_DisplayItem",
+          "refLine": 65,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1 << 9"
+        },
+        "MenuAction_Cancel": {
+          "name": "MenuAction_Cancel",
+          "refLine": 56,
+          "docStart": 2373,
+          "docEnd": 2434,
+          "docs": {
+            "brief": "The menu was cancelled (param1=client, param2=reason)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The menu was cancelled (param1=client, param2=reason)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 3"
+        },
+        "MenuAction_VoteCancel": {
+          "name": "MenuAction_VoteCancel",
+          "refLine": 63,
+          "docStart": 3068,
+          "docEnd": 3139,
+          "docs": {
+            "brief": "(VOTE ONLY): A vote sequence has been cancelled (param1=reason)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "(VOTE ONLY): A vote sequence has been cancelled (param1=reason)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 7"
+        }
+      }
+    },
+    "MenuSource": {
+      "name": "MenuSource",
+      "refLine": 136,
+      "docStart": 6626,
+      "docEnd": 6664,
+      "docs": {
+        "brief": "Describes a menu's source",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Describes a menu's source"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "MenuSource_RawPanel": {
+          "name": "MenuSource_RawPanel",
+          "refLine": 141,
+          "docStart": 6918,
+          "docEnd": 6975,
+          "docs": {
+            "brief": "A display is active, but it is not tied to a menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A display is active, but it is not tied to a menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "MenuSource_Normal": {
+          "name": "MenuSource_Normal",
+          "refLine": 140,
+          "docStart": 6844,
+          "docEnd": 6883,
+          "docs": {
+            "brief": "A basic menu is being displayed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A basic menu is being displayed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "MenuSource_None": {
+          "name": "MenuSource_None",
+          "refLine": 138,
+          "docStart": 6719,
+          "docEnd": 6753,
+          "docs": {
+            "brief": "No menu is being displayed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No menu is being displayed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "MenuSource_External": {
+          "name": "MenuSource_External",
+          "refLine": 139,
+          "docStart": 6788,
+          "docEnd": 6809,
+          "docs": {
+            "brief": "External menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "External menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "VoteHandler": {
+      "name": "VoteHandler",
+      "refLine": 853,
+      "docStart": 32809,
+      "docEnd": 33308,
+      "docs": {
+        "brief": "Callback for when a vote has ended and results are available.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for when a vote has ended and results are available."
+          },
+          {
+            "tag": "param:menu",
+            "text": "The menu being voted on."
+          },
+          {
+            "tag": "param:num_votes",
+            "text": "Number of votes tallied in total."
+          },
+          {
+            "tag": "param:num_clients",
+            "text": "Number of clients who could vote."
+          },
+          {
+            "tag": "param:client_info",
+            "text": "Array of clients.  Use VOTEINFO_CLIENT_ defines."
+          },
+          {
+            "tag": "param:num_items",
+            "text": "Number of unique items that were selected."
+          },
+          {
+            "tag": "param:item_info",
+            "text": "Array of items, sorted by count.  Use VOTEINFO_ITEM\ndefines."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void(Menu menu, int num_votes, int num_clients, const int client_info[][2], int num_items, const int item_info[][2])": {
+          "refLine": 856,
+          "docStart": 33335,
+          "docEnd": 33347,
+          "docs": {
+            "brief": "old style",
+            "tags": [
+              {
+                "tag": "",
+                "text": "old style"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Menu menu, int num_votes, int num_clients, const int client_info[][2], int num_items, const int item_info[][2])",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Menu",
+                "name": "menu",
+                "decl": "Menu menu",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_votes",
+                "decl": "int num_votes",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_clients",
+                "decl": "int num_clients",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "client_info[][2]",
+                "decl": "const int client_info[][2]",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_items",
+                "decl": "int num_items",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "item_info[][2]",
+                "decl": "const int item_info[][2]",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Menu menu, int num_votes, int num_clients, const int[][] client_info, int num_items, const int[][] item_info)": {
+          "refLine": 866,
+          "docStart": 33503,
+          "docEnd": 33515,
+          "docs": {
+            "brief": "new style",
+            "tags": [
+              {
+                "tag": "",
+                "text": "new style"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Menu menu, int num_votes, int num_clients, const int[][] client_info, int num_items, const int[][] item_info)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Menu",
+                "name": "menu",
+                "decl": "Menu menu",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_votes",
+                "decl": "int num_votes",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_clients",
+                "decl": "int num_clients",
+                "default": null
+              },
+              {
+                "type": "const int[][]",
+                "name": "client_info",
+                "decl": "const int[][] client_info",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "num_items",
+                "decl": "int num_items",
+                "default": null
+              },
+              {
+                "type": "const int[][]",
+                "name": "item_info",
+                "decl": "const int[][] item_info",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "MenuHandler": {
+      "name": "MenuHandler",
+      "refLine": 155,
+      "docStart": 6983,
+      "docEnd": 7416,
+      "docs": {
+        "brief": "Called when a menu action is completed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a menu action is completed."
+          },
+          {
+            "tag": "param:menu",
+            "text": "The menu being acted upon."
+          },
+          {
+            "tag": "param:action",
+            "text": "The action of the menu."
+          },
+          {
+            "tag": "param:param1",
+            "text": "First action parameter (usually the client)."
+          },
+          {
+            "tag": "param:param2",
+            "text": "Second action parameter (usually the item).\n\nUse void-typed prototype if you don't plan to handle MenuAction_DrawItem\nand MenuAction_DisplayItem actions."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function int(Menu menu, MenuAction action, int param1, int param2)": {
+          "refLine": 157,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function int(Menu menu, MenuAction action, int param1, int param2)",
+          "parsedSignature": {
+            "returnType": "int",
+            "arguments": [
+              {
+                "type": "Menu",
+                "name": "menu",
+                "decl": "Menu menu",
+                "default": null
+              },
+              {
+                "type": "MenuAction",
+                "name": "action",
+                "decl": "MenuAction action",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "param1",
+                "decl": "int param1",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "param2",
+                "decl": "int param2",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Menu menu, MenuAction action, int param1, int param2)": {
+          "refLine": 158,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Menu menu, MenuAction action, int param1, int param2)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Menu",
+                "name": "menu",
+                "decl": "Menu menu",
+                "default": null
+              },
+              {
+                "type": "MenuAction",
+                "name": "action",
+                "decl": "MenuAction action",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "param1",
+                "decl": "int param1",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "param2",
+                "decl": "int param2",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

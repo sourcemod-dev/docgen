@@ -1,0 +1,356 @@
+{
+  "functions": {
+    "TTT_GetGlowSkin": {
+      "name": "TTT_GetGlowSkin",
+      "refLine": 13,
+      "docStart": 80,
+      "docEnd": 196,
+      "docs": {
+        "brief": "Gets the Glow Skin of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the Glow Skin of a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "returns",
+            "text": "entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_CanSeeAllGlow": {
+      "name": "TTT_CanSeeAllGlow",
+      "refLine": 58,
+      "docStart": 1558,
+      "docEnd": 1766,
+      "docs": {
+        "brief": "Lets a client see the targets glow of all players for the given duration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Lets a client see the targets glow of all players for the given duration."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "__pl_ttt_glow_SetNTVOptional": {
+      "name": "__pl_ttt_glow_SetNTVOptional",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_CanSeeClientsGlow": {
+      "name": "TTT_CanSeeClientsGlow",
+      "refLine": 50,
+      "docStart": 1153,
+      "docEnd": 1454,
+      "docs": {
+        "brief": "Lets a client see the glow pf the passed targets for the given duration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Lets a client see the glow pf the passed targets for the given duration."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:targets",
+            "text": "Target indexs."
+          },
+          {
+            "tag": "param:target_count",
+            "text": "The amount of targets."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "targets",
+          "decl": "int[] targets",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target_count",
+          "decl": "int target_count",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TTT_SetGlowColor": {
+      "name": "TTT_SetGlowColor",
+      "refLine": 22,
+      "docStart": 239,
+      "docEnd": 454,
+      "docs": {
+        "brief": "Sets the color of a clients glow.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the color of a clients glow."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:color",
+            "text": "Color of the glow."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int[4]",
+          "name": "color",
+          "decl": "int color[4]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TTT_AllCanSeeGlow": {
+      "name": "TTT_AllCanSeeGlow",
+      "refLine": 66,
+      "docStart": 1833,
+      "docEnd": 2029,
+      "docs": {
+        "brief": "Lets all players see the clients glow for the given duration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Lets all players see the clients glow for the given duration."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TTT_CanSeeGlow": {
+      "name": "TTT_CanSeeGlow",
+      "refLine": 40,
+      "docStart": 842,
+      "docEnd": 1077,
+      "docs": {
+        "brief": "Lets a client see the targets glow for the given duration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Lets a client see the targets glow for the given duration."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:target",
+            "text": "Target index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TTT_SetGlowTeam": {
+      "name": "TTT_SetGlowTeam",
+      "refLine": 31,
+      "docStart": 534,
+      "docEnd": 767,
+      "docs": {
+        "brief": "Sets the color of a clients glow.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the color of a clients glow."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:team",
+            "text": "Which Team color to set the glow to."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of the overide, default 0.0 = persistent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "team",
+          "decl": "int team",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "0.000000"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_glow_included": {
+      "name": "_ttt_glow_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

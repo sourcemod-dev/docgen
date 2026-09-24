@@ -1,0 +1,2307 @@
+{
+  "functions": {
+    "JSON_REAL_PRECISION": {
+      "name": "JSON_REAL_PRECISION",
+      "refLine": 32,
+      "docStart": 1038,
+      "docEnd": 1089,
+      "docs": {
+        "brief": "Output floats with at most n digits of precision",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Output floats with at most n digits of precision"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "n",
+          "decl": "int n",
+          "default": null
+        }
+      ]
+    },
+    "JSON_INDENT": {
+      "name": "JSON_INDENT",
+      "refLine": 26,
+      "docStart": 923,
+      "docEnd": 974,
+      "docs": {
+        "brief": "Pretty-print the result, indenting with n spaces",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pretty-print the result, indenting with n spaces"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "n",
+          "decl": "int n",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "JSONObject": {
+      "name": "JSONObject",
+      "refLine": 56,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "JSON",
+      "methods": {
+        "SetString": {
+          "name": "SetString",
+          "refLine": 185,
+          "docStart": 6526,
+          "docEnd": 6762,
+          "docs": {
+            "brief": "Sets a string value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "FromString": {
+          "name": "FromString",
+          "refLine": 78,
+          "docStart": 2407,
+          "docEnd": 2645,
+          "docs": {
+            "brief": "Loads a JSON object from a string.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Loads a JSON object from a string."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to load into the JSON object."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Decoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "Object handle, or null on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid JSON."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONObject",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "buffer",
+              "decl": "const char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "SetNull": {
+          "name": "SetNull",
+          "refLine": 178,
+          "docStart": 6292,
+          "docEnd": 6476,
+          "docs": {
+            "brief": "Sets a null value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a null value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "FromFile": {
+          "name": "FromFile",
+          "refLine": 70,
+          "docStart": 2116,
+          "docEnd": 2327,
+          "docs": {
+            "brief": "Loads a JSON object from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Loads a JSON object from a file."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to read from."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Decoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "Object handle, or null on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid JSON."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONObject",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "HasKey": {
+          "name": "HasKey",
+          "refLine": 137,
+          "docStart": 4574,
+          "docEnd": 4728,
+          "docs": {
+            "brief": "Returns whether or not a key exists in the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a key exists in the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True if the key exists, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "IsNull": {
+          "name": "IsNull",
+          "refLine": 131,
+          "docStart": 4330,
+          "docEnd": 4525,
+          "docs": {
+            "brief": "Returns whether or not a value in the object is null.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a value in the object is null."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True if the value is null, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetInt64": {
+          "name": "GetInt64",
+          "refLine": 116,
+          "docStart": 3601,
+          "docEnd": 3873,
+          "docs": {
+            "brief": "Retrieves a 64-bit integer value from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a 64-bit integer value from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store value."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the key was not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 191,
+          "docStart": 6834,
+          "docEnd": 6979,
+          "docs": {
+            "brief": "Removes an entry from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an entry from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the key was not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 101,
+          "docStart": 3198,
+          "docEnd": 3348,
+          "docs": {
+            "brief": "Retrieves a float value from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a float value from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 158,
+          "docStart": 5380,
+          "docEnd": 5615,
+          "docs": {
+            "brief": "Sets a float value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a float value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 151,
+          "docStart": 5081,
+          "docEnd": 5318,
+          "docs": {
+            "brief": "Sets a boolean value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a boolean value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 87,
+          "docStart": 2729,
+          "docEnd": 2950,
+          "docs": {
+            "brief": "Retrieves an array or object value from the object.\n\nThe JSON must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an array or object value from the object.\n\nThe JSON must be freed via delete or CloseHandle()."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSON",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 124,
+          "docStart": 3954,
+          "docEnd": 4248,
+          "docs": {
+            "brief": "Retrieves a string value from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string value from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store value."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success. False if the key was not found, or the value is not a string."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "Set": {
+          "name": "Set",
+          "refLine": 144,
+          "docStart": 4777,
+          "docEnd": 5023,
+          "docs": {
+            "brief": "Sets an array or object value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an array or object value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "JSON",
+              "name": "value",
+              "decl": "JSON value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 165,
+          "docStart": 5679,
+          "docEnd": 5917,
+          "docs": {
+            "brief": "Sets an integer value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an integer value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt64": {
+          "name": "SetInt64",
+          "refLine": 172,
+          "docStart": 5977,
+          "docEnd": 6221,
+          "docs": {
+            "brief": "Sets a 64-bit integer value in the object, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a 64-bit integer value in the object, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Keys": {
+          "name": "Keys",
+          "refLine": 198,
+          "docStart": 7153,
+          "docEnd": 7218,
+          "docs": {
+            "brief": "Returns an iterator for the object's keys. See JSONObjectKeys.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns an iterator for the object's keys. See JSONObjectKeys."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONObjectKeys",
+          "arguments": []
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 195,
+          "docStart": 7028,
+          "docEnd": 7121,
+          "docs": {
+            "brief": "Clears the object of all entries.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears the object of all entries."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "JSONObject": {
+          "name": "JSONObject",
+          "refLine": 62,
+          "docStart": 1837,
+          "docEnd": 2084,
+          "docs": {
+            "brief": "Creates a JSON object. A JSON object maps strings (called \"keys\") to values. Keys in a\nJSON object are unique. That is, there is at most one entry in the map for a given key.\n\nThe JSONObject must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a JSON object. A JSON object maps strings (called \"keys\") to values. Keys in a\nJSON object are unique. That is, there is at most one entry in the map for a given key.\n\nThe JSONObject must be freed via delete or CloseHandle()."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONObject",
+          "arguments": []
+        },
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 94,
+          "docStart": 2996,
+          "docEnd": 3148,
+          "docs": {
+            "brief": "Retrieves a boolean value from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a boolean value from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 108,
+          "docStart": 3400,
+          "docEnd": 3553,
+          "docs": {
+            "brief": "Retrieves an integer value from the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an integer value from the object."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Size": {
+          "name": "Size",
+          "refLine": 201,
+          "docStart": 7259,
+          "docEnd": 7295,
+          "docs": {
+            "brief": "Retrieves the size of the object.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the size of the object."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "JSONObjectKeys": {
+      "name": "JSONObjectKeys",
+      "refLine": 211,
+      "docStart": 7347,
+      "docEnd": 7525,
+      "docs": {
+        "brief": "A JSONObjectKeys is created via JSONObject.Keys(). It allows the keys of an\nobject to be iterated. The JSONObjectKeys must be freed with delete or\nCloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A JSONObjectKeys is created via JSONObject.Keys(). It allows the keys of an\nobject to be iterated. The JSONObjectKeys must be freed with delete or\nCloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "ReadKey": {
+          "name": "ReadKey",
+          "refLine": 218,
+          "docStart": 7563,
+          "docEnd": 7809,
+          "docs": {
+            "brief": "Reads an object key, then advances to the next key if any.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an object key, then advances to the next key if any."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store key."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there are no more keys."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "JSONArray": {
+      "name": "JSONArray",
+      "refLine": 221,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "JSON",
+      "methods": {
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 324,
+          "docStart": 11120,
+          "docEnd": 11297,
+          "docs": {
+            "brief": "Sets an integer value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an integer value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt64": {
+          "name": "SetInt64",
+          "refLine": 331,
+          "docStart": 11350,
+          "docEnd": 11548,
+          "docs": {
+            "brief": "Sets a 64 bit integer value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a 64 bit integer value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "64-bit integer value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 344,
+          "docStart": 11792,
+          "docEnd": 11974,
+          "docs": {
+            "brief": "Sets a string value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "PushInt64": {
+          "name": "PushInt64",
+          "refLine": 374,
+          "docStart": 12903,
+          "docEnd": 13095,
+          "docs": {
+            "brief": "Pushes a 64-bit integer value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a 64-bit integer value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "64-bit integer value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "PushNull": {
+          "name": "PushNull",
+          "refLine": 378,
+          "docStart": 13149,
+          "docEnd": 13275,
+          "docs": {
+            "brief": "Pushes a null value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a null value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "FromString": {
+          "name": "FromString",
+          "refLine": 242,
+          "docStart": 8311,
+          "docEnd": 8546,
+          "docs": {
+            "brief": "Loads a JSON array from a string.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Loads a JSON array from a string."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to load into the JSON array."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Decoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "Array handle, or null on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid JSON."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONArray",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "buffer",
+              "decl": "const char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 251,
+          "docStart": 8629,
+          "docEnd": 8859,
+          "docs": {
+            "brief": "Retrieves an array or object value from the array.\n\nThe JSON must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an array or object value from the array.\n\nThe JSON must be freed via delete or CloseHandle()."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSON",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 289,
+          "docStart": 9809,
+          "docEnd": 10101,
+          "docs": {
+            "brief": "Retrieves a string value from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string value from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the value is not a string."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "PushBool": {
+          "name": "PushBool",
+          "refLine": 356,
+          "docStart": 12259,
+          "docEnd": 12429,
+          "docs": {
+            "brief": "Pushes a boolean value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a boolean value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 258,
+          "docStart": 8898,
+          "docEnd": 9059,
+          "docs": {
+            "brief": "Retrieves a boolean value from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a boolean value from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "PushString": {
+          "name": "PushString",
+          "refLine": 384,
+          "docStart": 13310,
+          "docEnd": 13486,
+          "docs": {
+            "brief": "Pushes a string value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a string value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 394,
+          "docStart": 13737,
+          "docEnd": 13829,
+          "docs": {
+            "brief": "Clears the array of all entries.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears the array of all entries."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "PushInt": {
+          "name": "PushInt",
+          "refLine": 368,
+          "docStart": 12689,
+          "docEnd": 12860,
+          "docs": {
+            "brief": "Pushes an integer value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes an integer value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetNull": {
+          "name": "SetNull",
+          "refLine": 337,
+          "docStart": 11612,
+          "docEnd": 11749,
+          "docs": {
+            "brief": "Sets a null value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a null value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "IsNull": {
+          "name": "IsNull",
+          "refLine": 296,
+          "docStart": 10176,
+          "docEnd": 10380,
+          "docs": {
+            "brief": "Returns whether or not a value in the array is null.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a value in the array is null."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "True if the value is null, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 310,
+          "docStart": 10658,
+          "docEnd": 10834,
+          "docs": {
+            "brief": "Sets a boolean value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a boolean value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 317,
+          "docStart": 10889,
+          "docEnd": 11063,
+          "docs": {
+            "brief": "Sets a float value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a float value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "Push": {
+          "name": "Push",
+          "refLine": 350,
+          "docStart": 12039,
+          "docEnd": 12218,
+          "docs": {
+            "brief": "Pushes an array or object value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes an array or object value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "JSON",
+              "name": "value",
+              "decl": "JSON value",
+              "default": null
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 265,
+          "docStart": 9102,
+          "docEnd": 9261,
+          "docs": {
+            "brief": "Retrieves a float value from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a float value from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "Set": {
+          "name": "Set",
+          "refLine": 303,
+          "docStart": 10422,
+          "docEnd": 10607,
+          "docs": {
+            "brief": "Sets an array or object value in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an array or object value in the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "JSON",
+              "name": "value",
+              "decl": "JSON value",
+              "default": null
+            }
+          ]
+        },
+        "JSONArray": {
+          "name": "JSONArray",
+          "refLine": 226,
+          "docStart": 7903,
+          "docEnd": 7992,
+          "docs": {
+            "brief": "Creates a JSON array.\n\nThe JSONArray must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a JSON array.\n\nThe JSONArray must be freed via delete or CloseHandle()."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONArray",
+          "arguments": []
+        },
+        "FromFile": {
+          "name": "FromFile",
+          "refLine": 234,
+          "docStart": 8023,
+          "docEnd": 8232,
+          "docs": {
+            "brief": "Loads a JSON array from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Loads a JSON array from a file."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to read from."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Decoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "Array handle, or null on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid JSON."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "JSONArray",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "PushFloat": {
+          "name": "PushFloat",
+          "refLine": 362,
+          "docStart": 12474,
+          "docEnd": 12642,
+          "docs": {
+            "brief": "Pushes a float value onto the end of the array, adding a new index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a float value onto the end of the array, adding a new index."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 390,
+          "docStart": 13541,
+          "docEnd": 13695,
+          "docs": {
+            "brief": "Removes an entry from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an entry from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array to remove."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 272,
+          "docStart": 9306,
+          "docEnd": 9468,
+          "docs": {
+            "brief": "Retrieves an integer value from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an integer value from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetInt64": {
+          "name": "GetInt64",
+          "refLine": 280,
+          "docStart": 9509,
+          "docEnd": 9735,
+          "docs": {
+            "brief": "Retrieves an 64-bit integer value from the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an 64-bit integer value from the array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 397,
+          "docStart": 13861,
+          "docEnd": 13896,
+          "docs": {
+            "brief": "Retrieves the size of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the size of the array."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "JSON": {
+      "name": "JSON",
+      "refLine": 38,
+      "docStart": 1158,
+      "docEnd": 1192,
+      "docs": {
+        "brief": "Generic type for encoding JSON.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Generic type for encoding JSON."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "ToString": {
+          "name": "ToString",
+          "refLine": 53,
+          "docStart": 1475,
+          "docEnd": 1726,
+          "docs": {
+            "brief": "Retrieves the JSON string representation.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the JSON string representation."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to write to."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the string buffer."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Encoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        },
+        "ToFile": {
+          "name": "ToFile",
+          "refLine": 45,
+          "docStart": 1220,
+          "docEnd": 1410,
+          "docs": {
+            "brief": "Writes the JSON string representation to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes the JSON string representation to a file."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to write to."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Encoding flags."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {
+    "JSON_ENCODE_ANY": {
+      "name": "JSON_ENCODE_ANY",
+      "refLine": 17,
+      "docStart": 681,
+      "docEnd": 705,
+      "docs": {
+        "brief": "Encode any value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Encode any value"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_EMBED": {
+      "name": "JSON_EMBED",
+      "refLine": 19,
+      "docStart": 790,
+      "docEnd": 853,
+      "docs": {
+        "brief": "Omit opening and closing braces of the top-level object",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Omit opening and closing braces of the top-level object"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_ENSURE_ASCII": {
+      "name": "JSON_ENSURE_ASCII",
+      "refLine": 15,
+      "docStart": 537,
+      "docEnd": 598,
+      "docs": {
+        "brief": "Escape all Unicode characters outside the ASCII range",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Escape all Unicode characters outside the ASCII range"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_REJECT_DUPLICATES": {
+      "name": "JSON_REJECT_DUPLICATES",
+      "refLine": 4,
+      "docStart": 58,
+      "docEnd": 114,
+      "docs": {
+        "brief": "Error if any JSON object contains duplicate keys",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Error if any JSON object contains duplicate keys"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_SORT_KEYS": {
+      "name": "JSON_SORT_KEYS",
+      "refLine": 16,
+      "docStart": 627,
+      "docEnd": 651,
+      "docs": {
+        "brief": "Sort object keys",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sort object keys"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_ESCAPE_SLASH": {
+      "name": "JSON_ESCAPE_SLASH",
+      "refLine": 18,
+      "docStart": 735,
+      "docEnd": 759,
+      "docs": {
+        "brief": "Escape / with \\/",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Escape / with \\/"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_ALLOW_NUL": {
+      "name": "JSON_ALLOW_NUL",
+      "refLine": 8,
+      "docStart": 372,
+      "docEnd": 420,
+      "docs": {
+        "brief": "Allow \\u0000 escape inside string values",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow \\u0000 escape inside string values"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_DECODE_INT_AS_REAL": {
+      "name": "JSON_DECODE_INT_AS_REAL",
+      "refLine": 7,
+      "docStart": 299,
+      "docEnd": 338,
+      "docs": {
+        "brief": "Interpret all numbers as floats",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Interpret all numbers as floats"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_DECODE_ANY": {
+      "name": "JSON_DECODE_ANY",
+      "refLine": 6,
+      "docStart": 241,
+      "docEnd": 265,
+      "docs": {
+        "brief": "Decode any value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Decode any value"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_DISABLE_EOF_CHECK": {
+      "name": "JSON_DISABLE_EOF_CHECK",
+      "refLine": 5,
+      "docStart": 148,
+      "docEnd": 207,
+      "docs": {
+        "brief": "Allow extra data after a valid JSON array or object",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow extra data after a valid JSON array or object"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "JSON_COMPACT": {
+      "name": "JSON_COMPACT",
+      "refLine": 14,
+      "docStart": 478,
+      "docEnd": 508,
+      "docs": {
+        "brief": "Compact representation",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Compact representation"
+          }
+        ]
+      },
+      "metadata": null
+    }
+  },
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

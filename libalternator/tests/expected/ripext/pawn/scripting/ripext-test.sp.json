@@ -1,0 +1,91 @@
+{
+  "functions": {
+    "CreateJSONObject": {
+      "name": "CreateJSONObject",
+      "refLine": 114,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "JSONObject",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnHTTPResponse": {
+      "name": "OnHTTPResponse",
+      "refLine": 91,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPResponse",
+          "name": "response",
+          "decl": "HTTPResponse response",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "OnImageDownloaded": {
+      "name": "OnImageDownloaded",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "HTTPStatus",
+          "name": "status",
+          "decl": "HTTPStatus status",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "API_BASE_URL": {
+      "name": "API_BASE_URL",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"https://nghttp2.org/httpbin\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,432 @@
+{
+  "functions": {
+    "FireEntityOutput": {
+      "name": "FireEntityOutput",
+      "refLine": 108,
+      "docStart": 4164,
+      "docEnd": 4638,
+      "docs": {
+        "brief": "Fire a named output on an entity.\n\nAfter completion (successful or not), the current global variant is re-initialized.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fire a named output on an entity.\n\nAfter completion (successful or not), the current global variant is re-initialized."
+          },
+          {
+            "tag": "param:caller",
+            "text": "Entity index from where the output is fired."
+          },
+          {
+            "tag": "param:output",
+            "text": "Output name."
+          },
+          {
+            "tag": "param:activator",
+            "text": "Entity index which initiated the sequence of actions (-1 for a NULL entity)."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay before firing the output."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "caller",
+          "decl": "int caller",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "activator",
+          "decl": "int activator",
+          "default": "-1"
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "UnhookEntityOutput": {
+      "name": "UnhookEntityOutput",
+      "refLine": 73,
+      "docStart": 2758,
+      "docEnd": 3083,
+      "docs": {
+        "brief": "Remove an entity output hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove an entity output hook."
+          },
+          {
+            "tag": "param:classname",
+            "text": "The classname to hook."
+          },
+          {
+            "tag": "param:output",
+            "text": "The output name to hook."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EntityOutput function pointer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if no valid hook was found."
+          },
+          {
+            "tag": "error",
+            "text": "Entity Outputs disabled."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "EntityOutput",
+          "name": "callback",
+          "decl": "EntityOutput callback",
+          "default": null
+        }
+      ]
+    },
+    "HookSingleEntityOutput": {
+      "name": "HookSingleEntityOutput",
+      "refLine": 84,
+      "docStart": 3188,
+      "docEnd": 3575,
+      "docs": {
+        "brief": "Add an entity output hook on a single entity instance",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an entity output hook on a single entity instance"
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity on which to add a hook."
+          },
+          {
+            "tag": "param:output",
+            "text": "The output name to hook."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EntityOutput function pointer."
+          },
+          {
+            "tag": "param:once",
+            "text": "Only fire this hook once and then remove itself."
+          },
+          {
+            "tag": "error",
+            "text": "Entity Outputs disabled or Invalid Entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "EntityOutput",
+          "name": "callback",
+          "decl": "EntityOutput callback",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "once",
+          "decl": "bool once",
+          "default": "false"
+        }
+      ]
+    },
+    "UnhookSingleEntityOutput": {
+      "name": "UnhookSingleEntityOutput",
+      "refLine": 95,
+      "docStart": 3689,
+      "docEnd": 4065,
+      "docs": {
+        "brief": "Remove a single entity output hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove a single entity output hook."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity on which to remove the hook."
+          },
+          {
+            "tag": "param:output",
+            "text": "The output name to hook."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EntityOutput function pointer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if no valid hook was found."
+          },
+          {
+            "tag": "error",
+            "text": "Entity Outputs disabled or Invalid Entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "EntityOutput",
+          "name": "callback",
+          "decl": "EntityOutput callback",
+          "default": null
+        }
+      ]
+    },
+    "HookEntityOutput": {
+      "name": "HookEntityOutput",
+      "refLine": 63,
+      "docStart": 2384,
+      "docEnd": 2655,
+      "docs": {
+        "brief": "Add an entity output hook on a entity classname",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an entity output hook on a entity classname"
+          },
+          {
+            "tag": "param:classname",
+            "text": "The classname to hook."
+          },
+          {
+            "tag": "param:output",
+            "text": "The output name to hook."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An EntityOutput function pointer."
+          },
+          {
+            "tag": "error",
+            "text": "Entity Outputs disabled."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "EntityOutput",
+          "name": "callback",
+          "decl": "EntityOutput callback",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_entoutput_included": {
+      "name": "_sdktools_entoutput_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {
+    "EntityOutput": {
+      "name": "EntityOutput",
+      "refLine": 49,
+      "docStart": 1661,
+      "docEnd": 2191,
+      "docs": {
+        "brief": "Called when an entity output is fired.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an entity output is fired."
+          },
+          {
+            "tag": "param:output",
+            "text": "Name of the output that fired."
+          },
+          {
+            "tag": "param:caller",
+            "text": "Entity index of the caller."
+          },
+          {
+            "tag": "param:activator",
+            "text": "Entity index of the activator."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds? before the event gets fired."
+          },
+          {
+            "tag": "return",
+            "text": "Anything other than Plugin_Continue will supress this event,\nreturning Plugin_Continue will allow it to propagate the results\nof this output to any entity inputs."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void(const char[] output, int caller, int activator, float delay)": {
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const char[] output, int caller, int activator, float delay)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "output",
+                "decl": "const char[] output",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "caller",
+                "decl": "int caller",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "activator",
+                "decl": "int activator",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "delay",
+                "decl": "float delay",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(const char[] output, int caller, int activator, float delay)": {
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function Action(const char[] output, int caller, int activator, float delay)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "output",
+                "decl": "const char[] output",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "caller",
+                "decl": "int caller",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "activator",
+                "decl": "int activator",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "delay",
+                "decl": "float delay",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

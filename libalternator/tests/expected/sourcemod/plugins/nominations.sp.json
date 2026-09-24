@@ -1,0 +1,306 @@
+{
+  "functions": {
+    "MenuHandler_MapSelect": {
+      "name": "MenuHandler_MapSelect",
+      "refLine": 426,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OpenNominationMenu": {
+      "name": "OpenNominationMenu",
+      "refLine": 359,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "FindMatchingMaps": {
+      "name": "FindMatchingMaps",
+      "refLine": 255,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "ArrayList",
+          "name": "mapList",
+          "decl": "ArrayList mapList",
+          "default": null
+        },
+        {
+          "type": "ArrayList",
+          "name": "results",
+          "decl": "ArrayList results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        }
+      ]
+    },
+    "OnNominationRemoved": {
+      "name": "OnNominationRemoved",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "owner",
+          "decl": "int owner",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSayCommand_Post": {
+      "name": "OnClientSayCommand_Post",
+      "refLine": 172,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    },
+    "BuildMapMenu": {
+      "name": "BuildMapMenu",
+      "refLine": 365,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Command_Addmap": {
+      "name": "Command_Addmap",
+      "refLine": 123,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "AttemptNominate": {
+      "name": "AttemptNominate",
+      "refLine": 287,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "map",
+          "decl": "const char[] map",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Command_Nominate": {
+      "name": "Command_Nominate",
+      "refLine": 189,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 84,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MAPSTATUS_EXCLUDE_NOMINATED": {
+      "name": "MAPSTATUS_EXCLUDE_NOMINATED",
+      "refLine": 61,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "MAPSTATUS_EXCLUDE_CURRENT": {
+      "name": "MAPSTATUS_EXCLUDE_CURRENT",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "MAPSTATUS_EXCLUDE_PREVIOUS": {
+      "name": "MAPSTATUS_EXCLUDE_PREVIOUS",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "MAPSTATUS_DISABLED": {
+      "name": "MAPSTATUS_DISABLED",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "MAPSTATUS_ENABLED": {
+      "name": "MAPSTATUS_ENABLED",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<0)"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

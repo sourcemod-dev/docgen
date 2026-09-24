@@ -1,0 +1,1079 @@
+{
+  "functions": {
+    "C_ReplyToCommandEx": {
+      "name": "C_ReplyToCommandEx",
+      "refLine": 138,
+      "docStart": 4113,
+      "docEnd": 4674,
+      "docs": {
+        "brief": "Reples to a message in a command. A client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used. If the command was from chat, C_PrintToChat() is used.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reples to a message in a command. A client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used. If the command was from chat, C_PrintToChat() is used.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index, or 0 for server."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index whose color will be used for teamcolor tag."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "No return\n\nOn error/Errors:   If the client is not connected or invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_PrintToChatAllEx": {
+      "name": "C_PrintToChatAllEx",
+      "refLine": 231,
+      "docStart": 6934,
+      "docEnd": 7271,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.\nSupports color tags and teamcolor tag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area.\nSupports color tags and teamcolor tag."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index whos color will be used for teamcolor tag."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Message (formatting rules)."
+          },
+          {
+            "tag": "return",
+            "text": "No return\n\nOn error/Errors:   If the author is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_SkipNextClient": {
+      "name": "C_SkipNextClient",
+      "refLine": 316,
+      "docStart": 9028,
+      "docEnd": 9353,
+      "docs": {
+        "brief": "This function should only be used right in front of\nC_PrintToChatAll or C_PrintToChatAllEx and it tells\nto those funcions to skip specified client when printing\nmessage to all clients. After message is printed client will\nno more be skipped.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This function should only be used right in front of\nC_PrintToChatAll or C_PrintToChatAllEx and it tells\nto those funcions to skip specified client when printing\nmessage to all clients. After message is printed client will\nno more be skipped."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "return",
+            "text": "No return"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "C_ShowActivity2": {
+      "name": "C_ShowActivity2",
+      "refLine": 811,
+      "docStart": 22973,
+      "docEnd": 23485,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to prepend to the message."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_ColorAllowed": {
+      "name": "C_ColorAllowed",
+      "refLine": 274,
+      "docStart": 8174,
+      "docEnd": 8318,
+      "docs": {
+        "brief": "Checks whether a color is allowed or not",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether a color is allowed or not"
+          },
+          {
+            "tag": "param:tag",
+            "text": "Color Tag."
+          },
+          {
+            "tag": "return",
+            "text": "True when color is supported, otherwise false"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "C_Colors",
+          "name": "color",
+          "decl": "C_Colors color",
+          "default": null
+        }
+      ]
+    },
+    "C_Format": {
+      "name": "C_Format",
+      "refLine": 333,
+      "docStart": 9523,
+      "docEnd": 9841,
+      "docs": {
+        "brief": "Replaces color tags in a string with color codes",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replaces color tags in a string with color codes"
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "String."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Client index that can be used for SayText2 author index\n\nOn error/Errors:   If there is more then one team color is used an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "szMessage",
+          "decl": "char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": "-1"
+        }
+      ]
+    },
+    "C_SayText2": {
+      "name": "C_SayText2",
+      "refLine": 454,
+      "docStart": 12908,
+      "docEnd": 13088,
+      "docs": {
+        "brief": "Sends a SayText2 usermessage to a client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a SayText2 usermessage to a client"
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Author index"
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Message"
+          },
+          {
+            "tag": "return",
+            "text": "No return."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        }
+      ]
+    },
+    "C_Event_MapStart": {
+      "name": "C_Event_MapStart",
+      "refLine": 571,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "C_PrintToChatEx": {
+      "name": "C_PrintToChatEx",
+      "refLine": 190,
+      "docStart": 5771,
+      "docEnd": 6159,
+      "docs": {
+        "brief": "Prints a message to a specific client in the chat area.\nSupports color tags and teamcolor tag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the chat area.\nSupports color tags and teamcolor tag."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index whose color will be used for teamcolor tag."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Message (formatting rules)."
+          },
+          {
+            "tag": "return",
+            "text": "No return\n\nOn error/Errors:   If the client or author are not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_PrintToChatAll": {
+      "name": "C_PrintToChatAll",
+      "refLine": 164,
+      "docStart": 5214,
+      "docEnd": 5408,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Message (formatting rules)"
+          },
+          {
+            "tag": "return",
+            "text": "No return"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_PrintToChat": {
+      "name": "C_PrintToChat",
+      "refLine": 68,
+      "docStart": 2175,
+      "docEnd": 2458,
+      "docs": {
+        "brief": "Prints a message to a specific client in the chat area.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the chat area.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Message (formatting rules)."
+          },
+          {
+            "tag": "return",
+            "text": "No return\n\nOn error/Errors:   If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_ShowActivity": {
+      "name": "C_ShowActivity",
+      "refLine": 595,
+      "docStart": 17023,
+      "docEnd": 17598,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nC_ShowActivity2() is slightly more useful.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nC_ShowActivity2() is slightly more useful.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_ShowActivityEx": {
+      "name": "C_ShowActivityEx",
+      "refLine": 701,
+      "docStart": 20049,
+      "docEnd": 20422,
+      "docs": {
+        "brief": "Same as C_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as C_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to display with."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "C_FindRandomPlayerByTeam": {
+      "name": "C_FindRandomPlayerByTeam",
+      "refLine": 425,
+      "docStart": 12382,
+      "docEnd": 12532,
+      "docs": {
+        "brief": "Finds a random player with specified team",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a random player with specified team"
+          },
+          {
+            "tag": "param:color_team",
+            "text": "Client team."
+          },
+          {
+            "tag": "return",
+            "text": "Client index or NO_PLAYER if no player found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "color_team",
+          "decl": "int color_team",
+          "default": null
+        }
+      ]
+    },
+    "C_SetupProfile": {
+      "name": "C_SetupProfile",
+      "refLine": 483,
+      "docStart": 13808,
+      "docEnd": 13945,
+      "docs": {
+        "brief": "Creates game color profile\nThis function must be edited if you want to add more games support",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates game color profile\nThis function must be edited if you want to add more games support"
+          },
+          {
+            "tag": "return",
+            "text": "No return."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "C_RemoveTags": {
+      "name": "C_RemoveTags",
+      "refLine": 260,
+      "docStart": 7839,
+      "docEnd": 7943,
+      "docs": {
+        "brief": "Removes color tags from the string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes color tags from the string."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "String."
+          },
+          {
+            "tag": "return",
+            "text": "No return"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "szMessage",
+          "decl": "char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "C_ReplaceColor": {
+      "name": "C_ReplaceColor",
+      "refLine": 292,
+      "docStart": 8475,
+      "docEnd": 8644,
+      "docs": {
+        "brief": "Replace the color with another color\nHandle with care!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replace the color with another color\nHandle with care!"
+          },
+          {
+            "tag": "param:color",
+            "text": "color to replace."
+          },
+          {
+            "tag": "param:newColor",
+            "text": "color to replace with."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "C_Colors",
+          "name": "color",
+          "decl": "C_Colors color",
+          "default": null
+        },
+        {
+          "type": "C_Colors",
+          "name": "newColor",
+          "decl": "C_Colors newColor",
+          "default": null
+        }
+      ]
+    },
+    "C_ReplyToCommand": {
+      "name": "C_ReplyToCommand",
+      "refLine": 107,
+      "docStart": 3115,
+      "docEnd": 3597,
+      "docs": {
+        "brief": "Reples to a message in a command. A client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used. If the command was from chat, C_PrintToChat() is used.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reples to a message in a command. A client index of 0 will use PrintToServer().\nIf the command was from the console, PrintToConsole() is used. If the command was from chat, C_PrintToChat() is used.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index, or 0 for server."
+          },
+          {
+            "tag": "param:szMessage",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "No return\n\nOn error/Errors:   If the client is not connected or invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "szMessage",
+          "decl": "const char[] szMessage",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_colors_included": {
+      "name": "_colors_included",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SERVER_INDEX": {
+      "name": "SERVER_INDEX",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "NO_INDEX": {
+      "name": "NO_INDEX",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    },
+    "NO_PLAYER": {
+      "name": "NO_PLAYER",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-2"
+    },
+    "MAX_MESSAGE_LENGTH": {
+      "name": "MAX_MESSAGE_LENGTH",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "250"
+    },
+    "MAX_COLORS": {
+      "name": "MAX_COLORS",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "18"
+    }
+  },
+  "enums": {
+    "C_Colors": {
+      "name": "C_Colors",
+      "refLine": 22,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Color_Yellow": {
+          "name": "Color_Yellow",
+          "refLine": 34,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Grey2": {
+          "name": "Color_Grey2",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Default": {
+          "name": "Color_Default",
+          "refLine": 23,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "Color_Orange": {
+          "name": "Color_Orange",
+          "refLine": 35,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Lightblue": {
+          "name": "Color_Lightblue",
+          "refLine": 37,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Green": {
+          "name": "Color_Green",
+          "refLine": 25,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Darkred": {
+          "name": "Color_Darkred",
+          "refLine": 24,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Lightgreen": {
+          "name": "Color_Lightgreen",
+          "refLine": 26,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Darkblue": {
+          "name": "Color_Darkblue",
+          "refLine": 38,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Blue": {
+          "name": "Color_Blue",
+          "refLine": 28,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Lightred": {
+          "name": "Color_Lightred",
+          "refLine": 31,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Red": {
+          "name": "Color_Red",
+          "refLine": 27,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Purple": {
+          "name": "Color_Purple",
+          "refLine": 32,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Grey": {
+          "name": "Color_Grey",
+          "refLine": 33,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Bluegrey": {
+          "name": "Color_Bluegrey",
+          "refLine": 36,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Lightred2": {
+          "name": "Color_Lightred2",
+          "refLine": 41,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Olive": {
+          "name": "Color_Olive",
+          "refLine": 29,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Lime": {
+          "name": "Color_Lime",
+          "refLine": 30,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Color_Orchid": {
+          "name": "Color_Orchid",
+          "refLine": 40,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

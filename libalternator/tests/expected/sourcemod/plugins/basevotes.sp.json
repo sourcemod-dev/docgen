@@ -1,0 +1,264 @@
+{
+  "functions": {
+    "OnAdminMenuReady": {
+      "name": "OnAdminMenuReady",
+      "refLine": 142,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "aTopMenu",
+          "decl": "Handle aTopMenu",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 92,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Handler_VoteCallback": {
+      "name": "Handler_VoteCallback",
+      "refLine": 234,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "Command_Vote": {
+      "name": "Command_Vote",
+      "refLine": 166,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 137,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TestVoteDelay": {
+      "name": "TestVoteDelay",
+      "refLine": 409,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Timer_ChangeMap": {
+      "name": "Timer_ChangeMap",
+      "refLine": 435,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dp",
+          "decl": "DataPack dp",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "VOTE_AUTHID": {
+      "name": "VOTE_AUTHID",
+      "refLine": 79,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    },
+    "VOTE_YES": {
+      "name": "VOTE_YES",
+      "refLine": 52,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"###yes###\""
+    },
+    "VOTE_NAME": {
+      "name": "VOTE_NAME",
+      "refLine": 78,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "VOTE_IP": {
+      "name": "VOTE_IP",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "GENERIC_COUNT": {
+      "name": "GENERIC_COUNT",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "5"
+    },
+    "VOTE_NO": {
+      "name": "VOTE_NO",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"###no###\""
+    },
+    "ANSWER_SIZE": {
+      "name": "ANSWER_SIZE",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    }
+  },
+  "enums": {
+    "VoteType": {
+      "name": "VoteType",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "VoteType_Map": {
+          "name": "VoteType_Map",
+          "refLine": 65,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "VoteType_Question": {
+          "name": "VoteType_Question",
+          "refLine": 68,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "VoteType_Kick": {
+          "name": "VoteType_Kick",
+          "refLine": 66,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "VoteType_Ban": {
+          "name": "VoteType_Ban",
+          "refLine": 67,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

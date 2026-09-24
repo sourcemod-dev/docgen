@@ -1,95 +1,29 @@
-name: Build libraries & docgen
+name: Build docgen
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  libraries:
-    name: SP Libraries
+  test:
+    name: Test
 
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Python environment
-        uses: actions/setup-python@v2
-
       - name: Checkout generator
-        uses: actions/checkout@v2
-        with:
-          path: docgen
+        uses: actions/checkout@v4
 
-      - name: Checkout SourcePawn
-        uses: actions/checkout@v2
-        with:
-          path: sourcepawn
-          repository: SlidyBat/sourcepawn
-          ref: enum-struct-docgen
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
 
-      - name: Checkout SP Submodules
-        shell: bash
-        working-directory: sourcepawn
-        run: |
-          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
 
-      - name: Checkout AMbuild
-        uses: actions/checkout@v2
-        with:
-          path: ambuild
-          repository: alliedmodders/ambuild
+      - name: Test parser and schema
+        run: cargo test -p alternator -p schema
 
-      - name: Install AMBuild (Win/Mac)
-        working-directory: ambuild
-        if: ${{ matrix.os }} == windows-latest || ${{ matrix.os }} == macos-latest
-        run: |
-          python setup.py install
-
-      - name: Install AMBuild (Linux)
-        working-directory: ambuild
-        if: ${{ matrix.os }} == ubuntu-latest
-        run: |
-          python setup.py install --user
-
-      - name: Copy binding helpers
-        run: |
-          cp docgen/libalternator/binding/configure.py sourcepawn/
-          cp docgen/libalternator/binding/AMBuilder sourcepawn/exp/tools/docparse/
-          cp docgen/libalternator/binding/docparse.cpp sourcepawn/exp/tools/docparse/
-          cp docgen/libalternator/binding/docparse.h sourcepawn/exp/tools/docparse/
-          cp docgen/libalternator/binding/dll_exports.cpp sourcepawn/exp/compiler/
-
-      - name: Create build directory
-        working-directory: sourcepawn
-        run: |
-          mkdir build
-
-      - name: Build libraries
-        working-directory: sourcepawn/build
-        # env:
-        #   CC: gcc
-        #   CXX: g++ 
-        run: |
-          python ../configure.py --build exp --enable-optimize
-          ambuild
-
-      - name: Package libraries
-        working-directory: sourcepawn
-        run: cd build/ && tar -zcvf ../build.tar.gz * && cd - 
-
-      - name: Upload libraries
-        uses: actions/upload-artifact@v2
-        with:
-          name: libraries-${{ matrix.os }}
-          path: sourcepawn/build.tar.gz
   generator:
     name: DocGen
 
-    needs: libraries
-
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
@@ -98,56 +32,22 @@ jobs:
 
     steps:
       - name: Checkout generator
-        uses: actions/checkout@v2
-        with:
-          path: docgen
+        uses: actions/checkout@v4
 
       - name: Install Rust stable
-        uses: actions-rs/toolchain@v1
-        with:
-            toolchain: stable
-            override: true
+        uses: dtolnay/rust-toolchain@stable
 
-      - name: Download libraries
-        uses: actions/download-artifact@v1
-        with:
-          name: libraries-${{ matrix.os }}
-          path: libraries
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
 
-      - name: Extract libraries
-        run: |
-          mkdir docgen/libalternator/libraries
-          tar -xzf libraries/build.tar.gz -C docgen/libalternator/libraries
-
-      - name: Install LLVM and Clang # required for bindgen to work, see https://github.com/rust-lang/rust-bindgen/issues/1797
-        uses: KyleMayes/install-llvm-action@v1.5.0
-        if: matrix.os == 'windows-latest'
-        with:
-          version: "11.0"
-          directory: ${{ runner.temp }}/llvm
-
-      - name: Set LIBCLANG_PATH
-        run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
-        if: matrix.os == 'windows-latest'
-
-      - name: Cache cargo registry
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo/registry
-          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('docgen/Cargo.lock') }}
-
-      - name: Cache cargo build
-        uses: actions/cache@v1
-        with:
-          path: docgen/target
-          key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('docgen/Cargo.lock') }}
-
-      - name: Build crates
-        working-directory: docgen
-        run: cargo build --release
+      - name: Build chumbucket
+        run: cargo build --release -p chumbucket
 
       - name: Upload docgen
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: docgen-${{ matrix.os }}
-          path: docgen/target/release/chumbucket*
+          path: |
+            target/release/chumbucket
+            target/release/chumbucket.exe
+          if-no-files-found: error

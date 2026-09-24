@@ -1,0 +1,279 @@
+{
+  "functions": {
+    "TTT_GetAutoIonCannon": {
+      "name": "TTT_GetAutoIonCannon",
+      "refLine": 40,
+      "docStart": 711,
+      "docEnd": 869,
+      "docs": {
+        "brief": "Get client automatic ion cannon target.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get client automatic ion cannon target."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "return",
+            "text": "int              Target index, -1 otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsFriendlyFired": {
+      "name": "TTT_IsFriendlyFired",
+      "refLine": 67,
+      "docStart": 1440,
+      "docEnd": 1558,
+      "docs": {
+        "brief": "Check if traitor friendly fire is enabled.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if traitor friendly fire is enabled."
+          },
+          {
+            "tag": "return",
+            "text": "bool             True if enabled, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "__pl_ttt_ioncannon_SetNTVOptional": {
+      "name": "__pl_ttt_ioncannon_SetNTVOptional",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_HasAutoIonCannon": {
+      "name": "TTT_HasAutoIonCannon",
+      "refLine": 22,
+      "docStart": 300,
+      "docEnd": 476,
+      "docs": {
+        "brief": "Check whether client have automatic ion cannon or not.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check whether client have automatic ion cannon or not."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "return",
+            "text": "bool             True if have, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddIonCannon": {
+      "name": "TTT_AddIonCannon",
+      "refLine": 50,
+      "docStart": 916,
+      "docEnd": 1125,
+      "docs": {
+        "brief": "Add client ion cannon/s.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add client ion cannon/s."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:amount",
+            "text": "How many should player receive? Default 1."
+          },
+          {
+            "tag": "return",
+            "text": "int              Number of ion cannons."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "amount",
+          "decl": "int amount",
+          "default": "1"
+        }
+      ]
+    },
+    "TTT_SetIonCannon": {
+      "name": "TTT_SetIonCannon",
+      "refLine": 60,
+      "docStart": 1184,
+      "docEnd": 1380,
+      "docs": {
+        "brief": "Set client ion cannon/s.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set client ion cannon/s."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:amount",
+            "text": "How many should player have?."
+          },
+          {
+            "tag": "return",
+            "text": "int              Number of ion cannons."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cannons",
+          "decl": "int cannons",
+          "default": "0"
+        }
+      ]
+    },
+    "TTT_HasIonCannon": {
+      "name": "TTT_HasIonCannon",
+      "refLine": 13,
+      "docStart": 90,
+      "docEnd": 256,
+      "docs": {
+        "brief": "Check whether client have ion cannon or not.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check whether client have ion cannon or not."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "return",
+            "text": "bool             True if have, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetIonCannon": {
+      "name": "TTT_GetIonCannon",
+      "refLine": 31,
+      "docStart": 524,
+      "docEnd": 668,
+      "docs": {
+        "brief": "Get client bought ion cannons.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get client bought ion cannons."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "return",
+            "text": "int              Number of ion cannons."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_ioncannon_included": {
+      "name": "_ttt_ioncannon_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

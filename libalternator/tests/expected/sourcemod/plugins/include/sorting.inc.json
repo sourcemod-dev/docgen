@@ -1,0 +1,728 @@
+{
+  "functions": {
+    "SortIntegers": {
+      "name": "SortIntegers",
+      "refLine": 66,
+      "docStart": 1970,
+      "docEnd": 2166,
+      "docs": {
+        "brief": "Sorts an array of integers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sorts an array of integers."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array of integers to sort in-place."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Size of the array."
+          },
+          {
+            "tag": "param:order",
+            "text": "Sorting order to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int[]",
+          "name": "array",
+          "decl": "int[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        },
+        {
+          "type": "SortOrder",
+          "name": "order",
+          "decl": "SortOrder order",
+          "default": "Sort_Ascending"
+        }
+      ]
+    },
+    "SortCustom1D": {
+      "name": "SortCustom1D",
+      "refLine": 108,
+      "docStart": 3519,
+      "docEnd": 3812,
+      "docs": {
+        "brief": "Sorts a custom 1D array.  You must pass in a comparison function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sorts a custom 1D array.  You must pass in a comparison function."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to sort."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Size of the array to sort."
+          },
+          {
+            "tag": "param:sortfunc",
+            "text": "Sort function."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Optional Handle to pass through the comparison calls."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int[]",
+          "name": "array",
+          "decl": "int[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        },
+        {
+          "type": "SortFunc1D",
+          "name": "sortfunc",
+          "decl": "SortFunc1D sortfunc",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "SortADTArrayCustom": {
+      "name": "SortADTArrayCustom",
+      "refLine": 198,
+      "docStart": 7430,
+      "docEnd": 7695,
+      "docs": {
+        "brief": "Custom sorts an ADT Array. You must pass in a comparison function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Custom sorts an ADT Array. You must pass in a comparison function."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle to sort"
+          },
+          {
+            "tag": "param:sortfunc",
+            "text": "Sort comparison function to use"
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Optional Handle to pass through the comparison calls."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "SortFuncADTArray",
+          "name": "sortfunc",
+          "decl": "SortFuncADTArray sortfunc",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "SortStrings": {
+      "name": "SortStrings",
+      "refLine": 84,
+      "docStart": 2575,
+      "docEnd": 2769,
+      "docs": {
+        "brief": "Sorts an array of strings.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sorts an array of strings."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array of strings to sort in-place."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Size of the array."
+          },
+          {
+            "tag": "param:order",
+            "text": "Sorting order to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[][]",
+          "name": "array",
+          "decl": "char[][] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        },
+        {
+          "type": "SortOrder",
+          "name": "order",
+          "decl": "SortOrder order",
+          "default": "Sort_Ascending"
+        }
+      ]
+    },
+    "SortCustom2D": {
+      "name": "SortCustom2D",
+      "refLine": 140,
+      "docStart": 4816,
+      "docEnd": 5158,
+      "docs": {
+        "brief": "Sorts a custom 2D array.  You must pass in a comparison function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sorts a custom 2D array.  You must pass in a comparison function."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to sort."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Size of the major array to sort (first index, outermost)."
+          },
+          {
+            "tag": "param:sortfunc",
+            "text": "Sort comparison function to use."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Optional Handle to pass through the comparison calls."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "any[][]",
+          "name": "array",
+          "decl": "any[][] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        },
+        {
+          "type": "SortFunc2D",
+          "name": "sortfunc",
+          "decl": "SortFunc2D sortfunc",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "SortADTArray": {
+      "name": "SortADTArray",
+      "refLine": 174,
+      "docStart": 6389,
+      "docEnd": 6641,
+      "docs": {
+        "brief": "Sort an ADT Array. Specify the type as Integer, Float, or String.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sort an ADT Array. Specify the type as Integer, Float, or String."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle to sort"
+          },
+          {
+            "tag": "param:order",
+            "text": "Sort order to use, same as other sorts."
+          },
+          {
+            "tag": "param:type",
+            "text": "Data type stored in the ADT Array"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "SortOrder",
+          "name": "order",
+          "decl": "SortOrder order",
+          "default": null
+        },
+        {
+          "type": "SortType",
+          "name": "type",
+          "decl": "SortType type",
+          "default": null
+        }
+      ]
+    },
+    "SortFloats": {
+      "name": "SortFloats",
+      "refLine": 75,
+      "docStart": 2260,
+      "docEnd": 2481,
+      "docs": {
+        "brief": "Sorts an array of float point numbers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sorts an array of float point numbers."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array of floating point numbers to sort in-place."
+          },
+          {
+            "tag": "param:array_size",
+            "text": "Size of the array."
+          },
+          {
+            "tag": "param:order",
+            "text": "Sorting order to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float[]",
+          "name": "array",
+          "decl": "float[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        },
+        {
+          "type": "SortOrder",
+          "name": "order",
+          "decl": "SortOrder order",
+          "default": "Sort_Ascending"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sorting_included": {
+      "name": "_sorting_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "SortType": {
+      "name": "SortType",
+      "refLine": 52,
+      "docStart": 1853,
+      "docEnd": 1896,
+      "docs": {
+        "brief": "Data types for ADT Array Sorts",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Data types for ADT Array Sorts"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Sort_Float": {
+          "name": "Sort_Float",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Sort_Integer": {
+          "name": "Sort_Integer",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "Sort_String": {
+          "name": "Sort_String",
+          "refLine": 56,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SortOrder": {
+      "name": "SortOrder",
+      "refLine": 42,
+      "docStart": 1641,
+      "docEnd": 1678,
+      "docs": {
+        "brief": "Contains sorting orders.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Contains sorting orders."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Sort_Ascending": {
+          "name": "Sort_Ascending",
+          "refLine": 44,
+          "docStart": 1724,
+          "docEnd": 1747,
+          "docs": {
+            "brief": "Ascending order",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Ascending order"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "Sort_Random": {
+          "name": "Sort_Random",
+          "refLine": 46,
+          "docStart": 1825,
+          "docEnd": 1845,
+          "docs": {
+            "brief": "Random order",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Random order"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "Sort_Descending": {
+          "name": "Sort_Descending",
+          "refLine": 45,
+          "docStart": 1774,
+          "docEnd": 1798,
+          "docs": {
+            "brief": "Descending order",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Descending order"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "SortFunc2D": {
+      "name": "SortFunc2D",
+      "refLine": 125,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function int(int[] elem1, int[] elem2, const int[][] array, Handle hndl)": {
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function int(int[] elem1, int[] elem2, const int[][] array, Handle hndl)",
+          "parsedSignature": {
+            "returnType": "int",
+            "arguments": [
+              {
+                "type": "int[]",
+                "name": "elem1",
+                "decl": "int[] elem1",
+                "default": null
+              },
+              {
+                "type": "int[]",
+                "name": "elem2",
+                "decl": "int[] elem2",
+                "default": null
+              },
+              {
+                "type": "const int[][]",
+                "name": "array",
+                "decl": "const int[][] array",
+                "default": null
+              },
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function int(char[] elem1, char[] elem2, const char[][] array, Handle hndl)": {
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function int(char[] elem1, char[] elem2, const char[][] array, Handle hndl)",
+          "parsedSignature": {
+            "returnType": "int",
+            "arguments": [
+              {
+                "type": "char[]",
+                "name": "elem1",
+                "decl": "char[] elem1",
+                "default": null
+              },
+              {
+                "type": "char[]",
+                "name": "elem2",
+                "decl": "char[] elem2",
+                "default": null
+              },
+              {
+                "type": "const char[][]",
+                "name": "array",
+                "decl": "const char[][] array",
+                "default": null
+              },
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {
+    "SortFuncADTArray": {
+      "name": "SortFuncADTArray",
+      "refLine": 189,
+      "docStart": 6718,
+      "docEnd": 7332,
+      "docs": {
+        "brief": "Sort comparison function for ADT Array elements. Function provides you with\nindexes currently being sorted, use ADT Array functions to retrieve the\nindex values and compare.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sort comparison function for ADT Array elements. Function provides you with\nindexes currently being sorted, use ADT Array functions to retrieve the\nindex values and compare."
+          },
+          {
+            "tag": "param:index1",
+            "text": "First index to compare."
+          },
+          {
+            "tag": "param:index2",
+            "text": "Second index to compare."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array that is being sorted (order is undefined)."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle optionally passed in while sorting."
+          },
+          {
+            "tag": "return",
+            "text": "-1 if first should go before second\n0 if first is equal to second\n1 if first should go after second"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function int(int index1, int index2, Handle array, Handle hndl)",
+      "parsedSignature": {
+        "returnType": "int",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "index1",
+            "decl": "int index1",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "index2",
+            "decl": "int index2",
+            "default": null
+          },
+          {
+            "type": "Handle",
+            "name": "array",
+            "decl": "Handle array",
+            "default": null
+          },
+          {
+            "type": "Handle",
+            "name": "hndl",
+            "decl": "Handle hndl",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SortFunc1D": {
+      "name": "SortFunc1D",
+      "refLine": 98,
+      "docStart": 2865,
+      "docEnd": 3424,
+      "docs": {
+        "brief": "Sort comparison function for 1D array elements.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sort comparison function for 1D array elements."
+          },
+          {
+            "tag": "note",
+            "text": "You may need to use explicit tags in order to use data properly."
+          },
+          {
+            "tag": "param:elem1",
+            "text": "First element to compare."
+          },
+          {
+            "tag": "param:elem2",
+            "text": "Second element to compare."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array that is being sorted (order is undefined)."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle optionally passed in while sorting."
+          },
+          {
+            "tag": "return",
+            "text": "-1 if first should go before second\n0 if first is equal to second\n1 if first should go after second"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function int(int elem1, int elem2, const int[] array, Handle hndl)",
+      "parsedSignature": {
+        "returnType": "int",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "elem1",
+            "decl": "int elem1",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "elem2",
+            "decl": "int elem2",
+            "default": null
+          },
+          {
+            "type": "const int[]",
+            "name": "array",
+            "decl": "const int[] array",
+            "default": null
+          },
+          {
+            "type": "Handle",
+            "name": "hndl",
+            "decl": "Handle hndl",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

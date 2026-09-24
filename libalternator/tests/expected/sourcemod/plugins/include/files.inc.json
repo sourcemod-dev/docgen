@@ -1,0 +1,4057 @@
+{
+  "functions": {
+    "FileSeek": {
+      "name": "FileSeek",
+      "refLine": 489,
+      "docStart": 19939,
+      "docEnd": 20277,
+      "docs": {
+        "brief": "Sets the file position indicator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the file position indicator."
+          },
+          {
+            "tag": "param:file",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:position",
+            "text": "Position relative to what is specified in whence."
+          },
+          {
+            "tag": "param:where",
+            "text": "SEEK_ constant value of where to see from."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "file",
+          "decl": "Handle file",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "position",
+          "decl": "int position",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "where",
+          "decl": "int where",
+          "default": null
+        }
+      ]
+    },
+    "OpenDirectoryAsync": {
+      "name": "OpenDirectoryAsync",
+      "refLine": 794,
+      "docStart": 34482,
+      "docEnd": 34947,
+      "docs": {
+        "brief": "Enumerates an OS filesystem directory without blocking the game thread.\nThe callback receives a fully-materialized DirectoryListing snapshot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates an OS filesystem directory without blocking the game thread.\nThe callback receives a fully-materialized DirectoryListing snapshot."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the directory. Use \".\" for the game directory."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "error",
+            "text": "The path is empty, the callback is invalid, or the async worker is shutting down."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileDirectoryCallback",
+          "name": "callback",
+          "decl": "FileDirectoryCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "WriteFileLine": {
+      "name": "WriteFileLine",
+      "refLine": 425,
+      "docStart": 17952,
+      "docEnd": 18295,
+      "docs": {
+        "brief": "Writes a line of text to a text file.  A newline is automatically appended.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a line of text to a text file.  A newline is automatically appended."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FileSize": {
+      "name": "FileSize",
+      "refLine": 567,
+      "docStart": 23640,
+      "docEnd": 24187,
+      "docs": {
+        "brief": "Get the file size in bytes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the file size in bytes."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to find files existing in any of\nthe Valve search paths, rather than solely files\nexisting directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "File size in bytes, -1 if file not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "CreateDirectoryAsync": {
+      "name": "CreateDirectoryAsync",
+      "refLine": 825,
+      "docStart": 36087,
+      "docEnd": 36685,
+      "docs": {
+        "brief": "Creates a directory without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a directory without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to create."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Permissions for an OS filesystem directory. Ignored by the Valve filesystem."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mode",
+          "decl": "int mode",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "ReadFileAsync": {
+      "name": "ReadFileAsync",
+      "refLine": 781,
+      "docStart": 33781,
+      "docEnd": 34278,
+      "docs": {
+        "brief": "Reads a whole file without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a whole file without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileReadCallback",
+          "name": "callback",
+          "decl": "FileReadCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "DirExists": {
+      "name": "DirExists",
+      "refLine": 554,
+      "docStart": 22974,
+      "docEnd": 23533,
+      "docs": {
+        "brief": "Checks if a directory exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a directory exists."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the directory."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to find files existing in any of\nthe Valve search paths, rather than solely files\nexisting directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "True if the directory exists, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "IsEndOfFile": {
+      "name": "IsEndOfFile",
+      "refLine": 478,
+      "docStart": 19671,
+      "docEnd": 19896,
+      "docs": {
+        "brief": "Tests if the end of file has been reached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tests if the end of file has been reached."
+          },
+          {
+            "tag": "param:file",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "return",
+            "text": "True if end of file has been reached, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "file",
+          "decl": "Handle file",
+          "default": null
+        }
+      ]
+    },
+    "CreateDirectory": {
+      "name": "CreateDirectory",
+      "refLine": 611,
+      "docStart": 25443,
+      "docEnd": 26232,
+      "docs": {
+        "brief": "Creates a directory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a directory."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to create. Note that directories are not created recursively unless use_valve_fs is used."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Permissions (default is o=rx,g=rx,u=rwx).  Note that folders must have\nthe execute bit set on Linux.  On Windows, the mode is ignored."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to create folders in the game's\nValve search paths, rather than directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for default.\nIn this case, mode is ignored."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mode",
+          "decl": "int mode",
+          "default": "4 | 1 | 32 | 8 | 256 | 128 | 64"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "DeleteFileAsync": {
+      "name": "DeleteFileAsync",
+      "refLine": 690,
+      "docStart": 29050,
+      "docEnd": 29543,
+      "docs": {
+        "brief": "Deletes a file without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Deletes a file without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "WriteFile": {
+      "name": "WriteFile",
+      "refLine": 403,
+      "docStart": 16807,
+      "docEnd": 17479,
+      "docs": {
+        "brief": "Writes binary data to a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes binary data to a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:items",
+            "text": "Array of items to write.  The data is read directly.\nThat is, in 1 or 2-byte mode, the lower byte(s) in\neach cell are used directly, rather than performing\nany casts from a 4-byte number to a smaller number."
+          },
+          {
+            "tag": "param:num_items",
+            "text": "Number of items in the array."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of each item in the array in bytes.\nValid sizes are 1, 2, or 4."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on error."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "items",
+          "decl": "const any[] items",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_items",
+          "decl": "int num_items",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "DeleteFile": {
+      "name": "DeleteFile",
+      "refLine": 348,
+      "docStart": 14415,
+      "docEnd": 14982,
+      "docs": {
+        "brief": "Deletes a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Deletes a file."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path of the file to delete."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to delete files existing in the Valve\nsearch path, rather than solely files existing directly\nin the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure or if file not immediately removed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "LogToOpenFileEx": {
+      "name": "LogToOpenFileEx",
+      "refLine": 887,
+      "docStart": 38603,
+      "docEnd": 38907,
+      "docs": {
+        "brief": "Same as LogToFileEx(), except uses an open file Handle.  The file must\nbe opened in text appending mode.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as LogToFileEx(), except uses an open file Handle.  The file must\nbe opened in text appending mode."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "RenameFile": {
+      "name": "RenameFile",
+      "refLine": 524,
+      "docStart": 21237,
+      "docEnd": 21792,
+      "docs": {
+        "brief": "Renames a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Renames a file."
+          },
+          {
+            "tag": "param:newpath",
+            "text": "New path to the file."
+          },
+          {
+            "tag": "param:oldpath",
+            "text": "Path to the existing file."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to rename files in the game's\nValve search paths, rather than directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "True on success or use_valve_fs specified, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "newpath",
+          "decl": "const char[] newpath",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldpath",
+          "decl": "const char[] oldpath",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "CopyFile": {
+      "name": "CopyFile",
+      "refLine": 541,
+      "docStart": 21939,
+      "docEnd": 22794,
+      "docs": {
+        "brief": "Copies a file. If the destination file already exists, it is overwritten.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies a file. If the destination file already exists, it is overwritten."
+          },
+          {
+            "tag": "param:newpath",
+            "text": "Path to the destination file."
+          },
+          {
+            "tag": "param:oldpath",
+            "text": "Path to the existing source file."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to copy files in the game's\nValve search paths, rather than directly in the gamedir."
+          },
+          {
+            "tag": "param:source_path_id",
+            "text": "If use_valve_fs, the gameinfo search path used to locate\nthe source file, or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "param:dest_path_id",
+            "text": "If use_valve_fs, the gameinfo search path used to write\nthe destination file, or NULL_STRING for the default\nwrite path."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "newpath",
+          "decl": "const char[] newpath",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldpath",
+          "decl": "const char[] oldpath",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "source_path_id",
+          "decl": "const char[] source_path_id",
+          "default": "\"GAME\""
+        },
+        {
+          "type": "const char[]",
+          "name": "dest_path_id",
+          "decl": "const char[] dest_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "ReadFileLine": {
+      "name": "ReadFileLine",
+      "refLine": 358,
+      "docStart": 15104,
+      "docEnd": 15368,
+      "docs": {
+        "brief": "Reads a line from a text file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a line from a text file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer to hold the line."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FlushFile": {
+      "name": "FlushFile",
+      "refLine": 577,
+      "docStart": 24292,
+      "docEnd": 24582,
+      "docs": {
+        "brief": "Flushes a file's buffered output; any buffered output\nis immediately written to the file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Flushes a file's buffered output; any buffered output\nis immediately written to the file."
+          },
+          {
+            "tag": "param:file",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "return",
+            "text": "True on success or use_valve_fs specified with OpenFile,\notherwise false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "file",
+          "decl": "Handle file",
+          "default": null
+        }
+      ]
+    },
+    "BuildPath": {
+      "name": "BuildPath",
+      "refLine": 266,
+      "docStart": 10123,
+      "docEnd": 10657,
+      "docs": {
+        "brief": "Builds a path relative to the SourceMod folder.  This should be used instead of\ndirectly referencing addons/sourcemod, in case users change the name of their\nfolder layout.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Builds a path relative to the SourceMod folder.  This should be used instead of\ndirectly referencing addons/sourcemod, in case users change the name of their\nfolder layout."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of path to build as the base."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the path."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of buffer."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format string."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to buffer (not including null terminator)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "PathType",
+          "name": "type",
+          "decl": "PathType type",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "ReadFileString": {
+      "name": "ReadFileString",
+      "refLine": 387,
+      "docStart": 15920,
+      "docEnd": 16714,
+      "docs": {
+        "brief": "Reads a UTF8 or ANSI string from a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a UTF8 or ANSI string from a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the string."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of the string buffer."
+          },
+          {
+            "tag": "param:read_count",
+            "text": "If -1, reads until a null terminator is encountered in\nthe file.  Otherwise, read_count bytes are read\ninto the buffer provided.  In this case the buffer\nis not explicitly null terminated, and the buffer\nwill contain any null terminators read from the file."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer, or -1\nif an error was encountered."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, or read_count > max_size."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "read_count",
+          "decl": "int read_count",
+          "default": "-1"
+        }
+      ]
+    },
+    "ReadFile": {
+      "name": "ReadFile",
+      "refLine": 370,
+      "docStart": 15442,
+      "docEnd": 15843,
+      "docs": {
+        "brief": "Reads binary data from a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads binary data from a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:items",
+            "text": "Array to store each item read."
+          },
+          {
+            "tag": "param:num_items",
+            "text": "Number of items to read into the array."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of each element, in bytes, to be read.\nValid sizes are 1, 2, or 4."
+          },
+          {
+            "tag": "return",
+            "text": "Number of elements read, or -1 on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "items",
+          "decl": "any[] items",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_items",
+          "decl": "int num_items",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "FileSizeAsync": {
+      "name": "FileSizeAsync",
+      "refLine": 767,
+      "docStart": 33080,
+      "docEnd": 33577,
+      "docs": {
+        "brief": "Gets a file's size without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a file's size without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileSizeCallback",
+          "name": "callback",
+          "decl": "FileSizeCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "RemoveDirectoryAsync": {
+      "name": "RemoveDirectoryAsync",
+      "refLine": 838,
+      "docStart": 36966,
+      "docEnd": 37308,
+      "docs": {
+        "brief": "Removes an empty OS filesystem directory without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an empty OS filesystem directory without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the directory."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid or the async worker is shutting down."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "WriteFileString": {
+      "name": "WriteFileString",
+      "refLine": 414,
+      "docStart": 17564,
+      "docEnd": 17873,
+      "docs": {
+        "brief": "Writes a binary string to a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a binary string to a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to write."
+          },
+          {
+            "tag": "param:term",
+            "text": "True to append NUL terminator, false otherwise."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on error."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "term",
+          "decl": "bool term",
+          "default": null
+        }
+      ]
+    },
+    "FilePosition": {
+      "name": "FilePosition",
+      "refLine": 498,
+      "docStart": 20342,
+      "docEnd": 20542,
+      "docs": {
+        "brief": "Get current position in the file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get current position in the file."
+          },
+          {
+            "tag": "param:file",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "return",
+            "text": "Value for the file position indicator."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "file",
+          "decl": "Handle file",
+          "default": null
+        }
+      ]
+    },
+    "RemoveDir": {
+      "name": "RemoveDir",
+      "refLine": 586,
+      "docStart": 24623,
+      "docEnd": 24860,
+      "docs": {
+        "brief": "Removes a directory.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a directory."
+          },
+          {
+            "tag": "note",
+            "text": "On most Operating Systems you cannot remove a directory which has files inside it."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the directory."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        }
+      ]
+    },
+    "CopyFileAsync": {
+      "name": "CopyFileAsync",
+      "refLine": 723,
+      "docStart": 30590,
+      "docEnd": 31268,
+      "docs": {
+        "brief": "Copies a file without blocking the game thread. Existing destinations are\noverwritten.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies a file without blocking the game thread. Existing destinations are\noverwritten."
+          },
+          {
+            "tag": "param:newpath",
+            "text": "Path to the destination file."
+          },
+          {
+            "tag": "param:oldpath",
+            "text": "Path to the existing source file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:source_path_id",
+            "text": "Valve filesystem search path for the source."
+          },
+          {
+            "tag": "param:dest_path_id",
+            "text": "Valve filesystem search path for the destination."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "newpath",
+          "decl": "const char[] newpath",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldpath",
+          "decl": "const char[] oldpath",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "source_path_id",
+          "decl": "const char[] source_path_id",
+          "default": "\"GAME\""
+        },
+        {
+          "type": "const char[]",
+          "name": "dest_path_id",
+          "decl": "const char[] dest_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "GetFilePermissions": {
+      "name": "GetFilePermissions",
+      "refLine": 856,
+      "docStart": 37675,
+      "docEnd": 37901,
+      "docs": {
+        "brief": "Retrieves a file or directories permissions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a file or directories permissions."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Variable to store the permissions in."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "mode",
+          "decl": "int& mode",
+          "default": null
+        }
+      ]
+    },
+    "DirExistsAsync": {
+      "name": "DirExistsAsync",
+      "refLine": 753,
+      "docStart": 32314,
+      "docEnd": 32871,
+      "docs": {
+        "brief": "Checks for a directory without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks for a directory without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the directory. Use \".\" for the game directory."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The path is empty, the callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileExistsCallback",
+          "name": "callback",
+          "decl": "FileExistsCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "RenameFileAsync": {
+      "name": "RenameFileAsync",
+      "refLine": 705,
+      "docStart": 29765,
+      "docEnd": 30314,
+      "docs": {
+        "brief": "Renames a file without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Renames a file without blocking the game thread."
+          },
+          {
+            "tag": "param:newpath",
+            "text": "New path to the file."
+          },
+          {
+            "tag": "param:oldpath",
+            "text": "Path to the existing file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "newpath",
+          "decl": "const char[] newpath",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldpath",
+          "decl": "const char[] oldpath",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "WriteFileAsync": {
+      "name": "WriteFileAsync",
+      "refLine": 809,
+      "docStart": 35047,
+      "docEnd": 35788,
+      "docs": {
+        "brief": "Writes size raw bytes from contents without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes size raw bytes from contents without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:contents",
+            "text": "Raw-byte buffer to write."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes to write from contents."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:append",
+            "text": "If true, append rather than overwrite."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem path; must be DEFAULT_WRITE_PATH."
+          },
+          {
+            "tag": "error",
+            "text": "The size is negative, the callback is invalid, the async worker is shutting down, Valve async operations are unavailable, or valve_path_id is unsupported."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "contents",
+          "decl": "const char[] contents",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        },
+        {
+          "type": "FileOpCallback",
+          "name": "callback",
+          "decl": "FileOpCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "append",
+          "decl": "bool append",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"DEFAULT_WRITE_PATH\""
+        }
+      ]
+    },
+    "LogToOpenFile": {
+      "name": "LogToOpenFile",
+      "refLine": 876,
+      "docStart": 38225,
+      "docEnd": 38527,
+      "docs": {
+        "brief": "Same as LogToFile(), except uses an open file Handle.  The file must\nbe opened in text appending mode.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as LogToFile(), except uses an open file Handle.  The file must\nbe opened in text appending mode."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FileExists": {
+      "name": "FileExists",
+      "refLine": 511,
+      "docStart": 20585,
+      "docEnd": 21129,
+      "docs": {
+        "brief": "Checks if a file exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a file exists."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to find files existing in any of\nthe Valve search paths, rather than solely files\nexisting directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "True if the file exists, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "FileExistsAsync": {
+      "name": "FileExistsAsync",
+      "refLine": 739,
+      "docStart": 31598,
+      "docEnd": 32102,
+      "docs": {
+        "brief": "Checks for a regular file without blocking the game thread.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks for a regular file without blocking the game thread."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback invoked on completion."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data passed to the callback."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, use the Valve filesystem."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "Valve filesystem search path when use_valve_fs is true."
+          },
+          {
+            "tag": "error",
+            "text": "The callback is invalid, the async worker is shutting down, or Valve async operations are unavailable."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "FileExistsCallback",
+          "name": "callback",
+          "decl": "FileExistsCallback callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "WriteFileCell": {
+      "name": "WriteFileCell",
+      "refLine": 463,
+      "docStart": 18956,
+      "docEnd": 19523,
+      "docs": {
+        "brief": "Writes a single binary cell to a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a single binary cell to a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:data",
+            "text": "Cell to write to the file."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of the data to read in bytes.  Valid\nsizes are 1, 2, or 4 bytes.  If the size\nis less than 4 bytes, the data is truncated\nrather than casted.  That is, only the lower\nbits will be read."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on error."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "data",
+          "decl": "int data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "GetFileTime": {
+      "name": "GetFileTime",
+      "refLine": 865,
+      "docStart": 37968,
+      "docEnd": 38157,
+      "docs": {
+        "brief": "Returns a file timestamp as a unix timestamp.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a file timestamp as a unix timestamp."
+          },
+          {
+            "tag": "param:file",
+            "text": "File name."
+          },
+          {
+            "tag": "param:tmode",
+            "text": "Time mode."
+          },
+          {
+            "tag": "return",
+            "text": "Time value, or -1 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "FileTimeMode",
+          "name": "tmode",
+          "decl": "FileTimeMode tmode",
+          "default": null
+        }
+      ]
+    },
+    "OpenFile": {
+      "name": "OpenFile",
+      "refLine": 335,
+      "docStart": 12363,
+      "docEnd": 14290,
+      "docs": {
+        "brief": "Opens or creates a file, returning a File handle on success. File handles\nshould be closed with delete or CloseHandle().\n\nThe open mode may be one of the following strings:\n\"r\": Open an existing file for reading.\n\"w\": Create a file for writing, or truncate (delete the contents of) an\nexisting file and then open it for writing.\n\"wx\": Create file for writing, fails if file already exists.\n\"a\": Create a file for writing, or open an existing file such that writes\nwill be appended to the end.\n\"r+\": Open an existing file for both reading and writing.\n\"w+\": Create a file for reading and writing, or truncate an existing file\nand then open it for reading and writing.\n\"a+\": Create a file for both reading and writing, or open an existing file\nsuch that writes will be appended to the end.\n\nThe open mode may also contain an additional character after \"r\", \"w\", or \"a\",\nbut before the \"+\" sign. This character may be \"b\" (indicating binary mode) or\n\"t\" (indicating text mode). By default, \"text\" mode is implied. On Linux and\nMac, this has no distinction from binary mode. On Windows, it causes the '\\n'\ncharacter (0xA) to be written as \"\\r\\n\" (0xD, 0xA).\n\nExample: \"rb\" opens a binary file for reading; \"at\" opens a text file for\nappending.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Opens or creates a file, returning a File handle on success. File handles\nshould be closed with delete or CloseHandle().\n\nThe open mode may be one of the following strings:\n\"r\": Open an existing file for reading.\n\"w\": Create a file for writing, or truncate (delete the contents of) an\nexisting file and then open it for writing.\n\"wx\": Create file for writing, fails if file already exists.\n\"a\": Create a file for writing, or open an existing file such that writes\nwill be appended to the end.\n\"r+\": Open an existing file for both reading and writing.\n\"w+\": Create a file for reading and writing, or truncate an existing file\nand then open it for reading and writing.\n\"a+\": Create a file for both reading and writing, or open an existing file\nsuch that writes will be appended to the end.\n\nThe open mode may also contain an additional character after \"r\", \"w\", or \"a\",\nbut before the \"+\" sign. This character may be \"b\" (indicating binary mode) or\n\"t\" (indicating text mode). By default, \"text\" mode is implied. On Linux and\nMac, this has no distinction from binary mode. On Windows, it causes the '\\n'\ncharacter (0xA) to be written as \"\\r\\n\" (0xD, 0xA).\n\nExample: \"rb\" opens a binary file for reading; \"at\" opens a text file for\nappending."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to open."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Open mode."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to find files existing in valve\nsearch paths, rather than solely files existing directly\nin the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "A File handle, or null if the file could not be opened."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "File",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "mode",
+          "decl": "const char[] mode",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "OpenDirectory": {
+      "name": "OpenDirectory",
+      "refLine": 283,
+      "docStart": 10756,
+      "docEnd": 11493,
+      "docs": {
+        "brief": "Opens a directory/folder for contents enumeration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Opens a directory/folder for contents enumeration."
+          },
+          {
+            "tag": "note",
+            "text": "Directories are closed with CloseHandle() or delete."
+          },
+          {
+            "tag": "note",
+            "text": "Directories Handles can be cloned."
+          },
+          {
+            "tag": "note",
+            "text": "OpenDirectory() supports the \"file://\" notation."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to open."
+          },
+          {
+            "tag": "param:use_valve_fs",
+            "text": "If true, the Valve file system will be used instead.\nThis can be used to find files existing in any of\nthe Valve search paths, rather than solely files\nexisting directly in the gamedir."
+          },
+          {
+            "tag": "param:valve_path_id",
+            "text": "If use_valve_fs, a search path from gameinfo or NULL_STRING for all search paths."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to the directory, null on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DirectoryListing",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "use_valve_fs",
+          "decl": "bool use_valve_fs",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "valve_path_id",
+          "decl": "const char[] valve_path_id",
+          "default": "\"GAME\""
+        }
+      ]
+    },
+    "SetFilePermissions": {
+      "name": "SetFilePermissions",
+      "refLine": 847,
+      "docStart": 37403,
+      "docEnd": 37609,
+      "docs": {
+        "brief": "Changes a file or directories permissions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes a file or directories permissions."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path to the file."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Permissions to set."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mode",
+          "decl": "int mode",
+          "default": null
+        }
+      ]
+    },
+    "ReadDirEntry": {
+      "name": "ReadDirEntry",
+      "refLine": 298,
+      "docStart": 11616,
+      "docEnd": 12257,
+      "docs": {
+        "brief": "Reads the current directory entry as a local filename, then moves to the next file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads the current directory entry as a local filename, then moves to the next file."
+          },
+          {
+            "tag": "note",
+            "text": "Contents of buffers are undefined when returning false."
+          },
+          {
+            "tag": "note",
+            "text": "Both the '.' and '..' automatic directory entries will be retrieved for Windows and Linux."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Handle to a directory."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer to hold directory name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:type",
+            "text": "Optional variable to store the file type."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there are no more files to read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "dir",
+          "decl": "Handle dir",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "FileType&",
+          "name": "type",
+          "decl": "FileType& type",
+          "default": "FileType_Unknown"
+        }
+      ]
+    },
+    "ReadFileCell": {
+      "name": "ReadFileCell",
+      "refLine": 437,
+      "docStart": 18370,
+      "docEnd": 18764,
+      "docs": {
+        "brief": "Reads a single binary cell from a file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a single binary cell from a file."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the file."
+          },
+          {
+            "tag": "param:data",
+            "text": "Variable to store the data read."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of the data to read in bytes.  Valid\nsizes are 1, 2, or 4 bytes."
+          },
+          {
+            "tag": "return",
+            "text": "Number of elements read (max 1), or -1 on error."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "data",
+          "decl": "int& data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "File": {
+      "name": "File",
+      "refLine": 108,
+      "docStart": 3872,
+      "docEnd": 4076,
+      "docs": {
+        "brief": "A File object can be obtained by calling OpenFile(). File objects should be\nclosed with delete or Close(). Note that, \"delete file\" does not\nactually delete the file, it just closes the handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A File object can be obtained by calling OpenFile(). File objects should be\nclosed with delete or Close(). Note that, \"delete file\" does not\nactually delete the file, it just closes the handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "ReadString": {
+          "name": "ReadString",
+          "refLine": 148,
+          "docStart": 5086,
+          "docEnd": 5837,
+          "docs": {
+            "brief": "Reads a UTF8 or ANSI string from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a UTF8 or ANSI string from a file."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the string."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of the string buffer."
+              },
+              {
+                "tag": "param:read_count",
+                "text": "If -1, reads until a null terminator is encountered in\nthe file.  Otherwise, read_count bytes are read\ninto the buffer provided.  In this case the buffer\nis not explicitly null terminated, and the buffer\nwill contain any null terminators read from the file."
+              },
+              {
+                "tag": "return",
+                "text": "Number of characters written to the buffer, or -1\nif an error was encountered."
+              },
+              {
+                "tag": "error",
+                "text": "read_count > max_size."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "read_count",
+              "decl": "int read_count",
+              "default": "-1"
+            }
+          ]
+        },
+        "EndOfFile": {
+          "name": "EndOfFile",
+          "refLine": 232,
+          "docStart": 9242,
+          "docEnd": 9375,
+          "docs": {
+            "brief": "Tests if the end of file has been reached.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Tests if the end of file has been reached."
+              },
+              {
+                "tag": "return",
+                "text": "True if end of file has been reached, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "Seek": {
+          "name": "Seek",
+          "refLine": 239,
+          "docStart": 9414,
+          "docEnd": 9666,
+          "docs": {
+            "brief": "Sets the file position indicator.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the file position indicator."
+              },
+              {
+                "tag": "param:position",
+                "text": "Position relative to what is specified in whence."
+              },
+              {
+                "tag": "param:where",
+                "text": "SEEK_ constant value of where to see from."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "position",
+              "decl": "int position",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "where",
+              "decl": "int where",
+              "default": null
+            }
+          ]
+        },
+        "ReadUint8": {
+          "name": "ReadUint8",
+          "refLine": 189,
+          "docStart": 7539,
+          "docEnd": 7774,
+          "docs": {
+            "brief": "Reads a single uint8 (unsigned byte) from a file. The returned value is\nzero-extended to an int32.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single uint8 (unsigned byte) from a file. The returned value is\nzero-extended to an int32."
+              },
+              {
+                "tag": "param:data",
+                "text": "Variable to store the data read."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "data",
+              "decl": "int& data",
+              "default": null
+            }
+          ]
+        },
+        "Read": {
+          "name": "Read",
+          "refLine": 134,
+          "docStart": 4655,
+          "docEnd": 5017,
+          "docs": {
+            "brief": "Reads binary data from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads binary data from a file."
+              },
+              {
+                "tag": "param:items",
+                "text": "Array to store each item read."
+              },
+              {
+                "tag": "param:num_items",
+                "text": "Number of items to read into the array."
+              },
+              {
+                "tag": "param:size",
+                "text": "Size of each element, in bytes, to be read.\nValid sizes are 1, 2, or 4."
+              },
+              {
+                "tag": "return",
+                "text": "Number of elements read, or -1 on error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "any[]",
+              "name": "items",
+              "decl": "any[] items",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "num_items",
+              "decl": "int num_items",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "Close": {
+          "name": "Close",
+          "refLine": 111,
+          "docStart": 4107,
+          "docEnd": 4183,
+          "docs": {
+            "brief": "Close the file handle. This is the same as using CloseHandle() or delete.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Close the file handle. This is the same as using CloseHandle() or delete."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "ReadLine": {
+          "name": "ReadLine",
+          "refLine": 125,
+          "docStart": 4367,
+          "docEnd": 4589,
+          "docs": {
+            "brief": "Reads a line of text from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a line of text from a file."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to hold the line."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "Flush": {
+          "name": "Flush",
+          "refLine": 246,
+          "docStart": 9723,
+          "docEnd": 9963,
+          "docs": {
+            "brief": "Flushes a file's buffered output; any buffered output\nis immediately written to the file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Flushes a file's buffered output; any buffered output\nis immediately written to the file."
+              },
+              {
+                "tag": "return",
+                "text": "True on success or use_valve_fs specified with OpenFile,\notherwise false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "WriteInt8": {
+          "name": "WriteInt8",
+          "refLine": 215,
+          "docStart": 8589,
+          "docEnd": 8764,
+          "docs": {
+            "brief": "Writes a single int8 (byte) to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a single int8 (byte) to a file."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data to write (truncated to an int8)."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "WriteInt32": {
+          "name": "WriteInt32",
+          "refLine": 227,
+          "docStart": 9037,
+          "docEnd": 9194,
+          "docs": {
+            "brief": "Writes a single int32 (int/cell) to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a single int32 (int/cell) to a file."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data to write."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "WriteLine": {
+          "name": "WriteLine",
+          "refLine": 175,
+          "docStart": 6894,
+          "docEnd": 7199,
+          "docs": {
+            "brief": "Writes a line of text to a text file.  A newline is automatically appended.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a line of text to a text file.  A newline is automatically appended."
+              },
+              {
+                "tag": "param:hndl",
+                "text": "Handle to the file."
+              },
+              {
+                "tag": "param:format",
+                "text": "Formatting rules."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of format parameters."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "format",
+              "decl": "const char[] format",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "ReadInt8": {
+          "name": "ReadInt8",
+          "refLine": 182,
+          "docStart": 7266,
+          "docEnd": 7492,
+          "docs": {
+            "brief": "Reads a single int8 (byte) from a file. The returned value is sign-\nextended to an int32.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single int8 (byte) from a file. The returned value is sign-\nextended to an int32."
+              },
+              {
+                "tag": "param:data",
+                "text": "Variable to store the data read."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "data",
+              "decl": "int& data",
+              "default": null
+            }
+          ]
+        },
+        "ReadInt32": {
+          "name": "ReadInt32",
+          "refLine": 209,
+          "docStart": 8365,
+          "docEnd": 8541,
+          "docs": {
+            "brief": "Reads a single int32 (int/cell) from a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single int32 (int/cell) from a file."
+              },
+              {
+                "tag": "param:data",
+                "text": "Variable to store the data read."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "data",
+              "decl": "int& data",
+              "default": null
+            }
+          ]
+        },
+        "ReadInt16": {
+          "name": "ReadInt16",
+          "refLine": 196,
+          "docStart": 7822,
+          "docEnd": 8040,
+          "docs": {
+            "brief": "Reads a single int16 (short) from a file. The value is sign-extended to\nan int32.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single int16 (short) from a file. The value is sign-extended to\nan int32."
+              },
+              {
+                "tag": "param:data",
+                "text": "Variable to store the data read."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "data",
+              "decl": "int& data",
+              "default": null
+            }
+          ]
+        },
+        "WriteInt16": {
+          "name": "WriteInt16",
+          "refLine": 221,
+          "docStart": 8811,
+          "docEnd": 8989,
+          "docs": {
+            "brief": "Writes a single int16 (short) to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a single int16 (short) to a file."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data to write (truncated to an int16)."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "data",
+              "decl": "int data",
+              "default": null
+            }
+          ]
+        },
+        "Write": {
+          "name": "Write",
+          "refLine": 160,
+          "docStart": 5922,
+          "docEnd": 6523,
+          "docs": {
+            "brief": "Writes binary data to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes binary data to a file."
+              },
+              {
+                "tag": "param:items",
+                "text": "Array of items to write.  The data is read directly.\nThat is, in 1 or 2-byte mode, the lower byte(s) in\neach cell are used directly, rather than performing\nany casts from a 4-byte number to a smaller number."
+              },
+              {
+                "tag": "param:num_items",
+                "text": "Number of items in the array."
+              },
+              {
+                "tag": "param:size",
+                "text": "Size of each item in the array in bytes.\nValid sizes are 1, 2, or 4."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const any[]",
+              "name": "items",
+              "decl": "const any[] items",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "num_items",
+              "decl": "int num_items",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": null
+            }
+          ]
+        },
+        "Size": {
+          "name": "Size",
+          "refLine": 118,
+          "docStart": 4238,
+          "docEnd": 4334,
+          "docs": {
+            "brief": "Get the file size in bytes.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get the file size in bytes."
+              },
+              {
+                "tag": "return",
+                "text": "File size in bytes, -1 on error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "WriteString": {
+          "name": "WriteString",
+          "refLine": 167,
+          "docStart": 6600,
+          "docEnd": 6823,
+          "docs": {
+            "brief": "Writes a binary string to a file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a binary string to a file."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String to write."
+              },
+              {
+                "tag": "param:term",
+                "text": "True to append NUL terminator, false otherwise."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "buffer",
+              "decl": "const char[] buffer",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "term",
+              "decl": "bool term",
+              "default": null
+            }
+          ]
+        },
+        "ReadUint16": {
+          "name": "ReadUint16",
+          "refLine": 203,
+          "docStart": 8088,
+          "docEnd": 8316,
+          "docs": {
+            "brief": "Reads a single unt16 (unsigned short) from a file. The value is zero-\nextended to an int32.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single unt16 (unsigned short) from a file. The value is zero-\nextended to an int32."
+              },
+              {
+                "tag": "param:data",
+                "text": "Variable to store the data read."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "data",
+              "decl": "int& data",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Position": {
+          "name": "Position",
+          "refLine": 249,
+          "docStart": 9999,
+          "docEnd": 10062,
+          "docs": {
+            "brief": "Get the current position in the file; returns -1 on failure.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Get the current position in the file; returns -1 on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "DirectoryListing": {
+      "name": "DirectoryListing",
+      "refLine": 91,
+      "docStart": 3138,
+      "docEnd": 3265,
+      "docs": {
+        "brief": "A DirectoryListing iterates over the contents of a directory. To obtain a\nDirectoryListing handle, call OpenDirectory().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A DirectoryListing iterates over the contents of a directory. To obtain a\nDirectoryListing handle, call OpenDirectory()."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetNext": {
+          "name": "GetNext",
+          "refLine": 102,
+          "docStart": 3308,
+          "docEnd": 3771,
+          "docs": {
+            "brief": "Reads the current directory entry as a local filename, then moves to the\nnext file.\n\nNote: Both the '.' and '..' automatic directory entries will be retrieved.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads the current directory entry as a local filename, then moves to the\nnext file.\n\nNote: Both the '.' and '..' automatic directory entries will be retrieved."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to hold directory name."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of string buffer."
+              },
+              {
+                "tag": "param:type",
+                "text": "Optional variable to store the file type."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there are no more files to read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "FileType&",
+              "name": "type",
+              "decl": "FileType& type",
+              "default": "FileType_Unknown"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SEEK_CUR": {
+      "name": "SEEK_CUR",
+      "refLine": 78,
+      "docStart": 2924,
+      "docEnd": 2959,
+      "docs": {
+        "brief": "Seek from current position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Seek from current position."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "PLATFORM_MAX_PATH": {
+      "name": "PLATFORM_MAX_PATH",
+      "refLine": 75,
+      "docStart": 2802,
+      "docEnd": 2830,
+      "docs": {
+        "brief": "Maximum path length.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum path length."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "256"
+    },
+    "FPERM_U_READ": {
+      "name": "FPERM_U_READ",
+      "refLine": 588,
+      "docStart": 24943,
+      "docEnd": 24963,
+      "docs": {
+        "brief": "User can read.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "User can read."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0100"
+    },
+    "FPERM_G_READ": {
+      "name": "FPERM_G_READ",
+      "refLine": 591,
+      "docStart": 25118,
+      "docEnd": 25139,
+      "docs": {
+        "brief": "Group can read.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Group can read."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0020"
+    },
+    "SEEK_END": {
+      "name": "SEEK_END",
+      "refLine": 79,
+      "docStart": 2993,
+      "docEnd": 3024,
+      "docs": {
+        "brief": "Seek from end position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Seek from end position."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "FPERM_O_READ": {
+      "name": "FPERM_O_READ",
+      "refLine": 594,
+      "docStart": 25296,
+      "docEnd": 25318,
+      "docs": {
+        "brief": "Anyone can read.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Anyone can read."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0004"
+    },
+    "FPERM_O_WRITE": {
+      "name": "FPERM_O_WRITE",
+      "refLine": 595,
+      "docStart": 25356,
+      "docEnd": 25379,
+      "docs": {
+        "brief": "Anyone can write.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Anyone can write."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0002"
+    },
+    "FPERM_O_EXEC": {
+      "name": "FPERM_O_EXEC",
+      "refLine": 596,
+      "docStart": 25417,
+      "docEnd": 25439,
+      "docs": {
+        "brief": "Anyone can exec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Anyone can exec."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0001"
+    },
+    "FPERM_G_WRITE": {
+      "name": "FPERM_G_WRITE",
+      "refLine": 592,
+      "docStart": 25177,
+      "docEnd": 25199,
+      "docs": {
+        "brief": "Group can write.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Group can write."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0010"
+    },
+    "FPERM_U_EXEC": {
+      "name": "FPERM_U_EXEC",
+      "refLine": 590,
+      "docStart": 25060,
+      "docEnd": 25080,
+      "docs": {
+        "brief": "User can exec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "User can exec."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0040"
+    },
+    "FPERM_G_EXEC": {
+      "name": "FPERM_G_EXEC",
+      "refLine": 593,
+      "docStart": 25237,
+      "docEnd": 25258,
+      "docs": {
+        "brief": "Group can exec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Group can exec."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0008"
+    },
+    "SEEK_SET": {
+      "name": "SEEK_SET",
+      "refLine": 77,
+      "docStart": 2866,
+      "docEnd": 2890,
+      "docs": {
+        "brief": "Seek from start.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Seek from start."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "FPERM_U_WRITE": {
+      "name": "FPERM_U_WRITE",
+      "refLine": 589,
+      "docStart": 25001,
+      "docEnd": 25022,
+      "docs": {
+        "brief": "User can write.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "User can write."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0080"
+    },
+    "_files_included": {
+      "name": "_files_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "PathType": {
+      "name": "PathType",
+      "refLine": 84,
+      "docStart": 3028,
+      "docEnd": 3052,
+      "docs": {
+        "brief": "Path types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Path types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Path_SM": {
+          "name": "Path_SM",
+          "refLine": 86,
+          "docStart": 3101,
+          "docEnd": 3130,
+          "docs": {
+            "brief": "SourceMod root folder",
+            "tags": [
+              {
+                "tag": "",
+                "text": "SourceMod root folder"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "FileOpResult": {
+      "name": "FileOpResult",
+      "refLine": 616,
+      "docStart": 26461,
+      "docEnd": 26529,
+      "docs": {
+        "brief": "Results reported by asynchronous filesystem operations.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Results reported by asynchronous filesystem operations."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "FileOp_NotFound": {
+          "name": "FileOp_NotFound",
+          "refLine": 619,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "FileOp_Error": {
+          "name": "FileOp_Error",
+          "refLine": 620,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "FileOp_Success": {
+          "name": "FileOp_Success",
+          "refLine": 618,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "FileTimeMode": {
+      "name": "FileTimeMode",
+      "refLine": 68,
+      "docStart": 2518,
+      "docEnd": 2547,
+      "docs": {
+        "brief": "File time modes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "File time modes."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "FileTime_LastChange": {
+          "name": "FileTime_LastChange",
+          "refLine": 72,
+          "docStart": 2739,
+          "docEnd": 2762,
+          "docs": {
+            "brief": "Last modification",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Last modification"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "FileTime_Created": {
+          "name": "FileTime_Created",
+          "refLine": 71,
+          "docStart": 2671,
+          "docEnd": 2708,
+          "docs": {
+            "brief": "Creation (does not work on FAT)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creation (does not work on FAT)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "FileTime_LastAccess": {
+          "name": "FileTime_LastAccess",
+          "refLine": 70,
+          "docStart": 2600,
+          "docEnd": 2640,
+          "docs": {
+            "brief": "Last access (does not work on FAT)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Last access (does not work on FAT)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "FileType": {
+      "name": "FileType",
+      "refLine": 58,
+      "docStart": 2297,
+      "docEnd": 2327,
+      "docs": {
+        "brief": "File inode types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "File inode types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "FileType_Directory": {
+          "name": "FileType_Directory",
+          "refLine": 61,
+          "docStart": 2438,
+          "docEnd": 2463,
+          "docs": {
+            "brief": "File is a directory",
+            "tags": [
+              {
+                "tag": "",
+                "text": "File is a directory"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "FileType_File": {
+          "name": "FileType_File",
+          "refLine": 62,
+          "docStart": 2490,
+          "docEnd": 2510,
+          "docs": {
+            "brief": "File is a file",
+            "tags": [
+              {
+                "tag": "",
+                "text": "File is a file"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "FileType_Unknown": {
+          "name": "FileType_Unknown",
+          "refLine": 60,
+          "docStart": 2372,
+          "docEnd": 2411,
+          "docs": {
+            "brief": "Unknown file type (device/socket)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Unknown file type (device/socket)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "FileOpCallback": {
+      "name": "FileOpCallback",
+      "refLine": 630,
+      "docStart": 26616,
+      "docEnd": 26854,
+      "docs": {
+        "brief": "Called when an asynchronous filesystem operation completes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an asynchronous filesystem operation completes."
+          },
+          {
+            "tag": "param:result",
+            "text": "Operation result."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path supplied to the operation."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data supplied to the operation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(FileOpResult result, const char[] path, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "FileOpResult",
+            "name": "result",
+            "decl": "FileOpResult result",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "path",
+            "decl": "const char[] path",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "FileExistsCallback": {
+      "name": "FileExistsCallback",
+      "refLine": 639,
+      "docStart": 26949,
+      "docEnd": 27227,
+      "docs": {
+        "brief": "Called when an asynchronous existence check completes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an asynchronous existence check completes."
+          },
+          {
+            "tag": "param:exists",
+            "text": "Whether the requested entry exists and has the requested type."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path supplied to the operation."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data supplied to the operation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(bool exists, const char[] path, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "bool",
+            "name": "exists",
+            "decl": "bool exists",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "path",
+            "decl": "const char[] path",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "FileSizeCallback": {
+      "name": "FileSizeCallback",
+      "refLine": 649,
+      "docStart": 27318,
+      "docEnd": 27614,
+      "docs": {
+        "brief": "Called when an asynchronous file-size query completes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an asynchronous file-size query completes."
+          },
+          {
+            "tag": "param:result",
+            "text": "Operation result."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path supplied to the operation."
+          },
+          {
+            "tag": "param:size",
+            "text": "File size in bytes, or -1 on failure."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data supplied to the operation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(FileOpResult result, const char[] path, int size, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "FileOpResult",
+            "name": "result",
+            "decl": "FileOpResult result",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "path",
+            "decl": "const char[] path",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "size",
+            "decl": "int size",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "FileDirectoryCallback": {
+      "name": "FileDirectoryCallback",
+      "refLine": 678,
+      "docStart": 28402,
+      "docEnd": 28922,
+      "docs": {
+        "brief": "Called when an asynchronous directory snapshot has been materialized.\n\nOn success, listing contains a fully-materialized DirectoryListing and must\nbe closed by the callback. It is independent of later filesystem changes.\nOn failure, listing is null.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an asynchronous directory snapshot has been materialized.\n\nOn success, listing contains a fully-materialized DirectoryListing and must\nbe closed by the callback. It is independent of later filesystem changes.\nOn failure, listing is null."
+          },
+          {
+            "tag": "param:result",
+            "text": "Operation result."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path supplied to the operation."
+          },
+          {
+            "tag": "param:listing",
+            "text": "Materialized directory listing, or null on failure."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data supplied to the operation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(FileOpResult result, const char[] path, DirectoryListing listing, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "FileOpResult",
+            "name": "result",
+            "decl": "FileOpResult result",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "path",
+            "decl": "const char[] path",
+            "default": null
+          },
+          {
+            "type": "DirectoryListing",
+            "name": "listing",
+            "decl": "DirectoryListing listing",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "FileReadCallback": {
+      "name": "FileReadCallback",
+      "refLine": 664,
+      "docStart": 27721,
+      "docEnd": 28272,
+      "docs": {
+        "brief": "Called when an asynchronous whole-file read completes.\n\ncontents contains the raw file bytes. It is binary-safe, including embedded\nNUL bytes, and its length is given by size. Do not use string-focused natives\non it unless the data is known to be a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an asynchronous whole-file read completes.\n\ncontents contains the raw file bytes. It is binary-safe, including embedded\nNUL bytes, and its length is given by size. Do not use string-focused natives\non it unless the data is known to be a string."
+          },
+          {
+            "tag": "param:result",
+            "text": "Operation result."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path supplied to the operation."
+          },
+          {
+            "tag": "param:contents",
+            "text": "Raw-byte buffer."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of file bytes in contents."
+          },
+          {
+            "tag": "param:data",
+            "text": "User data supplied to the operation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(FileOpResult result, const char[] path, const char[] contents, int size, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "FileOpResult",
+            "name": "result",
+            "decl": "FileOpResult result",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "path",
+            "decl": "const char[] path",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "contents",
+            "decl": "const char[] contents",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "size",
+            "decl": "int size",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1678 @@
+{
+  "functions": {
+    "TE_SetupDust": {
+      "name": "TE_SetupDust",
+      "refLine": 121,
+      "docStart": 4583,
+      "docEnd": 4808,
+      "docs": {
+        "brief": "Sets up a dust cloud effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a dust cloud effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the dust."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Direction of the dust."
+          },
+          {
+            "tag": "param:Size",
+            "text": "Dust cloud size."
+          },
+          {
+            "tag": "param:Speed",
+            "text": "Dust cloud speed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Size",
+          "decl": "float Size",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Speed",
+          "decl": "float Speed",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupSmoke": {
+      "name": "TE_SetupSmoke",
+      "refLine": 104,
+      "docStart": 4081,
+      "docEnd": 4312,
+      "docs": {
+        "brief": "Sets up a smoke effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a smoke effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the smoke."
+          },
+          {
+            "tag": "param:Model",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:Scale",
+            "text": "Scale of the smoke."
+          },
+          {
+            "tag": "param:FrameRate",
+            "text": "Frame rate of the smoke."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Model",
+          "decl": "int Model",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Scale",
+          "decl": "float Scale",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FrameRate",
+          "decl": "int FrameRate",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupGlowSprite": {
+      "name": "TE_SetupGlowSprite",
+      "refLine": 197,
+      "docStart": 6792,
+      "docEnd": 7074,
+      "docs": {
+        "brief": "Sets up a glowing sprite effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a glowing sprite effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the sprite."
+          },
+          {
+            "tag": "param:Model",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the sprite."
+          },
+          {
+            "tag": "param:Size",
+            "text": "Sprite size."
+          },
+          {
+            "tag": "param:Brightness",
+            "text": "Sprite brightness."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Model",
+          "decl": "int Model",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Size",
+          "decl": "float Size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Brightness",
+          "decl": "int Brightness",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupBloodSprite": {
+      "name": "TE_SetupBloodSprite",
+      "refLine": 244,
+      "docStart": 8443,
+      "docEnd": 8779,
+      "docs": {
+        "brief": "Sets up a blood sprite effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a blood sprite effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the sprite."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sprite direction."
+          },
+          {
+            "tag": "param:color",
+            "text": "Color array (r, g, b, a)."
+          },
+          {
+            "tag": "param:Size",
+            "text": "Sprite size."
+          },
+          {
+            "tag": "param:SprayModel",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:BloodDropModel",
+            "text": "Precached model index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "color",
+          "decl": "const int color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Size",
+          "decl": "int Size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "SprayModel",
+          "decl": "int SprayModel",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "BloodDropModel",
+          "decl": "int BloodDropModel",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupSparks": {
+      "name": "TE_SetupSparks",
+      "refLine": 87,
+      "docStart": 3555,
+      "docEnd": 3786,
+      "docs": {
+        "brief": "Sets up a sparks effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a sparks effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the sparks."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Direction of the sparks."
+          },
+          {
+            "tag": "param:Magnitude",
+            "text": "Sparks size."
+          },
+          {
+            "tag": "param:TrailLength",
+            "text": "Trail lenght of the sparks."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Magnitude",
+          "decl": "int Magnitude",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "TrailLength",
+          "decl": "int TrailLength",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupBeamRing": {
+      "name": "TE_SetupBeamRing",
+      "refLine": 393,
+      "docStart": 14056,
+      "docEnd": 14680,
+      "docs": {
+        "brief": "Sets up a beam ring effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a beam ring effect."
+          },
+          {
+            "tag": "param:StartEntity",
+            "text": "Entity index from where the ring starts."
+          },
+          {
+            "tag": "param:EndEntity",
+            "text": "Entity index from where the ring ends."
+          },
+          {
+            "tag": "param:ModelIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:HaloIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:StartFrame",
+            "text": "Initial frame to render."
+          },
+          {
+            "tag": "param:FrameRate",
+            "text": "Ring frame rate."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the ring."
+          },
+          {
+            "tag": "param:Width",
+            "text": "Beam width."
+          },
+          {
+            "tag": "param:Amplitude",
+            "text": "Beam amplitude."
+          },
+          {
+            "tag": "param:Color",
+            "text": "Color array (r, g, b, a)."
+          },
+          {
+            "tag": "param:Speed",
+            "text": "Speed of the beam."
+          },
+          {
+            "tag": "param:Flags",
+            "text": "Beam flags."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "StartEntity",
+          "decl": "int StartEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "EndEntity",
+          "decl": "int EndEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ModelIndex",
+          "decl": "int ModelIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "HaloIndex",
+          "decl": "int HaloIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "StartFrame",
+          "decl": "int StartFrame",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FrameRate",
+          "decl": "int FrameRate",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Width",
+          "decl": "float Width",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Amplitude",
+          "decl": "float Amplitude",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "Color",
+          "decl": "const int Color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Speed",
+          "decl": "int Speed",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Flags",
+          "decl": "int Flags",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupExplosion": {
+      "name": "TE_SetupExplosion",
+      "refLine": 220,
+      "docStart": 7402,
+      "docEnd": 7860,
+      "docs": {
+        "brief": "Sets up a explosion effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a explosion effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Explosion position."
+          },
+          {
+            "tag": "param:Model",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:Scale",
+            "text": "Explosion scale."
+          },
+          {
+            "tag": "param:Framerate",
+            "text": "Explosion frame rate."
+          },
+          {
+            "tag": "param:Flags",
+            "text": "Explosion flags."
+          },
+          {
+            "tag": "param:Radius",
+            "text": "Explosion radius."
+          },
+          {
+            "tag": "param:Magnitude",
+            "text": "Explosion size."
+          },
+          {
+            "tag": "param:normal",
+            "text": "Normal vector to the explosion."
+          },
+          {
+            "tag": "param:MaterialType",
+            "text": "Exploded material type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Model",
+          "decl": "int Model",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Scale",
+          "decl": "float Scale",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Framerate",
+          "decl": "int Framerate",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Flags",
+          "decl": "int Flags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Radius",
+          "decl": "int Radius",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Magnitude",
+          "decl": "int Magnitude",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "normal",
+          "decl": "const float normal[3]",
+          "default": "{ 0.000000, 0.000000, 1.000000 }"
+        },
+        {
+          "type": "int",
+          "name": "MaterialType",
+          "decl": "int MaterialType",
+          "default": "'C'"
+        }
+      ]
+    },
+    "TE_SetupBeamRingPoint": {
+      "name": "TE_SetupBeamRingPoint",
+      "refLine": 275,
+      "docStart": 9277,
+      "docEnd": 9921,
+      "docs": {
+        "brief": "Sets up a beam ring point effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a beam ring point effect."
+          },
+          {
+            "tag": "param:center",
+            "text": "Center position of the ring."
+          },
+          {
+            "tag": "param:Start_Radius",
+            "text": "Initial ring radius."
+          },
+          {
+            "tag": "param:End_Radius",
+            "text": "Final ring radius."
+          },
+          {
+            "tag": "param:ModelIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:HaloIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:StartFrame",
+            "text": "Initial frame to render."
+          },
+          {
+            "tag": "param:FrameRate",
+            "text": "Ring frame rate."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the ring."
+          },
+          {
+            "tag": "param:Width",
+            "text": "Beam width."
+          },
+          {
+            "tag": "param:Amplitude",
+            "text": "Beam amplitude."
+          },
+          {
+            "tag": "param:Color",
+            "text": "Color array (r, g, b, a)."
+          },
+          {
+            "tag": "param:Speed",
+            "text": "Speed of the beam."
+          },
+          {
+            "tag": "param:Flags",
+            "text": "Beam flags."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "center",
+          "decl": "const float center[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Start_Radius",
+          "decl": "float Start_Radius",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "End_Radius",
+          "decl": "float End_Radius",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ModelIndex",
+          "decl": "int ModelIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "HaloIndex",
+          "decl": "int HaloIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "StartFrame",
+          "decl": "int StartFrame",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FrameRate",
+          "decl": "int FrameRate",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Width",
+          "decl": "float Width",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Amplitude",
+          "decl": "float Amplitude",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "Color",
+          "decl": "const int Color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Speed",
+          "decl": "int Speed",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Flags",
+          "decl": "int Flags",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupArmorRicochet": {
+      "name": "TE_SetupArmorRicochet",
+      "refLine": 181,
+      "docStart": 6443,
+      "docEnd": 6608,
+      "docs": {
+        "brief": "Sets up an armor ricochet effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up an armor ricochet effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the armor ricochet."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Direction of the armor ricochet."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupMetalSparks": {
+      "name": "TE_SetupMetalSparks",
+      "refLine": 153,
+      "docStart": 5650,
+      "docEnd": 5808,
+      "docs": {
+        "brief": "Sets up a metal sparks effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a metal sparks effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the metal sparks."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Direction of the metal sparks."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupBeamLaser": {
+      "name": "TE_SetupBeamLaser",
+      "refLine": 355,
+      "docStart": 12456,
+      "docEnd": 13158,
+      "docs": {
+        "brief": "Sets up an entity to entity laser effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up an entity to entity laser effect."
+          },
+          {
+            "tag": "param:StartEntity",
+            "text": "Entity index from where the beam starts."
+          },
+          {
+            "tag": "param:EndEntity",
+            "text": "Entity index from where the beam ends."
+          },
+          {
+            "tag": "param:ModelIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:HaloIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:StartFrame",
+            "text": "Initial frame to render."
+          },
+          {
+            "tag": "param:FrameRate",
+            "text": "Beam frame rate."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the beam."
+          },
+          {
+            "tag": "param:Width",
+            "text": "Initial beam width."
+          },
+          {
+            "tag": "param:EndWidth",
+            "text": "Final beam width."
+          },
+          {
+            "tag": "param:FadeLength",
+            "text": "Beam fade time duration."
+          },
+          {
+            "tag": "param:Amplitude",
+            "text": "Beam amplitude."
+          },
+          {
+            "tag": "param:Color",
+            "text": "Color array (r, g, b, a)."
+          },
+          {
+            "tag": "param:Speed",
+            "text": "Speed of the beam."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "StartEntity",
+          "decl": "int StartEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "EndEntity",
+          "decl": "int EndEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ModelIndex",
+          "decl": "int ModelIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "HaloIndex",
+          "decl": "int HaloIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "StartFrame",
+          "decl": "int StartFrame",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FrameRate",
+          "decl": "int FrameRate",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Width",
+          "decl": "float Width",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "EndWidth",
+          "decl": "float EndWidth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FadeLength",
+          "decl": "int FadeLength",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Amplitude",
+          "decl": "float Amplitude",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "Color",
+          "decl": "const int Color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Speed",
+          "decl": "int Speed",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupMuzzleFlash": {
+      "name": "TE_SetupMuzzleFlash",
+      "refLine": 138,
+      "docStart": 5082,
+      "docEnd": 5367,
+      "docs": {
+        "brief": "Sets up a muzzle flash effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a muzzle flash effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the muzzle flash."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Rotation angles of the muzzle flash."
+          },
+          {
+            "tag": "param:Scale",
+            "text": "Scale of the muzzle flash."
+          },
+          {
+            "tag": "param:Type",
+            "text": "Muzzle flash type to render (Mod specific)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angles",
+          "decl": "const float angles[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Scale",
+          "decl": "float Scale",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Type",
+          "decl": "int Type",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupBeamFollow": {
+      "name": "TE_SetupBeamFollow",
+      "refLine": 427,
+      "docStart": 15571,
+      "docEnd": 16020,
+      "docs": {
+        "brief": "Sets up a follow beam effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a follow beam effect."
+          },
+          {
+            "tag": "param:EntIndex",
+            "text": "Entity index from where the beam starts."
+          },
+          {
+            "tag": "param:ModelIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:HaloIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the beam."
+          },
+          {
+            "tag": "param:Width",
+            "text": "Initial beam width."
+          },
+          {
+            "tag": "param:EndWidth",
+            "text": "Final beam width."
+          },
+          {
+            "tag": "param:FadeLength",
+            "text": "Beam fade time duration."
+          },
+          {
+            "tag": "param:Color",
+            "text": "Color array (r, g, b, a)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "EntIndex",
+          "decl": "int EntIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ModelIndex",
+          "decl": "int ModelIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "HaloIndex",
+          "decl": "int HaloIndex",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Width",
+          "decl": "float Width",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "EndWidth",
+          "decl": "float EndWidth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FadeLength",
+          "decl": "int FadeLength",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "Color",
+          "decl": "const int Color[4]",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupEnergySplash": {
+      "name": "TE_SetupEnergySplash",
+      "refLine": 167,
+      "docStart": 5988,
+      "docEnd": 6203,
+      "docs": {
+        "brief": "Sets up an energy splash effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up an energy splash effect."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the energy splash."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Direction of the energy splash."
+          },
+          {
+            "tag": "param:Explosive",
+            "text": "Makes the effect explosive."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "Explosive",
+          "decl": "bool Explosive",
+          "default": null
+        }
+      ]
+    },
+    "TE_SetupBeamPoints": {
+      "name": "TE_SetupBeamPoints",
+      "refLine": 316,
+      "docStart": 10892,
+      "docEnd": 11564,
+      "docs": {
+        "brief": "Sets up a point to point beam effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets up a point to point beam effect."
+          },
+          {
+            "tag": "param:start",
+            "text": "Start position of the beam."
+          },
+          {
+            "tag": "param:end",
+            "text": "End position of the beam."
+          },
+          {
+            "tag": "param:ModelIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:HaloIndex",
+            "text": "Precached model index."
+          },
+          {
+            "tag": "param:StartFrame",
+            "text": "Initial frame to render."
+          },
+          {
+            "tag": "param:FrameRate",
+            "text": "Beam frame rate."
+          },
+          {
+            "tag": "param:Life",
+            "text": "Time duration of the beam."
+          },
+          {
+            "tag": "param:Width",
+            "text": "Initial beam width."
+          },
+          {
+            "tag": "param:EndWidth",
+            "text": "Final beam width."
+          },
+          {
+            "tag": "param:FadeLength",
+            "text": "Beam fade time duration."
+          },
+          {
+            "tag": "param:Amplitude",
+            "text": "Beam amplitude."
+          },
+          {
+            "tag": "param:Color",
+            "text": "Color array (r, g, b, a)."
+          },
+          {
+            "tag": "param:Speed",
+            "text": "Speed of the beam."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "start",
+          "decl": "const float start[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "end",
+          "decl": "const float end[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ModelIndex",
+          "decl": "int ModelIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "HaloIndex",
+          "decl": "int HaloIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "StartFrame",
+          "decl": "int StartFrame",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FrameRate",
+          "decl": "int FrameRate",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Life",
+          "decl": "float Life",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Width",
+          "decl": "float Width",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "EndWidth",
+          "decl": "float EndWidth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "FadeLength",
+          "decl": "int FadeLength",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "Amplitude",
+          "decl": "float Amplitude",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "Color",
+          "decl": "const int Color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "Speed",
+          "decl": "int Speed",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "FBEAM_STARTENTITY": {
+      "name": "FBEAM_STARTENTITY",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000001"
+    },
+    "FBEAM_SINENOISE": {
+      "name": "FBEAM_SINENOISE",
+      "refLine": 62,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000010"
+    },
+    "TE_EXPLFLAG_NOFIREBALL": {
+      "name": "TE_EXPLFLAG_NOFIREBALL",
+      "refLine": 48,
+      "docStart": 2363,
+      "docEnd": 2393,
+      "docs": {
+        "brief": "do not draw a fireball",
+        "tags": [
+          {
+            "tag": "",
+            "text": "do not draw a fireball"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x40"
+    },
+    "TE_EXPLFLAG_NONE": {
+      "name": "TE_EXPLFLAG_NONE",
+      "refLine": 41,
+      "docStart": 1729,
+      "docEnd": 1786,
+      "docs": {
+        "brief": "all flags clear makes default Half-Life explosion",
+        "tags": [
+          {
+            "tag": "",
+            "text": "all flags clear makes default Half-Life explosion"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0"
+    },
+    "FBEAM_STARTVISIBLE": {
+      "name": "FBEAM_STARTVISIBLE",
+      "refLine": 69,
+      "docStart": 3148,
+      "docEnd": 3215,
+      "docs": {
+        "brief": "Has this client actually seen this beam's start entity yet?",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Has this client actually seen this beam's start entity yet?"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000800"
+    },
+    "FBEAM_FOREVER": {
+      "name": "FBEAM_FOREVER",
+      "refLine": 72,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00004000"
+    },
+    "TE_EXPLFLAG_ROTATE": {
+      "name": "TE_EXPLFLAG_ROTATE",
+      "refLine": 47,
+      "docStart": 2285,
+      "docEnd": 2319,
+      "docs": {
+        "brief": "rotate the sprite randomly",
+        "tags": [
+          {
+            "tag": "",
+            "text": "rotate the sprite randomly"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x20"
+    },
+    "FBEAM_FADEOUT": {
+      "name": "FBEAM_FADEOUT",
+      "refLine": 61,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000008"
+    },
+    "FBEAM_USE_HITBOXES": {
+      "name": "FBEAM_USE_HITBOXES",
+      "refLine": 68,
+      "docStart": 3029,
+      "docEnd": 3106,
+      "docs": {
+        "brief": "Attachment indices represent hitbox indices instead when this is set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Attachment indices represent hitbox indices instead when this is set."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000400"
+    },
+    "FBEAM_NOTILE": {
+      "name": "FBEAM_NOTILE",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000200"
+    },
+    "FBEAM_HALOBEAM": {
+      "name": "FBEAM_HALOBEAM",
+      "refLine": 73,
+      "docStart": 3444,
+      "docEnd": 3523,
+      "docs": {
+        "brief": "When drawing a beam with a halo, don't ignore the segments and endwidth",
+        "tags": [
+          {
+            "tag": "",
+            "text": "When drawing a beam with a halo, don't ignore the segments and endwidth"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00008000"
+    },
+    "TE_EXPLFLAG_NOADDITIVE": {
+      "name": "TE_EXPLFLAG_NOADDITIVE",
+      "refLine": 42,
+      "docStart": 1830,
+      "docEnd": 1924,
+      "docs": {
+        "brief": "sprite will be drawn opaque (ensure that the sprite you send is a non-additive sprite)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "sprite will be drawn opaque (ensure that the sprite you send is a non-additive sprite)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x1"
+    },
+    "FBEAM_ISACTIVE": {
+      "name": "FBEAM_ISACTIVE",
+      "refLine": 71,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00002000"
+    },
+    "FBEAM_SHADEOUT": {
+      "name": "FBEAM_SHADEOUT",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000080"
+    },
+    "FBEAM_FADEIN": {
+      "name": "FBEAM_FADEIN",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000004"
+    },
+    "FBEAM_SOLID": {
+      "name": "FBEAM_SOLID",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000020"
+    },
+    "_te_stocks_included": {
+      "name": "_te_stocks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TE_EXPLFLAG_NOSOUND": {
+      "name": "TE_EXPLFLAG_NOSOUND",
+      "refLine": 44,
+      "docStart": 2048,
+      "docEnd": 2090,
+      "docs": {
+        "brief": "do not play client explosion sound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "do not play client explosion sound"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x4"
+    },
+    "FBEAM_SHADEIN": {
+      "name": "FBEAM_SHADEIN",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000040"
+    },
+    "TE_EXPLFLAG_DRAWALPHA": {
+      "name": "TE_EXPLFLAG_DRAWALPHA",
+      "refLine": 46,
+      "docStart": 2207,
+      "docEnd": 2241,
+      "docs": {
+        "brief": "sprite will be drawn alpha",
+        "tags": [
+          {
+            "tag": "",
+            "text": "sprite will be drawn alpha"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x10"
+    },
+    "TE_EXPLFLAG_NODLIGHTS": {
+      "name": "TE_EXPLFLAG_NODLIGHTS",
+      "refLine": 43,
+      "docStart": 1968,
+      "docEnd": 2004,
+      "docs": {
+        "brief": "do not render dynamic lights",
+        "tags": [
+          {
+            "tag": "",
+            "text": "do not render dynamic lights"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x2"
+    },
+    "FBEAM_ENDVISIBLE": {
+      "name": "FBEAM_ENDVISIBLE",
+      "refLine": 70,
+      "docStart": 3257,
+      "docEnd": 3322,
+      "docs": {
+        "brief": "Has this client actually seen this beam's end entity yet?",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Has this client actually seen this beam's end entity yet?"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00001000"
+    },
+    "TE_EXPLFLAG_NOPARTICLES": {
+      "name": "TE_EXPLFLAG_NOPARTICLES",
+      "refLine": 45,
+      "docStart": 2134,
+      "docEnd": 2163,
+      "docs": {
+        "brief": "do not draw particles",
+        "tags": [
+          {
+            "tag": "",
+            "text": "do not draw particles"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x8"
+    },
+    "TE_EXPLFLAG_NOFIREBALLSMOKE": {
+      "name": "TE_EXPLFLAG_NOFIREBALLSMOKE",
+      "refLine": 49,
+      "docStart": 2437,
+      "docEnd": 2480,
+      "docs": {
+        "brief": "do not draw smoke with the fireball",
+        "tags": [
+          {
+            "tag": "",
+            "text": "do not draw smoke with the fireball"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x80"
+    },
+    "FBEAM_ENDENTITY": {
+      "name": "FBEAM_ENDENTITY",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x00000002"
+    },
+    "FBEAM_ONLYNOISEONCE": {
+      "name": "FBEAM_ONLYNOISEONCE",
+      "refLine": 66,
+      "docStart": 2910,
+      "docEnd": 2947,
+      "docs": {
+        "brief": "Only calculate our noise once",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Only calculate our noise once"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000100"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

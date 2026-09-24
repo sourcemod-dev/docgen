@@ -1,0 +1,1040 @@
+{
+  "functions": {
+    "PrepSDKCall_SetSignature": {
+      "name": "PrepSDKCall_SetSignature",
+      "refLine": 134,
+      "docStart": 4682,
+      "docEnd": 5201,
+      "docs": {
+        "brief": "Finds an address in a library and sets it as the address to use for the SDK call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds an address in a library and sets it as the address to use for the SDK call."
+          },
+          {
+            "tag": "param:lib",
+            "text": "Library to use."
+          },
+          {
+            "tag": "param:signature",
+            "text": "Binary data to search for in the library.  If it starts with '@',\nthe bytes parameter is ignored and the signature is interpreted\nas a symbol lookup in the library."
+          },
+          {
+            "tag": "param:bytes",
+            "text": "Number of bytes in the binary search string."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if nothing was found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "SDKLibrary",
+          "name": "lib",
+          "decl": "SDKLibrary lib",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "signature",
+          "decl": "const char[] signature",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bytes",
+          "decl": "int bytes",
+          "default": null
+        }
+      ]
+    },
+    "PrepSDKCall_SetReturnInfo": {
+      "name": "PrepSDKCall_SetReturnInfo",
+      "refLine": 166,
+      "docStart": 6108,
+      "docEnd": 6568,
+      "docs": {
+        "brief": "Sets the return information of an SDK call.  Do not call this if there is no return data.\nThis must be called if there is a return value (i.e. it is not necessarily safe to ignore\nthe data).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the return information of an SDK call.  Do not call this if there is no return data.\nThis must be called if there is a return value (i.e. it is not necessarily safe to ignore\nthe data)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Data type to convert to/from."
+          },
+          {
+            "tag": "param:pass",
+            "text": "How the data is passed in C++."
+          },
+          {
+            "tag": "param:decflags",
+            "text": "Flags on decoding from the plugin to C++."
+          },
+          {
+            "tag": "param:encflags",
+            "text": "Flags on encoding from C++ to the plugin."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "SDKType",
+          "name": "type",
+          "decl": "SDKType type",
+          "default": null
+        },
+        {
+          "type": "SDKPassMethod",
+          "name": "pass",
+          "decl": "SDKPassMethod pass",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "decflags",
+          "decl": "int decflags",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "encflags",
+          "decl": "int encflags",
+          "default": "0"
+        }
+      ]
+    },
+    "PrepSDKCall_AddParameter": {
+      "name": "PrepSDKCall_AddParameter",
+      "refLine": 177,
+      "docStart": 6678,
+      "docEnd": 7097,
+      "docs": {
+        "brief": "Adds a parameter to the calling convention.  This should be called in normal ascending order.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a parameter to the calling convention.  This should be called in normal ascending order."
+          },
+          {
+            "tag": "param:type",
+            "text": "Data type to convert to/from."
+          },
+          {
+            "tag": "param:pass",
+            "text": "How the data is passed in C++."
+          },
+          {
+            "tag": "param:decflags",
+            "text": "Flags on decoding from the plugin to C++."
+          },
+          {
+            "tag": "param:encflags",
+            "text": "Flags on encoding from C++ to the plugin."
+          },
+          {
+            "tag": "error",
+            "text": "Parameter limit for SDK calls reached."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "SDKType",
+          "name": "type",
+          "decl": "SDKType type",
+          "default": null
+        },
+        {
+          "type": "SDKPassMethod",
+          "name": "pass",
+          "decl": "SDKPassMethod pass",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "decflags",
+          "decl": "int decflags",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "encflags",
+          "decl": "int encflags",
+          "default": "0"
+        }
+      ]
+    },
+    "StartPrepSDKCall": {
+      "name": "StartPrepSDKCall",
+      "refLine": 115,
+      "docStart": 4340,
+      "docEnd": 4456,
+      "docs": {
+        "brief": "Starts the preparation of an SDK call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts the preparation of an SDK call."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of function call this will be."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "SDKCallType",
+          "name": "type",
+          "decl": "SDKCallType type",
+          "default": null
+        }
+      ]
+    },
+    "SDKCall": {
+      "name": "SDKCall",
+      "refLine": 208,
+      "docStart": 7415,
+      "docEnd": 8691,
+      "docs": {
+        "brief": "Calls an SDK function with the given parameters.\n\nIf the call type is Entity or Player, the index MUST ALWAYS be the FIRST parameter passed.\nIf the call type is GameRules, then nothing special needs to be passed.\nIf the return value is a Vector or QAngles, the SECOND parameter must be a Float[3].\nIf the return value is a string, the THIRD parameter must be a String buffer, and the\nFOURTH parameter must be the maximum length.\nIf the return value is a SourceMod's Address, the SECOND parameter must be an Address variable.\nAll parameters must be passed after the above is followed.  Failure to follow these\nrules will result in crashes or wildly unexpected behavior!\n\nIf the return value is a float or integer, the return value will be this value.\nIf the return value is a string, the value returned by the function will be the number of bytes written, or -1 for NULL.\nIf the return value is a CBaseEntity, CBasePlayer, or edict, the return value will\nalways be the entity index, or -1 for NULL.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calls an SDK function with the given parameters.\n\nIf the call type is Entity or Player, the index MUST ALWAYS be the FIRST parameter passed.\nIf the call type is GameRules, then nothing special needs to be passed.\nIf the return value is a Vector or QAngles, the SECOND parameter must be a Float[3].\nIf the return value is a string, the THIRD parameter must be a String buffer, and the\nFOURTH parameter must be the maximum length.\nIf the return value is a SourceMod's Address, the SECOND parameter must be an Address variable.\nAll parameters must be passed after the above is followed.  Failure to follow these\nrules will result in crashes or wildly unexpected behavior!\n\nIf the return value is a float or integer, the return value will be this value.\nIf the return value is a string, the value returned by the function will be the number of bytes written, or -1 for NULL.\nIf the return value is a CBaseEntity, CBasePlayer, or edict, the return value will\nalways be the entity index, or -1 for NULL."
+          },
+          {
+            "tag": "param:call",
+            "text": "SDKCall Handle."
+          },
+          {
+            "tag": "param:...",
+            "text": "Call Parameters."
+          },
+          {
+            "tag": "return",
+            "text": "Simple return value, if any."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or internal decoding error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "call",
+          "decl": "Handle call",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "PrepSDKCall_SetVirtual": {
+      "name": "PrepSDKCall_SetVirtual",
+      "refLine": 122,
+      "docStart": 4509,
+      "docEnd": 4628,
+      "docs": {
+        "brief": "Sets the virtual index of the SDK call if it is virtual.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the virtual index of the SDK call if it is virtual."
+          },
+          {
+            "tag": "param:vtblidx",
+            "text": "Virtual table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "vtblidx",
+          "decl": "int vtblidx",
+          "default": null
+        }
+      ]
+    },
+    "PrepSDKCall_SetAddress": {
+      "name": "PrepSDKCall_SetAddress",
+      "refLine": 142,
+      "docStart": 5295,
+      "docEnd": 5474,
+      "docs": {
+        "brief": "Uses the given function address for the SDK call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Uses the given function address for the SDK call."
+          },
+          {
+            "tag": "param:addr",
+            "text": "Address of function to use."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "addr",
+          "decl": "Address addr",
+          "default": null
+        }
+      ]
+    },
+    "PrepSDKCall_SetFromConf": {
+      "name": "PrepSDKCall_SetFromConf",
+      "refLine": 154,
+      "docStart": 5529,
+      "docEnd": 6004,
+      "docs": {
+        "brief": "Finds an address or virtual function index in a GameConfig file and sets it as\nthe calling information for the SDK call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds an address or virtual function index in a GameConfig file and sets it as\nthe calling information for the SDK call."
+          },
+          {
+            "tag": "param:gameconf",
+            "text": "GameConfig Handle, or INVALID_HANDLE to use sdktools.games.txt."
+          },
+          {
+            "tag": "param:source",
+            "text": "Whether to look in Offsets or Signatures."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the property to find."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if nothing was found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid game config Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "gameconf",
+          "decl": "Handle gameconf",
+          "default": null
+        },
+        {
+          "type": "SDKFuncConfSource",
+          "name": "source",
+          "decl": "SDKFuncConfSource source",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "EndPrepSDKCall": {
+      "name": "EndPrepSDKCall",
+      "refLine": 184,
+      "docStart": 7206,
+      "docEnd": 7378,
+      "docs": {
+        "brief": "Finalizes an SDK call preparation and returns the resultant Handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finalizes an SDK call preparation and returns the resultant Handle."
+          },
+          {
+            "tag": "return",
+            "text": "A new SDKCall Handle on success, or INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "GetPlayerResourceEntity": {
+      "name": "GetPlayerResourceEntity",
+      "refLine": 215,
+      "docStart": 8738,
+      "docEnd": 8888,
+      "docs": {
+        "brief": "Returns the entity index of the player resource/manager entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the entity index of the player resource/manager entity."
+          },
+          {
+            "tag": "return",
+            "text": "Index of resource entity or -1 if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "VDECODE_FLAG_BYREF": {
+      "name": "VDECODE_FLAG_BYREF",
+      "refLine": 106,
+      "docStart": 4222,
+      "docEnd": 4254,
+      "docs": {
+        "brief": "Floats/ints by reference",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Floats/ints by reference"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "VENCODE_FLAG_COPYBACK": {
+      "name": "VENCODE_FLAG_COPYBACK",
+      "refLine": 108,
+      "docStart": 4304,
+      "docEnd": 4336,
+      "docs": {
+        "brief": "Copy back data once done",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copy back data once done"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "_sdktools_included": {
+      "name": "_sdktools_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "VDECODE_FLAG_ALLOWNOTINGAME": {
+      "name": "VDECODE_FLAG_ALLOWNOTINGAME",
+      "refLine": 104,
+      "docStart": 4067,
+      "docEnd": 4100,
+      "docs": {
+        "brief": "Allow players not in game",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow players not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "VDECODE_FLAG_ALLOWWORLD": {
+      "name": "VDECODE_FLAG_ALLOWWORLD",
+      "refLine": 105,
+      "docStart": 4148,
+      "docEnd": 4174,
+      "docs": {
+        "brief": "Allow World entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow World entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "VDECODE_FLAG_ALLOWNULL": {
+      "name": "VDECODE_FLAG_ALLOWNULL",
+      "refLine": 103,
+      "docStart": 3988,
+      "docEnd": 4019,
+      "docs": {
+        "brief": "Allow NULL for pointers",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow NULL for pointers"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    }
+  },
+  "enums": {
+    "SDKLibrary": {
+      "name": "SDKLibrary",
+      "refLine": 68,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKLibrary_Server": {
+          "name": "SDKLibrary_Server",
+          "refLine": 70,
+          "docStart": 2673,
+          "docEnd": 2706,
+          "docs": {
+            "brief": "server.dll/server_i486.so",
+            "tags": [
+              {
+                "tag": "",
+                "text": "server.dll/server_i486.so"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKLibrary_Engine": {
+          "name": "SDKLibrary_Engine",
+          "refLine": 71,
+          "docStart": 2733,
+          "docEnd": 2763,
+          "docs": {
+            "brief": "engine.dll/engine_*.so",
+            "tags": [
+              {
+                "tag": "",
+                "text": "engine.dll/engine_*.so"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SDKFuncConfSource": {
+      "name": "SDKFuncConfSource",
+      "refLine": 74,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKConf_Signature": {
+          "name": "SDKConf_Signature",
+          "refLine": 77,
+          "docStart": 2903,
+          "docEnd": 2955,
+          "docs": {
+            "brief": "Read a signature from the Signatures section",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Read a signature from the Signatures section"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "SDKConf_Virtual": {
+          "name": "SDKConf_Virtual",
+          "refLine": 76,
+          "docStart": 2823,
+          "docEnd": 2876,
+          "docs": {
+            "brief": "Read a virtual index from the Offsets section",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Read a virtual index from the Offsets section"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "SDKConf_Address": {
+          "name": "SDKConf_Address",
+          "refLine": 78,
+          "docStart": 2982,
+          "docEnd": 3032,
+          "docs": {
+            "brief": "Read an address from the Addresses section",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Read an address from the Addresses section"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        }
+      }
+    },
+    "SDKPassMethod": {
+      "name": "SDKPassMethod",
+      "refLine": 95,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKPass_ByValue": {
+          "name": "SDKPass_ByValue",
+          "refLine": 99,
+          "docStart": 3841,
+          "docEnd": 3872,
+          "docs": {
+            "brief": "Pass an object by value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pass an object by value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKPass_Pointer": {
+          "name": "SDKPass_Pointer",
+          "refLine": 97,
+          "docStart": 3736,
+          "docEnd": 3761,
+          "docs": {
+            "brief": "Pass as a pointer",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pass as a pointer"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKPass_Plain": {
+          "name": "SDKPass_Plain",
+          "refLine": 98,
+          "docStart": 3788,
+          "docEnd": 3814,
+          "docs": {
+            "brief": "Pass as plain data",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pass as plain data"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKPass_ByRef": {
+          "name": "SDKPass_ByRef",
+          "refLine": 100,
+          "docStart": 3899,
+          "docEnd": 3934,
+          "docs": {
+            "brief": "Pass an object by reference",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pass an object by reference"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SDKType": {
+      "name": "SDKType",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKType_Address": {
+          "name": "SDKType_Address",
+          "refLine": 92,
+          "docStart": 3653,
+          "docEnd": 3680,
+          "docs": {
+            "brief": "SourceMod's Address",
+            "tags": [
+              {
+                "tag": "",
+                "text": "SourceMod's Address"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_Bool": {
+          "name": "SDKType_Bool",
+          "refLine": 91,
+          "docStart": 3605,
+          "docEnd": 3626,
+          "docs": {
+            "brief": "Boolean (any)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Boolean (any)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_CBaseEntity": {
+          "name": "SDKType_CBaseEntity",
+          "refLine": 83,
+          "docStart": 3082,
+          "docEnd": 3121,
+          "docs": {
+            "brief": "CBaseEntity (always as pointer)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CBaseEntity (always as pointer)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_Float": {
+          "name": "SDKType_Float",
+          "refLine": 88,
+          "docStart": 3420,
+          "docEnd": 3439,
+          "docs": {
+            "brief": "Float (any)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Float (any)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_Edict": {
+          "name": "SDKType_Edict",
+          "refLine": 89,
+          "docStart": 3466,
+          "docEnd": 3501,
+          "docs": {
+            "brief": "edict_t (always as pointer)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "edict_t (always as pointer)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_QAngle": {
+          "name": "SDKType_QAngle",
+          "refLine": 86,
+          "docStart": 3282,
+          "docEnd": 3324,
+          "docs": {
+            "brief": "QAngles (pointer, byval, or byref)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "QAngles (pointer, byval, or byref)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_String": {
+          "name": "SDKType_String",
+          "refLine": 90,
+          "docStart": 3528,
+          "docEnd": 3578,
+          "docs": {
+            "brief": "NULL-terminated string (always as pointer)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "NULL-terminated string (always as pointer)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_PlainOldData": {
+          "name": "SDKType_PlainOldData",
+          "refLine": 87,
+          "docStart": 3351,
+          "docEnd": 3393,
+          "docs": {
+            "brief": "Integer/generic data <=32bit (any)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Integer/generic data <=32bit (any)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_Vector": {
+          "name": "SDKType_Vector",
+          "refLine": 85,
+          "docStart": 3214,
+          "docEnd": 3255,
+          "docs": {
+            "brief": "Vector (pointer, byval, or byref)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Vector (pointer, byval, or byref)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKType_CBasePlayer": {
+          "name": "SDKType_CBasePlayer",
+          "refLine": 84,
+          "docStart": 3148,
+          "docEnd": 3187,
+          "docs": {
+            "brief": "CBasePlayer (always as pointer)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CBasePlayer (always as pointer)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SDKCallType": {
+      "name": "SDKCallType",
+      "refLine": 56,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKCall_Static": {
+          "name": "SDKCall_Static",
+          "refLine": 58,
+          "docStart": 2173,
+          "docEnd": 2192,
+          "docs": {
+            "brief": "Static call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Static call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_Engine": {
+          "name": "SDKCall_Engine",
+          "refLine": 65,
+          "docStart": 2593,
+          "docEnd": 2620,
+          "docs": {
+            "brief": "CVEngineServer call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CVEngineServer call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_Player": {
+          "name": "SDKCall_Player",
+          "refLine": 60,
+          "docStart": 2270,
+          "docEnd": 2294,
+          "docs": {
+            "brief": "CBasePlayer call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CBasePlayer call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_Entity": {
+          "name": "SDKCall_Entity",
+          "refLine": 59,
+          "docStart": 2219,
+          "docEnd": 2243,
+          "docs": {
+            "brief": "CBaseEntity call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CBaseEntity call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_Server": {
+          "name": "SDKCall_Server",
+          "refLine": 64,
+          "docStart": 2542,
+          "docEnd": 2566,
+          "docs": {
+            "brief": "CBaseServer call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CBaseServer call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_EntityList": {
+          "name": "SDKCall_EntityList",
+          "refLine": 62,
+          "docStart": 2371,
+          "docEnd": 2401,
+          "docs": {
+            "brief": "CGlobalEntityList call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CGlobalEntityList call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_GameRules": {
+          "name": "SDKCall_GameRules",
+          "refLine": 61,
+          "docStart": 2321,
+          "docEnd": 2344,
+          "docs": {
+            "brief": "CGameRules call",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CGameRules call"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKCall_Raw": {
+          "name": "SDKCall_Raw",
+          "refLine": 63,
+          "docStart": 2428,
+          "docEnd": 2515,
+          "docs": {
+            "brief": "|this| pointer with an arbitrary address. You should pass a SourceMod's Address",
+            "tags": [
+              {
+                "tag": "",
+                "text": "|this| pointer with an arbitrary address. You should pass a SourceMod's Address"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

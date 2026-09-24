@@ -1,0 +1,128 @@
+{
+  "functions": {
+    "OnClientPutInServer": {
+      "name": "OnClientPutInServer",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientFloodResult": {
+      "name": "OnClientFloodResult",
+      "refLine": 92,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "blocked",
+          "decl": "bool blocked",
+          "default": null
+        }
+      ]
+    },
+    "OnClientFloodCheck": {
+      "name": "OnClientFloodCheck",
+      "refLine": 70,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {
+    "PlayerInfo": {
+      "name": "PlayerInfo",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "tokenCount": {
+          "name": "tokenCount",
+          "refLine": 51,
+          "docStart": 1960,
+          "docEnd": 1999,
+          "docs": {
+            "brief": "Number of flood tokens player has",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Number of flood tokens player has"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int"
+        },
+        "lastTime": {
+          "name": "lastTime",
+          "refLine": 50,
+          "docStart": 1898,
+          "docEnd": 1941,
+          "docs": {
+            "brief": "Last time player used say or say_team",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Last time player used say or say_team"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "float"
+        }
+      }
+    }
+  },
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

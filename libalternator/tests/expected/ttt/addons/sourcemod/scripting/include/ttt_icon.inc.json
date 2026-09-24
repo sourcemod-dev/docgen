@@ -1,0 +1,116 @@
+{
+  "functions": {
+    "Icon_OnPrecache": {
+      "name": "Icon_OnPrecache",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_icon_SetNTVOptional": {
+      "name": "__pl_ttt_icon_SetNTVOptional",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_SetIcon": {
+      "name": "TTT_SetIcon",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        }
+      ]
+    },
+    "Icon_OnIconCreate": {
+      "name": "Icon_OnIconCreate",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "treatAsTraitor",
+          "decl": "bool& treatAsTraitor",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_icon_included": {
+      "name": "_ttt_icon_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

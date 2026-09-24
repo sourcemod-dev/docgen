@@ -1,0 +1,1110 @@
+{
+  "functions": {
+    "MC_SendMessage": {
+      "name": "MC_SendMessage",
+      "refLine": 173,
+      "docStart": 4760,
+      "docEnd": 4883,
+      "docs": {
+        "brief": "Sends a SayText2 usermessage",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a SayText2 usermessage"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to send usermessage to"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message to send"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": "0"
+        }
+      ]
+    },
+    "MC_PrintToChatAll": {
+      "name": "MC_PrintToChatAll",
+      "refLine": 72,
+      "docStart": 1974,
+      "docEnd": 2140,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_ShowActivity": {
+      "name": "MC_ShowActivity",
+      "refLine": 473,
+      "docStart": 12455,
+      "docEnd": 13012,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nMC_ShowActivity2() is slightly more useful.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nMC_ShowActivity2() is slightly more useful.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_InitFastColors": {
+      "name": "MC_InitFastColors",
+      "refLine": 836,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "MC_ReplyToCommandEx": {
+      "name": "MC_ReplyToCommandEx",
+      "refLine": 440,
+      "docStart": 11779,
+      "docEnd": 11956,
+      "docs": {
+        "brief": "Replies to a command with colors",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a command with colors"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to reply to"
+          },
+          {
+            "tag": "param:author",
+            "text": "Client to use for {teamcolor}"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_ShowActivity2": {
+      "name": "MC_ShowActivity2",
+      "refLine": 686,
+      "docStart": 18349,
+      "docEnd": 18847,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to prepend to the message."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_PrintToChat": {
+      "name": "MC_PrintToChat",
+      "refLine": 43,
+      "docStart": 1177,
+      "docEnd": 1429,
+      "docs": {
+        "brief": "Prints a message to a specific client in the chat area.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the chat area.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules).\n\nOn error/Errors:  If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_ReplyToCommand": {
+      "name": "MC_ReplyToCommand",
+      "refLine": 415,
+      "docStart": 11175,
+      "docEnd": 11304,
+      "docs": {
+        "brief": "Replies to a command with colors",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a command with colors"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to reply to"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_StrToLower": {
+      "name": "MC_StrToLower",
+      "refLine": 366,
+      "docStart": 10038,
+      "docEnd": 10118,
+      "docs": {
+        "brief": "Converts a string to lowercase",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to lowercase"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to convert"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "MC_ShowActivityEx": {
+      "name": "MC_ShowActivityEx",
+      "refLine": 577,
+      "docStart": 15441,
+      "docEnd": 15802,
+      "docs": {
+        "brief": "Same as MC_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as MC_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to display with."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CColorExists": {
+      "name": "CColorExists",
+      "refLine": 790,
+      "docStart": 21314,
+      "docEnd": 21464,
+      "docs": {
+        "brief": "Determines whether a color name exists",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determines whether a color name exists"
+          },
+          {
+            "tag": "param:color",
+            "text": "The color name to check"
+          },
+          {
+            "tag": "return",
+            "text": "True if the color exists, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "color",
+          "decl": "const char[] color",
+          "default": null
+        }
+      ]
+    },
+    "MC_FastGetColor": {
+      "name": "MC_FastGetColor",
+      "refLine": 1078,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "MC_ReplaceColorCodes": {
+      "name": "MC_ReplaceColorCodes",
+      "refLine": 246,
+      "docStart": 6748,
+      "docEnd": 7327,
+      "docs": {
+        "brief": "Replaces color tags in a string with color codes (used internally by MC_PrintToChat, MC_PrintToChatAll, MC_PrintToChatEx, and MC_PrintToChatAllEx",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replaces color tags in a string with color codes (used internally by MC_PrintToChat, MC_PrintToChatAll, MC_PrintToChatEx, and MC_PrintToChatAllEx"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String."
+          },
+          {
+            "tag": "param:author",
+            "text": "Optional client index to use for {teamcolor} tags, or 0 for none"
+          },
+          {
+            "tag": "param:removeTags",
+            "text": "Optional boolean value to determine whether we're replacing tags with colors, or just removing tags, used by MC_RemoveTags"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Optional value for max buffer length, used by MC_RemoveTags\n\nOn error/Errors:  If the client index passed for author is invalid or not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "removeTags",
+          "decl": "bool removeTags",
+          "default": "false"
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": "256 * 4"
+        }
+      ]
+    },
+    "MC_PrintToChatEx": {
+      "name": "MC_PrintToChatEx",
+      "refLine": 102,
+      "docStart": 2618,
+      "docEnd": 2973,
+      "docs": {
+        "brief": "Prints a message to a specific client in the chat area.\nSupports color tags and teamcolor tag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to a specific client in the chat area.\nSupports color tags and teamcolor tag."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index whose color will be used for teamcolor tag."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules).\n\nOn error/Errors:  If the client or author are not connected an error will be thrown"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_PrintToChatAllEx": {
+      "name": "MC_PrintToChatAllEx",
+      "refLine": 138,
+      "docStart": 3738,
+      "docEnd": 4048,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.\nSupports color tags and teamcolor tag.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area.\nSupports color tags and teamcolor tag."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index whose color will be used for teamcolor tag."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules).\n\nOn error/Errors:   If the author is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "MC_RemoveTags": {
+      "name": "MC_RemoveTags",
+      "refLine": 405,
+      "docStart": 10933,
+      "docEnd": 11067,
+      "docs": {
+        "brief": "Removes color tags from a message",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes color tags from a message"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message to remove tags from"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum buffer length"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "message",
+          "decl": "char[] message",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CGetTeamColor": {
+      "name": "CGetTeamColor",
+      "refLine": 806,
+      "docStart": 21703,
+      "docEnd": 22019,
+      "docs": {
+        "brief": "Returns the hexadecimal representation of a client's team color (will initialize the hash table if needed)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the hexadecimal representation of a client's team color (will initialize the hash table if needed)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to get the team color for"
+          },
+          {
+            "tag": "return",
+            "text": "Client's team color in hexadecimal, or green if unknown\nOn error/Errors:  If the client index passed is invalid or not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "MC_FastReplaceString": {
+      "name": "MC_FastReplaceString",
+      "refLine": 1102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "text",
+          "decl": "char[] text",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "search",
+          "decl": "const char[] search",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "replace",
+          "decl": "const char[] replace",
+          "default": null
+        }
+      ]
+    },
+    "MC_FastSetColor": {
+      "name": "MC_FastSetColor",
+      "refLine": 1040,
+      "docStart": 31922,
+      "docEnd": 32239,
+      "docs": {
+        "brief": "Inserts or updates a color in the hash table using linear probing\nUpdates existing keys, adds new ones, or silently fails if table is full\nUses FNV-1a hash with cycle detection to prevent infinite loops\nSilent fail occurs only if: empty key/value, 256+ unique colors, or hash table completely full",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Inserts or updates a color in the hash table using linear probing\nUpdates existing keys, adds new ones, or silently fails if table is full\nUses FNV-1a hash with cycle detection to prevent infinite loops\nSilent fail occurs only if: empty key/value, 256+ unique colors, or hash table completely full"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "CSubString": {
+      "name": "CSubString",
+      "refLine": 348,
+      "docStart": 9473,
+      "docEnd": 9761,
+      "docs": {
+        "brief": "Gets a part of a string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a part of a string"
+          },
+          {
+            "tag": "param:input",
+            "text": "String to get the part from"
+          },
+          {
+            "tag": "param:output",
+            "text": "Buffer to write to"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Max length of output buffer"
+          },
+          {
+            "tag": "param:start",
+            "text": "Position to start at"
+          },
+          {
+            "tag": "param:numChars",
+            "text": "Number of characters to return, or 0 for the end of the string"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "start",
+          "decl": "int start",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numChars",
+          "decl": "int numChars",
+          "default": "0"
+        }
+      ]
+    },
+    "MC_SkipNextClient": {
+      "name": "MC_SkipNextClient",
+      "refLine": 228,
+      "docStart": 6280,
+      "docEnd": 6576,
+      "docs": {
+        "brief": "This function should only be used right in front of\nMC_PrintToChatAll or MC_PrintToChatAllEx. It causes those functions\nto skip the specified client when printing the message.\nAfter printing the message, the client will no longer be skipped.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This function should only be used right in front of\nMC_PrintToChatAll or MC_PrintToChatAllEx. It causes those functions\nto skip the specified client when printing the message.\nAfter printing the message, the client will no longer be skipped."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "MC_AddColor": {
+      "name": "MC_AddColor",
+      "refLine": 381,
+      "docStart": 10274,
+      "docEnd": 10537,
+      "docs": {
+        "brief": "Adds a color to the colors hash table",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a color to the colors hash table"
+          },
+          {
+            "tag": "param:name",
+            "text": "Color name, without braces"
+          },
+          {
+            "tag": "param:color",
+            "text": "Hexadecimal representation of the color (0xRRGGBB)"
+          },
+          {
+            "tag": "return",
+            "text": "True if color was added successfully, false if a color already exists with that name"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "color",
+          "decl": "int color",
+          "default": null
+        }
+      ]
+    },
+    "MC_FastHash": {
+      "name": "MC_FastHash",
+      "refLine": 1025,
+      "docStart": 31343,
+      "docEnd": 31711,
+      "docs": {
+        "brief": "Computes FNV-1a (Fowler-Noll-Vo) hash for a string\nFNV-1a provides better avalanche characteristics than FNV-1\nand is widely used in hash tables for its speed and distribution quality\n2166136261 is the FNV-1a 32-bit offset basis\n16777619 is the FNV-1a 32-bit prime multiplier",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Computes FNV-1a (Fowler-Noll-Vo) hash for a string\nFNV-1a provides better avalanche characteristics than FNV-1\nand is widely used in hash tables for its speed and distribution quality\n2166136261 is the FNV-1a 32-bit offset basis\n16777619 is the FNV-1a 32-bit prime multiplier"
+          },
+          {
+            "tag": "param:str",
+            "text": "String to hash"
+          },
+          {
+            "tag": "return",
+            "text": "32-bit hash value"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MCOLOR_RED": {
+      "name": "MCOLOR_RED",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0xFF4040"
+    },
+    "_more_colors_included": {
+      "name": "_more_colors_included",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MC_MAX_MESSAGE_LENGTH": {
+      "name": "MC_MAX_MESSAGE_LENGTH",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "256"
+    },
+    "MCOLOR_GREEN": {
+      "name": "MCOLOR_GREEN",
+      "refLine": 21,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x3EFF3E"
+    },
+    "MORE_COLORS_VERSION": {
+      "name": "MORE_COLORS_VERSION",
+      "refLine": 12,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"3.0.1-MC\""
+    },
+    "MC_GAME_DODS": {
+      "name": "MC_GAME_DODS",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "MCOLOR_GRAY": {
+      "name": "MCOLOR_GRAY",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0xCCCCCC"
+    },
+    "MAX_COLOR_TAG_LENGTH": {
+      "name": "MAX_COLOR_TAG_LENGTH",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    },
+    "MAX_BUFFER_LENGTH": {
+      "name": "MAX_BUFFER_LENGTH",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(MC_MAX_MESSAGE_LENGTH * 4)"
+    },
+    "COLOR_HASH_SIZE": {
+      "name": "COLOR_HASH_SIZE",
+      "refLine": 16,
+      "docStart": 421,
+      "docEnd": 509,
+      "docs": {
+        "brief": "512 slots for ~172 colors = 34% load factor (optimal performance, minimal collisions)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "512 slots for ~172 colors = 34% load factor (optimal performance, minimal collisions)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "512"
+    },
+    "MCOLOR_BLUE": {
+      "name": "MCOLOR_BLUE",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x99CCFF"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

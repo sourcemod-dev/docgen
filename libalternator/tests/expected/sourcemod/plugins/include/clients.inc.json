@@ -1,0 +1,3206 @@
+{
+  "functions": {
+    "GetClientOfUserId": {
+      "name": "GetClientOfUserId",
+      "refLine": 783,
+      "docStart": 28666,
+      "docEnd": 28867,
+      "docs": {
+        "brief": "Translates an userid index to the real player index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Translates an userid index to the real player index."
+          },
+          {
+            "tag": "param:userid",
+            "text": "Userid value."
+          },
+          {
+            "tag": "return",
+            "text": "Client value."
+          },
+          {
+            "tag": "error",
+            "text": "Returns 0 if invalid userid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "userid",
+          "decl": "int userid",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPreAdminCheck": {
+      "name": "OnClientPreAdminCheck",
+      "refLine": 203,
+      "docStart": 7228,
+      "docEnd": 7853,
+      "docs": {
+        "brief": "Called once a client is authorized and fully in-game, but\nbefore admin checks are done.  This can be used to override\nthe default admin checks for a client.  You should only use\nthis for overriding; use OnClientPostAdminCheck() instead\nif you want notification.\n\nNote: If handled/blocked, PostAdminCheck must be signalled\nmanually via NotifyPostAdminCheck().\n\nThis callback is guaranteed to occur on all clients, and always\nafter each OnClientPutInServer() call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once a client is authorized and fully in-game, but\nbefore admin checks are done.  This can be used to override\nthe default admin checks for a client.  You should only use\nthis for overriding; use OnClientPostAdminCheck() instead\nif you want notification.\n\nNote: If handled/blocked, PostAdminCheck must be signalled\nmanually via NotifyPostAdminCheck().\n\nThis callback is guaranteed to occur on all clients, and always\nafter each OnClientPutInServer() call."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block admin checks."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnServerExitHibernation": {
+      "name": "OnServerExitHibernation",
+      "refLine": 231,
+      "docStart": 8712,
+      "docEnd": 8778,
+      "docs": {
+        "brief": "Called directly before the server leaves hibernation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called directly before the server leaves hibernation."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "IsClientInGame": {
+      "name": "IsClientInGame",
+      "refLine": 385,
+      "docStart": 14864,
+      "docEnd": 15133,
+      "docs": {
+        "brief": "Returns if a certain player has entered the game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player has entered the game."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index (index does not have to be connected)."
+          },
+          {
+            "tag": "return",
+            "text": "True if player has entered the game, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientDisconnect": {
+      "name": "OnClientDisconnect",
+      "refLine": 121,
+      "docStart": 4754,
+      "docEnd": 4864,
+      "docs": {
+        "brief": "Called when a client is disconnecting from the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is disconnecting from the server."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientLanguageChanged": {
+      "name": "OnClientLanguageChanged",
+      "refLine": 250,
+      "docStart": 9175,
+      "docEnd": 9327,
+      "docs": {
+        "brief": "Called when the language was received from the player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the language was received from the player."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:language",
+            "text": "Language number."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "language",
+          "decl": "int language",
+          "default": null
+        }
+      ]
+    },
+    "IsPlayerInGame": {
+      "name": "IsPlayerInGame",
+      "refLine": 402,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetUserFlagBits": {
+      "name": "GetUserFlagBits",
+      "refLine": 541,
+      "docStart": 20181,
+      "docEnd": 20431,
+      "docs": {
+        "brief": "Returns client access flags.  If the client is not an admin,\nthe result is always 0.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns client access flags.  If the client is not an admin,\nthe result is always 0."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Flags"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "KickClientEx": {
+      "name": "KickClientEx",
+      "refLine": 818,
+      "docStart": 29864,
+      "docEnd": 30459,
+      "docs": {
+        "brief": "Immediately disconnects a client from the server.\n\nKicking clients from certain events or callbacks may cause crashes.  If in\ndoubt, create a short (0.1 second) timer to kick the client in the next\navailable frame.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Immediately disconnects a client from the server.\n\nKicking clients from certain events or callbacks may cause crashes.  If in\ndoubt, create a short (0.1 second) timer to kick the client in the next\navailable frame."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Optional formatting rules for disconnect reason.\nNote that a period is automatically appended to the string by the engine."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": "\"\""
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetClientSerial": {
+      "name": "GetClientSerial",
+      "refLine": 838,
+      "docStart": 30928,
+      "docEnd": 31141,
+      "docs": {
+        "brief": "Returns the clients unique serial identifier.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the clients unique serial identifier."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Serial number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "IsClientSourceTV": {
+      "name": "IsClientSourceTV",
+      "refLine": 432,
+      "docStart": 16370,
+      "docEnd": 16624,
+      "docs": {
+        "brief": "Returns if a certain player is the SourceTV bot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player is the SourceTV bot."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player is the SourceTV bot, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "IsClientInKickQueue": {
+      "name": "IsClientInKickQueue",
+      "refLine": 395,
+      "docStart": 15178,
+      "docEnd": 15500,
+      "docs": {
+        "brief": "Returns if a client is in the \"kick queue\" (i.e. the client will be kicked\nshortly and thus they should not appear as valid).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a client is in the \"kick queue\" (i.e. the client will be kicked\nshortly and thus they should not appear as valid)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index (must be connected)."
+          },
+          {
+            "tag": "return",
+            "text": "True if in the kick queue, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetMaxClients": {
+      "name": "GetMaxClients",
+      "refLine": 267,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "RemoveUserFlags": {
+      "name": "RemoveUserFlags",
+      "refLine": 521,
+      "docStart": 19446,
+      "docEnd": 19718,
+      "docs": {
+        "brief": "Removes flags from a client.  If the client is not an admin,\nthis has no effect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes flags from a client.  If the client is not an admin,\nthis has no effect."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:...",
+            "text": "Flags to remove from the client."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "AdminFlag ...",
+          "name": "...",
+          "decl": "AdminFlag ...",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAbsOrigin": {
+      "name": "GetClientAbsOrigin",
+      "refLine": 660,
+      "docStart": 24360,
+      "docEnd": 24620,
+      "docs": {
+        "brief": "Returns the client's origin vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's origin vector."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Destination vector to store the client's origin vector."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAvgPackets": {
+      "name": "GetClientAvgPackets",
+      "refLine": 774,
+      "docStart": 28302,
+      "docEnd": 28601,
+      "docs": {
+        "brief": "Returns the client's average packet frequency in packets/sec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's average packet frequency in packets/sec."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Packet frequency."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "GetClientName": {
+      "name": "GetClientName",
+      "refLine": 301,
+      "docStart": 10998,
+      "docEnd": 11365,
+      "docs": {
+        "brief": "Returns the client's name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's name."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the client's name."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "IsPlayerAlive": {
+      "name": "IsPlayerAlive",
+      "refLine": 461,
+      "docStart": 17281,
+      "docEnd": 17613,
+      "docs": {
+        "brief": "Returns if the client is alive or dead.\n\nNote: This function was originally in SDKTools and was moved to core.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if the client is alive or dead.\n\nNote: This function was originally in SDKTools and was moved to core."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "True if the client is alive, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientAuthorized": {
+      "name": "OnClientAuthorized",
+      "refLine": 185,
+      "docStart": 6645,
+      "docEnd": 7159,
+      "docs": {
+        "brief": "Called after a client's auth ID has been validated.  The state\nof a client's authorization as an admin is not guaranteed here.\nUse OnClientPostAdminCheck() if you need a client's admin status.\n\nThere may be a delay in receiving this callback if the Steam\nnetowrk is experience downtime or other issues.\n\nThis is called by bots, but the ID will be \"BOT\".",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a client's auth ID has been validated.  The state\nof a client's authorization as an admin is not guaranteed here.\nUse OnClientPostAdminCheck() if you need a client's admin status.\n\nThere may be a delay in receiving this callback if the Steam\nnetowrk is experience downtime or other issues.\n\nThis is called by bots, but the ID will be \"BOT\"."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:auth",
+            "text": "Client Steam2 id, if available, else engine auth id."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        }
+      ]
+    },
+    "GetClientMaxs": {
+      "name": "GetClientMaxs",
+      "refLine": 633,
+      "docStart": 23405,
+      "docEnd": 23662,
+      "docs": {
+        "brief": "Returns the client's max size vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's max size vector."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Destination vector to store the client's max size."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "CanUserTarget": {
+      "name": "CanUserTarget",
+      "refLine": 552,
+      "docStart": 20476,
+      "docEnd": 20831,
+      "docs": {
+        "brief": "Returns whether a user can target another user.\nThis is a helper function for CanAdminTarget.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a user can target another user.\nThis is a helper function for CanAdminTarget."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:target",
+            "text": "Target player's index."
+          },
+          {
+            "tag": "return",
+            "text": "True if target is targettable by the player, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or unconnected player indexers."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "OnClientConnect": {
+      "name": "OnClientConnect",
+      "refLine": 92,
+      "docStart": 3117,
+      "docEnd": 3929,
+      "docs": {
+        "brief": "Called on client connection.  If you return true, the client will be allowed in the server.\nIf you return false (or return nothing), the client will be rejected.  If the client is\nrejected by this forward or any other, OnClientDisconnect will not be called.\n\nNote: Do not write to rejectmsg if you plan on returning true.  If multiple plugins write\nto the string buffer, it is not defined which plugin's string will be shown to the client,\nbut it is guaranteed one of them will.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called on client connection.  If you return true, the client will be allowed in the server.\nIf you return false (or return nothing), the client will be rejected.  If the client is\nrejected by this forward or any other, OnClientDisconnect will not be called.\n\nNote: Do not write to rejectmsg if you plan on returning true.  If multiple plugins write\nto the string buffer, it is not defined which plugin's string will be shown to the client,\nbut it is guaranteed one of them will."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:rejectmsg",
+            "text": "Buffer to store the rejection message when the connection is refused."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum number of characters for rejection buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True to validate client's connection, false to refuse it."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "rejectmsg",
+          "decl": "char[] rejectmsg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAvgLoss": {
+      "name": "GetClientAvgLoss",
+      "refLine": 744,
+      "docStart": 27113,
+      "docEnd": 27476,
+      "docs": {
+        "brief": "Returns the client's average packet loss, values go from 0 to 1 (for percentages).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's average packet loss, values go from 0 to 1 (for percentages)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Average packet loss, or -1 if network info is not available."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "GetUserAdmin": {
+      "name": "GetUserAdmin",
+      "refLine": 501,
+      "docStart": 18816,
+      "docEnd": 19052,
+      "docs": {
+        "brief": "Retrieves a client's AdminId.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a client's AdminId."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "AdminId of the client, or INVALID_ADMIN_ID if none."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "AdminId",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPostAdminCheck": {
+      "name": "OnClientPostAdminCheck",
+      "refLine": 242,
+      "docStart": 8823,
+      "docEnd": 9121,
+      "docs": {
+        "brief": "Called once a client is authorized and fully in-game, and\nafter all post-connection authorizations have been performed.\n\nThis callback is guaranteed to occur on all clients, and always\nafter each OnClientPutInServer() call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once a client is authorized and fully in-game, and\nafter all post-connection authorizations have been performed.\n\nThis callback is guaranteed to occur on all clients, and always\nafter each OnClientPutInServer() call."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientWeapon": {
+      "name": "GetClientWeapon",
+      "refLine": 624,
+      "docStart": 23003,
+      "docEnd": 23332,
+      "docs": {
+        "brief": "Returns the client's weapon name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's weapon name."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Buffer to store the client's weapon name."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "weapon",
+          "decl": "char[] weapon",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPutInServer": {
+      "name": "OnClientPutInServer",
+      "refLine": 114,
+      "docStart": 4204,
+      "docEnd": 4703,
+      "docs": {
+        "brief": "Called when a client is entering the game.\n\nWhether a client has a steamid is undefined until OnClientAuthorized\nis called, which may occur either before or after OnClientPutInServer.\nSimilarly, use OnClientPostAdminCheck() if you need to verify whether\nconnecting players are admins.\n\nGetClientCount() will include clients as they are passed through this\nfunction, as clients are already in game at this point.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is entering the game.\n\nWhether a client has a steamid is undefined until OnClientAuthorized\nis called, which may occur either before or after OnClientPutInServer.\nSimilarly, use OnClientPostAdminCheck() if you need to verify whether\nconnecting players are admins.\n\nGetClientCount() will include clients as they are passed through this\nfunction, as clients are already in game at this point."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientFromSerial": {
+      "name": "GetClientFromSerial",
+      "refLine": 846,
+      "docStart": 31186,
+      "docEnd": 31353,
+      "docs": {
+        "brief": "Returns the client index by its serial number.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client index by its serial number."
+          },
+          {
+            "tag": "param:serial",
+            "text": "Serial number."
+          },
+          {
+            "tag": "return",
+            "text": "Client index, or 0 for invalid serial."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "serial",
+          "decl": "int serial",
+          "default": null
+        }
+      ]
+    },
+    "IsFakeClient": {
+      "name": "IsFakeClient",
+      "refLine": 423,
+      "docStart": 16079,
+      "docEnd": 16327,
+      "docs": {
+        "brief": "Returns if a certain player is a fake client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player is a fake client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player is a fake client, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetSteamAccountID": {
+      "name": "GetSteamAccountID",
+      "refLine": 357,
+      "docStart": 13568,
+      "docEnd": 14187,
+      "docs": {
+        "brief": "Returns the client's Steam account ID, a number uniquely identifying a given Steam account.\nThis number is the basis for the various display SteamID forms, see the AuthIdType enum for examples.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's Steam account ID, a number uniquely identifying a given Steam account.\nThis number is the basis for the various display SteamID forms, see the AuthIdType enum for examples."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index."
+          },
+          {
+            "tag": "param:validate",
+            "text": "Check backend validation status.\nDO NOT PASS FALSE UNLESS YOU UNDERSTAND THE CONSEQUENCES,\nYou WILL KNOW if you need to use this, MOST WILL NOT."
+          },
+          {
+            "tag": "return",
+            "text": "Steam account ID or 0 if not available."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected or the index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "validate",
+          "decl": "bool validate",
+          "default": "true"
+        }
+      ]
+    },
+    "IsClientObserver": {
+      "name": "IsClientObserver",
+      "refLine": 450,
+      "docStart": 16966,
+      "docEnd": 17234,
+      "docs": {
+        "brief": "Returns if a certain player is an observer/spectator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player is an observer/spectator."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player is an observer, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientLatency": {
+      "name": "GetClientLatency",
+      "refLine": 724,
+      "docStart": 26302,
+      "docEnd": 26662,
+      "docs": {
+        "brief": "Returns the client's current latency (RTT), more accurate than GetAvgLatency but jittering.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's current latency (RTT), more accurate than GetAvgLatency but jittering."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Latency, or -1 if network info is not available."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAvgData": {
+      "name": "GetClientAvgData",
+      "refLine": 764,
+      "docStart": 27965,
+      "docEnd": 28240,
+      "docs": {
+        "brief": "Returns the client's data flow in bytes/sec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's data flow in bytes/sec."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Data flow."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "KickClient": {
+      "name": "KickClient",
+      "refLine": 803,
+      "docStart": 28914,
+      "docEnd": 29790,
+      "docs": {
+        "brief": "Disconnects a client from the server as soon as the next frame starts.\n\nNote: Originally, KickClient() was immediate.  The delay was introduced\nbecause despite warnings, plugins were using it in ways that would crash.\nThe new safe version can break cases that rely on immediate disconnects,\nbut ensures that plugins do not accidentally cause crashes.\n\nIf you need immediate disconnects, use KickClientEx().\n\nNote: IsClientInKickQueue() will return true before the kick occurs.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Disconnects a client from the server as soon as the next frame starts.\n\nNote: Originally, KickClient() was immediate.  The delay was introduced\nbecause despite warnings, plugins were using it in ways that would crash.\nThe new safe version can break cases that rely on immediate disconnects,\nbut ensures that plugins do not accidentally cause crashes.\n\nIf you need immediate disconnects, use KickClientEx().\n\nNote: IsClientInKickQueue() will return true before the kick occurs."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:format",
+            "text": "Optional formatting rules for disconnect reason.\nNote that a period is automatically appended to the string by the engine."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": "\"\""
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPostAdminFilter": {
+      "name": "OnClientPostAdminFilter",
+      "refLine": 219,
+      "docStart": 7908,
+      "docEnd": 8418,
+      "docs": {
+        "brief": "Called directly before OnClientPostAdminCheck() as a method to\nalter administrative permissions before plugins perform final\npost-connect operations.\n\nIn general, do not use this function unless you are specifically\nattempting to change access permissions.  Use OnClientPostAdminCheck()\ninstead if you simply want to perform post-connect authorization\nroutines.\n\nSee OnClientPostAdminCheck() for more information.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called directly before OnClientPostAdminCheck() as a method to\nalter administrative permissions before plugins perform final\npost-connect operations.\n\nIn general, do not use this function unless you are specifically\nattempting to change access permissions.  Use OnClientPostAdminCheck()\ninstead if you simply want to perform post-connect authorization\nroutines.\n\nSee OnClientPostAdminCheck() for more information."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientArmor": {
+      "name": "GetClientArmor",
+      "refLine": 669,
+      "docStart": 24683,
+      "docEnd": 24892,
+      "docs": {
+        "brief": "Returns the client's armor.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's armor."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Armor value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "RunAdminCacheChecks": {
+      "name": "RunAdminCacheChecks",
+      "refLine": 564,
+      "docStart": 20887,
+      "docEnd": 21288,
+      "docs": {
+        "brief": "Runs through the Core-defined admin authorization checks on a player.\nHas no effect if the player is already an admin.\n\nNote: This function is based on the internal cache only.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Runs through the Core-defined admin authorization checks on a player.\nHas no effect if the player is already an admin.\n\nNote: This function is based on the internal cache only."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "True if access was changed, false if it did not."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in-game AND authorized."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAuthId": {
+      "name": "GetClientAuthId",
+      "refLine": 344,
+      "docStart": 12782,
+      "docEnd": 13456,
+      "docs": {
+        "brief": "Retrieves a client's authentication string (SteamID).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a client's authentication string (SteamID)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "param:authType",
+            "text": "Auth id type and format to use."
+          },
+          {
+            "tag": "param:auth",
+            "text": "Buffer to store the client's auth id."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "param:validate",
+            "text": "Check backend validation status.\nDO NOT PASS FALSE UNLESS YOU UNDERSTAND THE CONSEQUENCES,\nYou WILL KNOW if you need to use this, MOST WILL NOT."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected or the index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "AuthIdType",
+          "name": "authType",
+          "decl": "AuthIdType authType",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "auth",
+          "decl": "char[] auth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "validate",
+          "decl": "bool validate",
+          "default": "true"
+        }
+      ]
+    },
+    "GetClientAvgLatency": {
+      "name": "GetClientAvgLatency",
+      "refLine": 734,
+      "docStart": 26724,
+      "docEnd": 27048,
+      "docs": {
+        "brief": "Returns the client's average packet latency in seconds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's average packet latency in seconds."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Latency, or -1 if network info is not available."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "GetClientFrags": {
+      "name": "GetClientFrags",
+      "refLine": 687,
+      "docStart": 25196,
+      "docEnd": 25409,
+      "docs": {
+        "brief": "Returns the client's frag count.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's frag count."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Frag count."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "IsClientAuthorized": {
+      "name": "IsClientAuthorized",
+      "refLine": 414,
+      "docStart": 15795,
+      "docEnd": 16030,
+      "docs": {
+        "brief": "Returns if a certain player has been authenticated.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player has been authenticated."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player has been authenticated, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientConnected": {
+      "name": "OnClientConnected",
+      "refLine": 99,
+      "docStart": 4006,
+      "docEnd": 4155,
+      "docs": {
+        "brief": "Called once a client successfully connects.  This callback is paired with OnClientDisconnect.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once a client successfully connects.  This callback is paired with OnClientDisconnect."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSettingsChanged": {
+      "name": "OnClientSettingsChanged",
+      "refLine": 170,
+      "docStart": 6484,
+      "docEnd": 6590,
+      "docs": {
+        "brief": "Called whenever the client's settings are changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called whenever the client's settings are changed."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CreateFakeClient": {
+      "name": "CreateFakeClient",
+      "refLine": 584,
+      "docStart": 21730,
+      "docEnd": 21914,
+      "docs": {
+        "brief": "Creates a fake client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a fake client."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name to use."
+          },
+          {
+            "tag": "return",
+            "text": "Client index on success, 0 otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "No map is active."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "GetClientHealth": {
+      "name": "GetClientHealth",
+      "refLine": 604,
+      "docStart": 22349,
+      "docEnd": 22560,
+      "docs": {
+        "brief": "Returns the client's health.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's health."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Health value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientTeam": {
+      "name": "GetClientTeam",
+      "refLine": 482,
+      "docStart": 18127,
+      "docEnd": 18372,
+      "docs": {
+        "brief": "Retrieves a client's team index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a client's team index."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Team index the client is on (mod specific)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAbsAngles": {
+      "name": "GetClientAbsAngles",
+      "refLine": 651,
+      "docStart": 24035,
+      "docEnd": 24297,
+      "docs": {
+        "brief": "Returns the client's position angle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's position angle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:ang",
+            "text": "Destination vector to store the client's position angle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "ang",
+          "decl": "float ang[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetClientTime": {
+      "name": "GetClientTime",
+      "refLine": 714,
+      "docStart": 26024,
+      "docEnd": 26257,
+      "docs": {
+        "brief": "Returns the client's connection time in seconds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's connection time in seconds."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Connection time."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientCount": {
+      "name": "GetClientCount",
+      "refLine": 290,
+      "docStart": 10760,
+      "docEnd": 10944,
+      "docs": {
+        "brief": "Returns the client count put in the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client count put in the server."
+          },
+          {
+            "tag": "param:inGameOnly",
+            "text": "If false connecting players are also counted."
+          },
+          {
+            "tag": "return",
+            "text": "Client count in the server."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "inGameOnly",
+          "decl": "bool inGameOnly",
+          "default": "true"
+        }
+      ]
+    },
+    "GetClientMins": {
+      "name": "GetClientMins",
+      "refLine": 642,
+      "docStart": 23720,
+      "docEnd": 23977,
+      "docs": {
+        "brief": "Returns the client's min size vector.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's min size vector."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Destination vector to store the client's min size."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "GetMaxHumanPlayers": {
+      "name": "GetMaxHumanPlayers",
+      "refLine": 282,
+      "docStart": 10072,
+      "docEnd": 10722,
+      "docs": {
+        "brief": "Returns the maximum number of human players allowed on the server.  This is\na game-specific function used on newer games to limit the number of humans\nthat can join a game and can be lower than MaxClients. It is the number often\nreflected in the server browser or when viewing the output of the status command.\nOn unsupported games or modes without overrides, it will return the same value\nas MaxClients.\n\nYou should not globally cache the value to GetMaxHumanPlayers() because it can change across\ngame modes. You may still cache it locally.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the maximum number of human players allowed on the server.  This is\na game-specific function used on newer games to limit the number of humans\nthat can join a game and can be lower than MaxClients. It is the number often\nreflected in the server browser or when viewing the output of the status command.\nOn unsupported games or modes without overrides, it will return the same value\nas MaxClients.\n\nYou should not globally cache the value to GetMaxHumanPlayers() because it can change across\ngame modes. You may still cache it locally."
+          },
+          {
+            "tag": "return",
+            "text": "Maximum number of humans allowed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "AddUserFlags": {
+      "name": "AddUserFlags",
+      "refLine": 511,
+      "docStart": 19098,
+      "docEnd": 19388,
+      "docs": {
+        "brief": "Sets access flags on a client.  If the client is not an admin,\na temporary, anonymous AdminId is given.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets access flags on a client.  If the client is not an admin,\na temporary, anonymous AdminId is given."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:...",
+            "text": "Flags to set on the client."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "AdminFlag ...",
+          "name": "...",
+          "decl": "AdminFlag ...",
+          "default": null
+        }
+      ]
+    },
+    "OnClientCommandKeyValues": {
+      "name": "OnClientCommandKeyValues",
+      "refLine": 153,
+      "docStart": 5566,
+      "docEnd": 6035,
+      "docs": {
+        "brief": "Called when a client is sending a KeyValues command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is sending a KeyValues command."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:kv",
+            "text": "Editable KeyValues data to be sent as the command.\n(This handle should not be stored and will be closed\nafter this forward completes.)"
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled blocks the command from being sent,\nand Plugin_Continue resumes normal functionality."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "KeyValues",
+          "name": "kv",
+          "decl": "KeyValues kv",
+          "default": null
+        }
+      ]
+    },
+    "GetClientAvgChoke": {
+      "name": "GetClientAvgChoke",
+      "refLine": 754,
+      "docStart": 27538,
+      "docEnd": 27902,
+      "docs": {
+        "brief": "Returns the client's average packet choke, values go from 0 to 1 (for percentages).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's average packet choke, values go from 0 to 1 (for percentages)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flow",
+            "text": "Traffic flowing direction."
+          },
+          {
+            "tag": "return",
+            "text": "Average packet loss, or -1 if network info is not available."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "NetFlow",
+          "name": "flow",
+          "decl": "NetFlow flow",
+          "default": null
+        }
+      ]
+    },
+    "GetClientModel": {
+      "name": "GetClientModel",
+      "refLine": 614,
+      "docStart": 22605,
+      "docEnd": 22932,
+      "docs": {
+        "brief": "Returns the client's model name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's model name."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:model",
+            "text": "Buffer to store the client's model name."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "model",
+          "decl": "char[] model",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "SetFakeClientConVar": {
+      "name": "SetFakeClientConVar",
+      "refLine": 595,
+      "docStart": 21967,
+      "docEnd": 22260,
+      "docs": {
+        "brief": "Sets a convar value on a fake client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a convar value on a fake client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:cvar",
+            "text": "ConVar name."
+          },
+          {
+            "tag": "param:value",
+            "text": "ConVar value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected,\nor client not a fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "cvar",
+          "decl": "const char[] cvar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetClientUserId": {
+      "name": "GetClientUserId",
+      "refLine": 367,
+      "docStart": 14254,
+      "docEnd": 14542,
+      "docs": {
+        "brief": "Retrieves a client's user id, which is an index incremented for every client\nthat joins the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a client's user id, which is an index incremented for every client\nthat joins the server."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "User id of the client."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected or the index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "IsClientReplay": {
+      "name": "IsClientReplay",
+      "refLine": 441,
+      "docStart": 16671,
+      "docEnd": 16921,
+      "docs": {
+        "brief": "Returns if a certain player is the Replay bot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player is the Replay bot."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player is the Replay bot, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientCommandKeyValues_Post": {
+      "name": "OnClientCommandKeyValues_Post",
+      "refLine": 163,
+      "docStart": 6107,
+      "docEnd": 6409,
+      "docs": {
+        "brief": "Called after a client has sent a KeyValues command.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a client has sent a KeyValues command."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues data sent as the command.\n(This handle should not be stored and will be closed\nafter this forward completes.)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "KeyValues",
+          "name": "kv",
+          "decl": "KeyValues kv",
+          "default": null
+        }
+      ]
+    },
+    "SetUserAdmin": {
+      "name": "SetUserAdmin",
+      "refLine": 492,
+      "docStart": 18416,
+      "docEnd": 18744,
+      "docs": {
+        "brief": "Sets a client's AdminId.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's AdminId."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:id",
+            "text": "AdminId to set.  INVALID_ADMIN_ID removes admin permissions."
+          },
+          {
+            "tag": "param:temp",
+            "text": "True if the id should be freed on disconnect."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or bogus AdminId."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "AdminId",
+          "name": "id",
+          "decl": "AdminId id",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "temp",
+          "decl": "bool temp",
+          "default": "false"
+        }
+      ]
+    },
+    "NotifyPostAdminCheck": {
+      "name": "NotifyPostAdminCheck",
+      "refLine": 575,
+      "docStart": 21338,
+      "docEnd": 21679,
+      "docs": {
+        "brief": "Signals that a player has completed post-connection admin checks.\nHas no effect if the player has already had this event signalled.\n\nNote: This must be sent even if no admin id was assigned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Signals that a player has completed post-connection admin checks.\nHas no effect if the player has already had this event signalled.\n\nNote: This must be sent even if no admin id was assigned."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in-game AND authorized."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientDataRate": {
+      "name": "GetClientDataRate",
+      "refLine": 696,
+      "docStart": 25453,
+      "docEnd": 25681,
+      "docs": {
+        "brief": "Returns the client's send data rate in bytes/sec.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's send data rate in bytes/sec."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Data rate."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "ChangeClientTeam": {
+      "name": "ChangeClientTeam",
+      "refLine": 829,
+      "docStart": 30535,
+      "docEnd": 30871,
+      "docs": {
+        "brief": "Changes a client's team through the mod's generic team changing function.\nOn CS:S, this will kill the player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes a client's team through the mod's generic team changing function.\nOn CS:S, this will kill the player."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:team",
+            "text": "Mod-specific team index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or lack of\nmod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "team",
+          "decl": "int team",
+          "default": null
+        }
+      ]
+    },
+    "IsClientConnected": {
+      "name": "IsClientConnected",
+      "refLine": 376,
+      "docStart": 14587,
+      "docEnd": 14816,
+      "docs": {
+        "brief": "Returns if a certain player is connected.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a certain player is connected."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "return",
+            "text": "True if player is connected to the server, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnServerEnterHibernation": {
+      "name": "OnServerEnterHibernation",
+      "refLine": 226,
+      "docStart": 8473,
+      "docEnd": 8666,
+      "docs": {
+        "brief": "Called directly before the server enters hibernation.\nThis is your last chance to do anything in the plugin before\nhibernation occurs, as SV_Frame will no longer be called.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called directly before the server enters hibernation.\nThis is your last chance to do anything in the plugin before\nhibernation occurs, as SV_Frame will no longer be called."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GetClientAuthString": {
+      "name": "GetClientAuthString",
+      "refLine": 329,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "auth",
+          "decl": "char[] auth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "validate",
+          "decl": "bool validate",
+          "default": "true"
+        }
+      ]
+    },
+    "OnClientDisconnect_Post": {
+      "name": "OnClientDisconnect_Post",
+      "refLine": 128,
+      "docStart": 4914,
+      "docEnd": 5023,
+      "docs": {
+        "brief": "Called when a client is disconnected from the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is disconnected from the server."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientIP": {
+      "name": "GetClientIP",
+      "refLine": 313,
+      "docStart": 11434,
+      "docEnd": 11897,
+      "docs": {
+        "brief": "Retrieves a client's IP address.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a client's IP address."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "param:ip",
+            "text": "Buffer to store the client's ip address."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of string buffer (includes NULL terminator)."
+          },
+          {
+            "tag": "param:remport",
+            "text": "Remove client's port from the ip string (true by default)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected or the index is invalid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "ip",
+          "decl": "char[] ip",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "remport",
+          "decl": "bool remport",
+          "default": "true"
+        }
+      ]
+    },
+    "GetClientDeaths": {
+      "name": "GetClientDeaths",
+      "refLine": 678,
+      "docStart": 24936,
+      "docEnd": 25151,
+      "docs": {
+        "brief": "Returns the client's death count.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's death count."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Death count."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientCommand": {
+      "name": "OnClientCommand",
+      "refLine": 141,
+      "docStart": 5078,
+      "docEnd": 5507,
+      "docs": {
+        "brief": "Called when a client is sending a command.\n\nAs of SourceMod 1.3, the client is guaranteed to be in-game.\nUse command listeners (console.inc) for more advanced hooks.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is sending a command.\n\nAs of SourceMod 1.3, the client is guaranteed to be in-game.\nUse command listeners (console.inc) for more advanced hooks."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:args",
+            "text": "Number of arguments."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled blocks the command from being sent,\nand Plugin_Continue resumes normal functionality."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "IsClientTimingOut": {
+      "name": "IsClientTimingOut",
+      "refLine": 705,
+      "docStart": 25728,
+      "docEnd": 25976,
+      "docs": {
+        "brief": "Returns if a client is timing out",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a client is timing out"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "True if client is timing out, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not connected, or fake client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientInfo": {
+      "name": "GetClientInfo",
+      "refLine": 473,
+      "docStart": 17657,
+      "docEnd": 18039,
+      "docs": {
+        "brief": "Retrieves values from client replicated keys.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves values from client replicated keys."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store value."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of valve (UTF-8 safe)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "SetUserFlagBits": {
+      "name": "SetUserFlagBits",
+      "refLine": 531,
+      "docStart": 19779,
+      "docEnd": 20124,
+      "docs": {
+        "brief": "Sets access flags on a client using bits instead of flags.  If the\nclient is not an admin, and flags not 0, a temporary, anonymous AdminId is given.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets access flags on a client using bits instead of flags.  If the\nclient is not an admin, and flags not 0, a temporary, anonymous AdminId is given."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Bitstring of flags to set on client."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MAXPLAYERS": {
+      "name": "MAXPLAYERS",
+      "refLine": 72,
+      "docStart": 2792,
+      "docEnd": 2844,
+      "docs": {
+        "brief": "Maximum number of players SourceMod supports",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum number of players SourceMod supports"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "101"
+    },
+    "_clients_included": {
+      "name": "_clients_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MAX_NAME_LENGTH": {
+      "name": "MAX_NAME_LENGTH",
+      "refLine": 73,
+      "docStart": 2874,
+      "docEnd": 2928,
+      "docs": {
+        "brief": "Maximum buffer required to store a client name",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum buffer required to store a client name"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "128"
+    },
+    "MAX_AUTHID_LENGTH": {
+      "name": "MAX_AUTHID_LENGTH",
+      "refLine": 74,
+      "docStart": 2959,
+      "docEnd": 3015,
+      "docs": {
+        "brief": "Maximum buffer required to store any AuthID type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum buffer required to store any AuthID type"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "64"
+    }
+  },
+  "enums": {
+    "AuthIdType": {
+      "name": "AuthIdType",
+      "refLine": 57,
+      "docStart": 1865,
+      "docEnd": 2159,
+      "docs": {
+        "brief": "Auth string types.\n\nNote that for the Steam2 and Steam3 types, the following ids are\nalso valid values:\n\"STEAM_ID_PENDING\" - Authentication is pending.\n\"STEAM_ID_LAN\" - Authentication is disabled because of being on a LAN server.\n\"BOT\" - The client is a bot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Auth string types.\n\nNote that for the Steam2 and Steam3 types, the following ids are\nalso valid values:\n\"STEAM_ID_PENDING\" - Authentication is pending.\n\"STEAM_ID_LAN\" - Authentication is disabled because of being on a LAN server.\n\"BOT\" - The client is a bot."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "AuthId_Steam3": {
+          "name": "AuthId_Steam3",
+          "refLine": 63,
+          "docStart": 2461,
+          "docEnd": 2511,
+          "docs": {
+            "brief": "Steam3 rendered format, ex \"[U:1:8307981]\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Steam3 rendered format, ex \"[U:1:8307981]\""
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "AuthId_Steam2": {
+          "name": "AuthId_Steam2",
+          "refLine": 62,
+          "docStart": 2276,
+          "docEnd": 2355,
+          "docs": {
+            "brief": "The following are only available on games that support Steam authentication.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The following are only available on games that support Steam authentication."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "AuthId_Engine": {
+          "name": "AuthId_Engine",
+          "refLine": 59,
+          "docStart": 2205,
+          "docEnd": 2270,
+          "docs": {
+            "brief": "The game-specific auth string as returned from the engine",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The game-specific auth string as returned from the engine"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "AuthId_SteamID64": {
+          "name": "AuthId_SteamID64",
+          "refLine": 64,
+          "docStart": 2537,
+          "docEnd": 2601,
+          "docs": {
+            "brief": "A SteamID64 (uint64) as a String, ex \"76561197968573709\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A SteamID64 (uint64) as a String, ex \"76561197968573709\""
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "NetFlow": {
+      "name": "NetFlow",
+      "refLine": 41,
+      "docStart": 1640,
+      "docEnd": 1677,
+      "docs": {
+        "brief": "Network flow directions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Network flow directions."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "NetFlow_Both": {
+          "name": "NetFlow_Both",
+          "refLine": 45,
+          "docStart": 1823,
+          "docEnd": 1857,
+          "docs": {
+            "brief": "Both values added together",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Both values added together"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "NetFlow_Outgoing": {
+          "name": "NetFlow_Outgoing",
+          "refLine": 43,
+          "docStart": 1721,
+          "docEnd": 1745,
+          "docs": {
+            "brief": "Outgoing traffic",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Outgoing traffic"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "NetFlow_Incoming": {
+          "name": "NetFlow_Incoming",
+          "refLine": 44,
+          "docStart": 1772,
+          "docEnd": 1796,
+          "docs": {
+            "brief": "Incoming traffic",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Incoming traffic"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

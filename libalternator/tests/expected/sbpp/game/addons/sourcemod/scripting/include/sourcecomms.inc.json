@@ -1,0 +1,654 @@
+{
+  "functions": {
+    "__pl_sourcecomms_SetNTVOptional": {
+      "name": "__pl_sourcecomms_SetNTVOptional",
+      "refLine": 137,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SourceComms_GetClientMuteType": {
+      "name": "SourceComms_GetClientMuteType",
+      "refLine": 94,
+      "docStart": 4044,
+      "docEnd": 4245,
+      "docs": {
+        "brief": "Returns the client's mute type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's mute type"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index of the player to check mute status"
+          },
+          {
+            "tag": "return",
+            "text": "The client's current mute type index (see enum bType in the begin)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bType",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SourceComms_OnBlockRemoved": {
+      "name": "SourceComms_OnBlockRemoved",
+      "refLine": 124,
+      "docStart": 5074,
+      "docEnd": 5417,
+      "docs": {
+        "brief": "Called when removed communication block for player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when removed communication block for player."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index of the admin who is unblocking the client."
+          },
+          {
+            "tag": "param:target",
+            "text": "The client index of the player to blocked."
+          },
+          {
+            "tag": "param:type",
+            "text": "The type of unblock. See section \"Int definitions for punishments types\"."
+          },
+          {
+            "tag": "param:reason",
+            "text": "The reason to unblock the player."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "reason",
+          "decl": "char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "SourceComms_SetClientGag": {
+      "name": "SourceComms_SetClientGag",
+      "refLine": 86,
+      "docStart": 3165,
+      "docEnd": 3886,
+      "docs": {
+        "brief": "Sets a client's gag state.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's gag state."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:gagState",
+            "text": "True to gag client, false to ungag.\n--------------------------------------Parameters below this line are used only for gagState=true--------------------------------------\n-----------------------------------for gagState=false these parameters are ignored (saveToDB=false)-----------------------------------"
+          },
+          {
+            "tag": "param:gagLength",
+            "text": "Length of punishment in minutes. Value < 0 gagging client for session. Permanent (0) is not allowed at this time."
+          },
+          {
+            "tag": "param:saveToDB",
+            "text": "If true, punishment will be saved in database."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for punishment."
+          },
+          {
+            "tag": "return",
+            "text": "True if this caused a change in gag state, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "gagState",
+          "decl": "bool gagState",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "gagLength",
+          "decl": "int gagLength",
+          "default": "-1"
+        },
+        {
+          "type": "bool",
+          "name": "saveToDB",
+          "decl": "bool saveToDB",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"Gagged through natives\""
+        }
+      ]
+    },
+    "SourceComms_OnBlockAdded": {
+      "name": "SourceComms_OnBlockAdded",
+      "refLine": 114,
+      "docStart": 4559,
+      "docEnd": 4974,
+      "docs": {
+        "brief": "Called when added communication block for player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when added communication block for player."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index of the admin who is blocking the client."
+          },
+          {
+            "tag": "param:target",
+            "text": "The client index of the player to blocked."
+          },
+          {
+            "tag": "param:time",
+            "text": "The time to blocked the player for (in minutes, 0 = permanent)."
+          },
+          {
+            "tag": "param:type",
+            "text": "The type of block. See section \"Int definitions for punishments types\"."
+          },
+          {
+            "tag": "param:reason",
+            "text": "The reason to block the player."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "reason",
+          "decl": "char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "SourceComms_SetClientMute": {
+      "name": "SourceComms_SetClientMute",
+      "refLine": 72,
+      "docStart": 2281,
+      "docEnd": 3005,
+      "docs": {
+        "brief": "Sets a client's mute state.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's mute state."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:muteState",
+            "text": "True to mute client, false to unmute.\n-------------------------------------Parameters below this line are used only for muteState=true-------------------------------------\n----------------------------------for muteState=false these parameters are ignored (saveToDB=false)----------------------------------"
+          },
+          {
+            "tag": "param:muteLength",
+            "text": "Length of punishment in minutes. Value < 0 muting client for session. Permanent (0) is not allowed at this time."
+          },
+          {
+            "tag": "param:saveToDB",
+            "text": "If true, punishment will be saved in database."
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for punishment."
+          },
+          {
+            "tag": "return",
+            "text": "True if this caused a change in mute state, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "muteState",
+          "decl": "bool muteState",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "muteLength",
+          "decl": "int muteLength",
+          "default": "-1"
+        },
+        {
+          "type": "bool",
+          "name": "saveToDB",
+          "decl": "bool saveToDB",
+          "default": "false"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"Muted through natives\""
+        }
+      ]
+    },
+    "SourceComms_GetClientGagType": {
+      "name": "SourceComms_GetClientGagType",
+      "refLine": 103,
+      "docStart": 4304,
+      "docEnd": 4502,
+      "docs": {
+        "brief": "Returns the client's gag type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the client's gag type"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index of the player to check gag status"
+          },
+          {
+            "tag": "return",
+            "text": "The client's current gag type index (see enum bType in the begin)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bType",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SBPPComms_VERSION_MINOR": {
+      "name": "SBPPComms_VERSION_MINOR",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"8\""
+    },
+    "_sourcecomms_included": {
+      "name": "_sourcecomms_included",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TYPE_SILENCE": {
+      "name": "TYPE_SILENCE",
+      "refLine": 44,
+      "docStart": 1704,
+      "docEnd": 1732,
+      "docs": {
+        "brief": "Silence (mute + gag)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Silence (mute + gag)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "3"
+    },
+    "TYPE_TEMP_UNSILENCE": {
+      "name": "TYPE_TEMP_UNSILENCE",
+      "refLine": 50,
+      "docStart": 2027,
+      "docEnd": 2055,
+      "docs": {
+        "brief": "Temp silence removed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Temp silence removed"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "16"
+    },
+    "TYPE_TEMP_UNMUTE": {
+      "name": "TYPE_TEMP_UNMUTE",
+      "refLine": 48,
+      "docStart": 1912,
+      "docEnd": 1937,
+      "docs": {
+        "brief": "Temp mute removed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Temp mute removed"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "14"
+    },
+    "TYPE_UNMUTE": {
+      "name": "TYPE_UNMUTE",
+      "refLine": 45,
+      "docStart": 1765,
+      "docEnd": 1784,
+      "docs": {
+        "brief": "Voice Unmute",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Voice Unmute"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "4"
+    },
+    "TYPE_UNSILENCE": {
+      "name": "TYPE_UNSILENCE",
+      "refLine": 47,
+      "docStart": 1862,
+      "docEnd": 1879,
+      "docs": {
+        "brief": "Unsilence",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unsilence"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "6"
+    },
+    "SBPPComms_VERSION_MAJOR": {
+      "name": "SBPPComms_VERSION_MAJOR",
+      "refLine": 32,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"1\""
+    },
+    "SBPPComms_VERSION_PATCH": {
+      "name": "SBPPComms_VERSION_PATCH",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"4\""
+    },
+    "SBPPComms_VERSION": {
+      "name": "SBPPComms_VERSION",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "SBPPComms_VERSION_MAJOR...\".\"...SBPPComms_VERSION_MINOR...\".\"...SBPPComms_VERSION_PATCH"
+    },
+    "TYPE_UNGAG": {
+      "name": "TYPE_UNGAG",
+      "refLine": 46,
+      "docStart": 1817,
+      "docEnd": 1829,
+      "docs": {
+        "brief": "Ungag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ungag"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "5"
+    },
+    "TYPE_MUTE": {
+      "name": "TYPE_MUTE",
+      "refLine": 42,
+      "docStart": 1597,
+      "docEnd": 1615,
+      "docs": {
+        "brief": "Voice Mute",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Voice Mute"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "TYPE_TEMP_UNGAG": {
+      "name": "TYPE_TEMP_UNGAG",
+      "refLine": 49,
+      "docStart": 1970,
+      "docEnd": 1994,
+      "docs": {
+        "brief": "Temp gag removed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Temp gag removed"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "15"
+    },
+    "TYPE_GAG": {
+      "name": "TYPE_GAG",
+      "refLine": 43,
+      "docStart": 1648,
+      "docEnd": 1671,
+      "docs": {
+        "brief": "Gag (text chat)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gag (text chat)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    }
+  },
+  "enums": {
+    "bType": {
+      "name": "bType",
+      "refLine": 53,
+      "docStart": 2057,
+      "docEnd": 2080,
+      "docs": {
+        "brief": "Punishments types",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Punishments types"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "bPerm": {
+          "name": "bPerm",
+          "refLine": 57,
+          "docStart": 2251,
+          "docEnd": 2277,
+          "docs": {
+            "brief": "... permanently blocked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "... permanently blocked"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "bNot": {
+          "name": "bNot",
+          "refLine": 54,
+          "docStart": 2106,
+          "docEnd": 2144,
+          "docs": {
+            "brief": "Player chat or voice is not blocked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Player chat or voice is not blocked"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "bSess": {
+          "name": "bSess",
+          "refLine": 55,
+          "docStart": 2154,
+          "docEnd": 2205,
+          "docs": {
+            "brief": "... blocked for player session (until reconnect)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "... blocked for player session (until reconnect)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "bTime": {
+          "name": "bTime",
+          "refLine": 56,
+          "docStart": 2215,
+          "docEnd": 2243,
+          "docs": {
+            "brief": "... blocked for some time",
+            "tags": [
+              {
+                "tag": "",
+                "text": "... blocked for some time"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

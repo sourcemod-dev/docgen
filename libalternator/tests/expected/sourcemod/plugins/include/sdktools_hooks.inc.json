@@ -1,0 +1,516 @@
+{
+  "functions": {
+    "OnFileReceive": {
+      "name": "OnFileReceive",
+      "refLine": 112,
+      "docStart": 5558,
+      "docEnd": 5810,
+      "docs": {
+        "brief": "Called when a client sends a file to the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client sends a file to the server."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:sFile",
+            "text": "Requested file path."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the transfer, Plugin_Continue to let it proceed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sFile",
+          "decl": "const char[] sFile",
+          "default": null
+        }
+      ]
+    },
+    "OnPlayerRunCmdPre": {
+      "name": "OnPlayerRunCmdPre",
+      "refLine": 55,
+      "docStart": 1733,
+      "docEnd": 2614,
+      "docs": {
+        "brief": "Called when a clients movement buttons are being processed (Read Only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a clients movement buttons are being processed (Read Only)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:buttons",
+            "text": "Current commands (as bitflags - see entity_prop_stocks.inc)."
+          },
+          {
+            "tag": "param:impulse",
+            "text": "Current impulse command."
+          },
+          {
+            "tag": "param:vel",
+            "text": "Players desired velocity."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Players desired view angles."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Entity index of the new weapon if player switches weapon, 0 otherwise."
+          },
+          {
+            "tag": "param:subtype",
+            "text": "Weapon subtype when selected from a menu."
+          },
+          {
+            "tag": "param:cmdnum",
+            "text": "Command number. Increments from the first command sent."
+          },
+          {
+            "tag": "param:tickcount",
+            "text": "Tick count. A client's prediction based on the server's GetGameTickCount value."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Random seed. Used to determine weapon recoil, spread, and other predicted elements."
+          },
+          {
+            "tag": "param:mouse",
+            "text": "Mouse direction (x, y)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "buttons",
+          "decl": "int buttons",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "impulse",
+          "decl": "int impulse",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vel",
+          "decl": "const float vel[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angles",
+          "decl": "const float angles[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "subtype",
+          "decl": "int subtype",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cmdnum",
+          "decl": "int cmdnum",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "tickcount",
+          "decl": "int tickcount",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "seed",
+          "decl": "int seed",
+          "default": null
+        },
+        {
+          "type": "const int[2]",
+          "name": "mouse",
+          "decl": "const int mouse[2]",
+          "default": null
+        }
+      ]
+    },
+    "OnPlayerRunCmdPost": {
+      "name": "OnPlayerRunCmdPost",
+      "refLine": 92,
+      "docStart": 4162,
+      "docEnd": 5036,
+      "docs": {
+        "brief": "Called after a clients movement buttons were processed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a clients movement buttons were processed."
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:buttons",
+            "text": "The current commands (as bitflags - see entity_prop_stocks.inc)."
+          },
+          {
+            "tag": "param:impulse",
+            "text": "The current impulse command."
+          },
+          {
+            "tag": "param:vel",
+            "text": "Players desired velocity."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Players desired view angles."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Entity index of the new weapon if player switches weapon, 0 otherwise."
+          },
+          {
+            "tag": "param:subtype",
+            "text": "Weapon subtype when selected from a menu."
+          },
+          {
+            "tag": "param:cmdnum",
+            "text": "Command number. Increments from the first command sent."
+          },
+          {
+            "tag": "param:tickcount",
+            "text": "Tick count. A client's prediction based on the server's GetGameTickCount value."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Random seed. Used to determine weapon recoil, spread, and other predicted elements."
+          },
+          {
+            "tag": "param:mouse",
+            "text": "Mouse direction (x, y)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "buttons",
+          "decl": "int buttons",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "impulse",
+          "decl": "int impulse",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vel",
+          "decl": "const float vel[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angles",
+          "decl": "const float angles[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "subtype",
+          "decl": "int subtype",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cmdnum",
+          "decl": "int cmdnum",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "tickcount",
+          "decl": "int tickcount",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "seed",
+          "decl": "int seed",
+          "default": null
+        },
+        {
+          "type": "const int[2]",
+          "name": "mouse",
+          "decl": "const int mouse[2]",
+          "default": null
+        }
+      ]
+    },
+    "OnPlayerRunCmd": {
+      "name": "OnPlayerRunCmd",
+      "refLine": 75,
+      "docStart": 2814,
+      "docEnd": 3974,
+      "docs": {
+        "brief": "Called when a clients movement buttons are being processed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a clients movement buttons are being processed"
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client."
+          },
+          {
+            "tag": "param:buttons",
+            "text": "Copyback buffer containing the current commands (as bitflags - see entity_prop_stocks.inc)."
+          },
+          {
+            "tag": "param:impulse",
+            "text": "Copyback buffer containing the current impulse command."
+          },
+          {
+            "tag": "param:vel",
+            "text": "Players desired velocity."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Players desired view angles."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Entity index of the new weapon if player switches weapon, 0 otherwise."
+          },
+          {
+            "tag": "param:subtype",
+            "text": "Weapon subtype when selected from a menu."
+          },
+          {
+            "tag": "param:cmdnum",
+            "text": "Command number. Increments from the first command sent."
+          },
+          {
+            "tag": "param:tickcount",
+            "text": "Tick count. A client's prediction based on the server's GetGameTickCount value."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Random seed. Used to determine weapon recoil, spread, and other predicted elements."
+          },
+          {
+            "tag": "param:mouse",
+            "text": "Mouse direction (x, y)."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the commands from being processed, Plugin_Continue otherwise."
+          },
+          {
+            "tag": "note",
+            "text": "To see if all 11 params are available, use FeatureType_Capability and FEATURECAP_PLAYERRUNCMD_11PARAMS."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "buttons",
+          "decl": "int& buttons",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "impulse",
+          "decl": "int& impulse",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vel",
+          "decl": "float vel[3]",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "angles",
+          "decl": "float angles[3]",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "weapon",
+          "decl": "int& weapon",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "subtype",
+          "decl": "int& subtype",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "cmdnum",
+          "decl": "int& cmdnum",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "tickcount",
+          "decl": "int& tickcount",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "seed",
+          "decl": "int& seed",
+          "default": null
+        },
+        {
+          "type": "int[2]",
+          "name": "mouse",
+          "decl": "int mouse[2]",
+          "default": null
+        }
+      ]
+    },
+    "OnFileSend": {
+      "name": "OnFileSend",
+      "refLine": 102,
+      "docStart": 5237,
+      "docEnd": 5494,
+      "docs": {
+        "brief": "Called when a client requests a file from the server.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client requests a file from the server."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:sFile",
+            "text": "Requested file path."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled to block the transfer, Plugin_Continue to let it proceed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sFile",
+          "decl": "const char[] sFile",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_hooks_included": {
+      "name": "_sdktools_hooks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "FEATURECAP_PLAYERRUNCMD_11PARAMS": {
+      "name": "FEATURECAP_PLAYERRUNCMD_11PARAMS",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"SDKTools PlayerRunCmd 11Params\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,1542 @@
+{
+  "functions": {
+    "LoadTopMenuConfig": {
+      "name": "LoadTopMenuConfig",
+      "refLine": 291,
+      "docStart": 9929,
+      "docEnd": 11138,
+      "docs": {
+        "brief": "Re-sorts the items in a TopMenu via a configuration file.\n\nThe format of the configuration file should be a Valve Key-Values\nformatted file that SourceMod can parse.  There should be one root\nsection, and one sub-section for each category.  Each sub-section's\nname should match the category name.\n\nEach sub-section may only contain key/value pairs in the form of:\nkey: \"item\"\nvalue: Name of the item as passed to AddToTopMenu().\n\nThe TopMenu will draw items in the order declared in the configuration\nfile.  If items do not appear in the configuration file, they are sorted\nper-player based on how the handler function renders for that player.\nThese items appear after the configuration sorted items.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Re-sorts the items in a TopMenu via a configuration file.\n\nThe format of the configuration file should be a Valve Key-Values\nformatted file that SourceMod can parse.  There should be one root\nsection, and one sub-section for each category.  Each sub-section's\nname should match the category name.\n\nEach sub-section may only contain key/value pairs in the form of:\nkey: \"item\"\nvalue: Name of the item as passed to AddToTopMenu().\n\nThe TopMenu will draw items in the order declared in the configuration\nfile.  If items do not appear in the configuration file, they are sorted\nper-player based on how the handler function renders for that player.\nThese items appear after the configuration sorted items."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:file",
+            "text": "File path."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the error buffer.\nError buffer will be filled with a\nzero-terminated string if false is\nreturned."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FindTopMenuCategory": {
+      "name": "FindTopMenuCategory",
+      "refLine": 388,
+      "docStart": 14619,
+      "docEnd": 14931,
+      "docs": {
+        "brief": "Finds a category's topobj ID in a TopMenu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a category's topobj ID in a TopMenu."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Object's unique name."
+          },
+          {
+            "tag": "return",
+            "text": "TopMenuObject ID on success, or\nINVALID_TOPMENUOBJECT on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "TopMenuObject",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "CreateTopMenu": {
+      "name": "CreateTopMenu",
+      "refLine": 262,
+      "docStart": 9690,
+      "docEnd": 9870,
+      "docs": {
+        "brief": "Creates a TopMenu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a TopMenu."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Handler to use for drawing the root title."
+          },
+          {
+            "tag": "return",
+            "text": "A new TopMenu Handle, or INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "TopMenu",
+      "arguments": [
+        {
+          "type": "TopMenuHandler",
+          "name": "handler",
+          "decl": "TopMenuHandler handler",
+          "default": null
+        }
+      ]
+    },
+    "GetTopMenuObjName": {
+      "name": "GetTopMenuObjName",
+      "refLine": 343,
+      "docStart": 12817,
+      "docEnd": 13250,
+      "docs": {
+        "brief": "Retrieves the name string of a top menu item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name string of a top menu item."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:topobj",
+            "text": "TopMenuObject ID."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store info string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of info string."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written, not including the\nnull terminator."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle or TopMenuObject ID."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "topobj",
+          "decl": "TopMenuObject topobj",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SetTopMenuTitleCaching": {
+      "name": "SetTopMenuTitleCaching",
+      "refLine": 400,
+      "docStart": 15013,
+      "docEnd": 15506,
+      "docs": {
+        "brief": "Change the menu title caching behavior of the TopMenu. By default the\ntitles are cached to reduce overhead. If you need dynamic menu titles, which\ncan change everytime the menu is displayed to a user, set this to false.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Change the menu title caching behavior of the TopMenu. By default the\ntitles are cached to reduce overhead. If you need dynamic menu titles, which\ncan change everytime the menu is displayed to a user, set this to false."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:cache_titles",
+            "text": "Cache the menu titles and don't call the handler with\nTopMenuAction_DisplayTitle everytime the menu is drawn?"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "cache_titles",
+          "decl": "bool cache_titles",
+          "default": null
+        }
+      ]
+    },
+    "AddToTopMenu": {
+      "name": "AddToTopMenu",
+      "refLine": 310,
+      "docStart": 11238,
+      "docEnd": 11989,
+      "docs": {
+        "brief": "Adds an topobj to a TopMenu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds an topobj to a TopMenu."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Object name (MUST be unique)."
+          },
+          {
+            "tag": "param:type",
+            "text": "Object type."
+          },
+          {
+            "tag": "param:handler",
+            "text": "Handler for topobj."
+          },
+          {
+            "tag": "param:parent",
+            "text": "Parent topobj ID, or INVALID_TOPMENUOBJECT for none.\nItems must have a category parent.\nCategories must not have a parent."
+          },
+          {
+            "tag": "param:cmdname",
+            "text": "Command name (for access overrides)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Default access flags."
+          },
+          {
+            "tag": "param:info_string",
+            "text": "Arbitrary storage (max 255 bytes)."
+          },
+          {
+            "tag": "return",
+            "text": "A new TopMenuObject ID, or INVALID_TOPMENUOBJECT on\nfailure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "TopMenuObject",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "TopMenuObjectType",
+          "name": "type",
+          "decl": "TopMenuObjectType type",
+          "default": null
+        },
+        {
+          "type": "TopMenuHandler",
+          "name": "handler",
+          "decl": "TopMenuHandler handler",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "parent",
+          "decl": "TopMenuObject parent",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "cmdname",
+          "decl": "const char[] cmdname",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "info_string",
+          "decl": "const char[] info_string",
+          "default": "\"\""
+        }
+      ]
+    },
+    "DisplayTopMenuCategory": {
+      "name": "DisplayTopMenuCategory",
+      "refLine": 377,
+      "docStart": 14190,
+      "docEnd": 14526,
+      "docs": {
+        "brief": "Displays a TopMenu category to a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays a TopMenu category to a client."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:category",
+            "text": "Category topobj id."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle, invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "category",
+          "decl": "TopMenuObject category",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "__ext_topmenus_SetNTVOptional": {
+      "name": "__ext_topmenus_SetNTVOptional",
+      "refLine": 423,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "RemoveFromTopMenu": {
+      "name": "RemoveFromTopMenu",
+      "refLine": 355,
+      "docStart": 13353,
+      "docEnd": 13696,
+      "docs": {
+        "brief": "Removes an topobj from a TopMenu.\n\nPlugins' topobjs are automatically removed all TopMenus when the given\nplugin unloads or pauses.  In the case of unpausing, all items are restored.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an topobj from a TopMenu.\n\nPlugins' topobjs are automatically removed all TopMenus when the given\nplugin unloads or pauses.  In the case of unpausing, all items are restored."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:topobj",
+            "text": "TopMenuObject ID."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "topobj",
+          "decl": "TopMenuObject topobj",
+          "default": null
+        }
+      ]
+    },
+    "DisplayTopMenu": {
+      "name": "DisplayTopMenu",
+      "refLine": 366,
+      "docStart": 13770,
+      "docEnd": 14103,
+      "docs": {
+        "brief": "Displays a TopMenu to a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays a TopMenu to a client."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:position",
+            "text": "Position to display from."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle, invalid client index, or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TopMenuPosition",
+          "name": "position",
+          "decl": "TopMenuPosition position",
+          "default": null
+        }
+      ]
+    },
+    "GetTopMenuInfoString": {
+      "name": "GetTopMenuInfoString",
+      "refLine": 330,
+      "docStart": 12278,
+      "docEnd": 12711,
+      "docs": {
+        "brief": "Retrieves the info string of a top menu item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the info string of a top menu item."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:parent",
+            "text": "TopMenuObject ID."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store info string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of info string."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written, not including the\nnull terminator."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid TopMenu Handle or TopMenuObject ID."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "parent",
+          "decl": "TopMenuObject parent",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "TopMenu": {
+      "name": "TopMenu",
+      "refLine": 140,
+      "docStart": 4303,
+      "docEnd": 4464,
+      "docs": {
+        "brief": "TopMenu objects are used for constructing multi-layer menus. Currently, they\nsupport at most two levels. The first level of items are called \"categories\".",
+        "tags": [
+          {
+            "tag": "",
+            "text": "TopMenu objects are used for constructing multi-layer menus. Currently, they\nsupport at most two levels. The first level of items are called \"categories\"."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetObjName": {
+          "name": "GetObjName",
+          "refLine": 217,
+          "docStart": 7895,
+          "docEnd": 8185,
+          "docs": {
+            "brief": "Retrieves the name string of a top menu item.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the name string of a top menu item."
+              },
+              {
+                "tag": "param:topobj",
+                "text": "TopMenuObject ID."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store info string."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of info string."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written, not including the null terminator."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "TopMenuObject",
+              "name": "topobj",
+              "decl": "TopMenuObject topobj",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "AddCategory": {
+          "name": "AddCategory",
+          "refLine": 186,
+          "docStart": 6141,
+          "docEnd": 6534,
+          "docs": {
+            "brief": "Adds a category to a TopMenu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a category to a TopMenu."
+              },
+              {
+                "tag": "param:name",
+                "text": "Object name (MUST be unique)."
+              },
+              {
+                "tag": "param:handler",
+                "text": "Handler for topobj."
+              },
+              {
+                "tag": "param:cmdname",
+                "text": "Command name (for access overrides)."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Default access flags."
+              },
+              {
+                "tag": "param:info_string",
+                "text": "Arbitrary storage (max 255 bytes)."
+              },
+              {
+                "tag": "return",
+                "text": "A new TopMenuObject ID, or INVALID_TOPMENUOBJECT on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "TopMenuObject",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "TopMenuHandler",
+              "name": "handler",
+              "decl": "TopMenuHandler handler",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "cmdname",
+              "decl": "const char[] cmdname",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            },
+            {
+              "type": "const char[]",
+              "name": "info_string",
+              "decl": "const char[] info_string",
+              "default": "\"\""
+            }
+          ]
+        },
+        "FromHandle": {
+          "name": "FromHandle",
+          "refLine": 151,
+          "docStart": 4692,
+          "docEnd": 4851,
+          "docs": {
+            "brief": "Returns a TopMenu handle from a generic handle. If the given handle is\na TopMenu, the handle is simply casted back. Otherwise, an error is\nraised.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns a TopMenu handle from a generic handle. If the given handle is\na TopMenu, the handle is simply casted back. Otherwise, an error is\nraised."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "TopMenu",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "handle",
+              "decl": "Handle handle",
+              "default": null
+            }
+          ]
+        },
+        "AddItem": {
+          "name": "AddItem",
+          "refLine": 199,
+          "docStart": 6782,
+          "docEnd": 7254,
+          "docs": {
+            "brief": "Adds an item to a TopMenu category.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds an item to a TopMenu category."
+              },
+              {
+                "tag": "param:name",
+                "text": "Object name (MUST be unique)."
+              },
+              {
+                "tag": "param:handler",
+                "text": "Handler for topobj."
+              },
+              {
+                "tag": "param:category",
+                "text": "The object of the parent category for the item."
+              },
+              {
+                "tag": "param:cmdname",
+                "text": "Command name (for access overrides)."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Default access flags."
+              },
+              {
+                "tag": "param:info_string",
+                "text": "Arbitrary storage (max 255 bytes)."
+              },
+              {
+                "tag": "return",
+                "text": "A new TopMenuObject ID, or INVALID_TOPMENUOBJECT on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "TopMenuObject",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "TopMenuHandler",
+              "name": "handler",
+              "decl": "TopMenuHandler handler",
+              "default": null
+            },
+            {
+              "type": "TopMenuObject",
+              "name": "parent",
+              "decl": "TopMenuObject parent",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "cmdname",
+              "decl": "const char[] cmdname",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            },
+            {
+              "type": "const char[]",
+              "name": "info_string",
+              "decl": "const char[] info_string",
+              "default": "\"\""
+            }
+          ]
+        },
+        "GetInfoString": {
+          "name": "GetInfoString",
+          "refLine": 209,
+          "docStart": 7512,
+          "docEnd": 7803,
+          "docs": {
+            "brief": "Retrieves the info string of a top menu item.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the info string of a top menu item."
+              },
+              {
+                "tag": "param:parent",
+                "text": "TopMenuObject ID."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store info string."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of info string."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written, not including the  null terminator."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "TopMenuObject",
+              "name": "parent",
+              "decl": "TopMenuObject parent",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "TopMenu": {
+          "name": "TopMenu",
+          "refLine": 146,
+          "docStart": 4498,
+          "docEnd": 4638,
+          "docs": {
+            "brief": "Creates a new TopMenu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new TopMenu."
+              },
+              {
+                "tag": "param:handler",
+                "text": "Handler to use for drawing the root title."
+              },
+              {
+                "tag": "return",
+                "text": "A new TopMenu."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "TopMenu",
+          "arguments": [
+            {
+              "type": "TopMenuHandler",
+              "name": "handler",
+              "decl": "TopMenuHandler handler",
+              "default": null
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 225,
+          "docStart": 8274,
+          "docEnd": 8521,
+          "docs": {
+            "brief": "Removes an topobj from a TopMenu.\n\nPlugins' topobjs are automatically removed all TopMenus when the given\nplugin unloads or pauses.  In the case of unpausing, all items are restored.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an topobj from a TopMenu.\n\nPlugins' topobjs are automatically removed all TopMenus when the given\nplugin unloads or pauses.  In the case of unpausing, all items are restored."
+              },
+              {
+                "tag": "param:topobj",
+                "text": "TopMenuObject ID."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "TopMenuObject",
+              "name": "topobj",
+              "decl": "TopMenuObject topobj",
+              "default": null
+            }
+          ]
+        },
+        "Display": {
+          "name": "Display",
+          "refLine": 232,
+          "docStart": 8577,
+          "docEnd": 8767,
+          "docs": {
+            "brief": "Displays a TopMenu to a client.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Displays a TopMenu to a client."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "param:position",
+                "text": "Position to display from."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "TopMenuPosition",
+              "name": "position",
+              "decl": "TopMenuPosition position",
+              "default": null
+            }
+          ]
+        },
+        "DisplayCategory": {
+          "name": "DisplayCategory",
+          "refLine": 239,
+          "docStart": 8840,
+          "docEnd": 9033,
+          "docs": {
+            "brief": "Displays a TopMenu category to a client.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Displays a TopMenu category to a client."
+              },
+              {
+                "tag": "param:category",
+                "text": "Category topobj id."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "TopMenuObject",
+              "name": "category",
+              "decl": "TopMenuObject category",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            }
+          ]
+        },
+        "FindCategory": {
+          "name": "FindCategory",
+          "refLine": 246,
+          "docStart": 9112,
+          "docEnd": 9326,
+          "docs": {
+            "brief": "Finds a category's topobj ID in a TopMenu.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds a category's topobj ID in a TopMenu."
+              },
+              {
+                "tag": "param:name",
+                "text": "Object's unique name."
+              },
+              {
+                "tag": "return",
+                "text": "TopMenuObject ID on success, or\nINVALID_TOPMENUOBJECT on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "TopMenuObject",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            }
+          ]
+        },
+        "LoadConfig": {
+          "name": "LoadConfig",
+          "refLine": 176,
+          "docStart": 4914,
+          "docEnd": 6055,
+          "docs": {
+            "brief": "Re-sorts the items in a TopMenu via a configuration file.\n\nThe format of the configuration file should be a Valve Key-Values\nformatted file that SourceMod can parse.  There should be one root\nsection, and one sub-section for each category.  Each sub-section's\nname should match the category name.\n\nEach sub-section may only contain key/value pairs in the form of:\nkey: \"item\"\nvalue: Name of the item as passed to AddToTopMenu().\n\nThe TopMenu will draw items in the order declared in the configuration\nfile.  If items do not appear in the configuration file, they are sorted\nper-player based on how the handler function renders for that player.\nThese items appear after the configuration sorted items.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Re-sorts the items in a TopMenu via a configuration file.\n\nThe format of the configuration file should be a Valve Key-Values\nformatted file that SourceMod can parse.  There should be one root\nsection, and one sub-section for each category.  Each sub-section's\nname should match the category name.\n\nEach sub-section may only contain key/value pairs in the form of:\nkey: \"item\"\nvalue: Name of the item as passed to AddToTopMenu().\n\nThe TopMenu will draw items in the order declared in the configuration\nfile.  If items do not appear in the configuration file, they are sorted\nper-player based on how the handler function renders for that player.\nThese items appear after the configuration sorted items."
+              },
+              {
+                "tag": "param:topmenu",
+                "text": "TopMenu Handle."
+              },
+              {
+                "tag": "param:file",
+                "text": "File path."
+              },
+              {
+                "tag": "param:error",
+                "text": "Error buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the error buffer. Error buffer\nwill be filled with a zero-terminated string if\nfalse is returned."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "error",
+              "decl": "char[] error",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "CacheTitles": {
+          "name": "CacheTitles",
+          "refLine": 251,
+          "docStart": 9394,
+          "docEnd": 9614,
+          "docs": {
+            "brief": "Set the menu title caching behavior of the TopMenu. By default titles\nare cached to reduce overhead. If you need dynamic menu titles which\nchange each time the menu is displayed to a user, set this to false.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set the menu title caching behavior of the TopMenu. By default titles\nare cached to reduce overhead. If you need dynamic menu titles which\nchange each time the menu is displayed to a user, set this to false."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": false,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_topmenus_included": {
+      "name": "_topmenus_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "TopMenuPosition": {
+      "name": "TopMenuPosition",
+      "refLine": 104,
+      "docStart": 3356,
+      "docEnd": 3409,
+      "docs": {
+        "brief": "Top menu starting positions for display.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Top menu starting positions for display."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "TopMenuPosition_Start": {
+          "name": "TopMenuPosition_Start",
+          "refLine": 106,
+          "docStart": 3473,
+          "docEnd": 3503,
+          "docs": {
+            "brief": "Start/root of the menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Start/root of the menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "TopMenuPosition_LastCategory": {
+          "name": "TopMenuPosition_LastCategory",
+          "refLine": 108,
+          "docStart": 3619,
+          "docEnd": 3663,
+          "docs": {
+            "brief": "Last position in their last category",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Last position in their last category"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "TopMenuPosition_LastRoot": {
+          "name": "TopMenuPosition_LastRoot",
+          "refLine": 107,
+          "docStart": 3542,
+          "docEnd": 3580,
+          "docs": {
+            "brief": "Last position in the root menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Last position in the root menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "TopMenuObjectType": {
+      "name": "TopMenuObjectType",
+      "refLine": 95,
+      "docStart": 3135,
+      "docEnd": 3170,
+      "docs": {
+        "brief": "Top menu topobj types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Top menu topobj types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "TopMenuObject_Item": {
+          "name": "TopMenuObject_Item",
+          "refLine": 98,
+          "docStart": 3322,
+          "docEnd": 3348,
+          "docs": {
+            "brief": "Item on a sub-menu",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Item on a sub-menu"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "TopMenuObject_Category": {
+          "name": "TopMenuObject_Category",
+          "refLine": 97,
+          "docStart": 3236,
+          "docEnd": 3283,
+          "docs": {
+            "brief": "Category (sub-menu branching from root)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Category (sub-menu branching from root)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "TopMenuAction": {
+      "name": "TopMenuAction",
+      "refLine": 43,
+      "docStart": 1676,
+      "docEnd": 1731,
+      "docs": {
+        "brief": "Actions a top menu will take on an topobj.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Actions a top menu will take on an topobj."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "TopMenuAction_RemoveObject": {
+          "name": "TopMenuAction_RemoveObject",
+          "refLine": 89,
+          "docStart": 2914,
+          "docEnd": 3093,
+          "docs": {
+            "brief": "Called when an topobj is being removed from the menu.\nThis can be used to clean up data stored in the info string.\n\nINPUT : TopMenu Handle, topobj ID.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when an topobj is being removed from the menu.\nThis can be used to clean up data stored in the info string.\n\nINPUT : TopMenu Handle, topobj ID."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "4"
+        },
+        "TopMenuAction_DisplayTitle": {
+          "name": "TopMenuAction_DisplayTitle",
+          "refLine": 62,
+          "docStart": 1989,
+          "docEnd": 2306,
+          "docs": {
+            "brief": "The title of a menu is being drawn for a given topobj.\n\nNote: The Object ID will be INVALID_TOPMENUOBJECT if drawing the\nroot title.  Otherwise, the Object ID is a category.\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: Buffer for rendering, maxlength of buffer.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The title of a menu is being drawn for a given topobj.\n\nNote: The Object ID will be INVALID_TOPMENUOBJECT if drawing the\nroot title.  Otherwise, the Object ID is a category.\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: Buffer for rendering, maxlength of buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "TopMenuAction_SelectOption": {
+          "name": "TopMenuAction_SelectOption",
+          "refLine": 71,
+          "docStart": 2345,
+          "docEnd": 2516,
+          "docs": {
+            "brief": "A menu option has been selected.\n\nThe Object ID will always be an item (not a category).\n\nINPUT : TopMenu Handle, topobj ID, client index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu option has been selected.\n\nThe Object ID will always be an item (not a category).\n\nINPUT : TopMenu Handle, topobj ID, client index."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "TopMenuAction_DrawOption": {
+          "name": "TopMenuAction_DrawOption",
+          "refLine": 81,
+          "docStart": 2555,
+          "docEnd": 2876,
+          "docs": {
+            "brief": "A menu option is being drawn and its flags can be overridden.\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: The first byte of the 'buffer' string should be set\nto the desired flags.  By default, it will contain\nITEMDRAW_DEFAULT.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A menu option is being drawn and its flags can be overridden.\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: The first byte of the 'buffer' string should be set\nto the desired flags.  By default, it will contain\nITEMDRAW_DEFAULT."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "TopMenuAction_DisplayOption": {
+          "name": "TopMenuAction_DisplayOption",
+          "refLine": 51,
+          "docStart": 1757,
+          "docEnd": 1949,
+          "docs": {
+            "brief": "An option is being drawn for a menu (or for sorting purposes).\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: Buffer for rendering, maxlength of buffer.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "An option is being drawn for a menu (or for sorting purposes).\n\nINPUT : TopMenu Handle, topobj ID, client index.\nOUTPUT: Buffer for rendering, maxlength of buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "TopMenuObject": {
+      "name": "TopMenuObject",
+      "refLine": 114,
+      "docStart": 3671,
+      "docEnd": 3722,
+      "docs": {
+        "brief": "Top menu topobj tag for type checking.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Top menu topobj tag for type checking."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "INVALID_TOPMENUOBJECT": {
+          "name": "INVALID_TOPMENUOBJECT",
+          "refLine": 116,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "TopMenuHandler": {
+      "name": "TopMenuHandler",
+      "refLine": 129,
+      "docStart": 3781,
+      "docEnd": 4131,
+      "docs": {
+        "brief": "TopMenu callback prototype.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "TopMenu callback prototype."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "Handle to the TopMenu."
+          },
+          {
+            "tag": "param:action",
+            "text": "TopMenuAction being performed."
+          },
+          {
+            "tag": "param:topobj_id",
+            "text": "The topobj ID (if used)."
+          },
+          {
+            "tag": "param:param",
+            "text": "Extra parameter (if used)."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Output buffer (if used)."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Output buffer (if used)."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(TopMenu topmenu, TopMenuAction action, TopMenuObject topobj_id, int param, char[] buffer, int maxlength)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "TopMenu",
+            "name": "topmenu",
+            "decl": "TopMenu topmenu",
+            "default": null
+          },
+          {
+            "type": "TopMenuAction",
+            "name": "action",
+            "decl": "TopMenuAction action",
+            "default": null
+          },
+          {
+            "type": "TopMenuObject",
+            "name": "topobj_id",
+            "decl": "TopMenuObject topobj_id",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "param",
+            "decl": "int param",
+            "default": null
+          },
+          {
+            "type": "char[]",
+            "name": "buffer",
+            "decl": "char[] buffer",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "maxlength",
+            "decl": "int maxlength",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

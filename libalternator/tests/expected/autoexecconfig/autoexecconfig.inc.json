@@ -1,0 +1,873 @@
+{
+  "functions": {
+    "AutoExecConfig_CreateConVar": {
+      "name": "AutoExecConfig_CreateConVar",
+      "refLine": 244,
+      "docStart": 5842,
+      "docEnd": 6951,
+      "docs": {
+        "brief": "Creates a convar and appends it to the autoconfigfile if not found.\nFCVAR_DONTRECORD will be skipped.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a convar and appends it to the autoconfigfile if not found.\nFCVAR_DONTRECORD will be skipped."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of new convar."
+          },
+          {
+            "tag": "param:defaultValue",
+            "text": "String containing the default value of new convar."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description of the convar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional bitstring of flags determining how the convar should be handled. See FCVAR_* constants for more details."
+          },
+          {
+            "tag": "param:hasMin",
+            "text": "Optional boolean that determines if the convar has a minimum value."
+          },
+          {
+            "tag": "param:min",
+            "text": "Minimum floating point value that the convar can have if hasMin is true."
+          },
+          {
+            "tag": "param:hasMax",
+            "text": "Optional boolean that determines if the convar has a maximum value."
+          },
+          {
+            "tag": "param:max",
+            "text": "Maximum floating point value that the convar can have if hasMax is true."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to the newly created convar. If the convar already exists, a handle to it will still be returned."
+          },
+          {
+            "tag": "error",
+            "text": "Convar name is blank or is the same as an existing console command."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "ConVar",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defaultValue",
+          "decl": "const char[] defaultValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "hasMin",
+          "decl": "bool hasMin",
+          "default": "false"
+        },
+        {
+          "type": "float",
+          "name": "min",
+          "decl": "float min",
+          "default": "0.000000"
+        },
+        {
+          "type": "bool",
+          "name": "hasMax",
+          "decl": "bool hasMax",
+          "default": "false"
+        },
+        {
+          "type": "float",
+          "name": "max",
+          "decl": "float max",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "AutoExecConfig_SetFile": {
+      "name": "AutoExecConfig_SetFile",
+      "refLine": 184,
+      "docStart": 4496,
+      "docEnd": 4897,
+      "docs": {
+        "brief": "Set the global autoconfigfile used by functions of this file.\nNote: does not support subfolders like folder1/folder2",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set the global autoconfigfile used by functions of this file.\nNote: does not support subfolders like folder1/folder2"
+          },
+          {
+            "tag": "param:file",
+            "text": "Name of the config file, path and .cfg extension is being added if not given."
+          },
+          {
+            "tag": "param:folder",
+            "text": "Folder under cfg/ to use.  By default this is \"sourcemod.\""
+          },
+          {
+            "tag": "return",
+            "text": "True if formatter returned success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "file",
+          "decl": "char[] file",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "folder",
+          "decl": "char[] folder",
+          "default": "\"sourcemod\""
+        }
+      ]
+    },
+    "AutoExecConfig_AppendValue": {
+      "name": "AutoExecConfig_AppendValue",
+      "refLine": 371,
+      "docStart": 9931,
+      "docEnd": 10816,
+      "docs": {
+        "brief": "Appends a convar to the global autoconfigfile",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Appends a convar to the global autoconfigfile"
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of new convar."
+          },
+          {
+            "tag": "param:defaultValue",
+            "text": "String containing the default value of new convar."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description of the convar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional bitstring of flags determining how the convar should be handled. See FCVAR_* constants for more details."
+          },
+          {
+            "tag": "param:hasMin",
+            "text": "Optional boolean that determines if the convar has a minimum value."
+          },
+          {
+            "tag": "param:min",
+            "text": "Minimum floating point value that the convar can have if hasMin is true."
+          },
+          {
+            "tag": "param:hasMax",
+            "text": "Optional boolean that determines if the convar has a maximum value."
+          },
+          {
+            "tag": "param:max",
+            "text": "Maximum floating point value that the convar can have if hasMax is true."
+          },
+          {
+            "tag": "return",
+            "text": "Returns one of the AUTOEXEC_APPEND values"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defaultValue",
+          "decl": "const char[] defaultValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "hasMin",
+          "decl": "bool hasMin",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "min",
+          "decl": "float min",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "hasMax",
+          "decl": "bool hasMax",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "max",
+          "decl": "float max",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig_CacheConvars": {
+      "name": "AutoExecConfig_CacheConvars",
+      "refLine": 765,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "AutoExecConfig_GetFile": {
+      "name": "AutoExecConfig_GetFile",
+      "refLine": 209,
+      "docStart": 5351,
+      "docEnd": 5590,
+      "docs": {
+        "brief": "Get the formatted autoconfigfile used by functions of this file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the formatted autoconfigfile used by functions of this file."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to format."
+          },
+          {
+            "tag": "param:size",
+            "text": "Maximum size of buffer"
+          },
+          {
+            "tag": "return",
+            "text": "True if filename was set, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig_GetFindResult": {
+      "name": "AutoExecConfig_GetFindResult",
+      "refLine": 93,
+      "docStart": 2261,
+      "docEnd": 2394,
+      "docs": {
+        "brief": "Returns the last result from the parser.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the last result from the parser."
+          },
+          {
+            "tag": "return",
+            "text": "Returns one of the AUTOEXEC_FIND values or -1 if not set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": []
+    },
+    "AutoExecConfig_GetPlugin": {
+      "name": "AutoExecConfig_GetPlugin",
+      "refLine": 170,
+      "docStart": 4298,
+      "docEnd": 4417,
+      "docs": {
+        "brief": "Returns the plugin's handle for which the config file is created.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the plugin's handle for which the config file is created."
+          },
+          {
+            "tag": "return",
+            "text": "The plugin handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "AutoExecConfig_FindValue": {
+      "name": "AutoExecConfig_FindValue",
+      "refLine": 490,
+      "docStart": 13588,
+      "docEnd": 13984,
+      "docs": {
+        "brief": "Returns a convar's value from the global autoconfigfile",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a convar's value from the global autoconfigfile"
+          },
+          {
+            "tag": "param:cvar",
+            "text": "Cvar to search for."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store result into."
+          },
+          {
+            "tag": "param:size",
+            "text": "Maximum size of buffer."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "Whether or not the search should be case sensitive."
+          },
+          {
+            "tag": "return",
+            "text": "Returns one of the AUTOEXEC_FIND values"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "cvar",
+          "decl": "const char[] cvar",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "false"
+        }
+      ]
+    },
+    "AutoExecConfig_SetPlugin": {
+      "name": "AutoExecConfig_SetPlugin",
+      "refLine": 159,
+      "docStart": 3898,
+      "docEnd": 4206,
+      "docs": {
+        "brief": "Set the plugin for which the config file should be created.\nSet to null to use the calling plugin.\nUsed to print the correct filename in the top comment when creating the file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set the plugin for which the config file should be created.\nSet to null to use the calling plugin.\nUsed to print the correct filename in the top comment when creating the file."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "The plugin to create convars for or null to use the calling plugin."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig_SetCreateDirectory": {
+      "name": "AutoExecConfig_SetCreateDirectory",
+      "refLine": 133,
+      "docStart": 3007,
+      "docEnd": 3403,
+      "docs": {
+        "brief": "Set if the config file's folder should be created by the autoexecconfig include itself if it doesn't exist.\nNote: Must be used before AutoExecConfig_SetFile as the potential creation of it happens there",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set if the config file's folder should be created by the autoexecconfig include itself if it doesn't exist.\nNote: Must be used before AutoExecConfig_SetFile as the potential creation of it happens there"
+          },
+          {
+            "tag": "param:create",
+            "text": "True if config file should be created, false otherwise."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Folder permission mode, default is u=rwx,g=rx,o=rx."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "create",
+          "decl": "bool create",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mode",
+          "decl": "int mode",
+          "default": "FPERM_U_READ | FPERM_U_WRITE | FPERM_U_EXEC | FPERM_G_READ | FPERM_G_EXEC | FPERM_O_READ | FPERM_O_EXEC"
+        }
+      ]
+    },
+    "AutoExecConfig_GetCreateFile": {
+      "name": "AutoExecConfig_GetCreateFile",
+      "refLine": 145,
+      "docStart": 3640,
+      "docEnd": 3819,
+      "docs": {
+        "brief": "Returns if the config file should be created if it doesn't exist.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if the config file should be created if it doesn't exist."
+          },
+          {
+            "tag": "return",
+            "text": "Returns true, if the config file should be created or false if it should not."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "AutoExecConfig_CleanFile": {
+      "name": "AutoExecConfig_CleanFile",
+      "refLine": 635,
+      "docStart": 16759,
+      "docEnd": 16881,
+      "docs": {
+        "brief": "Cleans the global autoconfigfile from too much spaces",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cleans the global autoconfigfile from too much spaces"
+          },
+          {
+            "tag": "return",
+            "text": "One of the AUTOEXEC_CLEAN values."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": []
+    },
+    "AutoExecConfig_SetCreateFile": {
+      "name": "AutoExecConfig_SetCreateFile",
+      "refLine": 119,
+      "docStart": 2705,
+      "docEnd": 2915,
+      "docs": {
+        "brief": "Set if the config file should be created by the autoexecconfig include itself if it doesn't exist.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set if the config file should be created by the autoexecconfig include itself if it doesn't exist."
+          },
+          {
+            "tag": "param:create",
+            "text": "True if config file should be created, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "create",
+          "decl": "bool create",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig_GetAppendResult": {
+      "name": "AutoExecConfig_GetAppendResult",
+      "refLine": 107,
+      "docStart": 2482,
+      "docEnd": 2619,
+      "docs": {
+        "brief": "Returns the last result from the appender.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the last result from the appender."
+          },
+          {
+            "tag": "return",
+            "text": "Returns one of the AUTOEXEC_APPEND values or -1 if not set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetCharCountInStr": {
+      "name": "GetCharCountInStr",
+      "refLine": 743,
+      "docStart": 18569,
+      "docEnd": 18766,
+      "docs": {
+        "brief": "Returns how many times the given char occures in the given string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns how many times the given char occures in the given string."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to search for in."
+          },
+          {
+            "tag": "return",
+            "text": "Occurences of the given char found in string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "static stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "character",
+          "decl": "int character",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "AutoExecConfig_FormatFileName": {
+      "name": "AutoExecConfig_FormatFileName",
+      "refLine": 297,
+      "docStart": 8369,
+      "docEnd": 8621,
+      "docs": {
+        "brief": "Formats a autoconfigfile, prefixes path and adds .cfg extension if missing.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a autoconfigfile, prefixes path and adds .cfg extension if missing."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to format."
+          },
+          {
+            "tag": "param:size",
+            "text": "Maximum size of buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Returns one of the AUTOEXEC_FORMAT values.."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "static stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "folder",
+          "decl": "char[] folder",
+          "default": "\"sourcemod\""
+        }
+      ]
+    },
+    "AutoExecConfig_ExecuteFile": {
+      "name": "AutoExecConfig_ExecuteFile",
+      "refLine": 280,
+      "docStart": 8005,
+      "docEnd": 8173,
+      "docs": {
+        "brief": "Executes the autoconfigfile and adds it to the OnConfigsExecuted forward.\nIf we didn't create it ourselves we let SourceMod create it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes the autoconfigfile and adds it to the OnConfigsExecuted forward.\nIf we didn't create it ourselves we let SourceMod create it."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "AUTOEXEC_NO_CONFIG": {
+      "name": "AUTOEXEC_NO_CONFIG",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "30"
+    },
+    "AUTOEXEC_FIND_BAD_HANDLE": {
+      "name": "AUTOEXEC_FIND_BAD_HANDLE",
+      "refLine": 45,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "12"
+    },
+    "AUTOEXECCONFIG_URL": {
+      "name": "AUTOEXECCONFIG_URL",
+      "refLine": 32,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"https://forums.alliedmods.net/showthread.php?t=204254\""
+    },
+    "AUTOEXEC_FORMAT_BAD_FILENAME": {
+      "name": "AUTOEXEC_FORMAT_BAD_FILENAME",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "40"
+    },
+    "AUTOEXEC_APPEND_BAD_FILENAME": {
+      "name": "AUTOEXEC_APPEND_BAD_FILENAME",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "AUTOEXEC_FIND_BAD_FILENAME": {
+      "name": "AUTOEXEC_FIND_BAD_FILENAME",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "10"
+    },
+    "AUTOEXEC_APPEND_SUCCESS": {
+      "name": "AUTOEXEC_APPEND_SUCCESS",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "3"
+    },
+    "AUTOEXEC_FIND_SUCCESS": {
+      "name": "AUTOEXEC_FIND_SUCCESS",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "14"
+    },
+    "AUTOEXEC_FIND_NOT_FOUND": {
+      "name": "AUTOEXEC_FIND_NOT_FOUND",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "13"
+    },
+    "AUTOEXEC_CLEAN_BAD_HANDLE": {
+      "name": "AUTOEXEC_CLEAN_BAD_HANDLE",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "21"
+    },
+    "AUTOEXECCONFIG_VERSION": {
+      "name": "AUTOEXECCONFIG_VERSION",
+      "refLine": 31,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"0.1.6\""
+    },
+    "AUTOEXEC_FORMAT_SUCCESS": {
+      "name": "AUTOEXEC_FORMAT_SUCCESS",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "41"
+    },
+    "AUTOEXEC_APPEND_BAD_HANDLE": {
+      "name": "AUTOEXEC_APPEND_BAD_HANDLE",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "_autoexecconfig_included": {
+      "name": "_autoexecconfig_included",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "AUTOEXEC_FIND_FILE_NOT_FOUND": {
+      "name": "AUTOEXEC_FIND_FILE_NOT_FOUND",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "11"
+    },
+    "AUTOEXEC_APPEND_FILE_NOT_FOUND": {
+      "name": "AUTOEXEC_APPEND_FILE_NOT_FOUND",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    },
+    "AUTOEXEC_CLEAN_FILE_NOT_FOUND": {
+      "name": "AUTOEXEC_CLEAN_FILE_NOT_FOUND",
+      "refLine": 52,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "20"
+    },
+    "AUTOEXEC_CLEAN_SUCCESS": {
+      "name": "AUTOEXEC_CLEAN_SUCCESS",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "22"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

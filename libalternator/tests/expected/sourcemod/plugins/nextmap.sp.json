@@ -1,0 +1,206 @@
+{
+  "functions": {
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 99,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "FindAndSetNextMap": {
+      "name": "FindAndSetNextMap",
+      "refLine": 142,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "currentMap",
+          "decl": "char[] currentMap",
+          "default": null
+        }
+      ]
+    },
+    "FormatTimeDuration": {
+      "name": "FormatTimeDuration",
+      "refLine": 227,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "Command_MapHistory": {
+      "name": "Command_MapHistory",
+      "refLine": 189,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnChangelevelFailed": {
+      "name": "OnChangelevelFailed",
+      "refLine": 119,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Command_List": {
+      "name": "Command_List",
+      "refLine": 127,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

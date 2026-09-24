@@ -1,0 +1,3744 @@
+{
+  "functions": {
+    "TF2_SetPlayerPowerPlay": {
+      "name": "TF2_SetPlayerPowerPlay",
+      "refLine": 308,
+      "docStart": 15651,
+      "docEnd": 15914,
+      "docs": {
+        "brief": "Enables/disables PowerPlay mode on a player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enables/disables PowerPlay mode on a player."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:enabled",
+            "text": "Whether to enable or disable PowerPlay on player."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "enabled",
+          "decl": "bool enabled",
+          "default": null
+        }
+      ]
+    },
+    "TF2_RemoveCondition": {
+      "name": "TF2_RemoveCondition",
+      "refLine": 299,
+      "docStart": 15338,
+      "docEnd": 15583,
+      "docs": {
+        "brief": "Removes a condition from a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a condition from a player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:condition",
+            "text": "Integer identifier of condition to remove."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFCond",
+          "name": "condition",
+          "decl": "TFCond condition",
+          "default": null
+        }
+      ]
+    },
+    "TF2_CalcIsAttackCritical": {
+      "name": "TF2_CalcIsAttackCritical",
+      "refLine": 384,
+      "docStart": 18201,
+      "docEnd": 18953,
+      "docs": {
+        "brief": "Called on weapon fire to decide if the current shot should be critical.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called on weapon fire to decide if the current shot should be critical.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'"
+          },
+          {
+            "tag": "note",
+            "text": "Since critical shots are also calculated client side any changes made with\nthis will not show for the shooter. Projectile weapons such as the rocketlauncher\nand demoman weapons will show a critical bullet but no critical sound effect.\nBullet hits should appear as expected."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Weapon entity Index."
+          },
+          {
+            "tag": "param:weaponname",
+            "text": "Classname of the weapon."
+          },
+          {
+            "tag": "param:result",
+            "text": "Buffer param for the result of the decision."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "weaponname",
+          "decl": "char[] weaponname",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "result",
+          "decl": "bool& result",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnIsHolidayActive": {
+      "name": "TF2_OnIsHolidayActive",
+      "refLine": 401,
+      "docStart": 19257,
+      "docEnd": 19713,
+      "docs": {
+        "brief": "Called at various times when the game checks to see if the given holiday is active.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called at various times when the game checks to see if the given holiday is active.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'"
+          },
+          {
+            "tag": "param:holiday",
+            "text": "Holiday being checked."
+          },
+          {
+            "tag": "param:result",
+            "text": "Buffer param for the result of the decision."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue for original calculation, higher value to use 'result'."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "TFHoliday",
+          "name": "holiday",
+          "decl": "TFHoliday holiday",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "result",
+          "decl": "bool& result",
+          "default": null
+        }
+      ]
+    },
+    "TF2_DisguisePlayer": {
+      "name": "TF2_DisguisePlayer",
+      "refLine": 321,
+      "docStart": 15981,
+      "docEnd": 16555,
+      "docs": {
+        "brief": "Disguises a client to the given model and team. Only has an effect on spies.\n\nNote: This only starts the disguise process and a delay occurs before the spy is fully disguised",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Disguises a client to the given model and team. Only has an effect on spies.\n\nNote: This only starts the disguise process and a delay occurs before the spy is fully disguised"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:team",
+            "text": "Team to disguise the player as (only TFTeam_Red and TFTeam_Blue have an effect)"
+          },
+          {
+            "tag": "param:classType",
+            "text": "TFClassType class to disguise the player as"
+          },
+          {
+            "tag": "param:target",
+            "text": "Specific target player to disguise as (0 for any)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFTeam",
+          "name": "team",
+          "decl": "TFTeam team",
+          "default": null
+        },
+        {
+          "type": "TFClassType",
+          "name": "classType",
+          "decl": "TFClassType classType",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": "0"
+        }
+      ]
+    },
+    "TF2_IsHolidayActive": {
+      "name": "TF2_IsHolidayActive",
+      "refLine": 409,
+      "docStart": 19789,
+      "docEnd": 19970,
+      "docs": {
+        "brief": "Returns whether or not a holiday is active",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not a holiday is active"
+          },
+          {
+            "tag": "param:holiday",
+            "text": "Holiday being checked."
+          },
+          {
+            "tag": "return",
+            "text": "Boolean of whether or not the holiday is active."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "TFHoliday",
+          "name": "holiday",
+          "decl": "TFHoliday holiday",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnConditionRemoved": {
+      "name": "TF2_OnConditionRemoved",
+      "refLine": 443,
+      "docStart": 20918,
+      "docEnd": 21128,
+      "docs": {
+        "brief": "Called after a condition is removed from a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a condition is removed from a player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client to which the condition is being removed."
+          },
+          {
+            "tag": "param:condition",
+            "text": "Condition that is being removed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFCond",
+          "name": "condition",
+          "decl": "TFCond condition",
+          "default": null
+        }
+      ]
+    },
+    "TF2_MakeBleed": {
+      "name": "TF2_MakeBleed",
+      "refLine": 350,
+      "docStart": 17392,
+      "docEnd": 17589,
+      "docs": {
+        "brief": "Induces the bleed effect on a client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Induces the bleed effect on a client"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker's index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of bleeding (in seconds)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": null
+        }
+      ]
+    },
+    "TF2_StunPlayer": {
+      "name": "TF2_StunPlayer",
+      "refLine": 341,
+      "docStart": 16925,
+      "docEnd": 17280,
+      "docs": {
+        "brief": "Stuns a client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stuns a client"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of stun."
+          },
+          {
+            "tag": "param:slowdown",
+            "text": "Slowdown percent (as decimal, 0.00-1.00)\nIgnored if TF_STUNFLAG_SLOWDOWN is not set."
+          },
+          {
+            "tag": "param:stunflags",
+            "text": "Stun flags."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker's index (0 is allowed for world)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "slowdown",
+          "decl": "float slowdown",
+          "default": "0.000000"
+        },
+        {
+          "type": "int",
+          "name": "stunflags",
+          "decl": "int stunflags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": "0"
+        }
+      ]
+    },
+    "TF2_IsPlayerInDuel": {
+      "name": "TF2_IsPlayerInDuel",
+      "refLine": 417,
+      "docStart": 20027,
+      "docEnd": 20214,
+      "docs": {
+        "brief": "Returns whether or not a client (Player) is in a duel.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not a client (Player) is in a duel."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index."
+          },
+          {
+            "tag": "return",
+            "text": "Boolean of whether or not the client/player is dueling."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnConditionAdded": {
+      "name": "TF2_OnConditionAdded",
+      "refLine": 435,
+      "docStart": 20646,
+      "docEnd": 20848,
+      "docs": {
+        "brief": "Called after a condition is added to a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a condition is added to a player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Index of the client to which the condition is being added."
+          },
+          {
+            "tag": "param:condition",
+            "text": "Condition that is being added."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFCond",
+          "name": "condition",
+          "decl": "TFCond condition",
+          "default": null
+        }
+      ]
+    },
+    "TF2_IgnitePlayer": {
+      "name": "TF2_IgnitePlayer",
+      "refLine": 262,
+      "docStart": 13884,
+      "docEnd": 14202,
+      "docs": {
+        "brief": "Sets a client on fire.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client on fire."
+          },
+          {
+            "tag": "note",
+            "text": "Fire duration is capped to 10 seconds."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker's index."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of fire (in seconds)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "10.000000"
+        }
+      ]
+    },
+    "TF2_GetClass": {
+      "name": "TF2_GetClass",
+      "refLine": 367,
+      "docStart": 17954,
+      "docEnd": 18139,
+      "docs": {
+        "brief": "Finds the TFClassType for a given class name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds the TFClassType for a given class name."
+          },
+          {
+            "tag": "param:classname",
+            "text": "A classname string such as \"sniper\" or \"demoman\""
+          },
+          {
+            "tag": "return",
+            "text": "A TFClassType constant."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "TFClassType",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnWaitingForPlayersEnd": {
+      "name": "TF2_OnWaitingForPlayersEnd",
+      "refLine": 453,
+      "docStart": 21328,
+      "docEnd": 21405,
+      "docs": {
+        "brief": "Called when the server exits the Waiting for Players round state",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the server exits the Waiting for Players round state"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TF2_OnPlayerTeleport": {
+      "name": "TF2_OnPlayerTeleport",
+      "refLine": 466,
+      "docStart": 21453,
+      "docEnd": 22077,
+      "docs": {
+        "brief": "Called when a player attempts to use a teleporter to decide if the player should be allowed to teleport.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a player attempts to use a teleporter to decide if the player should be allowed to teleport.\nReturn Plugin_Continue to let the original calculation or return a higher\naction to override the decision with the value of 'result'"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:teleporter",
+            "text": "Teleporter entity index."
+          },
+          {
+            "tag": "param:result",
+            "text": "Buffer param for the result of the decision.\nThis is prepopulated with the game's original decision to let a player teleport."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue for original calculation, higher value to use 'result'."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "teleporter",
+          "decl": "int teleporter",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "result",
+          "decl": "bool& result",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnGetHoliday": {
+      "name": "TF2_OnGetHoliday",
+      "refLine": 390,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "TFHoliday&",
+          "name": "holiday",
+          "decl": "TFHoliday& holiday",
+          "default": null
+        }
+      ]
+    },
+    "TF2_OnWaitingForPlayersStart": {
+      "name": "TF2_OnWaitingForPlayersStart",
+      "refLine": 448,
+      "docStart": 21200,
+      "docEnd": 21278,
+      "docs": {
+        "brief": "Called when the server enters the Waiting for Players round state",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the server enters the Waiting for Players round state"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TF2_RespawnPlayer": {
+      "name": "TF2_RespawnPlayer",
+      "refLine": 270,
+      "docStart": 14284,
+      "docEnd": 14445,
+      "docs": {
+        "brief": "Respawns a client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Respawns a client"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetResourceEntity": {
+      "name": "TF2_GetResourceEntity",
+      "refLine": 359,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "TF2_RemovePlayerDisguise": {
+      "name": "TF2_RemovePlayerDisguise",
+      "refLine": 329,
+      "docStart": 16654,
+      "docEnd": 16870,
+      "docs": {
+        "brief": "Removes the current disguise from a client. Only has an effect on spies.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes the current disguise from a client. Only has an effect on spies."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_RemoveWearable": {
+      "name": "TF2_RemoveWearable",
+      "refLine": 427,
+      "docStart": 20263,
+      "docEnd": 20583,
+      "docs": {
+        "brief": "Removes an econ wearable (hat, misc, etc) from a player.\nThis also deletes the wearable entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an econ wearable (hat, misc, etc) from a player.\nThis also deletes the wearable entity."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:wearable",
+            "text": "Index of the wearable entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, invalid wearable entity, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "wearable",
+          "decl": "int wearable",
+          "default": null
+        }
+      ]
+    },
+    "__ext_tf2_SetNTVOptional": {
+      "name": "__ext_tf2_SetNTVOptional",
+      "refLine": 484,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TF2_RegeneratePlayer": {
+      "name": "TF2_RegeneratePlayer",
+      "refLine": 278,
+      "docStart": 14493,
+      "docEnd": 14681,
+      "docs": {
+        "brief": "Regenerates a client's health and ammunition",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Regenerates a client's health and ammunition"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_AddCondition": {
+      "name": "TF2_AddCondition",
+      "refLine": 290,
+      "docStart": 14732,
+      "docEnd": 15216,
+      "docs": {
+        "brief": "Adds a condition to a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a condition to a player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:condition",
+            "text": "Integer identifier of condition to apply."
+          },
+          {
+            "tag": "param:duration",
+            "text": "Duration of condition (does not apply to all conditions).\nPass TFCondDuration_Infinite to apply until manually removed."
+          },
+          {
+            "tag": "param:inflictor",
+            "text": "Condition inflictor's index (0 for no inflictor)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFCond",
+          "name": "condition",
+          "decl": "TFCond condition",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "duration",
+          "decl": "float duration",
+          "default": "TFCondDuration_Infinite"
+        },
+        {
+          "type": "int",
+          "name": "inflictor",
+          "decl": "int inflictor",
+          "default": "0"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "TF_STUNFLAG_CHEERSOUND": {
+      "name": "TF_STUNFLAG_CHEERSOUND",
+      "refLine": 41,
+      "docStart": 1931,
+      "docEnd": 1953,
+      "docs": {
+        "brief": "cheering sound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "cheering sound"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "TF_STUNFLAG_THIRDPERSON": {
+      "name": "TF_STUNFLAG_THIRDPERSON",
+      "refLine": 43,
+      "docStart": 2081,
+      "docEnd": 2104,
+      "docs": {
+        "brief": "panic animation",
+        "tags": [
+          {
+            "tag": "",
+            "text": "panic animation"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "TF_STUNFLAG_LIMITMOVEMENT": {
+      "name": "TF_STUNFLAG_LIMITMOVEMENT",
+      "refLine": 40,
+      "docStart": 1840,
+      "docEnd": 1881,
+      "docs": {
+        "brief": "disable forward/backward movement",
+        "tags": [
+          {
+            "tag": "",
+            "text": "disable forward/backward movement"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "TF_STUNFLAGS_LOSERSTATE": {
+      "name": "TF_STUNFLAGS_LOSERSTATE",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "TF_STUNFLAG_SLOWDOWN|TF_STUNFLAG_NOSOUNDOREFFECT|TF_STUNFLAG_THIRDPERSON"
+    },
+    "TF_STUNFLAGS_NORMALBONK": {
+      "name": "TF_STUNFLAGS_NORMALBONK",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "TF_STUNFLAG_BONKSTUCK"
+    },
+    "TF_STUNFLAGS_BIGBONK": {
+      "name": "TF_STUNFLAGS_BIGBONK",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "TF_STUNFLAG_CHEERSOUND|TF_STUNFLAG_BONKSTUCK"
+    },
+    "TF_STUNFLAG_NOSOUNDOREFFECT": {
+      "name": "TF_STUNFLAG_NOSOUNDOREFFECT",
+      "refLine": 42,
+      "docStart": 2003,
+      "docEnd": 2031,
+      "docs": {
+        "brief": "no sound or particle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "no sound or particle"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "_tf2_included": {
+      "name": "_tf2_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TF_STUNFLAG_BONKSTUCK": {
+      "name": "TF_STUNFLAG_BONKSTUCK",
+      "refLine": 39,
+      "docStart": 1765,
+      "docEnd": 1790,
+      "docs": {
+        "brief": "bonk sound, stuck",
+        "tags": [
+          {
+            "tag": "",
+            "text": "bonk sound, stuck"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "TF_STUNFLAGS_SMALLBONK": {
+      "name": "TF_STUNFLAGS_SMALLBONK",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "TF_STUNFLAG_THIRDPERSON|TF_STUNFLAG_SLOWDOWN"
+    },
+    "TF_STUNFLAG_SOUND": {
+      "name": "TF_STUNFLAG_SOUND",
+      "refLine": 45,
+      "docStart": 2227,
+      "docEnd": 2240,
+      "docs": {
+        "brief": "sound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "sound"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "TF_STUNFLAGS_GHOSTSCARE": {
+      "name": "TF_STUNFLAGS_GHOSTSCARE",
+      "refLine": 48,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "TF_STUNFLAG_GHOSTEFFECT|TF_STUNFLAG_THIRDPERSON"
+    },
+    "TF_STUNFLAG_SLOWDOWN": {
+      "name": "TF_STUNFLAG_SLOWDOWN",
+      "refLine": 38,
+      "docStart": 1680,
+      "docEnd": 1715,
+      "docs": {
+        "brief": "activates slowdown modifier",
+        "tags": [
+          {
+            "tag": "",
+            "text": "activates slowdown modifier"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "TF_STUNFLAG_GHOSTEFFECT": {
+      "name": "TF_STUNFLAG_GHOSTEFFECT",
+      "refLine": 44,
+      "docStart": 2154,
+      "docEnd": 2177,
+      "docs": {
+        "brief": "ghost particles",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ghost particles"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 7)"
+    }
+  },
+  "enums": {
+    "TFObjectMode": {
+      "name": "TFObjectMode",
+      "refLine": 245,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFObjectMode_Exit": {
+          "name": "TFObjectMode_Exit",
+          "refLine": 249,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        },
+        "TFObjectMode_None": {
+          "name": "TFObjectMode_None",
+          "refLine": 247,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "TFObjectMode_Entrance": {
+          "name": "TFObjectMode_Entrance",
+          "refLine": 248,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "TFCond": {
+      "name": "TFCond",
+      "refLine": 75,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFCond_FocusBuff": {
+          "name": "TFCond_FocusBuff",
+          "refLine": 125,
+          "docStart": 6075,
+          "docEnd": 6135,
+          "docs": {
+            "brief": "46: Hitman's Heatmaker no-unscope and faster Sniper charge",
+            "tags": [
+              {
+                "tag": "",
+                "text": "46: Hitman's Heatmaker no-unscope and faster Sniper charge"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritOnDamage": {
+          "name": "TFCond_CritOnDamage",
+          "refLine": 135,
+          "docStart": 6922,
+          "docEnd": 6952,
+          "docs": {
+            "brief": "56: Miscellaneous crit-boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "56: Miscellaneous crit-boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritRuneTemp": {
+          "name": "TFCond_CritRuneTemp",
+          "refLine": 186,
+          "docStart": 10956,
+          "docEnd": 10980,
+          "docs": {
+            "brief": "105: Crit-boost effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "105: Crit-boost effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritDemoCharge": {
+          "name": "TFCond_CritDemoCharge",
+          "refLine": 114,
+          "docStart": 5310,
+          "docEnd": 5378,
+          "docs": {
+            "brief": "35: Crit glow, adds TFCond_Charging when charge meter is below 75%",
+            "tags": [
+              {
+                "tag": "",
+                "text": "35: Crit glow, adds TFCond_Charging when charge meter is below 75%"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_BurningPyro": {
+          "name": "TFCond_BurningPyro",
+          "refLine": 206,
+          "docStart": 12435,
+          "docEnd": 12474,
+          "docs": {
+            "brief": "124: Dragon's Fury afterburn on Pyros",
+            "tags": [
+              {
+                "tag": "",
+                "text": "124: Dragon's Fury afterburn on Pyros"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DefenseBuffNoCritBlock": {
+          "name": "TFCond_DefenseBuffNoCritBlock",
+          "refLine": 121,
+          "docStart": 5806,
+          "docEnd": 5888,
+          "docs": {
+            "brief": "42: MvM Bomb Carrier defense buff (TFCond_DefenseBuffed without crit resistance)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "42: MvM Bomb Carrier defense buff (TFCond_DefenseBuffed without crit resistance)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritOnWin": {
+          "name": "TFCond_CritOnWin",
+          "refLine": 117,
+          "docStart": 5516,
+          "docEnd": 5573,
+          "docs": {
+            "brief": "38: End-of-round crit-boost (May not remove correctly?)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "38: End-of-round crit-boost (May not remove correctly?)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_InHealRadius": {
+          "name": "TFCond_InHealRadius",
+          "refLine": 99,
+          "docStart": 4297,
+          "docEnd": 4350,
+          "docs": {
+            "brief": "20: Ring effect, rings disappear after a taunt ends",
+            "tags": [
+              {
+                "tag": "",
+                "text": "20: Ring effect, rings disappear after a taunt ends"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrapplingHookLatched": {
+          "name": "TFCond_GrapplingHookLatched",
+          "refLine": 181,
+          "docStart": 10438,
+          "docEnd": 10515,
+          "docs": {
+            "brief": "100: Used when a player latches onto a wall, no effect applying or removing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "100: Used when a player latches onto a wall, no effect applying or removing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrapplingHookSafeFall": {
+          "name": "TFCond_GrapplingHookSafeFall",
+          "refLine": 180,
+          "docStart": 10316,
+          "docEnd": 10406,
+          "docs": {
+            "brief": "99: Used when a player is pulled by their grappling hook, no effect applying or removing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "99: Used when a player is pulled by their grappling hook, no effect applying or removing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Ubercharged": {
+          "name": "TFCond_Ubercharged",
+          "refLine": 82,
+          "docStart": 3251,
+          "docEnd": 3324,
+          "docs": {
+            "brief": "5: Invulnerability, removed when being healed or by another Uber effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "5: Invulnerability, removed when being healed or by another Uber effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SpeedBuffAlly": {
+          "name": "TFCond_SpeedBuffAlly",
+          "refLine": 111,
+          "docStart": 5111,
+          "docEnd": 5148,
+          "docs": {
+            "brief": "32: Disciplinary Action speed boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "32: Disciplinary Action speed boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Slowed": {
+          "name": "TFCond_Slowed",
+          "refLine": 77,
+          "docStart": 3014,
+          "docEnd": 3074,
+          "docs": {
+            "brief": "0: Revving Minigun, Sniper Rifle. Gives zoomed/revved pose",
+            "tags": [
+              {
+                "tag": "",
+                "text": "0: Revving Minigun, Sniper Rifle. Gives zoomed/revved pose"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "TFCond_Overhealed": {
+          "name": "TFCond_Overhealed",
+          "refLine": 102,
+          "docStart": 4515,
+          "docEnd": 4561,
+          "docs": {
+            "brief": "23: Used for overheal, does nothing applying",
+            "tags": [
+              {
+                "tag": "",
+                "text": "23: Used for overheal, does nothing applying"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Bleeding": {
+          "name": "TFCond_Bleeding",
+          "refLine": 104,
+          "docStart": 4619,
+          "docEnd": 4637,
+          "docs": {
+            "brief": "25: Bleed effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "25: Bleed effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrapplingHook": {
+          "name": "TFCond_GrapplingHook",
+          "refLine": 179,
+          "docStart": 10200,
+          "docEnd": 10283,
+          "docs": {
+            "brief": "98: Used when a player fires their grappling hook, no effect applying or removing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "98: Used when a player fires their grappling hook, no effect applying or removing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_KingAura": {
+          "name": "TFCond_KingAura",
+          "refLine": 194,
+          "docStart": 11669,
+          "docEnd": 11750,
+          "docs": {
+            "brief": "113: Increased fire rate, reload speed, and health regen to players in a radius",
+            "tags": [
+              {
+                "tag": "",
+                "text": "113: Increased fire rate, reload speed, and health regen to players in a radius"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_AirCurrent": {
+          "name": "TFCond_AirCurrent",
+          "refLine": 209,
+          "docStart": 12626,
+          "docEnd": 12665,
+          "docs": {
+            "brief": "127: Reduced air control and friction",
+            "tags": [
+              {
+                "tag": "",
+                "text": "127: Reduced air control and friction"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SwimmingNoEffects": {
+          "name": "TFCond_SwimmingNoEffects",
+          "refLine": 188,
+          "docStart": 11091,
+          "docEnd": 11147,
+          "docs": {
+            "brief": "107: Swimming in the air without animations or overlay",
+            "tags": [
+              {
+                "tag": "",
+                "text": "107: Swimming in the air without animations or overlay"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritCola": {
+          "name": "TFCond_CritCola",
+          "refLine": 98,
+          "docStart": 4251,
+          "docEnd": 4273,
+          "docs": {
+            "brief": "19: Mini-crit effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "19: Mini-crit effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_StealthedUserBuffFade": {
+          "name": "TFCond_StealthedUserBuffFade",
+          "refLine": 145,
+          "docStart": 7547,
+          "docEnd": 7617,
+          "docs": {
+            "brief": "66: Cloaked, will appear for a few seconds on attack and cloak again",
+            "tags": [
+              {
+                "tag": "",
+                "text": "66: Cloaked, will appear for a few seconds on attack and cloak again"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberFireResist": {
+          "name": "TFCond_UberFireResist",
+          "refLine": 139,
+          "docStart": 7180,
+          "docEnd": 7217,
+          "docs": {
+            "brief": "60: Vaccinator Uber fire resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "60: Vaccinator Uber fire resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_BulletImmune": {
+          "name": "TFCond_BulletImmune",
+          "refLine": 146,
+          "docStart": 7641,
+          "docEnd": 7667,
+          "docs": {
+            "brief": "67: Full bullet immunity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "67: Full bullet immunity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DefenseBuffed": {
+          "name": "TFCond_DefenseBuffed",
+          "refLine": 105,
+          "docStart": 4662,
+          "docEnd": 4712,
+          "docs": {
+            "brief": "26: Battalion's Backup's defense, icon, and glow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "26: Battalion's Backup's defense, icon, and glow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenQuickHeal": {
+          "name": "TFCond_HalloweenQuickHeal",
+          "refLine": 152,
+          "docStart": 8039,
+          "docEnd": 8119,
+          "docs": {
+            "brief": "73: Healing effect, adds TFCond_Healing along with TFCond_MegaHeal temporarily",
+            "tags": [
+              {
+                "tag": "",
+                "text": "73: Healing effect, adds TFCond_Healing along with TFCond_MegaHeal temporarily"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_NoHealingDamageBuff": {
+          "name": "TFCond_NoHealingDamageBuff",
+          "refLine": 110,
+          "docStart": 5019,
+          "docEnd": 5086,
+          "docs": {
+            "brief": "31: Mini-crits, blocks healing, glow, no weapon mini-crit effects",
+            "tags": [
+              {
+                "tag": "",
+                "text": "31: Mini-crits, blocks healing, glow, no weapon mini-crit effects"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberchargedOnTakeDamage": {
+          "name": "TFCond_UberchargedOnTakeDamage",
+          "refLine": 136,
+          "docStart": 6987,
+          "docEnd": 7022,
+          "docs": {
+            "brief": "57: Miscellaneous invulnerability",
+            "tags": [
+              {
+                "tag": "",
+                "text": "57: Miscellaneous invulnerability"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenSpeedBoost": {
+          "name": "TFCond_HalloweenSpeedBoost",
+          "refLine": 151,
+          "docStart": 7940,
+          "docEnd": 8009,
+          "docs": {
+            "brief": "72: Speed boost, non-melee fire rate and reload, infinite air jumps",
+            "tags": [
+              {
+                "tag": "",
+                "text": "72: Speed boost, non-melee fire rate and reload, infinite air jumps"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_ObscuredSmoke": {
+          "name": "TFCond_ObscuredSmoke",
+          "refLine": 159,
+          "docStart": 8567,
+          "docEnd": 8602,
+          "docs": {
+            "brief": "79: 75% chance to dodge an attack",
+            "tags": [
+              {
+                "tag": "",
+                "text": "79: 75% chance to dodge an attack"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "79"
+        },
+        "TFCond_PasstimePenaltyDebuff": {
+          "name": "TFCond_PasstimePenaltyDebuff",
+          "refLine": 201,
+          "docStart": 12140,
+          "docEnd": 12170,
+          "docs": {
+            "brief": "119: Marked-for-death effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "119: Marked-for-death effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RegenBuffed": {
+          "name": "TFCond_RegenBuffed",
+          "refLine": 108,
+          "docStart": 4864,
+          "docEnd": 4922,
+          "docs": {
+            "brief": "29: Concheror's speed boost, heal on hit, icon, and glow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "29: Concheror's speed boost, heal on hit, icon, and glow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritHype": {
+          "name": "TFCond_CritHype",
+          "refLine": 115,
+          "docStart": 5398,
+          "docEnd": 5433,
+          "docs": {
+            "brief": "36: Soda Popper multi-jump effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "36: Soda Popper multi-jump effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_ImmuneToPushback": {
+          "name": "TFCond_ImmuneToPushback",
+          "refLine": 212,
+          "docStart": 12845,
+          "docEnd": 12889,
+          "docs": {
+            "brief": "130: Player is immune to pushback effects",
+            "tags": [
+              {
+                "tag": "",
+                "text": "130: Player is immune to pushback effects"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Sapped": {
+          "name": "TFCond_Sapped",
+          "refLine": 129,
+          "docStart": 6405,
+          "docEnd": 6439,
+          "docs": {
+            "brief": "50: Sapper sparkle effect in MvM",
+            "tags": [
+              {
+                "tag": "",
+                "text": "50: Sapper sparkle effect in MvM"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_AfterburnImmune": {
+          "name": "TFCond_AfterburnImmune",
+          "refLine": 183,
+          "docStart": 10636,
+          "docEnd": 10672,
+          "docs": {
+            "brief": "102: Deadringer afterburn immunity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "102: Deadringer afterburn immunity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenBombHead": {
+          "name": "TFCond_HalloweenBombHead",
+          "refLine": 132,
+          "docStart": 6636,
+          "docEnd": 6677,
+          "docs": {
+            "brief": "53: Bomb head effect (does not explode)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "53: Bomb head effect (does not explode)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HasRune": {
+          "name": "TFCond_HasRune",
+          "refLine": 170,
+          "docStart": 9364,
+          "docEnd": 9383,
+          "docs": {
+            "brief": "89: Has a powerup",
+            "tags": [
+              {
+                "tag": "",
+                "text": "89: Has a powerup"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrapplingHookBleeding": {
+          "name": "TFCond_GrapplingHookBleeding",
+          "refLine": 182,
+          "docStart": 10548,
+          "docEnd": 10609,
+          "docs": {
+            "brief": "101: Used when a player is hit by attacker's grappling hook",
+            "tags": [
+              {
+                "tag": "",
+                "text": "101: Used when a player is hit by attacker's grappling hook"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrappledByPlayer": {
+          "name": "TFCond_GrappledByPlayer",
+          "refLine": 203,
+          "docStart": 12282,
+          "docEnd": 12296,
+          "docs": {
+            "brief": "121: Unknown",
+            "tags": [
+              {
+                "tag": "",
+                "text": "121: Unknown"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenKartCage": {
+          "name": "TFCond_HalloweenKartCage",
+          "refLine": 169,
+          "docStart": 9264,
+          "docEnd": 9345,
+          "docs": {
+            "brief": "88: Puts a cage around the player if in TFCond_HalloweenKart, otherwise crashes",
+            "tags": [
+              {
+                "tag": "",
+                "text": "88: Puts a cage around the player if in TFCond_HalloweenKart, otherwise crashes"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberchargedHidden": {
+          "name": "TFCond_UberchargedHidden",
+          "refLine": 130,
+          "docStart": 6468,
+          "docEnd": 6516,
+          "docs": {
+            "brief": "51: Out-of-bounds robot invulnerability effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "51: Out-of-bounds robot invulnerability effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Charging": {
+          "name": "TFCond_Charging",
+          "refLine": 96,
+          "docStart": 4152,
+          "docEnd": 4187,
+          "docs": {
+            "brief": "17: Forced forward, charge effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "17: Forced forward, charge effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenTiny": {
+          "name": "TFCond_HalloweenTiny",
+          "refLine": 154,
+          "docStart": 8255,
+          "docEnd": 8294,
+          "docs": {
+            "brief": "75: Half size and increased head size",
+            "tags": [
+              {
+                "tag": "",
+                "text": "75: Half size and increased head size"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneHaste": {
+          "name": "TFCond_RuneHaste",
+          "refLine": 172,
+          "docStart": 9469,
+          "docEnd": 9556,
+          "docs": {
+            "brief": "91: Double fire rate, reload speed, clip and ammo size, and 30% faster movement speed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "91: Double fire rate, reload speed, clip and ammo size, and 30% faster movement speed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritOnFlagCapture": {
+          "name": "TFCond_CritOnFlagCapture",
+          "refLine": 118,
+          "docStart": 5602,
+          "docEnd": 5639,
+          "docs": {
+            "brief": "39: Intelligence capture crit-boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "39: Intelligence capture crit-boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DisguiseRemoved": {
+          "name": "TFCond_DisguiseRemoved",
+          "refLine": 126,
+          "docStart": 6162,
+          "docEnd": 6197,
+          "docs": {
+            "brief": "47: Enforcer damage bonus removed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "47: Enforcer damage bonus removed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenCritCandy": {
+          "name": "TFCond_HalloweenCritCandy",
+          "refLine": 112,
+          "docStart": 5178,
+          "docEnd": 5212,
+          "docs": {
+            "brief": "33: Halloween pumpkin crit-boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "33: Halloween pumpkin crit-boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberBlastResist": {
+          "name": "TFCond_UberBlastResist",
+          "refLine": 138,
+          "docStart": 7116,
+          "docEnd": 7154,
+          "docs": {
+            "brief": "59: Vaccinator Uber blast resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "59: Vaccinator Uber blast resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenKart": {
+          "name": "TFCond_HalloweenKart",
+          "refLine": 162,
+          "docStart": 8757,
+          "docEnd": 8798,
+          "docs": {
+            "brief": "82: Player forced into a Halloween kart",
+            "tags": [
+              {
+                "tag": "",
+                "text": "82: Player forced into a Halloween kart"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Buffed": {
+          "name": "TFCond_Buffed",
+          "refLine": 95,
+          "docStart": 4088,
+          "docEnd": 4132,
+          "docs": {
+            "brief": "16: Buff Banner mini-crits, icon, and glow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "16: Buff Banner mini-crits, icon, and glow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SupernovaRune": {
+          "name": "TFCond_SupernovaRune",
+          "refLine": 192,
+          "docStart": 11470,
+          "docEnd": 11559,
+          "docs": {
+            "brief": "111: Charge meter passively increasing, when charged activiated causes radius Bonk stun",
+            "tags": [
+              {
+                "tag": "",
+                "text": "111: Charge meter passively increasing, when charged activiated causes radius Bonk stun"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HealingDebuff": {
+          "name": "TFCond_HealingDebuff",
+          "refLine": 200,
+          "docStart": 12059,
+          "docEnd": 12107,
+          "docs": {
+            "brief": "118: Healing debuff from Medics and dispensers",
+            "tags": [
+              {
+                "tag": "",
+                "text": "118: Healing debuff from Medics and dispensers"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "118"
+        },
+        "TFCond_DisguisedAsDispenser": {
+          "name": "TFCond_DisguisedAsDispenser",
+          "refLine": 128,
+          "docStart": 6304,
+          "docEnd": 6387,
+          "docs": {
+            "brief": "49: Dispenser disguise when crouching, max movement speed, sentries ignore player",
+            "tags": [
+              {
+                "tag": "",
+                "text": "49: Dispenser disguise when crouching, max movement speed, sentries ignore player"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Disguising": {
+          "name": "TFCond_Disguising",
+          "refLine": 79,
+          "docStart": 3139,
+          "docEnd": 3158,
+          "docs": {
+            "brief": "2: Disguise smoke",
+            "tags": [
+              {
+                "tag": "",
+                "text": "2: Disguise smoke"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneKnockout": {
+          "name": "TFCond_RuneKnockout",
+          "refLine": 184,
+          "docStart": 10696,
+          "docEnd": 10854,
+          "docs": {
+            "brief": "103: Melee and grappling hook only, increased max health, knockback immunity, x4 more damage against buildings, and knockbacks a powerup off a victim on hit",
+            "tags": [
+              {
+                "tag": "",
+                "text": "103: Melee and grappling hook only, increased max health, knockback immunity, x4 more damage against buildings, and knockbacks a powerup off a victim on hit"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Dazed": {
+          "name": "TFCond_Dazed",
+          "refLine": 94,
+          "docStart": 4018,
+          "docEnd": 4070,
+          "docs": {
+            "brief": "15: Slow effect, can remove to remove stun effects",
+            "tags": [
+              {
+                "tag": "",
+                "text": "15: Slow effect, can remove to remove stun effects"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritMmmph": {
+          "name": "TFCond_CritMmmph",
+          "refLine": 123,
+          "docStart": 5958,
+          "docEnd": 5989,
+          "docs": {
+            "brief": "44: Phlogistinator crit-boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "44: Phlogistinator crit-boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenInHell": {
+          "name": "TFCond_HalloweenInHell",
+          "refLine": 155,
+          "docStart": 8321,
+          "docEnd": 8381,
+          "docs": {
+            "brief": "76: Applies TFCond_HalloweenGhostMode when the player dies",
+            "tags": [
+              {
+                "tag": "",
+                "text": "76: Applies TFCond_HalloweenGhostMode when the player dies"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Reprogrammed": {
+          "name": "TFCond_Reprogrammed",
+          "refLine": 122,
+          "docStart": 5912,
+          "docEnd": 5937,
+          "docs": {
+            "brief": "43: No longer functions",
+            "tags": [
+              {
+                "tag": "",
+                "text": "43: No longer functions"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Milked": {
+          "name": "TFCond_Milked",
+          "refLine": 106,
+          "docStart": 4730,
+          "docEnd": 4751,
+          "docs": {
+            "brief": "27: Mad Milk effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "27: Mad Milk effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MeleeOnly": {
+          "name": "TFCond_MeleeOnly",
+          "refLine": 165,
+          "docStart": 8989,
+          "docEnd": 9065,
+          "docs": {
+            "brief": "85: Forced melee, along with TFCond_SpeedBuffAlly and TFCond_HalloweenTiny",
+            "tags": [
+              {
+                "tag": "",
+                "text": "85: Forced melee, along with TFCond_SpeedBuffAlly and TFCond_HalloweenTiny"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MVMBotRadiowave": {
+          "name": "TFCond_MVMBotRadiowave",
+          "refLine": 150,
+          "docStart": 7868,
+          "docEnd": 7909,
+          "docs": {
+            "brief": "71: Stuns bots and applies radio effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "71: Stuns bots and applies radio effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritOnFirstBlood": {
+          "name": "TFCond_CritOnFirstBlood",
+          "refLine": 116,
+          "docStart": 5461,
+          "docEnd": 5495,
+          "docs": {
+            "brief": "37: Arena first blood crit-boost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "37: Arena first blood crit-boost"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DefenseBuffMmmph": {
+          "name": "TFCond_DefenseBuffMmmph",
+          "refLine": 124,
+          "docStart": 6017,
+          "docEnd": 6054,
+          "docs": {
+            "brief": "45: Old Phlogistinator defense buff",
+            "tags": [
+              {
+                "tag": "",
+                "text": "45: Old Phlogistinator defense buff"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Healing": {
+          "name": "TFCond_Healing",
+          "refLine": 100,
+          "docStart": 4369,
+          "docEnd": 4414,
+          "docs": {
+            "brief": "21: Used for healing, does nothing applying",
+            "tags": [
+              {
+                "tag": "",
+                "text": "21: Used for healing, does nothing applying"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Taunting": {
+          "name": "TFCond_Taunting",
+          "refLine": 84,
+          "docStart": 3396,
+          "docEnd": 3447,
+          "docs": {
+            "brief": "7: Used for taunting, can remove to stop taunting",
+            "tags": [
+              {
+                "tag": "",
+                "text": "7: Used for taunting, can remove to stop taunting"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DeadRingered": {
+          "name": "TFCond_DeadRingered",
+          "refLine": 92,
+          "docStart": 3895,
+          "docEnd": 3952,
+          "docs": {
+            "brief": "13: Dead Ringer damage resistance, gives TFCond_Cloaked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "13: Dead Ringer damage resistance, gives TFCond_Cloaked"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Disguised": {
+          "name": "TFCond_Disguised",
+          "refLine": 80,
+          "docStart": 3179,
+          "docEnd": 3192,
+          "docs": {
+            "brief": "3: Disguise",
+            "tags": [
+              {
+                "tag": "",
+                "text": "3: Disguise"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_LostFooting": {
+          "name": "TFCond_LostFooting",
+          "refLine": 208,
+          "docStart": 12577,
+          "docEnd": 12604,
+          "docs": {
+            "brief": "126: Less ground friction",
+            "tags": [
+              {
+                "tag": "",
+                "text": "126: Less ground friction"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_BalloonHead": {
+          "name": "TFCond_BalloonHead",
+          "refLine": 164,
+          "docStart": 8934,
+          "docEnd": 8968,
+          "docs": {
+            "brief": "84: Big head and lowered gravity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "84: Big head and lowered gravity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_PreventDeath": {
+          "name": "TFCond_PreventDeath",
+          "refLine": 149,
+          "docStart": 7785,
+          "docEnd": 7841,
+          "docs": {
+            "brief": "70: Survive to 1 health, then the condition is removed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "70: Survive to 1 health, then the condition is removed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DemoBuff": {
+          "name": "TFCond_DemoBuff",
+          "refLine": 97,
+          "docStart": 4207,
+          "docEnd": 4231,
+          "docs": {
+            "brief": "18: Eyelander eye glow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "18: Eyelander eye glow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_ParachuteDeployed": {
+          "name": "TFCond_ParachuteDeployed",
+          "refLine": 204,
+          "docStart": 12325,
+          "docEnd": 12373,
+          "docs": {
+            "brief": "122: Parachute deployed, prevents reopening it",
+            "tags": [
+              {
+                "tag": "",
+                "text": "122: Parachute deployed, prevents reopening it"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MiniCritOnKill": {
+          "name": "TFCond_MiniCritOnKill",
+          "refLine": 157,
+          "docStart": 8487,
+          "docEnd": 8510,
+          "docs": {
+            "brief": "78: Mini-crits effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "78: Mini-crits effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneWarlock": {
+          "name": "TFCond_RuneWarlock",
+          "refLine": 176,
+          "docStart": 9801,
+          "docEnd": 9895,
+          "docs": {
+            "brief": "95: Attacker takes damage and knockback on hitting the player and 50% increase in max health",
+            "tags": [
+              {
+                "tag": "",
+                "text": "95: Attacker takes damage and knockback on hitting the player and 50% increase in max health"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RocketPack": {
+          "name": "TFCond_RocketPack",
+          "refLine": 207,
+          "docStart": 12496,
+          "docEnd": 12554,
+          "docs": {
+            "brief": "125: Thermal Thruster launched effects, prevents reusing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "125: Thermal Thruster launched effects, prevents reusing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Kritzkrieged": {
+          "name": "TFCond_Kritzkrieged",
+          "refLine": 89,
+          "docStart": 3688,
+          "docEnd": 3754,
+          "docs": {
+            "brief": "11: Crit boost, removed when being healed or another Uber effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "11: Crit boost, removed when being healed or another Uber effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MedigunDebuff": {
+          "name": "TFCond_MedigunDebuff",
+          "refLine": 144,
+          "docStart": 7501,
+          "docEnd": 7514,
+          "docs": {
+            "brief": "65: Unknown",
+            "tags": [
+              {
+                "tag": "",
+                "text": "65: Unknown"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_DodgeChance": {
+          "name": "TFCond_DodgeChance",
+          "refLine": 158,
+          "docStart": 8533,
+          "docEnd": 8537,
+          "docs": {
+            "brief": "79",
+            "tags": [
+              {
+                "tag": "",
+                "text": "79"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_TeleportedGlow": {
+          "name": "TFCond_TeleportedGlow",
+          "refLine": 83,
+          "docStart": 3350,
+          "docEnd": 3376,
+          "docs": {
+            "brief": "6: Teleport trail effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "6: Teleport trail effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Gas": {
+          "name": "TFCond_Gas",
+          "refLine": 205,
+          "docStart": 12388,
+          "docEnd": 12412,
+          "docs": {
+            "brief": "123: Gas Passer effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "123: Gas Passer effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SmallFireResist": {
+          "name": "TFCond_SmallFireResist",
+          "refLine": 142,
+          "docStart": 7384,
+          "docEnd": 7424,
+          "docs": {
+            "brief": "63: Vaccinator healing fire resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "63: Vaccinator healing fire resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_FireImmune": {
+          "name": "TFCond_FireImmune",
+          "refLine": 148,
+          "docStart": 7737,
+          "docEnd": 7761,
+          "docs": {
+            "brief": "69: Full fire immunity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "69: Full fire immunity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_PasstimeInterception": {
+          "name": "TFCond_PasstimeInterception",
+          "refLine": 187,
+          "docStart": 11012,
+          "docEnd": 11062,
+          "docs": {
+            "brief": "106: Used when a player intercepts the Jack/Ball",
+            "tags": [
+              {
+                "tag": "",
+                "text": "106: Used when a player intercepts the Jack/Ball"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CritCanteen": {
+          "name": "TFCond_CritCanteen",
+          "refLine": 113,
+          "docStart": 5235,
+          "docEnd": 5284,
+          "docs": {
+            "brief": "34: Crit-boost and doubles Sentry Gun fire-rate",
+            "tags": [
+              {
+                "tag": "",
+                "text": "34: Crit-boost and doubles Sentry Gun fire-rate"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneRegen": {
+          "name": "TFCond_RuneRegen",
+          "refLine": 173,
+          "docStart": 9577,
+          "docEnd": 9612,
+          "docs": {
+            "brief": "92: Regen ammo, health, and metal",
+            "tags": [
+              {
+                "tag": "",
+                "text": "92: Regen ammo, health, and metal"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Plague": {
+          "name": "TFCond_Plague",
+          "refLine": 193,
+          "docStart": 11577,
+          "docEnd": 11649,
+          "docs": {
+            "brief": "112: Plague sound effect and message, blocks King powerup health regen",
+            "tags": [
+              {
+                "tag": "",
+                "text": "112: Plague sound effect and message, blocks King powerup health regen"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneVampire": {
+          "name": "TFCond_RuneVampire",
+          "refLine": 175,
+          "docStart": 9701,
+          "docEnd": 9778,
+          "docs": {
+            "brief": "94: Takes 3/4 damage, gain health on damage, and 40% increase in max health",
+            "tags": [
+              {
+                "tag": "",
+                "text": "94: Takes 3/4 damage, gain health on damage, and 40% increase in max health"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenGiant": {
+          "name": "TFCond_HalloweenGiant",
+          "refLine": 153,
+          "docStart": 8145,
+          "docEnd": 8230,
+          "docs": {
+            "brief": "74: Double size, x10 max health increase, ammo regeneration, and forced thirdperson",
+            "tags": [
+              {
+                "tag": "",
+                "text": "74: Double size, x10 max health increase, ammo regeneration, and forced thirdperson"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CloakFlicker": {
+          "name": "TFCond_CloakFlicker",
+          "refLine": 87,
+          "docStart": 3564,
+          "docEnd": 3592,
+          "docs": {
+            "brief": "9: Cloak flickering effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "9: Cloak flickering effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "9"
+        },
+        "TFCond_RuneStrength": {
+          "name": "TFCond_RuneStrength",
+          "refLine": 171,
+          "docStart": 9407,
+          "docEnd": 9448,
+          "docs": {
+            "brief": "90: Double damage and no damage falloff",
+            "tags": [
+              {
+                "tag": "",
+                "text": "90: Double damage and no damage falloff"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenKartNoTurn": {
+          "name": "TFCond_HalloweenKartNoTurn",
+          "refLine": 167,
+          "docStart": 9162,
+          "docEnd": 9166,
+          "docs": {
+            "brief": "87",
+            "tags": [
+              {
+                "tag": "",
+                "text": "87"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_BlastJumping": {
+          "name": "TFCond_BlastJumping",
+          "refLine": 161,
+          "docStart": 8703,
+          "docEnd": 8732,
+          "docs": {
+            "brief": "81: Player is blast jumping",
+            "tags": [
+              {
+                "tag": "",
+                "text": "81: Player is blast jumping"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberBulletResist": {
+          "name": "TFCond_UberBulletResist",
+          "refLine": 137,
+          "docStart": 7050,
+          "docEnd": 7089,
+          "docs": {
+            "brief": "58: Vaccinator Uber bullet resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "58: Vaccinator Uber bullet resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Cloaked": {
+          "name": "TFCond_Cloaked",
+          "refLine": 81,
+          "docStart": 3211,
+          "docEnd": 3228,
+          "docs": {
+            "brief": "4: Cloak effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "4: Cloak effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_PlagueRune": {
+          "name": "TFCond_PlagueRune",
+          "refLine": 191,
+          "docStart": 11354,
+          "docEnd": 11445,
+          "docs": {
+            "brief": "110: Radius health kit stealing, increased max health, TFCond_Plague on touching a victim",
+            "tags": [
+              {
+                "tag": "",
+                "text": "110: Radius health kit stealing, increased max health, TFCond_Plague on touching a victim"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MarkedForDeath": {
+          "name": "TFCond_MarkedForDeath",
+          "refLine": 109,
+          "docStart": 4948,
+          "docEnd": 4988,
+          "docs": {
+            "brief": "30: Fan o' War marked-for-death effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "30: Fan o' War marked-for-death effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenGhostMode": {
+          "name": "TFCond_HalloweenGhostMode",
+          "refLine": 156,
+          "docStart": 8411,
+          "docEnd": 8461,
+          "docs": {
+            "brief": "77: Becomes a ghost unable to attack but can fly",
+            "tags": [
+              {
+                "tag": "",
+                "text": "77: Becomes a ghost unable to attack but can fly"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenThriller": {
+          "name": "TFCond_HalloweenThriller",
+          "refLine": 133,
+          "docStart": 6706,
+          "docEnd": 6736,
+          "docs": {
+            "brief": "54: Forced Thriller taunting",
+            "tags": [
+              {
+                "tag": "",
+                "text": "54: Forced Thriller taunting"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Bonked": {
+          "name": "TFCond_Bonked",
+          "refLine": 93,
+          "docStart": 3970,
+          "docEnd": 4001,
+          "docs": {
+            "brief": "14: Bonk! Atomic Punch effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "14: Bonk! Atomic Punch effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RadiusHealOnDamage": {
+          "name": "TFCond_RadiusHealOnDamage",
+          "refLine": 134,
+          "docStart": 6766,
+          "docEnd": 6898,
+          "docs": {
+            "brief": "55: Radius healing, adds TFCond_InHealRadius, TFCond_Healing. Removed when a taunt ends, but this condition stays but does nothing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "55: Radius healing, adds TFCond_InHealRadius, TFCond_Healing. Removed when a taunt ends, but this condition stays but does nothing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_FreezeInput": {
+          "name": "TFCond_FreezeInput",
+          "refLine": 168,
+          "docStart": 9194,
+          "docEnd": 9235,
+          "docs": {
+            "brief": "87: Prevents player from using controls",
+            "tags": [
+              {
+                "tag": "",
+                "text": "87: Prevents player from using controls"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "87"
+        },
+        "TFCond_CritOnKill": {
+          "name": "TFCond_CritOnKill",
+          "refLine": 119,
+          "docStart": 5661,
+          "docEnd": 5703,
+          "docs": {
+            "brief": "40: Crit-boost from crit-on-kill weapons",
+            "tags": [
+              {
+                "tag": "",
+                "text": "40: Crit-boost from crit-on-kill weapons"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenHellHeal": {
+          "name": "TFCond_HalloweenHellHeal",
+          "refLine": 210,
+          "docStart": 12694,
+          "docEnd": 12744,
+          "docs": {
+            "brief": "128: Used when a player gets teleported to hell",
+            "tags": [
+              {
+                "tag": "",
+                "text": "128: Used when a player gets teleported to hell"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Unknown2": {
+          "name": "TFCond_Unknown2",
+          "refLine": 90,
+          "docStart": 3774,
+          "docEnd": 3778,
+          "docs": {
+            "brief": "12",
+            "tags": [
+              {
+                "tag": "",
+                "text": "12"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Teleporting": {
+          "name": "TFCond_Teleporting",
+          "refLine": 88,
+          "docStart": 3615,
+          "docEnd": 3664,
+          "docs": {
+            "brief": "10: Used for teleporting, does nothing applying",
+            "tags": [
+              {
+                "tag": "",
+                "text": "10: Used for teleporting, does nothing applying"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SmallBulletResist": {
+          "name": "TFCond_SmallBulletResist",
+          "refLine": 140,
+          "docStart": 7246,
+          "docEnd": 7288,
+          "docs": {
+            "brief": "61: Vaccinator healing bullet resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "61: Vaccinator healing bullet resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CompetitiveLoser": {
+          "name": "TFCond_CompetitiveLoser",
+          "refLine": 198,
+          "docStart": 11976,
+          "docEnd": 11990,
+          "docs": {
+            "brief": "117: Unknown",
+            "tags": [
+              {
+                "tag": "",
+                "text": "117: Unknown"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_OnFire": {
+          "name": "TFCond_OnFire",
+          "refLine": 101,
+          "docStart": 4432,
+          "docEnd": 4493,
+          "docs": {
+            "brief": "22: Ignite sound and vocals, can remove to remove afterburn",
+            "tags": [
+              {
+                "tag": "",
+                "text": "22: Ignite sound and vocals, can remove to remove afterburn"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneAgility": {
+          "name": "TFCond_RuneAgility",
+          "refLine": 178,
+          "docStart": 10083,
+          "docEnd": 10175,
+          "docs": {
+            "brief": "97: Increased movement speed, grappling hook speed, jump height, and instant weapon switch",
+            "tags": [
+              {
+                "tag": "",
+                "text": "97: Increased movement speed, grappling hook speed, jump height, and instant weapon switch"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneImbalance": {
+          "name": "TFCond_RuneImbalance",
+          "refLine": 185,
+          "docStart": 10879,
+          "docEnd": 10932,
+          "docs": {
+            "brief": "104: Prevents gaining a crit-boost or Uber powerups",
+            "tags": [
+              {
+                "tag": "",
+                "text": "104: Prevents gaining a crit-boost or Uber powerups"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RuneResist": {
+          "name": "TFCond_RuneResist",
+          "refLine": 174,
+          "docStart": 9634,
+          "docEnd": 9678,
+          "docs": {
+            "brief": "93: Takes 1/2 damage and critical immunity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "93: Takes 1/2 damage and critical immunity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SwimmingCurse": {
+          "name": "TFCond_SwimmingCurse",
+          "refLine": 166,
+          "docStart": 9090,
+          "docEnd": 9131,
+          "docs": {
+            "brief": "86: Swim in the air with Jarate overlay",
+            "tags": [
+              {
+                "tag": "",
+                "text": "86: Swim in the air with Jarate overlay"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_CompetitiveWinner": {
+          "name": "TFCond_CompetitiveWinner",
+          "refLine": 197,
+          "docStart": 11934,
+          "docEnd": 11948,
+          "docs": {
+            "brief": "116: Unknown",
+            "tags": [
+              {
+                "tag": "",
+                "text": "116: Unknown"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MegaHeal": {
+          "name": "TFCond_MegaHeal",
+          "refLine": 107,
+          "docStart": 4771,
+          "docEnd": 4841,
+          "docs": {
+            "brief": "28: Quick-Fix Ubercharge's knockback/stun immunity and visual effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "28: Quick-Fix Ubercharge's knockback/stun immunity and visual effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberchargeFading": {
+          "name": "TFCond_UberchargeFading",
+          "refLine": 85,
+          "docStart": 3475,
+          "docEnd": 3513,
+          "docs": {
+            "brief": "8: Invulnerability expiration effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "8: Invulnerability expiration effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_BlastImmune": {
+          "name": "TFCond_BlastImmune",
+          "refLine": 147,
+          "docStart": 7690,
+          "docEnd": 7715,
+          "docs": {
+            "brief": "68: Full blast immunity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "68: Full blast immunity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_NoTaunting_DEPRECATED": {
+          "name": "TFCond_NoTaunting_DEPRECATED",
+          "refLine": 199,
+          "docStart": 12023,
+          "docEnd": 12028,
+          "docs": {
+            "brief": "118",
+            "tags": [
+              {
+                "tag": "",
+                "text": "118"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_MarkedForDeathSilent": {
+          "name": "TFCond_MarkedForDeathSilent",
+          "refLine": 127,
+          "docStart": 6229,
+          "docEnd": 6272,
+          "docs": {
+            "brief": "48: Marked-for-death without sound effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "48: Marked-for-death without sound effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SpawnOutline": {
+          "name": "TFCond_SpawnOutline",
+          "refLine": 195,
+          "docStart": 11774,
+          "docEnd": 11840,
+          "docs": {
+            "brief": "114: Outline and health meter of teammates (and disguised spies)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "114: Outline and health meter of teammates (and disguised spies)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_HalloweenKartDash": {
+          "name": "TFCond_HalloweenKartDash",
+          "refLine": 163,
+          "docStart": 8827,
+          "docEnd": 8911,
+          "docs": {
+            "brief": "83: Forced forward if in TFCond_HalloweenKart, zoom in effect, and dash animations",
+            "tags": [
+              {
+                "tag": "",
+                "text": "83: Forced forward if in TFCond_HalloweenKart, zoom in effect, and dash animations"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Unknown1": {
+          "name": "TFCond_Unknown1",
+          "refLine": 86,
+          "docStart": 3533,
+          "docEnd": 3536,
+          "docs": {
+            "brief": "9",
+            "tags": [
+              {
+                "tag": "",
+                "text": "9"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_PowerupModeDominant": {
+          "name": "TFCond_PowerupModeDominant",
+          "refLine": 211,
+          "docStart": 12775,
+          "docEnd": 12818,
+          "docs": {
+            "brief": "129: Reduces effects of certain powerups",
+            "tags": [
+              {
+                "tag": "",
+                "text": "129: Reduces effects of certain powerups"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Zoomed": {
+          "name": "TFCond_Zoomed",
+          "refLine": 78,
+          "docStart": 3092,
+          "docEnd": 3117,
+          "docs": {
+            "brief": "1: Sniper Rifle zooming",
+            "tags": [
+              {
+                "tag": "",
+                "text": "1: Sniper Rifle zooming"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_UberchargedCanteen": {
+          "name": "TFCond_UberchargedCanteen",
+          "refLine": 131,
+          "docStart": 6546,
+          "docEnd": 6607,
+          "docs": {
+            "brief": "52: Invulnerability effect and Sentry Gun damage resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "52: Invulnerability effect and Sentry Gun damage resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Stealthed": {
+          "name": "TFCond_Stealthed",
+          "refLine": 143,
+          "docStart": 7445,
+          "docEnd": 7476,
+          "docs": {
+            "brief": "64: Cloaked until next attack",
+            "tags": [
+              {
+                "tag": "",
+                "text": "64: Cloaked until next attack"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_Jarated": {
+          "name": "TFCond_Jarated",
+          "refLine": 103,
+          "docStart": 4580,
+          "docEnd": 4599,
+          "docs": {
+            "brief": "24: Jarate effect",
+            "tags": [
+              {
+                "tag": "",
+                "text": "24: Jarate effect"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_EyeaductUnderworld": {
+          "name": "TFCond_EyeaductUnderworld",
+          "refLine": 189,
+          "docStart": 11177,
+          "docEnd": 11257,
+          "docs": {
+            "brief": "108: Refills max health, short Uber, escaped the underworld message on removal",
+            "tags": [
+              {
+                "tag": "",
+                "text": "108: Refills max health, short Uber, escaped the underworld message on removal"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RestrictToMelee": {
+          "name": "TFCond_RestrictToMelee",
+          "refLine": 120,
+          "docStart": 5730,
+          "docEnd": 5772,
+          "docs": {
+            "brief": "41: Prevents switching once melee is out",
+            "tags": [
+              {
+                "tag": "",
+                "text": "41: Prevents switching once melee is out"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_KnockedIntoAir": {
+          "name": "TFCond_KnockedIntoAir",
+          "refLine": 196,
+          "docStart": 11866,
+          "docEnd": 11905,
+          "docs": {
+            "brief": "115: Used when a player is airblasted",
+            "tags": [
+              {
+                "tag": "",
+                "text": "115: Used when a player is airblasted"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_SmallBlastResist": {
+          "name": "TFCond_SmallBlastResist",
+          "refLine": 141,
+          "docStart": 7316,
+          "docEnd": 7357,
+          "docs": {
+            "brief": "62: Vaccinator healing blast resistance",
+            "tags": [
+              {
+                "tag": "",
+                "text": "62: Vaccinator healing blast resistance"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_KingRune": {
+          "name": "TFCond_KingRune",
+          "refLine": 190,
+          "docStart": 11277,
+          "docEnd": 11332,
+          "docs": {
+            "brief": "109: Increased max health and applies TFCond_KingAura",
+            "tags": [
+              {
+                "tag": "",
+                "text": "109: Increased max health and applies TFCond_KingAura"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_RunePrecision": {
+          "name": "TFCond_RunePrecision",
+          "refLine": 177,
+          "docStart": 9920,
+          "docEnd": 10060,
+          "docs": {
+            "brief": "96: Less bullet spread, no damage falloff, 250% faster projectiles, and double damage, faster charge, and faster re-zoom for Sniper Rifles",
+            "tags": [
+              {
+                "tag": "",
+                "text": "96: Less bullet spread, no damage falloff, 250% faster projectiles, and double damage, faster charge, and faster re-zoom for Sniper Rifles"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_TmpDamageBonus": {
+          "name": "TFCond_TmpDamageBonus",
+          "refLine": 91,
+          "docStart": 3809,
+          "docEnd": 3871,
+          "docs": {
+            "brief": "12: Temporary damage buff, something along with attribute 19",
+            "tags": [
+              {
+                "tag": "",
+                "text": "12: Temporary damage buff, something along with attribute 19"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "12"
+        },
+        "TFCond_Parachute": {
+          "name": "TFCond_Parachute",
+          "refLine": 160,
+          "docStart": 8623,
+          "docEnd": 8679,
+          "docs": {
+            "brief": "80: Parachute effect, removed when touching the ground",
+            "tags": [
+              {
+                "tag": "",
+                "text": "80: Parachute effect, removed when touching the ground"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TFCond_GrappledToPlayer": {
+          "name": "TFCond_GrappledToPlayer",
+          "refLine": 202,
+          "docStart": 12198,
+          "docEnd": 12254,
+          "docs": {
+            "brief": "120: Prevents taunting and some Grappling Hook actions",
+            "tags": [
+              {
+                "tag": "",
+                "text": "120: Prevents taunting and some Grappling Hook actions"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "TFTeam": {
+      "name": "TFTeam",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFTeam_Unassigned": {
+          "name": "TFTeam_Unassigned",
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "TFTeam_Blue": {
+          "name": "TFTeam_Blue",
+          "refLine": 72,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "3"
+        },
+        "TFTeam_Red": {
+          "name": "TFTeam_Red",
+          "refLine": 71,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "2"
+        },
+        "TFTeam_Spectator": {
+          "name": "TFTeam_Spectator",
+          "refLine": 70,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "TFHoliday": {
+      "name": "TFHoliday",
+      "refLine": 217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFHoliday_Invalid": {
+          "name": "TFHoliday_Invalid",
+          "refLine": 219,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-1"
+        }
+      }
+    },
+    "TFObjectType": {
+      "name": "TFObjectType",
+      "refLine": 236,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFObject_CartDispenser": {
+          "name": "TFObject_CartDispenser",
+          "refLine": 238,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "TFObject_Dispenser": {
+          "name": "TFObject_Dispenser",
+          "refLine": 239,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "TFObject_Teleporter": {
+          "name": "TFObject_Teleporter",
+          "refLine": 240,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        },
+        "TFObject_Sentry": {
+          "name": "TFObject_Sentry",
+          "refLine": 241,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "2"
+        },
+        "TFObject_Sapper": {
+          "name": "TFObject_Sapper",
+          "refLine": 242,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "3"
+        }
+      }
+    },
+    "TFClassType": {
+      "name": "TFClassType",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFClass_DemoMan": {
+          "name": "TFClass_DemoMan",
+          "refLine": 59,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Medic": {
+          "name": "TFClass_Medic",
+          "refLine": 60,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Spy": {
+          "name": "TFClass_Spy",
+          "refLine": 63,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Unknown": {
+          "name": "TFClass_Unknown",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "TFClass_Pyro": {
+          "name": "TFClass_Pyro",
+          "refLine": 62,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Sniper": {
+          "name": "TFClass_Sniper",
+          "refLine": 57,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Engineer": {
+          "name": "TFClass_Engineer",
+          "refLine": 64,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Soldier": {
+          "name": "TFClass_Soldier",
+          "refLine": 58,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Heavy": {
+          "name": "TFClass_Heavy",
+          "refLine": 61,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFClass_Scout": {
+          "name": "TFClass_Scout",
+          "refLine": 56,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

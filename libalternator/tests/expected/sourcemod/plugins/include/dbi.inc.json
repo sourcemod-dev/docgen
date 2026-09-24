@@ -1,0 +1,4419 @@
+{
+  "functions": {
+    "SQL_IsSameConnection": {
+      "name": "SQL_IsSameConnection",
+      "refLine": 1001,
+      "docStart": 41207,
+      "docEnd": 41563,
+      "docs": {
+        "brief": "Tells whether two database handles both point to the same database\nconnection.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tells whether two database handles both point to the same database\nconnection."
+          },
+          {
+            "tag": "param:hndl1",
+            "text": "First database Handle."
+          },
+          {
+            "tag": "param:hndl2",
+            "text": "Second database Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if the Handles point to the same\nconnection, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl1",
+          "decl": "Handle hndl1",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl2",
+          "decl": "Handle hndl2",
+          "default": null
+        }
+      ]
+    },
+    "SQL_Rewind": {
+      "name": "SQL_Rewind",
+      "refLine": 825,
+      "docStart": 33554,
+      "docEnd": 33805,
+      "docs": {
+        "brief": "Rewinds a result set back to the first result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rewinds a result set back to the first result."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or no current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_ExecuteTransaction": {
+      "name": "SQL_ExecuteTransaction",
+      "refLine": 1071,
+      "docStart": 43969,
+      "docEnd": 44557,
+      "docs": {
+        "brief": "Sends a transaction to the database thread. The transaction handle is\nautomatically closed. When the transaction completes, the optional\ncallback is invoked.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a transaction to the database thread. The transaction handle is\nautomatically closed. When the transaction completes, the optional\ncallback is invoked."
+          },
+          {
+            "tag": "param:db",
+            "text": "A database handle."
+          },
+          {
+            "tag": "param:txn",
+            "text": "A transaction handle."
+          },
+          {
+            "tag": "param:onSuccess",
+            "text": "An optional callback to receive a successful transaction."
+          },
+          {
+            "tag": "param:onError",
+            "text": "An optional callback to receive an error message."
+          },
+          {
+            "tag": "param:data",
+            "text": "An optional value to pass to callbacks."
+          },
+          {
+            "tag": "param:prio",
+            "text": "Priority queue to use."
+          },
+          {
+            "tag": "error",
+            "text": "An invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "Transaction",
+          "name": "txn",
+          "decl": "Transaction txn",
+          "default": null
+        },
+        {
+          "type": "SQLTxnSuccess",
+          "name": "onSuccess",
+          "decl": "SQLTxnSuccess onSuccess",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "SQLTxnFailure",
+          "name": "onError",
+          "decl": "SQLTxnFailure onError",
+          "default": "INVALID_FUNCTION"
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "DBPriority",
+          "name": "priority",
+          "decl": "DBPriority priority",
+          "default": "DBPrio_Normal"
+        }
+      ]
+    },
+    "SQL_ConnectEx": {
+      "name": "SQL_ConnectEx",
+      "refLine": 521,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "driver",
+          "decl": "Handle driver",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "host",
+          "decl": "const char[] host",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "user",
+          "decl": "const char[] user",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "pass",
+          "decl": "const char[] pass",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "database",
+          "decl": "const char[] database",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "persistent",
+          "decl": "bool persistent",
+          "default": "true"
+        },
+        {
+          "type": "int",
+          "name": "port",
+          "decl": "int port",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "maxTimeout",
+          "decl": "int maxTimeout",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_GetError": {
+      "name": "SQL_GetError",
+      "refLine": 625,
+      "docStart": 25459,
+      "docEnd": 25821,
+      "docs": {
+        "brief": "Returns the error reported by the last query.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the error reported by the last query."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A database, query, OR statement Handle."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if there was an error, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database, query, or statement Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_UnlockDatabase": {
+      "name": "SQL_UnlockDatabase",
+      "refLine": 977,
+      "docStart": 40351,
+      "docEnd": 40518,
+      "docs": {
+        "brief": "Unlocks a database so threading operations may continue.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unlocks a database so threading operations may continue."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FastQuery": {
+      "name": "SQL_FastQuery",
+      "refLine": 695,
+      "docStart": 28219,
+      "docEnd": 28757,
+      "docs": {
+        "brief": "Executes a query and ignores the result set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a query and ignores the result set."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:query",
+            "text": "Query string."
+          },
+          {
+            "tag": "param:len",
+            "text": "Optional parameter to specify the query length, in\nbytes.  This can be used to send binary queries that\nhave a premature terminator."
+          },
+          {
+            "tag": "return",
+            "text": "True if query succeeded, false otherwise.  Use\nSQL_GetError to find the last error."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": "-1"
+        }
+      ]
+    },
+    "SQL_QuoteString": {
+      "name": "SQL_QuoteString",
+      "refLine": 674,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "string",
+          "decl": "const char[] string",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "written",
+          "decl": "int& written",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_TQuery": {
+      "name": "SQL_TQuery",
+      "refLine": 1037,
+      "docStart": 42315,
+      "docEnd": 43141,
+      "docs": {
+        "brief": "Executes a simple query via a thread.  The query Handle is passed through\nthe callback.\n\nThe database Handle returned through the callback is always a new Handle,\nand if necessary, SQL_IsSameConnection() should be used to test against\nother connections.\n\nThe query Handle returned through the callback is temporary and destroyed\nat the end of the callback.  If you need to hold onto it, use CloneHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a simple query via a thread.  The query Handle is passed through\nthe callback.\n\nThe database Handle returned through the callback is always a new Handle,\nand if necessary, SQL_IsSameConnection() should be used to test against\nother connections.\n\nThe query Handle returned through the callback is temporary and destroyed\nat the end of the callback.  If you need to hold onto it, use CloneHandle()."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback; database is in \"owner\" and the query Handle\nis passed in \"hndl\"."
+          },
+          {
+            "tag": "param:query",
+            "text": "Query string."
+          },
+          {
+            "tag": "param:data",
+            "text": "Extra data value to pass to the callback."
+          },
+          {
+            "tag": "param:prio",
+            "text": "Priority queue to use."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "SQLTCallback",
+          "name": "callback",
+          "decl": "SQLTCallback callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "DBPriority",
+          "name": "prio",
+          "decl": "DBPriority prio",
+          "default": "DBPrio_Normal"
+        }
+      ]
+    },
+    "SQL_TConnect": {
+      "name": "SQL_TConnect",
+      "refLine": 1016,
+      "docStart": 41630,
+      "docEnd": 42220,
+      "docs": {
+        "brief": "Connects to a database via a thread.  This can be used instead of\nSQL_Connect() if you wish for non-blocking functionality.\n\nIt is not necessary to use this to use threaded queries.  However, if you\ndon't (or you mix threaded/non-threaded queries), you should see\nSQL_LockDatabase().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Connects to a database via a thread.  This can be used instead of\nSQL_Connect() if you wish for non-blocking functionality.\n\nIt is not necessary to use this to use threaded queries.  However, if you\ndon't (or you mix threaded/non-threaded queries), you should see\nSQL_LockDatabase()."
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback; new Handle will be in hndl, owner is the driver.\nIf no driver was found, the owner is INVALID_HANDLE."
+          },
+          {
+            "tag": "param:name",
+            "text": "Database name."
+          },
+          {
+            "tag": "param:data",
+            "text": "Extra data value to pass to the callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "SQLTCallback",
+          "name": "callback",
+          "decl": "SQLTCallback callback",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": "\"default\""
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_SetCharset": {
+      "name": "SQL_SetCharset",
+      "refLine": 596,
+      "docStart": 24432,
+      "docEnd": 24787,
+      "docs": {
+        "brief": "Sets the character set of the current connection.\nLike SET NAMES .. in mysql, but stays after connection problems.\n\nExample: \"utf8\", \"latin1\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the character set of the current connection.\nLike SET NAMES .. in mysql, but stays after connection problems.\n\nExample: \"utf8\", \"latin1\""
+          },
+          {
+            "tag": "param:database",
+            "text": "Database Handle."
+          },
+          {
+            "tag": "param:charset",
+            "text": "The character set string to change to."
+          },
+          {
+            "tag": "return",
+            "text": "True, if character set was changed, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "charset",
+          "decl": "const char[] charset",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetDriver": {
+      "name": "SQL_GetDriver",
+      "refLine": 550,
+      "docStart": 22781,
+      "docEnd": 23155,
+      "docs": {
+        "brief": "Returns a driver Handle from a name string.\n\nIf the driver is not found, SourceMod will attempt\nto load an extension named dbi.<name>.ext.[dll|so].",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a driver Handle from a name string.\n\nIf the driver is not found, SourceMod will attempt\nto load an extension named dbi.<name>.ext.[dll|so]."
+          },
+          {
+            "tag": "param:name",
+            "text": "Driver identification string, or an empty\nstring to return the default driver."
+          },
+          {
+            "tag": "return",
+            "text": "Driver Handle, or INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DBDriver",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": "\"\""
+        }
+      ]
+    },
+    "SQL_EscapeString": {
+      "name": "SQL_EscapeString",
+      "refLine": 650,
+      "docStart": 25894,
+      "docEnd": 27076,
+      "docs": {
+        "brief": "Escapes a database string for literal insertion.  This is not needed\nfor binding strings in prepared statements.\n\nGenerally, database strings are inserted into queries enclosed in\nsingle quotes (').  If user input has a single quote in it, the\nquote needs to be escaped.  This function ensures that any unsafe\ncharacters are safely escaped according to the database engine and\nthe database's character set.\n\nNOTE: SourceMod only guarantees properly escaped strings when the query\nencloses the string in single quotes. While drivers tend to allow double\nquotes (\") instead, the string may be not be escaped (for example, on SQLite)!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Escapes a database string for literal insertion.  This is not needed\nfor binding strings in prepared statements.\n\nGenerally, database strings are inserted into queries enclosed in\nsingle quotes (').  If user input has a single quote in it, the\nquote needs to be escaped.  This function ensures that any unsafe\ncharacters are safely escaped according to the database engine and\nthe database's character set.\n\nNOTE: SourceMod only guarantees properly escaped strings when the query\nencloses the string in single quotes. While drivers tend to allow double\nquotes (\") instead, the string may be not be escaped (for example, on SQLite)!"
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:string",
+            "text": "String to quote."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store quoted string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "param:written",
+            "text": "Optionally returns the number of bytes written."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if buffer is not big enough.\nThe buffer must be at least 2*strlen(string)+1."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database or statement Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "string",
+          "decl": "const char[] string",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "written",
+          "decl": "int& written",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_FetchMoreResults": {
+      "name": "SQL_FetchMoreResults",
+      "refLine": 742,
+      "docStart": 30383,
+      "docEnd": 30862,
+      "docs": {
+        "brief": "Advances to the next set of results.\n\nIn some SQL implementations, multiple result sets can exist on one query.\nThis is possible in MySQL with simple queries when executing a CALL\nquery.  If this is the case, all result sets must be processed before\nanother query is made.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Advances to the next set of results.\n\nIn some SQL implementations, multiple result sets can exist on one query.\nThis is possible in MySQL with simple queries when executing a CALL\nquery.  If this is the case, all result sets must be processed before\nanother query is made."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if there was another result set, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_MoreRows": {
+      "name": "SQL_MoreRows",
+      "refLine": 816,
+      "docStart": 33286,
+      "docEnd": 33509,
+      "docs": {
+        "brief": "Returns if there are more rows.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if there are more rows."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if there are more rows, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FieldNumToName": {
+      "name": "SQL_FieldNumToName",
+      "refLine": 783,
+      "docStart": 31897,
+      "docEnd": 32284,
+      "docs": {
+        "brief": "Retrieves the name of a field by index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name of a field by index."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field number (starting from 0)."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the name buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle, invalid field index, or\nno current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FetchRow": {
+      "name": "SQL_FetchRow",
+      "refLine": 807,
+      "docStart": 32814,
+      "docEnd": 33241,
+      "docs": {
+        "brief": "Fetches a row from the current result set.  This must be\nsuccessfully called before any results are fetched.\n\nIf this function fails, SQL_MoreRows() can be used to\ntell if there was an error or the result set is finished.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fetches a row from the current result set.  This must be\nsuccessfully called before any results are fetched.\n\nIf this function fails, SQL_MoreRows() can be used to\ntell if there was an error or the result set is finished."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if a row was fetched, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetAffectedRows": {
+      "name": "SQL_GetAffectedRows",
+      "refLine": 605,
+      "docStart": 24859,
+      "docEnd": 25120,
+      "docs": {
+        "brief": "Returns the number of affected rows from the last query.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of affected rows from the last query."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A database OR statement Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of rows affected by the last query."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database or statement Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetInsertId": {
+      "name": "SQL_GetInsertId",
+      "refLine": 614,
+      "docStart": 25170,
+      "docEnd": 25413,
+      "docs": {
+        "brief": "Returns the last query's insertion id.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the last query's insertion id."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A database, query, OR statement Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Last query's insertion id."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database, query, or statement Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "SQL_BindParamString": {
+      "name": "SQL_BindParamString",
+      "refLine": 937,
+      "docStart": 38342,
+      "docEnd": 38985,
+      "docs": {
+        "brief": "Binds a parameter in a prepared statement to a given string value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Binds a parameter in a prepared statement to a given string value."
+          },
+          {
+            "tag": "param:statement",
+            "text": "A statement (prepared query) Handle."
+          },
+          {
+            "tag": "param:param",
+            "text": "The parameter index (starting from 0)."
+          },
+          {
+            "tag": "param:value",
+            "text": "The string to bind."
+          },
+          {
+            "tag": "param:copy",
+            "text": "Whether or not SourceMod should copy the value\nlocally if necessary.  If the string contents\nwon't change before calling SQL_Execute(), this\ncan be set to false for optimization."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid statement Handle or parameter index, or\nSQL error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "statement",
+          "decl": "Handle statement",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "copy",
+          "decl": "bool copy",
+          "default": null
+        }
+      ]
+    },
+    "SQLite_UseDatabase": {
+      "name": "SQLite_UseDatabase",
+      "refLine": 503,
+      "docStart": 21002,
+      "docEnd": 21788,
+      "docs": {
+        "brief": "Grabs a handle to an SQLite database, creating one if it does not exist.\n\nUnless there are extenuating circumstances, you should consider using \"sourcemod-local\" as the\ndatabase name.  This provides some unification between plugins on behalf of users.\n\nAs a precaution, you should always create some sort of unique prefix to your table names so\nthere are no conflicts, and you should never drop or modify tables that you do not own.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Grabs a handle to an SQLite database, creating one if it does not exist.\n\nUnless there are extenuating circumstances, you should consider using \"sourcemod-local\" as the\ndatabase name.  This provides some unification between plugins on behalf of users.\n\nAs a precaution, you should always create some sort of unique prefix to your table names so\nthere are no conflicts, and you should never drop or modify tables that you do not own."
+          },
+          {
+            "tag": "param:database",
+            "text": "Database name."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the error buffer."
+          },
+          {
+            "tag": "return",
+            "text": "A database connection Handle, or INVALID_HANDLE on failure.\nOn failure the error buffer will be filled with a message."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Database",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "database",
+          "decl": "const char[] database",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_HasResultSet": {
+      "name": "SQL_HasResultSet",
+      "refLine": 753,
+      "docStart": 30915,
+      "docEnd": 31268,
+      "docs": {
+        "brief": "Returns whether or not a result set exists.  This will\nreturn true even if 0 results were returned, but false\non queries like UPDATE, INSERT, or DELETE.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not a result set exists.  This will\nreturn true even if 0 results were returned, but false\non queries like UPDATE, INSERT, or DELETE."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if there is a result set, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetRowCount": {
+      "name": "SQL_GetRowCount",
+      "refLine": 762,
+      "docStart": 31317,
+      "docEnd": 31557,
+      "docs": {
+        "brief": "Retrieves the number of rows in the last result set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the number of rows in the last result set."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of rows in the current result set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_AddQuery": {
+      "name": "SQL_AddQuery",
+      "refLine": 1056,
+      "docStart": 43543,
+      "docEnd": 43890,
+      "docs": {
+        "brief": "Adds a query to a transaction object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a query to a transaction object."
+          },
+          {
+            "tag": "param:txn",
+            "text": "A transaction handle."
+          },
+          {
+            "tag": "param:query",
+            "text": "Query string."
+          },
+          {
+            "tag": "param:data",
+            "text": "Extra data value to pass to the final callback."
+          },
+          {
+            "tag": "return",
+            "text": "The index of the query in the transaction's query list."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid transaction handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Transaction",
+          "name": "txn",
+          "decl": "Transaction txn",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_Connect": {
+      "name": "SQL_Connect",
+      "refLine": 445,
+      "docStart": 18621,
+      "docEnd": 19050,
+      "docs": {
+        "brief": "Creates an SQL connection from a named configuration.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates an SQL connection from a named configuration."
+          },
+          {
+            "tag": "param:confname",
+            "text": "Named configuration."
+          },
+          {
+            "tag": "param:persistent",
+            "text": "True to re-use a previous persistent connection if\npossible, false otherwise."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the error buffer."
+          },
+          {
+            "tag": "return",
+            "text": "A database connection Handle, or INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Database",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "confname",
+          "decl": "const char[] confname",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "persistent",
+          "decl": "bool persistent",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_IsFieldNull": {
+      "name": "SQL_IsFieldNull",
+      "refLine": 884,
+      "docStart": 36221,
+      "docEnd": 36662,
+      "docs": {
+        "brief": "Returns whether a field's data in the current row of a result set is\nNULL or not.  NULL is an SQL type which means \"no data.\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a field's data in the current row of a result set is\nNULL or not.  NULL is an SQL type which means \"no data.\""
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "The field index (starting from 0)."
+          },
+          {
+            "tag": "return",
+            "text": "True if data is NULL, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or field index, or no\ncurrent result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FormatQuery": {
+      "name": "SQL_FormatQuery",
+      "refLine": 667,
+      "docStart": 27235,
+      "docEnd": 27736,
+      "docs": {
+        "brief": "Formats a string according to the SourceMod format rules (see documentation).\nAll format specifiers are escaped (see SQL_EscapeString) unless the '!' flag is used.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a string according to the SourceMod format rules (see documentation).\nAll format specifiers are escaped (see SQL_EscapeString) unless the '!' flag is used."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "Number of cells written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FetchString": {
+      "name": "SQL_FetchString",
+      "refLine": 842,
+      "docStart": 33848,
+      "docEnd": 34615,
+      "docs": {
+        "brief": "Fetches a string from a field in the current row of a result set.\nIf the result is NULL, an empty string will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fetches a string from a field in the current row of a result set.\nIf the result is NULL, an empty string will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "The field index (starting from 0)."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the string buffer."
+          },
+          {
+            "tag": "param:result",
+            "text": "Optional variable to store the status of the return value."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or field index, invalid\ntype conversion requested from the database,\nor no current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "DBResult&",
+          "name": "result",
+          "decl": "DBResult& result",
+          "default": "DBVal_Error"
+        }
+      ]
+    },
+    "SQL_Execute": {
+      "name": "SQL_Execute",
+      "refLine": 946,
+      "docStart": 39083,
+      "docEnd": 39345,
+      "docs": {
+        "brief": "Executes a prepared statement.  All parameters must be bound beforehand.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a prepared statement.  All parameters must be bound beforehand."
+          },
+          {
+            "tag": "param:statement",
+            "text": "A statement (prepared query) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid statement Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "statement",
+          "decl": "Handle statement",
+          "default": null
+        }
+      ]
+    },
+    "SQL_CreateTransaction": {
+      "name": "SQL_CreateTransaction",
+      "refLine": 1045,
+      "docStart": 43273,
+      "docEnd": 43494,
+      "docs": {
+        "brief": "Creates a new transaction object. A transaction object is a list of queries\nthat can be sent to the database thread and executed as a single transaction.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new transaction object. A transaction object is a list of queries\nthat can be sent to the database thread and executed as a single transaction."
+          },
+          {
+            "tag": "return",
+            "text": "A transaction handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Transaction",
+      "arguments": []
+    },
+    "SQL_PrepareQuery": {
+      "name": "SQL_PrepareQuery",
+      "refLine": 728,
+      "docStart": 29520,
+      "docEnd": 30275,
+      "docs": {
+        "brief": "Creates a new prepared statement query.  Prepared statements can\nbe executed any number of times.  They can also have placeholder\nparameters, similar to variables, which can be bound safely and\nsecurely (for example, you do not need to quote bound strings).\n\nStatement handles will work in any function that accepts a Query handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new prepared statement query.  Prepared statements can\nbe executed any number of times.  They can also have placeholder\nparameters, similar to variables, which can be bound safely and\nsecurely (for example, you do not need to quote bound strings).\n\nStatement handles will work in any function that accepts a Query handle."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:query",
+            "text": "Query string."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the error buffer."
+          },
+          {
+            "tag": "return",
+            "text": "A new statement Handle on success, INVALID_HANDLE\notherwise.  The Handle must be freed with CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DBStatement",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetFieldCount": {
+      "name": "SQL_GetFieldCount",
+      "refLine": 771,
+      "docStart": 31604,
+      "docEnd": 31848,
+      "docs": {
+        "brief": "Retrieves the number of fields in the last result set.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the number of fields in the last result set."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of fields in the current result set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "SQL_CheckConfig": {
+      "name": "SQL_CheckConfig",
+      "refLine": 538,
+      "docStart": 22544,
+      "docEnd": 22728,
+      "docs": {
+        "brief": "Returns if a named configuration is present in databases.cfg.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a named configuration is present in databases.cfg."
+          },
+          {
+            "tag": "param:name",
+            "text": "Configuration name."
+          },
+          {
+            "tag": "return",
+            "text": "True if it exists, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "SQL_GetDriverProduct": {
+      "name": "SQL_GetDriverProduct",
+      "refLine": 584,
+      "docStart": 24007,
+      "docEnd": 24347,
+      "docs": {
+        "brief": "Retrieves a driver's product string.\n\nExample: \"MySQL\", \"SQLite\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a driver's product string.\n\nExample: \"MySQL\", \"SQLite\""
+          },
+          {
+            "tag": "param:driver",
+            "text": "Driver Handle, or INVALID_HANDLE for the default driver."
+          },
+          {
+            "tag": "param:product",
+            "text": "Product string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "driver",
+          "decl": "Handle driver",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "product",
+          "decl": "char[] product",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FetchFloat": {
+      "name": "SQL_FetchFloat",
+      "refLine": 857,
+      "docStart": 34733,
+      "docEnd": 35388,
+      "docs": {
+        "brief": "Fetches a float from a field in the current row of a result set.\nIf the result is NULL, a value of 0.0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fetches a float from a field in the current row of a result set.\nIf the result is NULL, a value of 0.0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "The field index (starting from 0)."
+          },
+          {
+            "tag": "param:result",
+            "text": "Optional variable to store the status of the return value."
+          },
+          {
+            "tag": "return",
+            "text": "A float value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or field index, invalid\ntype conversion requested from the database,\nor no current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        },
+        {
+          "type": "DBResult&",
+          "name": "result",
+          "decl": "DBResult& result",
+          "default": "DBVal_Error"
+        }
+      ]
+    },
+    "SQL_BindParamFloat": {
+      "name": "SQL_BindParamFloat",
+      "refLine": 922,
+      "docStart": 37894,
+      "docEnd": 38263,
+      "docs": {
+        "brief": "Binds a parameter in a prepared statement to a given float value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Binds a parameter in a prepared statement to a given float value."
+          },
+          {
+            "tag": "param:statement",
+            "text": "A statement (prepared query) Handle."
+          },
+          {
+            "tag": "param:param",
+            "text": "The parameter index (starting from 0)."
+          },
+          {
+            "tag": "param:value",
+            "text": "The float number to bind."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid statement Handle or parameter index, or\nSQL error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "statement",
+          "decl": "Handle statement",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "SQL_ConnectCustom": {
+      "name": "SQL_ConnectCustom",
+      "refLine": 483,
+      "docStart": 19755,
+      "docEnd": 20865,
+      "docs": {
+        "brief": "Connects to a database using key value pairs containing the database info.\nThe key/value pairs should match what would be in databases.cfg.\n\nI.e. \"driver\" should be \"default\" or a driver name (or omitted for\nthe default).  For SQLite, only the \"database\" parameter is needed in addition.\nFor drivers which require external connections, more of the parameters may be\nneeded.\n\nIn general it is discouraged to use this function.  Connections should go through\ndatabases.cfg for greatest flexibility on behalf of users.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Connects to a database using key value pairs containing the database info.\nThe key/value pairs should match what would be in databases.cfg.\n\nI.e. \"driver\" should be \"default\" or a driver name (or omitted for\nthe default).  For SQLite, only the \"database\" parameter is needed in addition.\nFor drivers which require external connections, more of the parameters may be\nneeded.\n\nIn general it is discouraged to use this function.  Connections should go through\ndatabases.cfg for greatest flexibility on behalf of users."
+          },
+          {
+            "tag": "param:keyvalues",
+            "text": "Key/value pairs from a KeyValues handle, describing the connection."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the error buffer."
+          },
+          {
+            "tag": "param:persistent",
+            "text": "True to re-use a previous persistent connection if\npossible, false otherwise."
+          },
+          {
+            "tag": "return",
+            "text": "A database connection Handle, or INVALID_HANDLE on failure.\nOn failure the error buffer will be filled with a message."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid KeyValues handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Database",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "keyvalues",
+          "decl": "Handle keyvalues",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "persistent",
+          "decl": "bool persistent",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FetchSize": {
+      "name": "SQL_FetchSize",
+      "refLine": 898,
+      "docStart": 36721,
+      "docEnd": 37263,
+      "docs": {
+        "brief": "Returns the length of a field's data in the current row of a result\nset.  This only needs to be called for strings to determine how many\nbytes to use.  Note that the return value does not include the null\nterminator.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the length of a field's data in the current row of a result\nset.  This only needs to be called for strings to determine how many\nbytes to use.  Note that the return value does not include the null\nterminator."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "The field index (starting from 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes for the field's data size."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or field index or no\ncurrent result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        }
+      ]
+    },
+    "SQL_FieldNameToNum": {
+      "name": "SQL_FieldNameToNum",
+      "refLine": 794,
+      "docStart": 32374,
+      "docEnd": 32732,
+      "docs": {
+        "brief": "Retrieves a field index by name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a field index by name."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the field (case sensitive)."
+          },
+          {
+            "tag": "param:field",
+            "text": "Variable to store field index in."
+          },
+          {
+            "tag": "return",
+            "text": "True if found, false if not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or no current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "field",
+          "decl": "int& field",
+          "default": null
+        }
+      ]
+    },
+    "SQL_ReadDriver": {
+      "name": "SQL_ReadDriver",
+      "refLine": 560,
+      "docStart": 23213,
+      "docEnd": 23481,
+      "docs": {
+        "brief": "Reads the driver of an opened database.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads the driver of an opened database."
+          },
+          {
+            "tag": "param:database",
+            "text": "Database Handle."
+          },
+          {
+            "tag": "param:ident",
+            "text": "Option buffer to store the identification string."
+          },
+          {
+            "tag": "param:ident_length",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Driver Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DBDriver",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "ident",
+          "decl": "char[] ident",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "ident_length",
+          "decl": "int ident_length",
+          "default": "0"
+        }
+      ]
+    },
+    "SQL_BindParamInt": {
+      "name": "SQL_BindParamInt",
+      "refLine": 911,
+      "docStart": 37319,
+      "docEnd": 37800,
+      "docs": {
+        "brief": "Binds a parameter in a prepared statement to a given integer value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Binds a parameter in a prepared statement to a given integer value."
+          },
+          {
+            "tag": "param:statement",
+            "text": "A statement (prepared query) Handle."
+          },
+          {
+            "tag": "param:param",
+            "text": "The parameter index (starting from 0)."
+          },
+          {
+            "tag": "param:number",
+            "text": "The number to bind."
+          },
+          {
+            "tag": "param:signed",
+            "text": "True to bind the number as signed, false to\nbind it as unsigned."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid statement Handle or parameter index, or\nSQL error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "statement",
+          "decl": "Handle statement",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "number",
+          "decl": "int number",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "signed",
+          "decl": "bool signed",
+          "default": "true"
+        }
+      ]
+    },
+    "SQL_GetDriverIdent": {
+      "name": "SQL_GetDriverIdent",
+      "refLine": 572,
+      "docStart": 23572,
+      "docEnd": 23926,
+      "docs": {
+        "brief": "Retrieves a driver's identification string.\n\nExample: \"mysql\", \"sqlite\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a driver's identification string.\n\nExample: \"mysql\", \"sqlite\""
+          },
+          {
+            "tag": "param:driver",
+            "text": "Driver Handle, or INVALID_HANDLE for the default driver."
+          },
+          {
+            "tag": "param:ident",
+            "text": "Identification string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle other than INVALID_HANDLE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "driver",
+          "decl": "Handle driver",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "ident",
+          "decl": "char[] ident",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SQL_Query": {
+      "name": "SQL_Query",
+      "refLine": 710,
+      "docStart": 28838,
+      "docEnd": 29436,
+      "docs": {
+        "brief": "Executes a simple query and returns a new query Handle for\nreceiving the results.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Executes a simple query and returns a new query Handle for\nreceiving the results."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "param:query",
+            "text": "Query string."
+          },
+          {
+            "tag": "param:len",
+            "text": "Optional parameter to specify the query length, in\nbytes.  This can be used to send binary queries that\nhave a premature terminator."
+          },
+          {
+            "tag": "return",
+            "text": "A new Query Handle on success, INVALID_HANDLE\notherwise.  The Handle must be freed with CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DBResultSet",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": "-1"
+        }
+      ]
+    },
+    "SQL_FetchInt": {
+      "name": "SQL_FetchInt",
+      "refLine": 872,
+      "docStart": 35477,
+      "docEnd": 36136,
+      "docs": {
+        "brief": "Fetches an integer from a field in the current row of a result set.\nIf the result is NULL, a value of 0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fetches an integer from a field in the current row of a result set.\nIf the result is NULL, a value of 0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+          },
+          {
+            "tag": "param:query",
+            "text": "A query (or statement) Handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "The field index (starting from 0)."
+          },
+          {
+            "tag": "param:result",
+            "text": "Optional variable to store the status of the return value."
+          },
+          {
+            "tag": "return",
+            "text": "An integer value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid query Handle or field index, invalid\ntype conversion requested from the database,\nor no current result set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "field",
+          "decl": "int field",
+          "default": null
+        },
+        {
+          "type": "DBResult&",
+          "name": "result",
+          "decl": "DBResult& result",
+          "default": "DBVal_Error"
+        }
+      ]
+    },
+    "SQL_LockDatabase": {
+      "name": "SQL_LockDatabase",
+      "refLine": 969,
+      "docStart": 39393,
+      "docEnd": 40299,
+      "docs": {
+        "brief": "Locks a database so threading operations will not interrupt.\n\nIf you are using a database Handle for both threading and non-threading,\nthis MUST be called before doing any set of non-threading DB operations.\nOtherwise you risk corrupting the database driver's memory or network\nconnection.\n\nLeaving a lock on a database and then executing a threaded query results\nin a dead lock! Make sure to call SQL_UnlockDatabase()!\n\nIf the lock cannot be acquired, the main thread will pause until the\nthreaded operation has concluded.\n\nCare should be taken to not lock an already-locked database. Internally,\nlock calls are nested recursively and must be paired with an equal amount\nof unlocks to be undone. This behaviour should not be relied on.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Locks a database so threading operations will not interrupt.\n\nIf you are using a database Handle for both threading and non-threading,\nthis MUST be called before doing any set of non-threading DB operations.\nOtherwise you risk corrupting the database driver's memory or network\nconnection.\n\nLeaving a lock on a database and then executing a threaded query results\nin a dead lock! Make sure to call SQL_UnlockDatabase()!\n\nIf the lock cannot be acquired, the main thread will pause until the\nthreaded operation has concluded.\n\nCare should be taken to not lock an already-locked database. Internally,\nlock calls are nested recursively and must be paired with an equal amount\nof unlocks to be undone. This behaviour should not be relied on."
+          },
+          {
+            "tag": "param:database",
+            "text": "A database Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid database Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "database",
+          "decl": "Handle database",
+          "default": null
+        }
+      ]
+    },
+    "SQL_DefConnect": {
+      "name": "SQL_DefConnect",
+      "refLine": 457,
+      "docStart": 19153,
+      "docEnd": 19600,
+      "docs": {
+        "brief": "Creates a default SQL connection.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a default SQL connection."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the error buffer."
+          },
+          {
+            "tag": "param:persistent",
+            "text": "True to re-use a previous persistent connection\nif possible, false otherwise."
+          },
+          {
+            "tag": "return",
+            "text": "A database connection Handle, or INVALID_HANDLE on failure.\nOn failure the error buffer will be filled with a message."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Database",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "persistent",
+          "decl": "bool persistent",
+          "default": "true"
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "DBDriver": {
+      "name": "DBDriver",
+      "refLine": 72,
+      "docStart": 2409,
+      "docEnd": 2519,
+      "docs": {
+        "brief": "A Driver represents a database backend, currently MySQL or SQLite.\n\nDriver handles cannot be closed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A Driver represents a database backend, currently MySQL or SQLite.\n\nDriver handles cannot be closed."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Find": {
+          "name": "Find",
+          "refLine": 83,
+          "docStart": 2554,
+          "docEnd": 2859,
+          "docs": {
+            "brief": "Finds the driver associated with a name.\n\nSupported driver strings:\nmysql\nsqlite",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds the driver associated with a name.\n\nSupported driver strings:\nmysql\nsqlite"
+              },
+              {
+                "tag": "param:name",
+                "text": "Driver identification string, or an empty string\nto return the default driver."
+              },
+              {
+                "tag": "return",
+                "text": "Driver handle, or null on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DBDriver",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": "\"\""
+            }
+          ]
+        },
+        "GetIdentifier": {
+          "name": "GetIdentifier",
+          "refLine": 91,
+          "docStart": 2926,
+          "docEnd": 3126,
+          "docs": {
+            "brief": "Retrieves a driver's identification string.\n\nExample: \"mysql\", \"sqlite\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a driver's identification string.\n\nExample: \"mysql\", \"sqlite\""
+              },
+              {
+                "tag": "param:ident",
+                "text": "Identification string buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "ident",
+              "decl": "char[] ident",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "GetProduct": {
+          "name": "GetProduct",
+          "refLine": 99,
+          "docStart": 3196,
+          "docEnd": 3382,
+          "docs": {
+            "brief": "Retrieves a driver's product string.\n\nExample: \"MySQL\", \"SQLite\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a driver's product string.\n\nExample: \"MySQL\", \"SQLite\""
+              },
+              {
+                "tag": "param:product",
+                "text": "Product string buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "product",
+              "decl": "char[] product",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "Database": {
+      "name": "Database",
+      "refLine": 344,
+      "docStart": 14136,
+      "docEnd": 14271,
+      "docs": {
+        "brief": "A Database represents a live connection to a database, either over the\nwire, through a unix domain socket, or over an open file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A Database represents a live connection to a database, either over the\nwire, through a unix domain socket, or over an open file."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Connect": {
+          "name": "Connect",
+          "refLine": 351,
+          "docStart": 14306,
+          "docEnd": 14589,
+          "docs": {
+            "brief": "Connects to a database asynchronously, so the game thread is not blocked.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Connects to a database asynchronously, so the game thread is not blocked."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback. If no driver was found, the owner is null."
+              },
+              {
+                "tag": "param:name",
+                "text": "Database configuration name."
+              },
+              {
+                "tag": "param:data",
+                "text": "Extra data value to pass to the callback."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SQLConnectCallback",
+              "name": "callback",
+              "decl": "SQLConnectCallback callback",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": "\"default\""
+            },
+            {
+              "type": "any",
+              "name": "data",
+              "decl": "any data",
+              "default": "0"
+            }
+          ]
+        },
+        "Execute": {
+          "name": "Execute",
+          "refLine": 428,
+          "docStart": 17810,
+          "docEnd": 18313,
+          "docs": {
+            "brief": "Sends a transaction to the database thread. The transaction handle is\nautomatically closed. When the transaction completes, the optional\ncallback is invoked.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sends a transaction to the database thread. The transaction handle is\nautomatically closed. When the transaction completes, the optional\ncallback is invoked."
+              },
+              {
+                "tag": "param:txn",
+                "text": "A transaction handle."
+              },
+              {
+                "tag": "param:onSuccess",
+                "text": "An optional callback to receive a successful transaction."
+              },
+              {
+                "tag": "param:onError",
+                "text": "An optional callback to receive an error message."
+              },
+              {
+                "tag": "param:data",
+                "text": "An optional value to pass to callbacks."
+              },
+              {
+                "tag": "param:prio",
+                "text": "Priority queue to use."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "Transaction",
+              "name": "txn",
+              "decl": "Transaction txn",
+              "default": null
+            },
+            {
+              "type": "SQLTxnSuccess",
+              "name": "onSuccess",
+              "decl": "SQLTxnSuccess onSuccess",
+              "default": "INVALID_FUNCTION"
+            },
+            {
+              "type": "SQLTxnFailure",
+              "name": "onError",
+              "decl": "SQLTxnFailure onError",
+              "default": "INVALID_FUNCTION"
+            },
+            {
+              "type": "any",
+              "name": "data",
+              "decl": "any data",
+              "default": "0"
+            },
+            {
+              "type": "DBPriority",
+              "name": "priority",
+              "decl": "DBPriority priority",
+              "default": "DBPrio_Normal"
+            }
+          ]
+        },
+        "Escape": {
+          "name": "Escape",
+          "refLine": 386,
+          "docStart": 15175,
+          "docEnd": 16258,
+          "docs": {
+            "brief": "Escapes a database string for literal insertion.  This is not needed\nfor binding strings in prepared statements.\n\nGenerally, database strings are inserted into queries enclosed in\nsingle quotes (').  If user input has a single quote in it, the\nquote needs to be escaped.  This function ensures that any unsafe\ncharacters are safely escaped according to the database engine and\nthe database's character set.\n\nNOTE: SourceMod only guarantees properly escaped strings when the query\nencloses the string in single quotes. While drivers tend to allow double\nquotes (\") instead, the string may be not be escaped (for example, on SQLite)!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Escapes a database string for literal insertion.  This is not needed\nfor binding strings in prepared statements.\n\nGenerally, database strings are inserted into queries enclosed in\nsingle quotes (').  If user input has a single quote in it, the\nquote needs to be escaped.  This function ensures that any unsafe\ncharacters are safely escaped according to the database engine and\nthe database's character set.\n\nNOTE: SourceMod only guarantees properly escaped strings when the query\nencloses the string in single quotes. While drivers tend to allow double\nquotes (\") instead, the string may be not be escaped (for example, on SQLite)!"
+              },
+              {
+                "tag": "param:string",
+                "text": "String to quote."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store quoted string in."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the buffer."
+              },
+              {
+                "tag": "param:written",
+                "text": "Optionally returns the number of bytes written."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if buffer is not big enough.\nThe buffer must be at least 2*strlen(string)+1."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "string",
+              "decl": "const char[] string",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "written",
+              "decl": "int& written",
+              "default": "0"
+            }
+          ]
+        },
+        "IsSameConnection": {
+          "name": "IsSameConnection",
+          "refLine": 399,
+          "docStart": 16906,
+          "docEnd": 16979,
+          "docs": {
+            "brief": "Returns whether a database is the same connection as another database.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether a database is the same connection as another database."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "Database",
+              "name": "other",
+              "decl": "Database other",
+              "default": null
+            }
+          ]
+        },
+        "Query": {
+          "name": "Query",
+          "refLine": 415,
+          "docStart": 17039,
+          "docEnd": 17629,
+          "docs": {
+            "brief": "Executes a query via a thread. The result handle is passed through the\ncallback.\n\nThe database handle returned through the callback is always a new Handle,\nand if necessary, IsSameConnection() should be used to test against other\nconnections.\n\nThe result handle returned through the callback is temporary and destroyed\nat the end of the callback.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Executes a query via a thread. The result handle is passed through the\ncallback.\n\nThe database handle returned through the callback is always a new Handle,\nand if necessary, IsSameConnection() should be used to test against other\nconnections.\n\nThe result handle returned through the callback is temporary and destroyed\nat the end of the callback."
+              },
+              {
+                "tag": "param:callback",
+                "text": "Callback."
+              },
+              {
+                "tag": "param:query",
+                "text": "Query string."
+              },
+              {
+                "tag": "param:data",
+                "text": "Extra data value to pass to the callback."
+              },
+              {
+                "tag": "param:prio",
+                "text": "Priority queue to use."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SQLQueryCallback",
+              "name": "callback",
+              "decl": "SQLQueryCallback callback",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "query",
+              "decl": "const char[] query",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "data",
+              "decl": "any data",
+              "default": "0"
+            },
+            {
+              "type": "DBPriority",
+              "name": "prio",
+              "decl": "DBPriority prio",
+              "default": "DBPrio_Normal"
+            }
+          ]
+        },
+        "Format": {
+          "name": "Format",
+          "refLine": 396,
+          "docStart": 16359,
+          "docEnd": 16813,
+          "docs": {
+            "brief": "Formats a string according to the SourceMod format rules (see documentation).\nAll format specifiers are escaped (see SQL_EscapeString) unless the '!' flag is used.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Formats a string according to the SourceMod format rules (see documentation).\nAll format specifiers are escaped (see SQL_EscapeString) unless the '!' flag is used."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination string buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of output string buffer."
+              },
+              {
+                "tag": "param:format",
+                "text": "Formatting rules."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of format parameters."
+              },
+              {
+                "tag": "return",
+                "text": "Number of cells written."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "format",
+              "decl": "const char[] format",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "SetCharset": {
+          "name": "SetCharset",
+          "refLine": 365,
+          "docStart": 14814,
+          "docEnd": 15115,
+          "docs": {
+            "brief": "Sets the character set of the connection.\nLike SET NAMES .. in mysql, but stays after connection problems.\n\nExample: \"utf8\", \"latin1\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the character set of the connection.\nLike SET NAMES .. in mysql, but stays after connection problems.\n\nExample: \"utf8\", \"latin1\""
+              },
+              {
+                "tag": "param:charset",
+                "text": "The character set string to change to."
+              },
+              {
+                "tag": "return",
+                "text": "True, if character set was changed, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "charset",
+              "decl": "const char[] charset",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Driver": {
+          "name": "Driver",
+          "refLine": 354,
+          "docStart": 14701,
+          "docEnd": 14752,
+          "docs": {
+            "brief": "Returns the driver for this database connection.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the driver for this database connection."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "DBDriver",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "DBResultSet": {
+      "name": "DBResultSet",
+      "refLine": 103,
+      "docStart": 3454,
+      "docEnd": 3517,
+      "docs": {
+        "brief": "Represents a set of results returned from executing a query.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Represents a set of results returned from executing a query."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "FetchRow": {
+          "name": "FetchRow",
+          "refLine": 169,
+          "docStart": 5557,
+          "docEnd": 5870,
+          "docs": {
+            "brief": "Fetches a row from the current result set.  This must be\nsuccessfully called before any results are fetched.\n\nIf this function fails, MoreRows can be used to\ntell if there was an error or the result set is finished.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fetches a row from the current result set.  This must be\nsuccessfully called before any results are fetched.\n\nIf this function fails, MoreRows can be used to\ntell if there was an error or the result set is finished."
+              },
+              {
+                "tag": "return",
+                "text": "True if a row was fetched, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "FetchFloat": {
+          "name": "FetchFloat",
+          "refLine": 206,
+          "docStart": 7049,
+          "docEnd": 7600,
+          "docs": {
+            "brief": "Fetches a float from a field in the current row of a result set.\nIf the result is NULL, a value of 0.0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fetches a float from a field in the current row of a result set.\nIf the result is NULL, a value of 0.0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+              },
+              {
+                "tag": "param:field",
+                "text": "The field index (starting from 0)."
+              },
+              {
+                "tag": "param:result",
+                "text": "Optional variable to store the status of the return value."
+              },
+              {
+                "tag": "return",
+                "text": "A float value."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index, invalid type conversion requested\nfrom the database, or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            },
+            {
+              "type": "DBResult&",
+              "name": "result",
+              "decl": "DBResult& result",
+              "default": "DBVal_Error"
+            }
+          ]
+        },
+        "FetchString": {
+          "name": "FetchString",
+          "refLine": 195,
+          "docStart": 6277,
+          "docEnd": 6940,
+          "docs": {
+            "brief": "Fetches a string from a field in the current row of a result set.\nIf the result is NULL, an empty string will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fetches a string from a field in the current row of a result set.\nIf the result is NULL, an empty string will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+              },
+              {
+                "tag": "param:field",
+                "text": "The field index (starting from 0)."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the string buffer."
+              },
+              {
+                "tag": "param:result",
+                "text": "Optional variable to store the status of the return value."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index, invalid type conversion requested\nfrom the database, or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "DBResult&",
+              "name": "result",
+              "decl": "DBResult& result",
+              "default": "DBVal_Error"
+            }
+          ]
+        },
+        "FetchInt": {
+          "name": "FetchInt",
+          "refLine": 217,
+          "docStart": 7680,
+          "docEnd": 8235,
+          "docs": {
+            "brief": "Fetches an integer from a field in the current row of a result set.\nIf the result is NULL, a value of 0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Fetches an integer from a field in the current row of a result set.\nIf the result is NULL, a value of 0 will be returned.  A NULL\ncheck can be done with the result parameter, or SQL_IsFieldNull()."
+              },
+              {
+                "tag": "param:field",
+                "text": "The field index (starting from 0)."
+              },
+              {
+                "tag": "param:result",
+                "text": "Optional variable to store the status of the return value."
+              },
+              {
+                "tag": "return",
+                "text": "An integer value."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index, invalid type conversion requested\nfrom the database, or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            },
+            {
+              "type": "DBResult&",
+              "name": "result",
+              "decl": "DBResult& result",
+              "default": "DBVal_Error"
+            }
+          ]
+        },
+        "FetchSize": {
+          "name": "FetchSize",
+          "refLine": 235,
+          "docStart": 8697,
+          "docEnd": 9136,
+          "docs": {
+            "brief": "Returns the length of a field's data in the current row of a result\nset.  This only needs to be called for strings to determine how many\nbytes to use.  Note that the return value does not include the null\nterminator.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the length of a field's data in the current row of a result\nset.  This only needs to be called for strings to determine how many\nbytes to use.  Note that the return value does not include the null\nterminator."
+              },
+              {
+                "tag": "param:field",
+                "text": "The field index (starting from 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes for the field's data size."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            }
+          ]
+        },
+        "FetchMoreResults": {
+          "name": "FetchMoreResults",
+          "refLine": 113,
+          "docStart": 3555,
+          "docEnd": 3942,
+          "docs": {
+            "brief": "Advances to the next set of results.\n\nIn some SQL implementations, multiple result sets can exist on one query.\nThis is possible in MySQL with simple queries when executing a CALL\nquery.  If this is the case, all result sets must be processed before\nanother query is made.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Advances to the next set of results.\n\nIn some SQL implementations, multiple result sets can exist on one query.\nThis is possible in MySQL with simple queries when executing a CALL\nquery.  If this is the case, all result sets must be processed before\nanother query is made."
+              },
+              {
+                "tag": "return",
+                "text": "True if there was another result set, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "FieldNameToNum": {
+          "name": "FieldNameToNum",
+          "refLine": 160,
+          "docStart": 5215,
+          "docEnd": 5484,
+          "docs": {
+            "brief": "Retrieves a field index by name.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a field index by name."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the field (case sensitive)."
+              },
+              {
+                "tag": "param:field",
+                "text": "Variable to store field index in."
+              },
+              {
+                "tag": "return",
+                "text": "True if found, false if not found."
+              },
+              {
+                "tag": "error",
+                "text": "No current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "field",
+              "decl": "int& field",
+              "default": null
+            }
+          ]
+        },
+        "Rewind": {
+          "name": "Rewind",
+          "refLine": 182,
+          "docStart": 6079,
+          "docEnd": 6241,
+          "docs": {
+            "brief": "Rewinds a result set back to the first result.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Rewinds a result set back to the first result."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "No current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "FieldNumToName": {
+          "name": "FieldNumToName",
+          "refLine": 152,
+          "docStart": 4859,
+          "docEnd": 5134,
+          "docs": {
+            "brief": "Retrieves the name of a field by index.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the name of a field by index."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field number (starting from 0)."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the name buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index, or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "IsFieldNull": {
+          "name": "IsFieldNull",
+          "refLine": 225,
+          "docStart": 8311,
+          "docEnd": 8647,
+          "docs": {
+            "brief": "Returns whether a field's data in the current row of a result set is\nNULL or not.  NULL is an SQL type which means \"no data.\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether a field's data in the current row of a result set is\nNULL or not.  NULL is an SQL type which means \"no data.\""
+              },
+              {
+                "tag": "param:field",
+                "text": "The field index (starting from 0)."
+              },
+              {
+                "tag": "return",
+                "text": "True if data is NULL, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid field index, or no current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "field",
+              "decl": "int field",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "RowCount": {
+          "name": "RowCount",
+          "refLine": 126,
+          "docStart": 4215,
+          "docEnd": 4399,
+          "docs": {
+            "brief": "Retrieves the number of rows in the last result set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the number of rows in the last result set."
+              },
+              {
+                "tag": "param:query",
+                "text": "A query (or statement) Handle."
+              },
+              {
+                "tag": "return",
+                "text": "Number of rows in the current result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "MoreRows": {
+          "name": "MoreRows",
+          "refLine": 174,
+          "docStart": 5908,
+          "docEnd": 6019,
+          "docs": {
+            "brief": "Returns if there are more rows.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns if there are more rows."
+              },
+              {
+                "tag": "return",
+                "text": "True if there are more rows, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": false
+        },
+        "FieldCount": {
+          "name": "FieldCount",
+          "refLine": 131,
+          "docStart": 4458,
+          "docEnd": 4515,
+          "docs": {
+            "brief": "Retrieves the number of fields in the last result set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the number of fields in the last result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "AffectedRows": {
+          "name": "AffectedRows",
+          "refLine": 137,
+          "docStart": 4576,
+          "docEnd": 4666,
+          "docs": {
+            "brief": "Returns the number of affected rows from the query that generated this\nresult set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of affected rows from the query that generated this\nresult set."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "InsertId": {
+          "name": "InsertId",
+          "refLine": 142,
+          "docStart": 4729,
+          "docEnd": 4800,
+          "docs": {
+            "brief": "Returns the insert id from the query that generated this result set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the insert id from the query that generated this result set."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "HasResults": {
+          "name": "HasResults",
+          "refLine": 118,
+          "docStart": 3988,
+          "docEnd": 4153,
+          "docs": {
+            "brief": "Returns whether or not a result set exists.  This will\nreturn true even if 0 results were returned, but false\non queries like UPDATE, INSERT, or DELETE.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a result set exists.  This will\nreturn true even if 0 results were returned, but false\non queries like UPDATE, INSERT, or DELETE."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "DBStatement": {
+      "name": "DBStatement",
+      "refLine": 289,
+      "docStart": 11368,
+      "docEnd": 11549,
+      "docs": {
+        "brief": "A DBStatement is a pre-compiled SQL query that may be executed multiple\ntimes with different parameters. A DBStatement holds a reference to the\nDatabase that prepared it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A DBStatement is a pre-compiled SQL query that may be executed multiple\ntimes with different parameters. A DBStatement holds a reference to the\nDatabase that prepared it."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "BindString": {
+          "name": "BindString",
+          "refLine": 316,
+          "docStart": 12350,
+          "docEnd": 12884,
+          "docs": {
+            "brief": "Binds a parameter in a prepared statement to a given string value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Binds a parameter in a prepared statement to a given string value."
+              },
+              {
+                "tag": "param:param",
+                "text": "The parameter index (starting from 0)."
+              },
+              {
+                "tag": "param:value",
+                "text": "The string to bind."
+              },
+              {
+                "tag": "param:copy",
+                "text": "Whether or not SourceMod should copy the value\nlocally if necessary.  If the string contents\nwon't change before calling SQL_Execute(), this\ncan be set to false for optimization."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid parameter index, or SQL error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "param",
+              "decl": "int param",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "copy",
+              "decl": "bool copy",
+              "default": null
+            }
+          ]
+        },
+        "BindInt": {
+          "name": "BindInt",
+          "refLine": 298,
+          "docStart": 11587,
+          "docEnd": 11957,
+          "docs": {
+            "brief": "Binds a parameter in a prepared statement to a given integer value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Binds a parameter in a prepared statement to a given integer value."
+              },
+              {
+                "tag": "param:param",
+                "text": "The parameter index (starting from 0)."
+              },
+              {
+                "tag": "param:number",
+                "text": "The number to bind."
+              },
+              {
+                "tag": "param:signed",
+                "text": "True to bind the number as signed, false to\nbind it as unsigned."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid parameter index, or SQL error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "param",
+              "decl": "int param",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "number",
+              "decl": "int number",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "signed",
+              "decl": "bool signed",
+              "default": "true"
+            }
+          ]
+        },
+        "BindFloat": {
+          "name": "BindFloat",
+          "refLine": 305,
+          "docStart": 12033,
+          "docEnd": 12289,
+          "docs": {
+            "brief": "Binds a parameter in a prepared statement to a given float value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Binds a parameter in a prepared statement to a given float value."
+              },
+              {
+                "tag": "param:param",
+                "text": "The parameter index (starting from 0)."
+              },
+              {
+                "tag": "param:value",
+                "text": "The float number to bind."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid parameter index, or SQL error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "param",
+              "decl": "int param",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "Transaction": {
+      "name": "Transaction",
+      "refLine": 273,
+      "docStart": 10859,
+      "docEnd": 10963,
+      "docs": {
+        "brief": "A Transaction is a collection of SQL statements that must all execute\nsuccessfully or not at all.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A Transaction is a collection of SQL statements that must all execute\nsuccessfully or not at all."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Transaction": {
+          "name": "Transaction",
+          "refLine": 276,
+          "docStart": 11001,
+          "docEnd": 11029,
+          "docs": {
+            "brief": "Create a new transaction.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Create a new transaction."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Transaction",
+          "arguments": []
+        },
+        "AddQuery": {
+          "name": "AddQuery",
+          "refLine": 283,
+          "docStart": 11065,
+          "docEnd": 11298,
+          "docs": {
+            "brief": "Adds a query to the transaction.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a query to the transaction."
+              },
+              {
+                "tag": "param:query",
+                "text": "Query string."
+              },
+              {
+                "tag": "param:data",
+                "text": "Extra data value to pass to the final callback."
+              },
+              {
+                "tag": "return",
+                "text": "The index of the query in the transaction's query list."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "query",
+              "decl": "const char[] query",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "data",
+              "decl": "any data",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_dbi_included": {
+      "name": "_dbi_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "DBPriority": {
+      "name": "DBPriority",
+      "refLine": 62,
+      "docStart": 2195,
+      "docEnd": 2233,
+      "docs": {
+        "brief": "Threading priority level.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Threading priority level."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DBPrio_Low": {
+          "name": "DBPrio_Low",
+          "refLine": 66,
+          "docStart": 2380,
+          "docEnd": 2401,
+          "docs": {
+            "brief": "Low priority.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Low priority."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "DBPrio_High": {
+          "name": "DBPrio_High",
+          "refLine": 64,
+          "docStart": 2280,
+          "docEnd": 2302,
+          "docs": {
+            "brief": "High priority.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "High priority."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "DBPrio_Normal": {
+          "name": "DBPrio_Normal",
+          "refLine": 65,
+          "docStart": 2329,
+          "docEnd": 2353,
+          "docs": {
+            "brief": "Normal priority.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Normal priority."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "DBBindType": {
+      "name": "DBBindType",
+      "refLine": 52,
+      "docStart": 1982,
+      "docEnd": 2019,
+      "docs": {
+        "brief": "Describes binding types.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Describes binding types."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DBBind_String": {
+          "name": "DBBind_String",
+          "refLine": 56,
+          "docStart": 2165,
+          "docEnd": 2187,
+          "docs": {
+            "brief": "Bind a string.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Bind a string."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "DBBind_Int": {
+          "name": "DBBind_Int",
+          "refLine": 54,
+          "docStart": 2066,
+          "docEnd": 2090,
+          "docs": {
+            "brief": "Bind an integer.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Bind an integer."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "DBBind_Float": {
+          "name": "DBBind_Float",
+          "refLine": 55,
+          "docStart": 2117,
+          "docEnd": 2138,
+          "docs": {
+            "brief": "Bind a float.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Bind a float."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    },
+    "DBResult": {
+      "name": "DBResult",
+      "refLine": 41,
+      "docStart": 1649,
+      "docEnd": 1702,
+      "docs": {
+        "brief": "Describes a database field fetch status.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Describes a database field fetch status."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DBVal_Error": {
+          "name": "DBVal_Error",
+          "refLine": 43,
+          "docStart": 1747,
+          "docEnd": 1786,
+          "docs": {
+            "brief": "Column number/field is invalid.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Column number/field is invalid."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "DBVal_Data": {
+          "name": "DBVal_Data",
+          "refLine": 46,
+          "docStart": 1952,
+          "docEnd": 1974,
+          "docs": {
+            "brief": "Field has data",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Field has data"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "DBVal_Null": {
+          "name": "DBVal_Null",
+          "refLine": 45,
+          "docStart": 1893,
+          "docEnd": 1925,
+          "docs": {
+            "brief": "Field has no data (NULL)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Field has no data (NULL)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        },
+        "DBVal_TypeMismatch": {
+          "name": "DBVal_TypeMismatch",
+          "refLine": 44,
+          "docStart": 1813,
+          "docEnd": 1866,
+          "docs": {
+            "brief": "You cannot retrieve this data with this type.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "You cannot retrieve this data with this type."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "SQLTxnSuccess": {
+      "name": "SQLTxnSuccess",
+      "refLine": 238,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Database db, any data, int numQueries, Handle[] results, any[] queryData)": {
+          "refLine": 247,
+          "docStart": 9213,
+          "docEnd": 9648,
+          "docs": {
+            "brief": "Callback for a successful transaction.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Callback for a successful transaction."
+              },
+              {
+                "tag": "param:db",
+                "text": "Database handle."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data value passed to SQL_ExecuteTransaction()."
+              },
+              {
+                "tag": "param:numQueries",
+                "text": "Number of queries executed in the transaction."
+              },
+              {
+                "tag": "param:results",
+                "text": "An array of Query handle results, one for each of numQueries. They are closed automatically."
+              },
+              {
+                "tag": "param:queryData",
+                "text": "An array of each data value passed to SQL_AddQuery()."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Database db, any data, int numQueries, Handle[] results, any[] queryData)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Database",
+                "name": "db",
+                "decl": "Database db",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "numQueries",
+                "decl": "int numQueries",
+                "default": null
+              },
+              {
+                "type": "Handle[]",
+                "name": "results",
+                "decl": "Handle[] results",
+                "default": null
+              },
+              {
+                "type": "any[]",
+                "name": "queryData",
+                "decl": "any[] queryData",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Database db, any data, int numQueries, DBResultSet[] results, any[] queryData)": {
+          "refLine": 256,
+          "docStart": 9746,
+          "docEnd": 10180,
+          "docs": {
+            "brief": "Callback for a successful transaction.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Callback for a successful transaction."
+              },
+              {
+                "tag": "param:db",
+                "text": "Database handle."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data value passed to SQL_ExecuteTransaction()."
+              },
+              {
+                "tag": "param:numQueries",
+                "text": "Number of queries executed in the transaction."
+              },
+              {
+                "tag": "param:results",
+                "text": "An array of DBResultSet results, one for each of numQueries. They are closed automatically."
+              },
+              {
+                "tag": "param:queryData",
+                "text": "An array of each data value passed to SQL_AddQuery()."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Database db, any data, int numQueries, DBResultSet[] results, any[] queryData)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Database",
+                "name": "db",
+                "decl": "Database db",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "numQueries",
+                "decl": "int numQueries",
+                "default": null
+              },
+              {
+                "type": "DBResultSet[]",
+                "name": "results",
+                "decl": "DBResultSet[] results",
+                "default": null
+              },
+              {
+                "type": "any[]",
+                "name": "queryData",
+                "decl": "any[] queryData",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {
+    "SQLQueryCallback": {
+      "name": "SQLQueryCallback",
+      "refLine": 340,
+      "docStart": 13507,
+      "docEnd": 14024,
+      "docs": {
+        "brief": "Callback for receiving asynchronous database query results.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for receiving asynchronous database query results."
+          },
+          {
+            "tag": "param:db",
+            "text": "Cloned handle to the database connection."
+          },
+          {
+            "tag": "param:results",
+            "text": "Result object, or null on failure."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error string if there was an error.  The error could be\nempty even if an error condition exists, so it is important\nto check the actual results value instead."
+          },
+          {
+            "tag": "param:data",
+            "text": "Data passed in via the original threaded invocation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Database db, DBResultSet results, const char[] error, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Database",
+            "name": "db",
+            "decl": "Database db",
+            "default": null
+          },
+          {
+            "type": "DBResultSet",
+            "name": "results",
+            "decl": "DBResultSet results",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "error",
+            "decl": "const char[] error",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SQLConnectCallback": {
+      "name": "SQLConnectCallback",
+      "refLine": 328,
+      "docStart": 12967,
+      "docEnd": 13414,
+      "docs": {
+        "brief": "Callback for receiving asynchronous database connections.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for receiving asynchronous database connections."
+          },
+          {
+            "tag": "param:db",
+            "text": "Handle to the database connection."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error string if there was an error.  The error could be\nempty even if an error condition exists, so it is important\nto check the actual Handle value instead."
+          },
+          {
+            "tag": "param:data",
+            "text": "Data passed in via the original threaded invocation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Database db, const char[] error, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Database",
+            "name": "db",
+            "decl": "Database db",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "error",
+            "decl": "const char[] error",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SQLTxnFailure": {
+      "name": "SQLTxnFailure",
+      "refLine": 269,
+      "docStart": 10285,
+      "docEnd": 10723,
+      "docs": {
+        "brief": "Callback for a failed transaction.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for a failed transaction."
+          },
+          {
+            "tag": "param:db",
+            "text": "Database handle."
+          },
+          {
+            "tag": "param:data",
+            "text": "Data value passed to SQL_ExecuteTransaction()."
+          },
+          {
+            "tag": "param:numQueries",
+            "text": "Number of queries executed in the transaction."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error message."
+          },
+          {
+            "tag": "param:failIndex",
+            "text": "Index of the query that failed, or -1 if something else."
+          },
+          {
+            "tag": "param:queryData",
+            "text": "An array of each data value passed to SQL_AddQuery()."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Database db, any data, int numQueries, const char[] error, int failIndex, any[] queryData)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Database",
+            "name": "db",
+            "decl": "Database db",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "numQueries",
+            "decl": "int numQueries",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "error",
+            "decl": "const char[] error",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "failIndex",
+            "decl": "int failIndex",
+            "default": null
+          },
+          {
+            "type": "any[]",
+            "name": "queryData",
+            "decl": "any[] queryData",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SQLTCallback": {
+      "name": "SQLTCallback",
+      "refLine": 989,
+      "docStart": 40572,
+      "docEnd": 41106,
+      "docs": {
+        "brief": "General callback for threaded SQL stuff.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "General callback for threaded SQL stuff."
+          },
+          {
+            "tag": "param:owner",
+            "text": "Parent object of the Handle (or INVALID_HANDLE if none)."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to the child object (or INVALID_HANDLE if none)."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error string if there was an error.  The error could be\nempty even if an error condition exists, so it is important\nto check the actual Handle value instead."
+          },
+          {
+            "tag": "param:data",
+            "text": "Data passed in via the original threaded invocation."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Handle owner, Handle hndl, const char[] error, any data)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Handle",
+            "name": "owner",
+            "decl": "Handle owner",
+            "default": null
+          },
+          {
+            "type": "Handle",
+            "name": "hndl",
+            "decl": "Handle hndl",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "error",
+            "decl": "const char[] error",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "data",
+            "decl": "any data",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

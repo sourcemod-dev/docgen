@@ -1,0 +1,1828 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "HTTPRequest": {
+      "name": "HTTPRequest",
+      "refLine": 79,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "DownloadFile": {
+          "name": "DownloadFile",
+          "refLine": 170,
+          "docStart": 5534,
+          "docEnd": 5826,
+          "docs": {
+            "brief": "Downloads a file.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Downloads a file.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:path",
+                "text": "File path to write to."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the download has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "path",
+              "decl": "const char[] path",
+              "default": null
+            },
+            {
+              "type": "HTTPFileCallback",
+              "name": "callback",
+              "decl": "HTTPFileCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "AppendQueryParam": {
+          "name": "AppendQueryParam",
+          "refLine": 105,
+          "docStart": 2891,
+          "docEnd": 3151,
+          "docs": {
+            "brief": "Appends a query parameter to the URL.\n\nThe parameter name and value are encoded according to RFC 3986.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Appends a query parameter to the URL.\n\nThe parameter name and value are encoded according to RFC 3986."
+              },
+              {
+                "tag": "param:name",
+                "text": "Parameter name."
+              },
+              {
+                "tag": "param:format",
+                "text": "Formatting rules."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of format parameters."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "format",
+              "decl": "const char[] format",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "Delete": {
+          "name": "Delete",
+          "refLine": 161,
+          "docStart": 5197,
+          "docEnd": 5458,
+          "docs": {
+            "brief": "Performs an HTTP DELETE request.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP DELETE request.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "SetBasicAuth": {
+          "name": "SetBasicAuth",
+          "refLine": 111,
+          "docStart": 3241,
+          "docEnd": 3377,
+          "docs": {
+            "brief": "Sets the credentials for HTTP Basic authentication.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the credentials for HTTP Basic authentication."
+              },
+              {
+                "tag": "param:username",
+                "text": "Username to use."
+              },
+              {
+                "tag": "param:password",
+                "text": "Password to use."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "username",
+              "decl": "const char[] username",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "password",
+              "decl": "const char[] password",
+              "default": null
+            }
+          ]
+        },
+        "AppendFormParam": {
+          "name": "AppendFormParam",
+          "refLine": 96,
+          "docStart": 2542,
+          "docEnd": 2802,
+          "docs": {
+            "brief": "Appends a parameter to the form data.\n\nThe parameter name and value are encoded according to RFC 3986.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Appends a parameter to the form data.\n\nThe parameter name and value are encoded according to RFC 3986."
+              },
+              {
+                "tag": "param:name",
+                "text": "Parameter name."
+              },
+              {
+                "tag": "param:format",
+                "text": "Formatting rules."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of format parameters."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "format",
+              "decl": "const char[] format",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "Put": {
+          "name": "Put",
+          "refLine": 144,
+          "docStart": 4427,
+          "docEnd": 4726,
+          "docs": {
+            "brief": "Performs an HTTP PUT request.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP PUT request.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:data",
+                "text": "JSON data to send."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "PostForm": {
+          "name": "PostForm",
+          "refLine": 188,
+          "docStart": 6405,
+          "docEnd": 6679,
+          "docs": {
+            "brief": "Performs an HTTP POST request with form data.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP POST request with form data.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "Post": {
+          "name": "Post",
+          "refLine": 135,
+          "docStart": 4042,
+          "docEnd": 4342,
+          "docs": {
+            "brief": "Performs an HTTP POST request.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP POST request.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:data",
+                "text": "JSON data to send."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "UploadFile": {
+          "name": "UploadFile",
+          "refLine": 180,
+          "docStart": 5924,
+          "docEnd": 6309,
+          "docs": {
+            "brief": "Uploads a file.\n\nThis function performs an HTTP PUT request. The file contents are sent in the request body.\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Uploads a file.\n\nThis function performs an HTTP PUT request. The file contents are sent in the request body.\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:path",
+                "text": "File path to read from."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the upload has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "path",
+              "decl": "const char[] path",
+              "default": null
+            },
+            {
+              "type": "HTTPFileCallback",
+              "name": "callback",
+              "decl": "HTTPFileCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "HTTPRequest": {
+          "name": "HTTPRequest",
+          "refLine": 87,
+          "docStart": 2268,
+          "docEnd": 2493,
+          "docs": {
+            "brief": "Creates an HTTP request.\n\nThe Handle is automatically freed when the request is performed.\nOtherwise, the Handle must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates an HTTP request.\n\nThe Handle is automatically freed when the request is performed.\nOtherwise, the Handle must be freed via delete or CloseHandle()."
+              },
+              {
+                "tag": "param:url",
+                "text": "URL to the REST API endpoint."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "HTTPRequest",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "url",
+              "decl": "const char[] url",
+              "default": null
+            }
+          ]
+        },
+        "Patch": {
+          "name": "Patch",
+          "refLine": 153,
+          "docStart": 4810,
+          "docEnd": 5111,
+          "docs": {
+            "brief": "Performs an HTTP PATCH request.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP PATCH request.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:data",
+                "text": "JSON data to send."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "SetHeader": {
+          "name": "SetHeader",
+          "refLine": 118,
+          "docStart": 3460,
+          "docEnd": 3628,
+          "docs": {
+            "brief": "Sets an HTTP header.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an HTTP header."
+              },
+              {
+                "tag": "param:name",
+                "text": "Header name."
+              },
+              {
+                "tag": "param:format",
+                "text": "Formatting rules."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of format parameters."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "format",
+              "decl": "const char[] format",
+              "default": null
+            },
+            {
+              "type": "any...",
+              "name": "...",
+              "decl": "any...",
+              "default": null
+            }
+          ]
+        },
+        "Get": {
+          "name": "Get",
+          "refLine": 126,
+          "docStart": 3711,
+          "docEnd": 3969,
+          "docs": {
+            "brief": "Performs an HTTP GET request.\n\nThis function closes the request Handle after completing.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Performs an HTTP GET request.\n\nThis function closes the request Handle after completing."
+              },
+              {
+                "tag": "param:callback",
+                "text": "A function to use as a callback when the request has finished."
+              },
+              {
+                "tag": "param:value",
+                "text": "Optional value to pass to the callback function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "MaxSendSpeed": {
+          "name": "MaxSendSpeed",
+          "refLine": 209,
+          "docStart": 7225,
+          "docEnd": 7298,
+          "docs": {
+            "brief": "Maximum upload speed in bytes per second. Defaults to unlimited speed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Maximum upload speed in bytes per second. Defaults to unlimited speed."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "MaxRedirects": {
+          "name": "MaxRedirects",
+          "refLine": 197,
+          "docStart": 6904,
+          "docEnd": 6960,
+          "docs": {
+            "brief": "Maximum number of redirects to follow. Defaults to 5.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Maximum number of redirects to follow. Defaults to 5."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "Timeout": {
+          "name": "Timeout",
+          "refLine": 215,
+          "docStart": 7391,
+          "docEnd": 7429,
+          "docs": {
+            "brief": "Timeout in seconds. Defaults to 30.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Timeout in seconds. Defaults to 30."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "MaxRecvSpeed": {
+          "name": "MaxRecvSpeed",
+          "refLine": 203,
+          "docStart": 7057,
+          "docEnd": 7132,
+          "docs": {
+            "brief": "Maximum download speed in bytes per second. Defaults to unlimited speed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Maximum download speed in bytes per second. Defaults to unlimited speed."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "ConnectTimeout": {
+          "name": "ConnectTimeout",
+          "refLine": 191,
+          "docStart": 6757,
+          "docEnd": 6803,
+          "docs": {
+            "brief": "Connect timeout in seconds. Defaults to 10.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Connect timeout in seconds. Defaults to 10."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    },
+    "HTTPResponse": {
+      "name": "HTTPResponse",
+      "refLine": 221,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "GetHeader": {
+          "name": "GetHeader",
+          "refLine": 229,
+          "docStart": 7543,
+          "docEnd": 7813,
+          "docs": {
+            "brief": "Retrieves an HTTP header from the response.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an HTTP header from the response."
+              },
+              {
+                "tag": "param:name",
+                "text": "Header name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to store value."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the header was not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Status": {
+          "name": "Status",
+          "refLine": 239,
+          "docStart": 8039,
+          "docEnd": 8084,
+          "docs": {
+            "brief": "Retrieves the HTTP status of the response.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the HTTP status of the response."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "HTTPStatus",
+          "getter": true,
+          "setter": false
+        },
+        "Data": {
+          "name": "Data",
+          "refLine": 234,
+          "docStart": 7896,
+          "docEnd": 7988,
+          "docs": {
+            "brief": "Retrieves the JSON data of the response.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the JSON data of the response."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid JSON response."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "JSON",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "HTTPClient": {
+      "name": "HTTPClient",
+      "refLine": 245,
+      "docStart": 8145,
+      "docEnd": 8184,
+      "docs": {
+        "brief": "Deprecated. Use HTTPRequest instead.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Deprecated. Use HTTPRequest instead."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Get": {
+          "name": "Get",
+          "refLine": 268,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "DownloadFile": {
+          "name": "DownloadFile",
+          "refLine": 312,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "path",
+              "decl": "const char[] path",
+              "default": null
+            },
+            {
+              "type": "HTTPFileCallback",
+              "name": "callback",
+              "decl": "HTTPFileCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "UploadFile": {
+          "name": "UploadFile",
+          "refLine": 323,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "path",
+              "decl": "const char[] path",
+              "default": null
+            },
+            {
+              "type": "HTTPFileCallback",
+              "name": "callback",
+              "decl": "HTTPFileCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "Put": {
+          "name": "Put",
+          "refLine": 286,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "SetHeader": {
+          "name": "SetHeader",
+          "refLine": 260,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Post": {
+          "name": "Post",
+          "refLine": 277,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "Delete": {
+          "name": "Delete",
+          "refLine": 303,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        },
+        "HTTPClient": {
+          "name": "HTTPClient",
+          "refLine": 253,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "HTTPClient",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "baseURL",
+              "decl": "const char[] baseURL",
+              "default": null
+            }
+          ]
+        },
+        "Patch": {
+          "name": "Patch",
+          "refLine": 295,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "endpoint",
+              "decl": "const char[] endpoint",
+              "default": null
+            },
+            {
+              "type": "JSON",
+              "name": "data",
+              "decl": "JSON data",
+              "default": null
+            },
+            {
+              "type": "HTTPRequestCallback",
+              "name": "callback",
+              "decl": "HTTPRequestCallback callback",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "FollowLocation": {
+          "name": "FollowLocation",
+          "refLine": 334,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "Timeout": {
+          "name": "Timeout",
+          "refLine": 341,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "ConnectTimeout": {
+          "name": "ConnectTimeout",
+          "refLine": 327,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "MaxSendSpeed": {
+          "name": "MaxSendSpeed",
+          "refLine": 348,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "MaxRecvSpeed": {
+          "name": "MaxRecvSpeed",
+          "refLine": 355,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {
+    "HTTPStatus": {
+      "name": "HTTPStatus",
+      "refLine": 1,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "HTTPStatus_NonAuthoritativeInformation": {
+          "name": "HTTPStatus_NonAuthoritativeInformation",
+          "refLine": 13,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "203"
+        },
+        "HTTPStatus_PermanentRedirect": {
+          "name": "HTTPStatus_PermanentRedirect",
+          "refLine": 26,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "308"
+        },
+        "HTTPStatus_OK": {
+          "name": "HTTPStatus_OK",
+          "refLine": 10,
+          "docStart": 134,
+          "docEnd": 148,
+          "docs": {
+            "brief": "2xx Success",
+            "tags": [
+              {
+                "tag": "",
+                "text": "2xx Success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "200"
+        },
+        "HTTPStatus_Continue": {
+          "name": "HTTPStatus_Continue",
+          "refLine": 6,
+          "docStart": 45,
+          "docEnd": 65,
+          "docs": {
+            "brief": "1xx Informational",
+            "tags": [
+              {
+                "tag": "",
+                "text": "1xx Informational"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "100"
+        },
+        "HTTPStatus_BadRequest": {
+          "name": "HTTPStatus_BadRequest",
+          "refLine": 29,
+          "docStart": 648,
+          "docEnd": 667,
+          "docs": {
+            "brief": "4xx Client Error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "4xx Client Error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "400"
+        },
+        "HTTPStatus_Forbidden": {
+          "name": "HTTPStatus_Forbidden",
+          "refLine": 32,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "403"
+        },
+        "HTTPStatus_RequestEntityTooLarge": {
+          "name": "HTTPStatus_RequestEntityTooLarge",
+          "refLine": 42,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "413"
+        },
+        "HTTPStatus_NetworkAuthenticationRequired": {
+          "name": "HTTPStatus_NetworkAuthenticationRequired",
+          "refLine": 64,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "511"
+        },
+        "HTTPStatus_ResetContent": {
+          "name": "HTTPStatus_ResetContent",
+          "refLine": 15,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "205"
+        },
+        "HTTPStatus_Invalid": {
+          "name": "HTTPStatus_Invalid",
+          "refLine": 3,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "HTTPStatus_Found": {
+          "name": "HTTPStatus_Found",
+          "refLine": 21,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "302"
+        },
+        "HTTPStatus_PaymentRequired": {
+          "name": "HTTPStatus_PaymentRequired",
+          "refLine": 31,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "402"
+        },
+        "HTTPStatus_ProxyAuthenticationRequired": {
+          "name": "HTTPStatus_ProxyAuthenticationRequired",
+          "refLine": 36,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "407"
+        },
+        "HTTPStatus_InternalServerError": {
+          "name": "HTTPStatus_InternalServerError",
+          "refLine": 56,
+          "docStart": 1570,
+          "docEnd": 1589,
+          "docs": {
+            "brief": "5xx Server Error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "5xx Server Error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "500"
+        },
+        "HTTPStatus_SwitchingProtocols": {
+          "name": "HTTPStatus_SwitchingProtocols",
+          "refLine": 7,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "101"
+        },
+        "HTTPStatus_NotFound": {
+          "name": "HTTPStatus_NotFound",
+          "refLine": 33,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "404"
+        },
+        "HTTPStatus_ExpectationFailed": {
+          "name": "HTTPStatus_ExpectationFailed",
+          "refLine": 46,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "417"
+        },
+        "HTTPStatus_PreconditionFailed": {
+          "name": "HTTPStatus_PreconditionFailed",
+          "refLine": 41,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "412"
+        },
+        "HTTPStatus_Gone": {
+          "name": "HTTPStatus_Gone",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "410"
+        },
+        "HTTPStatus_MisdirectedRequest": {
+          "name": "HTTPStatus_MisdirectedRequest",
+          "refLine": 47,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "421"
+        },
+        "HTTPStatus_TooManyRequests": {
+          "name": "HTTPStatus_TooManyRequests",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "429"
+        },
+        "HTTPStatus_Conflict": {
+          "name": "HTTPStatus_Conflict",
+          "refLine": 38,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "409"
+        },
+        "HTTPStatus_MovedPermanently": {
+          "name": "HTTPStatus_MovedPermanently",
+          "refLine": 20,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "301"
+        },
+        "HTTPStatus_RequestTimeout": {
+          "name": "HTTPStatus_RequestTimeout",
+          "refLine": 37,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "408"
+        },
+        "HTTPStatus_Created": {
+          "name": "HTTPStatus_Created",
+          "refLine": 11,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "201"
+        },
+        "HTTPStatus_NoContent": {
+          "name": "HTTPStatus_NoContent",
+          "refLine": 14,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "204"
+        },
+        "HTTPStatus_PartialContent": {
+          "name": "HTTPStatus_PartialContent",
+          "refLine": 16,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "206"
+        },
+        "HTTPStatus_TemporaryRedirect": {
+          "name": "HTTPStatus_TemporaryRedirect",
+          "refLine": 25,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "307"
+        },
+        "HTTPStatus_RequestedRangeNotSatisfiable": {
+          "name": "HTTPStatus_RequestedRangeNotSatisfiable",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "416"
+        },
+        "HTTPStatus_PreconditionRequired": {
+          "name": "HTTPStatus_PreconditionRequired",
+          "refLine": 50,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "428"
+        },
+        "HTTPStatus_Unauthorized": {
+          "name": "HTTPStatus_Unauthorized",
+          "refLine": 30,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "401"
+        },
+        "HTTPStatus_RequestHeaderFieldsTooLarge": {
+          "name": "HTTPStatus_RequestHeaderFieldsTooLarge",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "431"
+        },
+        "HTTPStatus_UnavailableForLegalReasons": {
+          "name": "HTTPStatus_UnavailableForLegalReasons",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "451"
+        },
+        "HTTPStatus_BadGateway": {
+          "name": "HTTPStatus_BadGateway",
+          "refLine": 58,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "502"
+        },
+        "HTTPStatus_ServiceUnavailable": {
+          "name": "HTTPStatus_ServiceUnavailable",
+          "refLine": 59,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "503"
+        },
+        "HTTPStatus_NotModified": {
+          "name": "HTTPStatus_NotModified",
+          "refLine": 23,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "304"
+        },
+        "HTTPStatus_UpgradeRequired": {
+          "name": "HTTPStatus_UpgradeRequired",
+          "refLine": 49,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "426"
+        },
+        "HTTPStatus_VariantAlsoNegotiates": {
+          "name": "HTTPStatus_VariantAlsoNegotiates",
+          "refLine": 62,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "506"
+        },
+        "HTTPStatus_NotExtended": {
+          "name": "HTTPStatus_NotExtended",
+          "refLine": 63,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "510"
+        },
+        "HTTPStatus_SeeOther": {
+          "name": "HTTPStatus_SeeOther",
+          "refLine": 22,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "303"
+        },
+        "HTTPStatus_UnsupportedMediaType": {
+          "name": "HTTPStatus_UnsupportedMediaType",
+          "refLine": 44,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "415"
+        },
+        "HTTPStatus_RequestURITooLong": {
+          "name": "HTTPStatus_RequestURITooLong",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "414"
+        },
+        "HTTPStatus_Accepted": {
+          "name": "HTTPStatus_Accepted",
+          "refLine": 12,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "202"
+        },
+        "HTTPStatus_TooEarly": {
+          "name": "HTTPStatus_TooEarly",
+          "refLine": 48,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "425"
+        },
+        "HTTPStatus_LengthRequired": {
+          "name": "HTTPStatus_LengthRequired",
+          "refLine": 40,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "411"
+        },
+        "HTTPStatus_UseProxy": {
+          "name": "HTTPStatus_UseProxy",
+          "refLine": 24,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "305"
+        },
+        "HTTPStatus_NotAcceptable": {
+          "name": "HTTPStatus_NotAcceptable",
+          "refLine": 35,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "406"
+        },
+        "HTTPStatus_NotImplemented": {
+          "name": "HTTPStatus_NotImplemented",
+          "refLine": 57,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "501"
+        },
+        "HTTPStatus_HTTPVersionNotSupported": {
+          "name": "HTTPStatus_HTTPVersionNotSupported",
+          "refLine": 61,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "505"
+        },
+        "HTTPStatus_MethodNotAllowed": {
+          "name": "HTTPStatus_MethodNotAllowed",
+          "refLine": 34,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "405"
+        },
+        "HTTPStatus_MultipleChoices": {
+          "name": "HTTPStatus_MultipleChoices",
+          "refLine": 19,
+          "docStart": 370,
+          "docEnd": 388,
+          "docs": {
+            "brief": "3xx Redirection",
+            "tags": [
+              {
+                "tag": "",
+                "text": "3xx Redirection"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "300"
+        },
+        "HTTPStatus_GatewayTimeout": {
+          "name": "HTTPStatus_GatewayTimeout",
+          "refLine": 60,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "504"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "HTTPRequestCallback": {
+      "name": "HTTPRequestCallback",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(HTTPResponse response, any value, const char[] error)": {
+          "refLine": 70,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPResponse response, any value, const char[] error)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPResponse",
+                "name": "response",
+                "decl": "HTTPResponse response",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "error",
+                "decl": "const char[] error",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(HTTPResponse response, any value)": {
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPResponse response, any value)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPResponse",
+                "name": "response",
+                "decl": "HTTPResponse response",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "HTTPFileCallback": {
+      "name": "HTTPFileCallback",
+      "refLine": 73,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(HTTPStatus status, any value, const char[] error)": {
+          "refLine": 76,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPStatus status, any value, const char[] error)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPStatus",
+                "name": "status",
+                "decl": "HTTPStatus status",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "error",
+                "decl": "const char[] error",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(HTTPStatus status, any value)": {
+          "refLine": 75,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(HTTPStatus status, any value)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "HTTPStatus",
+                "name": "status",
+                "decl": "HTTPStatus status",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

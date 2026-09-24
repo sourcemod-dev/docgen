@@ -1,0 +1,1487 @@
+{
+  "functions": {
+    "CompileRegex": {
+      "name": "CompileRegex",
+      "refLine": 194,
+      "docStart": 8460,
+      "docEnd": 9076,
+      "docs": {
+        "brief": "Precompile a regular expression.  Use this if you intend on using the\nsame expression multiple times.  Pass the regex handle returned here to\nMatchRegex to check for matches.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precompile a regular expression.  Use this if you intend on using the\nsame expression multiple times.  Pass the regex handle returned here to\nMatchRegex to check for matches."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "The regular expression pattern."
+          },
+          {
+            "tag": "param:flags",
+            "text": "General flags for the regular expression."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error message encountered, if applicable."
+          },
+          {
+            "tag": "param:maxLen",
+            "text": "Maximum string length of the error buffer."
+          },
+          {
+            "tag": "param:errcode",
+            "text": "Regex type error code encountered, if applicable."
+          },
+          {
+            "tag": "return",
+            "text": "Valid regex handle on success, INVALID_HANDLE on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Regex",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "maxLen",
+          "decl": "int maxLen",
+          "default": "0"
+        },
+        {
+          "type": "RegexError&",
+          "name": "errcode",
+          "decl": "RegexError& errcode",
+          "default": "REGEX_ERROR_NONE"
+        }
+      ]
+    },
+    "MatchRegex": {
+      "name": "MatchRegex",
+      "refLine": 208,
+      "docStart": 9218,
+      "docEnd": 9711,
+      "docs": {
+        "brief": "Matches a string against a pre-compiled regular expression pattern.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Matches a string against a pre-compiled regular expression pattern."
+          },
+          {
+            "tag": "param:regex",
+            "text": "Regex Handle from CompileRegex()"
+          },
+          {
+            "tag": "param:str",
+            "text": "The string to check."
+          },
+          {
+            "tag": "param:ret",
+            "text": "Error code, if applicable."
+          },
+          {
+            "tag": "param:offset",
+            "text": "Offset in the string to start searching from."
+          },
+          {
+            "tag": "return",
+            "text": "Number of captures found or -1 on failure."
+          },
+          {
+            "tag": "note",
+            "text": "Use the regex handle passed to this function to extract\nmatches with GetRegexSubString()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "regex",
+          "decl": "Handle regex",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "RegexError&",
+          "name": "ret",
+          "decl": "RegexError& ret",
+          "default": "REGEX_ERROR_NONE"
+        },
+        {
+          "type": "int",
+          "name": "offset",
+          "decl": "int offset",
+          "default": "0"
+        }
+      ]
+    },
+    "__ext_regex_SetNTVOptional": {
+      "name": "__ext_regex_SetNTVOptional",
+      "refLine": 278,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SimpleRegexMatch": {
+      "name": "SimpleRegexMatch",
+      "refLine": 240,
+      "docStart": 10563,
+      "docEnd": 11208,
+      "docs": {
+        "brief": "Matches a string against a regular expression pattern.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Matches a string against a regular expression pattern."
+          },
+          {
+            "tag": "note",
+            "text": "If you intend on using the same regular expression pattern\nmultiple times, consider using CompileRegex and MatchRegex\ninstead of making this function reparse the expression each time."
+          },
+          {
+            "tag": "param:str",
+            "text": "The string to check."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "The regular expression pattern."
+          },
+          {
+            "tag": "param:flags",
+            "text": "General flags for the regular expression."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error message, if applicable."
+          },
+          {
+            "tag": "param:maxLen",
+            "text": "Maximum length of the error buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of substrings found or -1 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "maxLen",
+          "decl": "int maxLen",
+          "default": "0"
+        }
+      ]
+    },
+    "GetRegexSubString": {
+      "name": "GetRegexSubString",
+      "refLine": 224,
+      "docStart": 9823,
+      "docEnd": 10474,
+      "docs": {
+        "brief": "Returns a matched substring from a regex handle.\nSubstring ids start at 0 and end at captures-1, where captures is the number returned\nby MatchRegex.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a matched substring from a regex handle.\nSubstring ids start at 0 and end at captures-1, where captures is the number returned\nby MatchRegex."
+          },
+          {
+            "tag": "param:regex",
+            "text": "The regex handle to extract data from."
+          },
+          {
+            "tag": "param:str_id",
+            "text": "The index of the expression to get - starts at 0, and ends at captures - 1."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "The buffer to set to the matching substring."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "The maximum string length of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if a substring was found, False on fail/error"
+          },
+          {
+            "tag": "note",
+            "text": "str_id = 0 is the full captured string, anything else is the capture group index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "regex",
+          "decl": "Handle regex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "str_id",
+          "decl": "int str_id",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Regex": {
+      "name": "Regex",
+      "refLine": 115,
+      "docStart": 5141,
+      "docEnd": 5232,
+      "docs": {
+        "brief": "Regular expression objects are used to match or decompose strings based on\npatterns.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Regular expression objects are used to match or decompose strings based on\npatterns."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "CaptureCount": {
+          "name": "CaptureCount",
+          "refLine": 173,
+          "docStart": 7827,
+          "docEnd": 8143,
+          "docs": {
+            "brief": "Returns number of captures for a match",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns number of captures for a match"
+              },
+              {
+                "tag": "param:match",
+                "text": "Match to get the number of captures for. Match starts at 0, and ends at MatchCount() -1"
+              },
+              {
+                "tag": "return",
+                "text": "Number of captures in the match."
+              },
+              {
+                "tag": "note",
+                "text": "Use GetSubString() and loop from 1 -> captures -1 for str_id to get all captures"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "match",
+              "decl": "int match",
+              "default": "0"
+            }
+          ]
+        },
+        "Regex": {
+          "name": "Regex",
+          "refLine": 124,
+          "docStart": 5264,
+          "docEnd": 5640,
+          "docs": {
+            "brief": "Compile a regular expression.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Compile a regular expression."
+              },
+              {
+                "tag": "param:pattern",
+                "text": "The regular expression pattern."
+              },
+              {
+                "tag": "param:flags",
+                "text": "General flags for the regular expression."
+              },
+              {
+                "tag": "param:error",
+                "text": "Error message encountered, if applicable."
+              },
+              {
+                "tag": "param:maxLen",
+                "text": "Maximum string length of the error buffer."
+              },
+              {
+                "tag": "param:errcode",
+                "text": "Regex type error code encountered, if applicable."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Regex",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "pattern",
+              "decl": "const char[] pattern",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "flags",
+              "decl": "int flags",
+              "default": "0"
+            },
+            {
+              "type": "char[]",
+              "name": "error",
+              "decl": "char[] error",
+              "default": "\"\""
+            },
+            {
+              "type": "int",
+              "name": "maxLen",
+              "decl": "int maxLen",
+              "default": "0"
+            },
+            {
+              "type": "RegexError&",
+              "name": "errcode",
+              "decl": "RegexError& errcode",
+              "default": "REGEX_ERROR_NONE"
+            }
+          ]
+        },
+        "MatchAll": {
+          "name": "MatchAll",
+          "refLine": 144,
+          "docStart": 6353,
+          "docEnd": 6682,
+          "docs": {
+            "brief": "Gets all matches from a string against a pre-compiled regular expression pattern.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets all matches from a string against a pre-compiled regular expression pattern."
+              },
+              {
+                "tag": "param:str",
+                "text": "The string to check."
+              },
+              {
+                "tag": "param:ret",
+                "text": "Error code, if applicable."
+              },
+              {
+                "tag": "return",
+                "text": "Number of matches found or -1 on failure."
+              },
+              {
+                "tag": "note",
+                "text": "Use GetSubString() and loop from 0 -> totalmatches - 1."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "str",
+              "decl": "const char[] str",
+              "default": null
+            },
+            {
+              "type": "RegexError&",
+              "name": "ret",
+              "decl": "RegexError& ret",
+              "default": "REGEX_ERROR_NONE"
+            }
+          ]
+        },
+        "Match": {
+          "name": "Match",
+          "refLine": 135,
+          "docStart": 5778,
+          "docEnd": 6251,
+          "docs": {
+            "brief": "Matches a string against a pre-compiled regular expression pattern.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Matches a string against a pre-compiled regular expression pattern."
+              },
+              {
+                "tag": "param:str",
+                "text": "The string to check."
+              },
+              {
+                "tag": "param:ret",
+                "text": "Error code, if applicable."
+              },
+              {
+                "tag": "param:offset",
+                "text": "Offset in the string to start searching from. MatchOffset returns the offset of the match."
+              },
+              {
+                "tag": "return",
+                "text": "Number of captures found or -1 on failure."
+              },
+              {
+                "tag": "note",
+                "text": "Use the regex handle passed to this function to extract\nmatches with GetSubString()."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "str",
+              "decl": "const char[] str",
+              "default": null
+            },
+            {
+              "type": "RegexError&",
+              "name": "ret",
+              "decl": "RegexError& ret",
+              "default": "REGEX_ERROR_NONE"
+            },
+            {
+              "type": "int",
+              "name": "offset",
+              "decl": "int offset",
+              "default": "0"
+            }
+          ]
+        },
+        "GetSubString": {
+          "name": "GetSubString",
+          "refLine": 159,
+          "docStart": 6771,
+          "docEnd": 7534,
+          "docs": {
+            "brief": "Returns a matched substring from a regex handle.\n\nSubstring ids start at 0 and end at captures-1, where captures is the\nnumber returned by Regex.Match or Regex.CaptureCount.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns a matched substring from a regex handle.\n\nSubstring ids start at 0 and end at captures-1, where captures is the\nnumber returned by Regex.Match or Regex.CaptureCount."
+              },
+              {
+                "tag": "param:str_id",
+                "text": "The index of the expression to get - starts at 0, and ends at captures - 1."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "The buffer to set to the matching substring."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "The maximum string length of the buffer."
+              },
+              {
+                "tag": "param:match",
+                "text": "Match to get the captures for - starts at 0, and ends at MatchCount() -1"
+              },
+              {
+                "tag": "return",
+                "text": "True if a substring was found, False on fail/error"
+              },
+              {
+                "tag": "note",
+                "text": "str_id = 0 is the full captured string, anything else is the capture group index.\nif Regex.Match is used match can only be 0"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "str_id",
+              "decl": "int str_id",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "match",
+              "decl": "int match",
+              "default": "0"
+            }
+          ]
+        },
+        "MatchCount": {
+          "name": "MatchCount",
+          "refLine": 165,
+          "docStart": 7628,
+          "docEnd": 7788,
+          "docs": {
+            "brief": "Returns number of matches\n\nWhen using Match this is always 1 or 0 (unless an error occured)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns number of matches\n\nWhen using Match this is always 1 or 0 (unless an error occured)"
+              },
+              {
+                "tag": "return",
+                "text": "Total number of matches found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "MatchOffset": {
+          "name": "MatchOffset",
+          "refLine": 179,
+          "docStart": 8197,
+          "docEnd": 8404,
+          "docs": {
+            "brief": "Returns the string offset of a match.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the string offset of a match."
+              },
+              {
+                "tag": "param:match",
+                "text": "Match to get the offset of. Match starts at 0, and ends at MatchCount() -1"
+              },
+              {
+                "tag": "return",
+                "text": "Offset of the match in the string."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "match",
+              "decl": "int match",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "PCRE_UNGREEDY": {
+      "name": "PCRE_UNGREEDY",
+      "refLine": 48,
+      "docStart": 2483,
+      "docEnd": 2521,
+      "docs": {
+        "brief": "Invert greediness of quantifiers",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invert greediness of quantifiers"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000200"
+    },
+    "_regex_included": {
+      "name": "_regex_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "PCRE_CASELESS": {
+      "name": "PCRE_CASELESS",
+      "refLine": 42,
+      "docStart": 1855,
+      "docEnd": 1872,
+      "docs": {
+        "brief": "Ignore Case",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ignore Case"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000001"
+    },
+    "PCRE_DOTALL": {
+      "name": "PCRE_DOTALL",
+      "refLine": 44,
+      "docStart": 2089,
+      "docEnd": 2178,
+      "docs": {
+        "brief": "Single line (affects . so that it matches any character, even new line characters).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Single line (affects . so that it matches any character, even new line characters)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000004"
+    },
+    "PCRE_ANCHORED": {
+      "name": "PCRE_ANCHORED",
+      "refLine": 46,
+      "docStart": 2327,
+      "docEnd": 2357,
+      "docs": {
+        "brief": "Force pattern anchoring.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Force pattern anchoring."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000010"
+    },
+    "PCRE_NOTEMPTY": {
+      "name": "PCRE_NOTEMPTY",
+      "refLine": 49,
+      "docStart": 2566,
+      "docEnd": 2609,
+      "docs": {
+        "brief": "An empty string is not a valid match.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "An empty string is not a valid match."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000400"
+    },
+    "PCRE_UTF8": {
+      "name": "PCRE_UTF8",
+      "refLine": 50,
+      "docStart": 2654,
+      "docEnd": 2675,
+      "docs": {
+        "brief": "Use UTF-8 Chars",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Use UTF-8 Chars"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000800"
+    },
+    "PCRE_UCP": {
+      "name": "PCRE_UCP",
+      "refLine": 52,
+      "docStart": 2850,
+      "docEnd": 2897,
+      "docs": {
+        "brief": "Use Unicode properties for \\ed, \\ew, etc.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Use Unicode properties for \\ed, \\ew, etc."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x20000000"
+    },
+    "PCRE_EXTENDED": {
+      "name": "PCRE_EXTENDED",
+      "refLine": 45,
+      "docStart": 2223,
+      "docEnd": 2282,
+      "docs": {
+        "brief": "Pattern extension (ignore whitespace and # comments).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pattern extension (ignore whitespace and # comments)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000008"
+    },
+    "PCRE_MULTILINE": {
+      "name": "PCRE_MULTILINE",
+      "refLine": 43,
+      "docStart": 1917,
+      "docEnd": 2044,
+      "docs": {
+        "brief": "Multilines (affects ^ and $ so that they match the start/end of a line rather than matching the start/end of the string).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Multilines (affects ^ and $ so that they match the start/end of a line rather than matching the start/end of the string)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000002"
+    },
+    "PCRE_NO_UTF8_CHECK": {
+      "name": "PCRE_NO_UTF8_CHECK",
+      "refLine": 51,
+      "docStart": 2720,
+      "docEnd": 2805,
+      "docs": {
+        "brief": "Do not check the pattern for UTF-8 validity (only relevant if PCRE_UTF8 is set)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do not check the pattern for UTF-8 validity (only relevant if PCRE_UTF8 is set)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00002000"
+    },
+    "PCRE_DOLLAR_ENDONLY": {
+      "name": "PCRE_DOLLAR_ENDONLY",
+      "refLine": 47,
+      "docStart": 2402,
+      "docEnd": 2438,
+      "docs": {
+        "brief": "$ not to match newline at end.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "$ not to match newline at end."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x00000020"
+    }
+  },
+  "enums": {
+    "RegexError": {
+      "name": "RegexError",
+      "refLine": 58,
+      "docStart": 2903,
+      "docEnd": 2945,
+      "docs": {
+        "brief": "Regex expression error codes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Regex expression error codes."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "REGEX_ERROR_BADOFFSET": {
+          "name": "REGEX_ERROR_BADOFFSET",
+          "refLine": 102,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-24"
+        },
+        "REGEX_ERROR_BADENDIANNESS": {
+          "name": "REGEX_ERROR_BADENDIANNESS",
+          "refLine": 107,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-29"
+        },
+        "REGEX_ERROR_BADLENGTH": {
+          "name": "REGEX_ERROR_BADLENGTH",
+          "refLine": 110,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-32"
+        },
+        "REGEX_ERROR_UNKNOWN_OPCODE": {
+          "name": "REGEX_ERROR_UNKNOWN_OPCODE",
+          "refLine": 83,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-5"
+        },
+        "REGEX_ERROR_EPAREN": {
+          "name": "REGEX_ERROR_EPAREN",
+          "refLine": 72,
+          "docStart": 3678,
+          "docEnd": 3697,
+          "docs": {
+            "brief": "unbalanced ()",
+            "tags": [
+              {
+                "tag": "",
+                "text": "unbalanced ()"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_BADUTF8_OFFSET": {
+          "name": "REGEX_ERROR_BADUTF8_OFFSET",
+          "refLine": 89,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-11"
+        },
+        "REGEX_ERROR_EBRACE": {
+          "name": "REGEX_ERROR_EBRACE",
+          "refLine": 66,
+          "docStart": 3308,
+          "docEnd": 3327,
+          "docs": {
+            "brief": "unbalanced {}",
+            "tags": [
+              {
+                "tag": "",
+                "text": "unbalanced {}"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_DFA_WSSIZE": {
+          "name": "REGEX_ERROR_DFA_WSSIZE",
+          "refLine": 97,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-19"
+        },
+        "REGEX_ERROR_RECURSIONLIMIT": {
+          "name": "REGEX_ERROR_RECURSIONLIMIT",
+          "refLine": 99,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-21"
+        },
+        "REGEX_ERROR_SHORTUTF8": {
+          "name": "REGEX_ERROR_SHORTUTF8",
+          "refLine": 103,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-25"
+        },
+        "REGEX_ERROR_BADOPTION": {
+          "name": "REGEX_ERROR_BADOPTION",
+          "refLine": 81,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-3"
+        },
+        "REGEX_ERROR_BADUTF8": {
+          "name": "REGEX_ERROR_BADUTF8",
+          "refLine": 88,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-10"
+        },
+        "REGEX_ERROR_ESUBREG": {
+          "name": "REGEX_ERROR_ESUBREG",
+          "refLine": 76,
+          "docStart": 3928,
+          "docEnd": 3952,
+          "docs": {
+            "brief": "bad back reference",
+            "tags": [
+              {
+                "tag": "",
+                "text": "bad back reference"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_NOSUBSTRING": {
+          "name": "REGEX_ERROR_NOSUBSTRING",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-7"
+        },
+        "REGEX_ERROR_DFA_RECURSE": {
+          "name": "REGEX_ERROR_DFA_RECURSE",
+          "refLine": 98,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-20"
+        },
+        "REGEX_ERROR_JIT_STACKLIMIT": {
+          "name": "REGEX_ERROR_JIT_STACKLIMIT",
+          "refLine": 105,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-27"
+        },
+        "REGEX_ERROR_ECOLLATE": {
+          "name": "REGEX_ERROR_ECOLLATE",
+          "refLine": 68,
+          "docStart": 3424,
+          "docEnd": 3460,
+          "docs": {
+            "brief": "collation error - not relevant",
+            "tags": [
+              {
+                "tag": "",
+                "text": "collation error - not relevant"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_DFA_BADRESTART": {
+          "name": "REGEX_ERROR_DFA_BADRESTART",
+          "refLine": 108,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-30"
+        },
+        "REGEX_ERROR_EESCAPE": {
+          "name": "REGEX_ERROR_EESCAPE",
+          "refLine": 70,
+          "docStart": 3553,
+          "docEnd": 3578,
+          "docs": {
+            "brief": "bad escape sequence",
+            "tags": [
+              {
+                "tag": "",
+                "text": "bad escape sequence"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_MATCHLIMIT": {
+          "name": "REGEX_ERROR_MATCHLIMIT",
+          "refLine": 86,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-8"
+        },
+        "REGEX_ERROR_DFA_UMLIMIT": {
+          "name": "REGEX_ERROR_DFA_UMLIMIT",
+          "refLine": 96,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-18"
+        },
+        "REGEX_ERROR_NOMATCH": {
+          "name": "REGEX_ERROR_NOMATCH",
+          "refLine": 79,
+          "docStart": 4050,
+          "docEnd": 4074,
+          "docs": {
+            "brief": "No match was found",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No match was found"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-1"
+        },
+        "REGEX_ERROR_BADPAT": {
+          "name": "REGEX_ERROR_BADPAT",
+          "refLine": 64,
+          "docStart": 3192,
+          "docEnd": 3211,
+          "docs": {
+            "brief": "pattern error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "pattern error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_NULL": {
+          "name": "REGEX_ERROR_NULL",
+          "refLine": 80,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-2"
+        },
+        "REGEX_ERROR_RECURSELOOP": {
+          "name": "REGEX_ERROR_RECURSELOOP",
+          "refLine": 104,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-26"
+        },
+        "REGEX_ERROR_PARTIAL": {
+          "name": "REGEX_ERROR_PARTIAL",
+          "refLine": 90,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-12"
+        },
+        "REGEX_ERROR_DFA_UITEM": {
+          "name": "REGEX_ERROR_DFA_UITEM",
+          "refLine": 94,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-16"
+        },
+        "REGEX_ERROR_JIT_BADOPTION": {
+          "name": "REGEX_ERROR_JIT_BADOPTION",
+          "refLine": 109,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-31"
+        },
+        "REGEX_ERROR_ESIZE": {
+          "name": "REGEX_ERROR_ESIZE",
+          "refLine": 74,
+          "docStart": 3800,
+          "docEnd": 3824,
+          "docs": {
+            "brief": "expression too big",
+            "tags": [
+              {
+                "tag": "",
+                "text": "expression too big"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_BADMAGIC": {
+          "name": "REGEX_ERROR_BADMAGIC",
+          "refLine": 82,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-4"
+        },
+        "REGEX_ERROR_ESPACE": {
+          "name": "REGEX_ERROR_ESPACE",
+          "refLine": 75,
+          "docStart": 3863,
+          "docEnd": 3889,
+          "docs": {
+            "brief": "failed to get memory",
+            "tags": [
+              {
+                "tag": "",
+                "text": "failed to get memory"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_EMPTY": {
+          "name": "REGEX_ERROR_EMPTY",
+          "refLine": 71,
+          "docStart": 3617,
+          "docEnd": 3639,
+          "docs": {
+            "brief": "empty expression",
+            "tags": [
+              {
+                "tag": "",
+                "text": "empty expression"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_ERANGE": {
+          "name": "REGEX_ERROR_ERANGE",
+          "refLine": 73,
+          "docStart": 3736,
+          "docEnd": 3761,
+          "docs": {
+            "brief": "bad range inside []",
+            "tags": [
+              {
+                "tag": "",
+                "text": "bad range inside []"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_NOMEMORY": {
+          "name": "REGEX_ERROR_NOMEMORY",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-6"
+        },
+        "REGEX_ERROR_BADRPT": {
+          "name": "REGEX_ERROR_BADRPT",
+          "refLine": 65,
+          "docStart": 3250,
+          "docEnd": 3269,
+          "docs": {
+            "brief": "? * + invalid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "? * + invalid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_ECTYPE": {
+          "name": "REGEX_ERROR_ECTYPE",
+          "refLine": 69,
+          "docStart": 3499,
+          "docEnd": 3514,
+          "docs": {
+            "brief": "bad class",
+            "tags": [
+              {
+                "tag": "",
+                "text": "bad class"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_CALLOUT": {
+          "name": "REGEX_ERROR_CALLOUT",
+          "refLine": 87,
+          "docStart": 4324,
+          "docEnd": 4355,
+          "docs": {
+            "brief": "Never used by PCRE itself",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Never used by PCRE itself"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-9"
+        },
+        "REGEX_ERROR_INVARG": {
+          "name": "REGEX_ERROR_INVARG",
+          "refLine": 77,
+          "docStart": 3991,
+          "docEnd": 4009,
+          "docs": {
+            "brief": "bad argument",
+            "tags": [
+              {
+                "tag": "",
+                "text": "bad argument"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_BADCOUNT": {
+          "name": "REGEX_ERROR_BADCOUNT",
+          "refLine": 93,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-15"
+        },
+        "REGEX_ERROR_NONE": {
+          "name": "REGEX_ERROR_NONE",
+          "refLine": 60,
+          "docStart": 3004,
+          "docEnd": 3018,
+          "docs": {
+            "brief": "No error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "REGEX_ERROR_ASSERT": {
+          "name": "REGEX_ERROR_ASSERT",
+          "refLine": 62,
+          "docStart": 3059,
+          "docEnd": 3081,
+          "docs": {
+            "brief": "internal error ?",
+            "tags": [
+              {
+                "tag": "",
+                "text": "internal error ?"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "REGEX_ERROR_INTERNAL": {
+          "name": "REGEX_ERROR_INTERNAL",
+          "refLine": 92,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-14"
+        },
+        "REGEX_ERROR_DFA_UCOND": {
+          "name": "REGEX_ERROR_DFA_UCOND",
+          "refLine": 95,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-17"
+        },
+        "REGEX_ERROR_EBRACK": {
+          "name": "REGEX_ERROR_EBRACK",
+          "refLine": 67,
+          "docStart": 3366,
+          "docEnd": 3385,
+          "docs": {
+            "brief": "unbalanced []",
+            "tags": [
+              {
+                "tag": "",
+                "text": "unbalanced []"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_BADBR": {
+          "name": "REGEX_ERROR_BADBR",
+          "refLine": 63,
+          "docStart": 3120,
+          "docEnd": 3153,
+          "docs": {
+            "brief": "invalid repeat counts in {}",
+            "tags": [
+              {
+                "tag": "",
+                "text": "invalid repeat counts in {}"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "REGEX_ERROR_NULLWSLIMIT": {
+          "name": "REGEX_ERROR_NULLWSLIMIT",
+          "refLine": 100,
+          "docStart": 4776,
+          "docEnd": 4805,
+          "docs": {
+            "brief": "No longer actually used",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No longer actually used"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-22"
+        },
+        "REGEX_ERROR_BADNEWLINE": {
+          "name": "REGEX_ERROR_BADNEWLINE",
+          "refLine": 101,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-23"
+        },
+        "REGEX_ERROR_BADPARTIAL": {
+          "name": "REGEX_ERROR_BADPARTIAL",
+          "refLine": 91,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-13"
+        },
+        "REGEX_ERROR_BADMODE": {
+          "name": "REGEX_ERROR_BADMODE",
+          "refLine": 106,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-28"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

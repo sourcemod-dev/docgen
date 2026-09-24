@@ -1,0 +1,2695 @@
+{
+  "functions": {
+    "TF2_IsPlayerInCondition": {
+      "name": "TF2_IsPlayerInCondition",
+      "refLine": 551,
+      "docStart": 14914,
+      "docEnd": 15112,
+      "docs": {
+        "brief": "Check whether or not a condition is set on a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check whether or not a condition is set on a player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:cond",
+            "text": "TFCond constant"
+          },
+          {
+            "tag": "return",
+            "text": "True if set, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFCond",
+          "name": "cond",
+          "decl": "TFCond cond",
+          "default": null
+        }
+      ]
+    },
+    "TF2_RemoveWeaponSlot": {
+      "name": "TF2_RemoveWeaponSlot",
+      "refLine": 494,
+      "docStart": 13388,
+      "docEnd": 13606,
+      "docs": {
+        "brief": "Removes all weapons from a client's weapon slot",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes all weapons from a client's weapon slot"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:slot",
+            "text": "Slot index (0-5)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client, invalid slot or lack of mod support"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetObjectType": {
+      "name": "TF2_GetObjectType",
+      "refLine": 618,
+      "docStart": 16255,
+      "docEnd": 16438,
+      "docs": {
+        "brief": "Gets an entity's object type.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's object type."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Current TFObjectType of entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "TFObjectType",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetPlayerClass": {
+      "name": "TF2_GetPlayerClass",
+      "refLine": 387,
+      "docStart": 10586,
+      "docEnd": 10771,
+      "docs": {
+        "brief": "Gets a client's current class.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's current class."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "return",
+            "text": "Current TFClassType of player."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "TFClassType",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_SetPlayerResourceData": {
+      "name": "TF2_SetPlayerResourceData",
+      "refLine": 461,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFResourceType",
+          "name": "type",
+          "decl": "TFResourceType type",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetClientTeam": {
+      "name": "TF2_GetClientTeam",
+      "refLine": 363,
+      "docStart": 10025,
+      "docEnd": 10202,
+      "docs": {
+        "brief": "Gets a client's current team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's current team."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Current TFTeam of client."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "TFTeam",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetPlayerResourceData": {
+      "name": "TF2_GetPlayerResourceData",
+      "refLine": 424,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFResourceType",
+          "name": "type",
+          "decl": "TFResourceType type",
+          "default": null
+        }
+      ]
+    },
+    "TF2_ChangeClientTeam": {
+      "name": "TF2_ChangeClientTeam",
+      "refLine": 375,
+      "docStart": 10299,
+      "docEnd": 10473,
+      "docs": {
+        "brief": "Changes a client's current team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes a client's current team."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:team",
+            "text": "TFTeam team symbol."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFTeam",
+          "name": "team",
+          "decl": "TFTeam team",
+          "default": null
+        }
+      ]
+    },
+    "TF2_RemoveAllWeapons": {
+      "name": "TF2_RemoveAllWeapons",
+      "refLine": 523,
+      "docStart": 14296,
+      "docEnd": 14383,
+      "docs": {
+        "brief": "Removes all weapons from a client",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes all weapons from a client"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetPlayerConditionFlags": {
+      "name": "TF2_GetPlayerConditionFlags",
+      "refLine": 539,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TF2_GetObjectMode": {
+      "name": "TF2_GetObjectMode",
+      "refLine": 637,
+      "docStart": 16695,
+      "docEnd": 16878,
+      "docs": {
+        "brief": "Gets an entity's object mode.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's object mode."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Current TFObjectMode of entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "TFObjectMode",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TF2_SetPlayerClass": {
+      "name": "TF2_SetPlayerClass",
+      "refLine": 403,
+      "docStart": 10899,
+      "docEnd": 11314,
+      "docs": {
+        "brief": "Sets a client's class.\n\nNote: If setting player class in a player spawn hook weapons should be set to false.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's class.\n\nNote: If setting player class in a player spawn hook weapons should be set to false."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:classType",
+            "text": "TFClassType class symbol."
+          },
+          {
+            "tag": "param:weapons",
+            "text": "This parameter is ignored."
+          },
+          {
+            "tag": "param:persistent",
+            "text": "If true, changes the player's desired class so the change stays after death."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "TFClassType",
+          "name": "classType",
+          "decl": "TFClassType classType",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "weapons",
+          "decl": "bool weapons",
+          "default": "true"
+        },
+        {
+          "type": "bool",
+          "name": "persistent",
+          "decl": "bool persistent",
+          "default": "true"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {
+    "TF_WEAPON_CLEAVER": {
+      "name": "TF_WEAPON_CLEAVER",
+      "refLine": 264,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BURNING": {
+      "name": "TF_CUSTOM_BURNING",
+      "refLine": 89,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PISTOL": {
+      "name": "TF_WEAPON_PISTOL",
+      "refLine": 219,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_ROCKET_DIRECTHIT": {
+      "name": "TF_CUSTOM_ROCKET_DIRECTHIT",
+      "refLine": 114,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_FLAGEVENT_PICKEDUP": {
+      "name": "TF_FLAGEVENT_PICKEDUP",
+      "refLine": 305,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_UBERSLICE": {
+      "name": "TF_CUSTOM_TAUNT_UBERSLICE",
+      "refLine": 115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOTGUN_SOLDIER": {
+      "name": "TF_WEAPON_SHOTGUN_SOLDIER",
+      "refLine": 191,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TRIGGER_HURT": {
+      "name": "TF_CUSTOM_TRIGGER_HURT",
+      "refLine": 126,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PISTOL_SCOUT": {
+      "name": "TF_WEAPON_PISTOL_SCOUT",
+      "refLine": 220,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BAT_GIFTWRAP": {
+      "name": "TF_WEAPON_BAT_GIFTWRAP",
+      "refLine": 260,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BURNING_ARROW": {
+      "name": "TF_CUSTOM_BURNING_ARROW",
+      "refLine": 103,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PLAYER_SENTRY": {
+      "name": "TF_CUSTOM_PLAYER_SENTRY",
+      "refLine": 116,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_COMBO_PUNCH": {
+      "name": "TF_CUSTOM_COMBO_PUNCH",
+      "refLine": 123,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PDA": {
+      "name": "TF_WEAPON_PDA",
+      "refLine": 223,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_DEMOMAN": {
+      "name": "TF_WEAPON_GRENADE_DEMOMAN",
+      "refLine": 231,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_CALTROP": {
+      "name": "TF_WEAPON_GRENADE_CALTROP",
+      "refLine": 212,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_CLEAVER": {
+      "name": "TF_WEAPON_GRENADE_CLEAVER",
+      "refLine": 265,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SLAP": {
+      "name": "TF_WEAPON_SLAP",
+      "refLine": 284,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_LASER_POINTER": {
+      "name": "TF_WEAPON_LASER_POINTER",
+      "refLine": 245,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_WRENCH_FIX": {
+      "name": "TF_CUSTOM_WRENCH_FIX",
+      "refLine": 90,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Item1": {
+      "name": "TFWeaponSlot_Item1",
+      "refLine": 299,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SUICIDE": {
+      "name": "TF_CUSTOM_SUICIDE",
+      "refLine": 92,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PDA_SPY_BUILD": {
+      "name": "TF_WEAPON_PDA_SPY_BUILD",
+      "refLine": 272,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PDA_ENGINEER_DESTROY": {
+      "name": "TF_WEAPON_PDA_ENGINEER_DESTROY",
+      "refLine": 225,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_FLAGEVENT_DROPPED": {
+      "name": "TF_FLAGEVENT_DROPPED",
+      "refLine": 308,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_BLASTJUMP": {
+      "name": "TF_CUSTOM_SPELL_BLASTJUMP",
+      "refLine": 158,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_MONOCULUS": {
+      "name": "TF_CUSTOM_SPELL_MONOCULUS",
+      "refLine": 157,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_MIRV_DEMOMAN": {
+      "name": "TF_WEAPON_GRENADE_MIRV_DEMOMAN",
+      "refLine": 208,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_LUNCHBOX": {
+      "name": "TF_WEAPON_LUNCHBOX",
+      "refLine": 237,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_HANDGUN_SCOUT_SEC": {
+      "name": "TF_WEAPON_HANDGUN_SCOUT_SEC",
+      "refLine": 253,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PIPEBOMBLAUNCHER": {
+      "name": "TF_WEAPON_PIPEBOMBLAUNCHER",
+      "refLine": 202,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SNIPERRIFLE_DECAP": {
+      "name": "TF_WEAPON_SNIPERRIFLE_DECAP",
+      "refLine": 255,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_NAIL": {
+      "name": "TF_WEAPON_GRENADE_NAIL",
+      "refLine": 206,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_RUNE_REFLECT": {
+      "name": "TF_CUSTOM_RUNE_REFLECT",
+      "refLine": 163,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_ROCKETLAUNCHER": {
+      "name": "TF_WEAPON_ROCKETLAUNCHER",
+      "refLine": 200,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FISTS": {
+      "name": "TF_WEAPON_FISTS",
+      "refLine": 186,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BLEEDING": {
+      "name": "TF_CUSTOM_BLEEDING",
+      "refLine": 120,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_GIANT_HAMMER": {
+      "name": "TF_CUSTOM_GIANT_HAMMER",
+      "refLine": 162,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BAT_WOOD": {
+      "name": "TF_WEAPON_BAT_WOOD",
+      "refLine": 180,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_JAR_MILK": {
+      "name": "TF_WEAPON_JAR_MILK",
+      "refLine": 248,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_JAR_GAS": {
+      "name": "TF_WEAPON_JAR_GAS",
+      "refLine": 285,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SPELLBOOK": {
+      "name": "TF_WEAPON_SPELLBOOK",
+      "refLine": 275,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TELEFRAG": {
+      "name": "TF_CUSTOM_TELEFRAG",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_LIGHTNING": {
+      "name": "TF_CUSTOM_SPELL_LIGHTNING",
+      "refLine": 155,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOTGUN_PYRO": {
+      "name": "TF_WEAPON_SHOTGUN_PYRO",
+      "refLine": 193,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PDA_SPY": {
+      "name": "TF_WEAPON_PDA_SPY",
+      "refLine": 226,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PARACHUTE": {
+      "name": "TF_WEAPON_PARACHUTE",
+      "refLine": 278,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PUMPKIN_BOMB": {
+      "name": "TF_CUSTOM_PUMPKIN_BOMB",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BREAKABLE_SIGN": {
+      "name": "TF_WEAPON_BREAKABLE_SIGN",
+      "refLine": 282,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_STICKBOMB_EXPLOSION": {
+      "name": "TF_CUSTOM_STICKBOMB_EXPLOSION",
+      "refLine": 128,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_GRAND_SLAM": {
+      "name": "TF_CUSTOM_TAUNT_GRAND_SLAM",
+      "refLine": 96,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRAPPLINGHOOK": {
+      "name": "TF_WEAPON_GRAPPLINGHOOK",
+      "refLine": 279,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Melee": {
+      "name": "TFWeaponSlot_Melee",
+      "refLine": 295,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_STICKY_BALL": {
+      "name": "TF_WEAPON_GRENADE_STICKY_BALL",
+      "refLine": 267,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_MINIGUN": {
+      "name": "TF_CUSTOM_MINIGUN",
+      "refLine": 91,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_JAR_GAS": {
+      "name": "TF_WEAPON_GRENADE_JAR_GAS",
+      "refLine": 286,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_CHARGED_SMG": {
+      "name": "TF_WEAPON_CHARGED_SMG",
+      "refLine": 281,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_COMPOUND_BOW": {
+      "name": "TF_WEAPON_COMPOUND_BOW",
+      "refLine": 239,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_THROWABLE": {
+      "name": "TF_CUSTOM_THROWABLE",
+      "refLine": 149,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BURNING_FLARE": {
+      "name": "TF_CUSTOM_BURNING_FLARE",
+      "refLine": 94,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BASEBALL": {
+      "name": "TF_CUSTOM_BASEBALL",
+      "refLine": 108,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_MEDIGUN": {
+      "name": "TF_WEAPON_MEDIGUN",
+      "refLine": 228,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PENETRATE_HEADSHOT": {
+      "name": "TF_CUSTOM_PENETRATE_HEADSHOT",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_ARROW_STAB": {
+      "name": "TF_CUSTOM_TAUNT_ARROW_STAB",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CARRIED_BUILDING": {
+      "name": "TF_CUSTOM_CARRIED_BUILDING",
+      "refLine": 122,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_FLARE_EXPLOSION": {
+      "name": "TF_CUSTOM_FLARE_EXPLOSION",
+      "refLine": 130,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BONESAW": {
+      "name": "TF_WEAPON_BONESAW",
+      "refLine": 189,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_AIR_STICKY_BURST": {
+      "name": "TF_CUSTOM_AIR_STICKY_BURST",
+      "refLine": 111,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOTGUN_HWG": {
+      "name": "TF_WEAPON_SHOTGUN_HWG",
+      "refLine": 192,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_MIRV": {
+      "name": "TF_WEAPON_GRENADE_MIRV",
+      "refLine": 207,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_RAYGUN_REVENGE": {
+      "name": "TF_WEAPON_RAYGUN_REVENGE",
+      "refLine": 262,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_KRAMPUS_RANGED": {
+      "name": "TF_CUSTOM_KRAMPUS_RANGED",
+      "refLine": 171,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_JAR": {
+      "name": "TF_WEAPON_JAR",
+      "refLine": 238,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FLAMETHROWER": {
+      "name": "TF_WEAPON_FLAMETHROWER",
+      "refLine": 203,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_NAILGUN": {
+      "name": "TF_WEAPON_NAILGUN",
+      "refLine": 222,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_MERASMUS_GRENADE": {
+      "name": "TF_CUSTOM_MERASMUS_GRENADE",
+      "refLine": 144,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_BATS": {
+      "name": "TF_CUSTOM_SPELL_BATS",
+      "refLine": 159,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_KNIFE": {
+      "name": "TF_WEAPON_KNIFE",
+      "refLine": 185,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PDA_ENGINEER_BUILD": {
+      "name": "TF_WEAPON_PDA_ENGINEER_BUILD",
+      "refLine": 224,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_CONCUSSION": {
+      "name": "TF_WEAPON_GRENADE_CONCUSSION",
+      "refLine": 205,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PARTICLE_CANNON": {
+      "name": "TF_WEAPON_PARTICLE_CANNON",
+      "refLine": 257,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_WATERBALLOON": {
+      "name": "TF_WEAPON_GRENADE_WATERBALLOON",
+      "refLine": 273,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_DRG_POMSON": {
+      "name": "TF_WEAPON_DRG_POMSON",
+      "refLine": 259,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNTATK_TRICKSHOT": {
+      "name": "TF_CUSTOM_TAUNTATK_TRICKSHOT",
+      "refLine": 172,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_WRENCH": {
+      "name": "TF_WEAPON_WRENCH",
+      "refLine": 188,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_HANDGUN_SCOUT_PRIMARY": {
+      "name": "TF_WEAPON_HANDGUN_SCOUT_PRIMARY",
+      "refLine": 249,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_DISPENSER": {
+      "name": "TF_WEAPON_DISPENSER",
+      "refLine": 234,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PENETRATE_ALL_PLAYERS": {
+      "name": "TF_CUSTOM_PENETRATE_ALL_PLAYERS",
+      "refLine": 98,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SNIPERRIFLE": {
+      "name": "TF_WEAPON_SNIPERRIFLE",
+      "refLine": 195,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_TELEPORT": {
+      "name": "TF_CUSTOM_SPELL_TELEPORT",
+      "refLine": 151,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_STANDARD_STICKY": {
+      "name": "TF_CUSTOM_STANDARD_STICKY",
+      "refLine": 117,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_DECAPITATION": {
+      "name": "TF_CUSTOM_DECAPITATION",
+      "refLine": 106,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_EMP": {
+      "name": "TF_WEAPON_GRENADE_EMP",
+      "refLine": 211,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_JAR": {
+      "name": "TF_WEAPON_GRENADE_JAR",
+      "refLine": 217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_HADOUKEN": {
+      "name": "TF_CUSTOM_TAUNT_HADOUKEN",
+      "refLine": 93,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PEP_BRAWLER_BLASTER": {
+      "name": "TF_WEAPON_PEP_BRAWLER_BLASTER",
+      "refLine": 263,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_CROWBAR": {
+      "name": "TF_WEAPON_CROWBAR",
+      "refLine": 184,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SMG": {
+      "name": "TF_WEAPON_SMG",
+      "refLine": 197,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SENTRY_BULLET": {
+      "name": "TF_WEAPON_SENTRY_BULLET",
+      "refLine": 232,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_ROCKETPACK": {
+      "name": "TF_WEAPON_ROCKETPACK",
+      "refLine": 283,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BOTTLE": {
+      "name": "TF_WEAPON_BOTTLE",
+      "refLine": 181,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SENTRY_ROCKET": {
+      "name": "TF_WEAPON_SENTRY_ROCKET",
+      "refLine": 233,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_FENCING": {
+      "name": "TF_CUSTOM_TAUNT_FENCING",
+      "refLine": 99,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_CROSSBOW": {
+      "name": "TF_WEAPON_CROSSBOW",
+      "refLine": 251,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_HIGH_NOON": {
+      "name": "TF_CUSTOM_TAUNT_HIGH_NOON",
+      "refLine": 95,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CLEAVER": {
+      "name": "TF_CUSTOM_CLEAVER",
+      "refLine": 140,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_PIPEBOMB": {
+      "name": "TF_WEAPON_GRENADE_PIPEBOMB",
+      "refLine": 213,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PUMPKIN_BOMB": {
+      "name": "TF_WEAPON_PUMPKIN_BOMB",
+      "refLine": 241,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_PDA": {
+      "name": "TFWeaponSlot_PDA",
+      "refLine": 298,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_FLAGEVENT_CAPTURED": {
+      "name": "TF_FLAGEVENT_CAPTURED",
+      "refLine": 306,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CLEAVER_CRIT": {
+      "name": "TF_CUSTOM_CLEAVER_CRIT",
+      "refLine": 141,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_REVOLVER": {
+      "name": "TF_WEAPON_REVOLVER",
+      "refLine": 221,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_FISH_KILL": {
+      "name": "TF_CUSTOM_FISH_KILL",
+      "refLine": 125,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_NAPALM": {
+      "name": "TF_WEAPON_GRENADE_NAPALM",
+      "refLine": 209,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_HARVESTER_SAW": {
+      "name": "TF_WEAPON_HARVESTER_SAW",
+      "refLine": 274,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_DECAPITATION_BOSS": {
+      "name": "TF_CUSTOM_DECAPITATION_BOSS",
+      "refLine": 127,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PLASMA": {
+      "name": "TF_CUSTOM_PLASMA",
+      "refLine": 132,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_NORMAL": {
+      "name": "TF_WEAPON_GRENADE_NORMAL",
+      "refLine": 204,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADELAUNCHER": {
+      "name": "TF_WEAPON_GRENADELAUNCHER",
+      "refLine": 201,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_MIRV": {
+      "name": "TF_CUSTOM_SPELL_MIRV",
+      "refLine": 153,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SENTRY_REVENGE": {
+      "name": "TF_WEAPON_SENTRY_REVENGE",
+      "refLine": 247,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_PASSTIME_GUN": {
+      "name": "TF_WEAPON_PASSTIME_GUN",
+      "refLine": 280,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Item2": {
+      "name": "TFWeaponSlot_Item2",
+      "refLine": 300,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_THROWABLE_KILL": {
+      "name": "TF_CUSTOM_THROWABLE_KILL",
+      "refLine": 150,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOVEL": {
+      "name": "TF_WEAPON_SHOVEL",
+      "refLine": 187,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BOOTS_STOMP": {
+      "name": "TF_CUSTOM_BOOTS_STOMP",
+      "refLine": 131,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SYRINGEGUN_MEDIC": {
+      "name": "TF_WEAPON_SYRINGEGUN_MEDIC",
+      "refLine": 198,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CHARGE_IMPACT": {
+      "name": "TF_CUSTOM_CHARGE_IMPACT",
+      "refLine": 109,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_MERASMUS_ZAP": {
+      "name": "TF_CUSTOM_MERASMUS_ZAP",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_METEOR": {
+      "name": "TF_CUSTOM_SPELL_METEOR",
+      "refLine": 154,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_TRANQ": {
+      "name": "TF_WEAPON_TRANQ",
+      "refLine": 199,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNTATK_GASBLAST": {
+      "name": "TF_CUSTOM_TAUNTATK_GASBLAST",
+      "refLine": 168,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BAT_FISH": {
+      "name": "TF_WEAPON_BAT_FISH",
+      "refLine": 250,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_THROWABLE": {
+      "name": "TF_WEAPON_THROWABLE",
+      "refLine": 270,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PLASMA_CHARGED": {
+      "name": "TF_CUSTOM_PLASMA_CHARGED",
+      "refLine": 133,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_DRAGONS_FURY_BONUS_BURNING": {
+      "name": "TF_CUSTOM_DRAGONS_FURY_BONUS_BURNING",
+      "refLine": 165,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SLAP_KILL": {
+      "name": "TF_CUSTOM_SLAP_KILL",
+      "refLine": 166,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_MINIGUN": {
+      "name": "TF_WEAPON_MINIGUN",
+      "refLine": 196,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_LIFELINE": {
+      "name": "TF_WEAPON_LIFELINE",
+      "refLine": 244,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_FLYINGBURN": {
+      "name": "TF_CUSTOM_FLYINGBURN",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_HEAL": {
+      "name": "TF_WEAPON_GRENADE_HEAL",
+      "refLine": 215,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_AEGIS_ROUND": {
+      "name": "TF_CUSTOM_AEGIS_ROUND",
+      "refLine": 129,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Primary": {
+      "name": "TFWeaponSlot_Primary",
+      "refLine": 293,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_GAS": {
+      "name": "TF_WEAPON_GRENADE_GAS",
+      "refLine": 210,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BUILDER": {
+      "name": "TF_WEAPON_BUILDER",
+      "refLine": 227,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_MECHANICAL_ARM": {
+      "name": "TF_WEAPON_MECHANICAL_ARM",
+      "refLine": 258,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_MERASMUS_DECAPITATION": {
+      "name": "TF_CUSTOM_MERASMUS_DECAPITATION",
+      "refLine": 146,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_INVIS": {
+      "name": "TF_WEAPON_INVIS",
+      "refLine": 235,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_NONE": {
+      "name": "TF_WEAPON_NONE",
+      "refLine": 178,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BUFF_ITEM": {
+      "name": "TF_WEAPON_BUFF_ITEM",
+      "refLine": 240,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_ENGINEER_ARM": {
+      "name": "TF_CUSTOM_TAUNT_ENGINEER_ARM",
+      "refLine": 124,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_BARBARIAN_SWING": {
+      "name": "TF_CUSTOM_TAUNT_BARBARIAN_SWING",
+      "refLine": 110,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_GOLD_WRENCH": {
+      "name": "TF_CUSTOM_GOLD_WRENCH",
+      "refLine": 121,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_STICKBOMB": {
+      "name": "TF_WEAPON_STICKBOMB",
+      "refLine": 252,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PLASMA_GIB": {
+      "name": "TF_CUSTOM_PLASMA_GIB",
+      "refLine": 134,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_ALLCLASS_GUITAR_RIFF": {
+      "name": "TF_CUSTOM_TAUNT_ALLCLASS_GUITAR_RIFF",
+      "refLine": 148,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SNIPERRIFLE_CLASSIC": {
+      "name": "TF_WEAPON_SNIPERRIFLE_CLASSIC",
+      "refLine": 277,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_HEADSHOT": {
+      "name": "TF_CUSTOM_HEADSHOT",
+      "refLine": 87,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_ENGINEER_SMASH": {
+      "name": "TF_CUSTOM_TAUNT_ENGINEER_SMASH",
+      "refLine": 119,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_HEADSHOT_DECAPITATION": {
+      "name": "TF_CUSTOM_HEADSHOT_DECAPITATION",
+      "refLine": 137,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FLAMETHROWER_ROCKET": {
+      "name": "TF_WEAPON_FLAMETHROWER_ROCKET",
+      "refLine": 230,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PICKAXE": {
+      "name": "TF_CUSTOM_PICKAXE",
+      "refLine": 113,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_DIRECTHIT": {
+      "name": "TF_WEAPON_DIRECTHIT",
+      "refLine": 243,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOTGUN_PRIMARY": {
+      "name": "TF_WEAPON_SHOTGUN_PRIMARY",
+      "refLine": 190,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_FLAGEVENT_DEFENDED": {
+      "name": "TF_FLAGEVENT_DEFENDED",
+      "refLine": 307,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_FLAGEVENT_RETURNED": {
+      "name": "TF_FLAGEVENT_RETURNED",
+      "refLine": 309,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_TINY": {
+      "name": "TF_CUSTOM_SPELL_TINY",
+      "refLine": 160,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_KART": {
+      "name": "TF_CUSTOM_KART",
+      "refLine": 161,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SHOTGUN_REVENGE_CRIT": {
+      "name": "TF_CUSTOM_SHOTGUN_REVENGE_CRIT",
+      "refLine": 118,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_SKELETON": {
+      "name": "TF_CUSTOM_SPELL_SKELETON",
+      "refLine": 152,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_ARMAGEDDON": {
+      "name": "TF_CUSTOM_TAUNT_ARMAGEDDON",
+      "refLine": 138,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CROC": {
+      "name": "TF_CUSTOM_CROC",
+      "refLine": 167,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_AXTINGUISHER_BOOSTED": {
+      "name": "TF_CUSTOM_AXTINGUISHER_BOOSTED",
+      "refLine": 169,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_KRAMPUS_MELEE": {
+      "name": "TF_CUSTOM_KRAMPUS_MELEE",
+      "refLine": 170,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_BAT": {
+      "name": "TF_WEAPON_BAT",
+      "refLine": 179,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_SMOKE_BOMB": {
+      "name": "TF_WEAPON_GRENADE_SMOKE_BOMB",
+      "refLine": 214,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PENETRATE_MY_TEAM": {
+      "name": "TF_CUSTOM_PENETRATE_MY_TEAM",
+      "refLine": 97,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_JAR_MILK": {
+      "name": "TF_WEAPON_GRENADE_JAR_MILK",
+      "refLine": 218,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SAPPER_RECORDER_DEATH": {
+      "name": "TF_CUSTOM_SAPPER_RECORDER_DEATH",
+      "refLine": 142,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_STUNBALL": {
+      "name": "TF_WEAPON_GRENADE_STUNBALL",
+      "refLine": 216,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_PRACTICE_STICKY": {
+      "name": "TF_CUSTOM_PRACTICE_STICKY",
+      "refLine": 135,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FLAREGUN": {
+      "name": "TF_WEAPON_FLAREGUN",
+      "refLine": 236,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_DISPENSER_GUN": {
+      "name": "TF_WEAPON_DISPENSER_GUN",
+      "refLine": 246,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_RAYGUN": {
+      "name": "TF_WEAPON_RAYGUN",
+      "refLine": 256,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_ORNAMENT": {
+      "name": "TF_WEAPON_GRENADE_ORNAMENT",
+      "refLine": 261,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_STICKY_BALL_LAUNCHER": {
+      "name": "TF_WEAPON_STICKY_BALL_LAUNCHER",
+      "refLine": 266,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_MERASMUS_PLAYER_BOMB": {
+      "name": "TF_CUSTOM_MERASMUS_PLAYER_BOMB",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_DRAGONS_FURY_IGNITE": {
+      "name": "TF_CUSTOM_DRAGONS_FURY_IGNITE",
+      "refLine": 164,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_CLUB": {
+      "name": "TF_WEAPON_CLUB",
+      "refLine": 183,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_BACKSTAB": {
+      "name": "TF_CUSTOM_BACKSTAB",
+      "refLine": 88,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SHOTGUN_BUILDING_RESCUE": {
+      "name": "TF_WEAPON_SHOTGUN_BUILDING_RESCUE",
+      "refLine": 268,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Secondary": {
+      "name": "TFWeaponSlot_Secondary",
+      "refLine": 294,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SODA_POPPER": {
+      "name": "TF_WEAPON_SODA_POPPER",
+      "refLine": 254,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_MIRVBOMB": {
+      "name": "TF_WEAPON_GRENADE_MIRVBOMB",
+      "refLine": 229,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SPELLBOOK_PROJECTILE": {
+      "name": "TF_WEAPON_SPELLBOOK_PROJECTILE",
+      "refLine": 276,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_FLARE_PELLET": {
+      "name": "TF_CUSTOM_FLARE_PELLET",
+      "refLine": 139,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FIREAXE": {
+      "name": "TF_WEAPON_FIREAXE",
+      "refLine": 182,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_CANNONBALL_PUSH": {
+      "name": "TF_CUSTOM_CANNONBALL_PUSH",
+      "refLine": 147,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_TAUNT_GRENADE": {
+      "name": "TF_CUSTOM_TAUNT_GRENADE",
+      "refLine": 107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_DEFENSIVE_STICKY": {
+      "name": "TF_CUSTOM_DEFENSIVE_STICKY",
+      "refLine": 112,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SCATTERGUN": {
+      "name": "TF_WEAPON_SCATTERGUN",
+      "refLine": 194,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_SWORD": {
+      "name": "TF_WEAPON_SWORD",
+      "refLine": 242,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_SPELL_FIREBALL": {
+      "name": "TF_CUSTOM_SPELL_FIREBALL",
+      "refLine": 156,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_CANNON": {
+      "name": "TF_WEAPON_CANNON",
+      "refLine": 269,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_GRENADE_THROWABLE": {
+      "name": "TF_WEAPON_GRENADE_THROWABLE",
+      "refLine": 271,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_WEAPON_FLAME_BALL": {
+      "name": "TF_WEAPON_FLAME_BALL",
+      "refLine": 287,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Grenade": {
+      "name": "TFWeaponSlot_Grenade",
+      "refLine": 296,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TFWeaponSlot_Building": {
+      "name": "TFWeaponSlot_Building",
+      "refLine": 297,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "TF_CUSTOM_EYEBALL_ROCKET": {
+      "name": "TF_CUSTOM_EYEBALL_ROCKET",
+      "refLine": 136,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    }
+  },
+  "defines": {
+    "TF_CONDFLAG_BUFFED": {
+      "name": "TF_CONDFLAG_BUFFED",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 16)"
+    },
+    "TF_CONDFLAG_BONKED": {
+      "name": "TF_CONDFLAG_BONKED",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 14)"
+    },
+    "TF_DEATHFLAG_DEADRINGER": {
+      "name": "TF_DEATHFLAG_DEADRINGER",
+      "refLine": 78,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "TF_CONDFLAG_BLEEDING": {
+      "name": "TF_CONDFLAG_BLEEDING",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 25)"
+    },
+    "TF_DEATHFLAG_FIRSTBLOOD": {
+      "name": "TF_DEATHFLAG_FIRSTBLOOD",
+      "refLine": 77,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "TF_CONDFLAG_CLOAKFLICKER": {
+      "name": "TF_CONDFLAG_CLOAKFLICKER",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 9)"
+    },
+    "TF_DEATHFLAG_ASSISTERREVENGE": {
+      "name": "TF_DEATHFLAG_ASSISTERREVENGE",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "TF_DEATHFLAG_AUSTRALIUM": {
+      "name": "TF_DEATHFLAG_AUSTRALIUM",
+      "refLine": 83,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 10)"
+    },
+    "TF_CONDFLAG_DEFENSEBUFFED": {
+      "name": "TF_CONDFLAG_DEFENSEBUFFED",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 26)"
+    },
+    "TF_CONDFLAG_MILKED": {
+      "name": "TF_CONDFLAG_MILKED",
+      "refLine": 68,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 27)"
+    },
+    "TF_CONDFLAG_CRITCOLA": {
+      "name": "TF_CONDFLAG_CRITCOLA",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 19)"
+    },
+    "TF_DEATHFLAG_KILLERREVENGE": {
+      "name": "TF_DEATHFLAG_KILLERREVENGE",
+      "refLine": 75,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "TF_CONDFLAG_JARATED": {
+      "name": "TF_CONDFLAG_JARATED",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 24)"
+    },
+    "TF_DEATHFLAG_INTERRUPTED": {
+      "name": "TF_DEATHFLAG_INTERRUPTED",
+      "refLine": 79,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "TF_CONDFLAG_SLOWED": {
+      "name": "TF_CONDFLAG_SLOWED",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "TF_CONDFLAG_INHEALRADIUS": {
+      "name": "TF_CONDFLAG_INHEALRADIUS",
+      "refLine": 61,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 20)"
+    },
+    "TF_CONDFLAG_OVERHEALED": {
+      "name": "TF_CONDFLAG_OVERHEALED",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 23)"
+    },
+    "TF_CONDFLAG_CLOAKED": {
+      "name": "TF_CONDFLAG_CLOAKED",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "TF_CONDFLAG_ZOOMED": {
+      "name": "TF_CONDFLAG_ZOOMED",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "TF_CONDFLAG_MEGAHEAL": {
+      "name": "TF_CONDFLAG_MEGAHEAL",
+      "refLine": 69,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 28)"
+    },
+    "TF_CONDFLAG_TELEPORTGLOW": {
+      "name": "TF_CONDFLAG_TELEPORTGLOW",
+      "refLine": 48,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "TF_CONDFLAG_DAZED": {
+      "name": "TF_CONDFLAG_DAZED",
+      "refLine": 56,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 15)"
+    },
+    "TF_CONDFLAG_ONFIRE": {
+      "name": "TF_CONDFLAG_ONFIRE",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 22)"
+    },
+    "TF_CONDFLAG_DEMOBUFF": {
+      "name": "TF_CONDFLAG_DEMOBUFF",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 18)"
+    },
+    "TF_CONDFLAG_DEADRINGERED": {
+      "name": "TF_CONDFLAG_DEADRINGERED",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 13)"
+    },
+    "TF_CONDFLAG_DISGUISED": {
+      "name": "TF_CONDFLAG_DISGUISED",
+      "refLine": 45,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "TF_CONDFLAG_NONE": {
+      "name": "TF_CONDFLAG_NONE",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "TF_DEATHFLAG_PURGATORY": {
+      "name": "TF_DEATHFLAG_PURGATORY",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "TF_CONDFLAG_HEALING": {
+      "name": "TF_CONDFLAG_HEALING",
+      "refLine": 62,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 21)"
+    },
+    "TF_DEATHFLAG_GIBBED": {
+      "name": "TF_DEATHFLAG_GIBBED",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "TF_CONDFLAG_TAUNTING": {
+      "name": "TF_CONDFLAG_TAUNTING",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "TF_CONDFLAG_TELEPORTING": {
+      "name": "TF_CONDFLAG_TELEPORTING",
+      "refLine": 52,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 10)"
+    },
+    "TF_DEATHFLAG_MINIBOSS": {
+      "name": "TF_DEATHFLAG_MINIBOSS",
+      "refLine": 82,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 9)"
+    },
+    "TF_CONDFLAG_UBERCHARGEFADE": {
+      "name": "TF_CONDFLAG_UBERCHARGEFADE",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "_tf2_stocks_included": {
+      "name": "_tf2_stocks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TF_CONDFLAG_KRITZKRIEGED": {
+      "name": "TF_CONDFLAG_KRITZKRIEGED",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 11)"
+    },
+    "TF_CONDFLAG_CHARGING": {
+      "name": "TF_CONDFLAG_CHARGING",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 17)"
+    },
+    "TF_CONDFLAG_DISGUISING": {
+      "name": "TF_CONDFLAG_DISGUISING",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "TF_DEATHFLAG_ASSISTERDOMINATION": {
+      "name": "TF_DEATHFLAG_ASSISTERDOMINATION",
+      "refLine": 74,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "TF_CONDFLAG_UBERCHARGED": {
+      "name": "TF_CONDFLAG_UBERCHARGED",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "TF_CONDFLAG_MARKEDFORDEATH": {
+      "name": "TF_CONDFLAG_MARKEDFORDEATH",
+      "refLine": 71,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 30)"
+    },
+    "TF_CONDFLAG_REGENBUFFED": {
+      "name": "TF_CONDFLAG_REGENBUFFED",
+      "refLine": 70,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 29)"
+    },
+    "TF_DEATHFLAG_KILLERDOMINATION": {
+      "name": "TF_DEATHFLAG_KILLERDOMINATION",
+      "refLine": 73,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 0)"
+    }
+  },
+  "enums": {
+    "TFResourceType": {
+      "name": "TFResourceType",
+      "refLine": 312,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TFResource_MaxHealth": {
+          "name": "TFResource_MaxHealth",
+          "refLine": 330,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Defenses": {
+          "name": "TFResource_Defenses",
+          "refLine": 319,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_PlayerClass": {
+          "name": "TFResource_PlayerClass",
+          "refLine": 331,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_ResupplyPoints": {
+          "name": "TFResource_ResupplyPoints",
+          "refLine": 328,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_KillAssists": {
+          "name": "TFResource_KillAssists",
+          "refLine": 329,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Invulns": {
+          "name": "TFResource_Invulns",
+          "refLine": 326,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Score": {
+          "name": "TFResource_Score",
+          "refLine": 315,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Deaths": {
+          "name": "TFResource_Deaths",
+          "refLine": 316,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Backstabs": {
+          "name": "TFResource_Backstabs",
+          "refLine": 324,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Ping": {
+          "name": "TFResource_Ping",
+          "refLine": 314,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Captures": {
+          "name": "TFResource_Captures",
+          "refLine": 318,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Teleports": {
+          "name": "TFResource_Teleports",
+          "refLine": 327,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Revenge": {
+          "name": "TFResource_Revenge",
+          "refLine": 321,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Headshots": {
+          "name": "TFResource_Headshots",
+          "refLine": 323,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_BuildingsDestroyed": {
+          "name": "TFResource_BuildingsDestroyed",
+          "refLine": 322,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_HealPoints": {
+          "name": "TFResource_HealPoints",
+          "refLine": 325,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_TotalScore": {
+          "name": "TFResource_TotalScore",
+          "refLine": 317,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "TFResource_Dominations": {
+          "name": "TFResource_Dominations",
+          "refLine": 320,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

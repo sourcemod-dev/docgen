@@ -1,0 +1,1344 @@
+{
+  "functions": {
+    "SquareRoot": {
+      "name": "SquareRoot",
+      "refLine": 170,
+      "docStart": 5789,
+      "docEnd": 5976,
+      "docs": {
+        "brief": "Returns the square root of the input value, equivalent to floatpower(value, 0.5).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the square root of the input value, equivalent to floatpower(value, 0.5)."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "Square root of the value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "ArcTangent2": {
+      "name": "ArcTangent2",
+      "refLine": 261,
+      "docStart": 7990,
+      "docEnd": 8185,
+      "docs": {
+        "brief": "Returns the arctangent2 of the input values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the arctangent2 of the input values."
+          },
+          {
+            "tag": "param:y",
+            "text": "Vertical value."
+          },
+          {
+            "tag": "param:x",
+            "text": "Horizontal value."
+          },
+          {
+            "tag": "return",
+            "text": "atan2(value) in radians."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "y",
+          "decl": "float y",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "x",
+          "decl": "float x",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_EQ__": {
+      "name": "__FLOAT_EQ__",
+      "refLine": 290,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "FloatDiv": {
+      "name": "FloatDiv",
+      "refLine": 72,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "dividend",
+          "decl": "float dividend",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "divisor",
+          "decl": "float divisor",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_MOD__": {
+      "name": "__FLOAT_MOD__",
+      "refLine": 284,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_NOT__": {
+      "name": "__FLOAT_NOT__",
+      "refLine": 292,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        }
+      ]
+    },
+    "GetURandomFloat": {
+      "name": "GetURandomFloat",
+      "refLine": 455,
+      "docStart": 13129,
+      "docEnd": 13341,
+      "docs": {
+        "brief": "Returns a uniform random float in the range [0, 1).\n\nNote: Uniform random number streams are seeded automatically per-plugin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a uniform random float in the range [0, 1).\n\nNote: Uniform random number streams are seeded automatically per-plugin."
+          },
+          {
+            "tag": "return",
+            "text": "Uniform random floating-point number."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": []
+    },
+    "Logarithm": {
+      "name": "Logarithm",
+      "refLine": 196,
+      "docStart": 6458,
+      "docEnd": 6667,
+      "docs": {
+        "brief": "Returns the logarithm of any base specified.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the logarithm of any base specified."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value."
+          },
+          {
+            "tag": "param:base",
+            "text": "Logarithm base to use, default is 10."
+          },
+          {
+            "tag": "return",
+            "text": "log(value)/log(base)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "base",
+          "decl": "float base",
+          "default": "10.000000"
+        }
+      ]
+    },
+    "float": {
+      "name": "float",
+      "refLine": 45,
+      "docStart": 1678,
+      "docEnd": 1835,
+      "docs": {
+        "brief": "Converts an integer into a floating point value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an integer into a floating point value."
+          },
+          {
+            "tag": "param:value",
+            "text": "Integer to convert."
+          },
+          {
+            "tag": "return",
+            "text": "Floating point value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "DegToRad": {
+      "name": "DegToRad",
+      "refLine": 423,
+      "docStart": 12529,
+      "docEnd": 12642,
+      "docs": {
+        "brief": "Converts degrees to radians.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts degrees to radians."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Degrees."
+          },
+          {
+            "tag": "return",
+            "text": "Radians."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        }
+      ]
+    },
+    "SetURandomSeedSimple": {
+      "name": "SetURandomSeedSimple",
+      "refLine": 472,
+      "docStart": 13718,
+      "docEnd": 13905,
+      "docs": {
+        "brief": "Seeds a plugin's uniform random number stream. This is done automatically,\nso normally it is totally unnecessary to call this.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Seeds a plugin's uniform random number stream. This is done automatically,\nso normally it is totally unnecessary to call this."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Single seed value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "seed",
+          "decl": "int seed",
+          "default": null
+        }
+      ]
+    },
+    "FloatMod": {
+      "name": "FloatMod",
+      "refLine": 111,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "oper1",
+          "decl": "float oper1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "oper2",
+          "decl": "float oper2",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_ADD__": {
+      "name": "__FLOAT_ADD__",
+      "refLine": 282,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_GT__": {
+      "name": "__FLOAT_GT__",
+      "refLine": 286,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "RoundToZero": {
+      "name": "RoundToZero",
+      "refLine": 127,
+      "docStart": 4594,
+      "docEnd": 4749,
+      "docs": {
+        "brief": "Rounds a float to the closest integer to zero.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rounds a float to the closest integer to zero."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value to be rounded."
+          },
+          {
+            "tag": "return",
+            "text": "Rounded value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "ArcSine": {
+      "name": "ArcSine",
+      "refLine": 252,
+      "docStart": 7807,
+      "docEnd": 7950,
+      "docs": {
+        "brief": "Returns the arcsine of the input value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the arcsine of the input value."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "asin(value) in radians."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        }
+      ]
+    },
+    "RoundToNearest": {
+      "name": "RoundToNearest",
+      "refLine": 151,
+      "docStart": 5191,
+      "docEnd": 5323,
+      "docs": {
+        "brief": "Standard IEEE rounding.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Standard IEEE rounding."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value to be rounded."
+          },
+          {
+            "tag": "return",
+            "text": "Rounded value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "GetURandomInt": {
+      "name": "GetURandomInt",
+      "refLine": 446,
+      "docStart": 12907,
+      "docEnd": 13096,
+      "docs": {
+        "brief": "Returns a random integer in the range [0, 2^31-1].\n\nNote: Uniform random number streams are seeded automatically per-plugin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a random integer in the range [0, 2^31-1].\n\nNote: Uniform random number streams are seeded automatically per-plugin."
+          },
+          {
+            "tag": "return",
+            "text": "Random integer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "FloatAbs": {
+      "name": "FloatAbs",
+      "refLine": 228,
+      "docStart": 7255,
+      "docEnd": 7390,
+      "docs": {
+        "brief": "Returns an absolute value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns an absolute value."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "Absolute value of the input."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "ArcTangent": {
+      "name": "ArcTangent",
+      "refLine": 236,
+      "docStart": 7431,
+      "docEnd": 7577,
+      "docs": {
+        "brief": "Returns the arctangent of the input value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the arctangent of the input value."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "atan(value) in radians."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        }
+      ]
+    },
+    "RoundToFloor": {
+      "name": "RoundToFloor",
+      "refLine": 143,
+      "docStart": 4991,
+      "docEnd": 5148,
+      "docs": {
+        "brief": "Rounds a float to the next lowest integer value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rounds a float to the next lowest integer value."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value to be rounded."
+          },
+          {
+            "tag": "return",
+            "text": "Rounded value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_LT__": {
+      "name": "__FLOAT_LT__",
+      "refLine": 288,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_NE__": {
+      "name": "__FLOAT_NE__",
+      "refLine": 291,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "FloatCompare": {
+      "name": "FloatCompare",
+      "refLine": 162,
+      "docStart": 5368,
+      "docEnd": 5735,
+      "docs": {
+        "brief": "Compares two floats.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Compares two floats."
+          },
+          {
+            "tag": "param:fOne",
+            "text": "First value."
+          },
+          {
+            "tag": "param:fTwo",
+            "text": "Second value."
+          },
+          {
+            "tag": "return",
+            "text": "Returns 1 if the first argument is greater than the second argument.\nReturns -1 if the first argument is smaller than the second argument.\nReturns 0 if both arguments are equal."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "fOne",
+          "decl": "float fOne",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "fTwo",
+          "decl": "float fTwo",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_MUL__": {
+      "name": "__FLOAT_MUL__",
+      "refLine": 280,
+      "docStart": 8604,
+      "docEnd": 8652,
+      "docs": {
+        "brief": "Internal aliases for backwards compatibility.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Internal aliases for backwards compatibility."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "Sine": {
+      "name": "Sine",
+      "refLine": 204,
+      "docStart": 6726,
+      "docEnd": 6862,
+      "docs": {
+        "brief": "Returns the sine of the argument.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the sine of the argument."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value in radians."
+          },
+          {
+            "tag": "return",
+            "text": "sin(value)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_SUB__": {
+      "name": "__FLOAT_SUB__",
+      "refLine": 283,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "RadToDeg": {
+      "name": "RadToDeg",
+      "refLine": 434,
+      "docStart": 12718,
+      "docEnd": 12831,
+      "docs": {
+        "brief": "Converts radians to degrees.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts radians to degrees."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Radians."
+          },
+          {
+            "tag": "return",
+            "text": "Degrees."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        }
+      ]
+    },
+    "Tangent": {
+      "name": "Tangent",
+      "refLine": 220,
+      "docStart": 7076,
+      "docEnd": 7215,
+      "docs": {
+        "brief": "Returns the tangent of the argument.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the tangent of the argument."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value in radians."
+          },
+          {
+            "tag": "return",
+            "text": "tan(value)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "SetURandomSeed": {
+      "name": "SetURandomSeed",
+      "refLine": 464,
+      "docStart": 13378,
+      "docEnd": 13652,
+      "docs": {
+        "brief": "Seeds a plugin's uniform random number stream. This is done automatically,\nso normally it is totally unnecessary to call this.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Seeds a plugin's uniform random number stream. This is done automatically,\nso normally it is totally unnecessary to call this."
+          },
+          {
+            "tag": "param:seeds",
+            "text": "Array of numbers to use as seeding data."
+          },
+          {
+            "tag": "param:numSeeds",
+            "text": "Number of seeds in the seeds array."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "seeds",
+          "decl": "const int[] seeds",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numSeeds",
+          "decl": "int numSeeds",
+          "default": null
+        }
+      ]
+    },
+    "FloatAdd": {
+      "name": "FloatAdd",
+      "refLine": 85,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "oper1",
+          "decl": "float oper1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "oper2",
+          "decl": "float oper2",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_DIV__": {
+      "name": "__FLOAT_DIV__",
+      "refLine": 281,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "Exponential": {
+      "name": "Exponential",
+      "refLine": 187,
+      "docStart": 6278,
+      "docEnd": 6414,
+      "docs": {
+        "brief": "Returns the value of raising the input by e.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the value of raising the input by e."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "exp(value)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_LE__": {
+      "name": "__FLOAT_LE__",
+      "refLine": 289,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "RoundToCeil": {
+      "name": "RoundToCeil",
+      "refLine": 135,
+      "docStart": 4791,
+      "docEnd": 4949,
+      "docs": {
+        "brief": "Rounds a float to the next highest integer value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rounds a float to the next highest integer value."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value to be rounded."
+          },
+          {
+            "tag": "return",
+            "text": "Rounded value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "FloatFraction": {
+      "name": "FloatFraction",
+      "refLine": 119,
+      "docStart": 4418,
+      "docEnd": 4548,
+      "docs": {
+        "brief": "Returns the decimal part of a float.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the decimal part of a float."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "Decimal part."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "Pow": {
+      "name": "Pow",
+      "refLine": 179,
+      "docStart": 6019,
+      "docEnd": 6226,
+      "docs": {
+        "brief": "Returns the value raised to the power of the exponent.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the value raised to the power of the exponent."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to be raised."
+          },
+          {
+            "tag": "param:exponent",
+            "text": "Value to raise the base."
+          },
+          {
+            "tag": "return",
+            "text": "value^exponent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "exponent",
+          "decl": "float exponent",
+          "default": null
+        }
+      ]
+    },
+    "ArcCosine": {
+      "name": "ArcCosine",
+      "refLine": 244,
+      "docStart": 7620,
+      "docEnd": 7765,
+      "docs": {
+        "brief": "Returns the arccosine of the input value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the arccosine of the input value."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Input value."
+          },
+          {
+            "tag": "return",
+            "text": "acos(value) in radians."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        }
+      ]
+    },
+    "Cosine": {
+      "name": "Cosine",
+      "refLine": 212,
+      "docStart": 6899,
+      "docEnd": 7037,
+      "docs": {
+        "brief": "Returns the cosine of the argument.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the cosine of the argument."
+          },
+          {
+            "tag": "param:value",
+            "text": "Input value in radians."
+          },
+          {
+            "tag": "return",
+            "text": "cos(value)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "__FLOAT_GE__": {
+      "name": "__FLOAT_GE__",
+      "refLine": 287,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "a",
+          "decl": "float a",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "b",
+          "decl": "float b",
+          "default": null
+        }
+      ]
+    },
+    "RoundFloat": {
+      "name": "RoundFloat",
+      "refLine": 269,
+      "docStart": 8234,
+      "docEnd": 8444,
+      "docs": {
+        "brief": "Rounds a floating point number using the \"round to nearest\" algorithm.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rounds a floating point number using the \"round to nearest\" algorithm."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point value to round."
+          },
+          {
+            "tag": "return",
+            "text": "The value rounded to the nearest integer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "FloatSub": {
+      "name": "FloatSub",
+      "refLine": 98,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "oper1",
+          "decl": "float oper1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "oper2",
+          "decl": "float oper2",
+          "default": null
+        }
+      ]
+    },
+    "FloatMul": {
+      "name": "FloatMul",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "oper1",
+          "decl": "float oper1",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "oper2",
+          "decl": "float oper2",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "FLOAT_PI": {
+      "name": "FLOAT_PI",
+      "refLine": 415,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "3.1415926535897932384626433832795"
+    },
+    "_float_included": {
+      "name": "_float_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

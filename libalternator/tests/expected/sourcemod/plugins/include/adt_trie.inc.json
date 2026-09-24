@@ -1,0 +1,2055 @@
+{
+  "functions": {
+    "TrieSnapshotLength": {
+      "name": "TrieSnapshotLength",
+      "refLine": 428,
+      "docStart": 17087,
+      "docEnd": 17403,
+      "docs": {
+        "brief": "Returns the number of keys in a map snapshot. Note that this may be\ndifferent from the size of the map, since the map can change after the\nsnapshot of its keys was taken.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of keys in a map snapshot. Note that this may be\ndifferent from the size of the map, since the map can change after the\nsnapshot of its keys was taken."
+          },
+          {
+            "tag": "param:snapshot",
+            "text": "Map snapshot."
+          },
+          {
+            "tag": "return",
+            "text": "Number of keys."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "snapshot",
+          "decl": "Handle snapshot",
+          "default": null
+        }
+      ]
+    },
+    "SetTrieValue": {
+      "name": "SetTrieValue",
+      "refLine": 315,
+      "docStart": 12764,
+      "docEnd": 13172,
+      "docs": {
+        "brief": "Sets a value in a hash map, either inserting a new entry or replacing an old one.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a value in a hash map, either inserting a new entry or replacing an old one."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to store at this key."
+          },
+          {
+            "tag": "param:replace",
+            "text": "If false, operation will fail if the key is already set."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replace",
+          "decl": "bool replace",
+          "default": "true"
+        }
+      ]
+    },
+    "GetTrieValue": {
+      "name": "GetTrieValue",
+      "refLine": 352,
+      "docStart": 14330,
+      "docEnd": 14692,
+      "docs": {
+        "brief": "Retrieves a value in a Map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a value in a Map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "Variable to store value."
+          },
+          {
+            "tag": "return",
+            "text": "True on success.  False if the key is not set, or the key is set\nas an array or string (not a value)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "any&",
+          "name": "value",
+          "decl": "any& value",
+          "default": null
+        }
+      ]
+    },
+    "SetTrieString": {
+      "name": "SetTrieString",
+      "refLine": 340,
+      "docStart": 13830,
+      "docEnd": 14229,
+      "docs": {
+        "brief": "Sets a string value in a Map, either inserting a new entry or replacing an old one.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string value in a Map, either inserting a new entry or replacing an old one."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "String to store."
+          },
+          {
+            "tag": "param:replace",
+            "text": "If false, operation will fail if the key is already set."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replace",
+          "decl": "bool replace",
+          "default": "true"
+        }
+      ]
+    },
+    "RemoveFromTrie": {
+      "name": "RemoveFromTrie",
+      "refLine": 390,
+      "docStart": 15996,
+      "docEnd": 16235,
+      "docs": {
+        "brief": "Removes a key entry from a Map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a key entry from a Map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the value was never set."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        }
+      ]
+    },
+    "TrieSnapshotKeyBufferSize": {
+      "name": "TrieSnapshotKeyBufferSize",
+      "refLine": 439,
+      "docStart": 17456,
+      "docEnd": 17810,
+      "docs": {
+        "brief": "Returns the buffer size required to store a given key. That is, it returns\nthe length of the key plus one.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the buffer size required to store a given key. That is, it returns\nthe length of the key plus one."
+          },
+          {
+            "tag": "param:snapshot",
+            "text": "Map snapshot."
+          },
+          {
+            "tag": "param:index",
+            "text": "Key index (starting from 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Buffer size required to store the key string."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or index out of range."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "snapshot",
+          "decl": "Handle snapshot",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "GetTrieSnapshotKey": {
+      "name": "GetTrieSnapshotKey",
+      "refLine": 451,
+      "docStart": 17881,
+      "docEnd": 18264,
+      "docs": {
+        "brief": "Retrieves the key string of a given key in a map snapshot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the key string of a given key in a map snapshot."
+          },
+          {
+            "tag": "param:snapshot",
+            "text": "Map snapshot."
+          },
+          {
+            "tag": "param:index",
+            "text": "Key index (starting from 0)."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum buffer length."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or index out of range."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "snapshot",
+          "decl": "Handle snapshot",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "CreateTrie": {
+      "name": "CreateTrie",
+      "refLine": 303,
+      "docStart": 12078,
+      "docEnd": 12728,
+      "docs": {
+        "brief": "Creates a hash map. A hash map is a container that can map strings (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a hash map. A hash map is a container that can map strings (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n)."
+          },
+          {
+            "tag": "return",
+            "text": "New Map Handle, which must be freed via CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "StringMap",
+      "arguments": []
+    },
+    "GetTrieArray": {
+      "name": "GetTrieArray",
+      "refLine": 366,
+      "docStart": 14765,
+      "docEnd": 15280,
+      "docs": {
+        "brief": "Retrieves an array in a Map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an array in a Map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:array",
+            "text": "Buffer to store array."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of array buffer."
+          },
+          {
+            "tag": "param:size",
+            "text": "Optional parameter to store the number of elements written to the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success.  False if the key is not set, or the key is set\nas a value or string (not an array)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "array",
+          "decl": "any[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "size",
+          "decl": "int& size",
+          "default": "0"
+        }
+      ]
+    },
+    "SetTrieArray": {
+      "name": "SetTrieArray",
+      "refLine": 328,
+      "docStart": 13263,
+      "docEnd": 13716,
+      "docs": {
+        "brief": "Sets an array value in a Map, either inserting a new entry or replacing an old one.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an array value in a Map, either inserting a new entry or replacing an old one."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array to store."
+          },
+          {
+            "tag": "param:num_items",
+            "text": "Number of items in the array."
+          },
+          {
+            "tag": "param:replace",
+            "text": "If false, operation will fail if the key is already set."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "array",
+          "decl": "const any[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num_items",
+          "decl": "int num_items",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replace",
+          "decl": "bool replace",
+          "default": "true"
+        }
+      ]
+    },
+    "ClearTrie": {
+      "name": "ClearTrie",
+      "refLine": 398,
+      "docStart": 16298,
+      "docEnd": 16423,
+      "docs": {
+        "brief": "Clears all entries from a Map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clears all entries from a Map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        }
+      ]
+    },
+    "GetTrieString": {
+      "name": "GetTrieString",
+      "refLine": 380,
+      "docStart": 15381,
+      "docEnd": 15893,
+      "docs": {
+        "brief": "Retrieves a string in a Map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a string in a Map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key string."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store value."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:size",
+            "text": "Optional parameter to store the number of bytes written to the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success.  False if the key is not set, or the key is set\nas a value or array (not a string)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "size",
+          "decl": "int& size",
+          "default": "0"
+        }
+      ]
+    },
+    "GetTrieSize": {
+      "name": "GetTrieSize",
+      "refLine": 407,
+      "docStart": 16463,
+      "docEnd": 16657,
+      "docs": {
+        "brief": "Retrieves the number of elements in a map.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the number of elements in a map."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of elements in the trie."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        }
+      ]
+    },
+    "CreateTrieSnapshot": {
+      "name": "CreateTrieSnapshot",
+      "refLine": 417,
+      "docStart": 16698,
+      "docEnd": 17036,
+      "docs": {
+        "brief": "Creates a snapshot of all keys in the map. If the map is changed after this\ncall, the changes are not reflected in the snapshot. Keys are not sorted.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a snapshot of all keys in the map. If the map is changed after this\ncall, the changes are not reflected in the snapshot. Keys are not sorted."
+          },
+          {
+            "tag": "param:map",
+            "text": "Map Handle."
+          },
+          {
+            "tag": "return",
+            "text": "New Map Snapshot Handle, which must be closed via CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "map",
+          "decl": "Handle map",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "IntMap": {
+      "name": "IntMap",
+      "refLine": 170,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "SetString": {
+          "name": "SetString",
+          "refLine": 217,
+          "docStart": 9091,
+          "docEnd": 9396,
+          "docs": {
+            "brief": "Sets a string value in a Map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value in a Map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to store."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 260,
+          "docStart": 11237,
+          "docEnd": 11270,
+          "docs": {
+            "brief": "Clears all entries from a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears all entries from a Map."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "SetArray": {
+          "name": "SetArray",
+          "refLine": 209,
+          "docStart": 8630,
+          "docEnd": 8987,
+          "docs": {
+            "brief": "Sets an array value in a Map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an array value in a Map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:array",
+                "text": "Array to store."
+              },
+              {
+                "tag": "param:num_items",
+                "text": "Number of items in the array."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "const any[]",
+              "name": "array",
+              "decl": "const any[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "num_items",
+              "decl": "int num_items",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "ContainsKey": {
+          "name": "ContainsKey",
+          "refLine": 251,
+          "docStart": 10833,
+          "docEnd": 10985,
+          "docs": {
+            "brief": "Checks whether a key is present in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Checks whether a key is present in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "return",
+                "text": "True if the key has been found, else false."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            }
+          ]
+        },
+        "Clone": {
+          "name": "Clone",
+          "refLine": 192,
+          "docStart": 7843,
+          "docEnd": 8198,
+          "docs": {
+            "brief": "Clones a hash map, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed with delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clones a hash map, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed with delete or CloseHandle()."
+              },
+              {
+                "tag": "return",
+                "text": "New handle to the cloned hash map"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "IntMap",
+          "arguments": []
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 245,
+          "docStart": 10326,
+          "docEnd": 10740,
+          "docs": {
+            "brief": "Retrieves a string in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store value."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of string buffer."
+              },
+              {
+                "tag": "param:size",
+                "text": "Optional parameter to store the number of bytes written to the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas a value or array (not a string)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "IntMap": {
+          "name": "IntMap",
+          "refLine": 184,
+          "docStart": 7182,
+          "docEnd": 7812,
+          "docs": {
+            "brief": "Creates a hash map. A hash map is a container that can map integers (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n).\n\nThe IntMap must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a hash map. A hash map is a container that can map integers (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n).\n\nThe IntMap must be freed via delete or CloseHandle()."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "IntMap",
+          "arguments": []
+        },
+        "SetValue": {
+          "name": "SetValue",
+          "refLine": 200,
+          "docStart": 8235,
+          "docEnd": 8549,
+          "docs": {
+            "brief": "Sets a value in a hash map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a value in a hash map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 257,
+          "docStart": 11039,
+          "docEnd": 11188,
+          "docs": {
+            "brief": "Removes a key entry from a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes a key entry from a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the value was never set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            }
+          ]
+        },
+        "GetArray": {
+          "name": "GetArray",
+          "refLine": 235,
+          "docStart": 9818,
+          "docEnd": 10235,
+          "docs": {
+            "brief": "Retrieves an array in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an array in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:array",
+                "text": "Buffer to store array."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of array buffer."
+              },
+              {
+                "tag": "param:size",
+                "text": "Optional parameter to store the number of elements written to the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas a value or string (not an array)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "any[]",
+              "name": "array",
+              "decl": "any[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "Snapshot": {
+          "name": "Snapshot",
+          "refLine": 263,
+          "docStart": 11305,
+          "docEnd": 11364,
+          "docs": {
+            "brief": "Create a snapshot of the map's keys. See IntMapSnapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Create a snapshot of the map's keys. See IntMapSnapshot."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "IntMapSnapshot",
+          "arguments": []
+        },
+        "GetValue": {
+          "name": "GetValue",
+          "refLine": 225,
+          "docStart": 9487,
+          "docEnd": 9755,
+          "docs": {
+            "brief": "Retrieves a value in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a value in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key integer."
+              },
+              {
+                "tag": "param:value",
+                "text": "Variable to store value."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas an array or string (not a value)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const int",
+              "name": "key",
+              "decl": "const int key",
+              "default": null
+            },
+            {
+              "type": "any&",
+              "name": "value",
+              "decl": "any& value",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Size": {
+          "name": "Size",
+          "refLine": 266,
+          "docStart": 11412,
+          "docEnd": 11457,
+          "docs": {
+            "brief": "Retrieves the number of elements in a map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the number of elements in a map."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "StringMap": {
+      "name": "StringMap",
+      "refLine": 39,
+      "docStart": 1659,
+      "docEnd": 1698,
+      "docs": {
+        "brief": "Object-oriented wrapper for maps.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Object-oriented wrapper for maps."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Clear": {
+          "name": "Clear",
+          "refLine": 129,
+          "docStart": 5817,
+          "docEnd": 5850,
+          "docs": {
+            "brief": "Clears all entries from a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears all entries from a Map."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "GetValue": {
+          "name": "GetValue",
+          "refLine": 94,
+          "docStart": 4057,
+          "docEnd": 4324,
+          "docs": {
+            "brief": "Retrieves a value in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a value in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Variable to store value."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas an array or string (not a value)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any&",
+              "name": "value",
+              "decl": "any& value",
+              "default": null
+            }
+          ]
+        },
+        "Clone": {
+          "name": "Clone",
+          "refLine": 61,
+          "docStart": 2400,
+          "docEnd": 2759,
+          "docs": {
+            "brief": "Clones a string map, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed with delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clones a string map, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed with delete or CloseHandle()."
+              },
+              {
+                "tag": "return",
+                "text": "New handle to the cloned string map"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "StringMap",
+          "arguments": []
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 114,
+          "docStart": 4900,
+          "docEnd": 5313,
+          "docs": {
+            "brief": "Retrieves a string in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store value."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of string buffer."
+              },
+              {
+                "tag": "param:size",
+                "text": "Optional parameter to store the number of bytes written to the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas a value or array (not a string)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "ContainsKey": {
+          "name": "ContainsKey",
+          "refLine": 120,
+          "docStart": 5409,
+          "docEnd": 5560,
+          "docs": {
+            "brief": "Checks whether a key is present in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Checks whether a key is present in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True if the key has been found, else false."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetArray": {
+          "name": "GetArray",
+          "refLine": 104,
+          "docStart": 4390,
+          "docEnd": 4806,
+          "docs": {
+            "brief": "Retrieves an array in a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an array in a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:array",
+                "text": "Buffer to store array."
+              },
+              {
+                "tag": "param:max_size",
+                "text": "Maximum size of array buffer."
+              },
+              {
+                "tag": "param:size",
+                "text": "Optional parameter to store the number of elements written to the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success.  False if the key is not set, or the key is set\nas a value or string (not an array)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any[]",
+              "name": "array",
+              "decl": "any[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 126,
+          "docStart": 5617,
+          "docEnd": 5765,
+          "docs": {
+            "brief": "Removes a key entry from a Map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes a key entry from a Map."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if the value was never set."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 86,
+          "docStart": 3659,
+          "docEnd": 3963,
+          "docs": {
+            "brief": "Sets a string value in a Map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value in a Map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to store."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "SetValue": {
+          "name": "SetValue",
+          "refLine": 69,
+          "docStart": 2799,
+          "docEnd": 3112,
+          "docs": {
+            "brief": "Sets a value in a hash map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a value in a hash map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to store at this key."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "StringMap": {
+          "name": "StringMap",
+          "refLine": 53,
+          "docStart": 1734,
+          "docEnd": 2366,
+          "docs": {
+            "brief": "Creates a hash map. A hash map is a container that can map strings (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n).\n\nThe StringMap must be freed via delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a hash map. A hash map is a container that can map strings (called\n\"keys\") to arbitrary values (cells, arrays, or strings). Keys in a hash map\nare unique. That is, there is at most one entry in the map for a given key.\n\nInsertion, deletion, and lookup in a hash map are all considered to be fast\noperations, amortized to O(1), or constant time.\n\nThe word \"Trie\" in this API is historical. As of SourceMod 1.6, tries have\nbeen internally replaced with hash tables, which have O(1) insertion time\ninstead of O(n).\n\nThe StringMap must be freed via delete or CloseHandle()."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "StringMap",
+          "arguments": []
+        },
+        "SetArray": {
+          "name": "SetArray",
+          "refLine": 78,
+          "docStart": 3196,
+          "docEnd": 3552,
+          "docs": {
+            "brief": "Sets an array value in a Map, either inserting a new entry or replacing an old one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an array value in a Map, either inserting a new entry or replacing an old one."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key string."
+              },
+              {
+                "tag": "param:array",
+                "text": "Array to store."
+              },
+              {
+                "tag": "param:num_items",
+                "text": "Number of items in the array."
+              },
+              {
+                "tag": "param:replace",
+                "text": "If false, operation will fail if the key is already set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const any[]",
+              "name": "array",
+              "decl": "const any[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "num_items",
+              "decl": "int num_items",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replace",
+              "decl": "bool replace",
+              "default": "true"
+            }
+          ]
+        },
+        "Snapshot": {
+          "name": "Snapshot",
+          "refLine": 132,
+          "docStart": 5885,
+          "docEnd": 5947,
+          "docs": {
+            "brief": "Create a snapshot of the map's keys. See StringMapSnapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Create a snapshot of the map's keys. See StringMapSnapshot."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "StringMapSnapshot",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "Size": {
+          "name": "Size",
+          "refLine": 135,
+          "docStart": 5998,
+          "docEnd": 6043,
+          "docs": {
+            "brief": "Retrieves the number of elements in a map.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the number of elements in a map."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "StringMapSnapshot": {
+      "name": "StringMapSnapshot",
+      "refLine": 145,
+      "docStart": 6101,
+      "docEnd": 6283,
+      "docs": {
+        "brief": "A StringMapSnapshot is created via StringMap.Snapshot(). It captures the\nkeys on a map so they can be read. Snapshots must be freed with delete or\nCloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A StringMapSnapshot is created via StringMap.Snapshot(). It captures the\nkeys on a map so they can be read. Snapshots must be freed with delete or\nCloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "KeyBufferSize": {
+          "name": "KeyBufferSize",
+          "refLine": 158,
+          "docStart": 6434,
+          "docEnd": 6715,
+          "docs": {
+            "brief": "Returns the buffer size required to store a given key. That is, it\nreturns the length of the key plus one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the buffer size required to store a given key. That is, it\nreturns the length of the key plus one."
+              },
+              {
+                "tag": "param:index",
+                "text": "Key index (starting from 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Buffer size required to store the key string."
+              },
+              {
+                "tag": "error",
+                "text": "Index out of range."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "GetKey": {
+          "name": "GetKey",
+          "refLine": 167,
+          "docStart": 6766,
+          "docEnd": 7074,
+          "docs": {
+            "brief": "Retrieves the key string of a given key in a map snapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the key string of a given key in a map snapshot."
+              },
+              {
+                "tag": "param:index",
+                "text": "Key index (starting from 0)."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum buffer length."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written to the buffer."
+              },
+              {
+                "tag": "error",
+                "text": "Index out of range."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 148,
+          "docStart": 6327,
+          "docEnd": 6377,
+          "docs": {
+            "brief": "Returns the number of keys in the map snapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of keys in the map snapshot."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "IntMapSnapshot": {
+      "name": "IntMapSnapshot",
+      "refLine": 274,
+      "docStart": 11515,
+      "docEnd": 11681,
+      "docs": {
+        "brief": "A IntMapSnapshot is created via IntMap.Snapshot(). It captures the\nkeys on a map so they can be read. Snapshots must be freed with delete or\nCloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A IntMapSnapshot is created via IntMap.Snapshot(). It captures the\nkeys on a map so they can be read. Snapshots must be freed with delete or\nCloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetKey": {
+          "name": "GetKey",
+          "refLine": 286,
+          "docStart": 11829,
+          "docEnd": 12031,
+          "docs": {
+            "brief": "Retrieves the key integer of a given key in a map snapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the key integer of a given key in a map snapshot."
+              },
+              {
+                "tag": "param:index",
+                "text": "Key index (starting from 0)."
+              },
+              {
+                "tag": "return",
+                "text": "The key integer"
+              },
+              {
+                "tag": "error",
+                "text": "Index out of range."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 277,
+          "docStart": 11722,
+          "docEnd": 11772,
+          "docs": {
+            "brief": "Returns the number of keys in the map snapshot.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of keys in the map snapshot."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_adt_trie_included": {
+      "name": "_adt_trie_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

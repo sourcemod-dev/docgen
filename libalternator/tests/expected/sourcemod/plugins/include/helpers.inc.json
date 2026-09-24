@@ -1,0 +1,209 @@
+{
+  "functions": {
+    "FormatUserLogText": {
+      "name": "FormatUserLogText",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SearchForClients": {
+      "name": "SearchForClients",
+      "refLine": 88,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "clients",
+          "decl": "int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxClients",
+          "decl": "int maxClients",
+          "default": null
+        }
+      ]
+    },
+    "LoadMaps": {
+      "name": "LoadMaps",
+      "refLine": 214,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "fileTime",
+          "decl": "int& fileTime",
+          "default": "0"
+        },
+        {
+          "type": "Handle",
+          "name": "fileCvar",
+          "decl": "Handle fileCvar",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "FindPluginByFile": {
+      "name": "FindPluginByFile",
+      "refLine": 60,
+      "docStart": 2147,
+      "docEnd": 2348,
+      "docs": {
+        "brief": "Returns plugin handle from plugin filename.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns plugin handle from plugin filename."
+          },
+          {
+            "tag": "param:filename",
+            "text": "Filename of the plugin to search for."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to plugin if found, INVALID_HANDLE otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "filename",
+          "decl": "const char[] filename",
+          "default": null
+        }
+      ]
+    },
+    "FindTarget": {
+      "name": "FindTarget",
+      "refLine": 163,
+      "docStart": 3877,
+      "docEnd": 4532,
+      "docs": {
+        "brief": "Wraps ProcessTargetString() and handles producing error messages for\nbad targets.\n\nNote that you should use LoadTranslations(\"common.phrases\") in OnPluginStart().\n\"common.phrases\" contains all of the translatable phrases that FindTarget() will\nreply with in the event a target is not found (error).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wraps ProcessTargetString() and handles producing error messages for\nbad targets.\n\nNote that you should use LoadTranslations(\"common.phrases\") in OnPluginStart().\n\"common.phrases\" contains all of the translatable phrases that FindTarget() will\nreply with in the event a target is not found (error)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client who issued command"
+          },
+          {
+            "tag": "param:target",
+            "text": "Client's target argument"
+          },
+          {
+            "tag": "param:nobots",
+            "text": "Optional. Set to true if bots should NOT be targetted"
+          },
+          {
+            "tag": "param:immunity",
+            "text": "Optional. Set to false to ignore target immunity."
+          },
+          {
+            "tag": "return",
+            "text": "Index of target client, or -1 on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "target",
+          "decl": "const char[] target",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "nobots",
+          "decl": "bool nobots",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "immunity",
+          "decl": "bool immunity",
+          "default": "true"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_helpers_included": {
+      "name": "_helpers_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

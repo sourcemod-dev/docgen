@@ -1,0 +1,1459 @@
+{
+  "functions": {
+    "TTT_AddItemUsage": {
+      "name": "TTT_AddItemUsage",
+      "refLine": 236,
+      "docStart": 8212,
+      "docEnd": 8557,
+      "docs": {
+        "brief": "Add the client usages for the specific item\nCan't be higher as the max usages\nAttention: This will be reset on player spawn and client disconnect",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add the client usages for the specific item\nCan't be higher as the max usages\nAttention: This will be reset on player spawn and client disconnect"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:short",
+            "text": "Short item name"
+          },
+          {
+            "tag": "param:usage",
+            "text": "Usages to add"
+          },
+          {
+            "tag": "return",
+            "text": "Usages for this item"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "short",
+          "decl": "const char[] short",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "usages",
+          "decl": "int usages",
+          "default": "1"
+        }
+      ]
+    },
+    "TTT_OnShopReady": {
+      "name": "TTT_OnShopReady",
+      "refLine": 63,
+      "docStart": 2546,
+      "docEnd": 2643,
+      "docs": {
+        "brief": "Called when items array was initialized. This was added to avoid \"empty items list\".",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when items array was initialized. This was added to avoid \"empty items list\"."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_UpdateShopItem": {
+      "name": "TTT_UpdateShopItem",
+      "refLine": 133,
+      "docStart": 5337,
+      "docEnd": 5661,
+      "docs": {
+        "brief": "Update shop item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Update shop item."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag identifier to find the item."
+          },
+          {
+            "tag": "param:price",
+            "text": "The price of the item."
+          },
+          {
+            "tag": "param:sort",
+            "text": "The priority in Sorting. Buy menu is sorted from high to low."
+          },
+          {
+            "tag": "param:maxUsages",
+            "text": "Max usages for this items per round. ( 0 - Disabled )"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "price",
+          "decl": "int price",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "sort",
+          "decl": "int sort",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "maxUsages",
+          "decl": "int maxUsages",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "limit",
+          "decl": "int limit",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemUsages": {
+      "name": "TTT_GetItemUsages",
+      "refLine": 223,
+      "docStart": 7864,
+      "docEnd": 8148,
+      "docs": {
+        "brief": "Get's the amount of usages for this item\nAttention: This will be reset on player spawn and client disconnect",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get's the amount of usages for this item\nAttention: This will be reset on player spawn and client disconnect"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:short",
+            "text": "Short item name"
+          },
+          {
+            "tag": "return",
+            "text": "Usages for this item, -1 = Item not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "short",
+          "decl": "const char[] short",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnItemPurchasePre": {
+      "name": "TTT_OnItemPurchasePre",
+      "refLine": 57,
+      "docStart": 2028,
+      "docEnd": 2446,
+      "docs": {
+        "brief": "Called before the purchase process has begun.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before the purchase process has begun."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client who will purchase this item"
+          },
+          {
+            "tag": "param:price",
+            "text": "Price of the item"
+          },
+          {
+            "tag": "param:count",
+            "text": "Usages of this item. (0 - No usage left, 1+ - Usages per Round)\nCheck for yourself if you've round based items without usage limit"
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Short name of the item"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "price",
+          "decl": "int& price",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "count",
+          "decl": "int& count",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnStartCredits": {
+      "name": "TTT_OnStartCredits",
+      "refLine": 101,
+      "docStart": 3854,
+      "docEnd": 4101,
+      "docs": {
+        "brief": "Called before start credits (on player_spawn) will be given.\nBy changing credits and return Plugin_Changed, you can modify credits amount.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before start credits (on player_spawn) will be given.\nBy changing credits and return Plugin_Changed, you can modify credits amount."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:credits",
+            "text": "The amount of credits."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "credits",
+          "decl": "int& credits",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnCreditsChanged": {
+      "name": "TTT_OnCreditsChanged",
+      "refLine": 71,
+      "docStart": 2677,
+      "docEnd": 2833,
+      "docs": {
+        "brief": "Called after a players credits are modified.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a players credits are modified."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:credits",
+            "text": "The new amount of credits."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "credits",
+          "decl": "int& credits",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ShopItemExist": {
+      "name": "TTT_ShopItemExist",
+      "refLine": 175,
+      "docStart": 6759,
+      "docEnd": 6932,
+      "docs": {
+        "brief": "Checks whether or not item exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks whether or not item exists."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name of item."
+          },
+          {
+            "tag": "return",
+            "text": "Returns true if item exists, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientCurrency": {
+      "name": "TTT_GetClientCurrency",
+      "refLine": 292,
+      "docStart": 10066,
+      "docEnd": 10414,
+      "docs": {
+        "brief": "Gets the currency for the specific player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the currency for the specific player"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store currency."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Returns true on success. Will return false if the item is no longer registered in shop or native failed to write to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveItemUsage": {
+      "name": "TTT_RemoveItemUsage",
+      "refLine": 249,
+      "docStart": 8636,
+      "docEnd": 8973,
+      "docs": {
+        "brief": "Remove the client usages for the specific item\nCan't be lower as 0\nAttention: This will be reset on player spawn and client disconnect",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove the client usages for the specific item\nCan't be lower as 0\nAttention: This will be reset on player spawn and client disconnect"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:short",
+            "text": "Short item name"
+          },
+          {
+            "tag": "param:usage",
+            "text": "Usages to remove"
+          },
+          {
+            "tag": "return",
+            "text": "Usages for this item"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "short",
+          "decl": "const char[] short",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "usages",
+          "decl": "int usages",
+          "default": "1"
+        }
+      ]
+    },
+    "TTT_OnItemPurchased": {
+      "name": "TTT_OnItemPurchased",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "price",
+          "decl": "int price",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "count",
+          "decl": "int count",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GiveClientItem": {
+      "name": "TTT_GiveClientItem",
+      "refLine": 212,
+      "docStart": 7587,
+      "docEnd": 7799,
+      "docs": {
+        "brief": "Add item to client (without any costs)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add item to client (without any costs)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index"
+          },
+          {
+            "tag": "param:item",
+            "text": "Short Item name"
+          },
+          {
+            "tag": "return",
+            "text": "True item found/valid, false item not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemRole": {
+      "name": "TTT_GetItemRole",
+      "refLine": 155,
+      "docStart": 6163,
+      "docEnd": 6277,
+      "docs": {
+        "brief": "Retrieve a item's role restriction.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a item's role restriction."
+          },
+          {
+            "tag": "param:item",
+            "text": "The short-tag identifier of the item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnRegisterShopItemPost": {
+      "name": "TTT_OnRegisterShopItemPost",
+      "refLine": 92,
+      "docStart": 3196,
+      "docEnd": 3693,
+      "docs": {
+        "brief": "Called after registers a custom item in the menu/shop.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after registers a custom item in the menu/shop."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag identifier of the item (must be unique)."
+          },
+          {
+            "tag": "param:itemlong",
+            "text": "The long fancy name for the item."
+          },
+          {
+            "tag": "param:price",
+            "text": "The price of the item."
+          },
+          {
+            "tag": "param:role",
+            "text": "The optional role to restrict the item to. (Default: 0 - for all)"
+          },
+          {
+            "tag": "param:sort",
+            "text": "The priority in Sorting. Buy menu is sorted from high to low. (Default: 0)\n// TODO: Add missing descriptions"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemlong",
+          "decl": "const char[] itemlong",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "price",
+          "decl": "int price",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "sort",
+          "decl": "int sort",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxUsages",
+          "decl": "int maxUsages",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "limit",
+          "decl": "int limit",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "logging",
+          "decl": "bool logging",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveShopItem": {
+      "name": "TTT_RemoveShopItem",
+      "refLine": 141,
+      "docStart": 5770,
+      "docEnd": 5952,
+      "docs": {
+        "brief": "Remove shop item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove shop item."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag identifier to find the item."
+          },
+          {
+            "tag": "return",
+            "text": "True it was removed, otherwise shop item not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnItemPurchase": {
+      "name": "TTT_OnItemPurchase",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "price",
+          "decl": "int& price",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "count",
+          "decl": "int& count",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_CheckItemAccess": {
+      "name": "TTT_CheckItemAccess",
+      "refLine": 281,
+      "docStart": 9780,
+      "docEnd": 9995,
+      "docs": {
+        "brief": "Check if client has access to the specific item",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if client has access to the specific item"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index"
+          },
+          {
+            "tag": "param:item",
+            "text": "Short Item name"
+          },
+          {
+            "tag": "return",
+            "text": "True if has access, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "shortName",
+          "decl": "const char[] shortName",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetItemUsage": {
+      "name": "TTT_SetItemUsage",
+      "refLine": 263,
+      "docStart": 9055,
+      "docEnd": 9423,
+      "docs": {
+        "brief": "Set the client usages for the specific item\nCan't be higher as the max usages\nCan't be lower as 0\nAttention: This will be reset on player spawn and client disconnect",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set the client usages for the specific item\nCan't be higher as the max usages\nCan't be lower as 0\nAttention: This will be reset on player spawn and client disconnect"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:short",
+            "text": "Short item name"
+          },
+          {
+            "tag": "param:usage",
+            "text": "Usages to set"
+          },
+          {
+            "tag": "return",
+            "text": "Usages for this item"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "short",
+          "decl": "const char[] short",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "usages",
+          "decl": "int usages",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RegisterShopItem": {
+      "name": "TTT_RegisterShopItem",
+      "refLine": 123,
+      "docStart": 4342,
+      "docEnd": 5133,
+      "docs": {
+        "brief": "Registers a item in the menu/shop.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Registers a item in the menu/shop."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag identifier of the item (must be unique)."
+          },
+          {
+            "tag": "param:itemlong",
+            "text": "The long fancy name for the item."
+          },
+          {
+            "tag": "param:price",
+            "text": "The price of the item."
+          },
+          {
+            "tag": "param:role",
+            "text": "The optional role to restrict the item to. (Default: 0 - for all)"
+          },
+          {
+            "tag": "param:sort",
+            "text": "The priority in Sorting. Buy menu is sorted from high to low. (Default: 0)"
+          },
+          {
+            "tag": "param:maxUsages",
+            "text": "Max usages for this items per round. ( 0 - Disabled )"
+          },
+          {
+            "tag": "param:limit",
+            "text": "The amount of purchases for all players during a round. ( 0 - Disabled )"
+          },
+          {
+            "tag": "param:callback",
+            "text": "A local function pointer to be called when the registered item is purchased."
+          },
+          {
+            "tag": "param:logging",
+            "text": "Enable or Disable purchase logging"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemlong",
+          "decl": "const char[] itemlong",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "price",
+          "decl": "int price",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "role",
+          "decl": "int role",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "sort",
+          "decl": "int sort",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "maxUsages",
+          "decl": "int maxUsages",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "limit",
+          "decl": "int limit",
+          "default": null
+        },
+        {
+          "type": "TTT_ItemPurchaseCallback",
+          "name": "callback",
+          "decl": "TTT_ItemPurchaseCallback callback",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "logging",
+          "decl": "bool logging",
+          "default": "true"
+        }
+      ]
+    },
+    "TTT_GetClientCredits": {
+      "name": "TTT_GetClientCredits",
+      "refLine": 189,
+      "docStart": 7156,
+      "docEnd": 7239,
+      "docs": {
+        "brief": "Retrieve a client's credits.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a client's credits."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemDiscount": {
+      "name": "TTT_GetItemDiscount",
+      "refLine": 272,
+      "docStart": 9498,
+      "docEnd": 9710,
+      "docs": {
+        "brief": "Get discount in percent for the specific item (from 0 - 100)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get discount in percent for the specific item (from 0 - 100)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index"
+          },
+          {
+            "tag": "param:item",
+            "text": "Short Item name"
+          },
+          {
+            "tag": "return",
+            "text": "Percent of discount"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "shortName",
+          "decl": "const char[] shortName",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_shop_SetNTVOptional": {
+      "name": "__pl_ttt_shop_SetNTVOptional",
+      "refLine": 317,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_OnItemRemove": {
+      "name": "TTT_OnItemRemove",
+      "refLine": 108,
+      "docStart": 4163,
+      "docEnd": 4285,
+      "docs": {
+        "brief": "Called after TTT_RemoveShopItem was used.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after TTT_RemoveShopItem was used."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag identifier of the item"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnCreditsChanged_Pre": {
+      "name": "TTT_OnCreditsChanged_Pre",
+      "refLine": 80,
+      "docStart": 2896,
+      "docEnd": 3108,
+      "docs": {
+        "brief": "Called before a players credits are modified.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before a players credits are modified."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:oldcredits",
+            "text": "The old amount of credits."
+          },
+          {
+            "tag": "param:newcredits",
+            "text": "The new amount of credits."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "oldcredits",
+          "decl": "int oldcredits",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "newcredits",
+          "decl": "int& newcredits",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetClientCredits": {
+      "name": "TTT_SetClientCredits",
+      "refLine": 196,
+      "docStart": 7286,
+      "docEnd": 7364,
+      "docs": {
+        "brief": "Set a client's credits.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a client's credits."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "credits",
+          "decl": "int credits",
+          "default": null
+        }
+      ]
+    },
+    "TTT_AddClientCredits": {
+      "name": "TTT_AddClientCredits",
+      "refLine": 203,
+      "docStart": 7424,
+      "docEnd": 7527,
+      "docs": {
+        "brief": "Add a client's credits (currentCredits+credits).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a client's credits (currentCredits+credits)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "credits",
+          "decl": "int credits",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemPrice": {
+      "name": "TTT_GetItemPrice",
+      "refLine": 148,
+      "docStart": 6010,
+      "docEnd": 6113,
+      "docs": {
+        "brief": "Retrieve a item's price.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a item's price."
+          },
+          {
+            "tag": "param:item",
+            "text": "The short-tag identifier of the item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemMaxUsages": {
+      "name": "TTT_GetItemMaxUsages",
+      "refLine": 182,
+      "docStart": 6989,
+      "docEnd": 7102,
+      "docs": {
+        "brief": "Retrieve the max usages of a item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the max usages of a item."
+          },
+          {
+            "tag": "param:item",
+            "text": "The short-tag identifier of the item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnItemPurchasePost": {
+      "name": "TTT_OnItemPurchasePost",
+      "refLine": 34,
+      "docStart": 912,
+      "docEnd": 1361,
+      "docs": {
+        "brief": "Called after an item is purchased in the menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after an item is purchased in the menu."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client who purchased the item."
+          },
+          {
+            "tag": "param:price",
+            "text": "The price that the item has cost. (0 = Free)"
+          },
+          {
+            "tag": "param:count",
+            "text": "Usages of this item. (0 - No usage left, 1+ - Usages per Round)\nCheck for yourself if you've round based items without usage limit"
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "The short-tag for the item's name."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "price",
+          "decl": "int price",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "count",
+          "decl": "int count",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetItemName": {
+      "name": "TTT_GetItemName",
+      "refLine": 166,
+      "docStart": 6326,
+      "docEnd": 6679,
+      "docs": {
+        "brief": "Gets the display name of the item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the display name of the item."
+          },
+          {
+            "tag": "param:itemshort",
+            "text": "Unique name of item."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store display name."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Returns true on success. Will return false if the item is no longer registered in shop or native failed to write to buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "itemshort",
+          "decl": "const char[] itemshort",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsShopRunning": {
+      "name": "TTT_IsShopRunning",
+      "refLine": 294,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_shop_included": {
+      "name": "_ttt_shop_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SHOP_ITEM_NAME_LONG": {
+      "name": "SHOP_ITEM_NAME_LONG",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "SHOP_ITEM_NAME_SHORT": {
+      "name": "SHOP_ITEM_NAME_SHORT",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "16"
+    },
+    "SHOP_CURRENCY_LENGTH": {
+      "name": "SHOP_CURRENCY_LENGTH",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "24"
+    },
+    "SHOP_ITEM_4ALL": {
+      "name": "SHOP_ITEM_4ALL",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {
+    "TTT_ItemPurchaseCallback": {
+      "name": "TTT_ItemPurchaseCallback",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "type": "function Action(int client, const char[] itemshort, int count, int price)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "int",
+            "name": "client",
+            "decl": "int client",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "itemshort",
+            "decl": "const char[] itemshort",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "count",
+            "decl": "int count",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "price",
+            "decl": "int price",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

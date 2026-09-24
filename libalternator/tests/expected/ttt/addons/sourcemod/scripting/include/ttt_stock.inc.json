@@ -1,0 +1,112 @@
+{
+  "functions": {
+    "TTT_EndConfig": {
+      "name": "TTT_EndConfig",
+      "refLine": 21,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_StartConfig": {
+      "name": "TTT_StartConfig",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "file",
+          "decl": "char[] file",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "directory",
+          "decl": "char[] directory",
+          "default": "\"ttt\""
+        }
+      ]
+    },
+    "TTT_IsGameCSGO": {
+      "name": "TTT_IsGameCSGO",
+      "refLine": 27,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "TTT_PLUGIN_VERSION": {
+      "name": "TTT_PLUGIN_VERSION",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"<VERSION>\""
+    },
+    "TTT_PLUGIN_NAME": {
+      "name": "TTT_PLUGIN_NAME",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"Trouble in Terrorist Town\""
+    },
+    "TTT_PLUGIN_AUTHOR": {
+      "name": "TTT_PLUGIN_AUTHOR",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"TTT Contributors\""
+    },
+    "TTT_PLUGIN_URL": {
+      "name": "TTT_PLUGIN_URL",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"https://github.com/TroubleInTerroristTown/Public\""
+    },
+    "_ttt_stock_included": {
+      "name": "_ttt_stock_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "TTT_PLUGIN_DESCRIPTION": {
+      "name": "TTT_PLUGIN_DESCRIPTION",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"The game is about a group of \\\"terrorists\\\" who have traitors among them, out to kill everyone who's not a traitor.\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}
