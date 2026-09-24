@@ -21,6 +21,9 @@ jobs:
       - name: Test parser and schema
         run: cargo test -p alternator -p schema
 
+      - name: Test walker history
+        run: cargo test -p walker --test history
+
   generator:
     name: DocGen
 

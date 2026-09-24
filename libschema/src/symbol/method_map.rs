@@ -32,8 +32,7 @@ impl ShlAssign for MethodMap {
     fn shl_assign(&mut self, rhs: Self) {
         self.declaration <<= rhs.declaration;
         self.parent = rhs.parent;
-        self.methods = rhs.methods;
-        self.properties = rhs.properties;
+        // Methods and properties are merged individually to preserve their metadata
     }
 }
 

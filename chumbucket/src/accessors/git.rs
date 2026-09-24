@@ -11,8 +11,11 @@ use super::Chronicle;
 pub struct Git<'g>(DiffList<'g>);
 
 impl<'g> Git<'g> {
-    pub fn from_walker(from: Option<i64>, walker: &'g mut Walker) -> Result<Self> {
-        Ok(Self(walker.walk(from)?))
+    pub fn from_walker(since: Option<&Versioning>, walker: &'g mut Walker) -> Result<Self> {
+        Ok(Self(walker.walk(
+            since.map(|v| v.hash.as_str()),
+            since.map(|v| v.time),
+        )?))
     }
 }
 

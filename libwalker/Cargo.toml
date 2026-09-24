@@ -9,3 +9,6 @@ edition = "2021"
 [dependencies]
 git2 = "0.13"
 thiserror = "1"
+
+[dev-dependencies]
+git2 = "0.13"

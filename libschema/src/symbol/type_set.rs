@@ -52,7 +52,7 @@ impl Metable for TypeSet {
 impl ShlAssign for TypeSet {
     fn shl_assign(&mut self, rhs: Self) {
         self.declaration <<= rhs.declaration;
-        self.types = rhs.types;
+        // Types are merged individually to preserve their metadata
     }
 }
 
