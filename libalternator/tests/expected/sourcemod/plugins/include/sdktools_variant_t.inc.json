@@ -1,0 +1,265 @@
+{
+  "functions": {
+    "SetVariantEntity": {
+      "name": "SetVariantEntity",
+      "refLine": 93,
+      "docStart": 2666,
+      "docEnd": 2808,
+      "docs": {
+        "brief": "Sets an entity in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity in the global variant object."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantInt": {
+      "name": "SetVariantInt",
+      "refLine": 57,
+      "docStart": 1907,
+      "docEnd": 2009,
+      "docs": {
+        "brief": "Sets an integer value in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an integer value in the global variant object."
+          },
+          {
+            "tag": "param:val",
+            "text": "Input value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "val",
+          "decl": "int val",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantBool": {
+      "name": "SetVariantBool",
+      "refLine": 43,
+      "docStart": 1624,
+      "docEnd": 1722,
+      "docs": {
+        "brief": "Sets a bool value in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a bool value in the global variant object."
+          },
+          {
+            "tag": "param:val",
+            "text": "Input value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "val",
+          "decl": "bool val",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantVector3D": {
+      "name": "SetVariantVector3D",
+      "refLine": 71,
+      "docStart": 2197,
+      "docEnd": 2295,
+      "docs": {
+        "brief": "Sets a 3D vector in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a 3D vector in the global variant object."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Input vector."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantPosVector3D": {
+      "name": "SetVariantPosVector3D",
+      "refLine": 78,
+      "docStart": 2349,
+      "docEnd": 2465,
+      "docs": {
+        "brief": "Sets a 3D position vector in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a 3D position vector in the global variant object."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Input position vector."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantFloat": {
+      "name": "SetVariantFloat",
+      "refLine": 64,
+      "docStart": 2047,
+      "docEnd": 2155,
+      "docs": {
+        "brief": "Sets a floating point value in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a floating point value in the global variant object."
+          },
+          {
+            "tag": "param:val",
+            "text": "Input value."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "val",
+          "decl": "float val",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantString": {
+      "name": "SetVariantString",
+      "refLine": 50,
+      "docStart": 1762,
+      "docEnd": 1857,
+      "docs": {
+        "brief": "Sets a string in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string in the global variant object."
+          },
+          {
+            "tag": "param:str",
+            "text": "Input string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "SetVariantColor": {
+      "name": "SetVariantColor",
+      "refLine": 85,
+      "docStart": 2522,
+      "docEnd": 2615,
+      "docs": {
+        "brief": "Sets a color in the global variant object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a color in the global variant object."
+          },
+          {
+            "tag": "param:color",
+            "text": "Input color."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[4]",
+          "name": "color",
+          "decl": "const int color[4]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_variant_t_included": {
+      "name": "_sdktools_variant_t_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

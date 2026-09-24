@@ -1,0 +1,2225 @@
+{
+  "functions": {
+    "GetEntityFlags": {
+      "name": "GetEntityFlags",
+      "refLine": 179,
+      "docStart": 9557,
+      "docEnd": 9955,
+      "docs": {
+        "brief": "Get an entity's flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get an entity's flags."
+          },
+          {
+            "tag": "note",
+            "text": "The game's actual flags are internally translated by SM\nto match the entity flags defined above as the actual values\ncan differ per engine."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity's flags, see entity flag defines above."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityFlags": {
+      "name": "SetEntityFlags",
+      "refLine": 192,
+      "docStart": 9999,
+      "docEnd": 10423,
+      "docs": {
+        "brief": "Sets an entity's flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's flags."
+          },
+          {
+            "tag": "note",
+            "text": "The entity flags as defined above are internally translated by SM\nto match the current game's expected value for the flags as\nthe actual values can differ per engine."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Entity flags, see entity flag defines above."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityRenderFx": {
+      "name": "GetEntityRenderFx",
+      "refLine": 318,
+      "docStart": 13069,
+      "docEnd": 13267,
+      "docs": {
+        "brief": "Gets an entity's render Fx.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's render Fx."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "RenderFx value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "RenderFx",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityRenderMode": {
+      "name": "GetEntityRenderMode",
+      "refLine": 260,
+      "docStart": 11782,
+      "docEnd": 11984,
+      "docs": {
+        "brief": "Gets an entity's render mode.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's render mode."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "RenderMode value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "RenderMode",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityMoveType": {
+      "name": "SetEntityMoveType",
+      "refLine": 231,
+      "docStart": 11138,
+      "docEnd": 11345,
+      "docs": {
+        "brief": "Sets an entity's movetype.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's movetype."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:mt",
+            "text": "Movetype, see enum above."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "MoveType",
+          "name": "mt",
+          "decl": "MoveType mt",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityRenderFx": {
+      "name": "SetEntityRenderFx",
+      "refLine": 347,
+      "docStart": 13704,
+      "docEnd": 13902,
+      "docs": {
+        "brief": "Sets an entity's render Fx.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's render Fx."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:fx",
+            "text": "RenderFx value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "RenderFx",
+          "name": "fx",
+          "decl": "RenderFx fx",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityRenderColor": {
+      "name": "GetEntityRenderColor",
+      "refLine": 379,
+      "docStart": 14326,
+      "docEnd": 14672,
+      "docs": {
+        "brief": "Gets an entity's color.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's color."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:r",
+            "text": "Amount of red (0-255)"
+          },
+          {
+            "tag": "param:g",
+            "text": "Amount of green (0-255)"
+          },
+          {
+            "tag": "param:b",
+            "text": "Amount of blue (0-255)"
+          },
+          {
+            "tag": "param:a",
+            "text": "Amount of alpha (0-255)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "r",
+          "decl": "int& r",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "g",
+          "decl": "int& g",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "b",
+          "decl": "int& b",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "a",
+          "decl": "int& a",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityRenderColor": {
+      "name": "SetEntityRenderColor",
+      "refLine": 421,
+      "docStart": 15377,
+      "docEnd": 15722,
+      "docs": {
+        "brief": "Sets an entity's color.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's color."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index"
+          },
+          {
+            "tag": "param:r",
+            "text": "Amount of red (0-255)"
+          },
+          {
+            "tag": "param:g",
+            "text": "Amount of green (0-255)"
+          },
+          {
+            "tag": "param:b",
+            "text": "Amount of blue (0-255)"
+          },
+          {
+            "tag": "param:a",
+            "text": "Amount of alpha (0-255)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "r",
+          "decl": "int r",
+          "default": "255"
+        },
+        {
+          "type": "int",
+          "name": "g",
+          "decl": "int g",
+          "default": "255"
+        },
+        {
+          "type": "int",
+          "name": "b",
+          "decl": "int b",
+          "default": "255"
+        },
+        {
+          "type": "int",
+          "name": "a",
+          "decl": "int a",
+          "default": "255"
+        }
+      ]
+    },
+    "GetEntityGravity": {
+      "name": "GetEntityGravity",
+      "refLine": 460,
+      "docStart": 16459,
+      "docEnd": 16661,
+      "docs": {
+        "brief": "Gets an entity's gravity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's gravity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity's m_flGravity value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityHealth": {
+      "name": "SetEntityHealth",
+      "refLine": 518,
+      "docStart": 17781,
+      "docEnd": 17974,
+      "docs": {
+        "brief": "Sets an entity's health",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's health"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:amount",
+            "text": "Health amount."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "amount",
+          "decl": "int amount",
+          "default": null
+        }
+      ]
+    },
+    "GetEntityMoveType": {
+      "name": "GetEntityMoveType",
+      "refLine": 202,
+      "docStart": 10481,
+      "docEnd": 10688,
+      "docs": {
+        "brief": "Gets an entity's movetype.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an entity's movetype."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "return",
+            "text": "Movetype, see enum above."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "MoveType",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityRenderMode": {
+      "name": "SetEntityRenderMode",
+      "refLine": 289,
+      "docStart": 12431,
+      "docEnd": 12633,
+      "docs": {
+        "brief": "Sets an entity's render mode.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's render mode."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:mode",
+            "text": "RenderMode value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "RenderMode",
+          "name": "mode",
+          "decl": "RenderMode mode",
+          "default": null
+        }
+      ]
+    },
+    "GetClientButtons": {
+      "name": "GetClientButtons",
+      "refLine": 570,
+      "docStart": 18803,
+      "docEnd": 19057,
+      "docs": {
+        "brief": "Get's a users current pressed buttons",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get's a users current pressed buttons"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "return",
+            "text": "Bitsum of buttons"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game,\nor lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SetEntityGravity": {
+      "name": "SetEntityGravity",
+      "refLine": 489,
+      "docStart": 17095,
+      "docEnd": 17333,
+      "docs": {
+        "brief": "Sets an entity's gravity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity's gravity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:amount",
+            "text": "Gravity to set (default = 1.0, half = 0.5, double = 2.0)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index, or lack of mod compliance."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "amount",
+          "decl": "float amount",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "IN_FORWARD": {
+      "name": "IN_FORWARD",
+      "refLine": 103,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "IN_ATTACK": {
+      "name": "IN_ATTACK",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "FL_WORLDBRUSH": {
+      "name": "FL_WORLDBRUSH",
+      "refLine": 157,
+      "docStart": 8672,
+      "docEnd": 8803,
+      "docs": {
+        "brief": "Not moveable/removeable brush entity (really part of the world, but represented as an entity for transparency or something)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Not moveable/removeable brush entity (really part of the world, but represented as an entity for transparency or something)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 24)"
+    },
+    "FL_DUCKING": {
+      "name": "FL_DUCKING",
+      "refLine": 131,
+      "docStart": 6300,
+      "docEnd": 6347,
+      "docs": {
+        "brief": "Player flag -- Player is fully crouched",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player flag -- Player is fully crouched"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "FL_STATICPROP": {
+      "name": "FL_STATICPROP",
+      "refLine": 151,
+      "docStart": 8020,
+      "docEnd": 8047,
+      "docs": {
+        "brief": "Eetsa static prop!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Eetsa static prop!"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 18)"
+    },
+    "FL_FROZEN": {
+      "name": "FL_FROZEN",
+      "refLine": 135,
+      "docStart": 6722,
+      "docEnd": 6768,
+      "docs": {
+        "brief": "Player is frozen for 3rd person camera",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player is frozen for 3rd person camera"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "FL_WATERJUMP": {
+      "name": "FL_WATERJUMP",
+      "refLine": 132,
+      "docStart": 6393,
+      "docEnd": 6428,
+      "docs": {
+        "brief": "player jumping out of water",
+        "tags": [
+          {
+            "tag": "",
+            "text": "player jumping out of water"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "FL_STEPMOVEMENT": {
+      "name": "FL_STEPMOVEMENT",
+      "refLine": 154,
+      "docStart": 8259,
+      "docEnd": 8326,
+      "docs": {
+        "brief": "Changes the SV_Movestep() behavior to not do any processing",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes the SV_Movestep() behavior to not do any processing"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 21)"
+    },
+    "IN_WALK": {
+      "name": "IN_WALK",
+      "refLine": 118,
+      "docStart": 5463,
+      "docEnd": 5494,
+      "docs": {
+        "brief": "Player holding walk key",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player holding walk key"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 18)"
+    },
+    "FL_GRAPHED": {
+      "name": "FL_GRAPHED",
+      "refLine": 152,
+      "docStart": 8093,
+      "docEnd": 8169,
+      "docs": {
+        "brief": "worldgraph has this ent listed as something that blocks a connection",
+        "tags": [
+          {
+            "tag": "",
+            "text": "worldgraph has this ent listed as something that blocks a connection"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 19)"
+    },
+    "IN_DUCK": {
+      "name": "IN_DUCK",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "FL_ONGROUND": {
+      "name": "FL_ONGROUND",
+      "refLine": 130,
+      "docStart": 6223,
+      "docEnd": 6254,
+      "docs": {
+        "brief": "At rest / on the ground",
+        "tags": [
+          {
+            "tag": "",
+            "text": "At rest / on the ground"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "FL_FREEZING": {
+      "name": "FL_FREEZING",
+      "refLine": 164,
+      "docStart": 9433,
+      "docEnd": 9463,
+      "docs": {
+        "brief": "We're becoming frozen!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "We're becoming frozen!"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 31)"
+    },
+    "IN_SPEED": {
+      "name": "IN_SPEED",
+      "refLine": 117,
+      "docStart": 5377,
+      "docEnd": 5416,
+      "docs": {
+        "brief": "Player is holding the speed key",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player is holding the speed key"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 17)"
+    },
+    "FL_UNBLOCKABLE_BY_PLAYER": {
+      "name": "FL_UNBLOCKABLE_BY_PLAYER",
+      "refLine": 163,
+      "docStart": 9337,
+      "docEnd": 9387,
+      "docs": {
+        "brief": "pusher that can't be blocked by the player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "pusher that can't be blocked by the player"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 30)"
+    },
+    "FL_SWIM": {
+      "name": "FL_SWIM",
+      "refLine": 144,
+      "docStart": 7526,
+      "docEnd": 7616,
+      "docs": {
+        "brief": "Changes the SV_Movestep() behavior to not need to be on ground (but stay in water)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes the SV_Movestep() behavior to not need to be on ground (but stay in water)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 11)"
+    },
+    "IN_RIGHT": {
+      "name": "IN_RIGHT",
+      "refLine": 108,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "IN_WEAPON1": {
+      "name": "IN_WEAPON1",
+      "refLine": 120,
+      "docStart": 5617,
+      "docEnd": 5650,
+      "docs": {
+        "brief": "weapon defines these bits",
+        "tags": [
+          {
+            "tag": "",
+            "text": "weapon defines these bits"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 20)"
+    },
+    "IN_ATTACK3": {
+      "name": "IN_ATTACK3",
+      "refLine": 125,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 25)"
+    },
+    "FL_OBJECT": {
+      "name": "FL_OBJECT",
+      "refLine": 158,
+      "docStart": 8849,
+      "docEnd": 8934,
+      "docs": {
+        "brief": "Terrible name. This is an object that NPCs should see. Missiles, for example.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Terrible name. This is an object that NPCs should see. Missiles, for example."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 25)"
+    },
+    "IN_MOVERIGHT": {
+      "name": "IN_MOVERIGHT",
+      "refLine": 110,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 10)"
+    },
+    "FL_CONVEYOR": {
+      "name": "FL_CONVEYOR",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 12)"
+    },
+    "IN_SCORE": {
+      "name": "IN_SCORE",
+      "refLine": 116,
+      "docStart": 5271,
+      "docEnd": 5330,
+      "docs": {
+        "brief": "Used by client.dll for when scoreboard is held down",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Used by client.dll for when scoreboard is held down"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 16)"
+    },
+    "FL_GODMODE": {
+      "name": "FL_GODMODE",
+      "refLine": 147,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 14)"
+    },
+    "FL_BASEVELOCITY": {
+      "name": "FL_BASEVELOCITY",
+      "refLine": 156,
+      "docStart": 8531,
+      "docEnd": 8626,
+      "docs": {
+        "brief": "Base velocity has been applied this frame (used to convert base velocity into momentum)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Base velocity has been applied this frame (used to convert base velocity into momentum)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 23)"
+    },
+    "IN_LEFT": {
+      "name": "IN_LEFT",
+      "refLine": 107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "FL_INRAIN": {
+      "name": "FL_INRAIN",
+      "refLine": 134,
+      "docStart": 6628,
+      "docEnd": 6676,
+      "docs": {
+        "brief": "Indicates the entity is standing in rain",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Indicates the entity is standing in rain"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "FL_FLY": {
+      "name": "FL_FLY",
+      "refLine": 143,
+      "docStart": 7410,
+      "docEnd": 7480,
+      "docs": {
+        "brief": "Changes the SV_Movestep() behavior to not need to be on ground",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes the SV_Movestep() behavior to not need to be on ground"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 10)"
+    },
+    "FL_KILLME": {
+      "name": "FL_KILLME",
+      "refLine": 159,
+      "docStart": 8980,
+      "docEnd": 9048,
+      "docs": {
+        "brief": "This entity is marked for death -- will be freed by game DLL",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This entity is marked for death -- will be freed by game DLL"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 26)"
+    },
+    "IN_ALT1": {
+      "name": "IN_ALT1",
+      "refLine": 114,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 14)"
+    },
+    "FL_ONFIRE": {
+      "name": "FL_ONFIRE",
+      "refLine": 160,
+      "docStart": 9094,
+      "docEnd": 9113,
+      "docs": {
+        "brief": "You know...",
+        "tags": [
+          {
+            "tag": "",
+            "text": "You know..."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 27)"
+    },
+    "IN_JUMP": {
+      "name": "IN_JUMP",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "IN_ATTACK2": {
+      "name": "IN_ATTACK2",
+      "refLine": 111,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 11)"
+    },
+    "IN_RUN": {
+      "name": "IN_RUN",
+      "refLine": 112,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 12)"
+    },
+    "IN_BULLRUSH": {
+      "name": "IN_BULLRUSH",
+      "refLine": 122,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 22)"
+    },
+    "IN_GRENADE1": {
+      "name": "IN_GRENADE1",
+      "refLine": 123,
+      "docStart": 5821,
+      "docEnd": 5838,
+      "docs": {
+        "brief": "grenade 1",
+        "tags": [
+          {
+            "tag": "",
+            "text": "grenade 1"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 23)"
+    },
+    "IN_MOVELEFT": {
+      "name": "IN_MOVELEFT",
+      "refLine": 109,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 9)"
+    },
+    "FL_FAKECLIENT": {
+      "name": "FL_FAKECLIENT",
+      "refLine": 138,
+      "docStart": 7003,
+      "docEnd": 7082,
+      "docs": {
+        "brief": "Fake client, simulated server side; don't send network messages to them",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fake client, simulated server side; don't send network messages to them"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "FL_GRENADE": {
+      "name": "FL_GRENADE",
+      "refLine": 153,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 20)"
+    },
+    "FL_PARTIALGROUND": {
+      "name": "FL_PARTIALGROUND",
+      "refLine": 150,
+      "docStart": 7941,
+      "docEnd": 7974,
+      "docs": {
+        "brief": "not all corners are valid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "not all corners are valid"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 17)"
+    },
+    "IN_BACK": {
+      "name": "IN_BACK",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "IN_WEAPON2": {
+      "name": "IN_WEAPON2",
+      "refLine": 121,
+      "docStart": 5697,
+      "docEnd": 5730,
+      "docs": {
+        "brief": "weapon defines these bits",
+        "tags": [
+          {
+            "tag": "",
+            "text": "weapon defines these bits"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 21)"
+    },
+    "PLAYER_FLAG_BITS": {
+      "name": "PLAYER_FLAG_BITS",
+      "refLine": 140,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "9"
+    },
+    "IN_USE": {
+      "name": "IN_USE",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "FL_DONTTOUCH": {
+      "name": "FL_DONTTOUCH",
+      "refLine": 155,
+      "docStart": 8372,
+      "docEnd": 8485,
+      "docs": {
+        "brief": "Doesn't generate touch functions, generates Untouch() for anything it was touching when this flag was set",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Doesn't generate touch functions, generates Untouch() for anything it was touching when this flag was set"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 22)"
+    },
+    "FL_CLIENT": {
+      "name": "FL_CLIENT",
+      "refLine": 137,
+      "docStart": 6938,
+      "docEnd": 6957,
+      "docs": {
+        "brief": "Is a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Is a player"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "IN_ALT2": {
+      "name": "IN_ALT2",
+      "refLine": 115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 15)"
+    },
+    "IN_ZOOM": {
+      "name": "IN_ZOOM",
+      "refLine": 119,
+      "docStart": 5541,
+      "docEnd": 5570,
+      "docs": {
+        "brief": "Zoom key for HUD zoom",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Zoom key for HUD zoom"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 19)"
+    },
+    "FL_EP2V_UNKNOWN1": {
+      "name": "FL_EP2V_UNKNOWN1",
+      "refLine": 165,
+      "docStart": 9509,
+      "docEnd": 9524,
+      "docs": {
+        "brief": "Unknown",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unknown"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 31)"
+    },
+    "FL_ONTRAIN": {
+      "name": "FL_ONTRAIN",
+      "refLine": 133,
+      "docStart": 6474,
+      "docEnd": 6582,
+      "docs": {
+        "brief": "Player is _controlling_ a train, so movement commands should be ignored on client during prediction.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player is _controlling_ a train, so movement commands should be ignored on client during prediction."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "FL_TRANSRAGDOLL": {
+      "name": "FL_TRANSRAGDOLL",
+      "refLine": 162,
+      "docStart": 9230,
+      "docEnd": 9291,
+      "docs": {
+        "brief": "In the process of turning into a client side ragdoll.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "In the process of turning into a client side ragdoll."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 29)"
+    },
+    "_entity_prop_stocks_included": {
+      "name": "_entity_prop_stocks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "IN_CANCEL": {
+      "name": "IN_CANCEL",
+      "refLine": 106,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "FL_INWATER": {
+      "name": "FL_INWATER",
+      "refLine": 142,
+      "docStart": 7348,
+      "docEnd": 7364,
+      "docs": {
+        "brief": "In water",
+        "tags": [
+          {
+            "tag": "",
+            "text": "In water"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 9)"
+    },
+    "FL_ATCONTROLS": {
+      "name": "FL_ATCONTROLS",
+      "refLine": 136,
+      "docStart": 6814,
+      "docEnd": 6892,
+      "docs": {
+        "brief": "Player can't move, but keeps key inputs for controlling another entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player can't move, but keeps key inputs for controlling another entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "FL_AIMTARGET": {
+      "name": "FL_AIMTARGET",
+      "refLine": 149,
+      "docStart": 7838,
+      "docEnd": 7895,
+      "docs": {
+        "brief": "set if the crosshair needs to aim onto the entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "set if the crosshair needs to aim onto the entity"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 16)"
+    },
+    "FL_NPC": {
+      "name": "FL_NPC",
+      "refLine": 146,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 13)"
+    },
+    "FL_NOTARGET": {
+      "name": "FL_NOTARGET",
+      "refLine": 148,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 15)"
+    },
+    "IN_RELOAD": {
+      "name": "IN_RELOAD",
+      "refLine": 113,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 13)"
+    },
+    "IN_GRENADE2": {
+      "name": "IN_GRENADE2",
+      "refLine": 124,
+      "docStart": 5885,
+      "docEnd": 5902,
+      "docs": {
+        "brief": "grenade 2",
+        "tags": [
+          {
+            "tag": "",
+            "text": "grenade 2"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 24)"
+    },
+    "FL_DISSOLVING": {
+      "name": "FL_DISSOLVING",
+      "refLine": 161,
+      "docStart": 9159,
+      "docEnd": 9184,
+      "docs": {
+        "brief": "We're dissolving!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "We're dissolving!"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 28)"
+    }
+  },
+  "enums": {
+    "RenderFx": {
+      "name": "RenderFx",
+      "refLine": 69,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "RENDERFX_CLAMP_MIN_SCALE": {
+          "name": "RENDERFX_CLAMP_MIN_SCALE",
+          "refLine": 90,
+          "docStart": 4034,
+          "docEnd": 4098,
+          "docs": {
+            "brief": "Keep this sprite from getting very small (SPRITES only!)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Keep this sprite from getting very small (SPRITES only!)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_ENV_RAIN": {
+          "name": "RENDERFX_ENV_RAIN",
+          "refLine": 91,
+          "docStart": 4129,
+          "docEnd": 4176,
+          "docs": {
+            "brief": "for environmental rendermode, make rain",
+            "tags": [
+              {
+                "tag": "",
+                "text": "for environmental rendermode, make rain"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_NO_DISSIPATION": {
+          "name": "RENDERFX_NO_DISSIPATION",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_FADE_FAST": {
+          "name": "RENDERFX_FADE_FAST",
+          "refLine": 77,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_EXPLODE": {
+          "name": "RENDERFX_EXPLODE",
+          "refLine": 88,
+          "docStart": 3923,
+          "docEnd": 3951,
+          "docs": {
+            "brief": "Scale up really big!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Scale up really big!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_PULSE_FAST_WIDER": {
+          "name": "RENDERFX_PULSE_FAST_WIDER",
+          "refLine": 95,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_SOLID_FAST": {
+          "name": "RENDERFX_SOLID_FAST",
+          "refLine": 79,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_FLICKER_FAST": {
+          "name": "RENDERFX_FLICKER_FAST",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_MAX": {
+          "name": "RENDERFX_MAX",
+          "refLine": 96,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_GLOWSHELL": {
+          "name": "RENDERFX_GLOWSHELL",
+          "refLine": 89,
+          "docStart": 3982,
+          "docEnd": 4003,
+          "docs": {
+            "brief": "Glowing Shell",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Glowing Shell"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_PULSE_SLOW": {
+          "name": "RENDERFX_PULSE_SLOW",
+          "refLine": 72,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_STROBE_FASTER": {
+          "name": "RENDERFX_STROBE_FASTER",
+          "refLine": 82,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_STROBE_SLOW": {
+          "name": "RENDERFX_STROBE_SLOW",
+          "refLine": 80,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_HOLOGRAM": {
+          "name": "RENDERFX_HOLOGRAM",
+          "refLine": 87,
+          "docStart": 3852,
+          "docEnd": 3892,
+          "docs": {
+            "brief": "kRenderFxDistort + distance fade",
+            "tags": [
+              {
+                "tag": "",
+                "text": "kRenderFxDistort + distance fade"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_SPOTLIGHT": {
+          "name": "RENDERFX_SPOTLIGHT",
+          "refLine": 93,
+          "docStart": 4285,
+          "docEnd": 4329,
+          "docs": {
+            "brief": "TEST CODE for experimental spotlight",
+            "tags": [
+              {
+                "tag": "",
+                "text": "TEST CODE for experimental spotlight"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_NONE": {
+          "name": "RENDERFX_NONE",
+          "refLine": 71,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "RENDERFX_PULSE_FAST": {
+          "name": "RENDERFX_PULSE_FAST",
+          "refLine": 73,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_SOLID_SLOW": {
+          "name": "RENDERFX_SOLID_SLOW",
+          "refLine": 78,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_DISTORT": {
+          "name": "RENDERFX_DISTORT",
+          "refLine": 86,
+          "docStart": 3782,
+          "docEnd": 3821,
+          "docs": {
+            "brief": "Distort/scale/translate flicker",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Distort/scale/translate flicker"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_ENV_SNOW": {
+          "name": "RENDERFX_ENV_SNOW",
+          "refLine": 92,
+          "docStart": 4207,
+          "docEnd": 4254,
+          "docs": {
+            "brief": "\"        \"            \"    , make snow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "\"        \"            \"    , make snow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_RAGDOLL": {
+          "name": "RENDERFX_RAGDOLL",
+          "refLine": 94,
+          "docStart": 4360,
+          "docEnd": 4431,
+          "docs": {
+            "brief": "HACKHACK: TEST CODE for signalling death of a ragdoll character",
+            "tags": [
+              {
+                "tag": "",
+                "text": "HACKHACK: TEST CODE for signalling death of a ragdoll character"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_PULSE_FAST_WIDE": {
+          "name": "RENDERFX_PULSE_FAST_WIDE",
+          "refLine": 75,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_FLICKER_SLOW": {
+          "name": "RENDERFX_FLICKER_SLOW",
+          "refLine": 83,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_STROBE_FAST": {
+          "name": "RENDERFX_STROBE_FAST",
+          "refLine": 81,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_PULSE_SLOW_WIDE": {
+          "name": "RENDERFX_PULSE_SLOW_WIDE",
+          "refLine": 74,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "RENDERFX_FADE_SLOW": {
+          "name": "RENDERFX_FADE_SLOW",
+          "refLine": 76,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "MoveType": {
+      "name": "MoveType",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "MOVETYPE_FLYGRAVITY": {
+          "name": "MOVETYPE_FLYGRAVITY",
+          "refLine": 45,
+          "docStart": 2051,
+          "docEnd": 2105,
+          "docs": {
+            "brief": "flies through the air + is affected by gravity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "flies through the air + is affected by gravity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_WALK": {
+          "name": "MOVETYPE_WALK",
+          "refLine": 42,
+          "docStart": 1808,
+          "docEnd": 1850,
+          "docs": {
+            "brief": "Player only - moving on the ground",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Player only - moving on the ground"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_PUSH": {
+          "name": "MOVETYPE_PUSH",
+          "refLine": 47,
+          "docStart": 2203,
+          "docEnd": 2243,
+          "docs": {
+            "brief": "no clip to world, push and crush",
+            "tags": [
+              {
+                "tag": "",
+                "text": "no clip to world, push and crush"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_LADDER": {
+          "name": "MOVETYPE_LADDER",
+          "refLine": 49,
+          "docStart": 2367,
+          "docEnd": 2420,
+          "docs": {
+            "brief": "Used by players only when going onto a ladder",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Used by players only when going onto a ladder"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_NONE": {
+          "name": "MOVETYPE_NONE",
+          "refLine": 40,
+          "docStart": 1708,
+          "docEnd": 1727,
+          "docs": {
+            "brief": "never moves",
+            "tags": [
+              {
+                "tag": "",
+                "text": "never moves"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "MOVETYPE_VPHYSICS": {
+          "name": "MOVETYPE_VPHYSICS",
+          "refLine": 46,
+          "docStart": 2136,
+          "docEnd": 2172,
+          "docs": {
+            "brief": "uses VPHYSICS for simulation",
+            "tags": [
+              {
+                "tag": "",
+                "text": "uses VPHYSICS for simulation"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_ISOMETRIC": {
+          "name": "MOVETYPE_ISOMETRIC",
+          "refLine": 41,
+          "docStart": 1758,
+          "docEnd": 1777,
+          "docs": {
+            "brief": "For players",
+            "tags": [
+              {
+                "tag": "",
+                "text": "For players"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_STEP": {
+          "name": "MOVETYPE_STEP",
+          "refLine": 43,
+          "docStart": 1881,
+          "docEnd": 1940,
+          "docs": {
+            "brief": "gravity, special edge handling -- monsters use this",
+            "tags": [
+              {
+                "tag": "",
+                "text": "gravity, special edge handling -- monsters use this"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_NOCLIP": {
+          "name": "MOVETYPE_NOCLIP",
+          "refLine": 48,
+          "docStart": 2274,
+          "docEnd": 2336,
+          "docs": {
+            "brief": "No gravity, no collisions, still do velocity/avelocity",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No gravity, no collisions, still do velocity/avelocity"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_FLY": {
+          "name": "MOVETYPE_FLY",
+          "refLine": 44,
+          "docStart": 1971,
+          "docEnd": 2020,
+          "docs": {
+            "brief": "No gravity, but still collides with stuff",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No gravity, but still collides with stuff"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_OBSERVER": {
+          "name": "MOVETYPE_OBSERVER",
+          "refLine": 50,
+          "docStart": 2451,
+          "docEnd": 2511,
+          "docs": {
+            "brief": "Observer movement, depends on player's observer mode",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Observer movement, depends on player's observer mode"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "MOVETYPE_CUSTOM": {
+          "name": "MOVETYPE_CUSTOM",
+          "refLine": 51,
+          "docStart": 2542,
+          "docEnd": 2595,
+          "docs": {
+            "brief": "Allows the entity to describe its own physics",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Allows the entity to describe its own physics"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "RenderMode": {
+      "name": "RenderMode",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "RENDER_NORMAL": {
+          "name": "RENDER_NORMAL",
+          "refLine": 56,
+          "docStart": 2652,
+          "docEnd": 2663,
+          "docs": {
+            "brief": "src",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSALPHAADD": {
+          "name": "RENDER_TRANSALPHAADD",
+          "refLine": 64,
+          "docStart": 3194,
+          "docEnd": 3218,
+          "docs": {
+            "brief": "src + dest*(1-a)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src + dest*(1-a)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSCOLOR": {
+          "name": "RENDER_TRANSCOLOR",
+          "refLine": 57,
+          "docStart": 2694,
+          "docEnd": 2716,
+          "docs": {
+            "brief": "c*a+dest*(1-a)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "c*a+dest*(1-a)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSADDFRAMEBLEND": {
+          "name": "RENDER_TRANSADDFRAMEBLEND",
+          "refLine": 63,
+          "docStart": 3093,
+          "docEnd": 3163,
+          "docs": {
+            "brief": "use a fractional frame value to blend between animation frames",
+            "tags": [
+              {
+                "tag": "",
+                "text": "use a fractional frame value to blend between animation frames"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_GLOW": {
+          "name": "RENDER_GLOW",
+          "refLine": 59,
+          "docStart": 2802,
+          "docEnd": 2872,
+          "docs": {
+            "brief": "src*a+dest -- No Z buffer checks -- Fixed size in screen space",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src*a+dest -- No Z buffer checks -- Fixed size in screen space"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSADD": {
+          "name": "RENDER_TRANSADD",
+          "refLine": 61,
+          "docStart": 2964,
+          "docEnd": 2982,
+          "docs": {
+            "brief": "src*a+dest",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src*a+dest"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSTEXTURE": {
+          "name": "RENDER_TRANSTEXTURE",
+          "refLine": 58,
+          "docStart": 2747,
+          "docEnd": 2771,
+          "docs": {
+            "brief": "src*a+dest*(1-a)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src*a+dest*(1-a)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_WORLDGLOW": {
+          "name": "RENDER_WORLDGLOW",
+          "refLine": 65,
+          "docStart": 3249,
+          "docEnd": 3311,
+          "docs": {
+            "brief": "Same as kRenderGlow but not fixed size in screen space",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Same as kRenderGlow but not fixed size in screen space"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_TRANSALPHA": {
+          "name": "RENDER_TRANSALPHA",
+          "refLine": 60,
+          "docStart": 2903,
+          "docEnd": 2933,
+          "docs": {
+            "brief": "src*srca+dest*(1-srca)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "src*srca+dest*(1-srca)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_ENVIRONMENTAL": {
+          "name": "RENDER_ENVIRONMENTAL",
+          "refLine": 62,
+          "docStart": 3013,
+          "docEnd": 3062,
+          "docs": {
+            "brief": "not drawn, used for environmental effects",
+            "tags": [
+              {
+                "tag": "",
+                "text": "not drawn, used for environmental effects"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RENDER_NONE": {
+          "name": "RENDER_NONE",
+          "refLine": 66,
+          "docStart": 3342,
+          "docEnd": 3363,
+          "docs": {
+            "brief": "Don't render.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Don't render."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

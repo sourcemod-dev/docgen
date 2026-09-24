@@ -1,0 +1,889 @@
+{
+  "functions": {
+    "TF2Attrib_GetByDefIndex": {
+      "name": "TF2Attrib_GetByDefIndex",
+      "refLine": 50,
+      "docStart": 1708,
+      "docEnd": 2168,
+      "docs": {
+        "brief": "Returns the address of an attribute (by attribute index) on an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the address of an attribute (by attribute index) on an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to get attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Definition index of the attribute, as from the number on the attribute entry in items_game."
+          },
+          {
+            "tag": "return",
+            "text": "Address of the attribute on the entity, or Address_Null if the attribute does not exist on the entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute index passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_GetValue": {
+      "name": "TF2Attrib_GetValue",
+      "refLine": 135,
+      "docStart": 5252,
+      "docEnd": 5431,
+      "docs": {
+        "brief": "Returns the value of m_flValue on an attribute.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the value of m_flValue on an attribute."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "return",
+            "text": "The floating point value of m_flValue on the attribute."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_RemoveAll": {
+      "name": "TF2Attrib_RemoveAll",
+      "refLine": 82,
+      "docStart": 3185,
+      "docEnd": 3475,
+      "docs": {
+        "brief": "Removes all attributes from an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes all attributes from an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to remove attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "return",
+            "text": "True if the SDKCall was made, false if entity had invalid address or m_AttributeList missing."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_SetRefundableCurrency": {
+      "name": "TF2Attrib_SetRefundableCurrency",
+      "refLine": 145,
+      "docStart": 5483,
+      "docEnd": 5674,
+      "docs": {
+        "brief": "Sets the value of m_nRefundableCurrency on an attribute.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the value of m_nRefundableCurrency on an attribute."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "param:nCurrency",
+            "text": "Value to set m_nRefundableCurrency to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nCurrency",
+          "decl": "int nCurrency",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_GetRefundableCurrency": {
+      "name": "TF2Attrib_GetRefundableCurrency",
+      "refLine": 154,
+      "docStart": 5753,
+      "docEnd": 5960,
+      "docs": {
+        "brief": "Returns the value of m_nRefundableCurrency on an attribute.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the value of m_nRefundableCurrency on an attribute."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "return",
+            "text": "The (unsigned) integer value of m_nRefundableCurrency on the attribute."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_GetStaticAttribs": {
+      "name": "TF2Attrib_GetStaticAttribs",
+      "refLine": 179,
+      "docStart": 6646,
+      "docEnd": 7411,
+      "docs": {
+        "brief": "Returns arrays containing the static attributes and their values present on an item definition.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns arrays containing the static attributes and their values present on an item definition."
+          },
+          {
+            "tag": "param:iItemDefIndex",
+            "text": "Item definition index (e.g. 7 for Shovel) to get static attribute list from."
+          },
+          {
+            "tag": "param:iAttribIndices",
+            "text": "Array of attribute definition indices found on the item definition."
+          },
+          {
+            "tag": "param:flAttribValues",
+            "text": "Array of attribute values found on the item definition, corresponding to the indices."
+          },
+          {
+            "tag": "param:iMaxLen",
+            "text": "Max length of the two arrays passed in, default 16. Does not affect the return value."
+          },
+          {
+            "tag": "return",
+            "text": "The number of attributes found on the item definition's static attribute list (max 16 as of June 2017), or -1 if no schema or item definition found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid iMaxLen, or gamedata for this function failed to load."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iItemDefIndex",
+          "decl": "int iItemDefIndex",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "iAttribIndices",
+          "decl": "int[] iAttribIndices",
+          "default": null
+        },
+        {
+          "type": "float[]",
+          "name": "flAttribValues",
+          "decl": "float[] flAttribValues",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iMaxLen",
+          "decl": "int iMaxLen",
+          "default": "16"
+        }
+      ]
+    },
+    "TF2Attrib_GetSOCAttribs": {
+      "name": "TF2Attrib_GetSOCAttribs",
+      "refLine": 192,
+      "docStart": 7533,
+      "docEnd": 8220,
+      "docs": {
+        "brief": "Returns arrays containing the item server (SOC) attributes and their values present on an item definition.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns arrays containing the item server (SOC) attributes and their values present on an item definition."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to get the item server attribute list from."
+          },
+          {
+            "tag": "param:iAttribIndices",
+            "text": "Array of attribute definition indices found."
+          },
+          {
+            "tag": "param:flAttribValues",
+            "text": "Array of attribute values found, corresponding to the indices."
+          },
+          {
+            "tag": "param:iMaxLen",
+            "text": "Max length of the two arrays passed in, default 16. Does not affect the return value."
+          },
+          {
+            "tag": "return",
+            "text": "The number of attributes found on the item's SOC attribute list (max 16 as of June 2017), or -1 if some error happened."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid iEntity or iMaxLen, or gamedata for this function failed to load."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "iAttribIndices",
+          "decl": "int[] iAttribIndices",
+          "default": null
+        },
+        {
+          "type": "float[]",
+          "name": "flAttribValues",
+          "decl": "float[] flAttribValues",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iMaxLen",
+          "decl": "int iMaxLen",
+          "default": "16"
+        }
+      ]
+    },
+    "TF2Attrib_SetByName": {
+      "name": "TF2Attrib_SetByName",
+      "refLine": 16,
+      "docStart": 88,
+      "docEnd": 563,
+      "docs": {
+        "brief": "Sets an attribute's value on an entity, adding it if it isn't on the entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an attribute's value on an entity, adding it if it isn't on the entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to set the attribute on. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:strAttrib",
+            "text": "Name of the attribute, as from the \"name\" key in items_game."
+          },
+          {
+            "tag": "param:flValue",
+            "text": "Value to set the attribute to"
+          },
+          {
+            "tag": "return",
+            "text": "True if the attribute was added successfully, false if entity does not have m_AttributeList."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute name passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "strAttrib",
+          "decl": "char[] strAttrib",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "flValue",
+          "decl": "float flValue",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_GetDefIndex": {
+      "name": "TF2Attrib_GetDefIndex",
+      "refLine": 116,
+      "docStart": 4741,
+      "docEnd": 4968,
+      "docs": {
+        "brief": "Returns the value of m_iAttributeDefinitionIndex (the attribute ID) on an attribute.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the value of m_iAttributeDefinitionIndex (the attribute ID) on an attribute."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "return",
+            "text": "The integer value of m_iAttributeDefinitionIndex on the attribute."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_ListDefIndices": {
+      "name": "TF2Attrib_ListDefIndices",
+      "refLine": 166,
+      "docStart": 6023,
+      "docEnd": 6559,
+      "docs": {
+        "brief": "Returns an array containing the attributes (as indices) present on an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns an array containing the attributes (as indices) present on an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to get attribute list from. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:iDefIndices",
+            "text": "Array of attribute definition indices found on the entity."
+          },
+          {
+            "tag": "param:iMaxLen",
+            "text": "Max length of the iDefIndices array, default 20. Does not affect the return value."
+          },
+          {
+            "tag": "return",
+            "text": "The number of attributes found on the entity's attribute list (max 20 as of Oct 2017), or -1 if some error happened."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid iEntity or iMaxLen."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "iDefIndices",
+          "decl": "int[] iDefIndices",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iMaxLen",
+          "decl": "int iMaxLen",
+          "default": "20"
+        }
+      ]
+    },
+    "TF2Attrib_SetDefIndex": {
+      "name": "TF2Attrib_SetDefIndex",
+      "refLine": 107,
+      "docStart": 4239,
+      "docEnd": 4672,
+      "docs": {
+        "brief": "Sets the value of m_iAttributeDefinitionIndex (the attribute ID) on an attribute.\nWarning, this changes what GetByName/ID and SetByName 'see' as the name of the attribute,\nbut will only change attribute's effects if TF2Attrib_ClearCache is called on the entity with the attribute after.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the value of m_iAttributeDefinitionIndex (the attribute ID) on an attribute.\nWarning, this changes what GetByName/ID and SetByName 'see' as the name of the attribute,\nbut will only change attribute's effects if TF2Attrib_ClearCache is called on the entity with the attribute after."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Value to set m_iAttributeDefinitionIndex to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_RemoveByName": {
+      "name": "TF2Attrib_RemoveByName",
+      "refLine": 61,
+      "docStart": 2238,
+      "docEnd": 2626,
+      "docs": {
+        "brief": "Removes an attribute from an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an attribute from an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to remove attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:strAttrib",
+            "text": "Name of the attribute, as from the \"name\" key in items_game."
+          },
+          {
+            "tag": "return",
+            "text": "True if the SDKCall was made, false if entity had invalid address or m_AttributeList missing."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute name passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "strAttrib",
+          "decl": "char[] strAttrib",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_GetByName": {
+      "name": "TF2Attrib_GetByName",
+      "refLine": 39,
+      "docStart": 1232,
+      "docEnd": 1639,
+      "docs": {
+        "brief": "Returns the address of an attribute on an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the address of an attribute on an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to get attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:strAttrib",
+            "text": "Name of the attribute, as from the \"name\" key in items_game."
+          },
+          {
+            "tag": "return",
+            "text": "Address of the attribute on the entity, or Address_Null if the attribute does not exist on the entity."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute name passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Address",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "strAttrib",
+          "decl": "char[] strAttrib",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_SetByDefIndex": {
+      "name": "TF2Attrib_SetByDefIndex",
+      "refLine": 28,
+      "docStart": 644,
+      "docEnd": 1150,
+      "docs": {
+        "brief": "Sets an attribute's value on an entity, adding it if it isn't on the entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an attribute's value on an entity, adding it if it isn't on the entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to set the attribute on. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Definition index of the attribute, as from the number on the attribute entry in items_game."
+          },
+          {
+            "tag": "param:flValue",
+            "text": "Value to set the attribute to"
+          },
+          {
+            "tag": "return",
+            "text": "True if the attribute was added successfully, false if entity does not have m_AttributeList."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute name passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "flValue",
+          "decl": "float flValue",
+          "default": null
+        }
+      ]
+    },
+    "__pl_tf2attributes_SetNTVOptional": {
+      "name": "__pl_tf2attributes_SetNTVOptional",
+      "refLine": 226,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TF2Attrib_RemoveByDefIndex": {
+      "name": "TF2Attrib_RemoveByDefIndex",
+      "refLine": 72,
+      "docStart": 2695,
+      "docEnd": 3115,
+      "docs": {
+        "brief": "Removes an attribute from an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an attribute from an entity."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to remove attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Definition index of the attribute, as from the number on the attribute entry in items_game."
+          },
+          {
+            "tag": "return",
+            "text": "True if the SDKCall was made, false if entity had invalid address or m_AttributeList missing."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index or attribute index passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_ClearCache": {
+      "name": "TF2Attrib_ClearCache",
+      "refLine": 95,
+      "docStart": 3523,
+      "docEnd": 4190,
+      "docs": {
+        "brief": "Clears and presumably rebuilds the attribute cache for an entity, 'refreshing' attributes.\nCall this after making changes to an attribute with any of the TF2Attrib_Set*(Address pAttrib, arg) natives below.\nYou may also need to call this on the entity's m_hOwnerEntity if it is a weapon or wearable.\nYou do NOT need to call this after calls to TF2Attrib_SetByName, TF2Attrib_Remove, and TF2Attrib_RemoveAll.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clears and presumably rebuilds the attribute cache for an entity, 'refreshing' attributes.\nCall this after making changes to an attribute with any of the TF2Attrib_Set*(Address pAttrib, arg) natives below.\nYou may also need to call this on the entity's m_hOwnerEntity if it is a weapon or wearable.\nYou do NOT need to call this after calls to TF2Attrib_SetByName, TF2Attrib_Remove, and TF2Attrib_RemoveAll."
+          },
+          {
+            "tag": "param:iEntity",
+            "text": "Entity index to remove attribute from. Must have m_AttributeList."
+          },
+          {
+            "tag": "return",
+            "text": "True if the SDKCall was made, false if entity had invalid address or m_AttributeList missing."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity index passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iEntity",
+          "decl": "int iEntity",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_SetValue": {
+      "name": "TF2Attrib_SetValue",
+      "refLine": 126,
+      "docStart": 5021,
+      "docEnd": 5186,
+      "docs": {
+        "brief": "Sets the value of m_flValue on an attribute.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the value of m_flValue on an attribute."
+          },
+          {
+            "tag": "param:pAttrib",
+            "text": "Address of the attribute."
+          },
+          {
+            "tag": "param:flValue",
+            "text": "Value to set m_flValue to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Address",
+          "name": "pAttrib",
+          "decl": "Address pAttrib",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "flValue",
+          "decl": "float flValue",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_IsIntegerValue": {
+      "name": "TF2Attrib_IsIntegerValue",
+      "refLine": 203,
+      "docStart": 8333,
+      "docEnd": 8729,
+      "docs": {
+        "brief": "Gets whether an attribute is stored as an integer or as a float.\nUse TF2Attrib_SetValue(attribute, view_as<float>(intValue)) on attributes that store values as ints\nto avoid compiler tag mismatch warnings.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets whether an attribute is stored as an integer or as a float.\nUse TF2Attrib_SetValue(attribute, view_as<float>(intValue)) on attributes that store values as ints\nto avoid compiler tag mismatch warnings."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Index of the attribute (as returned by TF2Attrib_GetDefIndex())."
+          },
+          {
+            "tag": "return",
+            "text": "True if attribute value is supposed to be an int, false if float."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "TF2Attrib_IsReady": {
+      "name": "TF2Attrib_IsReady",
+      "refLine": 212,
+      "docStart": 8784,
+      "docEnd": 9056,
+      "docs": {
+        "brief": "Gets whether the plugin loaded without ANY errors.\nFor the purpose of allowing dependencies to ignore the plugin if this returns false.\nCheck in OnAllPluginsLoaded() or something. I dunno.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets whether the plugin loaded without ANY errors.\nFor the purpose of allowing dependencies to ignore the plugin if this returns false.\nCheck in OnAllPluginsLoaded() or something. I dunno."
+          },
+          {
+            "tag": "return",
+            "text": "True if no errors while loading, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_tf2attributes_included": {
+      "name": "_tf2attributes_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,678 @@
+{
+  "functions": {
+    "TTT_PushRagdoll": {
+      "name": "TTT_PushRagdoll",
+      "refLine": 77,
+      "docStart": 2191,
+      "docEnd": 2396,
+      "docs": {
+        "brief": "Push a ragdoll to the global Ragdoll array (will get cleaned on Round Start).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Push a ragdoll to the global Ragdoll array (will get cleaned on Round Start)."
+          },
+          {
+            "tag": "param:radgoll",
+            "text": "The enum struct to save as Ragdoll."
+          },
+          {
+            "tag": "param:size",
+            "text": "The enum struct size."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "any[]",
+          "name": "ragdoll",
+          "decl": "any[] ragdoll",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_WasBodyFound": {
+      "name": "TTT_WasBodyFound",
+      "refLine": 92,
+      "docStart": 2711,
+      "docEnd": 2821,
+      "docs": {
+        "brief": "Determins whether a player's body was found (if dead).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determins whether a player's body was found (if dead)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_WasBodyScanned": {
+      "name": "TTT_WasBodyScanned",
+      "refLine": 99,
+      "docStart": 2865,
+      "docEnd": 2977,
+      "docs": {
+        "brief": "Determins whether a player's body was scanned (if dead).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determins whether a player's body was scanned (if dead)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_CreateClientRagdoll": {
+      "name": "TTT_CreateClientRagdoll",
+      "refLine": 121,
+      "docStart": 3441,
+      "docEnd": 3545,
+      "docs": {
+        "brief": "Spawn client ragdoll based on ttt spawn type.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Spawn client ragdoll based on ttt spawn type."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientByRagdollID": {
+      "name": "TTT_GetClientByRagdollID",
+      "refLine": 69,
+      "docStart": 2007,
+      "docEnd": 2139,
+      "docs": {
+        "brief": "Retrieve the client index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the client index."
+          },
+          {
+            "tag": "param:ragdoll",
+            "text": "The ragdoll index."
+          },
+          {
+            "tag": "return",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "ragdoll",
+          "decl": "int ragdoll",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnBodyFound": {
+      "name": "TTT_OnBodyFound",
+      "refLine": 27,
+      "docStart": 354,
+      "docEnd": 891,
+      "docs": {
+        "brief": "Called when a body is found.\nUse must use TTT_GetEntityRefRagdoll(client, entityref) to get the enum struct.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a body is found.\nUse must use TTT_GetEntityRefRagdoll(client, entityref) to get the enum struct."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client who identified the body."
+          },
+          {
+            "tag": "param:victim",
+            "text": "The client whom the body belongs to. (-1 for invalid index)"
+          },
+          {
+            "tag": "param:victimRole",
+            "text": "The role of victim"
+          },
+          {
+            "tag": "param:attackerRole",
+            "text": "The role of attacker"
+          },
+          {
+            "tag": "param:entityref",
+            "text": "The entity reference to find the correct ragdoll"
+          },
+          {
+            "tag": "param:silentID",
+            "text": "True if body was silenced id and false if normal inspect"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "victim",
+          "decl": "int victim",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "victimRole",
+          "decl": "int victimRole",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attackerRole",
+          "decl": "int attackerRole",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entityref",
+          "decl": "int entityref",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "silentID",
+          "decl": "bool silentID",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_bodies_SetNTVOptional": {
+      "name": "__pl_ttt_bodies_SetNTVOptional",
+      "refLine": 154,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_SetRagdoll": {
+      "name": "TTT_SetRagdoll",
+      "refLine": 85,
+      "docStart": 2451,
+      "docEnd": 2656,
+      "docs": {
+        "brief": "Sets a ragdoll to the global Ragdoll array (will get cleaned on Round Start).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a ragdoll to the global Ragdoll array (will get cleaned on Round Start)."
+          },
+          {
+            "tag": "param:radgoll",
+            "text": "The enum struct to save as Ragdoll."
+          },
+          {
+            "tag": "param:size",
+            "text": "The enum struct size."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "any[]",
+          "name": "ragdoll",
+          "decl": "any[] ragdoll",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetFoundArray": {
+      "name": "TTT_GetFoundArray",
+      "refLine": 133,
+      "docStart": 3730,
+      "docEnd": 3789,
+      "docs": {
+        "brief": "Gets the status of which bodies have been found.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the status of which bodies have been found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int[]",
+          "name": "found",
+          "decl": "int[] found",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnClientRagdollCreate": {
+      "name": "TTT_OnClientRagdollCreate",
+      "refLine": 14,
+      "docStart": 108,
+      "docEnd": 263,
+      "docs": {
+        "brief": "Called when a clients ragdoll entity is about to be created.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a clients ragdoll entity is about to be created."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client"
+          },
+          {
+            "tag": "param:attacker",
+            "text": "The attacker."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "weapon",
+          "decl": "const char[] weapon",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveRagdollFromArray": {
+      "name": "TTT_RemoveRagdollFromArray",
+      "refLine": 140,
+      "docStart": 3844,
+      "docEnd": 3934,
+      "docs": {
+        "brief": "Remove entity from ragdoll array",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove entity from ragdoll array"
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetFoundStatus": {
+      "name": "TTT_GetFoundStatus",
+      "refLine": 106,
+      "docStart": 3023,
+      "docEnd": 3155,
+      "docs": {
+        "brief": "Determines if a player is dead and has had their body found.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determines if a player is dead and has had their body found."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index to lookup."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetEntityRefRagdoll": {
+      "name": "TTT_GetEntityRefRagdoll",
+      "refLine": 61,
+      "docStart": 1784,
+      "docEnd": 1938,
+      "docs": {
+        "brief": "Retrieve the Radgoll Info.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the Radgoll Info."
+          },
+          {
+            "tag": "param:entityref",
+            "text": "The entity reference."
+          },
+          {
+            "tag": "param:radgoll",
+            "text": "The array to save the ragoll infos."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entityref",
+          "decl": "int entityref",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "ragdoll",
+          "decl": "any[] ragdoll",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetFoundStatus": {
+      "name": "TTT_SetFoundStatus",
+      "refLine": 114,
+      "docStart": 3201,
+      "docEnd": 3383,
+      "docs": {
+        "brief": "Set whether a player appears dead and body found.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set whether a player appears dead and body found."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index to change."
+          },
+          {
+            "tag": "param:found",
+            "text": "True if found & dead, false else."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "found",
+          "decl": "bool found",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientRagdollEntIndex": {
+      "name": "TTT_GetClientRagdollEntIndex",
+      "refLine": 53,
+      "docStart": 1561,
+      "docEnd": 1729,
+      "docs": {
+        "brief": "Retrieve the entity index of a clients ragdoll.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the entity index of a clients ragdoll."
+          },
+          {
+            "tag": "param:client",
+            "text": "The clients index."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index of the ragdoll."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnBodyCheck": {
+      "name": "TTT_OnBodyCheck",
+      "refLine": 36,
+      "docStart": 1011,
+      "docEnd": 1286,
+      "docs": {
+        "brief": "Called before a body will be scanned.\nUse must use TTT_GetEntityRefRagdoll(client, entityref) to get the enum struct.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called before a body will be scanned.\nUse must use TTT_GetEntityRefRagdoll(client, entityref) to get the enum struct."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client who scanned the body."
+          },
+          {
+            "tag": "param:entityref",
+            "text": "The entity reference to find the correct ragdoll"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entityref",
+          "decl": "int entityref",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveClientRagdoll": {
+      "name": "TTT_RemoveClientRagdoll",
+      "refLine": 128,
+      "docStart": 3595,
+      "docEnd": 3680,
+      "docs": {
+        "brief": "Removes a clients ragdoll.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a clients ragdoll."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetClientRagdoll": {
+      "name": "TTT_GetClientRagdoll",
+      "refLine": 44,
+      "docStart": 1347,
+      "docEnd": 1498,
+      "docs": {
+        "brief": "Retrieve the Radgoll Info.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the Radgoll Info."
+          },
+          {
+            "tag": "param:client",
+            "text": "The clients index."
+          },
+          {
+            "tag": "param:radgoll",
+            "text": "The array to save the ragoll infos."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "ragdoll",
+          "decl": "any[] ragdoll",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_bodies_included": {
+      "name": "_ttt_bodies_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

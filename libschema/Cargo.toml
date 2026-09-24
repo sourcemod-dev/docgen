@@ -7,5 +7,6 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-spdcp = { version = "0.4.4", features = ["serde"]}
+# TODO: switch to spdcp = "0.5" once rumblefrog/sp-dcp#1 is published
+spdcp = { git = "https://github.com/rumblefrog/sp-dcp", rev = "584897c42a6e011d3c92e3e0db2f78f24de2f5f8", features = ["serde"] }
 serde = { version = "1", features = ["derive"] }

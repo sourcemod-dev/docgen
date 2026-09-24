@@ -1,0 +1,663 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "MetaStringMap": {
+      "name": "MetaStringMap",
+      "refLine": 47,
+      "docStart": 1729,
+      "docEnd": 1972,
+      "docs": {
+        "brief": "A TypedStringMap which contains a nested `Data` `TypedStringMap` property.\nStandard methods and properties have been overridden to run against `Data`,\nbut you can access the parent methods/properties using the `Meta` property.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A TypedStringMap which contains a nested `Data` `TypedStringMap` property.\nStandard methods and properties have been overridden to run against `Data`,\nbut you can access the parent methods/properties using the `Meta` property."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "TypedStringMap",
+      "methods": {
+        "Snapshot": {
+          "name": "Snapshot",
+          "refLine": 216,
+          "docStart": 5763,
+          "docEnd": 5793,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.Snapshot"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "StringMapSnapshot",
+          "arguments": []
+        },
+        "SetValue": {
+          "name": "SetValue",
+          "refLine": 146,
+          "docStart": 4180,
+          "docEnd": 4210,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.SetValue"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 124,
+          "docStart": 3598,
+          "docEnd": 3633,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.GetFloat"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "default_value",
+              "decl": "float default_value",
+              "default": "-1.000000"
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 152,
+          "docStart": 4329,
+          "docEnd": 4360,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.SetString"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 164,
+          "docStart": 4638,
+          "docEnd": 4673,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.SetFloat"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "GetValue": {
+          "name": "GetValue",
+          "refLine": 93,
+          "docStart": 2822,
+          "docEnd": 2852,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.GetValue"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any&",
+              "name": "value",
+              "decl": "any& value",
+              "default": null
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 170,
+          "docStart": 4794,
+          "docEnd": 4828,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.SetBool"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "SetHandle": {
+          "name": "SetHandle",
+          "refLine": 176,
+          "docStart": 4946,
+          "docEnd": 4982,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.SetHandle"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "Handle",
+              "name": "value",
+              "decl": "Handle value",
+              "default": null
+            }
+          ]
+        },
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 130,
+          "docStart": 3778,
+          "docEnd": 3812,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.GetBool"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "default_value",
+              "decl": "bool default_value",
+              "default": "false"
+            }
+          ]
+        },
+        "HasKey": {
+          "name": "HasKey",
+          "refLine": 192,
+          "docStart": 5269,
+          "docEnd": 5302,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.HasKey"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetOptionalValue": {
+          "name": "GetOptionalValue",
+          "refLine": 102,
+          "docStart": 2972,
+          "docEnd": 3044,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "",
+                "text": ""
+              },
+              {
+                "tag": "see",
+                "text": "TypedStringMap.GetOptionalValue"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "default_value",
+              "decl": "any default_value",
+              "default": "-1"
+            }
+          ]
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 198,
+          "docStart": 5399,
+          "docEnd": 5426,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.Clear"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "Cleanup": {
+          "name": "Cleanup",
+          "refLine": 209,
+          "docStart": 5584,
+          "docEnd": 5672,
+          "docs": {
+            "brief": "Deletes the instance's data StringMap as well as the instance itself.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deletes the instance's data StringMap as well as the instance itself."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": []
+        },
+        "GetHandle": {
+          "name": "GetHandle",
+          "refLine": 136,
+          "docStart": 3954,
+          "docEnd": 3990,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.GetHandle"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "Handle",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "Handle",
+              "name": "default_value",
+              "decl": "Handle default_value",
+              "default": "null"
+            }
+          ]
+        },
+        "Remove": {
+          "name": "Remove",
+          "refLine": 182,
+          "docStart": 5106,
+          "docEnd": 5134,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.Remove"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 108,
+          "docStart": 3199,
+          "docEnd": 3230,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.GetString"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "max_size",
+              "decl": "int max_size",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "size",
+              "decl": "int& size",
+              "default": "0"
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 158,
+          "docStart": 4490,
+          "docEnd": 4523,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.SetInt"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "MetaStringMap": {
+          "name": "MetaStringMap",
+          "refLine": 230,
+          "docStart": 5933,
+          "docEnd": 6028,
+          "docs": {
+            "brief": "Creates a new MetaStringMap.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new MetaStringMap."
+              },
+              {
+                "tag": "return",
+                "text": "A new MetaStringMap."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "MetaStringMap",
+          "arguments": []
+        },
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 118,
+          "docStart": 3430,
+          "docEnd": 3463,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.GetInt"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "default_value",
+              "decl": "int default_value",
+              "default": "-1"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Meta": {
+          "name": "Meta",
+          "refLine": 56,
+          "docStart": 2064,
+          "docEnd": 2149,
+          "docs": {
+            "brief": "Views the instance as its superclass to access overridden methods.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Views the instance as its superclass to access overridden methods."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "TypedStringMap",
+          "getter": true,
+          "setter": false
+        },
+        "Data": {
+          "name": "Data",
+          "refLine": 67,
+          "docStart": 2291,
+          "docEnd": 2357,
+          "docs": {
+            "brief": "Gets the nested stringmap where data is stored.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the nested stringmap where data is stored."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "TypedStringMap",
+          "getter": true,
+          "setter": true
+        },
+        "Length": {
+          "name": "Length",
+          "refLine": 81,
+          "docStart": 2632,
+          "docEnd": 2665,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "TypedStringMap.Length"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_metastringmap_included": {
+      "name": "_metastringmap_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

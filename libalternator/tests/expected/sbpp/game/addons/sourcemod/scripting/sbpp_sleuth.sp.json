@@ -1,0 +1,402 @@
+{
+  "functions": {
+    "OnLibraryRemoved": {
+      "name": "OnLibraryRemoved",
+      "refLine": 142,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "OnAllPluginsLoaded": {
+      "name": "OnAllPluginsLoaded",
+      "refLine": 129,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnLibraryAdded": {
+      "name": "OnLibraryAdded",
+      "refLine": 134,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SQL_OnConnect": {
+      "name": "SQL_OnConnect",
+      "refLine": 150,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "SQL_CheckHim": {
+      "name": "SQL_CheckHim",
+      "refLine": 230,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "BanPlayer": {
+      "name": "BanPlayer",
+      "refLine": 293,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "ReloadListCallBack": {
+      "name": "ReloadListCallBack",
+      "refLine": 172,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "LoadWhiteList": {
+      "name": "LoadWhiteList",
+      "refLine": 317,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "DB_Connect": {
+      "name": "DB_Connect",
+      "refLine": 107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "PrintToAdmins": {
+      "name": "PrintToAdmins",
+      "refLine": 300,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPostAdminCheck": {
+      "name": "OnClientPostAdminCheck",
+      "refLine": 188,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Timer_ReconnectDB": {
+      "name": "Timer_ReconnectDB",
+      "refLine": 342,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        }
+      ]
+    },
+    "CheckDBConnection": {
+      "name": "CheckDBConnection",
+      "refLine": 349,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "LENGTH_KICK": {
+      "name": "LENGTH_KICK",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "5"
+    },
+    "LENGTH_DOUBLE": {
+      "name": "LENGTH_DOUBLE",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "3"
+    },
+    "LENGTH_NOTIFY": {
+      "name": "LENGTH_NOTIFY",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "4"
+    },
+    "PREFIX": {
+      "name": "PREFIX",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"[SourceSleuth] \""
+    },
+    "PLUGIN_VERSION": {
+      "name": "PLUGIN_VERSION",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"1.8.0\""
+    },
+    "LENGTH_ORIGINAL": {
+      "name": "LENGTH_ORIGINAL",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    },
+    "LENGTH_CUSTOM": {
+      "name": "LENGTH_CUSTOM",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    }
+  },
+  "enums": {
+    "DatabaseState": {
+      "name": "DatabaseState",
+      "refLine": 48,
+      "docStart": 1590,
+      "docEnd": 1621,
+      "docs": {
+        "brief": "Database connection state",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Database connection state"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DatabaseState_Wait": {
+          "name": "DatabaseState_Wait",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_Connecting": {
+          "name": "DatabaseState_Connecting",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_Connected": {
+          "name": "DatabaseState_Connected",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_None": {
+          "name": "DatabaseState_None",
+          "refLine": 50,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

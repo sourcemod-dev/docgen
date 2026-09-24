@@ -1,0 +1,2679 @@
+{
+  "functions": {
+    "OnEntityDestroyed": {
+      "name": "OnEntityDestroyed",
+      "refLine": 356,
+      "docStart": 11545,
+      "docEnd": 11643,
+      "docs": {
+        "brief": "When an entity is destroyed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "When an entity is destroyed"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index or edict reference."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "SDKHooks_DropWeapon": {
+      "name": "SDKHooks_DropWeapon",
+      "refLine": 441,
+      "docStart": 14090,
+      "docEnd": 14547,
+      "docs": {
+        "brief": "Forces a client to drop the specified weapon",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Forces a client to drop the specified weapon"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Weapon entity index."
+          },
+          {
+            "tag": "param:vecTarget",
+            "text": "Location to toss weapon to, or NULL_VECTOR for default."
+          },
+          {
+            "tag": "param:vecVelocity",
+            "text": "Velocity at which to toss weapon, or NULL_VECTOR for default."
+          },
+          {
+            "tag": "param:bypassHooks",
+            "text": "If true, bypass SDK hooks on Weapon Drop"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client or weapon entity, weapon not owned by client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vecTarget",
+          "decl": "const float vecTarget[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "vecVelocity",
+          "decl": "const float vecVelocity[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "bypassHooks",
+          "decl": "bool bypassHooks",
+          "default": "true"
+        }
+      ]
+    },
+    "SDKHookEx": {
+      "name": "SDKHookEx",
+      "refLine": 399,
+      "docStart": 12582,
+      "docEnd": 12866,
+      "docs": {
+        "brief": "Hooks an entity\n\nUnhooked automatically upon destruction/removal of the entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks an entity\n\nUnhooked automatically upon destruction/removal of the entity"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of function to hook"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Function to call when hook is called"
+          },
+          {
+            "tag": "return",
+            "text": "Hook Successful"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "SDKHookType",
+          "name": "type",
+          "decl": "SDKHookType type",
+          "default": null
+        },
+        {
+          "type": "SDKHookCB",
+          "name": "callback",
+          "decl": "SDKHookCB callback",
+          "default": null
+        }
+      ]
+    },
+    "SDKUnhook": {
+      "name": "SDKUnhook",
+      "refLine": 408,
+      "docStart": 12941,
+      "docEnd": 13097,
+      "docs": {
+        "brief": "Unhooks an entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unhooks an entity"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of function to unhook"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Callback function to unhook"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "SDKHookType",
+          "name": "type",
+          "decl": "SDKHookType type",
+          "default": null
+        },
+        {
+          "type": "SDKHookCB",
+          "name": "callback",
+          "decl": "SDKHookCB callback",
+          "default": null
+        }
+      ]
+    },
+    "SDKHook": {
+      "name": "SDKHook",
+      "refLine": 387,
+      "docStart": 12265,
+      "docEnd": 12509,
+      "docs": {
+        "brief": "Hooks an entity\n\nUnhooked automatically upon destruction/removal of the entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks an entity\n\nUnhooked automatically upon destruction/removal of the entity"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index"
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of function to hook"
+          },
+          {
+            "tag": "param:callback",
+            "text": "Function to call when hook is called"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "SDKHookType",
+          "name": "type",
+          "decl": "SDKHookType type",
+          "default": null
+        },
+        {
+          "type": "SDKHookCB",
+          "name": "callback",
+          "decl": "SDKHookCB callback",
+          "default": null
+        }
+      ]
+    },
+    "OnEntityCreated": {
+      "name": "OnEntityCreated",
+      "refLine": 349,
+      "docStart": 11366,
+      "docEnd": 11477,
+      "docs": {
+        "brief": "When an entity is created",
+        "tags": [
+          {
+            "tag": "",
+            "text": "When an entity is created"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index"
+          },
+          {
+            "tag": "param:classname",
+            "text": "Class name"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "classname",
+          "decl": "const char[] classname",
+          "default": null
+        }
+      ]
+    },
+    "OnGetGameDescription": {
+      "name": "OnGetGameDescription",
+      "refLine": 366,
+      "docStart": 11689,
+      "docEnd": 11901,
+      "docs": {
+        "brief": "When the game description is retrieved",
+        "tags": [
+          {
+            "tag": "",
+            "text": "When the game description is retrieved"
+          },
+          {
+            "tag": "note",
+            "text": "Not supported on ep2v."
+          },
+          {
+            "tag": "param:gameDesc",
+            "text": "Game description"
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Changed if gameDesc has been edited, else no change."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[64]",
+          "name": "gameDesc",
+          "decl": "char gameDesc[64]",
+          "default": null
+        }
+      ]
+    },
+    "SDKHooks_TakeDamage": {
+      "name": "SDKHooks_TakeDamage",
+      "refLine": 426,
+      "docStart": 13172,
+      "docEnd": 13843,
+      "docs": {
+        "brief": "Applies damage to an entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Applies damage to an entity"
+          },
+          {
+            "tag": "note",
+            "text": "Force application is dependent on game and damage type(s)"
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index taking damage"
+          },
+          {
+            "tag": "param:inflictor",
+            "text": "Inflictor entity index"
+          },
+          {
+            "tag": "param:attacker",
+            "text": "Attacker entity index"
+          },
+          {
+            "tag": "param:damage",
+            "text": "Amount of damage"
+          },
+          {
+            "tag": "param:damageType",
+            "text": "Bitfield of damage types"
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Weapon index (orangebox and later) or -1 for unspecified"
+          },
+          {
+            "tag": "param:damageForce",
+            "text": "Velocity of damage force"
+          },
+          {
+            "tag": "param:damagePosition",
+            "text": "Origin of damage"
+          },
+          {
+            "tag": "param:bypassHooks",
+            "text": "If true, bypass SDK hooks on OnTakeDamage"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity, attacker, inflictor, or weapon entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "inflictor",
+          "decl": "int inflictor",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attacker",
+          "decl": "int attacker",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "damage",
+          "decl": "float damage",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "damageType",
+          "decl": "int damageType",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "weapon",
+          "decl": "int weapon",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "damageForce",
+          "decl": "const float damageForce[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "damagePosition",
+          "decl": "const float damagePosition[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "bypassHooks",
+          "decl": "bool bypassHooks",
+          "default": "true"
+        }
+      ]
+    },
+    "OnLevelInit": {
+      "name": "OnLevelInit",
+      "refLine": 376,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "mapName",
+          "decl": "const char[] mapName",
+          "default": null
+        },
+        {
+          "type": "char[2097152]",
+          "name": "mapEntities",
+          "decl": "char mapEntities[2097152]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "DMG_CLUB": {
+      "name": "DMG_CLUB",
+      "refLine": 50,
+      "docStart": 2818,
+      "docEnd": 2850,
+      "docs": {
+        "brief": "crowbar, punch, headbutt",
+        "tags": [
+          {
+            "tag": "",
+            "text": "crowbar, punch, headbutt"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "DMG_NEVERGIB": {
+      "name": "DMG_NEVERGIB",
+      "refLine": 55,
+      "docStart": 3218,
+      "docEnd": 3302,
+      "docs": {
+        "brief": "with this bit OR'd in, no damage type will be able to gib victims upon death",
+        "tags": [
+          {
+            "tag": "",
+            "text": "with this bit OR'd in, no damage type will be able to gib victims upon death"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 12)"
+    },
+    "_sdkhooks_included": {
+      "name": "_sdkhooks_included",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "DMG_DIRECT": {
+      "name": "DMG_DIRECT",
+      "refLine": 72,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 28)"
+    },
+    "DMG_BUCKSHOT": {
+      "name": "DMG_BUCKSHOT",
+      "refLine": 73,
+      "docStart": 4902,
+      "docEnd": 4957,
+      "docs": {
+        "brief": "not quite a bullet. Little, rounder, different.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "not quite a bullet. Little, rounder, different."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 29)"
+    },
+    "DMG_DROWN": {
+      "name": "DMG_DROWN",
+      "refLine": 57,
+      "docStart": 3485,
+      "docEnd": 3501,
+      "docs": {
+        "brief": "Drowning",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Drowning"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 14)"
+    },
+    "DMG_RADIATION": {
+      "name": "DMG_RADIATION",
+      "refLine": 61,
+      "docStart": 3825,
+      "docEnd": 3851,
+      "docs": {
+        "brief": "radiation exposure",
+        "tags": [
+          {
+            "tag": "",
+            "text": "radiation exposure"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 18)"
+    },
+    "DMG_NOCLOSEDISTANCEMOD": {
+      "name": "DMG_NOCLOSEDISTANCEMOD",
+      "refLine": 85,
+      "docStart": 5273,
+      "docEnd": 5314,
+      "docs": {
+        "brief": "Don't do damage falloff too close",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't do damage falloff too close"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_POISON"
+    },
+    "DMG_DROWNRECOVER": {
+      "name": "DMG_DROWNRECOVER",
+      "refLine": 62,
+      "docStart": 3900,
+      "docEnd": 3925,
+      "docs": {
+        "brief": "drowning recovery",
+        "tags": [
+          {
+            "tag": "",
+            "text": "drowning recovery"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 19)"
+    },
+    "DMG_CRUSH": {
+      "name": "DMG_CRUSH",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 0)"
+    },
+    "DMG_SLASH": {
+      "name": "DMG_SLASH",
+      "refLine": 45,
+      "docStart": 2452,
+      "docEnd": 2480,
+      "docs": {
+        "brief": "cut, clawed, stabbed",
+        "tags": [
+          {
+            "tag": "",
+            "text": "cut, clawed, stabbed"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "DMG_FALL": {
+      "name": "DMG_FALL",
+      "refLine": 48,
+      "docStart": 2670,
+      "docEnd": 2690,
+      "docs": {
+        "brief": "fell too far",
+        "tags": [
+          {
+            "tag": "",
+            "text": "fell too far"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "DMG_ACID": {
+      "name": "DMG_ACID",
+      "refLine": 63,
+      "docStart": 3974,
+      "docEnd": 4011,
+      "docs": {
+        "brief": "toxic chemicals or acid burns",
+        "tags": [
+          {
+            "tag": "",
+            "text": "toxic chemicals or acid burns"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 20)"
+    },
+    "DMG_PLASMA": {
+      "name": "DMG_PLASMA",
+      "refLine": 68,
+      "docStart": 4511,
+      "docEnd": 4535,
+      "docs": {
+        "brief": "Shot by Cremator",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shot by Cremator"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 24)"
+    },
+    "DMG_SHOCK": {
+      "name": "DMG_SHOCK",
+      "refLine": 51,
+      "docStart": 2899,
+      "docEnd": 2921,
+      "docs": {
+        "brief": "electric shock",
+        "tags": [
+          {
+            "tag": "",
+            "text": "electric shock"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 8)"
+    },
+    "DMG_BULLET": {
+      "name": "DMG_BULLET",
+      "refLine": 44,
+      "docStart": 2391,
+      "docEnd": 2403,
+      "docs": {
+        "brief": "shot",
+        "tags": [
+          {
+            "tag": "",
+            "text": "shot"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "DMG_GENERIC": {
+      "name": "DMG_GENERIC",
+      "refLine": 38,
+      "docStart": 1745,
+      "docEnd": 1776,
+      "docs": {
+        "brief": "generic damage was done",
+        "tags": [
+          {
+            "tag": "",
+            "text": "generic damage was done"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "DMG_AIRBOAT": {
+      "name": "DMG_AIRBOAT",
+      "refLine": 69,
+      "docStart": 4584,
+      "docEnd": 4616,
+      "docs": {
+        "brief": "Hit by the airboat's gun",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hit by the airboat's gun"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 25)"
+    },
+    "DMG_BLAST": {
+      "name": "DMG_BLAST",
+      "refLine": 49,
+      "docStart": 2739,
+      "docEnd": 2769,
+      "docs": {
+        "brief": "explosive blast damage",
+        "tags": [
+          {
+            "tag": "",
+            "text": "explosive blast damage"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "DMG_CRIT": {
+      "name": "DMG_CRIT",
+      "refLine": 77,
+      "docStart": 5037,
+      "docEnd": 5068,
+      "docs": {
+        "brief": "TF2 crits and minicrits",
+        "tags": [
+          {
+            "tag": "",
+            "text": "TF2 crits and minicrits"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_ACID"
+    },
+    "DMG_PARALYZE": {
+      "name": "DMG_PARALYZE",
+      "refLine": 58,
+      "docStart": 3550,
+      "docEnd": 3586,
+      "docs": {
+        "brief": "slows affected creature down",
+        "tags": [
+          {
+            "tag": "",
+            "text": "slows affected creature down"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 15)"
+    },
+    "DMG_BLAST_SURFACE": {
+      "name": "DMG_BLAST_SURFACE",
+      "refLine": 71,
+      "docStart": 4733,
+      "docEnd": 4807,
+      "docs": {
+        "brief": "A blast on the surface of water that cannot harm things underwater",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A blast on the surface of water that cannot harm things underwater"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 27)"
+    },
+    "DMG_RADIUS_MAX": {
+      "name": "DMG_RADIUS_MAX",
+      "refLine": 81,
+      "docStart": 5154,
+      "docEnd": 5179,
+      "docs": {
+        "brief": "No damage falloff",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No damage falloff"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_ENERGYBEAM"
+    },
+    "DMG_USEDISTANCEMOD": {
+      "name": "DMG_USEDISTANCEMOD",
+      "refLine": 93,
+      "docStart": 5518,
+      "docEnd": 5543,
+      "docs": {
+        "brief": "Do damage falloff",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do damage falloff"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_SLOWBURN"
+    },
+    "DMG_USE_HITLOCATIONS": {
+      "name": "DMG_USE_HITLOCATIONS",
+      "refLine": 101,
+      "docStart": 5738,
+      "docEnd": 5806,
+      "docs": {
+        "brief": "Do hit location damage (Like the sniperrifle and ambassador)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do hit location damage (Like the sniperrifle and ambassador)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_AIRBOAT"
+    },
+    "DMG_NERVEGAS": {
+      "name": "DMG_NERVEGAS",
+      "refLine": 59,
+      "docStart": 3635,
+      "docEnd": 3665,
+      "docs": {
+        "brief": "nerve toxins, very bad",
+        "tags": [
+          {
+            "tag": "",
+            "text": "nerve toxins, very bad"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 16)"
+    },
+    "DMG_PHYSGUN": {
+      "name": "DMG_PHYSGUN",
+      "refLine": 67,
+      "docStart": 4404,
+      "docEnd": 4462,
+      "docs": {
+        "brief": "Hit by manipulator. Usually doesn't do any damage.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hit by manipulator. Usually doesn't do any damage."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 23)"
+    },
+    "DMG_POISON": {
+      "name": "DMG_POISON",
+      "refLine": 60,
+      "docStart": 3714,
+      "docEnd": 3776,
+      "docs": {
+        "brief": "blood poisoning - heals over time like drowning damage",
+        "tags": [
+          {
+            "tag": "",
+            "text": "blood poisoning - heals over time like drowning damage"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 17)"
+    },
+    "DMG_ALWAYSGIB": {
+      "name": "DMG_ALWAYSGIB",
+      "refLine": 56,
+      "docStart": 3351,
+      "docEnd": 3436,
+      "docs": {
+        "brief": "with this bit OR'd in, any damage type can be made to gib victims upon death.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "with this bit OR'd in, any damage type can be made to gib victims upon death."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 13)"
+    },
+    "DMG_SONIC": {
+      "name": "DMG_SONIC",
+      "refLine": 52,
+      "docStart": 2970,
+      "docEnd": 2999,
+      "docs": {
+        "brief": "sound pulse shockwave",
+        "tags": [
+          {
+            "tag": "",
+            "text": "sound pulse shockwave"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 9)"
+    },
+    "DMG_DISSOLVE": {
+      "name": "DMG_DISSOLVE",
+      "refLine": 70,
+      "docStart": 4665,
+      "docEnd": 4684,
+      "docs": {
+        "brief": "Dissolving!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dissolving!"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 26)"
+    },
+    "DMG_ENERGYBEAM": {
+      "name": "DMG_ENERGYBEAM",
+      "refLine": 53,
+      "docStart": 3048,
+      "docEnd": 3088,
+      "docs": {
+        "brief": "laser or other high energy beam",
+        "tags": [
+          {
+            "tag": "",
+            "text": "laser or other high energy beam"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 10)"
+    },
+    "DMG_BURN": {
+      "name": "DMG_BURN",
+      "refLine": 46,
+      "docStart": 2529,
+      "docEnd": 2548,
+      "docs": {
+        "brief": "heat burned",
+        "tags": [
+          {
+            "tag": "",
+            "text": "heat burned"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "DMG_VEHICLE": {
+      "name": "DMG_VEHICLE",
+      "refLine": 47,
+      "docStart": 2597,
+      "docEnd": 2621,
+      "docs": {
+        "brief": "hit by a vehicle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "hit by a vehicle"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "DMG_SLOWBURN": {
+      "name": "DMG_SLOWBURN",
+      "refLine": 64,
+      "docStart": 4060,
+      "docEnd": 4078,
+      "docs": {
+        "brief": "in an oven",
+        "tags": [
+          {
+            "tag": "",
+            "text": "in an oven"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 21)"
+    },
+    "DMG_REMOVENORAGDOLL": {
+      "name": "DMG_REMOVENORAGDOLL",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 22)"
+    },
+    "DMG_IGNITE": {
+      "name": "DMG_IGNITE",
+      "refLine": 97,
+      "docStart": 5625,
+      "docEnd": 5646,
+      "docs": {
+        "brief": "Ignite victim",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ignite victim"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_PLASMA"
+    },
+    "DMG_HALF_FALLOFF": {
+      "name": "DMG_HALF_FALLOFF",
+      "refLine": 89,
+      "docStart": 5402,
+      "docEnd": 5428,
+      "docs": {
+        "brief": "50% damage falloff",
+        "tags": [
+          {
+            "tag": "",
+            "text": "50% damage falloff"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "DMG_RADIATION"
+    },
+    "DMG_PREVENT_PHYSICS_FORCE": {
+      "name": "DMG_PREVENT_PHYSICS_FORCE",
+      "refLine": 54,
+      "docStart": 3137,
+      "docEnd": 3169,
+      "docs": {
+        "brief": "Prevent a physics force",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prevent a physics force"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 11)"
+    }
+  },
+  "enums": {
+    "SDKHookType": {
+      "name": "SDKHookType",
+      "refLine": 104,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SDKHook_EndTouch": {
+          "name": "SDKHook_EndTouch",
+          "refLine": 106,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponCanUsePost": {
+          "name": "SDKHook_WeaponCanUsePost",
+          "refLine": 136,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_OnTakeDamageAlive": {
+          "name": "SDKHook_OnTakeDamageAlive",
+          "refLine": 147,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_ThinkPost": {
+          "name": "SDKHook_ThinkPost",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponCanSwitchToPost": {
+          "name": "SDKHook_WeaponCanSwitchToPost",
+          "refLine": 135,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Think": {
+          "name": "SDKHook_Think",
+          "refLine": 115,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_TraceAttackPost": {
+          "name": "SDKHook_TraceAttackPost",
+          "refLine": 118,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_UsePost": {
+          "name": "SDKHook_UsePost",
+          "refLine": 141,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_ReloadPost": {
+          "name": "SDKHook_ReloadPost",
+          "refLine": 143,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_TouchPost": {
+          "name": "SDKHook_TouchPost",
+          "refLine": 132,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponCanSwitchTo": {
+          "name": "SDKHook_WeaponCanSwitchTo",
+          "refLine": 119,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_OnTakeDamagePost": {
+          "name": "SDKHook_OnTakeDamagePost",
+          "refLine": 109,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_FireBulletsPost": {
+          "name": "SDKHook_FireBulletsPost",
+          "refLine": 107,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_TraceAttack": {
+          "name": "SDKHook_TraceAttack",
+          "refLine": 117,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_PreThink": {
+          "name": "SDKHook_PreThink",
+          "refLine": 110,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Touch": {
+          "name": "SDKHook_Touch",
+          "refLine": 116,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_PostThinkPost": {
+          "name": "SDKHook_PostThinkPost",
+          "refLine": 126,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_VPhysicsUpdatePost": {
+          "name": "SDKHook_VPhysicsUpdatePost",
+          "refLine": 134,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_GetMaxHealth": {
+          "name": "SDKHook_GetMaxHealth",
+          "refLine": 144,
+          "docStart": 6719,
+          "docEnd": 6741,
+          "docs": {
+            "brief": "ep2v and later",
+            "tags": [
+              {
+                "tag": "",
+                "text": "ep2v and later"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_ShouldCollide": {
+          "name": "SDKHook_ShouldCollide",
+          "refLine": 124,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponDrop": {
+          "name": "SDKHook_WeaponDrop",
+          "refLine": 121,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponEquipPost": {
+          "name": "SDKHook_WeaponEquipPost",
+          "refLine": 138,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponEquip": {
+          "name": "SDKHook_WeaponEquip",
+          "refLine": 122,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_StartTouch": {
+          "name": "SDKHook_StartTouch",
+          "refLine": 114,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_PreThinkPost": {
+          "name": "SDKHook_PreThinkPost",
+          "refLine": 125,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_PostThink": {
+          "name": "SDKHook_PostThink",
+          "refLine": 111,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_EndTouchPost": {
+          "name": "SDKHook_EndTouchPost",
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_SetTransmit": {
+          "name": "SDKHook_SetTransmit",
+          "refLine": 112,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponSwitch": {
+          "name": "SDKHook_WeaponSwitch",
+          "refLine": 123,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponDropPost": {
+          "name": "SDKHook_WeaponDropPost",
+          "refLine": 137,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_OnTakeDamageAlivePost": {
+          "name": "SDKHook_OnTakeDamageAlivePost",
+          "refLine": 148,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_CanBeAutobalanced": {
+          "name": "SDKHook_CanBeAutobalanced",
+          "refLine": 149,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_OnTakeDamage": {
+          "name": "SDKHook_OnTakeDamage",
+          "refLine": 108,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Blocked": {
+          "name": "SDKHook_Blocked",
+          "refLine": 145,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponSwitchPost": {
+          "name": "SDKHook_WeaponSwitchPost",
+          "refLine": 139,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_WeaponCanUse": {
+          "name": "SDKHook_WeaponCanUse",
+          "refLine": 120,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_SpawnPost": {
+          "name": "SDKHook_SpawnPost",
+          "refLine": 130,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_StartTouchPost": {
+          "name": "SDKHook_StartTouchPost",
+          "refLine": 131,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Use": {
+          "name": "SDKHook_Use",
+          "refLine": 140,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Spawn": {
+          "name": "SDKHook_Spawn",
+          "refLine": 113,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_VPhysicsUpdate": {
+          "name": "SDKHook_VPhysicsUpdate",
+          "refLine": 133,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_GroundEntChangedPost": {
+          "name": "SDKHook_GroundEntChangedPost",
+          "refLine": 129,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_Reload": {
+          "name": "SDKHook_Reload",
+          "refLine": 142,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SDKHook_BlockedPost": {
+          "name": "SDKHook_BlockedPost",
+          "refLine": 146,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "UseType": {
+      "name": "UseType",
+      "refLine": 225,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Use_On": {
+          "name": "Use_On",
+          "refLine": 228,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Use_Set": {
+          "name": "Use_Set",
+          "refLine": 229,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Use_Off": {
+          "name": "Use_Off",
+          "refLine": 227,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Use_Toggle": {
+          "name": "Use_Toggle",
+          "refLine": 230,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {
+    "SDKHookCB": {
+      "name": "SDKHookCB",
+      "refLine": 233,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function Action(int entity, int client)": {
+          "refLine": 261,
+          "docStart": 8456,
+          "docEnd": 8470,
+          "docs": {
+            "brief": "SetTransmit",
+            "tags": [
+              {
+                "tag": "",
+                "text": "SetTransmit"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int entity, int client)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int ammotype, int hitbox, int hitgroup)": {
+          "refLine": 321,
+          "docStart": 10744,
+          "docEnd": 10762,
+          "docs": {
+            "brief": "TraceAttackPost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "TraceAttackPost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int ammotype, int hitbox, int hitgroup)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "attacker",
+                "decl": "int attacker",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "inflictor",
+                "decl": "int inflictor",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damage",
+                "decl": "float damage",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagetype",
+                "decl": "int damagetype",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "ammotype",
+                "decl": "int ammotype",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "hitbox",
+                "decl": "int hitbox",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "hitgroup",
+                "decl": "int hitgroup",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int entity, int activator, int caller, UseType type, float value)": {
+          "refLine": 330,
+          "docStart": 11094,
+          "docEnd": 11104,
+          "docs": {
+            "brief": "UsePost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "UsePost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int entity, int activator, int caller, UseType type, float value)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "activator",
+                "decl": "int activator",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "caller",
+                "decl": "int caller",
+                "default": null
+              },
+              {
+                "type": "UseType",
+                "name": "type",
+                "decl": "UseType type",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "value",
+                "decl": "float value",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int client, int weapon)": {
+          "refLine": 275,
+          "docStart": 8647,
+          "docEnd": 8752,
+          "docs": {
+            "brief": "WeaponCanSwitchToPost\nWeaponCanUsePost\nWeaponDropPost\nWeaponEquipPost\nWeaponSwitchPost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "WeaponCanSwitchToPost\nWeaponCanUsePost\nWeaponDropPost\nWeaponEquipPost\nWeaponSwitchPost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int client, int weapon)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype)": {
+          "refLine": 283,
+          "docStart": 8878,
+          "docEnd": 8933,
+          "docs": {
+            "brief": "OnTakeDamage\nOnTakeDamageAlive\nSDKHooks 1.0+",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamage\nOnTakeDamageAlive\nSDKHooks 1.0+"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "attacker",
+                "decl": "int& attacker",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "inflictor",
+                "decl": "int& inflictor",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "damage",
+                "decl": "float& damage",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "damagetype",
+                "decl": "int& damagetype",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& weapon, float damageForce[3], float damagePosition[3], int damagecustom)": {
+          "refLine": 298,
+          "docStart": 9386,
+          "docEnd": 9759,
+          "docs": {
+            "brief": "OnTakeDamage\nOnTakeDamageAlive\nNote: The weapon parameter is not used by all games and damage sources.\nNote: Force application is dependent on game and damage type(s)\nSDKHooks 2.1+  (can check for support at runtime using GetFeatureStatus on SDKHook_DmgCustomInOTD capability.\nDON'T attempt to access 'damagecustom' var if feature status != available",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamage\nOnTakeDamageAlive\nNote: The weapon parameter is not used by all games and damage sources.\nNote: Force application is dependent on game and damage type(s)\nSDKHooks 2.1+  (can check for support at runtime using GetFeatureStatus on SDKHook_DmgCustomInOTD capability.\nDON'T attempt to access 'damagecustom' var if feature status != available"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& weapon, float damageForce[3], float damagePosition[3], int damagecustom)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "attacker",
+                "decl": "int& attacker",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "inflictor",
+                "decl": "int& inflictor",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "damage",
+                "decl": "float& damage",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "damagetype",
+                "decl": "int& damagetype",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "weapon",
+                "decl": "int& weapon",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damageForce[3]",
+                "decl": "float damageForce[3]",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damagePosition[3]",
+                "decl": "float damagePosition[3]",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagecustom",
+                "decl": "int damagecustom",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int client, int weapon)": {
+          "refLine": 268,
+          "docStart": 8516,
+          "docEnd": 8601,
+          "docs": {
+            "brief": "WeaponCanSwitchTo\nWeaponCanUse\nWeaponDrop\nWeaponEquip\nWeaponSwitch",
+            "tags": [
+              {
+                "tag": "",
+                "text": "WeaponCanSwitchTo\nWeaponCanUse\nWeaponDrop\nWeaponEquip\nWeaponSwitch"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int client, int weapon)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int client)": {
+          "refLine": 237,
+          "docStart": 8050,
+          "docEnd": 8085,
+          "docs": {
+            "brief": "PreThink/Post\nPostThink/Post",
+            "tags": [
+              {
+                "tag": "",
+                "text": "PreThink/Post\nPostThink/Post"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int client)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& weapon, float damageForce[3], float damagePosition[3])": {
+          "refLine": 290,
+          "docStart": 9030,
+          "docEnd": 9229,
+          "docs": {
+            "brief": "OnTakeDamage\nOnTakeDamageAlive\nNote: The weapon parameter is not used by all games and damage sources.\nNote: Force application is dependent on game and damage type(s)\nSDKHooks 2.0+",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamage\nOnTakeDamageAlive\nNote: The weapon parameter is not used by all games and damage sources.\nNote: Force application is dependent on game and damage type(s)\nSDKHooks 2.0+"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& weapon, float damageForce[3], float damagePosition[3])",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "attacker",
+                "decl": "int& attacker",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "inflictor",
+                "decl": "int& inflictor",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "damage",
+                "decl": "float& damage",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "damagetype",
+                "decl": "int& damagetype",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "weapon",
+                "decl": "int& weapon",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damageForce[3]",
+                "decl": "float damageForce[3]",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damagePosition[3]",
+                "decl": "float damagePosition[3]",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int entity)": {
+          "refLine": 241,
+          "docStart": 8117,
+          "docEnd": 8135,
+          "docs": {
+            "brief": "Spawn\nThink",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Spawn\nThink"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int entity)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int entity, int& maxhealth)": {
+          "refLine": 278,
+          "docStart": 8796,
+          "docEnd": 8828,
+          "docs": {
+            "brief": "GetMaxHealth (ep2v and later)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "GetMaxHealth (ep2v and later)"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int entity, int& maxhealth)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "maxhealth",
+                "decl": "int& maxhealth",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int weapon, const float damageForce[3], const float damagePosition[3])": {
+          "refLine": 307,
+          "docStart": 10072,
+          "docEnd": 10117,
+          "docs": {
+            "brief": "OnTakeDamagePost\nOnTakeDamageAlivePost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamagePost\nOnTakeDamageAlivePost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int weapon, const float damageForce[3], const float damagePosition[3])",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "attacker",
+                "decl": "int attacker",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "inflictor",
+                "decl": "int inflictor",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damage",
+                "decl": "float damage",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagetype",
+                "decl": "int damagetype",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              },
+              {
+                "type": "const float",
+                "name": "damageForce[3]",
+                "decl": "const float damageForce[3]",
+                "default": null
+              },
+              {
+                "type": "const float",
+                "name": "damagePosition[3]",
+                "decl": "const float damagePosition[3]",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int entity)": {
+          "refLine": 247,
+          "docStart": 8169,
+          "docEnd": 8240,
+          "docs": {
+            "brief": "GroundEntChanged\nSpawnPost\nThinkPost\nVPhysicsUpdate/Post",
+            "tags": [
+              {
+                "tag": "",
+                "text": "GroundEntChanged\nSpawnPost\nThinkPost\nVPhysicsUpdate/Post"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int entity)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int victim, int attacker, int inflictor, float damage, int damagetype)": {
+          "refLine": 303,
+          "docStart": 9936,
+          "docEnd": 9981,
+          "docs": {
+            "brief": "OnTakeDamagePost\nOnTakeDamageAlivePost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamagePost\nOnTakeDamageAlivePost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int victim, int attacker, int inflictor, float damage, int damagetype)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "attacker",
+                "decl": "int attacker",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "inflictor",
+                "decl": "int inflictor",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damage",
+                "decl": "float damage",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagetype",
+                "decl": "int damagetype",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int client, int shots, const char[] weaponname)": {
+          "refLine": 315,
+          "docStart": 10506,
+          "docEnd": 10524,
+          "docs": {
+            "brief": "FireBulletsPost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "FireBulletsPost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int client, int shots, const char[] weaponname)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "shots",
+                "decl": "int shots",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "weaponname",
+                "decl": "const char[] weaponname",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int entity, int other)": {
+          "refLine": 253,
+          "docStart": 8272,
+          "docEnd": 8320,
+          "docs": {
+            "brief": "EndTouch\nStartTouch\nTouch\nBlocked",
+            "tags": [
+              {
+                "tag": "",
+                "text": "EndTouch\nStartTouch\nTouch\nBlocked"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int entity, int other)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "other",
+                "decl": "int other",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& ammotype, int hitbox, int hitgroup)": {
+          "refLine": 318,
+          "docStart": 10592,
+          "docEnd": 10606,
+          "docs": {
+            "brief": "TraceAttack",
+            "tags": [
+              {
+                "tag": "",
+                "text": "TraceAttack"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int victim, int& attacker, int& inflictor, float& damage, int& damagetype, int& ammotype, int hitbox, int hitgroup)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "attacker",
+                "decl": "int& attacker",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "inflictor",
+                "decl": "int& inflictor",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "damage",
+                "decl": "float& damage",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "damagetype",
+                "decl": "int& damagetype",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "ammotype",
+                "decl": "int& ammotype",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "hitbox",
+                "decl": "int hitbox",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "hitgroup",
+                "decl": "int hitgroup",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(int entity, int collisiongroup, int contentsmask, bool originalResult)": {
+          "refLine": 324,
+          "docStart": 10893,
+          "docEnd": 10909,
+          "docs": {
+            "brief": "ShouldCollide",
+            "tags": [
+              {
+                "tag": "",
+                "text": "ShouldCollide"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int entity, int collisiongroup, int contentsmask, bool originalResult)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "collisiongroup",
+                "decl": "int collisiongroup",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "contentsmask",
+                "decl": "int contentsmask",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "originalResult",
+                "decl": "bool originalResult",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int weapon)": {
+          "refLine": 333,
+          "docStart": 11190,
+          "docEnd": 11199,
+          "docs": {
+            "brief": "Reload",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reload"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int weapon)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(int client, bool origRet)": {
+          "refLine": 339,
+          "docStart": 11297,
+          "docEnd": 11317,
+          "docs": {
+            "brief": "CanBeAutobalanced",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CanBeAutobalanced"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int client, bool origRet)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "origRet",
+                "decl": "bool origRet",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int entity, int activator, int caller, UseType type, float value)": {
+          "refLine": 327,
+          "docStart": 11000,
+          "docEnd": 11006,
+          "docs": {
+            "brief": "Use",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Use"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int entity, int activator, int caller, UseType type, float value)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "activator",
+                "decl": "int activator",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "caller",
+                "decl": "int caller",
+                "default": null
+              },
+              {
+                "type": "UseType",
+                "name": "type",
+                "decl": "UseType type",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "value",
+                "decl": "float value",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int weapon, const float damageForce[3], const float damagePosition[3], int damagecustom)": {
+          "refLine": 311,
+          "docStart": 10279,
+          "docEnd": 10324,
+          "docs": {
+            "brief": "OnTakeDamagePost\nOnTakeDamageAlivePost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "OnTakeDamagePost\nOnTakeDamageAlivePost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int victim, int attacker, int inflictor, float damage, int damagetype, int weapon, const float damageForce[3], const float damagePosition[3], int damagecustom)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "victim",
+                "decl": "int victim",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "attacker",
+                "decl": "int attacker",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "inflictor",
+                "decl": "int inflictor",
+                "default": null
+              },
+              {
+                "type": "float",
+                "name": "damage",
+                "decl": "float damage",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagetype",
+                "decl": "int damagetype",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              },
+              {
+                "type": "const float",
+                "name": "damageForce[3]",
+                "decl": "const float damageForce[3]",
+                "default": null
+              },
+              {
+                "type": "const float",
+                "name": "damagePosition[3]",
+                "decl": "const float damagePosition[3]",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "damagecustom",
+                "decl": "int damagecustom",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int entity, int other)": {
+          "refLine": 258,
+          "docStart": 8365,
+          "docEnd": 8413,
+          "docs": {
+            "brief": "EndTouchPost\nStartTouchPost\nTouchPost",
+            "tags": [
+              {
+                "tag": "",
+                "text": "EndTouchPost\nStartTouchPost\nTouchPost"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int entity, int other)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "other",
+                "decl": "int other",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(int weapon, bool bSuccessful)": {
+          "refLine": 336,
+          "docStart": 11233,
+          "docEnd": 11247,
+          "docs": {
+            "brief": "Reload post",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reload post"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(int weapon, bool bSuccessful)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "weapon",
+                "decl": "int weapon",
+                "default": null
+              },
+              {
+                "type": "bool",
+                "name": "bSuccessful",
+                "decl": "bool bSuccessful",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

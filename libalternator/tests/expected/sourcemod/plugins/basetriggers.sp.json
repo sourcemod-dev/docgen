@@ -1,0 +1,488 @@
+{
+  "functions": {
+    "ConVarChange_TimeleftInterval": {
+      "name": "ConVarChange_TimeleftInterval",
+      "refLine": 190,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "convar",
+          "decl": "ConVar convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldValue",
+          "decl": "const char[] oldValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "newValue",
+          "decl": "const char[] newValue",
+          "default": null
+        }
+      ]
+    },
+    "Command_Nextmap": {
+      "name": "Command_Nextmap",
+      "refLine": 227,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Event_RoundEnd": {
+      "name": "Event_RoundEnd",
+      "refLine": 169,
+      "docStart": 4937,
+      "docEnd": 5029,
+      "docs": {
+        "brief": "You ask, why don't you just use team_score event? And I answer... Because CSS doesn't.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "You ask, why don't you just use team_score event? And I answer... Because CSS doesn't."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "OnLibraryRemoved": {
+      "name": "OnLibraryRemoved",
+      "refLine": 174,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "Command_FriendlyFire": {
+      "name": "Command_FriendlyFire",
+      "refLine": 265,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ShowFriendlyFire": {
+      "name": "ShowFriendlyFire",
+      "refLine": 527,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "who",
+          "decl": "int who",
+          "default": null
+        }
+      ]
+    },
+    "Command_Motd": {
+      "name": "Command_Motd",
+      "refLine": 249,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnLibraryAdded": {
+      "name": "OnLibraryAdded",
+      "refLine": 182,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "Event_TeamPlayWinPanel": {
+      "name": "Event_TeamPlayWinPanel",
+      "refLine": 161,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Command_Timeleft": {
+      "name": "Command_Timeleft",
+      "refLine": 220,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ShowTimeLeft": {
+      "name": "ShowTimeLeft",
+      "refLine": 348,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "who",
+          "decl": "int who",
+          "default": null
+        }
+      ]
+    },
+    "Event_TFRestartRound": {
+      "name": "Event_TFRestartRound",
+      "refLine": 149,
+      "docStart": 4360,
+      "docEnd": 4386,
+      "docs": {
+        "brief": "Round count tracking",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Round count tracking"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Event_GameStart": {
+      "name": "Event_GameStart",
+      "refLine": 155,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Event",
+          "name": "event",
+          "decl": "Event event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Timer_DisplayTimeleft": {
+      "name": "Timer_DisplayTimeleft",
+      "refLine": 213,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSayCommand_Post": {
+      "name": "OnClientSayCommand_Post",
+      "refLine": 272,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "PRINT_TO_ALL_MAYBE": {
+      "name": "PRINT_TO_ALL_MAYBE",
+      "refLine": 64,
+      "docStart": 2284,
+      "docEnd": 2336,
+      "docs": {
+        "brief": "Print to all players if sm_trigger_show allows",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Print to all players if sm_trigger_show allows"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "PRINT_TO_ONE": {
+      "name": "PRINT_TO_ONE",
+      "refLine": 65,
+      "docStart": 2364,
+      "docEnd": 2394,
+      "docs": {
+        "brief": "Print to a single player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Print to a single player"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "REQUIRE_PLUGIN": {
+      "name": "REQUIRE_PLUGIN",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "PRINT_TO_ALL_ALWAYS": {
+      "name": "PRINT_TO_ALL_ALWAYS",
+      "refLine": 63,
+      "docStart": 2225,
+      "docEnd": 2251,
+      "docs": {
+        "brief": "Print to all players",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Print to all players"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

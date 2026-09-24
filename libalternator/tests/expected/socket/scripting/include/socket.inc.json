@@ -1,0 +1,2386 @@
+{
+  "functions": {
+    "SocketSetSendqueueEmptyCallback": {
+      "name": "SocketSetSendqueueEmptyCallback",
+      "refLine": 569,
+      "docStart": 20572,
+      "docEnd": 20984,
+      "docs": {
+        "brief": "Defines the callback function for when the socket sent all items in its send queue",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines the callback function for when the socket sent all items in its send queue"
+          },
+          {
+            "tag": "note",
+            "text": "this must be called AFTER sending (queueing) the data"
+          },
+          {
+            "tag": "note",
+            "text": "if no send-data is queued this will fire the callback itself"
+          },
+          {
+            "tag": "note",
+            "text": "the callback is guaranteed to fire"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketDisconnectCB",
+            "text": "dfunc The disconnect callback"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketSendqueueEmptyCB",
+          "name": "sfunc",
+          "decl": "SocketSendqueueEmptyCB sfunc",
+          "default": null
+        }
+      ]
+    },
+    "SocketBind": {
+      "name": "SocketBind",
+      "refLine": 463,
+      "docStart": 16529,
+      "docEnd": 16801,
+      "docs": {
+        "brief": "Binds the socket to a local address",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Binds the socket to a local address"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket  The handle of the socket to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "hostname The hostname (or IP) to bind the socket to."
+          },
+          {
+            "tag": "param:int",
+            "text": "port  The port to bind the socket to."
+          },
+          {
+            "tag": "return",
+            "text": "bool     true on success"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "hostname",
+          "decl": "const char[] hostname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "port",
+          "decl": "int port",
+          "default": null
+        }
+      ]
+    },
+    "SocketDisconnect": {
+      "name": "SocketDisconnect",
+      "refLine": 490,
+      "docStart": 17681,
+      "docEnd": 17899,
+      "docs": {
+        "brief": "Disconnects a socket",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Disconnects a socket"
+          },
+          {
+            "tag": "note",
+            "text": "this will not close the handle, the socket will be reset to a state similar to after SocketCreate()"
+          },
+          {
+            "tag": "note",
+            "text": "this won't trigger any disconnect/error callbacks"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        }
+      ]
+    },
+    "SocketGetHostName": {
+      "name": "SocketGetHostName",
+      "refLine": 613,
+      "docStart": 22203,
+      "docEnd": 22442,
+      "docs": {
+        "brief": "Retrieve the local system's hostname as the command \"hostname\" does.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the local system's hostname as the command \"hostname\" does."
+          },
+          {
+            "tag": "param:dest",
+            "text": "Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:destLen",
+            "text": "Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "1 on success"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "dest",
+          "decl": "char[] dest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "destLen",
+          "decl": "int destLen",
+          "default": null
+        }
+      ]
+    },
+    "__ext_socket_SetNTVOptional": {
+      "name": "__ext_socket_SetNTVOptional",
+      "refLine": 635,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SocketCreate": {
+      "name": "SocketCreate",
+      "refLine": 453,
+      "docStart": 16132,
+      "docEnd": 16446,
+      "docs": {
+        "brief": "Creates a new socket.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new socket."
+          },
+          {
+            "tag": "note",
+            "text": "this function may be relatively expensive, reuse sockets if possible"
+          },
+          {
+            "tag": "param:SocketType",
+            "text": "protocol The protocol to use, SOCKET_TCP is default"
+          },
+          {
+            "tag": "param:SocketErrorCB",
+            "text": "efunc  The error callback"
+          },
+          {
+            "tag": "return",
+            "text": "Socket     The socket handle. Returns INVALID_HANDLE on failure"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Socket",
+      "arguments": [
+        {
+          "type": "SocketType",
+          "name": "protocol",
+          "decl": "SocketType protocol",
+          "default": "SOCKET_TCP"
+        },
+        {
+          "type": "SocketErrorCB",
+          "name": "efunc",
+          "decl": "SocketErrorCB efunc",
+          "default": null
+        }
+      ]
+    },
+    "SocketSetDisconnectCallback": {
+      "name": "SocketSetDisconnectCallback",
+      "refLine": 581,
+      "docStart": 21076,
+      "docEnd": 21468,
+      "docs": {
+        "brief": "Defines the callback function for when the socket was properly disconnected by the remote side",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines the callback function for when the socket was properly disconnected by the remote side"
+          },
+          {
+            "tag": "note",
+            "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketConnect())"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketDisconnectCB",
+            "text": "dfunc The disconnect callback"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketDisconnectCB",
+          "name": "dfunc",
+          "decl": "SocketDisconnectCB dfunc",
+          "default": null
+        }
+      ]
+    },
+    "SocketSetOption": {
+      "name": "SocketSetOption",
+      "refLine": 543,
+      "docStart": 19748,
+      "docEnd": 20062,
+      "docs": {
+        "brief": "Set a socket option.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a socket option."
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:SocketOption",
+            "text": "option The option to modify (see enum SocketOption for details)."
+          },
+          {
+            "tag": "param:cellt_",
+            "text": "value The value to set the option to."
+          },
+          {
+            "tag": "return",
+            "text": "int      1 on success."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketOption",
+          "name": "option",
+          "decl": "SocketOption option",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "SocketSetArg": {
+      "name": "SocketSetArg",
+      "refLine": 603,
+      "docStart": 21980,
+      "docEnd": 22151,
+      "docs": {
+        "brief": "Sets the argument being passed to callbacks",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the argument being passed to callbacks"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:any",
+            "text": "arg  The argument to set"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "arg",
+          "decl": "any arg",
+          "default": null
+        }
+      ]
+    },
+    "SocketSend": {
+      "name": "SocketSend",
+      "refLine": 515,
+      "docStart": 18244,
+      "docEnd": 18839,
+      "docs": {
+        "brief": "Sends data through the socket.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends data through the socket."
+          },
+          {
+            "tag": "note",
+            "text": "specify size for binary safe operation"
+          },
+          {
+            "tag": "note",
+            "text": "if size is not specified the \\0 terminator will not be included"
+          },
+          {
+            "tag": "note",
+            "text": "This native is threaded, it may be still running after it executed (not atomic)."
+          },
+          {
+            "tag": "note",
+            "text": "Use the SendqueueEmpty callback to determine when all data has been successfully sent."
+          },
+          {
+            "tag": "note",
+            "text": "The socket extension will ensure that the data will be send in the correct order and split\nthe data if required."
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "data The data to send."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "data",
+          "decl": "const char[] data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        }
+      ]
+    },
+    "SocketListen": {
+      "name": "SocketListen",
+      "refLine": 499,
+      "docStart": 17946,
+      "docEnd": 18177,
+      "docs": {
+        "brief": "Makes a socket listen for incoming connections",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Makes a socket listen for incoming connections"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketIncomingCB",
+            "text": "ifunc The callback for incoming connections"
+          },
+          {
+            "tag": "return",
+            "text": "bool      true on success"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketIncomingCB",
+          "name": "ifunc",
+          "decl": "SocketIncomingCB ifunc",
+          "default": null
+        }
+      ]
+    },
+    "SocketIsConnected": {
+      "name": "SocketIsConnected",
+      "refLine": 441,
+      "docStart": 15946,
+      "docEnd": 16083,
+      "docs": {
+        "brief": "Returns whether a socket is connected or not.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a socket is connected or not."
+          },
+          {
+            "tag": "param:socket",
+            "text": "Socket handle to check"
+          },
+          {
+            "tag": "return",
+            "text": "bool The connection status"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        }
+      ]
+    },
+    "SocketSendTo": {
+      "name": "SocketSendTo",
+      "refLine": 533,
+      "docStart": 18912,
+      "docEnd": 19640,
+      "docs": {
+        "brief": "Sends UDP data through the socket to a specific destination.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends UDP data through the socket to a specific destination."
+          },
+          {
+            "tag": "note",
+            "text": "specify size for binary safe operation"
+          },
+          {
+            "tag": "note",
+            "text": "if size is not specified the \\0 terminator will not be included"
+          },
+          {
+            "tag": "note",
+            "text": "This native is threaded, it may be still running after it executed (not atomic)."
+          },
+          {
+            "tag": "note",
+            "text": "Use the SendqueueEmpty callback to determine when all data has been successfully sent."
+          },
+          {
+            "tag": "note",
+            "text": "The socket extension will ensure that the data will be send in the correct order and split\nthe data if required."
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "data The data to send."
+          },
+          {
+            "tag": "param:String",
+            "text": "hostname The hostname (or IP) to send to."
+          },
+          {
+            "tag": "param:int",
+            "text": "port  The port to send to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "data",
+          "decl": "const char[] data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "hostname",
+          "decl": "const char[] hostname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "port",
+          "decl": "int port",
+          "default": null
+        }
+      ]
+    },
+    "SocketConnect": {
+      "name": "SocketConnect",
+      "refLine": 480,
+      "docStart": 16875,
+      "docEnd": 17532,
+      "docs": {
+        "brief": "Connects a socket",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Connects a socket"
+          },
+          {
+            "tag": "note",
+            "text": "this native is threaded, it may be still running after it executed, use the connect callback"
+          },
+          {
+            "tag": "note",
+            "text": "invokes the SocketError callback with errorType = CONNECT_ERROR or EMPTY_HOST if it fails"
+          },
+          {
+            "tag": "note",
+            "text": "invokes the SocketConnect callback if it succeeds"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket  The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketConnectCB",
+            "text": "cfunc  The connect callback"
+          },
+          {
+            "tag": "param:SocketReceiveCB",
+            "text": "rfunc  The receive callback"
+          },
+          {
+            "tag": "param:SocketDisconnectCB",
+            "text": "dfunc  The disconnect callback"
+          },
+          {
+            "tag": "param:String",
+            "text": "hostname The hostname (or IP) to connect to."
+          },
+          {
+            "tag": "param:int",
+            "text": "port  The port to connect to."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketConnectCB",
+          "name": "cfunc",
+          "decl": "SocketConnectCB cfunc",
+          "default": null
+        },
+        {
+          "type": "SocketReceiveCB",
+          "name": "rfunc",
+          "decl": "SocketReceiveCB rfunc",
+          "default": null
+        },
+        {
+          "type": "SocketDisconnectCB",
+          "name": "dfunc",
+          "decl": "SocketDisconnectCB dfunc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "hostname",
+          "decl": "const char[] hostname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "port",
+          "decl": "int port",
+          "default": null
+        }
+      ]
+    },
+    "SocketSetErrorCallback": {
+      "name": "SocketSetErrorCallback",
+      "refLine": 593,
+      "docStart": 21552,
+      "docEnd": 21905,
+      "docs": {
+        "brief": "Defines the callback function for when the socket triggered an error",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines the callback function for when the socket triggered an error"
+          },
+          {
+            "tag": "note",
+            "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketCreate())"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketErrorCB",
+            "text": "efunc The error callback"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketErrorCB",
+          "name": "efunc",
+          "decl": "SocketErrorCB efunc",
+          "default": null
+        }
+      ]
+    },
+    "SocketSetReceiveCallback": {
+      "name": "SocketSetReceiveCallback",
+      "refLine": 556,
+      "docStart": 20140,
+      "docEnd": 20494,
+      "docs": {
+        "brief": "Defines the callback function for when the socket receives data",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines the callback function for when the socket receives data"
+          },
+          {
+            "tag": "note",
+            "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketConnect())"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "socket The handle of the socket to be used."
+          },
+          {
+            "tag": "param:SocketReceiveCB",
+            "text": "rfunc The receive callback"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "socket",
+          "decl": "Handle socket",
+          "default": null
+        },
+        {
+          "type": "SocketReceiveCB",
+          "name": "rfunc",
+          "decl": "SocketReceiveCB rfunc",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Socket": {
+      "name": "Socket",
+      "refLine": 193,
+      "docStart": 6382,
+      "docEnd": 6394,
+      "docs": {
+        "brief": "Methodmap",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Methodmap"
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Connect": {
+          "name": "Connect",
+          "refLine": 227,
+          "docStart": 7112,
+          "docEnd": 7740,
+          "docs": {
+            "brief": "Connects a socket",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Connects a socket"
+              },
+              {
+                "tag": "note",
+                "text": "this native is threaded, it may be still running after it executed, use the connect callback"
+              },
+              {
+                "tag": "note",
+                "text": "invokes the SocketError callback with errorType = CONNECT_ERROR or EMPTY_HOST if it fails"
+              },
+              {
+                "tag": "note",
+                "text": "invokes the SocketConnect callback if it succeeds"
+              },
+              {
+                "tag": "param:SocketConnectCB",
+                "text": "cfunc  The connect callback"
+              },
+              {
+                "tag": "param:SocketReceiveCB",
+                "text": "rfunc  The receive callback"
+              },
+              {
+                "tag": "param:SocketDisconnectCB",
+                "text": "dfunc  The disconnect callback"
+              },
+              {
+                "tag": "param:String",
+                "text": "hostname The hostname (or IP) to connect to."
+              },
+              {
+                "tag": "param:int",
+                "text": "port  The port to connect to."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SocketConnectCB",
+              "name": "cfunc",
+              "decl": "SocketConnectCB cfunc",
+              "default": null
+            },
+            {
+              "type": "SocketReceiveCB",
+              "name": "rfunc",
+              "decl": "SocketReceiveCB rfunc",
+              "default": null
+            },
+            {
+              "type": "SocketDisconnectCB",
+              "name": "dfunc",
+              "decl": "SocketDisconnectCB dfunc",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "hostname",
+              "decl": "const char[] hostname",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "port",
+              "decl": "int port",
+              "default": null
+            }
+          ]
+        },
+        "Listen": {
+          "name": "Listen",
+          "refLine": 245,
+          "docStart": 8166,
+          "docEnd": 8357,
+          "docs": {
+            "brief": "Makes a socket listen for incoming connections",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Makes a socket listen for incoming connections"
+              },
+              {
+                "tag": "param:SocketIncomingCB",
+                "text": "ifunc   The callback for incoming connections"
+              },
+              {
+                "tag": "return",
+                "text": "bool                     true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "SocketIncomingCB",
+              "name": "ifunc",
+              "decl": "SocketIncomingCB ifunc",
+              "default": null
+            }
+          ]
+        },
+        "SetDisconnectCallback": {
+          "name": "SetDisconnectCallback",
+          "refLine": 315,
+          "docStart": 10887,
+          "docEnd": 11214,
+          "docs": {
+            "brief": "Defines the callback function for when the socket was properly disconnected by the remote side",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines the callback function for when the socket was properly disconnected by the remote side"
+              },
+              {
+                "tag": "note",
+                "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketConnect())"
+              },
+              {
+                "tag": "param:SocketDisconnectCB",
+                "text": "dfunc   The disconnect callback"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SocketDisconnectCB",
+              "name": "dfunc",
+              "decl": "SocketDisconnectCB dfunc",
+              "default": null
+            }
+          ]
+        },
+        "Disconnect": {
+          "name": "Disconnect",
+          "refLine": 237,
+          "docStart": 7877,
+          "docEnd": 8129,
+          "docs": {
+            "brief": "Disconnects a socket",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Disconnects a socket"
+              },
+              {
+                "tag": "note",
+                "text": "this will not close the handle, the socket will be reset to a state similar to after SocketCreate()"
+              },
+              {
+                "tag": "note",
+                "text": "this won't trigger any disconnect/error callbacks"
+              },
+              {
+                "tag": "return",
+                "text": "bool         true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "Socket": {
+          "name": "Socket",
+          "refLine": 203,
+          "docStart": 6424,
+          "docEnd": 6749,
+          "docs": {
+            "brief": "Creates a new socket.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new socket."
+              },
+              {
+                "tag": "note",
+                "text": "this function may be relatively expensive, reuse sockets if possible"
+              },
+              {
+                "tag": "param:SocketType",
+                "text": "protocol The protocol to use, SOCKET_TCP is default"
+              },
+              {
+                "tag": "param:SocketErrorCB",
+                "text": "efunc  The error callback"
+              },
+              {
+                "tag": "return",
+                "text": "Handle     The socket handle. Returns INVALID_HANDLE on failure"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Socket",
+          "arguments": [
+            {
+              "type": "SocketType",
+              "name": "protocol",
+              "decl": "SocketType protocol",
+              "default": "SOCKET_TCP"
+            },
+            {
+              "type": "SocketErrorCB",
+              "name": "efunc",
+              "decl": "SocketErrorCB efunc",
+              "default": null
+            }
+          ]
+        },
+        "SetErrorCallback": {
+          "name": "SetErrorCallback",
+          "refLine": 325,
+          "docStart": 11286,
+          "docEnd": 11573,
+          "docs": {
+            "brief": "Defines the callback function for when the socket triggered an error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines the callback function for when the socket triggered an error"
+              },
+              {
+                "tag": "note",
+                "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketCreate())"
+              },
+              {
+                "tag": "param:SocketErrorCB",
+                "text": "efunc   The error callback"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SocketErrorCB",
+              "name": "efunc",
+              "decl": "SocketErrorCB efunc",
+              "default": null
+            }
+          ]
+        },
+        "SetSendqueueEmptyCallback": {
+          "name": "SetSendqueueEmptyCallback",
+          "refLine": 305,
+          "docStart": 10459,
+          "docEnd": 10807,
+          "docs": {
+            "brief": "Defines the callback function for when the socket sent all items in its send queue",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines the callback function for when the socket sent all items in its send queue"
+              },
+              {
+                "tag": "note",
+                "text": "this must be called AFTER sending (queueing) the data"
+              },
+              {
+                "tag": "note",
+                "text": "if no send-data is queued this will fire the callback itself"
+              },
+              {
+                "tag": "note",
+                "text": "the callback is guaranteed to fire"
+              },
+              {
+                "tag": "param:SocketDisconnectCB",
+                "text": "dfunc   The disconnect callback"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SocketSendqueueEmptyCB",
+              "name": "sfunc",
+              "decl": "SocketSendqueueEmptyCB sfunc",
+              "default": null
+            }
+          ]
+        },
+        "SetArg": {
+          "name": "SetArg",
+          "refLine": 332,
+          "docStart": 11635,
+          "docEnd": 11744,
+          "docs": {
+            "brief": "Sets the argument being passed to callbacks",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the argument being passed to callbacks"
+              },
+              {
+                "tag": "param:any",
+                "text": "arg     The argument to set"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "arg",
+              "decl": "any arg",
+              "default": null
+            }
+          ]
+        },
+        "SetOption": {
+          "name": "SetOption",
+          "refLine": 284,
+          "docStart": 9807,
+          "docEnd": 10039,
+          "docs": {
+            "brief": "Set a socket option.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Set a socket option."
+              },
+              {
+                "tag": "param:SocketOption",
+                "text": "option  The option to modify (see enum SocketOption for details)."
+              },
+              {
+                "tag": "param:int",
+                "text": "value   The value to set the option to."
+              },
+              {
+                "tag": "return",
+                "text": "int          1 on success."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "SocketOption",
+              "name": "option",
+              "decl": "SocketOption option",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "GetHostName": {
+          "name": "GetHostName",
+          "refLine": 342,
+          "docStart": 11784,
+          "docEnd": 12035,
+          "docs": {
+            "brief": "Retrieve the local system's hostname as the command \"hostname\" does.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the local system's hostname as the command \"hostname\" does."
+              },
+              {
+                "tag": "param:dest",
+                "text": "Destination string buffer to copy to."
+              },
+              {
+                "tag": "param:destLen",
+                "text": "Destination buffer length (includes null terminator)."
+              },
+              {
+                "tag": "return",
+                "text": "1 on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "dest",
+              "decl": "char[] dest",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "destLen",
+              "decl": "int destLen",
+              "default": null
+            }
+          ]
+        },
+        "SetReceiveCallback": {
+          "name": "SetReceiveCallback",
+          "refLine": 294,
+          "docStart": 10104,
+          "docEnd": 10393,
+          "docs": {
+            "brief": "Defines the callback function for when the socket receives data",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines the callback function for when the socket receives data"
+              },
+              {
+                "tag": "note",
+                "text": "this is only useful and required for child-sockets spawned by listen-sockets\n(otherwise you already set it in SocketConnect())"
+              },
+              {
+                "tag": "param:SocketReceiveCB",
+                "text": "rfunc   The receive callback"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SocketReceiveCB",
+              "name": "rfunc",
+              "decl": "SocketReceiveCB rfunc",
+              "default": null
+            }
+          ]
+        },
+        "Bind": {
+          "name": "Bind",
+          "refLine": 212,
+          "docStart": 6828,
+          "docEnd": 7050,
+          "docs": {
+            "brief": "Binds the socket to a local address",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Binds the socket to a local address"
+              },
+              {
+                "tag": "param:String",
+                "text": "hostname The hostname (or IP) to bind the socket to."
+              },
+              {
+                "tag": "param:int",
+                "text": "port  The port to bind the socket to."
+              },
+              {
+                "tag": "return",
+                "text": "bool     true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "hostname",
+              "decl": "const char[] hostname",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "port",
+              "decl": "int port",
+              "default": null
+            }
+          ]
+        },
+        "SendTo": {
+          "name": "SendTo",
+          "refLine": 275,
+          "docStart": 9013,
+          "docEnd": 9709,
+          "docs": {
+            "brief": "Sends UDP data through the socket to a specific destination.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sends UDP data through the socket to a specific destination."
+              },
+              {
+                "tag": "note",
+                "text": "specify size for binary safe operation"
+              },
+              {
+                "tag": "note",
+                "text": "if size is not specified the \\0 terminator will not be included"
+              },
+              {
+                "tag": "note",
+                "text": "This native is threaded, it may be still running after it executed (not atomic)."
+              },
+              {
+                "tag": "note",
+                "text": "Use the SendqueueEmpty callback to determine when all data has been successfully sent."
+              },
+              {
+                "tag": "note",
+                "text": "The socket extension will ensure that the data will be send in the correct order and split\nthe data if required."
+              },
+              {
+                "tag": "param:String",
+                "text": "data        The data to send."
+              },
+              {
+                "tag": "param:String",
+                "text": "hostname    The hostname (or IP) to send to."
+              },
+              {
+                "tag": "param:int",
+                "text": "port        The port to send to."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "data",
+              "decl": "const char[] data",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            },
+            {
+              "type": "const char[]",
+              "name": "hostname",
+              "decl": "const char[] hostname",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "port",
+              "decl": "int port",
+              "default": null
+            }
+          ]
+        },
+        "Send": {
+          "name": "Send",
+          "refLine": 259,
+          "docStart": 8412,
+          "docEnd": 8950,
+          "docs": {
+            "brief": "Sends data through the socket.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sends data through the socket."
+              },
+              {
+                "tag": "note",
+                "text": "specify size for binary safe operation"
+              },
+              {
+                "tag": "note",
+                "text": "if size is not specified the \\0 terminator will not be included"
+              },
+              {
+                "tag": "note",
+                "text": "This native is threaded, it may be still running after it executed (not atomic)."
+              },
+              {
+                "tag": "note",
+                "text": "Use the SendqueueEmpty callback to determine when all data has been successfully sent."
+              },
+              {
+                "tag": "note",
+                "text": "The socket extension will ensure that the data will be send in the correct order and split\nthe data if required."
+              },
+              {
+                "tag": "param:String",
+                "text": "data    The data to send."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "data",
+              "decl": "const char[] data",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Connected": {
+          "name": "Connected",
+          "refLine": 349,
+          "docStart": 12103,
+          "docEnd": 12204,
+          "docs": {
+            "brief": "Returns whether a socket is connected or not.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether a socket is connected or not."
+              },
+              {
+                "tag": "return",
+                "text": "bool The connection status"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {
+    "BIND_ERROR": {
+      "name": "BIND_ERROR",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "RECV_ERROR": {
+      "name": "RECV_ERROR",
+      "refLine": 21,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "LISTEN_ERROR": {
+      "name": "LISTEN_ERROR",
+      "refLine": 22,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "NO_HOST": {
+      "name": "NO_HOST",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "EMPTY_HOST": {
+      "name": "EMPTY_HOST",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "CONNECT_ERROR": {
+      "name": "CONNECT_ERROR",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "SEND_ERROR": {
+      "name": "SEND_ERROR",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    }
+  },
+  "defines": {
+    "_socket_included": {
+      "name": "_socket_included",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "SocketType": {
+      "name": "SocketType",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SOCKET_TCP": {
+          "name": "SOCKET_TCP",
+          "refLine": 10,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "1"
+        },
+        "SOCKET_UDP": {
+          "name": "SOCKET_UDP",
+          "refLine": 11,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SOCKET_RAW": {
+          "name": "SOCKET_RAW",
+          "refLine": 12,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SocketOption": {
+      "name": "SocketOption",
+      "refLine": 37,
+      "docStart": 596,
+      "docEnd": 775,
+      "docs": {
+        "brief": "Options available for SocketSetOption()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Options available for SocketSetOption()"
+          },
+          {
+            "tag": "note",
+            "text": "modifying these options is not required for normal operation, you can skip the whole\nsection in most cases."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SocketDontRoute": {
+          "name": "SocketDontRoute",
+          "refLine": 146,
+          "docStart": 4632,
+          "docEnd": 4968,
+          "docs": {
+            "brief": "If this option is set outgoing messages will ignore the default routing facilities if the\nprotocol implementation supports it. The remote site should be directly connected to the sender.\nThis is a wrapper for setting SO_DONTROUTE.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set outgoing messages will ignore the default routing facilities if the\nprotocol implementation supports it. The remote site should be directly connected to the sender.\nThis is a wrapper for setting SO_DONTROUTE."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to skip default routing or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketReceiveLowWatermark": {
+          "name": "SocketReceiveLowWatermark",
+          "refLine": 156,
+          "docStart": 4987,
+          "docEnd": 5264,
+          "docs": {
+            "brief": "This option specifies the minimum amount of data to receive before processing it. This is a\nwrapper for setting SO_RCVLOWAT.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies the minimum amount of data to receive before processing it. This is a\nwrapper for setting SO_RCVLOWAT."
+              },
+              {
+                "tag": "note",
+                "text": "this can probably block the extension, use it with caution!"
+              },
+              {
+                "tag": "param:int",
+                "text": "size in bytes"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketSendBuffer": {
+          "name": "SocketSendBuffer",
+          "refLine": 129,
+          "docStart": 4230,
+          "docEnd": 4408,
+          "docs": {
+            "brief": "This option specifies how large the send buffer will be. This is a wrapper for setting\nSO_SNDBUF.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies how large the send buffer will be. This is a wrapper for setting\nSO_SNDBUF."
+              },
+              {
+                "tag": "param:int",
+                "text": "size in bytes"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketLinger": {
+          "name": "SocketLinger",
+          "refLine": 113,
+          "docStart": 3707,
+          "docEnd": 3959,
+          "docs": {
+            "brief": "This option specifies how long a socket will wait if it's being closed and its send buffer is\nstill filled. This is a wrapper for setting SO_LINGER.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies how long a socket will wait if it's being closed and its send buffer is\nstill filled. This is a wrapper for setting SO_LINGER."
+              },
+              {
+                "tag": "param:int",
+                "text": "0 (=default) to disable or time in s"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CallbacksPerFrame": {
+          "name": "CallbacksPerFrame",
+          "refLine": 81,
+          "docStart": 2254,
+          "docEnd": 2851,
+          "docs": {
+            "brief": "This will specify the maximum amount of callbacks processed in every gameframe.\n\nThe default value for this option is 1, setting it higher will possibly increase networking\nperformance but may cause lag if it's set too high.\nThe amount of callbacks actually being processed is limited by not being able to quietly obtain\na lock (see ForceFrameLock) and the amount of callbacks in the queue.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This will specify the maximum amount of callbacks processed in every gameframe.\n\nThe default value for this option is 1, setting it higher will possibly increase networking\nperformance but may cause lag if it's set too high.\nThe amount of callbacks actually being processed is limited by not being able to quietly obtain\na lock (see ForceFrameLock) and the amount of callbacks in the queue."
+              },
+              {
+                "tag": "note",
+                "text": "this option will affect all sockets from all plugins, use it with caution!"
+              },
+              {
+                "tag": "param:int",
+                "text": "maximum amount of callbacks per gameframe"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketKeepAlive": {
+          "name": "SocketKeepAlive",
+          "refLine": 105,
+          "docStart": 3411,
+          "docEnd": 3688,
+          "docs": {
+            "brief": "If this option is set the socket will try to keep the connection alive by periodically sending\nmessages if the protocol supports it. This is a wrapper for setting SO_KEEPALIVE.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set the socket will try to keep the connection alive by periodically sending\nmessages if the protocol supports it. This is a wrapper for setting SO_KEEPALIVE."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to allow broadcasting or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketOOBInline": {
+          "name": "SocketOOBInline",
+          "refLine": 121,
+          "docStart": 3975,
+          "docEnd": 4211,
+          "docs": {
+            "brief": "If this option is set out-of-band data will be inlined into the normal receive stream. This is a\nwrapper for setting SO_OOBINLINE.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set out-of-band data will be inlined into the normal receive stream. This is a\nwrapper for setting SO_OOBINLINE."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to inline out-of-band data or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketReceiveBuffer": {
+          "name": "SocketReceiveBuffer",
+          "refLine": 137,
+          "docStart": 4428,
+          "docEnd": 4609,
+          "docs": {
+            "brief": "This option specifies how large the receive buffer will be. This is a wrapper for setting\nSO_RCVBUF.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies how large the receive buffer will be. This is a wrapper for setting\nSO_RCVBUF."
+              },
+              {
+                "tag": "param:int",
+                "text": "size in bytes"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketReceiveTimeout": {
+          "name": "SocketReceiveTimeout",
+          "refLine": 164,
+          "docStart": 5293,
+          "docEnd": 5549,
+          "docs": {
+            "brief": "This option specifies how long a socket will try to receive data before it times out and\nprocesses the data. This is a wrapper for setting SO_RCVTIMEO.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies how long a socket will try to receive data before it times out and\nprocesses the data. This is a wrapper for setting SO_RCVTIMEO."
+              },
+              {
+                "tag": "param:int",
+                "text": "0 (=default) to disable or time in ms"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketSendLowWatermark": {
+          "name": "SocketSendLowWatermark",
+          "refLine": 174,
+          "docStart": 5573,
+          "docEnd": 5873,
+          "docs": {
+            "brief": "This option specifies the minimum amount of data required in the send buffer before starting to\nsend it. This is a wrapper for setting SO_SNDLOWAT.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies the minimum amount of data required in the send buffer before starting to\nsend it. This is a wrapper for setting SO_SNDLOWAT."
+              },
+              {
+                "tag": "note",
+                "text": "this can probably block the extension, use it with caution!"
+              },
+              {
+                "tag": "param:int",
+                "text": "size in bytes"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ForceFrameLock": {
+          "name": "ForceFrameLock",
+          "refLine": 67,
+          "docStart": 1605,
+          "docEnd": 2236,
+          "docs": {
+            "brief": "If this option is set the socket extension will enforce a mutex lock in the GameFrame() hook.\n\nThis will ensure that callbacks will be processed every gameframe as fast as possible with the\ndrawback of potentially creating lag. It's not recommended to set this option for most cases.\nIf this option is not set the gameframe will be skipped if quietly obtaining a lock fails.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set the socket extension will enforce a mutex lock in the GameFrame() hook.\n\nThis will ensure that callbacks will be processed every gameframe as fast as possible with the\ndrawback of potentially creating lag. It's not recommended to set this option for most cases.\nIf this option is not set the gameframe will be skipped if quietly obtaining a lock fails."
+              },
+              {
+                "tag": "note",
+                "text": "combine this with CallbacksPerFrame for best performance"
+              },
+              {
+                "tag": "note",
+                "text": "this option will affect all sockets from all plugins, use it with caution!"
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to force locking or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ConcatenateCallbacks": {
+          "name": "ConcatenateCallbacks",
+          "refLine": 53,
+          "docStart": 796,
+          "docEnd": 1577,
+          "docs": {
+            "brief": "If this option is set the socket extension will try to concatenate SocketReceive callbacks.\n\nThis will possibly lower the amount of callbacks passed to SourceMod plugins and improve the\nperformance. The socket extension will preserve the packet order.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set the socket extension will try to concatenate SocketReceive callbacks.\n\nThis will possibly lower the amount of callbacks passed to SourceMod plugins and improve the\nperformance. The socket extension will preserve the packet order."
+              },
+              {
+                "tag": "note",
+                "text": "this doesn't prevent multiple callbacks, it only reduces them for high load."
+              },
+              {
+                "tag": "note",
+                "text": "this will not truncate packets below 4096 bytes, setting it lower will be ignored"
+              },
+              {
+                "tag": "note",
+                "text": "set this option if you expect lots of data in a short timeframe"
+              },
+              {
+                "tag": "note",
+                "text": "don't forget to set your buffer sizes at least to the value passed to this function, but\nalways at least to 4096"
+              },
+              {
+                "tag": "param:int",
+                "text": "0(=default) to disable or max. chunk size including \\0 terminator in bytes"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "SocketReuseAddr": {
+          "name": "SocketReuseAddr",
+          "refLine": 97,
+          "docStart": 3145,
+          "docEnd": 3392,
+          "docs": {
+            "brief": "If this option is set SocketBind() will allow reusing local adresses in case the protocol\nsupports it. This is a wrapper for setting SO_REUSEADDR.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set SocketBind() will allow reusing local adresses in case the protocol\nsupports it. This is a wrapper for setting SO_REUSEADDR."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to allow broadcasting or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketBroadcast": {
+          "name": "SocketBroadcast",
+          "refLine": 89,
+          "docStart": 2872,
+          "docEnd": 3126,
+          "docs": {
+            "brief": "If this option is set the socket will be allowed to send broadcast messages in case the protocol\nsupports it. This is a wrapper for setting SO_BROADCAST.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set the socket will be allowed to send broadcast messages in case the protocol\nsupports it. This is a wrapper for setting SO_BROADCAST."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to allow broadcasting or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SocketSendTimeout": {
+          "name": "SocketSendTimeout",
+          "refLine": 182,
+          "docStart": 5899,
+          "docEnd": 6147,
+          "docs": {
+            "brief": "This option specifies how long a socket will try to send data before it times out and\nretries it later. This is a wrapper for setting SO_SNDTIMEO.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "This option specifies how long a socket will try to send data before it times out and\nretries it later. This is a wrapper for setting SO_SNDTIMEO."
+              },
+              {
+                "tag": "param:int",
+                "text": "0 (=default) to disable or time in ms"
+              },
+              {
+                "tag": "return",
+                "text": "bool  true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "DebugMode": {
+          "name": "DebugMode",
+          "refLine": 189,
+          "docStart": 6168,
+          "docEnd": 6366,
+          "docs": {
+            "brief": "If this option is set the socket extension will display debugging messages in the server console/logs.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "If this option is set the socket extension will display debugging messages in the server console/logs."
+              },
+              {
+                "tag": "param:bool",
+                "text": "whether to enable debugging or not"
+              },
+              {
+                "tag": "return",
+                "text": "bool true on success"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "SocketSendqueueEmptyCB": {
+      "name": "SocketSendqueueEmptyCB",
+      "refLine": 404,
+      "docStart": 14320,
+      "docEnd": 14559,
+      "docs": {
+        "brief": "called after a socket sent all items in its send queue successfully",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called after a socket sent all items in its send queue successfully"
+          },
+          {
+            "tag": "param:Socket",
+            "text": "socket  The socket handle pointing to the calling socket"
+          },
+          {
+            "tag": "param:any",
+            "text": "arg   The argument set by SocketSetArg() for the socket"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SocketReceiveCB": {
+      "name": "SocketReceiveCB",
+      "refLine": 395,
+      "docStart": 13468,
+      "docEnd": 14206,
+      "docs": {
+        "brief": "triggered if a socket receives data",
+        "tags": [
+          {
+            "tag": "",
+            "text": "triggered if a socket receives data"
+          },
+          {
+            "tag": "note",
+            "text": "This is binary safe if you always use dataSize for operations on receiveData[]"
+          },
+          {
+            "tag": "note",
+            "text": "packets may be split up into multiple chunks -> multiple calls to the receive callback"
+          },
+          {
+            "tag": "note",
+            "text": "if not set otherwise by SocketSetOption(..., ConcatenateCallbacks, ...) receiveData will\nnever be longer than 4096 characters including \\0 terminator"
+          },
+          {
+            "tag": "param:Socket",
+            "text": "socket  The socket handle pointing to the calling socket"
+          },
+          {
+            "tag": "param:String",
+            "text": "receiveData The data which arrived, 0-terminated at receiveData[dataSize]"
+          },
+          {
+            "tag": "param:int",
+            "text": "dataSize The length of the arrived data excluding the 0-termination"
+          },
+          {
+            "tag": "param:any",
+            "text": "arg   The argument set by SocketSetArg() for the socket"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, const char[] receiveData, const int dataSize, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "receiveData",
+            "decl": "const char[] receiveData",
+            "default": null
+          },
+          {
+            "type": "const int",
+            "name": "dataSize",
+            "decl": "const int dataSize",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SocketIncomingCB": {
+      "name": "SocketIncomingCB",
+      "refLine": 379,
+      "docStart": 12847,
+      "docEnd": 13342,
+      "docs": {
+        "brief": "triggered if a listening socket received an incoming connection and is ready to be used",
+        "tags": [
+          {
+            "tag": "",
+            "text": "triggered if a listening socket received an incoming connection and is ready to be used"
+          },
+          {
+            "tag": "note",
+            "text": "The child-socket won't work until receive-, disconnect-, and errorcallback for it are set."
+          },
+          {
+            "tag": "param:Socket",
+            "text": "socket  The socket handle pointing to the calling listen-socket"
+          },
+          {
+            "tag": "param:Socket",
+            "text": "newSocket The socket handle to the newly spawned child socket"
+          },
+          {
+            "tag": "param:String",
+            "text": "remoteIP The remote IP"
+          },
+          {
+            "tag": "param:any",
+            "text": "arg   The argument set by SocketSetArg() for the listen-socket"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, Socket newSocket, const char[] remoteIP, int remotePort, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "Socket",
+            "name": "newSocket",
+            "decl": "Socket newSocket",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "remoteIP",
+            "decl": "const char[] remoteIP",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "remotePort",
+            "decl": "int remotePort",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SocketConnectCB": {
+      "name": "SocketConnectCB",
+      "refLine": 366,
+      "docStart": 12563,
+      "docEnd": 12779,
+      "docs": {
+        "brief": "triggered if a normal sockets finished connecting and is ready to be used",
+        "tags": [
+          {
+            "tag": "",
+            "text": "triggered if a normal sockets finished connecting and is ready to be used"
+          },
+          {
+            "tag": "param:socket",
+            "text": "The socket handle pointing to the calling socket"
+          },
+          {
+            "tag": "param:arg",
+            "text": "The argument set by SocketSetArg()"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SocketDisconnectCB": {
+      "name": "SocketDisconnectCB",
+      "refLine": 415,
+      "docStart": 14634,
+      "docEnd": 14968,
+      "docs": {
+        "brief": "called if a socket has been properly disconnected by the remote side",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if a socket has been properly disconnected by the remote side"
+          },
+          {
+            "tag": "note",
+            "text": "You should call CloseHandle(socket) or reuse the socket before this function ends"
+          },
+          {
+            "tag": "param:Socket",
+            "text": "socket  The socket handle pointing to the calling socket"
+          },
+          {
+            "tag": "param:any",
+            "text": "arg   The argument set by SocketSetArg() for the socket"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SocketErrorCB": {
+      "name": "SocketErrorCB",
+      "refLine": 428,
+      "docStart": 15039,
+      "docEnd": 15537,
+      "docs": {
+        "brief": "called if an unrecoverable error occured, close the socket without an additional call to a disconnect callback",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if an unrecoverable error occured, close the socket without an additional call to a disconnect callback"
+          },
+          {
+            "tag": "note",
+            "text": "You should call CloseHandle(socket) or reuse the socket before this function ends"
+          },
+          {
+            "tag": "param:Socket",
+            "text": "socket  The socket handle pointing to the calling socket"
+          },
+          {
+            "tag": "param:int",
+            "text": "errorType The error type, see defines above"
+          },
+          {
+            "tag": "param:int",
+            "text": "errorNum The errno, see errno.h for details"
+          },
+          {
+            "tag": "param:any",
+            "text": "arg   The argument set by SocketSetArg() for the socket"
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(Socket socket, const int errorType, const int errorNum, any arg)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "Socket",
+            "name": "socket",
+            "decl": "Socket socket",
+            "default": null
+          },
+          {
+            "type": "const int",
+            "name": "errorType",
+            "decl": "const int errorType",
+            "default": null
+          },
+          {
+            "type": "const int",
+            "name": "errorNum",
+            "decl": "const int errorNum",
+            "default": null
+          },
+          {
+            "type": "any",
+            "name": "arg",
+            "decl": "any arg",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

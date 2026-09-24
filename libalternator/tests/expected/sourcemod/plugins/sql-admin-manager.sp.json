@@ -1,0 +1,490 @@
+{
+  "functions": {
+    "Command_DelAdmin": {
+      "name": "Command_DelAdmin",
+      "refLine": 738,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_DelGroup": {
+      "name": "Command_DelGroup",
+      "refLine": 586,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "CreateSQLite": {
+      "name": "CreateSQLite",
+      "refLine": 124,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "CreatePgSQL": {
+      "name": "CreatePgSQL",
+      "refLine": 159,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "DoError": {
+      "name": "DoError",
+      "refLine": 929,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "msg",
+          "decl": "const char[] msg",
+          "default": null
+        }
+      ]
+    },
+    "DoQuery": {
+      "name": "DoQuery",
+      "refLine": 914,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        }
+      ]
+    },
+    "DoStmtError": {
+      "name": "DoStmtError",
+      "refLine": 940,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "msg",
+          "decl": "const char[] msg",
+          "default": null
+        }
+      ]
+    },
+    "Command_CreateTables": {
+      "name": "Command_CreateTables",
+      "refLine": 199,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "UpdatePgSQL": {
+      "name": "UpdatePgSQL",
+      "refLine": 406,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "Connect": {
+      "name": "Connect",
+      "refLine": 68,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "Database",
+      "arguments": []
+    },
+    "Command_AddAdmin": {
+      "name": "Command_AddAdmin",
+      "refLine": 816,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_SetAdminGroups": {
+      "name": "Command_SetAdminGroups",
+      "refLine": 458,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_UpdateTables": {
+      "name": "Command_UpdateTables",
+      "refLine": 429,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "GetUpdateVersion": {
+      "name": "GetUpdateVersion",
+      "refLine": 228,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "int[4]",
+          "name": "versions",
+          "decl": "int versions[4]",
+          "default": null
+        }
+      ]
+    },
+    "UpdateSQLite": {
+      "name": "UpdateSQLite",
+      "refLine": 271,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "Command_AddGroup": {
+      "name": "Command_AddGroup",
+      "refLine": 670,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "UpdateMySQL": {
+      "name": "UpdateMySQL",
+      "refLine": 337,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CreateMySQL": {
+      "name": "CreateMySQL",
+      "refLine": 88,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SCHEMA_UPGRADE_1": {
+      "name": "SCHEMA_UPGRADE_1",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1409"
+    },
+    "CURRENT_SCHEMA_VERSION": {
+      "name": "CURRENT_SCHEMA_VERSION",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1409"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

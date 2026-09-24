@@ -1,0 +1,261 @@
+{
+  "functions": {
+    "ReadGroups_EndSection": {
+      "name": "ReadGroups_EndSection",
+      "refLine": 175,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "InternalReadGroups": {
+      "name": "InternalReadGroups",
+      "refLine": 216,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "GroupPass",
+          "name": "pass",
+          "decl": "GroupPass pass",
+          "default": null
+        }
+      ]
+    },
+    "ReadGroups_CurrentLine": {
+      "name": "ReadGroups_CurrentLine",
+      "refLine": 197,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "line",
+          "decl": "const char[] line",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "lineno",
+          "decl": "int lineno",
+          "default": null
+        }
+      ]
+    },
+    "ReadGroups_KeyValue": {
+      "name": "ReadGroups_KeyValue",
+      "refLine": 91,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "InitializeGroupParser": {
+      "name": "InitializeGroupParser",
+      "refLine": 204,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadGroups": {
+      "name": "ReadGroups",
+      "refLine": 238,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadGroups_NewSection": {
+      "name": "ReadGroups_NewSection",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {
+    "GroupState": {
+      "name": "GroupState",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "GroupState_None": {
+          "name": "GroupState_None",
+          "refLine": 36,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "GroupState_Overrides": {
+          "name": "GroupState_Overrides",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "GroupState_InGroup": {
+          "name": "GroupState_InGroup",
+          "refLine": 38,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "GroupState_Groups": {
+          "name": "GroupState_Groups",
+          "refLine": 37,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "GroupPass": {
+      "name": "GroupPass",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "GroupPass_Invalid": {
+          "name": "GroupPass_Invalid",
+          "refLine": 44,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "GroupPass_First": {
+          "name": "GroupPass_First",
+          "refLine": 45,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "GroupPass_Second": {
+          "name": "GroupPass_Second",
+          "refLine": 46,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

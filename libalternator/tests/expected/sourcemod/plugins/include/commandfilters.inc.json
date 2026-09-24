@@ -1,0 +1,672 @@
+{
+  "functions": {
+    "ProcessTargetString": {
+      "name": "ProcessTargetString",
+      "refLine": 78,
+      "docStart": 2901,
+      "docEnd": 4138,
+      "docs": {
+        "brief": "Processes a generic command target string, and resolves it to a list\nof clients or one client, based on filtering rules and a pattern.\n\nNote that you should use LoadTranslations(\"common.phrases\") in OnPluginStart(),\nas that file is guaranteed to contain all of the translatable phrases that\nProcessTargetString() will return.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Processes a generic command target string, and resolves it to a list\nof clients or one client, based on filtering rules and a pattern.\n\nNote that you should use LoadTranslations(\"common.phrases\") in OnPluginStart(),\nas that file is guaranteed to contain all of the translatable phrases that\nProcessTargetString() will return."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "Pattern to find clients against."
+          },
+          {
+            "tag": "param:admin",
+            "text": "Admin performing the action, or 0 if the server."
+          },
+          {
+            "tag": "param:targets",
+            "text": "Array to hold targets."
+          },
+          {
+            "tag": "param:max_targets",
+            "text": "Maximum size of the targets array."
+          },
+          {
+            "tag": "param:filter_flags",
+            "text": "Filter flags."
+          },
+          {
+            "tag": "param:target_name",
+            "text": "Buffer to store the target name."
+          },
+          {
+            "tag": "param:tn_maxlength",
+            "text": "Maximum length of the target name buffer."
+          },
+          {
+            "tag": "param:tn_is_ml",
+            "text": "OUTPUT: Will be true if the target name buffer is an ML phrase,\nfalse if it is a normal string."
+          },
+          {
+            "tag": "return",
+            "text": "If a multi-target pattern was used, the number of clients found\nis returned.  If a single-target pattern was used, 1 is returned\nif one valid client is found.  Otherwise, a COMMAND_TARGET reason\nfor failure is returned."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int[]",
+          "name": "targets",
+          "decl": "int[] targets",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_targets",
+          "decl": "int max_targets",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "filter_flags",
+          "decl": "int filter_flags",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "target_name",
+          "decl": "char[] target_name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "tn_maxlength",
+          "decl": "int tn_maxlength",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "tn_is_ml",
+          "decl": "bool& tn_is_ml",
+          "default": null
+        }
+      ]
+    },
+    "ReplyToTargetError": {
+      "name": "ReplyToTargetError",
+      "refLine": 96,
+      "docStart": 4390,
+      "docEnd": 4667,
+      "docs": {
+        "brief": "Replies to a client with a given message describing a targetting\nfailure reason.\n\nNote: The translation phrases are found in common.phrases.txt.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a client with a given message describing a targetting\nfailure reason.\n\nNote: The translation phrases are found in common.phrases.txt."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index, or 0 for server."
+          },
+          {
+            "tag": "param:reason",
+            "text": "COMMAND_TARGET reason."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "reason",
+          "decl": "int reason",
+          "default": null
+        }
+      ]
+    },
+    "RemoveMultiTargetFilter": {
+      "name": "RemoveMultiTargetFilter",
+      "refLine": 171,
+      "docStart": 6916,
+      "docEnd": 7101,
+      "docs": {
+        "brief": "Removes a multi-target filter function from ProcessTargetString().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a multi-target filter function from ProcessTargetString()."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "Pattern to match (case sensitive)."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Filter function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "MultiTargetFilter",
+          "name": "filter",
+          "decl": "MultiTargetFilter filter",
+          "default": null
+        }
+      ]
+    },
+    "AddMultiTargetFilter": {
+      "name": "AddMultiTargetFilter",
+      "refLine": 162,
+      "docStart": 6425,
+      "docEnd": 6757,
+      "docs": {
+        "brief": "Adds a multi-target filter function for ProcessTargetString().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a multi-target filter function for ProcessTargetString()."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "Pattern to match (case sensitive)."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Filter function."
+          },
+          {
+            "tag": "param:phrase",
+            "text": "Descriptive phrase to display on successful match."
+          },
+          {
+            "tag": "param:phraseIsML",
+            "text": "True if phrase is multi-lingual, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "pattern",
+          "decl": "const char[] pattern",
+          "default": null
+        },
+        {
+          "type": "MultiTargetFilter",
+          "name": "filter",
+          "decl": "MultiTargetFilter filter",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "phrase",
+          "decl": "const char[] phrase",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "phraseIsML",
+          "decl": "bool phraseIsML",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_commandfilters_included": {
+      "name": "_commandfilters_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "COMMAND_FILTER_CONNECTED": {
+      "name": "COMMAND_FILTER_CONNECTED",
+      "refLine": 42,
+      "docStart": 1909,
+      "docEnd": 1948,
+      "docs": {
+        "brief": "Allow players not fully in-game",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow players not fully in-game"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "FEATURECAP_MULTITARGETFILTER_CLIENTPARAM": {
+      "name": "FEATURECAP_MULTITARGETFILTER_CLIENTPARAM",
+      "refLine": 135,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"SourceMod MultiTargetFilter ClientParam\""
+    },
+    "COMMAND_TARGET_NOT_HUMAN": {
+      "name": "COMMAND_TARGET_NOT_HUMAN",
+      "refLine": 53,
+      "docStart": 2778,
+      "docEnd": 2806,
+      "docs": {
+        "brief": "Target was not human",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Target was not human"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-6"
+    },
+    "MAX_TARGET_LENGTH": {
+      "name": "MAX_TARGET_LENGTH",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "COMMAND_TARGET_IMMUNE": {
+      "name": "COMMAND_TARGET_IMMUNE",
+      "refLine": 51,
+      "docStart": 2595,
+      "docEnd": 2626,
+      "docs": {
+        "brief": "Single client is immune",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Single client is immune"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-4"
+    },
+    "COMMAND_FILTER_DEAD": {
+      "name": "COMMAND_FILTER_DEAD",
+      "refLine": 41,
+      "docStart": 1827,
+      "docEnd": 1859,
+      "docs": {
+        "brief": "Only filter dead players",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Only filter dead players"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "COMMAND_FILTER_NO_IMMUNITY": {
+      "name": "COMMAND_FILTER_NO_IMMUNITY",
+      "refLine": 43,
+      "docStart": 1998,
+      "docEnd": 2027,
+      "docs": {
+        "brief": "Ignore immunity rules",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ignore immunity rules"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "COMMAND_FILTER_NO_BOTS": {
+      "name": "COMMAND_FILTER_NO_BOTS",
+      "refLine": 45,
+      "docStart": 2172,
+      "docEnd": 2213,
+      "docs": {
+        "brief": "Do not allow bots to be targetted",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do not allow bots to be targetted"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<5)"
+    },
+    "COMMAND_TARGET_NONE": {
+      "name": "COMMAND_TARGET_NONE",
+      "refLine": 47,
+      "docStart": 2265,
+      "docEnd": 2292,
+      "docs": {
+        "brief": "No target was found",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No target was found"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "COMMAND_FILTER_NO_MULTI": {
+      "name": "COMMAND_FILTER_NO_MULTI",
+      "refLine": 44,
+      "docStart": 2077,
+      "docEnd": 2122,
+      "docs": {
+        "brief": "Do not allow multiple target patterns",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Do not allow multiple target patterns"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "COMMAND_TARGET_NOT_DEAD": {
+      "name": "COMMAND_TARGET_NOT_DEAD",
+      "refLine": 49,
+      "docStart": 2426,
+      "docEnd": 2459,
+      "docs": {
+        "brief": "Single client is not dead",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Single client is not dead"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-2"
+    },
+    "COMMAND_TARGET_NOT_ALIVE": {
+      "name": "COMMAND_TARGET_NOT_ALIVE",
+      "refLine": 48,
+      "docStart": 2342,
+      "docEnd": 2376,
+      "docs": {
+        "brief": "Single client is not alive",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Single client is not alive"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-1"
+    },
+    "COMMAND_TARGET_AMBIGUOUS": {
+      "name": "COMMAND_TARGET_AMBIGUOUS",
+      "refLine": 54,
+      "docStart": 2856,
+      "docEnd": 2897,
+      "docs": {
+        "brief": "Partial name had too many targets",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Partial name had too many targets"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-7"
+    },
+    "COMMAND_FILTER_ALIVE": {
+      "name": "COMMAND_FILTER_ALIVE",
+      "refLine": 40,
+      "docStart": 1745,
+      "docEnd": 1777,
+      "docs": {
+        "brief": "Only allow alive players",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Only allow alive players"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "COMMAND_TARGET_EMPTY_FILTER": {
+      "name": "COMMAND_TARGET_EMPTY_FILTER",
+      "refLine": 52,
+      "docStart": 2676,
+      "docEnd": 2728,
+      "docs": {
+        "brief": "A multi-filter (such as @all) had no targets",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A multi-filter (such as @all) had no targets"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-5"
+    },
+    "COMMAND_TARGET_NOT_IN_GAME": {
+      "name": "COMMAND_TARGET_NOT_IN_GAME",
+      "refLine": 50,
+      "docStart": 2509,
+      "docEnd": 2545,
+      "docs": {
+        "brief": "Single client is not in game",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Single client is not in game"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-3"
+    }
+  },
+  "enums": {},
+  "typesets": {
+    "MultiTargetFilter": {
+      "name": "MultiTargetFilter",
+      "refLine": 147,
+      "docStart": 5705,
+      "docEnd": 6135,
+      "docs": {
+        "brief": "Adds clients to a multi-target filter.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds clients to a multi-target filter."
+          },
+          {
+            "tag": "param:pattern",
+            "text": "Pattern name."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array to fill with unique, valid client indexes."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client that triggered this filter."
+          },
+          {
+            "tag": "return",
+            "text": "True if pattern was recognized, false otherwise."
+          },
+          {
+            "tag": "note",
+            "text": "To see if the client param is available, use FeatureType_Capability and FEATURECAP_MULTITARGETFILTER_CLIENTPARAM."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function bool(const char[] pattern, ArrayList clients)": {
+          "refLine": 149,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function bool(const char[] pattern, ArrayList clients)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "pattern",
+                "decl": "const char[] pattern",
+                "default": null
+              },
+              {
+                "type": "ArrayList",
+                "name": "clients",
+                "decl": "ArrayList clients",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(const char[] pattern, Handle clients)": {
+          "refLine": 148,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function bool(const char[] pattern, Handle clients)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "pattern",
+                "decl": "const char[] pattern",
+                "default": null
+              },
+              {
+                "type": "Handle",
+                "name": "clients",
+                "decl": "Handle clients",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(const char[] pattern, ArrayList clients, int client)": {
+          "refLine": 151,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function bool(const char[] pattern, ArrayList clients, int client)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "pattern",
+                "decl": "const char[] pattern",
+                "default": null
+              },
+              {
+                "type": "ArrayList",
+                "name": "clients",
+                "decl": "ArrayList clients",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(const char[] pattern, Handle clients, int client)": {
+          "refLine": 150,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function bool(const char[] pattern, Handle clients, int client)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "const char[]",
+                "name": "pattern",
+                "decl": "const char[] pattern",
+                "default": null
+              },
+              {
+                "type": "Handle",
+                "name": "clients",
+                "decl": "Handle clients",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

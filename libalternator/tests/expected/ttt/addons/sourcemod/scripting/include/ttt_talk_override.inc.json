@@ -1,0 +1,99 @@
+{
+  "functions": {
+    "TTT_OnTraitorVoice": {
+      "name": "TTT_OnTraitorVoice",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "status",
+          "decl": "bool& status",
+          "default": null
+        },
+        {
+          "type": "bool&",
+          "name": "message",
+          "decl": "bool& message",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetTraitorVoice": {
+      "name": "TTT_GetTraitorVoice",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_SetTraitorVoice": {
+      "name": "TTT_SetTraitorVoice",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "status",
+          "decl": "bool status",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "message",
+          "decl": "bool message",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_talk_override_included": {
+      "name": "_ttt_talk_override_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

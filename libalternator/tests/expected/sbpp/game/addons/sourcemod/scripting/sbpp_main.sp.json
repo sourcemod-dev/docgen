@@ -1,0 +1,2341 @@
+{
+  "functions": {
+    "CommandAddBan": {
+      "name": "CommandAddBan",
+      "refLine": 668,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnClientConnected": {
+      "name": "OnClientConnected",
+      "refLine": 331,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "InsertServerInfo": {
+      "name": "InsertServerInfo",
+      "refLine": 3014,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnAdminMenuReady": {
+      "name": "OnAdminMenuReady",
+      "refLine": 765,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hTemp",
+          "decl": "Handle hTemp",
+          "default": null
+        }
+      ]
+    },
+    "DB_OnBanBySteamIdSelect": {
+      "name": "DB_OnBanBySteamIdSelect",
+      "refLine": 2517,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "pack",
+          "decl": "DataPack pack",
+          "default": null
+        }
+      ]
+    },
+    "CommandBan": {
+      "name": "CommandBan",
+      "refLine": 443,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPreAdminCheck": {
+      "name": "OnClientPreAdminCheck",
+      "refLine": 302,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Native_SBReportPlayer": {
+      "name": "Native_SBReportPlayer",
+      "refLine": 2611,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "SelectAddbanCallback": {
+      "name": "SelectAddbanCallback",
+      "refLine": 1447,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_NewSection": {
+      "name": "ReadConfig_NewSection",
+      "refLine": 2241,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "InsertUnbanCallback": {
+      "name": "InsertUnbanCallback",
+      "refLine": 1408,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 260,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AdminsDone": {
+      "name": "AdminsDone",
+      "refLine": 1775,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_KeyValue": {
+      "name": "ReadConfig_KeyValue",
+      "refLine": 2258,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "Event_OnPlayerName": {
+      "name": "Event_OnPlayerName",
+      "refLine": 397,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "CommandReload": {
+      "name": "CommandReload",
+      "refLine": 434,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_EndSection": {
+      "name": "ReadConfig_EndSection",
+      "refLine": 2378,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "IsAsciiDecimal": {
+      "name": "IsAsciiDecimal",
+      "refLine": 2691,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "Steam2ToSteam3": {
+      "name": "Steam2ToSteam3",
+      "refLine": 2704,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "steam2",
+          "decl": "const char[] steam2",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "steam3",
+          "decl": "char[] steam3",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "CleanupBanDataPack": {
+      "name": "CleanupBanDataPack",
+      "refLine": 2882,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "UTIL_InsertTempBan": {
+      "name": "UTIL_InsertTempBan",
+      "refLine": 2947,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "targetUserId",
+          "decl": "int targetUserId",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "gameAuth",
+          "decl": "const char[] gameAuth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "ip",
+          "decl": "const char[] ip",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "adminIp",
+          "decl": "const char[] adminIp",
+          "default": null
+        }
+      ]
+    },
+    "CreateFlagLetters": {
+      "name": "CreateFlagLetters",
+      "refLine": 3181,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "AdminFlag[]",
+      "arguments": []
+    },
+    "OnClientConnect": {
+      "name": "OnClientConnect",
+      "refLine": 325,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "rejectmsg",
+          "decl": "char[] rejectmsg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CommandBanIp": {
+      "name": "CommandBanIp",
+      "refLine": 527,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "DisplayBanTimeMenu": {
+      "name": "DisplayBanTimeMenu",
+      "refLine": 1032,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "VerifyInsert": {
+      "name": "VerifyInsert",
+      "refLine": 1152,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "OnClientDisconnect": {
+      "name": "OnClientDisconnect",
+      "refLine": 310,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 276,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReasonSelected": {
+      "name": "ReasonSelected",
+      "refLine": 843,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "CreateBan": {
+      "name": "CreateBan",
+      "refLine": 2803,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "Native_SBBanPlayer": {
+      "name": "Native_SBBanPlayer",
+      "refLine": 2392,
+      "docStart": 67033,
+      "docEnd": 67385,
+      "docs": {
+        "brief": "Ban Player from server",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ban Player from server"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index of the player to ban"
+          },
+          {
+            "tag": "param:time",
+            "text": "The time to ban the player for (in minutes, 0 = permanent)"
+          },
+          {
+            "tag": "param:reason",
+            "text": "The reason to ban the player from the server"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "UTIL_InsertBan": {
+      "name": "UTIL_InsertBan",
+      "refLine": 2923,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "Name",
+          "decl": "const char[] Name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "Authid",
+          "decl": "const char[] Authid",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "Ip",
+          "decl": "const char[] Ip",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "Reason",
+          "decl": "const char[] Reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "AdminAuthid",
+          "decl": "const char[] AdminAuthid",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "AdminIp",
+          "decl": "const char[] AdminIp",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "SelectBanIpCallback": {
+      "name": "SelectBanIpCallback",
+      "refLine": 1232,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "OnClientAuthorized": {
+      "name": "OnClientAuthorized",
+      "refLine": 357,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        }
+      ]
+    },
+    "ProcessQueue": {
+      "name": "ProcessQueue",
+      "refLine": 2207,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "LoadGroupsOverrides": {
+      "name": "LoadGroupsOverrides",
+      "refLine": 2062,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "InitializeConfigParser": {
+      "name": "InitializeConfigParser",
+      "refLine": 2217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "VerifyBan": {
+      "name": "VerifyBan",
+      "refLine": 1688,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "userid",
+          "decl": "int userid",
+          "default": null
+        }
+      ]
+    },
+    "ParseBackupConfig_Overrides": {
+      "name": "ParseBackupConfig_Overrides",
+      "refLine": 3140,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ChatHook": {
+      "name": "ChatHook",
+      "refLine": 406,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "AddedFromSQLiteCallback": {
+      "name": "AddedFromSQLiteCallback",
+      "refLine": 1615,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig": {
+      "name": "ReadConfig",
+      "refLine": 3091,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "InsertBanIpCallback": {
+      "name": "InsertBanIpCallback",
+      "refLine": 1288,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "GroupsDone": {
+      "name": "GroupsDone",
+      "refLine": 1926,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "InsertAddbanCallback": {
+      "name": "InsertAddbanCallback",
+      "refLine": 1501,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "GroupsSecondPass": {
+      "name": "GroupsSecondPass",
+      "refLine": 2017,
+      "docStart": 57983,
+      "docEnd": 58021,
+      "docs": {
+        "brief": "Reparse to apply inherited immunity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reparse to apply inherited immunity"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "CleanupPendingBanDataPack": {
+      "name": "CleanupPendingBanDataPack",
+      "refLine": 2901,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GotDatabase": {
+      "name": "GotDatabase",
+      "refLine": 1065,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "ProcessQueueCallback": {
+      "name": "ProcessQueueCallback",
+      "refLine": 1535,
+      "docStart": 43675,
+      "docEnd": 43769,
+      "docs": {
+        "brief": "ProcessQueueCallback is called as the result of selecting all the rows from the queue table",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ProcessQueueCallback is called as the result of selecting all the rows from the queue table"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "SelectUnbanCallback": {
+      "name": "SelectUnbanCallback",
+      "refLine": 1353,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "ResolveQueuedGameAuth": {
+      "name": "ResolveQueuedGameAuth",
+      "refLine": 2735,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "storedAuth",
+          "decl": "const char[] storedAuth",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "gameAuth",
+          "decl": "char[] gameAuth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "sbid_reload": {
+      "name": "sbid_reload",
+      "refLine": 284,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "convar",
+          "decl": "ConVar convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldValue",
+          "decl": "const char[] oldValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "newValue",
+          "decl": "const char[] newValue",
+          "default": null
+        }
+      ]
+    },
+    "OnMapEnd": {
+      "name": "OnMapEnd",
+      "refLine": 292,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "HackingSelected": {
+      "name": "HackingSelected",
+      "refLine": 886,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "CommandUnban": {
+      "name": "CommandUnban",
+      "refLine": 613,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_Ban": {
+      "name": "AdminMenu_Ban",
+      "refLine": 809,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "topmenu",
+          "decl": "TopMenu topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "ResolveServerInfo": {
+      "name": "ResolveServerInfo",
+      "refLine": 3003,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "sm_rehash": {
+      "name": "sm_rehash",
+      "refLine": 753,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "DisplayBanTargetMenu": {
+      "name": "DisplayBanTargetMenu",
+      "refLine": 1007,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnAllPluginsLoaded": {
+      "name": "OnAllPluginsLoaded",
+      "refLine": 247,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ErrorCheckCallback": {
+      "name": "ErrorCheckCallback",
+      "refLine": 1680,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "DB_OnBanBySteamIdInsert": {
+      "name": "DB_OnBanBySteamIdInsert",
+      "refLine": 2586,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "pack",
+          "decl": "DataPack pack",
+          "default": null
+        }
+      ]
+    },
+    "SQL_OnReportPlayer": {
+      "name": "SQL_OnReportPlayer",
+      "refLine": 2656,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "InternalReadConfig": {
+      "name": "InternalReadConfig",
+      "refLine": 2228,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        }
+      ]
+    },
+    "ClientRecheck": {
+      "name": "ClientRecheck",
+      "refLine": 2183,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "client",
+          "decl": "any client",
+          "default": null
+        }
+      ]
+    },
+    "PrepareBan": {
+      "name": "PrepareBan",
+      "refLine": 3039,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "reason",
+          "decl": "char[] reason",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "targetUserId",
+          "decl": "int targetUserId",
+          "default": "-1"
+        }
+      ]
+    },
+    "OnRebuildAdminCache": {
+      "name": "OnRebuildAdminCache",
+      "refLine": 372,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        }
+      ]
+    },
+    "AccountForLateLoading": {
+      "name": "AccountForLateLoading",
+      "refLine": 3210,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 164,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ServerInfoCallback": {
+      "name": "ServerInfoCallback",
+      "refLine": 1640,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_BanTimeList": {
+      "name": "MenuHandler_BanTimeList",
+      "refLine": 965,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "SQL_OnIPMend": {
+      "name": "SQL_OnIPMend",
+      "refLine": 1766,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "InitializeBackupDB": {
+      "name": "InitializeBackupDB",
+      "refLine": 2748,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Native_SBPP_BanPlayerBySteamId": {
+      "name": "Native_SBPP_BanPlayerBySteamId",
+      "refLine": 2423,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "ResetSettings": {
+      "name": "ResetSettings",
+      "refLine": 3115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "ClearPendingBanState": {
+      "name": "ClearPendingBanState",
+      "refLine": 2911,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_BanPlayerList": {
+      "name": "MenuHandler_BanPlayerList",
+      "refLine": 915,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "CheckLoadAdmins": {
+      "name": "CheckLoadAdmins",
+      "refLine": 2978,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        }
+      ]
+    },
+    "OverridesDone": {
+      "name": "OverridesDone",
+      "refLine": 2129,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "ResetMenu": {
+      "name": "ResetMenu",
+      "refLine": 1045,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "DISABLE_ADDBAN": {
+      "name": "DISABLE_ADDBAN",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    },
+    "FLAG_LETTERS_SIZE": {
+      "name": "FLAG_LETTERS_SIZE",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "26"
+    },
+    "DISABLE_UNBAN": {
+      "name": "DISABLE_UNBAN",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "AUTO_ADD_SERVER_DISABLED": {
+      "name": "AUTO_ADD_SERVER_DISABLED",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "AUTO_ADD_SERVER_WITH_RCON": {
+      "name": "AUTO_ADD_SERVER_WITH_RCON",
+      "refLine": 45,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "Prefix": {
+      "name": "Prefix",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"\\x04[SourceBans++]\\x01 \""
+    }
+  },
+  "enums": {
+    "State": {
+      "name": "State",
+      "refLine": 49,
+      "docStart": 1564,
+      "docEnd": 1581,
+      "docs": {
+        "brief": "ConfigState",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ConfigState"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ConfigStateHacking": {
+          "name": "ConfigStateHacking",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateReasons": {
+          "name": "ConfigStateReasons",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateConfig": {
+          "name": "ConfigStateConfig",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateNone": {
+          "name": "ConfigStateNone",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "ConfigStateTime": {
+          "name": "ConfigStateTime",
+          "refLine": 55,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

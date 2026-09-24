@@ -1,0 +1,1032 @@
+{
+  "functions": {
+    "PopStackCell": {
+      "name": "PopStackCell",
+      "refLine": 227,
+      "docStart": 8696,
+      "docEnd": 9144,
+      "docs": {
+        "brief": "Pops a cell value from a stack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pops a cell value from a stack."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "Variable to store the value."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "param:asChar",
+            "text": "Optionally read as a byte instead of a cell."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the stack is empty."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "any&",
+          "name": "value",
+          "decl": "any& value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "asChar",
+          "decl": "bool asChar",
+          "default": "false"
+        }
+      ]
+    },
+    "PopStackString": {
+      "name": "PopStackString",
+      "refLine": 238,
+      "docStart": 9233,
+      "docEnd": 9536,
+      "docs": {
+        "brief": "Pops a string value from a stack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pops a string value from a stack."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store string."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the stack is empty."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "written",
+          "decl": "int& written",
+          "default": "0"
+        }
+      ]
+    },
+    "PushStackCell": {
+      "name": "PushStackCell",
+      "refLine": 190,
+      "docStart": 7358,
+      "docEnd": 7659,
+      "docs": {
+        "brief": "Pushes a value onto the end of the stack, adding a new index.\n\nThis may safely be used even if the stack has a blocksize\ngreater than 1.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a value onto the end of the stack, adding a new index.\n\nThis may safely be used even if the stack has a blocksize\ngreater than 1."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to push."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "IsStackEmpty": {
+      "name": "IsStackEmpty",
+      "refLine": 259,
+      "docStart": 10111,
+      "docEnd": 10295,
+      "docs": {
+        "brief": "Checks if a stack is empty.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a stack is empty."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if empty, false if not empty."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        }
+      ]
+    },
+    "PushStackArray": {
+      "name": "PushStackArray",
+      "refLine": 214,
+      "docStart": 8026,
+      "docEnd": 8616,
+      "docs": {
+        "brief": "Pushes a copy of an array of cells onto the end of a stack.  The cells\nare pushed as a block (i.e. the entire array takes up one stack slot),\nrather than pushing each cell individually.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a copy of an array of cells onto the end of a stack.  The cells\nare pushed as a block (i.e. the entire array takes up one stack slot),\nrather than pushing each cell individually."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:values",
+            "text": "Block of values to copy."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, the number of elements copied from the array\nwill be equal to the blocksize.  If set higher than the\nblocksize, the operation will be truncated."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "values",
+          "decl": "const any[] values",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        }
+      ]
+    },
+    "PopStackArray": {
+      "name": "PopStackArray",
+      "refLine": 250,
+      "docStart": 9629,
+      "docEnd": 10038,
+      "docs": {
+        "brief": "Pops an array of cells from a stack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pops an array of cells from a stack."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the array in."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if the stack is empty."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "buffer",
+          "decl": "any[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        }
+      ]
+    },
+    "CreateStack": {
+      "name": "CreateStack",
+      "refLine": 178,
+      "docStart": 6558,
+      "docEnd": 7305,
+      "docs": {
+        "brief": "Creates a stack structure.  A stack is a LIFO (last in, first out)\nvector (array) of items.  It has O(1) insertion and O(1) removal.\n\nStacks have two operations: Push (adding an item) and Pop (removes\nitems in reverse-push order).\n\nThe contents of the stack are uniform; i.e. storing a string and then\nretrieving it as an integer is NOT the same as StringToInt()!\n\nThe \"blocksize\" determines how many cells each slot has; it cannot\nbe changed after creation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a stack structure.  A stack is a LIFO (last in, first out)\nvector (array) of items.  It has O(1) insertion and O(1) removal.\n\nStacks have two operations: Push (adding an item) and Pop (removes\nitems in reverse-push order).\n\nThe contents of the stack are uniform; i.e. storing a string and then\nretrieving it as an integer is NOT the same as StringToInt()!\n\nThe \"blocksize\" determines how many cells each slot has; it cannot\nbe changed after creation."
+          },
+          {
+            "tag": "param:blocksize",
+            "text": "The number of cells each entry in the stack can\nhold.  For example, 32 cells is equivalent to:\nnew Array[X][32]"
+          },
+          {
+            "tag": "return",
+            "text": "New stack Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ArrayStack",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "blocksize",
+          "decl": "int blocksize",
+          "default": "1"
+        }
+      ]
+    },
+    "PushStackString": {
+      "name": "PushStackString",
+      "refLine": 200,
+      "docStart": 7716,
+      "docEnd": 7958,
+      "docs": {
+        "brief": "Pushes a copy of a string onto the end of a stack, truncating it if it is\ntoo big.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a copy of a string onto the end of a stack, truncating it if it is\ntoo big."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "String to push."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "PopStack": {
+      "name": "PopStack",
+      "refLine": 268,
+      "docStart": 10340,
+      "docEnd": 10558,
+      "docs": {
+        "brief": "Pops a value off a stack, ignoring it completely.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pops a value off a stack, ignoring it completely."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True if something was popped, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        }
+      ]
+    },
+    "GetStackBlockSize": {
+      "name": "GetStackBlockSize",
+      "refLine": 281,
+      "docStart": 10653,
+      "docEnd": 10851,
+      "docs": {
+        "brief": "Returns the blocksize the stack was created with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the blocksize the stack was created with."
+          },
+          {
+            "tag": "param:stack",
+            "text": "Stack Handle."
+          },
+          {
+            "tag": "return",
+            "text": "The blocksize of the stack."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "stack",
+          "decl": "Handle stack",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "ArrayStack": {
+      "name": "ArrayStack",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Top": {
+          "name": "Top",
+          "refLine": 109,
+          "docStart": 4308,
+          "docEnd": 4660,
+          "docs": {
+            "brief": "Reads a cell value from a stack without removing it.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a cell value from a stack without removing it."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "param:asChar",
+                "text": "Optionally read as a byte instead of a cell."
+              },
+              {
+                "tag": "return",
+                "text": "Value read from the stack."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "bool",
+              "name": "asChar",
+              "decl": "bool asChar",
+              "default": "false"
+            }
+          ]
+        },
+        "ArrayStack": {
+          "name": "ArrayStack",
+          "refLine": 55,
+          "docStart": 1696,
+          "docEnd": 2401,
+          "docs": {
+            "brief": "Creates a stack structure.  A stack is a LIFO (last in, first out)\nvector (array) of items.  It has O(1) insertion and O(1) removal.\n\nStacks have two operations: Push (adding an item) and Pop (removes\nitems in reverse-push order).\n\nThe contents of the stack are uniform; i.e. storing a string and then\nretrieving it as an integer is NOT the same as StringToInt()!\n\nThe \"blocksize\" determines how many cells each slot has; it cannot\nbe changed after creation.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a stack structure.  A stack is a LIFO (last in, first out)\nvector (array) of items.  It has O(1) insertion and O(1) removal.\n\nStacks have two operations: Push (adding an item) and Pop (removes\nitems in reverse-push order).\n\nThe contents of the stack are uniform; i.e. storing a string and then\nretrieving it as an integer is NOT the same as StringToInt()!\n\nThe \"blocksize\" determines how many cells each slot has; it cannot\nbe changed after creation."
+              },
+              {
+                "tag": "param:blocksize",
+                "text": "The number of cells each entry in the stack can\nhold.  For example, 32 cells is equivalent to:\nnew Array[X][32]"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "ArrayStack",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "blocksize",
+              "decl": "int blocksize",
+              "default": "1"
+            }
+          ]
+        },
+        "PopArray": {
+          "name": "PopArray",
+          "refLine": 135,
+          "docStart": 5539,
+          "docEnd": 5833,
+          "docs": {
+            "brief": "Pops an array of cells from a stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pops an array of cells from a stack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the array in."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any[]",
+              "name": "buffer",
+              "decl": "any[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            }
+          ]
+        },
+        "PushString": {
+          "name": "PushString",
+          "refLine": 80,
+          "docStart": 3125,
+          "docEnd": 3261,
+          "docs": {
+            "brief": "Pushes a copy of a string onto the end of a stack, truncating it if it\nis too big.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a copy of a string onto the end of a stack, truncating it if it\nis too big."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to push."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "Pop": {
+          "name": "Pop",
+          "refLine": 100,
+          "docStart": 3913,
+          "docEnd": 4246,
+          "docs": {
+            "brief": "Pops a cell value from a stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pops a cell value from a stack."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "param:asChar",
+                "text": "Optionally read as a byte instead of a cell."
+              },
+              {
+                "tag": "return",
+                "text": "Value popped from the stack."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "bool",
+              "name": "asChar",
+              "decl": "bool asChar",
+              "default": "false"
+            }
+          ]
+        },
+        "PushArray": {
+          "name": "PushArray",
+          "refLine": 91,
+          "docStart": 3319,
+          "docEnd": 3843,
+          "docs": {
+            "brief": "Pushes a copy of an array of cells onto the end of a stack. The cells\nare pushed as a block (i.e. the entire array takes up one stack slot),\nrather than pushing each cell individually.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a copy of an array of cells onto the end of a stack. The cells\nare pushed as a block (i.e. the entire array takes up one stack slot),\nrather than pushing each cell individually."
+              },
+              {
+                "tag": "param:stack",
+                "text": "Stack Handle."
+              },
+              {
+                "tag": "param:values",
+                "text": "Block of values to copy."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, the number of elements copied from the array\nwill be equal to the blocksize.  If set higher than the\nblocksize, the operation will be truncated."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const any[]",
+              "name": "values",
+              "decl": "const any[] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            }
+          ]
+        },
+        "Clone": {
+          "name": "Clone",
+          "refLine": 66,
+          "docStart": 2519,
+          "docEnd": 2843,
+          "docs": {
+            "brief": "Clones an stack, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should\nclosed when no longer needed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clones an stack, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should\nclosed when no longer needed."
+              },
+              {
+                "tag": "return",
+                "text": "New handle to the cloned stack object"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "ArrayStack",
+          "arguments": []
+        },
+        "Push": {
+          "name": "Push",
+          "refLine": 74,
+          "docStart": 2884,
+          "docEnd": 3082,
+          "docs": {
+            "brief": "Pushes a value onto the end of the stack, adding a new index.\n\nThis may safely be used even if the stack has a blocksize\ngreater than 1.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a value onto the end of the stack, adding a new index.\n\nThis may safely be used even if the stack has a blocksize\ngreater than 1."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "TopString": {
+          "name": "TopString",
+          "refLine": 127,
+          "docStart": 5120,
+          "docEnd": 5454,
+          "docs": {
+            "brief": "Reads a string value from a stack without removing it.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a string value from a stack without removing it."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store string."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "param:written",
+                "text": "Number of characters written to buffer, not including\nthe null terminator."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "written",
+              "decl": "int& written",
+              "default": "0"
+            }
+          ]
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 58,
+          "docStart": 2451,
+          "docEnd": 2484,
+          "docs": {
+            "brief": "Clears a stack of all entries.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears a stack of all entries."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "PopString": {
+          "name": "PopString",
+          "refLine": 118,
+          "docStart": 4722,
+          "docEnd": 5035,
+          "docs": {
+            "brief": "Pops a string value from a stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pops a string value from a stack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store string."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "param:written",
+                "text": "Number of characters written to buffer, not including\nthe null terminator."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "written",
+              "decl": "int& written",
+              "default": "0"
+            }
+          ]
+        },
+        "TopArray": {
+          "name": "TopArray",
+          "refLine": 143,
+          "docStart": 5896,
+          "docEnd": 6211,
+          "docs": {
+            "brief": "Reads an array of cells from a stack without removing it.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an array of cells from a stack without removing it."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the array in."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+              },
+              {
+                "tag": "error",
+                "text": "The stack is empty."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any[]",
+              "name": "buffer",
+              "decl": "any[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 155,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "BlockSize": {
+          "name": "BlockSize",
+          "refLine": 151,
+          "docStart": 6387,
+          "docEnd": 6440,
+          "docs": {
+            "brief": "Retrieve the blocksize the stack was created with.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the blocksize the stack was created with."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "Empty": {
+          "name": "Empty",
+          "refLine": 146,
+          "docStart": 6274,
+          "docEnd": 6329,
+          "docs": {
+            "brief": "Returns true if the stack is empty, false otherwise.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns true if the stack is empty, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_adt_stack_included": {
+      "name": "_adt_stack_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

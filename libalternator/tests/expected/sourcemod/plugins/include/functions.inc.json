@@ -1,0 +1,3007 @@
+{
+  "functions": {
+    "IsNativeParamNullVector": {
+      "name": "IsNativeParamNullVector",
+      "refLine": 571,
+      "docStart": 23521,
+      "docEnd": 23710,
+      "docs": {
+        "brief": "Check if the native parameter is the NULL_VECTOR.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if the native parameter is the NULL_VECTOR."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "return",
+            "text": "True if NULL_VECTOR, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        }
+      ]
+    },
+    "CreateForward": {
+      "name": "CreateForward",
+      "refLine": 220,
+      "docStart": 10133,
+      "docEnd": 10589,
+      "docs": {
+        "brief": "Creates a private forward.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a private forward."
+          },
+          {
+            "tag": "note",
+            "text": "No functions are automatically added. Use AddToForward() to do this."
+          },
+          {
+            "tag": "note",
+            "text": "Private forwards can be cloned."
+          },
+          {
+            "tag": "note",
+            "text": "Use CloseHandle() to destroy these."
+          },
+          {
+            "tag": "param:type",
+            "text": "Execution type to be used."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of parameter types (up to 32)."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to new private forward."
+          },
+          {
+            "tag": "error",
+            "text": "More than 32 parameter types passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "PrivateForward",
+      "arguments": [
+        {
+          "type": "ExecType",
+          "name": "type",
+          "decl": "ExecType type",
+          "default": null
+        },
+        {
+          "type": "ParamType...",
+          "name": "...",
+          "decl": "ParamType...",
+          "default": null
+        }
+      ]
+    },
+    "GetFunctionByName": {
+      "name": "GetFunctionByName",
+      "refLine": 190,
+      "docStart": 8956,
+      "docEnd": 9342,
+      "docs": {
+        "brief": "Gets a function id from a function name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a function id from a function name."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to search in the calling plugin."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the function."
+          },
+          {
+            "tag": "return",
+            "text": "Function id or INVALID_FUNCTION if not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt plugin handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Function",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "ThrowNativeError": {
+      "name": "ThrowNativeError",
+      "refLine": 462,
+      "docStart": 18939,
+      "docEnd": 19215,
+      "docs": {
+        "brief": "Throws an error in the calling plugin of a native, instead of your own plugin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Throws an error in the calling plugin of a native, instead of your own plugin."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error code to use."
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Error message format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "error",
+            "text": "Always!"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "error",
+          "decl": "int error",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetNativeFunction": {
+      "name": "GetNativeFunction",
+      "refLine": 523,
+      "docStart": 21523,
+      "docEnd": 21823,
+      "docs": {
+        "brief": "Gets a function pointer from a native parameter.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a function pointer from a native parameter."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "return",
+            "text": "Function pointer at the given parameter number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number, or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Function",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        }
+      ]
+    },
+    "IsNativeParamNullString": {
+      "name": "IsNativeParamNullString",
+      "refLine": 579,
+      "docStart": 23763,
+      "docEnd": 23952,
+      "docs": {
+        "brief": "Check if the native parameter is the NULL_STRING.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check if the native parameter is the NULL_STRING."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "return",
+            "text": "True if NULL_STRING, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        }
+      ]
+    },
+    "SetNativeString": {
+      "name": "SetNativeString",
+      "refLine": 505,
+      "docStart": 20485,
+      "docEnd": 21108,
+      "docs": {
+        "brief": "Sets a string in a native parameter.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string in a native parameter."
+          },
+          {
+            "tag": "note",
+            "text": "Output conditions are undefined on failure."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source string to use."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum number of bytes to write."
+          },
+          {
+            "tag": "param:utf8",
+            "text": "If false, string will not be written\nwith UTF8 safety."
+          },
+          {
+            "tag": "param:bytes",
+            "text": "Optionally store the number of bytes written."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, any other integer on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "utf8",
+          "decl": "bool utf8",
+          "default": "true"
+        },
+        {
+          "type": "int&",
+          "name": "bytes",
+          "decl": "int& bytes",
+          "default": "0"
+        }
+      ]
+    },
+    "Call_StartForward": {
+      "name": "Call_StartForward",
+      "refLine": 281,
+      "docStart": 12945,
+      "docEnd": 13236,
+      "docs": {
+        "brief": "Starts a call to functions in a forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a call to functions in a forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used during an incomplete call."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Handle to global or private forward."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt forward handle or called before another call has completed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "fwd",
+          "decl": "Handle fwd",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushString": {
+      "name": "Call_PushString",
+      "refLine": 369,
+      "docStart": 15795,
+      "docEnd": 16106,
+      "docs": {
+        "brief": "Pushes a string onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a string onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Changes to string are not copied back to caller. Use PushStringEx() to do this."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "String to push."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "CreateNative": {
+      "name": "CreateNative",
+      "refLine": 451,
+      "docStart": 18510,
+      "docEnd": 18872,
+      "docs": {
+        "brief": "Creates a dynamic native.  This should only be called in AskPluginLoad(), or\nelse you risk not having your native shared with other plugins.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a dynamic native.  This should only be called in AskPluginLoad(), or\nelse you risk not having your native shared with other plugins."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the dynamic native; must be unique among\nall other registered dynamic natives."
+          },
+          {
+            "tag": "param:func",
+            "text": "Function to use as the dynamic native."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "NativeCall",
+          "name": "func",
+          "decl": "NativeCall func",
+          "default": null
+        }
+      ]
+    },
+    "Call_Cancel": {
+      "name": "Call_Cancel",
+      "refLine": 406,
+      "docStart": 17271,
+      "docEnd": 17465,
+      "docs": {
+        "brief": "Cancels a call to a function or forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cancels a call to a function or forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Call_PushCellRef": {
+      "name": "Call_PushCellRef",
+      "refLine": 313,
+      "docStart": 14033,
+      "docEnd": 14273,
+      "docs": {
+        "brief": "Pushes a cell by reference onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a cell by reference onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Cell reference to push."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "any&",
+          "name": "value",
+          "decl": "any& value",
+          "default": null
+        }
+      ]
+    },
+    "Call_StartFunction": {
+      "name": "Call_StartFunction",
+      "refLine": 293,
+      "docStart": 13284,
+      "docEnd": 13700,
+      "docs": {
+        "brief": "Starts a call to a function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a call to a function."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used during an incomplete call."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to specify the calling plugin."
+          },
+          {
+            "tag": "param:func",
+            "text": "Function to call."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt plugin handle, invalid function, or called before another call has completed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "Function",
+          "name": "func",
+          "decl": "Function func",
+          "default": null
+        }
+      ]
+    },
+    "RequestFrame": {
+      "name": "RequestFrame",
+      "refLine": 621,
+      "docStart": 25260,
+      "docEnd": 25454,
+      "docs": {
+        "brief": "Creates a single use Next Frame hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a single use Next Frame hook."
+          },
+          {
+            "tag": "param:Function",
+            "text": "Function to call on the next frame."
+          },
+          {
+            "tag": "param:data",
+            "text": "Value to be passed on the invocation of the Function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "RequestFrameCallback",
+          "name": "Function",
+          "decl": "RequestFrameCallback Function",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "RemoveAllFromForward": {
+      "name": "RemoveAllFromForward",
+      "refLine": 271,
+      "docStart": 12335,
+      "docEnd": 12880,
+      "docs": {
+        "brief": "Removes all instances of a plugin from a private forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes all instances of a plugin from a private forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Functions will be removed automatically if their parent plugin is unloaded."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Handle to private forward."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Handle of the plugin to remove instances of.\nPass INVALID_HANDLE to specify the calling plugin."
+          },
+          {
+            "tag": "return",
+            "text": "Number of functions removed from forward."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt private forward handle or invalid or corrupt plugin handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "fwd",
+          "decl": "Handle fwd",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        }
+      ]
+    },
+    "SetNativeCellRef": {
+      "name": "SetNativeCellRef",
+      "refLine": 541,
+      "docStart": 22196,
+      "docEnd": 22493,
+      "docs": {
+        "brief": "Sets a cell from a native parameter, by reference.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a cell from a native parameter, by reference."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:value",
+            "text": "Cell value at the parameter number to set by reference."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushStringEx": {
+      "name": "Call_PushStringEx",
+      "refLine": 385,
+      "docStart": 16160,
+      "docEnd": 16786,
+      "docs": {
+        "brief": "Pushes a string onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a string onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "String to push."
+          },
+          {
+            "tag": "param:length",
+            "text": "Length of string buffer."
+          },
+          {
+            "tag": "param:szflags",
+            "text": "Flags determining how string should be handled.\nSee SM_PARAM_STRING_* constants for details.\nThe default (0) is to push ASCII."
+          },
+          {
+            "tag": "param:cpflags",
+            "text": "Whether or not changes should be copied back to the input array.\nSee SM_PARAM_* constants for details."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "szflags",
+          "decl": "int szflags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cpflags",
+          "decl": "int cpflags",
+          "default": null
+        }
+      ]
+    },
+    "GetNativeString": {
+      "name": "GetNativeString",
+      "refLine": 489,
+      "docStart": 19867,
+      "docEnd": 20397,
+      "docs": {
+        "brief": "Retrieves a string from a native parameter.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a string from a native parameter."
+          },
+          {
+            "tag": "note",
+            "text": "Output conditions are undefined on failure."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the buffer."
+          },
+          {
+            "tag": "param:bytes",
+            "text": "Optionally store the number of bytes written."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, any other integer on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "bytes",
+          "decl": "int& bytes",
+          "default": "0"
+        }
+      ]
+    },
+    "Call_PushFloat": {
+      "name": "Call_PushFloat",
+      "refLine": 323,
+      "docStart": 14320,
+      "docEnd": 14554,
+      "docs": {
+        "brief": "Pushes a float onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a float onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point value to push."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushArray": {
+      "name": "Call_PushArray",
+      "refLine": 345,
+      "docStart": 14901,
+      "docEnd": 15249,
+      "docs": {
+        "brief": "Pushes an array onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes an array onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Changes to array are not copied back to caller. Use PushArrayEx() to do this."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Array to push."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of array."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const any[]",
+          "name": "value",
+          "decl": "const any[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "RemoveFromForward": {
+      "name": "RemoveFromForward",
+      "refLine": 258,
+      "docStart": 11617,
+      "docEnd": 12257,
+      "docs": {
+        "brief": "Removes a function from a private forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a function from a private forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Only removes one instance."
+          },
+          {
+            "tag": "note",
+            "text": "Functions will be removed automatically if their parent plugin is unloaded."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Handle to private forward."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to specify the calling plugin."
+          },
+          {
+            "tag": "param:func",
+            "text": "Function to remove from forward."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "fwd",
+          "decl": "Handle fwd",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "Function",
+          "name": "func",
+          "decl": "Function func",
+          "default": null
+        }
+      ]
+    },
+    "FormatNativeString": {
+      "name": "FormatNativeString",
+      "refLine": 597,
+      "docStart": 24005,
+      "docEnd": 24842,
+      "docs": {
+        "brief": "Formats a string using parameters from a native.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a string using parameters from a native."
+          },
+          {
+            "tag": "note",
+            "text": "All parameter indexes start at 1."
+          },
+          {
+            "tag": "note",
+            "text": "If the input and output buffers overlap, the contents\nof the output buffer at the end is undefined."
+          },
+          {
+            "tag": "param:out_param",
+            "text": "Output parameter number to write to.  If 0, out_string is used."
+          },
+          {
+            "tag": "param:fmt_param",
+            "text": "Format parameter number.  If 0, fmt_string is used."
+          },
+          {
+            "tag": "param:vararg_param",
+            "text": "First variable parameter number."
+          },
+          {
+            "tag": "param:out_len",
+            "text": "Output string buffer maximum length (always required)."
+          },
+          {
+            "tag": "param:written",
+            "text": "Optionally stores the number of bytes written."
+          },
+          {
+            "tag": "param:out_string",
+            "text": "Output string buffer to use if out_param is not used."
+          },
+          {
+            "tag": "param:fmt_string",
+            "text": "Format string to use if fmt_param is not used."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, anything else on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "out_param",
+          "decl": "int out_param",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "fmt_param",
+          "decl": "int fmt_param",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "vararg_param",
+          "decl": "int vararg_param",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "out_len",
+          "decl": "int out_len",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "written",
+          "decl": "int& written",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "out_string",
+          "decl": "char[] out_string",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt_string",
+          "decl": "const char[] fmt_string",
+          "default": "\"\""
+        }
+      ]
+    },
+    "AddToForward": {
+      "name": "AddToForward",
+      "refLine": 243,
+      "docStart": 10985,
+      "docEnd": 11544,
+      "docs": {
+        "brief": "Adds a function to a private forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a function to a private forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used during an incomplete call."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Handle to private forward."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to specify the calling plugin."
+          },
+          {
+            "tag": "param:func",
+            "text": "Function to add to forward."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "fwd",
+          "decl": "Handle fwd",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": null
+        },
+        {
+          "type": "Function",
+          "name": "func",
+          "decl": "Function func",
+          "default": null
+        }
+      ]
+    },
+    "GetNativeCellRef": {
+      "name": "GetNativeCellRef",
+      "refLine": 532,
+      "docStart": 21874,
+      "docEnd": 22151,
+      "docs": {
+        "brief": "Gets a cell from a native parameter, by reference.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a cell from a native parameter, by reference."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "return",
+            "text": "Cell value at the parameter number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        }
+      ]
+    },
+    "SetNativeArray": {
+      "name": "SetNativeArray",
+      "refLine": 563,
+      "docStart": 23024,
+      "docEnd": 23449,
+      "docs": {
+        "brief": "Copies a local array into a native parameter array (always by reference).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies a local array into a native parameter array (always by reference)."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:local",
+            "text": "Local array to copy from."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of the local array to copy."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, anything else on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "local",
+          "decl": "const any[] local",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "GetForwardFunctionCount": {
+      "name": "GetForwardFunctionCount",
+      "refLine": 229,
+      "docStart": 10661,
+      "docEnd": 10932,
+      "docs": {
+        "brief": "Returns the number of functions in a global or private forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of functions in a global or private forward's call list."
+          },
+          {
+            "tag": "param:fwd",
+            "text": "Handle to global or private forward."
+          },
+          {
+            "tag": "return",
+            "text": "Number of functions in forward."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt forward handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "fwd",
+          "decl": "Handle fwd",
+          "default": null
+        }
+      ]
+    },
+    "GetNativeStringLength": {
+      "name": "GetNativeStringLength",
+      "refLine": 475,
+      "docStart": 19287,
+      "docEnd": 19804,
+      "docs": {
+        "brief": "Retrieves the string length from a native parameter string.  This is useful for\nfetching the entire string using dynamic arrays.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the string length from a native parameter string.  This is useful for\nfetching the entire string using dynamic arrays."
+          },
+          {
+            "tag": "note",
+            "text": "If this function succeeds, Get/SetNativeString will also succeed."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:length",
+            "text": "Stores the length of the string."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, any other integer on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "length",
+          "decl": "int& length",
+          "default": null
+        }
+      ]
+    },
+    "CreateGlobalForward": {
+      "name": "CreateGlobalForward",
+      "refLine": 206,
+      "docStart": 9416,
+      "docEnd": 10037,
+      "docs": {
+        "brief": "Creates a global forward.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a global forward."
+          },
+          {
+            "tag": "note",
+            "text": "The name used to create the forward is used as its public function in all target plugins."
+          },
+          {
+            "tag": "note",
+            "text": "This is ideal for global, static forwards that are never changed."
+          },
+          {
+            "tag": "note",
+            "text": "Global forwards cannot be cloned."
+          },
+          {
+            "tag": "note",
+            "text": "Use CloseHandle() to destroy these."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of public function to use in forward."
+          },
+          {
+            "tag": "param:type",
+            "text": "Execution type to be used."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of parameter types (up to 32)."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to new global forward."
+          },
+          {
+            "tag": "error",
+            "text": "More than 32 parameter types passed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "GlobalForward",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "ExecType",
+          "name": "type",
+          "decl": "ExecType type",
+          "default": null
+        },
+        {
+          "type": "ParamType...",
+          "name": "...",
+          "decl": "ParamType...",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushArrayEx": {
+      "name": "Call_PushArrayEx",
+      "refLine": 358,
+      "docStart": 15311,
+      "docEnd": 15724,
+      "docs": {
+        "brief": "Pushes an array onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes an array onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Array to push."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of array."
+          },
+          {
+            "tag": "param:cpflags",
+            "text": "Whether or not changes should be copied back to the input array.\nSee SM_PARAM_* constants for details."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "any[]",
+          "name": "value",
+          "decl": "any[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "cpflags",
+          "decl": "int cpflags",
+          "default": null
+        }
+      ]
+    },
+    "Call_Finish": {
+      "name": "Call_Finish",
+      "refLine": 397,
+      "docStart": 16876,
+      "docEnd": 17227,
+      "docs": {
+        "brief": "Completes a call to a function or forward's call list.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Completes a call to a function or forward's call list."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:result",
+            "text": "Return value of function or forward's call list."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, any other integer on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "any&",
+          "name": "result",
+          "decl": "any& result",
+          "default": "0"
+        }
+      ]
+    },
+    "GetNativeCell": {
+      "name": "GetNativeCell",
+      "refLine": 514,
+      "docStart": 21218,
+      "docEnd": 21481,
+      "docs": {
+        "brief": "Gets a cell from a native parameter.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a cell from a native parameter."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "return",
+            "text": "Cell value at the parameter number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        }
+      ]
+    },
+    "GetNativeArray": {
+      "name": "GetNativeArray",
+      "refLine": 552,
+      "docStart": 22550,
+      "docEnd": 22958,
+      "docs": {
+        "brief": "Gets an array from a native parameter (always by reference).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an array from a native parameter (always by reference)."
+          },
+          {
+            "tag": "param:param",
+            "text": "Parameter number, starting from 1."
+          },
+          {
+            "tag": "param:local",
+            "text": "Local array to copy into."
+          },
+          {
+            "tag": "param:size",
+            "text": "Maximum size of local array."
+          },
+          {
+            "tag": "return",
+            "text": "SP_ERROR_NONE on success, anything else on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid parameter number or calling from a non-native function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "local",
+          "decl": "any[] local",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushFloatRef": {
+      "name": "Call_PushFloatRef",
+      "refLine": 333,
+      "docStart": 14600,
+      "docEnd": 14851,
+      "docs": {
+        "brief": "Pushes a float by reference onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a float by reference onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point reference to push."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float&",
+          "name": "value",
+          "decl": "float& value",
+          "default": null
+        }
+      ]
+    },
+    "Call_PushCell": {
+      "name": "Call_PushCell",
+      "refLine": 303,
+      "docStart": 13767,
+      "docEnd": 13990,
+      "docs": {
+        "brief": "Pushes a cell onto the current call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a cell onto the current call."
+          },
+          {
+            "tag": "note",
+            "text": "Cannot be used before a call has been started."
+          },
+          {
+            "tag": "param:value",
+            "text": "Cell value to push."
+          },
+          {
+            "tag": "error",
+            "text": "Called before a call has been started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "GlobalForward": {
+      "name": "GlobalForward",
+      "refLine": 113,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GlobalForward": {
+          "name": "GlobalForward",
+          "refLine": 126,
+          "docStart": 5731,
+          "docEnd": 6373,
+          "docs": {
+            "brief": "Creates a global forward.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a global forward."
+              },
+              {
+                "tag": "note",
+                "text": "The name used to create the forward is used as its public function in all target plugins."
+              },
+              {
+                "tag": "note",
+                "text": "This is ideal for global, static forwards that are never changed."
+              },
+              {
+                "tag": "note",
+                "text": "Global forwards cannot be cloned."
+              },
+              {
+                "tag": "note",
+                "text": "Use CloseHandle() to destroy these."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of public function to use in forward."
+              },
+              {
+                "tag": "param:type",
+                "text": "Execution type to be used."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of parameter types (up to 32)."
+              },
+              {
+                "tag": "return",
+                "text": "Handle to new global forward."
+              },
+              {
+                "tag": "error",
+                "text": "More than 32 parameter types passed."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "GlobalForward",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "ExecType",
+              "name": "type",
+              "decl": "ExecType type",
+              "default": null
+            },
+            {
+              "type": "ParamType...",
+              "name": "...",
+              "decl": "ParamType...",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "FunctionCount": {
+          "name": "FunctionCount",
+          "refLine": 129,
+          "docStart": 6458,
+          "docEnd": 6536,
+          "docs": {
+            "brief": "Returns the number of functions in a global or private forward's call list.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of functions in a global or private forward's call list."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    },
+    "PrivateForward": {
+      "name": "PrivateForward",
+      "refLine": 134,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "GlobalForward",
+      "methods": {
+        "RemoveFunction": {
+          "name": "RemoveFunction",
+          "refLine": 168,
+          "docStart": 7744,
+          "docEnd": 8331,
+          "docs": {
+            "brief": "Removes a function from a private forward's call list.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes a function from a private forward's call list."
+              },
+              {
+                "tag": "note",
+                "text": "Only removes one instance."
+              },
+              {
+                "tag": "note",
+                "text": "Functions will be removed automatically if their parent plugin is unloaded."
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to specify the calling plugin."
+              },
+              {
+                "tag": "param:func",
+                "text": "Function to remove from forward."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "plugin",
+              "decl": "Handle plugin",
+              "default": null
+            },
+            {
+              "type": "Function",
+              "name": "func",
+              "decl": "Function func",
+              "default": null
+            }
+          ]
+        },
+        "AddFunction": {
+          "name": "AddFunction",
+          "refLine": 156,
+          "docStart": 7170,
+          "docEnd": 7675,
+          "docs": {
+            "brief": "Adds a function to a private forward's call list.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds a function to a private forward's call list."
+              },
+              {
+                "tag": "note",
+                "text": "Cannot be used during an incomplete call."
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the plugin that contains the function.\nPass INVALID_HANDLE to specify the calling plugin."
+              },
+              {
+                "tag": "param:func",
+                "text": "Function to add to forward."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "plugin",
+              "decl": "Handle plugin",
+              "default": null
+            },
+            {
+              "type": "Function",
+              "name": "func",
+              "decl": "Function func",
+              "default": null
+            }
+          ]
+        },
+        "PrivateForward": {
+          "name": "PrivateForward",
+          "refLine": 145,
+          "docStart": 6648,
+          "docEnd": 7103,
+          "docs": {
+            "brief": "Creates a private forward.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a private forward."
+              },
+              {
+                "tag": "note",
+                "text": "No functions are automatically added. Use AddToForward() to do this."
+              },
+              {
+                "tag": "note",
+                "text": "Private forwards can be cloned."
+              },
+              {
+                "tag": "note",
+                "text": "Use CloseHandle() to destroy these."
+              },
+              {
+                "tag": "param:type",
+                "text": "Execution type to be used."
+              },
+              {
+                "tag": "param:...",
+                "text": "Variable number of parameter types (up to 32)."
+              },
+              {
+                "tag": "return",
+                "text": "Handle to new private forward."
+              },
+              {
+                "tag": "error",
+                "text": "More than 32 parameter types passed."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "PrivateForward",
+          "arguments": [
+            {
+              "type": "ExecType",
+              "name": "type",
+              "decl": "ExecType type",
+              "default": null
+            },
+            {
+              "type": "ParamType...",
+              "name": "...",
+              "decl": "ParamType...",
+              "default": null
+            }
+          ]
+        },
+        "RemoveAllFunctions": {
+          "name": "RemoveAllFunctions",
+          "refLine": 178,
+          "docStart": 8403,
+          "docEnd": 8893,
+          "docs": {
+            "brief": "Removes all instances of a plugin from a private forward's call list.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes all instances of a plugin from a private forward's call list."
+              },
+              {
+                "tag": "note",
+                "text": "Functions will be removed automatically if their parent plugin is unloaded."
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the plugin to remove instances of.\nPass INVALID_HANDLE to specify the calling plugin."
+              },
+              {
+                "tag": "return",
+                "text": "Number of functions removed from forward."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid or corrupt private forward handle or invalid or corrupt plugin handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "plugin",
+              "decl": "Handle plugin",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SP_ERROR_INVALID_INSTRUCTION": {
+      "name": "SP_ERROR_INVALID_INSTRUCTION",
+      "refLine": 92,
+      "docStart": 4358,
+      "docEnd": 4401,
+      "docs": {
+        "brief": "Invalid instruction was encountered",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invalid instruction was encountered"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "10"
+    },
+    "SP_ERROR_HEAPMIN": {
+      "name": "SP_ERROR_HEAPMIN",
+      "refLine": 95,
+      "docStart": 4611,
+      "docEnd": 4653,
+      "docs": {
+        "brief": "Heap went beyond its minimum value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Heap went beyond its minimum value"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "13"
+    },
+    "SP_ERROR_INSTRUCTION_PARAM": {
+      "name": "SP_ERROR_INSTRUCTION_PARAM",
+      "refLine": 98,
+      "docStart": 4851,
+      "docEnd": 4895,
+      "docs": {
+        "brief": "Instruction had an invalid parameter",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Instruction had an invalid parameter"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "16"
+    },
+    "SP_ERROR_INVALID_NATIVE": {
+      "name": "SP_ERROR_INVALID_NATIVE",
+      "refLine": 103,
+      "docStart": 5284,
+      "docEnd": 5321,
+      "docs": {
+        "brief": "Native was pending or invalid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Native was pending or invalid"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "21"
+    },
+    "SP_ERROR_STACKLEAK": {
+      "name": "SP_ERROR_STACKLEAK",
+      "refLine": 99,
+      "docStart": 4941,
+      "docEnd": 4985,
+      "docs": {
+        "brief": "A native leaked an item on the stack",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A native leaked an item on the stack"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "17"
+    },
+    "_functions_included": {
+      "name": "_functions_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SP_ERROR_STACKLOW": {
+      "name": "SP_ERROR_STACKLOW",
+      "refLine": 90,
+      "docStart": 4168,
+      "docEnd": 4210,
+      "docs": {
+        "brief": "Not enough space left on the stack",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Not enough space left on the stack"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "8"
+    },
+    "SP_PARAMFLAG_BYREF": {
+      "name": "SP_PARAMFLAG_BYREF",
+      "refLine": 38,
+      "docStart": 1679,
+      "docEnd": 1705,
+      "docs": {
+        "brief": "Internal use only.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Internal use only."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "SP_ERROR_MEMACCESS": {
+      "name": "SP_ERROR_MEMACCESS",
+      "refLine": 93,
+      "docStart": 4447,
+      "docEnd": 4476,
+      "docs": {
+        "brief": "Invalid memory access",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invalid memory access"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "11"
+    },
+    "SP_ERROR_STACKMIN": {
+      "name": "SP_ERROR_STACKMIN",
+      "refLine": 94,
+      "docStart": 4522,
+      "docEnd": 4565,
+      "docs": {
+        "brief": "Stack went beyond its minimum value",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stack went beyond its minimum value"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "12"
+    },
+    "SP_ERROR_NATIVE": {
+      "name": "SP_ERROR_NATIVE",
+      "refLine": 105,
+      "docStart": 5457,
+      "docEnd": 5495,
+      "docs": {
+        "brief": "Error originates from a native",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Error originates from a native"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "23"
+    },
+    "SP_ERROR_ARRAY_TOO_BIG": {
+      "name": "SP_ERROR_ARRAY_TOO_BIG",
+      "refLine": 101,
+      "docStart": 5120,
+      "docEnd": 5154,
+      "docs": {
+        "brief": "A dynamic array is too big",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A dynamic array is too big"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "19"
+    },
+    "SM_PARAM_STRING_BINARY": {
+      "name": "SM_PARAM_STRING_BINARY",
+      "refLine": 73,
+      "docStart": 3356,
+      "docEnd": 3399,
+      "docs": {
+        "brief": "Treat the string as a binary string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Treat the string as a binary string"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "SP_ERROR_DIVIDE_BY_ZERO": {
+      "name": "SP_ERROR_DIVIDE_BY_ZERO",
+      "refLine": 96,
+      "docStart": 4699,
+      "docEnd": 4723,
+      "docs": {
+        "brief": "Division by zero",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Division by zero"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "14"
+    },
+    "SP_ERROR_NOTDEBUGGING": {
+      "name": "SP_ERROR_NOTDEBUGGING",
+      "refLine": 91,
+      "docStart": 4256,
+      "docEnd": 4312,
+      "docs": {
+        "brief": "Debug mode was not on or debug section not found",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Debug mode was not on or debug section not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "9"
+    },
+    "SP_ERROR_HEAPLEAK": {
+      "name": "SP_ERROR_HEAPLEAK",
+      "refLine": 100,
+      "docStart": 5031,
+      "docEnd": 5074,
+      "docs": {
+        "brief": "A native leaked an item on the heap",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A native leaked an item on the heap"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "18"
+    },
+    "SP_ERROR_INDEX": {
+      "name": "SP_ERROR_INDEX",
+      "refLine": 89,
+      "docStart": 4091,
+      "docEnd": 4122,
+      "docs": {
+        "brief": "Invalid index parameter",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invalid index parameter"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "7"
+    },
+    "SP_ERROR_FILE_FORMAT": {
+      "name": "SP_ERROR_FILE_FORMAT",
+      "refLine": 83,
+      "docStart": 3581,
+      "docEnd": 3613,
+      "docs": {
+        "brief": "File format unrecognized",
+        "tags": [
+          {
+            "tag": "",
+            "text": "File format unrecognized"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "SP_ERROR_NOT_FOUND": {
+      "name": "SP_ERROR_NOT_FOUND",
+      "refLine": 88,
+      "docStart": 4001,
+      "docEnd": 4045,
+      "docs": {
+        "brief": "The object in question was not found",
+        "tags": [
+          {
+            "tag": "",
+            "text": "The object in question was not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "6"
+    },
+    "SP_ERROR_NONE": {
+      "name": "SP_ERROR_NONE",
+      "refLine": 82,
+      "docStart": 3510,
+      "docEnd": 3535,
+      "docs": {
+        "brief": "No error occurred",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No error occurred"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "SP_ERROR_INVALID_ADDRESS": {
+      "name": "SP_ERROR_INVALID_ADDRESS",
+      "refLine": 87,
+      "docStart": 3917,
+      "docEnd": 3955,
+      "docs": {
+        "brief": "A memory address was not valid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A memory address was not valid"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "5"
+    },
+    "SP_ERROR_TRACKER_BOUNDS": {
+      "name": "SP_ERROR_TRACKER_BOUNDS",
+      "refLine": 102,
+      "docStart": 5200,
+      "docEnd": 5238,
+      "docs": {
+        "brief": "Tracker stack is out of bounds",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tracker stack is out of bounds"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "20"
+    },
+    "SP_ERROR_ARRAY_BOUNDS": {
+      "name": "SP_ERROR_ARRAY_BOUNDS",
+      "refLine": 97,
+      "docStart": 4769,
+      "docEnd": 4805,
+      "docs": {
+        "brief": "Array index is out of bounds",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Array index is out of bounds"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "15"
+    },
+    "SP_ERROR_NOT_RUNNABLE": {
+      "name": "SP_ERROR_NOT_RUNNABLE",
+      "refLine": 106,
+      "docStart": 5541,
+      "docEnd": 5583,
+      "docs": {
+        "brief": "Function or plugin is not runnable",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Function or plugin is not runnable"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "24"
+    },
+    "SP_ERROR_ABORTED": {
+      "name": "SP_ERROR_ABORTED",
+      "refLine": 107,
+      "docStart": 5629,
+      "docEnd": 5662,
+      "docs": {
+        "brief": "Function call was aborted",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Function call was aborted"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "25"
+    },
+    "SP_ERROR_DECOMPRESSOR": {
+      "name": "SP_ERROR_DECOMPRESSOR",
+      "refLine": 84,
+      "docStart": 3659,
+      "docEnd": 3695,
+      "docs": {
+        "brief": "A decompressor was not found",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A decompressor was not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "SP_ERROR_PARAMS_MAX": {
+      "name": "SP_ERROR_PARAMS_MAX",
+      "refLine": 104,
+      "docStart": 5367,
+      "docEnd": 5411,
+      "docs": {
+        "brief": "Maximum number of parameters reached",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Maximum number of parameters reached"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "22"
+    },
+    "SP_ERROR_PARAM": {
+      "name": "SP_ERROR_PARAM",
+      "refLine": 86,
+      "docStart": 3828,
+      "docEnd": 3871,
+      "docs": {
+        "brief": "Invalid parameter or parameter type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Invalid parameter or parameter type"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "4"
+    },
+    "SM_PARAM_STRING_UTF8": {
+      "name": "SM_PARAM_STRING_UTF8",
+      "refLine": 71,
+      "docStart": 3179,
+      "docEnd": 3217,
+      "docs": {
+        "brief": "String should be UTF-8 handled",
+        "tags": [
+          {
+            "tag": "",
+            "text": "String should be UTF-8 handled"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "SM_PARAM_COPYBACK": {
+      "name": "SM_PARAM_COPYBACK",
+      "refLine": 69,
+      "docStart": 3084,
+      "docEnd": 3131,
+      "docs": {
+        "brief": "Copy an array/reference back after call",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copy an array/reference back after call"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "SP_ERROR_HEAPLOW": {
+      "name": "SP_ERROR_HEAPLOW",
+      "refLine": 85,
+      "docStart": 3741,
+      "docEnd": 3782,
+      "docs": {
+        "brief": "Not enough space left on the heap",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Not enough space left on the heap"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "3"
+    },
+    "SM_PARAM_STRING_COPY": {
+      "name": "SM_PARAM_STRING_COPY",
+      "refLine": 72,
+      "docStart": 3263,
+      "docEnd": 3310,
+      "docs": {
+        "brief": "String should be copied into the plugin",
+        "tags": [
+          {
+            "tag": "",
+            "text": "String should be copied into the plugin"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1<<1)"
+    }
+  },
+  "enums": {
+    "ParamType": {
+      "name": "ParamType",
+      "refLine": 43,
+      "docStart": 1709,
+      "docEnd": 1793,
+      "docs": {
+        "brief": "Describes the various ways to pass parameters to functions or forwards.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Describes the various ways to pass parameters to functions or forwards."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Param_CellByRef": {
+          "name": "Param_CellByRef",
+          "refLine": 50,
+          "docStart": 2315,
+          "docEnd": 2361,
+          "docs": {
+            "brief": "Only a cell by reference can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only a cell by reference can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 1 | 1 << 0"
+        },
+        "Param_String": {
+          "name": "Param_String",
+          "refLine": 48,
+          "docStart": 2138,
+          "docEnd": 2172,
+          "docs": {
+            "brief": "Only strings can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only strings can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3 << 1 | 1 << 0"
+        },
+        "Param_Array": {
+          "name": "Param_Array",
+          "refLine": 49,
+          "docStart": 2227,
+          "docEnd": 2260,
+          "docs": {
+            "brief": "Only arrays can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only arrays can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "4 << 1 | 1 << 0"
+        },
+        "Param_FloatByRef": {
+          "name": "Param_FloatByRef",
+          "refLine": 51,
+          "docStart": 2416,
+          "docEnd": 2463,
+          "docs": {
+            "brief": "Only a float by reference can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only a float by reference can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2 << 1 | 1 << 0"
+        },
+        "Param_Cell": {
+          "name": "Param_Cell",
+          "refLine": 46,
+          "docStart": 1957,
+          "docEnd": 1995,
+          "docs": {
+            "brief": "Only basic cells can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only basic cells can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1 << 1"
+        },
+        "Param_Float": {
+          "name": "Param_Float",
+          "refLine": 47,
+          "docStart": 2050,
+          "docEnd": 2083,
+          "docs": {
+            "brief": "Only floats can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only floats can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2 << 1"
+        },
+        "Param_Any": {
+          "name": "Param_Any",
+          "refLine": 45,
+          "docStart": 1867,
+          "docEnd": 1902,
+          "docs": {
+            "brief": "Any data type can be pushed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Any data type can be pushed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "ExecType": {
+      "name": "ExecType",
+      "refLine": 57,
+      "docStart": 2471,
+      "docEnd": 2540,
+      "docs": {
+        "brief": "Defines how a forward iterates through plugin functions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines how a forward iterates through plugin functions."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ET_Ignore": {
+          "name": "ET_Ignore",
+          "refLine": 59,
+          "docStart": 2581,
+          "docEnd": 2623,
+          "docs": {
+            "brief": "Ignore all return values, return 0",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Ignore all return values, return 0"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "ET_Hook": {
+          "name": "ET_Hook",
+          "refLine": 62,
+          "docStart": 2844,
+          "docEnd": 2939,
+          "docs": {
+            "brief": "Acts as a hook with the Actions defined in core.inc, mid-Stops allowed, returns highest",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Acts as a hook with the Actions defined in core.inc, mid-Stops allowed, returns highest"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "3"
+        },
+        "ET_Single": {
+          "name": "ET_Single",
+          "refLine": 60,
+          "docStart": 2646,
+          "docEnd": 2698,
+          "docs": {
+            "brief": "Only return the last exec, ignore all others",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Only return the last exec, ignore all others"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "1"
+        },
+        "ET_Event": {
+          "name": "ET_Event",
+          "refLine": 61,
+          "docStart": 2721,
+          "docEnd": 2821,
+          "docs": {
+            "brief": "Acts as an event with the Actions defined in core.inc, no mid-Stops allowed, returns highest",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Acts as an event with the Actions defined in core.inc, no mid-Stops allowed, returns highest"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "2"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "RequestFrameCallback": {
+      "name": "RequestFrameCallback",
+      "refLine": 610,
+      "docStart": 25059,
+      "docEnd": 25173,
+      "docs": {
+        "brief": "Defines a RequestFrame Callback.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Defines a RequestFrame Callback."
+          },
+          {
+            "tag": "param:data",
+            "text": "Data passed to the RequestFrame native."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void(any data)": {
+          "refLine": 612,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(any data)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void()": {
+          "refLine": 611,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void()",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": []
+          }
+        }
+      }
+    },
+    "NativeCall": {
+      "name": "NativeCall",
+      "refLine": 408,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Handle plugin, int numParams)": {
+          "refLine": 440,
+          "docStart": 18220,
+          "docEnd": 18455,
+          "docs": {
+            "brief": "Defines a native function.\n\nIt is not necessary to validate the parameter count",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines a native function.\n\nIt is not necessary to validate the parameter count"
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the calling plugin."
+              },
+              {
+                "tag": "param:numParams",
+                "text": "Number of parameters passed to the native."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Handle plugin, int numParams)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "plugin",
+                "decl": "Handle plugin",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "numParams",
+                "decl": "int numParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function int(Handle plugin, int numParams)": {
+          "refLine": 419,
+          "docStart": 17521,
+          "docEnd": 17817,
+          "docs": {
+            "brief": "Defines a native function.\n\nIt is not necessary to validate the parameter count",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines a native function.\n\nIt is not necessary to validate the parameter count"
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the calling plugin."
+              },
+              {
+                "tag": "param:numParams",
+                "text": "Number of parameters passed to the native."
+              },
+              {
+                "tag": "return",
+                "text": "Value for the native call to return."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function int(Handle plugin, int numParams)",
+          "parsedSignature": {
+            "returnType": "int",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "plugin",
+                "decl": "Handle plugin",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "numParams",
+                "decl": "int numParams",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function any(Handle plugin, int numParams)": {
+          "refLine": 430,
+          "docStart": 17869,
+          "docEnd": 18168,
+          "docs": {
+            "brief": "Defines a native function.\n\nIt is not necessary to validate the parameter count",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Defines a native function.\n\nIt is not necessary to validate the parameter count"
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Handle of the calling plugin."
+              },
+              {
+                "tag": "param:numParams",
+                "text": "Number of parameters passed to the native."
+              },
+              {
+                "tag": "return",
+                "text": "Value for the native call to return."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function any(Handle plugin, int numParams)",
+          "parsedSignature": {
+            "returnType": "any",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "plugin",
+                "decl": "Handle plugin",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "numParams",
+                "decl": "int numParams",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

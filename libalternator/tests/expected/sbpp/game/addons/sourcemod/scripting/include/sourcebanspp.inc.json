@@ -1,0 +1,422 @@
+{
+  "functions": {
+    "__pl_sourcebanspp_SetNTVOptional": {
+      "name": "__pl_sourcebanspp_SetNTVOptional",
+      "refLine": 81,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SBPP_ReportPlayer": {
+      "name": "SBPP_ReportPlayer",
+      "refLine": 136,
+      "docStart": 5412,
+      "docEnd": 5728,
+      "docs": {
+        "brief": "Reports a player",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reports a player"
+          },
+          {
+            "tag": "param:iReporter",
+            "text": "The client index of the reporter"
+          },
+          {
+            "tag": "param:iTarget",
+            "text": "The client index of the player to report"
+          },
+          {
+            "tag": "param:sReason",
+            "text": "The reason to report the player"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReporter",
+          "decl": "int iReporter",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_BanPlayerBySteamId": {
+      "name": "SBPP_BanPlayerBySteamId",
+      "refLine": 126,
+      "docStart": 4672,
+      "docEnd": 5287,
+      "docs": {
+        "brief": "Ban a player by SteamID — supports offline/disconnected players.\nInserts the ban directly into the SourceBans++ database.\nFires SBPP_OnBanPlayer with iTarget = -1 to indicate an offline ban.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ban a player by SteamID — supports offline/disconnected players.\nInserts the ban directly into the SourceBans++ database.\nFires SBPP_OnBanPlayer with iTarget = -1 to indicate an offline ban."
+          },
+          {
+            "tag": "param:iAdmin",
+            "text": "Client index of the admin (0 = server / automated)"
+          },
+          {
+            "tag": "param:steamId",
+            "text": "SteamID string, e.g. \"STEAM_0:0:12345\""
+          },
+          {
+            "tag": "param:name",
+            "text": "Player name; may be empty string if unknown"
+          },
+          {
+            "tag": "param:iTime",
+            "text": "Ban duration in minutes (0 = permanent)"
+          },
+          {
+            "tag": "param:sReason",
+            "text": "Reason for the ban"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iAdmin",
+          "decl": "int iAdmin",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "steamId",
+          "decl": "const char[] steamId",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTime",
+          "decl": "int iTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_OnClientPreAdminCheck": {
+      "name": "SBPP_OnClientPreAdminCheck",
+      "refLine": 164,
+      "docStart": 6797,
+      "docEnd": 7105,
+      "docs": {
+        "brief": "Called when OnClientPreAdminCheck is about to be triggered",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when OnClientPreAdminCheck is about to be triggered"
+          },
+          {
+            "tag": "param:part",
+            "text": "The AdminCachePart being processed"
+          },
+          {
+            "tag": "return",
+            "text": "bBlock If enabled, blocks the trigger for OnClientPreAdminCheck"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_OnReportPlayer": {
+      "name": "SBPP_OnReportPlayer",
+      "refLine": 156,
+      "docStart": 6375,
+      "docEnd": 6711,
+      "docs": {
+        "brief": "Called when a new report is inserted",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a new report is inserted"
+          },
+          {
+            "tag": "param:iReporter",
+            "text": "The client index of the reporter"
+          },
+          {
+            "tag": "param:iTarget",
+            "text": "The client index of the player to report"
+          },
+          {
+            "tag": "param:sReason",
+            "text": "The reason to report the player"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReporter",
+          "decl": "int iReporter",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_OnClientPostAdminCheck": {
+      "name": "SBPP_OnClientPostAdminCheck",
+      "refLine": 173,
+      "docStart": 7169,
+      "docEnd": 7492,
+      "docs": {
+        "brief": "Called after a client's admin rights have been fully applied\nfrom the database (flags and groups assigned, cache checked).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called after a client's admin rights have been fully applied\nfrom the database (flags and groups assigned, cache checked)."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index who received admin rights"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SBBanPlayer": {
+      "name": "SBBanPlayer",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iAdmin",
+          "decl": "int iAdmin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTime",
+          "decl": "int iTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_BanPlayer": {
+      "name": "SBPP_BanPlayer",
+      "refLine": 112,
+      "docStart": 4156,
+      "docEnd": 4584,
+      "docs": {
+        "brief": "Ban Player from server",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ban Player from server"
+          },
+          {
+            "tag": "param:iAdmin",
+            "text": "The client index of the admin who is banning the client"
+          },
+          {
+            "tag": "param:iTarget",
+            "text": "The client index of the player to ban"
+          },
+          {
+            "tag": "param:iTime",
+            "text": "The time to ban the player for (in minutes, 0 = permanent)"
+          },
+          {
+            "tag": "param:sReason",
+            "text": "The reason to ban the player from the server"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iAdmin",
+          "decl": "int iAdmin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTime",
+          "decl": "int iTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_OnBanPlayer": {
+      "name": "SBPP_OnBanPlayer",
+      "refLine": 146,
+      "docStart": 5811,
+      "docEnd": 6284,
+      "docs": {
+        "brief": "Called when the admin banning the player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the admin banning the player."
+          },
+          {
+            "tag": "param:iAdmin",
+            "text": "The client index of the admin who is banning the client"
+          },
+          {
+            "tag": "param:iTarget",
+            "text": "The client index of the player to ban (-1 for an offline SteamID ban)"
+          },
+          {
+            "tag": "param:iTime",
+            "text": "The time to ban the player for (in minutes, 0 = permanent)"
+          },
+          {
+            "tag": "param:sReason",
+            "text": "The reason to ban the player from the server"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iAdmin",
+          "decl": "int iAdmin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTime",
+          "decl": "int iTime",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sourcebanspp_included": {
+      "name": "_sourcebanspp_included",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

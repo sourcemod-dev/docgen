@@ -1,0 +1,171 @@
+{
+  "functions": {
+    "OnPluginEnd": {
+      "name": "OnPluginEnd",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnRebuildAdminCache": {
+      "name": "OnRebuildAdminCache",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AdminCachePart",
+          "name": "part",
+          "decl": "AdminCachePart part",
+          "default": null
+        }
+      ]
+    },
+    "FindAdmGroupInsensitive": {
+      "name": "FindAdmGroupInsensitive",
+      "refLine": 164,
+      "docStart": 4529,
+      "docEnd": 6147,
+      "docs": {
+        "brief": "Resolve an admin-group name to its GroupId, tolerating case differences.\n\nSourceMod's admin cache matches group names case-sensitively (both\nFindAdmGroup and CreateAdmGroup key off a case-sensitive map) and exposes no\nnative to enumerate loaded groups, so we track the names ourselves as the\ngroups config is parsed. The SourceBans++ config files (sb_admin_groups.cfg /\nsb_admins.cfg) are generated from a database where a group's name can drift\nin case between the group definition and an admin's group reference: legacy\nAMXBans / SourceBans imports, manual DB edits, case-sensitive DB collations,\nor an older generator build that copied the admin's raw srv_group string\ninstead of the canonical srvgroups.name. A group defined as \"admin\" but\nreferenced as \"Admin\" would otherwise fail with a spurious \"Unknown group\"\nerror and silently drop the admin's group inheritance. Try the fast\nexact-case lookup first (covers groups created by any plugin), then fall back\nto the case-folded map (covers the SourceBans++ groups this reader tracks) so\nthe reference resolves regardless of the stored case (issue #1503).\n\nFreshness invariant: the GroupIds in the map are only valid for the current\nadmin-cache generation. This holds because SourceMod rebuilds groups before\nadmins and ReadGroups() clears+repopulates the map on every AdminCache_Groups\nrebuild, so the map never outlives the group cache it describes. The map does\nlegitimately persist across an admins-only rebuild (SourceMod leaves the group\ncache untouched then, so the stored ids stay valid).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resolve an admin-group name to its GroupId, tolerating case differences.\n\nSourceMod's admin cache matches group names case-sensitively (both\nFindAdmGroup and CreateAdmGroup key off a case-sensitive map) and exposes no\nnative to enumerate loaded groups, so we track the names ourselves as the\ngroups config is parsed. The SourceBans++ config files (sb_admin_groups.cfg /\nsb_admins.cfg) are generated from a database where a group's name can drift\nin case between the group definition and an admin's group reference: legacy\nAMXBans / SourceBans imports, manual DB edits, case-sensitive DB collations,\nor an older generator build that copied the admin's raw srv_group string\ninstead of the canonical srvgroups.name. A group defined as \"admin\" but\nreferenced as \"Admin\" would otherwise fail with a spurious \"Unknown group\"\nerror and silently drop the admin's group inheritance. Try the fast\nexact-case lookup first (covers groups created by any plugin), then fall back\nto the case-folded map (covers the SourceBans++ groups this reader tracks) so\nthe reference resolves regardless of the stored case (issue #1503).\n\nFreshness invariant: the GroupIds in the map are only valid for the current\nadmin-cache generation. This holds because SourceMod rebuilds groups before\nadmins and ReadGroups() clears+repopulates the map on every AdminCache_Groups\nrebuild, so the map never outlives the group cache it describes. The map does\nlegitimately persist across an admins-only rebuild (SourceMod leaves the group\ncache untouched then, so the stored ids stay valid)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "GroupId",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "group_name",
+          "decl": "const char[] group_name",
+          "default": null
+        }
+      ]
+    },
+    "ParseError": {
+      "name": "ParseError",
+      "refLine": 74,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "InitGlobalStates": {
+      "name": "InitGlobalStates",
+      "refLine": 91,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "RegisterGroupName": {
+      "name": "RegisterGroupName",
+      "refLine": 127,
+      "docStart": 3616,
+      "docEnd": 4147,
+      "docs": {
+        "brief": "Record a parsed server-group name so FindAdmGroupInsensitive can resolve a\nlater reference to it regardless of case. Called as each group section is\ncreated while reading sb_admin_groups.cfg. The key is the case-folded name,\nso if two group sections differ only in case (\"Admin\" and \"admin\") they map\nto one key and the last-registered id wins in the case-folded fallback\nkeyspace. That collision only affects references that miss the exact-case\nFindAdmGroup below; SourceMod itself keeps such groups distinct.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Record a parsed server-group name so FindAdmGroupInsensitive can resolve a\nlater reference to it regardless of case. Called as each group section is\ncreated while reading sb_admin_groups.cfg. The key is the case-folded name,\nso if two group sections differ only in case (\"Admin\" and \"admin\") they map\nto one key and the last-registered id wins in the case-folded fallback\nkeyspace. That collision only affects references that miss the exact-case\nFindAdmGroup below; SourceMod itself keeps such groups distinct."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "group_name",
+          "decl": "const char[] group_name",
+          "default": null
+        },
+        {
+          "type": "GroupId",
+          "name": "id",
+          "decl": "GroupId id",
+          "default": null
+        }
+      ]
+    },
+    "LowercaseCopy": {
+      "name": "LowercaseCopy",
+      "refLine": 105,
+      "docStart": 2970,
+      "docEnd": 3389,
+      "docs": {
+        "brief": "Copy src into dest, lowercasing every character. Used to build/consult the\ncase-insensitive group-name map keys (StringMap keys are case-sensitive).\nCharToLower is ASCII-only, which is fine here: the case drift this fixes is\nASCII (e.g. \"Admin\" vs \"admin\"), and any multibyte bytes pass through\nunchanged and identically on both the register and lookup sides, so a\nnon-ASCII name still maps to itself.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copy src into dest, lowercasing every character. Used to build/consult the\ncase-insensitive group-name map keys (StringMap keys are case-sensitive).\nCharToLower is ASCII-only, which is fine here: the case drift this fixes is\nASCII (e.g. \"Admin\" vs \"admin\"), and any multibyte bytes pass through\nunchanged and identically on both the register and lookup sides, so a\nnon-ASCII name still maps to itself."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "dest",
+          "decl": "char[] dest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "src",
+          "decl": "const char[] src",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,3185 @@
+{
+  "functions": {
+    "PrefetchSound": {
+      "name": "PrefetchSound",
+      "refLine": 132,
+      "docStart": 5730,
+      "docEnd": 5839,
+      "docs": {
+        "brief": "Prefetches a sound.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prefetches a sound."
+          },
+          {
+            "tag": "param:name",
+            "text": "Sound file name relative to the \"sound\" folder."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "ATTN_TO_SNDLEVEL": {
+      "name": "ATTN_TO_SNDLEVEL",
+      "refLine": 497,
+      "docStart": 19056,
+      "docEnd": 19248,
+      "docs": {
+        "brief": "Converts an attenuation value to a sound level.\nThis function is from the HL2SDK.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an attenuation value to a sound level.\nThis function is from the HL2SDK."
+          },
+          {
+            "tag": "param:attn",
+            "text": "Attenuation value."
+          },
+          {
+            "tag": "return",
+            "text": "Integer sound level."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "attn",
+          "decl": "float attn",
+          "default": null
+        }
+      ]
+    },
+    "RemoveNormalSoundHook": {
+      "name": "RemoveNormalSoundHook",
+      "refLine": 398,
+      "docStart": 15953,
+      "docEnd": 16104,
+      "docs": {
+        "brief": "Unhooks all played normal sounds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unhooks all played normal sounds."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function used for the hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "NormalSHook",
+          "name": "hook",
+          "decl": "NormalSHook hook",
+          "default": null
+        }
+      ]
+    },
+    "AddNormalSoundHook": {
+      "name": "AddNormalSoundHook",
+      "refLine": 382,
+      "docStart": 15538,
+      "docEnd": 15686,
+      "docs": {
+        "brief": "Hooks all played normal sounds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks all played normal sounds."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function to use as a hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "NormalSHook",
+          "name": "hook",
+          "decl": "NormalSHook hook",
+          "default": null
+        }
+      ]
+    },
+    "AddAmbientSoundHook": {
+      "name": "AddAmbientSoundHook",
+      "refLine": 374,
+      "docStart": 15332,
+      "docEnd": 15481,
+      "docs": {
+        "brief": "Hooks all played ambient sounds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks all played ambient sounds."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function to use as a hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AmbientSHook",
+          "name": "hook",
+          "decl": "AmbientSHook hook",
+          "default": null
+        }
+      ]
+    },
+    "RemoveAmbientSoundHook": {
+      "name": "RemoveAmbientSoundHook",
+      "refLine": 390,
+      "docStart": 15741,
+      "docEnd": 15893,
+      "docs": {
+        "brief": "Unhooks all played ambient sounds.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unhooks all played ambient sounds."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function used for the hook."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "AmbientSHook",
+          "name": "hook",
+          "decl": "AmbientSHook hook",
+          "default": null
+        }
+      ]
+    },
+    "EmitSoundToClient": {
+      "name": "EmitSoundToClient",
+      "refLine": 418,
+      "docStart": 16162,
+      "docEnd": 16870,
+      "docs": {
+        "brief": "Wrapper to emit sound to one client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wrapper to emit sound to one client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sample",
+          "decl": "const char[] sample",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": "SNDCHAN_AUTO"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "volume",
+          "decl": "float volume",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "EmitGameSoundToAll": {
+      "name": "EmitGameSoundToAll",
+      "refLine": 676,
+      "docStart": 24386,
+      "docEnd": 25053,
+      "docs": {
+        "brief": "Wrapper to emit game sound to all clients.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wrapper to emit game sound to all clients.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random."
+          },
+          {
+            "tag": "param:gameSound",
+            "text": "Name of game sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "gameSound",
+          "decl": "const char[] gameSound",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "EmitSoundEntry": {
+      "name": "EmitSoundEntry",
+      "refLine": 246,
+      "docStart": 9140,
+      "docEnd": 10264,
+      "docs": {
+        "brief": "Emits a sound or game sound to a list of clients using the latest version of the engine sound interface.\nThis native is only available in engines that are greater than or equal to Portal 2.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits a sound or game sound to a list of clients using the latest version of the engine sound interface.\nThis native is only available in engines that are greater than or equal to Portal 2."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array of client indexes."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of clients in the array."
+          },
+          {
+            "tag": "param:soundEntry",
+            "text": "Sound entry name."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:seed",
+            "text": "Sound seed."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "param:...",
+            "text": "Optional list of Float[3] arrays to specify additional origins."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or lack of mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "soundEntry",
+          "decl": "const char[] soundEntry",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sample",
+          "decl": "const char[] sample",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": "SNDCHAN_AUTO"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "seed",
+          "decl": "int seed",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "volume",
+          "decl": "float volume",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetGameSoundParams": {
+      "name": "GetGameSoundParams",
+      "refLine": 526,
+      "docStart": 19380,
+      "docEnd": 20175,
+      "docs": {
+        "brief": "Retrieves the parameters for a game sound.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the parameters for a game sound.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random."
+          },
+          {
+            "tag": "param:gameSound",
+            "text": "Name of game sound."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of sample string buffer."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity the sound is being emitted from."
+          },
+          {
+            "tag": "return",
+            "text": "True if the sound was successfully retrieved, false if it\nwas not found"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "gameSound",
+          "decl": "const char[] gameSound",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "channel",
+          "decl": "int& channel",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "soundLevel",
+          "decl": "int& soundLevel",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "volume",
+          "decl": "float& volume",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "pitch",
+          "decl": "int& pitch",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sample",
+          "decl": "char[] sample",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        }
+      ]
+    },
+    "EmitGameSound": {
+      "name": "EmitGameSound",
+      "refLine": 557,
+      "docStart": 20389,
+      "docEnd": 21270,
+      "docs": {
+        "brief": "Emits a game sound to a list of clients.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits a game sound to a list of clients.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array of client indexes."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of clients in the array."
+          },
+          {
+            "tag": "param:gameSound",
+            "text": "Name of game sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "return",
+            "text": "True if the sound was played successfully, false if it failed"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "gameSound",
+          "decl": "const char[] gameSound",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "EmitAmbientSound": {
+      "name": "EmitAmbientSound",
+      "refLine": 157,
+      "docStart": 6306,
+      "docEnd": 6752,
+      "docs": {
+        "brief": "Emits an ambient sound.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits an ambient sound."
+          },
+          {
+            "tag": "param:name",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Origin of sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index to associate sound with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level (from 0 to 255)."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:vol",
+            "text": "Volume (from 0.0 to 1.0)."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Pitch (from 0 to 255)."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Play delay."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "vol",
+          "decl": "float vol",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "EmitGameSoundToClient": {
+      "name": "EmitGameSoundToClient",
+      "refLine": 639,
+      "docStart": 23047,
+      "docEnd": 23776,
+      "docs": {
+        "brief": "Wrapper to emit a game sound to one client.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wrapper to emit a game sound to one client.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:gameSound",
+            "text": "Name of game sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "gameSound",
+          "decl": "const char[] gameSound",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "StopSound": {
+      "name": "StopSound",
+      "refLine": 185,
+      "docStart": 7527,
+      "docEnd": 7711,
+      "docs": {
+        "brief": "Stops a sound.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stops a sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel number."
+          },
+          {
+            "tag": "param:name",
+            "text": "Sound file name relative to the \"sound\" folder."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "EmitSoundToAll": {
+      "name": "EmitSoundToAll",
+      "refLine": 458,
+      "docStart": 17641,
+      "docEnd": 18289,
+      "docs": {
+        "brief": "Wrapper to emit sound to all clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Wrapper to emit sound to all clients."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sample",
+          "decl": "const char[] sample",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": "SNDCHAN_AUTO"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "volume",
+          "decl": "float volume",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "EmitSentence": {
+      "name": "EmitSentence",
+      "refLine": 284,
+      "docStart": 10813,
+      "docEnd": 11676,
+      "docs": {
+        "brief": "Emits a sentence to a list of clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits a sentence to a list of clients."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array of client indexes."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of clients in the array."
+          },
+          {
+            "tag": "param:sentence",
+            "text": "Sentence index (from PrecacheSentenceFile)."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "param:...",
+            "text": "Optional list of Float[3] arrays to specify additional origins."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "sentence",
+          "decl": "int sentence",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": "SNDCHAN_AUTO"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "volume",
+          "decl": "float volume",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetDistGainFromSoundLevel": {
+      "name": "GetDistGainFromSoundLevel",
+      "refLine": 307,
+      "docStart": 12145,
+      "docEnd": 12567,
+      "docs": {
+        "brief": "Calculates gain of sound on given distance with given sound level in decibel",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates gain of sound on given distance with given sound level in decibel"
+          },
+          {
+            "tag": "param:soundlevel",
+            "text": "decibel of sound, like SNDLEVEL_NORMAL or integer value"
+          },
+          {
+            "tag": "param:distance",
+            "text": "distance of sound to calculate, not meter or feet, but Source Engine`s normal Coordinate unit"
+          },
+          {
+            "tag": "return",
+            "text": "gain of sound. you can multiply this with original sound`s volume to calculate volume on given distance"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "soundlevel",
+          "decl": "int soundlevel",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "distance",
+          "decl": "float distance",
+          "default": null
+        }
+      ]
+    },
+    "FadeClientVolume": {
+      "name": "FadeClientVolume",
+      "refLine": 176,
+      "docStart": 7035,
+      "docEnd": 7420,
+      "docs": {
+        "brief": "Fades a client's volume level toward silence or a given percentage.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fades a client's volume level toward silence or a given percentage."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:percent",
+            "text": "Fade percentage."
+          },
+          {
+            "tag": "param:outtime",
+            "text": "Fade out time, in seconds."
+          },
+          {
+            "tag": "param:holdtime",
+            "text": "Hold time, in seconds."
+          },
+          {
+            "tag": "param:intime",
+            "text": "Fade in time, in seconds."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "percent",
+          "decl": "float percent",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "outtime",
+          "decl": "float outtime",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "holdtime",
+          "decl": "float holdtime",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "intime",
+          "decl": "float intime",
+          "default": null
+        }
+      ]
+    },
+    "EmitSound": {
+      "name": "EmitSound",
+      "refLine": 207,
+      "docStart": 7783,
+      "docEnd": 8647,
+      "docs": {
+        "brief": "Emits a sound to a list of clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits a sound to a list of clients."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array of client indexes."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of clients in the array."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to emit from."
+          },
+          {
+            "tag": "param:channel",
+            "text": "Channel to emit with."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Sound volume."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Sound pitch."
+          },
+          {
+            "tag": "param:speakerentity",
+            "text": "Unknown."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Sound origin."
+          },
+          {
+            "tag": "param:dir",
+            "text": "Sound direction."
+          },
+          {
+            "tag": "param:updatePos",
+            "text": "Unknown (updates positions?)"
+          },
+          {
+            "tag": "param:soundtime",
+            "text": "Alternate time to play sound for."
+          },
+          {
+            "tag": "param:...",
+            "text": "Optional list of Float[3] arrays to specify additional origins."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sample",
+          "decl": "const char[] sample",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "-2"
+        },
+        {
+          "type": "int",
+          "name": "channel",
+          "decl": "int channel",
+          "default": "SNDCHAN_AUTO"
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": "SNDLEVEL_NORMAL"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "volume",
+          "decl": "float volume",
+          "default": "1.000000"
+        },
+        {
+          "type": "int",
+          "name": "pitch",
+          "decl": "int pitch",
+          "default": "100"
+        },
+        {
+          "type": "int",
+          "name": "speakerentity",
+          "decl": "int speakerentity",
+          "default": "-1"
+        },
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "const float[3]",
+          "name": "dir",
+          "decl": "const float dir[3]",
+          "default": "NULL_VECTOR"
+        },
+        {
+          "type": "bool",
+          "name": "updatePos",
+          "decl": "bool updatePos",
+          "default": "true"
+        },
+        {
+          "type": "float",
+          "name": "soundtime",
+          "decl": "float soundtime",
+          "default": "0.000000"
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "GetSoundDuration": {
+      "name": "GetSoundDuration",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "EmitAmbientGameSound": {
+      "name": "EmitAmbientGameSound",
+      "refLine": 598,
+      "docStart": 21984,
+      "docEnd": 22458,
+      "docs": {
+        "brief": "Emits an ambient game sound.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Emits an ambient game sound.\n\nGame sounds are found in a game's scripts/game_sound.txt or other files\nreferenced from it\n\nNote that if a game sound has a rndwave section, one of them will be returned\nat random."
+          },
+          {
+            "tag": "param:gameSound",
+            "text": "Name of game sound."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Origin of sound."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index to associate sound with."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Play delay."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "gameSound",
+          "decl": "const char[] gameSound",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "SND_NOFLAGS"
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "PrecacheScriptSound": {
+      "name": "PrecacheScriptSound",
+      "refLine": 722,
+      "docStart": 25677,
+      "docEnd": 26347,
+      "docs": {
+        "brief": "Precache a game sound.\n\nMost games will precache all game sounds on map start, but this is not guaranteed...\nTeam Fortress 2 is known to not pre-cache MvM game mode sounds on non-MvM maps.\n\nDue to the above, this native should be called before any calls to GetGameSoundParams,\nEmitGameSound*, or EmitAmbientGameSound.\n\nIt should be safe to pass already precached game sounds to this function.\n\nNote: It precaches all files for a game sound.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Precache a game sound.\n\nMost games will precache all game sounds on map start, but this is not guaranteed...\nTeam Fortress 2 is known to not pre-cache MvM game mode sounds on non-MvM maps.\n\nDue to the above, this native should be called before any calls to GetGameSoundParams,\nEmitGameSound*, or EmitAmbientGameSound.\n\nIt should be safe to pass already precached game sounds to this function.\n\nNote: It precaches all files for a game sound."
+          },
+          {
+            "tag": "param:soundname",
+            "text": "Game sound to precache"
+          },
+          {
+            "tag": "return",
+            "text": "True if the game sound was found, false if sound did not exist\nor had no files"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "soundname",
+          "decl": "const char[] soundname",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {
+    "SNDLEVEL_NORMAL": {
+      "name": "SNDLEVEL_NORMAL",
+      "refLine": 104,
+      "docStart": 4525,
+      "docEnd": 4551,
+      "docs": {
+        "brief": "Normal sound level",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normal sound level"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_DO_NOT_OVERWRITE_EXISTING_ON_CHANNEL": {
+      "name": "SND_DO_NOT_OVERWRITE_EXISTING_ON_CHANNEL",
+      "refLine": 86,
+      "docStart": 3746,
+      "docEnd": 3848,
+      "docs": {
+        "brief": "If an existing sound is found on the channel, the sound will not play instead of overwriting it",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If an existing sound is found on the channel, the sound will not play instead of overwriting it"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_IGNORE_PHONEMES": {
+      "name": "SND_IGNORE_PHONEMES",
+      "refLine": 84,
+      "docStart": 3490,
+      "docEnd": 3552,
+      "docs": {
+        "brief": "Prevents flex animation from being driven by this sound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prevents flex animation from being driven by this sound"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_WEAPON": {
+      "name": "SNDCHAN_WEAPON",
+      "refLine": 60,
+      "docStart": 2077,
+      "docEnd": 2092,
+      "docs": {
+        "brief": "Weapons",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Weapons"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_CHANGEPITCH": {
+      "name": "SND_CHANGEPITCH",
+      "refLine": 77,
+      "docStart": 2833,
+      "docEnd": 2858,
+      "docs": {
+        "brief": "Change sound pitch",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Change sound pitch"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_USER_BASE": {
+      "name": "SNDCHAN_USER_BASE",
+      "refLine": 67,
+      "docStart": 2492,
+      "docEnd": 2542,
+      "docs": {
+        "brief": "Anything >= this is allocated to game code",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Anything >= this is allocated to game code"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_SPAWNING": {
+      "name": "SND_SPAWNING",
+      "refLine": 79,
+      "docStart": 2999,
+      "docEnd": 3037,
+      "docs": {
+        "brief": "Used in some cases for ambients",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Used in some cases for ambients"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_TRAFFIC": {
+      "name": "SNDLEVEL_TRAFFIC",
+      "refLine": 105,
+      "docStart": 4582,
+      "docEnd": 4613,
+      "docs": {
+        "brief": "Busy traffic (0.8 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Busy traffic (0.8 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_AUTO": {
+      "name": "SNDCHAN_AUTO",
+      "refLine": 59,
+      "docStart": 2034,
+      "docEnd": 2046,
+      "docs": {
+        "brief": "Auto",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Auto"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_DRYER": {
+      "name": "SNDLEVEL_DRYER",
+      "refLine": 101,
+      "docStart": 4326,
+      "docEnd": 4347,
+      "docs": {
+        "brief": "Clothes dryer",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clothes dryer"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_AIRCRAFT": {
+      "name": "SNDLEVEL_AIRCRAFT",
+      "refLine": 111,
+      "docStart": 4959,
+      "docEnd": 4986,
+      "docs": {
+        "brief": "Auto horn, aircraft",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Auto horn, aircraft"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_DISHWASHER": {
+      "name": "SNDLEVEL_DISHWASHER",
+      "refLine": 102,
+      "docStart": 4378,
+      "docEnd": 4423,
+      "docs": {
+        "brief": "Dishwasher/washing machine (1.5 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Dishwasher/washing machine (1.5 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_RAIDSIREN": {
+      "name": "SNDLEVEL_RAIDSIREN",
+      "refLine": 112,
+      "docStart": 5017,
+      "docEnd": 5039,
+      "docs": {
+        "brief": "Air raid siren",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Air raid siren"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_SCREAMING": {
+      "name": "SNDLEVEL_SCREAMING",
+      "refLine": 107,
+      "docStart": 4716,
+      "docEnd": 4750,
+      "docs": {
+        "brief": "Screaming child (0.5 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Screaming child (0.5 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_STREAM": {
+      "name": "SNDCHAN_STREAM",
+      "refLine": 64,
+      "docStart": 2258,
+      "docEnd": 2314,
+      "docs": {
+        "brief": "\"Stream channel from the static or dynamic area\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "\"Stream channel from the static or dynamic area\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_VOICE_BASE": {
+      "name": "SNDCHAN_VOICE_BASE",
+      "refLine": 66,
+      "docStart": 2421,
+      "docEnd": 2461,
+      "docs": {
+        "brief": "\"Channel for network voice data\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "\"Channel for network voice data\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_CHANGEVOL": {
+      "name": "SND_CHANGEVOL",
+      "refLine": 76,
+      "docStart": 2747,
+      "docEnd": 2773,
+      "docs": {
+        "brief": "Change sound volume",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Change sound volume"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_STOP": {
+      "name": "SND_STOP",
+      "refLine": 78,
+      "docStart": 2918,
+      "docEnd": 2939,
+      "docs": {
+        "brief": "Stop the sound",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stop the sound"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_FRIDGE": {
+      "name": "SNDLEVEL_FRIDGE",
+      "refLine": 98,
+      "docStart": 4144,
+      "docEnd": 4164,
+      "docs": {
+        "brief": "Refrigerator",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Refrigerator"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_ITEM": {
+      "name": "SNDCHAN_ITEM",
+      "refLine": 62,
+      "docStart": 2168,
+      "docEnd": 2181,
+      "docs": {
+        "brief": "Items",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Items"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_SHOULDPAUSE": {
+      "name": "SND_SHOULDPAUSE",
+      "refLine": 83,
+      "docStart": 3400,
+      "docEnd": 3430,
+      "docs": {
+        "brief": "Pause if game is paused",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pause if game is paused"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_TRAIN": {
+      "name": "SNDLEVEL_TRAIN",
+      "refLine": 108,
+      "docStart": 4781,
+      "docEnd": 4829,
+      "docs": {
+        "brief": "Subway train, pneumatic drill (0.4 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Subway train, pneumatic drill (0.4 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_WHISPER": {
+      "name": "SNDLEVEL_WHISPER",
+      "refLine": 96,
+      "docStart": 4044,
+      "docEnd": 4062,
+      "docs": {
+        "brief": "Whispering",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Whispering"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_ROCKET": {
+      "name": "SNDLEVEL_ROCKET",
+      "refLine": 114,
+      "docStart": 5140,
+      "docEnd": 5175,
+      "docs": {
+        "brief": "Rocket launching (0.2 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rocket launching (0.2 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_IGNORE_NAME": {
+      "name": "SND_IGNORE_NAME",
+      "refLine": 85,
+      "docStart": 3612,
+      "docEnd": 3686,
+      "docs": {
+        "brief": "Changes all sounds emitted on the entity, regardless of actual name",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Changes all sounds emitted on the entity, regardless of actual name"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_HOME": {
+      "name": "SNDLEVEL_HOME",
+      "refLine": 99,
+      "docStart": 4195,
+      "docEnd": 4226,
+      "docs": {
+        "brief": "Average home (3.9 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Average home (3.9 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_BODY": {
+      "name": "SNDCHAN_BODY",
+      "refLine": 63,
+      "docStart": 2212,
+      "docEnd": 2227,
+      "docs": {
+        "brief": "Player?",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Player?"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_VOICE": {
+      "name": "SNDCHAN_VOICE",
+      "refLine": 61,
+      "docStart": 2123,
+      "docEnd": 2137,
+      "docs": {
+        "brief": "Voices",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Voices"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_STOPLOOPING": {
+      "name": "SND_STOPLOOPING",
+      "refLine": 81,
+      "docStart": 3190,
+      "docEnd": 3234,
+      "docs": {
+        "brief": "Stop looping all sounds on the entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stop looping all sounds on the entity"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_DELAY": {
+      "name": "SND_DELAY",
+      "refLine": 80,
+      "docStart": 3097,
+      "docEnd": 3130,
+      "docs": {
+        "brief": "Sound has an initial delay",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sound has an initial delay"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_RUSTLE": {
+      "name": "SNDLEVEL_RUSTLE",
+      "refLine": 95,
+      "docStart": 3990,
+      "docEnd": 4013,
+      "docs": {
+        "brief": "Rustling leaves",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Rustling leaves"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_LIBRARY": {
+      "name": "SNDLEVEL_LIBRARY",
+      "refLine": 97,
+      "docStart": 4093,
+      "docEnd": 4113,
+      "docs": {
+        "brief": "In a library",
+        "tags": [
+          {
+            "tag": "",
+            "text": "In a library"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_SNOWMOBILE": {
+      "name": "SNDLEVEL_SNOWMOBILE",
+      "refLine": 110,
+      "docStart": 4909,
+      "docEnd": 4928,
+      "docs": {
+        "brief": "Snow mobile",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Snow mobile"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_GUNFIRE": {
+      "name": "SNDLEVEL_GUNFIRE",
+      "refLine": 113,
+      "docStart": 5070,
+      "docEnd": 5109,
+      "docs": {
+        "brief": "Gunshot, jet engine (0.27 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gunshot, jet engine (0.27 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_NONE": {
+      "name": "SNDLEVEL_NONE",
+      "refLine": 94,
+      "docStart": 3947,
+      "docEnd": 3959,
+      "docs": {
+        "brief": "None",
+        "tags": [
+          {
+            "tag": "",
+            "text": "None"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_MINIBIKE": {
+      "name": "SNDLEVEL_MINIBIKE",
+      "refLine": 106,
+      "docStart": 4644,
+      "docEnd": 4685,
+      "docs": {
+        "brief": "Mini-bike, alarm clock (0.7 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Mini-bike, alarm clock (0.7 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_REPLACE": {
+      "name": "SNDCHAN_REPLACE",
+      "refLine": 58,
+      "docStart": 1988,
+      "docEnd": 2003,
+      "docs": {
+        "brief": "Unknown",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Unknown"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDCHAN_STATIC": {
+      "name": "SNDCHAN_STATIC",
+      "refLine": 65,
+      "docStart": 2345,
+      "docEnd": 2390,
+      "docs": {
+        "brief": "\"Stream channel from the static area\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "\"Stream channel from the static area\""
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_SPEAKER": {
+      "name": "SND_SPEAKER",
+      "refLine": 82,
+      "docStart": 3294,
+      "docEnd": 3340,
+      "docs": {
+        "brief": "Being played by a mic through a speaker",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Being played by a mic through a speaker"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_HELICOPTER": {
+      "name": "SNDLEVEL_HELICOPTER",
+      "refLine": 109,
+      "docStart": 4860,
+      "docEnd": 4878,
+      "docs": {
+        "brief": "Helicopter",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Helicopter"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SND_NOFLAGS": {
+      "name": "SND_NOFLAGS",
+      "refLine": 75,
+      "docStart": 2673,
+      "docEnd": 2687,
+      "docs": {
+        "brief": "Nothing",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Nothing"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_CAR": {
+      "name": "SNDLEVEL_CAR",
+      "refLine": 103,
+      "docStart": 4454,
+      "docEnd": 4494,
+      "docs": {
+        "brief": "Car or vacuum cleaner (1.0 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Car or vacuum cleaner (1.0 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    },
+    "SNDLEVEL_CONVO": {
+      "name": "SNDLEVEL_CONVO",
+      "refLine": 100,
+      "docStart": 4257,
+      "docEnd": 4295,
+      "docs": {
+        "brief": "Normal conversation (2.0 attn)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normal conversation (2.0 attn)"
+          }
+        ]
+      },
+      "metadata": null
+    }
+  },
+  "defines": {
+    "SNDATTN_STATIC": {
+      "name": "SNDATTN_STATIC",
+      "refLine": 123,
+      "docStart": 5575,
+      "docEnd": 5602,
+      "docs": {
+        "brief": "Static attenuation?",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Static attenuation?"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1.25"
+    },
+    "SNDPITCH_HIGH": {
+      "name": "SNDPITCH_HIGH",
+      "refLine": 120,
+      "docStart": 5393,
+      "docEnd": 5413,
+      "docs": {
+        "brief": "A high pitch",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A high pitch"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "120"
+    },
+    "_sdktools_sound_included": {
+      "name": "_sdktools_sound_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SNDVOL_NORMAL": {
+      "name": "SNDVOL_NORMAL",
+      "refLine": 117,
+      "docStart": 5219,
+      "docEnd": 5240,
+      "docs": {
+        "brief": "Normal volume",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normal volume"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1.0"
+    },
+    "SNDATTN_NONE": {
+      "name": "SNDATTN_NONE",
+      "refLine": 121,
+      "docStart": 5451,
+      "docEnd": 5473,
+      "docs": {
+        "brief": "No attenuation",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No attenuation"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0.0"
+    },
+    "SNDPITCH_NORMAL": {
+      "name": "SNDPITCH_NORMAL",
+      "refLine": 118,
+      "docStart": 5278,
+      "docEnd": 5298,
+      "docs": {
+        "brief": "Normal pitch",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normal pitch"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "100"
+    },
+    "SNDATTN_RICOCHET": {
+      "name": "SNDATTN_RICOCHET",
+      "refLine": 124,
+      "docStart": 5640,
+      "docEnd": 5663,
+      "docs": {
+        "brief": "Ricochet effect",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Ricochet effect"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1.5"
+    },
+    "SNDATTN_IDLE": {
+      "name": "SNDATTN_IDLE",
+      "refLine": 125,
+      "docStart": 5701,
+      "docEnd": 5726,
+      "docs": {
+        "brief": "Idle attenuation?",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Idle attenuation?"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2.0"
+    },
+    "SOUND_FROM_PLAYER": {
+      "name": "SOUND_FROM_PLAYER",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-2"
+    },
+    "SOUND_FROM_LOCAL_PLAYER": {
+      "name": "SOUND_FROM_LOCAL_PLAYER",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    },
+    "SNDATTN_NORMAL": {
+      "name": "SNDATTN_NORMAL",
+      "refLine": 122,
+      "docStart": 5511,
+      "docEnd": 5537,
+      "docs": {
+        "brief": "Normal attenuation",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Normal attenuation"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0.8"
+    },
+    "SNDPITCH_LOW": {
+      "name": "SNDPITCH_LOW",
+      "refLine": 119,
+      "docStart": 5336,
+      "docEnd": 5355,
+      "docs": {
+        "brief": "A low pitch",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A low pitch"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "95"
+    },
+    "SOUND_FROM_WORLD": {
+      "name": "SOUND_FROM_WORLD",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    }
+  },
+  "enums": {},
+  "typesets": {
+    "NormalSHook": {
+      "name": "NormalSHook",
+      "refLine": 336,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function Action(int clients[64], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags)": {
+          "refLine": 364,
+          "docStart": 15121,
+          "docEnd": 15156,
+          "docs": {
+            "brief": "Deprecated. Use other prototype.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deprecated. Use other prototype."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int clients[64], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "clients[64]",
+                "decl": "int clients[64]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "numClients",
+                "decl": "int& numClients",
+                "default": null
+              },
+              {
+                "type": "char",
+                "name": "sample[PLATFORM_MAX_PATH]",
+                "decl": "char sample[PLATFORM_MAX_PATH]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "entity",
+                "decl": "int& entity",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "channel",
+                "decl": "int& channel",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "volume",
+                "decl": "float& volume",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "level",
+                "decl": "int& level",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "pitch",
+                "decl": "int& pitch",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "flags",
+                "decl": "int& flags",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int clients[64], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags, char soundEntry[PLATFORM_MAX_PATH], int& seed)": {
+          "refLine": 359,
+          "docStart": 14862,
+          "docEnd": 14897,
+          "docs": {
+            "brief": "Deprecated. Use other prototype.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Deprecated. Use other prototype."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int clients[64], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags, char soundEntry[PLATFORM_MAX_PATH], int& seed)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "clients[64]",
+                "decl": "int clients[64]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "numClients",
+                "decl": "int& numClients",
+                "default": null
+              },
+              {
+                "type": "char",
+                "name": "sample[PLATFORM_MAX_PATH]",
+                "decl": "char sample[PLATFORM_MAX_PATH]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "entity",
+                "decl": "int& entity",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "channel",
+                "decl": "int& channel",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "volume",
+                "decl": "float& volume",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "level",
+                "decl": "int& level",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "pitch",
+                "decl": "int& pitch",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "flags",
+                "decl": "int& flags",
+                "default": null
+              },
+              {
+                "type": "char",
+                "name": "soundEntry[PLATFORM_MAX_PATH]",
+                "decl": "char soundEntry[PLATFORM_MAX_PATH]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "seed",
+                "decl": "int& seed",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function Action(int clients[MAXPLAYERS], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags, char soundEntry[PLATFORM_MAX_PATH], int& seed)": {
+          "refLine": 354,
+          "docStart": 13623,
+          "docEnd": 14630,
+          "docs": {
+            "brief": "Called when a sound is going to be emitted to one or more clients.\nNOTICE: all params can be overwritten to modify the default behavior.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a sound is going to be emitted to one or more clients.\nNOTICE: all params can be overwritten to modify the default behavior."
+              },
+              {
+                "tag": "param:clients",
+                "text": "Array of client indexes."
+              },
+              {
+                "tag": "param:numClients",
+                "text": "Number of clients in the array (modify this value if you add/remove elements from the client array)."
+              },
+              {
+                "tag": "param:sample",
+                "text": "Sound file name relative to the \"sound\" folder."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity emitting the sound."
+              },
+              {
+                "tag": "param:channel",
+                "text": "Channel emitting the sound."
+              },
+              {
+                "tag": "param:volume",
+                "text": "Sound volume."
+              },
+              {
+                "tag": "param:level",
+                "text": "Sound level."
+              },
+              {
+                "tag": "param:pitch",
+                "text": "Sound pitch."
+              },
+              {
+                "tag": "param:flags",
+                "text": "Sound flags."
+              },
+              {
+                "tag": "param:soundEntry",
+                "text": "Game sound entry name. (Used in engines newer than Portal 2)"
+              },
+              {
+                "tag": "param:seed",
+                "text": "Sound seed. (Used in engines newer than Portal 2)"
+              },
+              {
+                "tag": "return",
+                "text": "Plugin_Continue to allow the sound to be played, Plugin_Stop to block it,\nPlugin_Changed when any parameter has been modified."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function Action(int clients[MAXPLAYERS], int& numClients, char sample[PLATFORM_MAX_PATH], int& entity, int& channel, float& volume, int& level, int& pitch, int& flags, char soundEntry[PLATFORM_MAX_PATH], int& seed)",
+          "parsedSignature": {
+            "returnType": "Action",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "clients[MAXPLAYERS]",
+                "decl": "int clients[MAXPLAYERS]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "numClients",
+                "decl": "int& numClients",
+                "default": null
+              },
+              {
+                "type": "char",
+                "name": "sample[PLATFORM_MAX_PATH]",
+                "decl": "char sample[PLATFORM_MAX_PATH]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "entity",
+                "decl": "int& entity",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "channel",
+                "decl": "int& channel",
+                "default": null
+              },
+              {
+                "type": "float&",
+                "name": "volume",
+                "decl": "float& volume",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "level",
+                "decl": "int& level",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "pitch",
+                "decl": "int& pitch",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "flags",
+                "decl": "int& flags",
+                "default": null
+              },
+              {
+                "type": "char",
+                "name": "soundEntry[PLATFORM_MAX_PATH]",
+                "decl": "char soundEntry[PLATFORM_MAX_PATH]",
+                "default": null
+              },
+              {
+                "type": "int&",
+                "name": "seed",
+                "decl": "int& seed",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {
+    "AmbientSHook": {
+      "name": "AmbientSHook",
+      "refLine": 325,
+      "docStart": 12644,
+      "docEnd": 13401,
+      "docs": {
+        "brief": "Called when an ambient sound is about to be emitted to one or more clients.\n\nNOTICE: all parameters can be overwritten to modify the default behavior.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an ambient sound is about to be emitted to one or more clients.\n\nNOTICE: all parameters can be overwritten to modify the default behavior."
+          },
+          {
+            "tag": "param:sample",
+            "text": "Sound file name relative to the \"sound\" folder."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity index associated to the sound."
+          },
+          {
+            "tag": "param:volume",
+            "text": "Volume (from 0.0 to 1.0)."
+          },
+          {
+            "tag": "param:level",
+            "text": "Sound level (from 0 to 255)."
+          },
+          {
+            "tag": "param:pitch",
+            "text": "Pitch (from 0 to 255)."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Origin of sound."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Sound flags."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Play delay."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue to allow the sound to be played, Plugin_Stop to block it,\nPlugin_Changed when any parameter has been modified."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(char sample[PLATFORM_MAX_PATH], int& entity, float& volume, int& level, int& pitch, float pos[3], int& flags, float& delay)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "char",
+            "name": "sample[PLATFORM_MAX_PATH]",
+            "decl": "char sample[PLATFORM_MAX_PATH]",
+            "default": null
+          },
+          {
+            "type": "int&",
+            "name": "entity",
+            "decl": "int& entity",
+            "default": null
+          },
+          {
+            "type": "float&",
+            "name": "volume",
+            "decl": "float& volume",
+            "default": null
+          },
+          {
+            "type": "int&",
+            "name": "level",
+            "decl": "int& level",
+            "default": null
+          },
+          {
+            "type": "int&",
+            "name": "pitch",
+            "decl": "int& pitch",
+            "default": null
+          },
+          {
+            "type": "float",
+            "name": "pos[3]",
+            "decl": "float pos[3]",
+            "default": null
+          },
+          {
+            "type": "int&",
+            "name": "flags",
+            "decl": "int& flags",
+            "default": null
+          },
+          {
+            "type": "float&",
+            "name": "delay",
+            "decl": "float& delay",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

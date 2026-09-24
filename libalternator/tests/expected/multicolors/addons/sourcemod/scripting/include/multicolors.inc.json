@@ -1,0 +1,876 @@
+{
+  "functions": {
+    "CFormatColor": {
+      "name": "CFormatColor",
+      "refLine": 418,
+      "docStart": 9991,
+      "docEnd": 10146,
+      "docs": {
+        "brief": "Replaces color tags in a string with color codes",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replaces color tags in a string with color codes"
+          },
+          {
+            "tag": "param:message",
+            "text": "String."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the string buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "message",
+          "decl": "char[] message",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": "-1"
+        }
+      ]
+    },
+    "CReplyToCommand": {
+      "name": "CReplyToCommand",
+      "refLine": 257,
+      "docStart": 5776,
+      "docEnd": 5906,
+      "docs": {
+        "brief": "Replies to a command with colors",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a command with colors"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to reply to"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CRemoveTags": {
+      "name": "CRemoveTags",
+      "refLine": 445,
+      "docStart": 10488,
+      "docEnd": 10623,
+      "docs": {
+        "brief": "Removes color tags from a message",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes color tags from a message"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message to remove tags from"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum buffer length"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "message",
+          "decl": "char[] message",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CInitColors": {
+      "name": "CInitColors",
+      "refLine": 495,
+      "docStart": 11523,
+      "docEnd": 11555,
+      "docs": {
+        "brief": "Inits the colors list",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Inits the colors list"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CClearPrefix": {
+      "name": "CClearPrefix",
+      "refLine": 57,
+      "docStart": 1027,
+      "docEnd": 1104,
+      "docs": {
+        "brief": "Add a chat prefix before all chat msg",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a chat prefix before all chat msg"
+          },
+          {
+            "tag": "param:sPrefix",
+            "text": "Prefix"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CPrintToServer": {
+      "name": "CPrintToServer",
+      "refLine": 303,
+      "docStart": 6882,
+      "docEnd": 6978,
+      "docs": {
+        "brief": "Remove all tags and print to server",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Remove all tags and print to server"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChatAllEx": {
+      "name": "CPrintToChatAllEx",
+      "refLine": 199,
+      "docStart": 4327,
+      "docEnd": 4499,
+      "docs": {
+        "brief": "Writes a message to all clients with the correct stock for the game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a message to all clients with the correct stock for the game."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChatObserversEx": {
+      "name": "CPrintToChatObserversEx",
+      "refLine": 223,
+      "docStart": 4892,
+      "docEnd": 5063,
+      "docs": {
+        "brief": "Writes a message to all of a client's observers with the correct\ngame stock.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a message to all of a client's observers with the correct\ngame stock."
+          },
+          {
+            "tag": "param:target",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChat": {
+      "name": "CPrintToChat",
+      "refLine": 69,
+      "docStart": 1159,
+      "docEnd": 1411,
+      "docs": {
+        "brief": "Writes a message to a client with the correct stock for the game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a message to a client with the correct stock for the game."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CReplyToCommandEx": {
+      "name": "CReplyToCommandEx",
+      "refLine": 281,
+      "docStart": 6288,
+      "docEnd": 6466,
+      "docs": {
+        "brief": "Replies to a command with colors",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replies to a command with colors"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to reply to"
+          },
+          {
+            "tag": "param:author",
+            "text": "Client to use for {teamcolor}"
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CFixColors": {
+      "name": "CFixColors",
+      "refLine": 457,
+      "docStart": 10785,
+      "docEnd": 10827,
+      "docs": {
+        "brief": "Fixes missing Lightgreen color.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Fixes missing Lightgreen color."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CGetColor": {
+      "name": "CGetColor",
+      "refLine": 474,
+      "docStart": 11148,
+      "docEnd": 11198,
+      "docs": {
+        "brief": "Gets the color code from the color name",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the color code from the color name"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "CShowActivity": {
+      "name": "CShowActivity",
+      "refLine": 336,
+      "docStart": 7433,
+      "docEnd": 7998,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nCShowActivity2() is slightly more useful.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the\nsetting of the sm_show_activity cvar.\n\nThis version does not display a message to the originating client\nif used from chat triggers or menus.  If manual replies are used\nfor these cases, then this function will suffice.  Otherwise,\nCShowActivity2() is slightly more useful.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "IsSource2009": {
+      "name": "IsSource2009",
+      "refLine": 505,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "CShowActivityEx": {
+      "name": "CShowActivityEx",
+      "refLine": 364,
+      "docStart": 8351,
+      "docEnd": 8715,
+      "docs": {
+        "brief": "Same as C_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as C_ShowActivity(), except the tag parameter is used instead of \"[SM] \" (note that you must supply any spacing).\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to display with."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChatEx": {
+      "name": "CPrintToChatEx",
+      "refLine": 176,
+      "docStart": 3630,
+      "docEnd": 3920,
+      "docs": {
+        "brief": "Writes a message to a client with the correct stock for the game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a message to a client with the correct stock for the game."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:author",
+            "text": "Author index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          },
+          {
+            "tag": "error",
+            "text": "If the client is not connected an error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChatAll": {
+      "name": "CPrintToChatAll",
+      "refLine": 93,
+      "docStart": 1784,
+      "docEnd": 1953,
+      "docs": {
+        "brief": "Prints a message to all clients in the chat area.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Prints a message to all clients in the chat area.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CSetPrefix": {
+      "name": "CSetPrefix",
+      "refLine": 40,
+      "docStart": 639,
+      "docEnd": 716,
+      "docs": {
+        "brief": "Add a chat prefix before all chat msg",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a chat prefix before all chat msg"
+          },
+          {
+            "tag": "param:sPrefix",
+            "text": "Prefix"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sPrefix",
+          "decl": "const char[] sPrefix",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CPrintToChatObservers": {
+      "name": "CPrintToChatObservers",
+      "refLine": 138,
+      "docStart": 2788,
+      "docEnd": 2928,
+      "docs": {
+        "brief": "Writes a message to all of a client's observers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a message to all of a client's observers."
+          },
+          {
+            "tag": "param:target",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message (formatting rules)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "CShowActivity2": {
+      "name": "CShowActivity2",
+      "refLine": 394,
+      "docStart": 9102,
+      "docEnd": 9605,
+      "docs": {
+        "brief": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Displays usage of an admin command to users depending on the setting of the sm_show_activity cvar.\nAll users receive a message in their chat text, except for the originating client,\nwho receives the message based on the current ReplySource.\nSupports color tags."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index doing the action, or 0 for server."
+          },
+          {
+            "tag": "param:tags",
+            "text": "Tag to prepend to the message."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "author",
+          "decl": "int author",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "PREFIX_SEPARATOR": {
+      "name": "PREFIX_SEPARATOR",
+      "refLine": 28,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"{default} \""
+    },
+    "_multicolors_included": {
+      "name": "_multicolors_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "PREFIX_MAX_LENGTH": {
+      "name": "PREFIX_MAX_LENGTH",
+      "refLine": 27,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "MuCo_VERSION": {
+      "name": "MuCo_VERSION",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"2.2.0\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

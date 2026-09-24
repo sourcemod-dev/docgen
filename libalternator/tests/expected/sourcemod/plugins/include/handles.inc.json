@@ -1,0 +1,232 @@
+{
+  "functions": {
+    "CloneHandle": {
+      "name": "CloneHandle",
+      "refLine": 76,
+      "docStart": 2203,
+      "docEnd": 3280,
+      "docs": {
+        "brief": "Clones a Handle.  When passing handles in between plugins, caching handles\ncan result in accidental invalidation when one plugin releases the Handle, or is its owner\nis unloaded from memory.  To prevent this, the Handle may be \"cloned\" with a new owner.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clones a Handle.  When passing handles in between plugins, caching handles\ncan result in accidental invalidation when one plugin releases the Handle, or is its owner\nis unloaded from memory.  To prevent this, the Handle may be \"cloned\" with a new owner."
+          },
+          {
+            "tag": "note",
+            "text": "Usually, you will be cloning Handles for other plugins.  This means that if you clone\nthe Handle without specifying the new owner, it will assume the identity of your original\ncalling plugin, which is not very useful.  You should either specify that the receiving\nplugin should clone the handle on its own, or you should explicitly clone the Handle\nusing the receiving plugin's identity Handle."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to clone/duplicate."
+          },
+          {
+            "tag": "param:plugin",
+            "text": "Optional Handle to another plugin to mark as the new owner.\nIf no owner is passed, the owner becomes the calling plugin."
+          },
+          {
+            "tag": "return",
+            "text": "Handle on success, INVALID_HANDLE if not cloneable."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handles will cause a run time error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "plugin",
+          "decl": "Handle plugin",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "CloseHandle": {
+      "name": "CloseHandle",
+      "refLine": 57,
+      "docStart": 1770,
+      "docEnd": 2160,
+      "docs": {
+        "brief": "Closes a Handle.  If the handle has multiple copies open,\nit is not destroyed unless all copies are closed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Closes a Handle.  If the handle has multiple copies open,\nit is not destroyed unless all copies are closed."
+          },
+          {
+            "tag": "note",
+            "text": "Closing a Handle has a different meaning for each Handle type.  Make\nsure you read the documentation on whatever provided the Handle."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "Handle to close."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handles will cause a run time error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Handle": {
+      "name": "Handle",
+      "refLine": 78,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": null,
+      "methods": {
+        "Clone": {
+          "name": "Clone",
+          "refLine": 108,
+          "docStart": 3849,
+          "docEnd": 4938,
+          "docs": {
+            "brief": "Clones a Handle.  When passing handles in between plugins, caching handles\ncan result in accidental invalidation when one plugin releases the Handle, or is its owner\nis unloaded from memory.  To prevent this, the Handle may be \"cloned\" with a new owner.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clones a Handle.  When passing handles in between plugins, caching handles\ncan result in accidental invalidation when one plugin releases the Handle, or is its owner\nis unloaded from memory.  To prevent this, the Handle may be \"cloned\" with a new owner."
+              },
+              {
+                "tag": "note",
+                "text": "Usually, you will be cloning Handles for other plugins.  This means that if you clone\nthe Handle without specifying the new owner, it will assume the identity of your original\ncalling plugin, which is not very useful.  You should either specify that the receiving\nplugin should clone the handle on its own, or you should explicitly clone the Handle\nusing the receiving plugin's identity Handle."
+              },
+              {
+                "tag": "param:plugin",
+                "text": "Optional Handle to another plugin to mark as the new owner.\nIf no owner is passed, the owner becomes the calling plugin."
+              },
+              {
+                "tag": "return",
+                "text": "Handle on success, INVALID_HANDLE if not cloneable."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handles will cause a run time error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Handle",
+          "arguments": [
+            {
+              "type": "Handle",
+              "name": "plugin",
+              "decl": "Handle plugin",
+              "default": "INVALID_HANDLE"
+            }
+          ]
+        },
+        "~Handle": {
+          "name": "~Handle",
+          "refLine": 79,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "Close": {
+          "name": "Close",
+          "refLine": 90,
+          "docStart": 3424,
+          "docEnd": 3808,
+          "docs": {
+            "brief": "Closes a Handle.  If the handle has multiple copies open,\nit is not destroyed unless all copies are closed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Closes a Handle.  If the handle has multiple copies open,\nit is not destroyed unless all copies are closed."
+              },
+              {
+                "tag": "note",
+                "text": "Closing a Handle has a different meaning for each Handle type.  Make\nsure you read the documentation on whatever provided the Handle."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid handles will cause a run time error."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_handles_included": {
+      "name": "_handles_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "Handle": {
+      "name": "Handle",
+      "refLine": 41,
+      "docStart": 1639,
+      "docEnd": 1673,
+      "docs": {
+        "brief": "Preset Handle values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Preset Handle values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "INVALID_HANDLE": {
+          "name": "INVALID_HANDLE",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

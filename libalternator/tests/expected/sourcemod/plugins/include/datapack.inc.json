@@ -1,0 +1,1149 @@
+{
+  "functions": {
+    "IsPackReadable": {
+      "name": "IsPackReadable",
+      "refLine": 255,
+      "docStart": 8345,
+      "docEnd": 8684,
+      "docs": {
+        "brief": "Returns whether or not a specified number of bytes from the data pack\nposition to the end can be read.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether or not a specified number of bytes from the data pack\nposition to the end can be read."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:bytes",
+            "text": "Number of bytes to simulate reading."
+          },
+          {
+            "tag": "return",
+            "text": "True if can be read, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "bytes",
+          "decl": "int bytes",
+          "default": null
+        }
+      ]
+    },
+    "WritePackCell": {
+      "name": "WritePackCell",
+      "refLine": 153,
+      "docStart": 5333,
+      "docEnd": 5516,
+      "docs": {
+        "brief": "Packs a normal cell into a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Packs a normal cell into a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:cell",
+            "text": "Cell to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "cell",
+          "decl": "any cell",
+          "default": null
+        }
+      ]
+    },
+    "ReadPackFloat": {
+      "name": "ReadPackFloat",
+      "refLine": 198,
+      "docStart": 6552,
+      "docEnd": 6746,
+      "docs": {
+        "brief": "Reads a float from a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a float from a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "return",
+            "text": "Float value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle, or bounds error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        }
+      ]
+    },
+    "CreateDataPack": {
+      "name": "CreateDataPack",
+      "refLine": 144,
+      "docStart": 5165,
+      "docEnd": 5294,
+      "docs": {
+        "brief": "Creates a new data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new data pack."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to the data pack.  Must be closed with CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DataPack",
+      "arguments": []
+    },
+    "WritePackString": {
+      "name": "WritePackString",
+      "refLine": 171,
+      "docStart": 5806,
+      "docEnd": 5986,
+      "docs": {
+        "brief": "Packs a string into a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Packs a string into a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "ReadPackString": {
+      "name": "ReadPackString",
+      "refLine": 208,
+      "docStart": 6792,
+      "docEnd": 7066,
+      "docs": {
+        "brief": "Reads a string from a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a string from a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle, or bounds error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "ReadPackCell": {
+      "name": "ReadPackCell",
+      "refLine": 189,
+      "docStart": 6317,
+      "docEnd": 6509,
+      "docs": {
+        "brief": "Reads a cell from a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a cell from a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "return",
+            "text": "Cell value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle, or bounds error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        }
+      ]
+    },
+    "ReadPackFunction": {
+      "name": "ReadPackFunction",
+      "refLine": 217,
+      "docStart": 7139,
+      "docEnd": 7349,
+      "docs": {
+        "brief": "Reads a function pointer from a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a function pointer from a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "return",
+            "text": "Function pointer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle, or bounds error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Function",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        }
+      ]
+    },
+    "WritePackFloat": {
+      "name": "WritePackFloat",
+      "refLine": 162,
+      "docStart": 5571,
+      "docEnd": 5749,
+      "docs": {
+        "brief": "Packs a float into a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Packs a float into a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:val",
+            "text": "Float to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "val",
+          "decl": "float val",
+          "default": null
+        }
+      ]
+    },
+    "GetPackPosition": {
+      "name": "GetPackPosition",
+      "refLine": 235,
+      "docStart": 7664,
+      "docEnd": 7917,
+      "docs": {
+        "brief": "Returns the read or write position in a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the read or write position in a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "return",
+            "text": "Position in the data pack, only usable with calls to SetPackPosition."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "DataPackPos",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        }
+      ]
+    },
+    "WritePackFunction": {
+      "name": "WritePackFunction",
+      "refLine": 180,
+      "docStart": 6051,
+      "docEnd": 6251,
+      "docs": {
+        "brief": "Packs a function pointer into a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Packs a function pointer into a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:fktptr",
+            "text": "Function pointer to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "Function",
+          "name": "fktptr",
+          "decl": "Function fktptr",
+          "default": null
+        }
+      ]
+    },
+    "ResetPack": {
+      "name": "ResetPack",
+      "refLine": 226,
+      "docStart": 7401,
+      "docEnd": 7605,
+      "docs": {
+        "brief": "Resets the position in a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resets the position in a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:clear",
+            "text": "If true, clears the contained data."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "clear",
+          "decl": "bool clear",
+          "default": "false"
+        }
+      ]
+    },
+    "SetPackPosition": {
+      "name": "SetPackPosition",
+      "refLine": 244,
+      "docStart": 7971,
+      "docEnd": 8276,
+      "docs": {
+        "brief": "Sets the read/write position in a data pack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the read/write position in a data pack."
+          },
+          {
+            "tag": "param:pack",
+            "text": "Handle to the data pack."
+          },
+          {
+            "tag": "param:position",
+            "text": "New position to set. Must have been previously retrieved from a call to GetPackPosition."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid handle, or position is beyond the pack bounds."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pack",
+          "decl": "Handle pack",
+          "default": null
+        },
+        {
+          "type": "DataPackPos",
+          "name": "position",
+          "decl": "DataPackPos position",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "DataPack": {
+      "name": "DataPack",
+      "refLine": 45,
+      "docStart": 1737,
+      "docEnd": 1810,
+      "docs": {
+        "brief": "A DataPack allows serializing multiple variables into a single stream.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A DataPack allows serializing multiple variables into a single stream."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "WriteFunction": {
+          "name": "WriteFunction",
+          "refLine": 72,
+          "docStart": 2650,
+          "docEnd": 2846,
+          "docs": {
+            "brief": "Packs a function pointer into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs a function pointer into a data pack."
+              },
+              {
+                "tag": "param:fktptr",
+                "text": "Function pointer to add."
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "Function",
+              "name": "fktptr",
+              "decl": "Function fktptr",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "DataPack": {
+          "name": "DataPack",
+          "refLine": 48,
+          "docStart": 1845,
+          "docEnd": 1872,
+          "docs": {
+            "brief": "Creates a new data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new data pack."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "DataPack",
+          "arguments": []
+        },
+        "Reset": {
+          "name": "Reset",
+          "refLine": 124,
+          "docStart": 4605,
+          "docEnd": 4710,
+          "docs": {
+            "brief": "Resets the position in a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Resets the position in a data pack."
+              },
+              {
+                "tag": "param:clear",
+                "text": "If true, clears the contained data."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "clear",
+              "decl": "bool clear",
+              "default": "false"
+            }
+          ]
+        },
+        "ReadFloatArray": {
+          "name": "ReadFloatArray",
+          "refLine": 119,
+          "docStart": 4381,
+          "docEnd": 4536,
+          "docs": {
+            "brief": "Reads an array of floats from a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an array of floats from a data pack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination buffer."
+              },
+              {
+                "tag": "param:count",
+                "text": "Maximum length of output buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[]",
+              "name": "buffer",
+              "decl": "float[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "count",
+              "decl": "int count",
+              "default": null
+            }
+          ]
+        },
+        "WriteString": {
+          "name": "WriteString",
+          "refLine": 66,
+          "docStart": 2396,
+          "docEnd": 2572,
+          "docs": {
+            "brief": "Packs a string into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs a string into a data pack."
+              },
+              {
+                "tag": "param:str",
+                "text": "String to add."
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "str",
+              "decl": "const char[] str",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "ReadFloat": {
+          "name": "ReadFloat",
+          "refLine": 96,
+          "docStart": 3686,
+          "docEnd": 3762,
+          "docs": {
+            "brief": "Reads a float from a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a float from a data pack."
+              },
+              {
+                "tag": "return",
+                "text": "Float at this position"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": []
+        },
+        "WriteFloat": {
+          "name": "WriteFloat",
+          "refLine": 60,
+          "docStart": 2152,
+          "docEnd": 2326,
+          "docs": {
+            "brief": "Packs a float into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs a float into a data pack."
+              },
+              {
+                "tag": "param:val",
+                "text": "Float to add."
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "val",
+              "decl": "float val",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "IsReadable": {
+          "name": "IsReadable",
+          "refLine": 130,
+          "docStart": 4761,
+          "docEnd": 4956,
+          "docs": {
+            "brief": "Returns whether or not a specified number of bytes from the data pack\nposition to the end can be read.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not a specified number of bytes from the data pack\nposition to the end can be read."
+              },
+              {
+                "tag": "param:unused",
+                "text": "Unused variable. Exists for backwards compatability."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "unused",
+              "decl": "int unused",
+              "default": "0"
+            }
+          ]
+        },
+        "WriteCellArray": {
+          "name": "WriteCellArray",
+          "refLine": 79,
+          "docStart": 2925,
+          "docEnd": 3154,
+          "docs": {
+            "brief": "Packs an array of cells into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs an array of cells into a data pack."
+              },
+              {
+                "tag": "param:array",
+                "text": "Array to add."
+              },
+              {
+                "tag": "param:count",
+                "text": "Number of elements"
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const any[]",
+              "name": "array",
+              "decl": "const any[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "count",
+              "decl": "int count",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "ReadCell": {
+          "name": "ReadCell",
+          "refLine": 91,
+          "docStart": 3573,
+          "docEnd": 3649,
+          "docs": {
+            "brief": "Reads a cell from a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a cell from a data pack."
+              },
+              {
+                "tag": "return",
+                "text": "A cell at this position"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": []
+        },
+        "ReadString": {
+          "name": "ReadString",
+          "refLine": 102,
+          "docStart": 3802,
+          "docEnd": 3961,
+          "docs": {
+            "brief": "Reads a string from a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a string from a data pack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination string buffer."
+              },
+              {
+                "tag": "param:maxlen",
+                "text": "Maximum length of output string buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlen",
+              "decl": "int maxlen",
+              "default": null
+            }
+          ]
+        },
+        "WriteCell": {
+          "name": "WriteCell",
+          "refLine": 54,
+          "docStart": 1905,
+          "docEnd": 2084,
+          "docs": {
+            "brief": "Packs a normal cell into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs a normal cell into a data pack."
+              },
+              {
+                "tag": "param:cell",
+                "text": "Cell to add."
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "cell",
+              "decl": "any cell",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "WriteFloatArray": {
+          "name": "WriteFloatArray",
+          "refLine": 86,
+          "docStart": 3247,
+          "docEnd": 3477,
+          "docs": {
+            "brief": "Packs an array of floats into a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Packs an array of floats into a data pack."
+              },
+              {
+                "tag": "param:array",
+                "text": "Array to add."
+              },
+              {
+                "tag": "param:count",
+                "text": "Number of elements"
+              },
+              {
+                "tag": "param:insert",
+                "text": "Determines whether mid-pack writes will insert instead of overwrite."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const float[]",
+              "name": "array",
+              "decl": "const float[] array",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "count",
+              "decl": "int count",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "insert",
+              "decl": "bool insert",
+              "default": "false"
+            }
+          ]
+        },
+        "ReadFunction": {
+          "name": "ReadFunction",
+          "refLine": 107,
+          "docStart": 4026,
+          "docEnd": 4120,
+          "docs": {
+            "brief": "Reads a function pointer from a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a function pointer from a data pack."
+              },
+              {
+                "tag": "return",
+                "text": "Function pointer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Function",
+          "arguments": []
+        },
+        "ReadCellArray": {
+          "name": "ReadCellArray",
+          "refLine": 113,
+          "docStart": 4166,
+          "docEnd": 4315,
+          "docs": {
+            "brief": "Reads an array of cells a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an array of cells a data pack."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination buffer."
+              },
+              {
+                "tag": "param:count",
+                "text": "Maximum length of output buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "any[]",
+              "name": "buffer",
+              "decl": "any[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "count",
+              "decl": "int count",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Position": {
+          "name": "Position",
+          "refLine": 133,
+          "docStart": 5011,
+          "docEnd": 5056,
+          "docs": {
+            "brief": "The read or write position in a data pack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The read or write position in a data pack."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "DataPackPos",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_datapack_included": {
+      "name": "_datapack_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "DataPackPos": {
+      "name": "DataPackPos",
+      "refLine": 42,
+      "docStart": 1660,
+      "docEnd": 1710,
+      "docs": {
+        "brief": "Opaque handle to a datapack position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Opaque handle to a datapack position."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {}
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,326 @@
+{
+  "functions": {},
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "KEVHELM_D_ITEM_SHORT": {
+      "name": "KEVHELM_D_ITEM_SHORT",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevhelmD\""
+    },
+    "BUMPMINE_T_ITEM_SHORT": {
+      "name": "BUMPMINE_T_ITEM_SHORT",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"bumpmine_t\""
+    },
+    "HELM_T_ITEM_SHORT": {
+      "name": "HELM_T_ITEM_SHORT",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"helmT\""
+    },
+    "HELM_D_ITEM_SHORT": {
+      "name": "HELM_D_ITEM_SHORT",
+      "refLine": 12,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"helmD\""
+    },
+    "SCOUT_ITEM_SHORT": {
+      "name": "SCOUT_ITEM_SHORT",
+      "refLine": 31,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"sg008\""
+    },
+    "KEVHELM_T_ITEM_SHORT": {
+      "name": "KEVHELM_T_ITEM_SHORT",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevhelmT\""
+    },
+    "AXE_T_ITEM_SHORT": {
+      "name": "AXE_T_ITEM_SHORT",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"axe_t\""
+    },
+    "SPANNER_T_ITEM_SHORT": {
+      "name": "SPANNER_T_ITEM_SHORT",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"spanner_t\""
+    },
+    "KEVHELM_ITEM_SHORT": {
+      "name": "KEVHELM_ITEM_SHORT",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevhelm\""
+    },
+    "_ttt_weapons_included": {
+      "name": "_ttt_weapons_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "AK_ITEM_SHORT": {
+      "name": "AK_ITEM_SHORT",
+      "refLine": 28,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"ak47\""
+    },
+    "BREACHCHARGE_ITEM_SHORT": {
+      "name": "BREACHCHARGE_ITEM_SHORT",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"breach\""
+    },
+    "KEV_ITEM_SHORT": {
+      "name": "KEV_ITEM_SHORT",
+      "refLine": 6,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevlar\""
+    },
+    "HEAVY_T_ITEM_SHORT": {
+      "name": "HEAVY_T_ITEM_SHORT",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"heavyT\""
+    },
+    "M4_ITEM_SHORT": {
+      "name": "M4_ITEM_SHORT",
+      "refLine": 25,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"m4a1s\""
+    },
+    "BUMPMINE_D_ITEM_SHORT": {
+      "name": "BUMPMINE_D_ITEM_SHORT",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"bumpmine_d\""
+    },
+    "AWP_ITEM_SHORT": {
+      "name": "AWP_ITEM_SHORT",
+      "refLine": 26,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"awp\""
+    },
+    "DEAGLE_ITEM_SHORT": {
+      "name": "DEAGLE_ITEM_SHORT",
+      "refLine": 29,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"deagle\""
+    },
+    "HAMMER_ITEM_SHORT": {
+      "name": "HAMMER_ITEM_SHORT",
+      "refLine": 32,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"hammer\""
+    },
+    "USP_ITEM_SHORT": {
+      "name": "USP_ITEM_SHORT",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"usps\""
+    },
+    "SPANNER_ITEM_SHORT": {
+      "name": "SPANNER_ITEM_SHORT",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"spanner\""
+    },
+    "KEV_D_ITEM_SHORT": {
+      "name": "KEV_D_ITEM_SHORT",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevlarD\""
+    },
+    "HELM_ITEM_SHORT": {
+      "name": "HELM_ITEM_SHORT",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"helm\""
+    },
+    "HEAVY_D_ITEM_SHORT": {
+      "name": "HEAVY_D_ITEM_SHORT",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"heavyD\""
+    },
+    "HEAVY_ITEM_SHORT": {
+      "name": "HEAVY_ITEM_SHORT",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"heavy\""
+    },
+    "AXE_D_ITEM_SHORT": {
+      "name": "AXE_D_ITEM_SHORT",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"axe_d\""
+    },
+    "AXE_ITEM_SHORT": {
+      "name": "AXE_ITEM_SHORT",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"axe\""
+    },
+    "REVOLVER_ITEM_SHORT": {
+      "name": "REVOLVER_ITEM_SHORT",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"revolver\""
+    },
+    "HAMMER_D_ITEM_SHORT": {
+      "name": "HAMMER_D_ITEM_SHORT",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"hammer_d\""
+    },
+    "HAMMER_T_ITEM_SHORT": {
+      "name": "HAMMER_T_ITEM_SHORT",
+      "refLine": 34,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"hammer_t\""
+    },
+    "SPANNER_D_ITEM_SHORT": {
+      "name": "SPANNER_D_ITEM_SHORT",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"spanner_d\""
+    },
+    "KEV_T_ITEM_SHORT": {
+      "name": "KEV_T_ITEM_SHORT",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"kevlarT\""
+    },
+    "BUMPMINE_ITEM_SHORT": {
+      "name": "BUMPMINE_ITEM_SHORT",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"bumpmine\""
+    },
+    "KF_ITEM_SHORT": {
+      "name": "KF_ITEM_SHORT",
+      "refLine": 27,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"1knife\""
+    },
+    "MP5SD_ITEM_SHORT": {
+      "name": "MP5SD_ITEM_SHORT",
+      "refLine": 24,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"mp5sd\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

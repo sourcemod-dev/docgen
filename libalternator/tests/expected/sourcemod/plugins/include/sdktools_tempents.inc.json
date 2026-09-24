@@ -1,0 +1,914 @@
+{
+  "functions": {
+    "TE_SendToAll": {
+      "name": "TE_SendToAll",
+      "refLine": 204,
+      "docStart": 6680,
+      "docEnd": 6831,
+      "docs": {
+        "brief": "Broadcasts the current temp entity to all clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Broadcasts the current temp entity to all clients."
+          },
+          {
+            "tag": "note",
+            "text": "See TE_Start()."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds to send the TE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TE_ReadNum": {
+      "name": "TE_ReadNum",
+      "refLine": 99,
+      "docStart": 3398,
+      "docEnd": 3593,
+      "docs": {
+        "brief": "Reads an integer value in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an integer value in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "return",
+            "text": "Property value."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "TE_Start": {
+      "name": "TE_Start",
+      "refLine": 73,
+      "docStart": 2726,
+      "docEnd": 2868,
+      "docs": {
+        "brief": "Starts a temp entity transmission.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a temp entity transmission."
+          },
+          {
+            "tag": "param:te_name",
+            "text": "TE name."
+          },
+          {
+            "tag": "error",
+            "text": "Temp Entity name not available."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "te_name",
+          "decl": "const char[] te_name",
+          "default": null
+        }
+      ]
+    },
+    "TE_WriteFloat": {
+      "name": "TE_WriteFloat",
+      "refLine": 126,
+      "docStart": 4199,
+      "docEnd": 4414,
+      "docs": {
+        "brief": "Sets a floating point number in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a floating point number in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point number to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "RemoveTempEntHook": {
+      "name": "RemoveTempEntHook",
+      "refLine": 65,
+      "docStart": 2432,
+      "docEnd": 2655,
+      "docs": {
+        "brief": "Removes a temp entity hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a temp entity hook."
+          },
+          {
+            "tag": "param:te_name",
+            "text": "TE name to unhook."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function used for the hook."
+          },
+          {
+            "tag": "error",
+            "text": "Temp Entity name not available or invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "te_name",
+          "decl": "const char[] te_name",
+          "default": null
+        },
+        {
+          "type": "TEHook",
+          "name": "hook",
+          "decl": "TEHook hook",
+          "default": null
+        }
+      ]
+    },
+    "TE_ReadFloat": {
+      "name": "TE_ReadFloat",
+      "refLine": 135,
+      "docStart": 4478,
+      "docEnd": 4680,
+      "docs": {
+        "brief": "Reads a floating point number in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a floating point number in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "return",
+            "text": "Property value."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "TE_ReadVector": {
+      "name": "TE_ReadVector",
+      "refLine": 153,
+      "docStart": 4991,
+      "docEnd": 5178,
+      "docs": {
+        "brief": "Reads a vector in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a vector in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:vector",
+            "text": "Vector to read."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vector",
+          "decl": "float vector[3]",
+          "default": null
+        }
+      ]
+    },
+    "TE_WriteAngles": {
+      "name": "TE_WriteAngles",
+      "refLine": 162,
+      "docStart": 5246,
+      "docEnd": 5431,
+      "docs": {
+        "brief": "Sets a QAngle in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a QAngle in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Angles to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angles",
+          "decl": "const float angles[3]",
+          "default": null
+        }
+      ]
+    },
+    "TE_ReadEnt": {
+      "name": "TE_ReadEnt",
+      "refLine": 117,
+      "docStart": 3917,
+      "docEnd": 4152,
+      "docs": {
+        "brief": "Reads an entity value in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an entity value in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "return",
+            "text": "Property value as backwards compatible entity reference."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    },
+    "TE_WriteEncodedEnt": {
+      "name": "TE_WriteEncodedEnt",
+      "refLine": 192,
+      "docStart": 6262,
+      "docEnd": 6525,
+      "docs": {
+        "brief": "Sets an encoded entity index in the current temp entity.\n(This is usually used for m_nStartEntity and m_nEndEntity).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an encoded entity index in the current temp entity.\n(This is usually used for m_nStartEntity and m_nEndEntity)."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "TE_WriteFloatArray": {
+      "name": "TE_WriteFloatArray",
+      "refLine": 172,
+      "docStart": 5506,
+      "docEnd": 5762,
+      "docs": {
+        "brief": "Sets an array of floats in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an array of floats in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array of values to copy."
+          },
+          {
+            "tag": "param:arraySize",
+            "text": "Number of values to copy."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const float[]",
+          "name": "array",
+          "decl": "const float[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "arraySize",
+          "decl": "int arraySize",
+          "default": null
+        }
+      ]
+    },
+    "TE_Send": {
+      "name": "TE_Send",
+      "refLine": 182,
+      "docStart": 5854,
+      "docEnd": 6182,
+      "docs": {
+        "brief": "Sends the current temp entity to one or more clients.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends the current temp entity to one or more clients."
+          },
+          {
+            "tag": "param:clients",
+            "text": "Array containing player indexes to broadcast to."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of players in the array."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds to send the TE."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "clients",
+          "decl": "const int[] clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numClients",
+          "decl": "int numClients",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TE_WriteVector": {
+      "name": "TE_WriteVector",
+      "refLine": 144,
+      "docStart": 4731,
+      "docEnd": 4916,
+      "docs": {
+        "brief": "Sets a vector in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a vector in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:vector",
+            "text": "Vector to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vector",
+          "decl": "const float vector[3]",
+          "default": null
+        }
+      ]
+    },
+    "TE_SendToClient": {
+      "name": "TE_SendToClient",
+      "refLine": 226,
+      "docStart": 7079,
+      "docEnd": 7331,
+      "docs": {
+        "brief": "Sends the current TE to only a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends the current TE to only a client."
+          },
+          {
+            "tag": "note",
+            "text": "See TE_Start()."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to send to."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds to send the TE."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TE_WriteEnt": {
+      "name": "TE_WriteEnt",
+      "refLine": 108,
+      "docStart": 3640,
+      "docEnd": 3857,
+      "docs": {
+        "brief": "Sets an entity value in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an entity value in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Entity reference or index value to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "TE_SendToAllInRange": {
+      "name": "TE_SendToAllInRange",
+      "refLine": 245,
+      "docStart": 7473,
+      "docEnd": 7828,
+      "docs": {
+        "brief": "Sends the current TE to all clients that are in\nvisible or audible range of the origin.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends the current TE to all clients that are in\nvisible or audible range of the origin."
+          },
+          {
+            "tag": "note",
+            "text": "See TE_Start()."
+          },
+          {
+            "tag": "note",
+            "text": "See GetClientsInRange()"
+          },
+          {
+            "tag": "param:origin",
+            "text": "Coordinates from which to test range."
+          },
+          {
+            "tag": "param:rangeType",
+            "text": "Range type to use for filtering clients."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds to send the TE."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "origin",
+          "decl": "const float origin[3]",
+          "default": null
+        },
+        {
+          "type": "ClientRangeType",
+          "name": "rangeType",
+          "decl": "ClientRangeType rangeType",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "TE_WriteNum": {
+      "name": "TE_WriteNum",
+      "refLine": 90,
+      "docStart": 3138,
+      "docEnd": 3338,
+      "docs": {
+        "brief": "Sets an integer value in the current temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an integer value in the current temp entity."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "param:value",
+            "text": "Integer value to set."
+          },
+          {
+            "tag": "error",
+            "text": "Property not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "AddTempEntHook": {
+      "name": "AddTempEntHook",
+      "refLine": 56,
+      "docStart": 2151,
+      "docEnd": 2364,
+      "docs": {
+        "brief": "Hooks a temp entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hooks a temp entity."
+          },
+          {
+            "tag": "param:te_name",
+            "text": "TE name to hook."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Function to use as a hook."
+          },
+          {
+            "tag": "error",
+            "text": "Temp Entity name not available or invalid function hook."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "te_name",
+          "decl": "const char[] te_name",
+          "default": null
+        },
+        {
+          "type": "TEHook",
+          "name": "hook",
+          "decl": "TEHook hook",
+          "default": null
+        }
+      ]
+    },
+    "TE_IsValidProp": {
+      "name": "TE_IsValidProp",
+      "refLine": 81,
+      "docStart": 2917,
+      "docEnd": 3086,
+      "docs": {
+        "brief": "Checks if a certain TE property exists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Checks if a certain TE property exists."
+          },
+          {
+            "tag": "param:prop",
+            "text": "Property to use."
+          },
+          {
+            "tag": "return",
+            "text": "True if the property exists, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "prop",
+          "decl": "const char[] prop",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_tempents_included": {
+      "name": "_sdktools_tempents_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {
+    "TEHook": {
+      "name": "TEHook",
+      "refLine": 47,
+      "docStart": 1659,
+      "docEnd": 2039,
+      "docs": {
+        "brief": "Called when a temp entity is going to be sent.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a temp entity is going to be sent."
+          },
+          {
+            "tag": "param:te_name",
+            "text": "TE name."
+          },
+          {
+            "tag": "param:Players",
+            "text": "Array containing target player indexes."
+          },
+          {
+            "tag": "param:numClients",
+            "text": "Number of players in the array."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Delay in seconds to send the TE."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue to allow the transmission of the TE, Plugin_Stop to block it."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(const char[] te_name, const int[] Players, int numClients, float delay)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "const char[]",
+            "name": "te_name",
+            "decl": "const char[] te_name",
+            "default": null
+          },
+          {
+            "type": "const int[]",
+            "name": "Players",
+            "decl": "const int[] Players",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "numClients",
+            "decl": "int numClients",
+            "default": null
+          },
+          {
+            "type": "float",
+            "name": "delay",
+            "decl": "float delay",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "functions": {
+    "TTT_SetHasteTime": {
+      "name": "TTT_SetHasteTime",
+      "refLine": 8,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_haste_SetNTVOptional": {
+      "name": "__pl_ttt_haste_SetNTVOptional",
+      "refLine": 24,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_AddHasteTime": {
+      "name": "TTT_AddHasteTime",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "TTT_RemoveHasteTime": {
+      "name": "TTT_RemoveHasteTime",
+      "refLine": 10,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": null
+        }
+      ]
+    },
+    "TTT_IsHasteActive": {
+      "name": "TTT_IsHasteActive",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_haste_included": {
+      "name": "_ttt_haste_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

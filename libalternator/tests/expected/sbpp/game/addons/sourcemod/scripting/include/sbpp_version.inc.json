@@ -1,0 +1,92 @@
+{
+  "functions": {},
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MINOR_REVISION": {
+      "name": "MINOR_REVISION",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1"
+    },
+    "SOURCEBANSPP_VERSION_MAJOR": {
+      "name": "SOURCEBANSPP_VERSION_MAJOR",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "MAJOR_REVISION"
+    },
+    "SB_VERSION_PATCH": {
+      "name": "SB_VERSION_PATCH",
+      "refLine": 21,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"0\""
+    },
+    "MAJOR_REVISION": {
+      "name": "MAJOR_REVISION",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "2"
+    },
+    "SB_VERSION": {
+      "name": "SB_VERSION",
+      "refLine": 23,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"dev\""
+    },
+    "SB_VERSION_MAJOR": {
+      "name": "SB_VERSION_MAJOR",
+      "refLine": 19,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"dev\""
+    },
+    "_sbpp_version_included": {
+      "name": "_sbpp_version_included",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SOURCEBANSPP_VERSION_MINOR": {
+      "name": "SOURCEBANSPP_VERSION_MINOR",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "MINOR_REVISION"
+    },
+    "SB_VERSION_MINOR": {
+      "name": "SB_VERSION_MINOR",
+      "refLine": 20,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"0\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

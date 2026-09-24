@@ -1,0 +1,3355 @@
+{
+  "functions": {
+    "PbReadRepeatedMessage": {
+      "name": "PbReadRepeatedMessage",
+      "refLine": 592,
+      "docStart": 24556,
+      "docEnd": 24954,
+      "docs": {
+        "brief": "Retrieve a handle to an embedded protobuf message in a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a handle to an embedded protobuf message in a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the repeated field."
+          },
+          {
+            "tag": "return",
+            "text": "protobuf handle to embedded message."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "PbRemoveRepeatedFieldValue": {
+      "name": "PbRemoveRepeatedFieldValue",
+      "refLine": 571,
+      "docStart": 23764,
+      "docEnd": 24075,
+      "docs": {
+        "brief": "Removes a value by index from a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a value by index from a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "PbReadFloat": {
+      "name": "PbReadFloat",
+      "refLine": 316,
+      "docStart": 13495,
+      "docEnd": 13844,
+      "docs": {
+        "brief": "Reads a float or downcasted double from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a float or downcasted double from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "return",
+            "text": "Float value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbAddAngle": {
+      "name": "PbAddAngle",
+      "refLine": 541,
+      "docStart": 22633,
+      "docEnd": 22927,
+      "docs": {
+        "brief": "Add an XYZ angle to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an XYZ angle to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Angle value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angle",
+          "decl": "const float angle[3]",
+          "default": null
+        }
+      ]
+    },
+    "PbAddColor": {
+      "name": "PbAddColor",
+      "refLine": 531,
+      "docStart": 22258,
+      "docEnd": 22553,
+      "docs": {
+        "brief": "Add an RGBA color to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an RGBA color to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:color",
+            "text": "Color value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "color",
+          "decl": "const int color[4]",
+          "default": null
+        }
+      ]
+    },
+    "PbSetVector2D": {
+      "name": "PbSetVector2D",
+      "refLine": 481,
+      "docStart": 20291,
+      "docEnd": 20624,
+      "docs": {
+        "brief": "Sets an XY vector on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an XY vector on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[2]",
+          "name": "vec",
+          "decl": "const float vec[2]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbReadBool": {
+      "name": "PbReadBool",
+      "refLine": 327,
+      "docStart": 13941,
+      "docEnd": 14270,
+      "docs": {
+        "brief": "Reads a bool from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a bool from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "return",
+            "text": "Boolean value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbReadString": {
+      "name": "PbReadString",
+      "refLine": 339,
+      "docStart": 14365,
+      "docEnd": 14768,
+      "docs": {
+        "brief": "Reads a string from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a string from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbAddVector": {
+      "name": "PbAddVector",
+      "refLine": 551,
+      "docStart": 23009,
+      "docEnd": 23305,
+      "docs": {
+        "brief": "Add an XYZ vector to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an XYZ vector to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "PbSetVector": {
+      "name": "PbSetVector",
+      "refLine": 470,
+      "docStart": 19841,
+      "docEnd": 20175,
+      "docs": {
+        "brief": "Sets an XYZ vector on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an XYZ vector on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbReadMessage": {
+      "name": "PbReadMessage",
+      "refLine": 581,
+      "docStart": 24162,
+      "docEnd": 24491,
+      "docs": {
+        "brief": "Retrieve a handle to an embedded protobuf message in a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve a handle to an embedded protobuf message in a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "return",
+            "text": "protobuf handle to embedded message."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        }
+      ]
+    },
+    "PbReadInt": {
+      "name": "PbReadInt",
+      "refLine": 305,
+      "docStart": 13021,
+      "docEnd": 13402,
+      "docs": {
+        "brief": "Reads an int32, uint32, sint32, fixed32, sfixed32, or enum value from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an int32, uint32, sint32, fixed32, sfixed32, or enum value from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "return",
+            "text": "Integer value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbSetInt": {
+      "name": "PbSetInt",
+      "refLine": 404,
+      "docStart": 17136,
+      "docEnd": 17516,
+      "docs": {
+        "brief": "Sets an int32, uint32, sint32, fixed32, sfixed32, or enum value on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an int32, uint32, sint32, fixed32, sfixed32, or enum value on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Integer value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbSetString": {
+      "name": "PbSetString",
+      "refLine": 437,
+      "docStart": 18499,
+      "docEnd": 18828,
+      "docs": {
+        "brief": "Sets a string on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbReadColor": {
+      "name": "PbReadColor",
+      "refLine": 350,
+      "docStart": 14895,
+      "docEnd": 15243,
+      "docs": {
+        "brief": "Reads an RGBA color value from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an RGBA color value from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination color buffer."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int[4]",
+          "name": "buffer",
+          "decl": "int buffer[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbAddVector2D": {
+      "name": "PbAddVector2D",
+      "refLine": 561,
+      "docStart": 23386,
+      "docEnd": 23681,
+      "docs": {
+        "brief": "Add an XY vector to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an XY vector to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[2]",
+          "name": "vec",
+          "decl": "const float vec[2]",
+          "default": null
+        }
+      ]
+    },
+    "PbAddFloat": {
+      "name": "PbAddFloat",
+      "refLine": 501,
+      "docStart": 21153,
+      "docEnd": 21452,
+      "docs": {
+        "brief": "Add a float or double to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a float or double to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Float value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "PbReadVector": {
+      "name": "PbReadVector",
+      "refLine": 372,
+      "docStart": 15814,
+      "docEnd": 16163,
+      "docs": {
+        "brief": "Reads an XYZ vector value from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an XYZ vector value from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination vector buffer."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "buffer",
+          "decl": "float buffer[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbReadVector2D": {
+      "name": "PbReadVector2D",
+      "refLine": 383,
+      "docStart": 16277,
+      "docEnd": 16625,
+      "docs": {
+        "brief": "Reads an XY vector value from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an XY vector value from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination vector buffer."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "float[2]",
+          "name": "buffer",
+          "decl": "float buffer[2]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbSetColor": {
+      "name": "PbSetColor",
+      "refLine": 448,
+      "docStart": 18944,
+      "docEnd": 19277,
+      "docs": {
+        "brief": "Sets an RGBA color on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an RGBA color on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:color",
+            "text": "Color value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const int[4]",
+          "name": "color",
+          "decl": "const int color[4]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbAddMessage": {
+      "name": "PbAddMessage",
+      "refLine": 602,
+      "docStart": 25038,
+      "docEnd": 25373,
+      "docs": {
+        "brief": "Adds an embedded protobuf message to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds an embedded protobuf message to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "return",
+            "text": "protobuf handle to added, embedded message."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        }
+      ]
+    },
+    "PbReadAngle": {
+      "name": "PbReadAngle",
+      "refLine": 361,
+      "docStart": 15354,
+      "docEnd": 15701,
+      "docs": {
+        "brief": "Reads an XYZ angle value from a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an XYZ angle value from a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination angle buffer."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "buffer",
+          "decl": "float buffer[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbSetBool": {
+      "name": "PbSetBool",
+      "refLine": 426,
+      "docStart": 18065,
+      "docEnd": 18393,
+      "docs": {
+        "brief": "Sets a bool on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a bool on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Boolean value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbSetAngle": {
+      "name": "PbSetAngle",
+      "refLine": 459,
+      "docStart": 19392,
+      "docEnd": 19724,
+      "docs": {
+        "brief": "Sets an XYZ angle on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an XYZ angle on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Angle value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "angle",
+          "decl": "const float angle[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbAddString": {
+      "name": "PbAddString",
+      "refLine": 521,
+      "docStart": 21886,
+      "docEnd": 22177,
+      "docs": {
+        "brief": "Add a string to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a string to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "PbSetFloat": {
+      "name": "PbSetFloat",
+      "refLine": 415,
+      "docStart": 17620,
+      "docEnd": 17957,
+      "docs": {
+        "brief": "Sets a float or double on a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a float or double on a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Float value to set."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index into repeated field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": "-1"
+        }
+      ]
+    },
+    "PbGetRepeatedFieldCount": {
+      "name": "PbGetRepeatedFieldCount",
+      "refLine": 393,
+      "docStart": 16741,
+      "docEnd": 17064,
+      "docs": {
+        "brief": "Gets the number of elements in a repeated field of a protobuf message.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the number of elements in a repeated field of a protobuf message."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "return",
+            "text": "Number of elements in the field."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        }
+      ]
+    },
+    "PbAddInt": {
+      "name": "PbAddInt",
+      "refLine": 491,
+      "docStart": 20742,
+      "docEnd": 21084,
+      "docs": {
+        "brief": "Add an int32, uint32, sint32, fixed32, sfixed32, or enum value to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add an int32, uint32, sint32, fixed32, sfixed32, or enum value to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Integer value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "PbAddBool": {
+      "name": "PbAddBool",
+      "refLine": 511,
+      "docStart": 21525,
+      "docEnd": 21815,
+      "docs": {
+        "brief": "Add a bool to a protobuf message repeated field.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a bool to a protobuf message repeated field."
+          },
+          {
+            "tag": "param:pb",
+            "text": "protobuf handle."
+          },
+          {
+            "tag": "param:field",
+            "text": "Field name."
+          },
+          {
+            "tag": "param:value",
+            "text": "Boolean value to add."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, non-existent field, or incorrect field type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "pb",
+          "decl": "Handle pb",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "field",
+          "decl": "const char[] field",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Protobuf": {
+      "name": "Protobuf",
+      "refLine": 40,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetRepeatedFieldCount": {
+          "name": "GetRepeatedFieldCount",
+          "refLine": 121,
+          "docStart": 5171,
+          "docEnd": 5406,
+          "docs": {
+            "brief": "Gets the number of elements in a repeated field of a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets the number of elements in a repeated field of a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "return",
+                "text": "Number of elements in the field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or non-repeated field."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            }
+          ]
+        },
+        "ReadVector": {
+          "name": "ReadVector",
+          "refLine": 106,
+          "docStart": 4388,
+          "docEnd": 4689,
+          "docs": {
+            "brief": "Reads an XYZ vector value from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an XYZ vector value from a protobuf message."
+              },
+              {
+                "tag": "param:pb",
+                "text": "protobuf handle."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination vector buffer."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "float[3]",
+              "name": "buffer",
+              "decl": "float buffer[3]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetVector2D": {
+          "name": "SetVector2D",
+          "refLine": 200,
+          "docStart": 8692,
+          "docEnd": 8937,
+          "docs": {
+            "brief": "Sets an XY vector on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an XY vector on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[2]",
+              "name": "vec",
+              "decl": "const float vec[2]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 152,
+          "docStart": 6573,
+          "docEnd": 6822,
+          "docs": {
+            "brief": "Sets a float or double on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a float or double on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Float value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "ReadVector2D": {
+          "name": "ReadVector2D",
+          "refLine": 114,
+          "docStart": 4799,
+          "docEnd": 5059,
+          "docs": {
+            "brief": "Reads an XY vector value from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an XY vector value from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination vector buffer."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "float[2]",
+              "name": "buffer",
+              "decl": "float buffer[2]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "AddColor": {
+          "name": "AddColor",
+          "refLine": 242,
+          "docStart": 10550,
+          "docEnd": 10759,
+          "docs": {
+            "brief": "Add an RGBA color to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an RGBA color to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:color",
+                "text": "Color value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const int[4]",
+              "name": "color",
+              "decl": "const int color[4]",
+              "default": null
+            }
+          ]
+        },
+        "ReadString": {
+          "name": "ReadString",
+          "refLine": 81,
+          "docStart": 3217,
+          "docEnd": 3530,
+          "docs": {
+            "brief": "Reads a string from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a string from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination string buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of output string buffer."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 160,
+          "docStart": 6926,
+          "docEnd": 7166,
+          "docs": {
+            "brief": "Sets a bool on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a bool on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Boolean value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "AddBool": {
+          "name": "AddBool",
+          "refLine": 228,
+          "docStart": 9997,
+          "docEnd": 10201,
+          "docs": {
+            "brief": "Add a bool to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add a bool to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Boolean value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt64": {
+          "name": "SetInt64",
+          "refLine": 144,
+          "docStart": 6159,
+          "docEnd": 6468,
+          "docs": {
+            "brief": "Sets an int64, uint64, sint64, fixed64, sfixed64 on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an int64, uint64, sint64, fixed64, sfixed64 on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Large integer value to set (0=High bits, 1=Low bits)."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int[2]",
+              "name": "value",
+              "decl": "int value[2]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "RemoveRepeatedFieldValue": {
+          "name": "RemoveRepeatedFieldValue",
+          "refLine": 270,
+          "docStart": 11696,
+          "docEnd": 11921,
+          "docs": {
+            "brief": "Removes a value by index from a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes a value by index from a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "ReadColor": {
+          "name": "ReadColor",
+          "refLine": 89,
+          "docStart": 3653,
+          "docEnd": 3913,
+          "docs": {
+            "brief": "Reads an RGBA color value from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an RGBA color value from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination color buffer."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int[4]",
+              "name": "buffer",
+              "decl": "int buffer[4]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "AddInt": {
+          "name": "AddInt",
+          "refLine": 207,
+          "docStart": 9051,
+          "docEnd": 9307,
+          "docs": {
+            "brief": "Add an int32, uint32, sint32, fixed32, sfixed32, or enum value to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an int32, uint32, sint32, fixed32, sfixed32, or enum value to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Integer value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "ReadMessage": {
+          "name": "ReadMessage",
+          "refLine": 277,
+          "docStart": 12004,
+          "docEnd": 12247,
+          "docs": {
+            "brief": "Retrieve a handle to an embedded protobuf message in a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve a handle to an embedded protobuf message in a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "return",
+                "text": "Protobuf handle to embedded message."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Protobuf",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            }
+          ]
+        },
+        "HasField": {
+          "name": "HasField",
+          "refLine": 128,
+          "docStart": 5474,
+          "docEnd": 5711,
+          "docs": {
+            "brief": "Returns whether or not the named, non-repeated field has a value set.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns whether or not the named, non-repeated field has a value set."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "return",
+                "text": "True if value has been set, else false."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or repeated field."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            }
+          ]
+        },
+        "AddFloat": {
+          "name": "AddFloat",
+          "refLine": 221,
+          "docStart": 9715,
+          "docEnd": 9928,
+          "docs": {
+            "brief": "Add a float or double to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add a float or double to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Float value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "AddInt64": {
+          "name": "AddInt64",
+          "refLine": 214,
+          "docStart": 9372,
+          "docEnd": 9645,
+          "docs": {
+            "brief": "Add an int64, uint64, sint64, fixed64, sfixed64 to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an int64, uint64, sint64, fixed64, sfixed64 to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Large integer value to add (0=High bits, 1=Low bits)."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int[2]",
+              "name": "value",
+              "decl": "int value[2]",
+              "default": null
+            }
+          ]
+        },
+        "AddVector2D": {
+          "name": "AddVector2D",
+          "refLine": 263,
+          "docStart": 11408,
+          "docEnd": 11617,
+          "docs": {
+            "brief": "Add an XY vector to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an XY vector to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[2]",
+              "name": "vec",
+              "decl": "const float vec[2]",
+              "default": null
+            }
+          ]
+        },
+        "AddMessage": {
+          "name": "AddMessage",
+          "refLine": 293,
+          "docStart": 12707,
+          "docEnd": 12956,
+          "docs": {
+            "brief": "Adds an embedded protobuf message to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Adds an embedded protobuf message to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "return",
+                "text": "Protobuf handle to added, embedded message."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Protobuf",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            }
+          ]
+        },
+        "AddString": {
+          "name": "AddString",
+          "refLine": 235,
+          "docStart": 10268,
+          "docEnd": 10473,
+          "docs": {
+            "brief": "Add a string to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add a string to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "AddVector": {
+          "name": "AddVector",
+          "refLine": 256,
+          "docStart": 11121,
+          "docEnd": 11331,
+          "docs": {
+            "brief": "Add an XYZ vector to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an XYZ vector to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "ReadInt": {
+          "name": "ReadInt",
+          "refLine": 48,
+          "docStart": 1721,
+          "docEnd": 2014,
+          "docs": {
+            "brief": "Reads an int32, uint32, sint32, fixed32, sfixed32, or enum value from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an int32, uint32, sint32, fixed32, sfixed32, or enum value from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value read."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetVector": {
+          "name": "SetVector",
+          "refLine": 192,
+          "docStart": 8334,
+          "docEnd": 8580,
+          "docs": {
+            "brief": "Sets an XYZ vector on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an XYZ vector on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "ReadInt64": {
+          "name": "ReadInt64",
+          "refLine": 56,
+          "docStart": 2103,
+          "docEnd": 2425,
+          "docs": {
+            "brief": "Reads an int64, uint64, sint64, fixed64, sfixed64 from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an int64, uint64, sint64, fixed64, sfixed64 from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Array to represent the large integer (0=High bits, 1=Low bits)."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int[2]",
+              "name": "value",
+              "decl": "int value[2]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "AddAngle": {
+          "name": "AddAngle",
+          "refLine": 249,
+          "docStart": 10835,
+          "docEnd": 11043,
+          "docs": {
+            "brief": "Add an XYZ angle to a protobuf message repeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Add an XYZ angle to a protobuf message repeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:angle",
+                "text": "Angle value to add."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "angle",
+              "decl": "const float angle[3]",
+              "default": null
+            }
+          ]
+        },
+        "ReadAngle": {
+          "name": "ReadAngle",
+          "refLine": 97,
+          "docStart": 4020,
+          "docEnd": 4279,
+          "docs": {
+            "brief": "Reads an XYZ angle value from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an XYZ angle value from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination angle buffer."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "float[3]",
+              "name": "buffer",
+              "decl": "float buffer[3]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 136,
+          "docStart": 5767,
+          "docEnd": 6059,
+          "docs": {
+            "brief": "Sets an int32, uint32, sint32, fixed32, sfixed32, or enum value on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an int32, uint32, sint32, fixed32, sfixed32, or enum value on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "Integer value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetAngle": {
+          "name": "SetAngle",
+          "refLine": 184,
+          "docStart": 7977,
+          "docEnd": 8221,
+          "docs": {
+            "brief": "Sets an XYZ angle on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an XYZ angle on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:angle",
+                "text": "Angle value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "angle",
+              "decl": "const float angle[3]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "ReadRepeatedMessage": {
+          "name": "ReadRepeatedMessage",
+          "refLine": 286,
+          "docStart": 12310,
+          "docEnd": 12625,
+          "docs": {
+            "brief": "Retrieve a handle to an embedded protobuf message in a protobuf message\nrepeated field.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve a handle to an embedded protobuf message in a protobuf message\nrepeated field."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the repeated field."
+              },
+              {
+                "tag": "return",
+                "text": "Protobuf handle to embedded message."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Protobuf",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "ReadFloat": {
+          "name": "ReadFloat",
+          "refLine": 64,
+          "docStart": 2531,
+          "docEnd": 2792,
+          "docs": {
+            "brief": "Reads a float or downcasted double from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a float or downcasted double from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "return",
+                "text": "Float value read."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 168,
+          "docStart": 7268,
+          "docEnd": 7509,
+          "docs": {
+            "brief": "Sets a string on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetColor": {
+          "name": "SetColor",
+          "refLine": 176,
+          "docStart": 7621,
+          "docEnd": 7866,
+          "docs": {
+            "brief": "Sets an RGBA color on a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an RGBA color on a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:color",
+                "text": "Color value to set."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "const int[4]",
+              "name": "color",
+              "decl": "const int color[4]",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        },
+        "ReadBool": {
+          "name": "ReadBool",
+          "refLine": 72,
+          "docStart": 2885,
+          "docEnd": 3126,
+          "docs": {
+            "brief": "Reads a bool from a protobuf message.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a bool from a protobuf message."
+              },
+              {
+                "tag": "param:field",
+                "text": "Field name."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index into repeated field."
+              },
+              {
+                "tag": "return",
+                "text": "Boolean value read."
+              },
+              {
+                "tag": "error",
+                "text": "Non-existent field, or incorrect field type."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "field",
+              "decl": "const char[] field",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": "-1"
+            }
+          ]
+        }
+      },
+      "properties": {}
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_protobuf_included": {
+      "name": "_protobuf_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "PB_FIELD_NOT_REPEATED": {
+      "name": "PB_FIELD_NOT_REPEATED",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "-1"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

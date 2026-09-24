@@ -1,0 +1,3594 @@
+{
+  "functions": {
+    "KvDeleteKey": {
+      "name": "KvDeleteKey",
+      "refLine": 562,
+      "docStart": 22983,
+      "docEnd": 23244,
+      "docs": {
+        "brief": "Removes the given key from the current position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes the given key from the current position."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if key did not exist."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        }
+      ]
+    },
+    "KvGetNameSymbol": {
+      "name": "KvGetNameSymbol",
+      "refLine": 721,
+      "docStart": 28771,
+      "docEnd": 29069,
+      "docs": {
+        "brief": "Finds a KeyValues id inside a KeyValues tree.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a KeyValues id inside a KeyValues tree."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key name."
+          },
+          {
+            "tag": "param:id",
+            "text": "Id of the found KeyValue."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if key not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "id",
+          "decl": "int& id",
+          "default": null
+        }
+      ]
+    },
+    "KvDeleteThis": {
+      "name": "KvDeleteThis",
+      "refLine": 579,
+      "docStart": 23303,
+      "docEnd": 24092,
+      "docs": {
+        "brief": "Removes the current sub-key and attempts to set the position\nto the sub-key after the removed one.  If no such sub-key exists,\nthe position will be the parent key in the traversal stack.\nGiven the sub-key having position \"N\" in the traversal stack, the\nremoval will always take place from position \"N-1.\"",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes the current sub-key and attempts to set the position\nto the sub-key after the removed one.  If no such sub-key exists,\nthe position will be the parent key in the traversal stack.\nGiven the sub-key having position \"N\" in the traversal stack, the\nremoval will always take place from position \"N-1.\""
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "return",
+            "text": "1 if removal succeeded and there was another key.\n0 if the current node was not contained in the\nprevious node, or no previous node exists.\n-1 if removal succeeded and there were no more keys,\nthus the state is as if KvGoBack() was called."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        }
+      ]
+    },
+    "KvSetSectionName": {
+      "name": "KvSetSectionName",
+      "refLine": 621,
+      "docStart": 25370,
+      "docEnd": 25540,
+      "docs": {
+        "brief": "Sets the current section name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current section name."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:section",
+            "text": "Section name."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "section",
+          "decl": "const char[] section",
+          "default": null
+        }
+      ]
+    },
+    "KvCopySubkeys": {
+      "name": "KvCopySubkeys",
+      "refLine": 698,
+      "docStart": 27952,
+      "docEnd": 28286,
+      "docs": {
+        "brief": "Makes a new copy of all subkeys in the origin KeyValues to\nthe destination KeyValues.\nNOTE: All KeyValues are processed from the current location not the root one.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Makes a new copy of all subkeys in the origin KeyValues to\nthe destination KeyValues.\nNOTE: All KeyValues are processed from the current location not the root one."
+          },
+          {
+            "tag": "param:origin",
+            "text": "Origin KeyValues Handle."
+          },
+          {
+            "tag": "param:dest",
+            "text": "Destination KeyValues Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "origin",
+          "decl": "Handle origin",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "dest",
+          "decl": "Handle dest",
+          "default": null
+        }
+      ]
+    },
+    "KvSetUInt64": {
+      "name": "KvSetUInt64",
+      "refLine": 397,
+      "docStart": 16663,
+      "docEnd": 16939,
+      "docs": {
+        "brief": "Sets a large integer value of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a large integer value of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "Large integer value (0=High bits, 1=Low bits)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const int[2]",
+          "name": "value",
+          "decl": "const int value[2]",
+          "default": null
+        }
+      ]
+    },
+    "KvGotoFirstSubKey": {
+      "name": "KvGotoFirstSubKey",
+      "refLine": 529,
+      "docStart": 21602,
+      "docEnd": 21977,
+      "docs": {
+        "brief": "Sets the current position in the KeyValues tree to the first sub key.\nThis native adds to the internal traversal stack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current position in the KeyValues tree to the first sub key.\nThis native adds to the internal traversal stack."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:keyOnly",
+            "text": "If false, non-keys will be traversed (values)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there was no first sub key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "keyOnly",
+          "decl": "bool keyOnly",
+          "default": "true"
+        }
+      ]
+    },
+    "KeyValuesToFile": {
+      "name": "KeyValuesToFile",
+      "refLine": 642,
+      "docStart": 25897,
+      "docEnd": 26192,
+      "docs": {
+        "brief": "Converts a KeyValues tree to a file.  The tree is dumped\nfrom the current position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a KeyValues tree to a file.  The tree is dumped\nfrom the current position."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to dump write to."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "KvSetFloat": {
+      "name": "KvSetFloat",
+      "refLine": 407,
+      "docStart": 17018,
+      "docEnd": 17271,
+      "docs": {
+        "brief": "Sets a floating point value of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a floating point value of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "KvGetVector": {
+      "name": "KvGetVector",
+      "refLine": 499,
+      "docStart": 20428,
+      "docEnd": 20780,
+      "docs": {
+        "brief": "Retrieves a vector value from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a vector value from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Destination vector to store the value in."
+          },
+          {
+            "tag": "param:defvalue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "defvalue",
+          "decl": "const float defvalue[3]",
+          "default": "{ 0.000000, 0.000000, 0.000000 }"
+        }
+      ]
+    },
+    "KvSetString": {
+      "name": "KvSetString",
+      "refLine": 377,
+      "docStart": 16041,
+      "docEnd": 16278,
+      "docs": {
+        "brief": "Sets a string value of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string value of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "KvJumpToKeySymbol": {
+      "name": "KvJumpToKeySymbol",
+      "refLine": 518,
+      "docStart": 21312,
+      "docEnd": 21547,
+      "docs": {
+        "brief": "Sets the current position in the KeyValues tree to the given key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current position in the KeyValues tree to the given key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:id",
+            "text": "KeyValues id."
+          },
+          {
+            "tag": "return",
+            "text": "True if the key exists, false if it does not."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "id",
+          "decl": "int id",
+          "default": null
+        }
+      ]
+    },
+    "KvGotoNextKey": {
+      "name": "KvGotoNextKey",
+      "refLine": 541,
+      "docStart": 22043,
+      "docEnd": 22505,
+      "docs": {
+        "brief": "Sets the current position in the KeyValues tree to the next sub key.\nThis native does NOT add to the internal traversal stack, and thus\nKvGoBack() is not needed for each successive call to this function.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current position in the KeyValues tree to the next sub key.\nThis native does NOT add to the internal traversal stack, and thus\nKvGoBack() is not needed for each successive call to this function."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:keyOnly",
+            "text": "If false, non-keys will be traversed (values)."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there was no next sub key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "keyOnly",
+          "decl": "bool keyOnly",
+          "default": "true"
+        }
+      ]
+    },
+    "KvGoBack": {
+      "name": "KvGoBack",
+      "refLine": 591,
+      "docStart": 24133,
+      "docEnd": 24621,
+      "docs": {
+        "brief": "Jumps back to the previous position.  Returns false if there are no\nprevious positions (i.e., at the root node with an empty traversal stack).\nThis should be called once for each successful Jump call, in order to return\nto the top node.  This function pops one node off the internal traversal stack.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Jumps back to the previous position.  Returns false if there are no\nprevious positions (i.e., at the root node with an empty traversal stack).\nThis should be called once for each successful Jump call, in order to return\nto the top node.  This function pops one node off the internal traversal stack."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there is no higher node."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        }
+      ]
+    },
+    "KvGetString": {
+      "name": "KvGetString",
+      "refLine": 442,
+      "docStart": 18100,
+      "docEnd": 18501,
+      "docs": {
+        "brief": "Retrieves a string value from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a string value from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store key value in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the value buffer."
+          },
+          {
+            "tag": "param:defvalue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defvalue",
+          "decl": "const char[] defvalue",
+          "default": "\"\""
+        }
+      ]
+    },
+    "KvSavePosition": {
+      "name": "KvSavePosition",
+      "refLine": 552,
+      "docStart": 22567,
+      "docEnd": 22939,
+      "docs": {
+        "brief": "Saves the current position in the traversal stack onto the traversal\nstack.  This can be useful if you wish to use KvGotoNextKey() and\nhave the previous key saved for backwards traversal.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Saves the current position in the traversal stack onto the traversal\nstack.  This can be useful if you wish to use KvGotoNextKey() and\nhave the previous key saved for backwards traversal."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if there is no higher node."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        }
+      ]
+    },
+    "KvNodesInStack": {
+      "name": "KvNodesInStack",
+      "refLine": 687,
+      "docStart": 27580,
+      "docEnd": 27909,
+      "docs": {
+        "brief": "Returns the position in the jump stack; I.e. the number of calls\nrequired for KvGoBack to return to the root node.  If at the root node,\n0 is returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the position in the jump stack; I.e. the number of calls\nrequired for KvGoBack to return to the root node.  If at the root node,\n0 is returned."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-root nodes in the jump stack."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        }
+      ]
+    },
+    "KvGetSectionSymbol": {
+      "name": "KvGetSectionSymbol",
+      "refLine": 731,
+      "docStart": 29141,
+      "docEnd": 29387,
+      "docs": {
+        "brief": "Retrieves the current section id.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the current section id."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:id",
+            "text": "Id of the current section."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "id",
+          "decl": "int& id",
+          "default": null
+        }
+      ]
+    },
+    "KvSetNum": {
+      "name": "KvSetNum",
+      "refLine": 387,
+      "docStart": 16357,
+      "docEnd": 16596,
+      "docs": {
+        "brief": "Sets an integer value of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an integer value of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "CreateKeyValues": {
+      "name": "CreateKeyValues",
+      "refLine": 367,
+      "docStart": 15574,
+      "docEnd": 15929,
+      "docs": {
+        "brief": "Creates a new KeyValues structure.  The Handle must always be closed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new KeyValues structure.  The Handle must always be closed."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of the root section."
+          },
+          {
+            "tag": "param:firstKey",
+            "text": "If non-empty, specifies the first key value."
+          },
+          {
+            "tag": "param:firstValue",
+            "text": "If firstKey is non-empty, specifies the first key's value."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to a new KeyValues structure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "KeyValues",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "firstKey",
+          "decl": "const char[] firstKey",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "firstValue",
+          "decl": "const char[] firstValue",
+          "default": "\"\""
+        }
+      ]
+    },
+    "KvSetVector": {
+      "name": "KvSetVector",
+      "refLine": 430,
+      "docStart": 17784,
+      "docEnd": 18021,
+      "docs": {
+        "brief": "Sets a vector value of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a vector value of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "KvGetFloat": {
+      "name": "KvGetFloat",
+      "refLine": 464,
+      "docStart": 19024,
+      "docEnd": 19375,
+      "docs": {
+        "brief": "Retrieves a floating point value from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a floating point value from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:defvalue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "return",
+            "text": "Floating point value of the key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "defvalue",
+          "decl": "float defvalue",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "KvSetEscapeSequences": {
+      "name": "KvSetEscapeSequences",
+      "refLine": 676,
+      "docStart": 27164,
+      "docEnd": 27513,
+      "docs": {
+        "brief": "Sets whether or not the KeyValues parser will read escape sequences.\nFor example, \\n would be read as a literal newline.  This defaults\nto false for new KeyValues structures.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets whether or not the KeyValues parser will read escape sequences.\nFor example, \\n would be read as a literal newline.  This defaults\nto false for new KeyValues structures."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:useEscapes",
+            "text": "Whether or not to read escape sequences."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "useEscapes",
+          "decl": "bool useEscapes",
+          "default": null
+        }
+      ]
+    },
+    "KvRewind": {
+      "name": "KvRewind",
+      "refLine": 601,
+      "docStart": 24659,
+      "docEnd": 24940,
+      "docs": {
+        "brief": "Sets the position back to the top node, emptying the entire node\ntraversal history.  This can be used instead of looping KvGoBack()\nif recursive iteration is not important.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the position back to the top node, emptying the entire node\ntraversal history.  This can be used instead of looping KvGoBack()\nif recursive iteration is not important."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        }
+      ]
+    },
+    "KvFindKeyById": {
+      "name": "KvFindKeyById",
+      "refLine": 710,
+      "docStart": 28346,
+      "docEnd": 28692,
+      "docs": {
+        "brief": "Finds a KeyValues name by id.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds a KeyValues name by id."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:id",
+            "text": "KeyValues id."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the value buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false if id not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "id",
+          "decl": "int id",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FileToKeyValues": {
+      "name": "FileToKeyValues",
+      "refLine": 653,
+      "docStart": 26256,
+      "docEnd": 26557,
+      "docs": {
+        "brief": "Converts a file to a KeyValues tree.  The file is read into\nthe current position of the tree.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a file to a KeyValues tree.  The file is read into\nthe current position of the tree."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to read from."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "StringToKeyValues": {
+      "name": "StringToKeyValues",
+      "refLine": 665,
+      "docStart": 26621,
+      "docEnd": 27049,
+      "docs": {
+        "brief": "Converts a given string to a KeyValues tree.  The string is read into\nthe current postion of the tree.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a given string to a KeyValues tree.  The string is read into\nthe current postion of the tree."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer to load into the KeyValues."
+          },
+          {
+            "tag": "param:resourceName",
+            "text": "The resource name of the KeyValues, used for error tracking purposes."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "resourceName",
+          "decl": "const char[] resourceName",
+          "default": "\"StringToKeyValues\""
+        }
+      ]
+    },
+    "KvGetUInt64": {
+      "name": "KvGetUInt64",
+      "refLine": 488,
+      "docStart": 19977,
+      "docEnd": 20332,
+      "docs": {
+        "brief": "Retrieves a large integer value from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a large integer value from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:value",
+            "text": "Array to represent the large integer."
+          },
+          {
+            "tag": "param:defvalue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int[2]",
+          "name": "value",
+          "decl": "int value[2]",
+          "default": null
+        },
+        {
+          "type": "int[2]",
+          "name": "defvalue",
+          "decl": "int defvalue[2]",
+          "default": "{ 0, 0 }"
+        }
+      ]
+    },
+    "KvGetColor": {
+      "name": "KvGetColor",
+      "refLine": 477,
+      "docStart": 19454,
+      "docEnd": 19887,
+      "docs": {
+        "brief": "Retrieves a set of color values from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a set of color values from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:r",
+            "text": "Red value, set by reference."
+          },
+          {
+            "tag": "param:g",
+            "text": "Green value, set by reference."
+          },
+          {
+            "tag": "param:b",
+            "text": "Blue value, set by reference."
+          },
+          {
+            "tag": "param:a",
+            "text": "Alpha value, set by reference."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "r",
+          "decl": "int& r",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "g",
+          "decl": "int& g",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "b",
+          "decl": "int& b",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "a",
+          "decl": "int& a",
+          "default": null
+        }
+      ]
+    },
+    "KvGetNum": {
+      "name": "KvGetNum",
+      "refLine": 453,
+      "docStart": 18615,
+      "docEnd": 18953,
+      "docs": {
+        "brief": "Retrieves an integer value from a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an integer value from a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:defvalue",
+            "text": "Optional default value to use if the key is not found."
+          },
+          {
+            "tag": "return",
+            "text": "Integer value of the key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "defvalue",
+          "decl": "int defvalue",
+          "default": "0"
+        }
+      ]
+    },
+    "KvGetSectionName": {
+      "name": "KvGetSectionName",
+      "refLine": 612,
+      "docStart": 24978,
+      "docEnd": 25293,
+      "docs": {
+        "brief": "Retrieves the current section name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the current section name."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:section",
+            "text": "Buffer to store the section name."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the name buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "section",
+          "decl": "char[] section",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "KvSetColor": {
+      "name": "KvSetColor",
+      "refLine": 420,
+      "docStart": 17342,
+      "docEnd": 17696,
+      "docs": {
+        "brief": "Sets a set of color values of a KeyValues key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a set of color values of a KeyValues key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key, or NULL_STRING."
+          },
+          {
+            "tag": "param:r",
+            "text": "Red value."
+          },
+          {
+            "tag": "param:g",
+            "text": "Green value."
+          },
+          {
+            "tag": "param:b",
+            "text": "Blue value."
+          },
+          {
+            "tag": "param:a",
+            "text": "Alpha value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "r",
+          "decl": "int r",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "g",
+          "decl": "int g",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "b",
+          "decl": "int b",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "a",
+          "decl": "int a",
+          "default": "0"
+        }
+      ]
+    },
+    "KvGetDataType": {
+      "name": "KvGetDataType",
+      "refLine": 631,
+      "docStart": 25608,
+      "docEnd": 25829,
+      "docs": {
+        "brief": "Returns the data type at a key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the data type at a key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key name."
+          },
+          {
+            "tag": "return",
+            "text": "KvDataType value of the key."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "KvDataTypes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        }
+      ]
+    },
+    "KvJumpToKey": {
+      "name": "KvJumpToKey",
+      "refLine": 509,
+      "docStart": 20894,
+      "docEnd": 21234,
+      "docs": {
+        "brief": "Sets the current position in the KeyValues tree to the given key.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the current position in the KeyValues tree to the given key."
+          },
+          {
+            "tag": "param:kv",
+            "text": "KeyValues Handle."
+          },
+          {
+            "tag": "param:key",
+            "text": "Name of the key."
+          },
+          {
+            "tag": "param:create",
+            "text": "If true, and the key does not exist, it will be created."
+          },
+          {
+            "tag": "return",
+            "text": "True if the key exists, false if it does not and was not created."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "kv",
+          "decl": "Handle kv",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "create",
+          "decl": "bool create",
+          "default": "false"
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "KeyValues": {
+      "name": "KeyValues",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "SetString": {
+          "name": "SetString",
+          "refLine": 123,
+          "docStart": 5050,
+          "docEnd": 5240,
+          "docs": {
+            "brief": "Sets a string value of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value of a KeyValues key."
+              },
+              {
+                "tag": "param:kv",
+                "text": "KeyValues Handle."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "SetUInt64": {
+          "name": "SetUInt64",
+          "refLine": 135,
+          "docStart": 5526,
+          "docEnd": 5711,
+          "docs": {
+            "brief": "Sets a large integer value of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a large integer value of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "Large integer value (0=High bits, 1=Low bits)"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const int[2]",
+              "name": "value",
+              "decl": "const int value[2]",
+              "default": null
+            }
+          ]
+        },
+        "GetNameSymbol": {
+          "name": "GetNameSymbol",
+          "refLine": 342,
+          "docStart": 14759,
+          "docEnd": 14967,
+          "docs": {
+            "brief": "Finds a KeyValues id inside a KeyValues tree.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds a KeyValues id inside a KeyValues tree."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key name."
+              },
+              {
+                "tag": "param:id",
+                "text": "Id of the found KeyValue."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if key not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "id",
+              "decl": "int& id",
+              "default": null
+            }
+          ]
+        },
+        "GetNum": {
+          "name": "GetNum",
+          "refLine": 179,
+          "docStart": 7320,
+          "docEnd": 7568,
+          "docs": {
+            "brief": "Retrieves an integer value from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an integer value from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:defvalue",
+                "text": "Optional default value to use if the key is not found."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value of the key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "defvalue",
+              "decl": "int defvalue",
+              "default": "0"
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 186,
+          "docStart": 7635,
+          "docEnd": 7896,
+          "docs": {
+            "brief": "Retrieves a floating point value from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a floating point value from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:defvalue",
+                "text": "Optional default value to use if the key is not found."
+              },
+              {
+                "tag": "return",
+                "text": "Floating point value of the key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "defvalue",
+              "decl": "float defvalue",
+              "default": "0.000000"
+            }
+          ]
+        },
+        "Merge": {
+          "name": "Merge",
+          "refLine": 356,
+          "docStart": 15287,
+          "docEnd": 15521,
+          "docs": {
+            "brief": "Merge from the current position of another KeyValues into the current\nposition of this one.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Merge from the current position of another KeyValues into the current\nposition of this one."
+              },
+              {
+                "tag": "param:other",
+                "text": "KeyValues Handle to merge from."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or unsupported engine version."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "KeyValues",
+              "name": "other",
+              "decl": "KeyValues other",
+              "default": null
+            }
+          ]
+        },
+        "GetColor": {
+          "name": "GetColor",
+          "refLine": 195,
+          "docStart": 7971,
+          "docEnd": 8316,
+          "docs": {
+            "brief": "Retrieves a set of color values from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a set of color values from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:r",
+                "text": "Red value, set by reference."
+              },
+              {
+                "tag": "param:g",
+                "text": "Green value, set by reference."
+              },
+              {
+                "tag": "param:b",
+                "text": "Blue value, set by reference."
+              },
+              {
+                "tag": "param:a",
+                "text": "Alpha value, set by reference."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "r",
+              "decl": "int& r",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "g",
+              "decl": "int& g",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "b",
+              "decl": "int& b",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "a",
+              "decl": "int& a",
+              "default": null
+            }
+          ]
+        },
+        "GetSectionSymbol": {
+          "name": "GetSectionSymbol",
+          "refLine": 349,
+          "docStart": 15035,
+          "docEnd": 15234,
+          "docs": {
+            "brief": "Retrieves the current section id.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the current section id."
+              },
+              {
+                "tag": "param:kv",
+                "text": "KeyValues Handle."
+              },
+              {
+                "tag": "param:id",
+                "text": "Id of the current section."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int&",
+              "name": "id",
+              "decl": "int& id",
+              "default": null
+            }
+          ]
+        },
+        "DeleteKey": {
+          "name": "DeleteKey",
+          "refLine": 272,
+          "docStart": 11684,
+          "docEnd": 11854,
+          "docs": {
+            "brief": "Removes the given key from the current position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes the given key from the current position."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if key did not exist."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "FromAddress": {
+          "name": "FromAddress",
+          "refLine": 76,
+          "docStart": 2626,
+          "docEnd": 3233,
+          "docs": {
+            "brief": "Wraps an existing native KeyValues pointer in a KeyValues Handle, for\nexample one obtained from the game through an SDKCall or a detour.\n\nThe returned Handle does NOT own the underlying KeyValues: closing or\ndeleting it will not free the pointed-to memory (which is owned by\nwhoever created it, typically the game). The Handle must not be used\nafter the underlying KeyValues has been freed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Wraps an existing native KeyValues pointer in a KeyValues Handle, for\nexample one obtained from the game through an SDKCall or a detour.\n\nThe returned Handle does NOT own the underlying KeyValues: closing or\ndeleting it will not free the pointed-to memory (which is owned by\nwhoever created it, typically the game). The Handle must not be used\nafter the underlying KeyValues has been freed."
+              },
+              {
+                "tag": "param:pKeyValues",
+                "text": "Address of a native KeyValues object."
+              },
+              {
+                "tag": "return",
+                "text": "A KeyValues Handle wrapping the given pointer."
+              },
+              {
+                "tag": "error",
+                "text": "Address is null."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "KeyValues",
+          "arguments": [
+            {
+              "type": "Address",
+              "name": "pKeyValues",
+              "decl": "Address pKeyValues",
+              "default": null
+            }
+          ]
+        },
+        "GetColor4": {
+          "name": "GetColor4",
+          "refLine": 201,
+          "docStart": 8402,
+          "docEnd": 8586,
+          "docs": {
+            "brief": "Retrieves a set of color values from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a set of color values from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:color",
+                "text": "Red, green, blue, and alpha channels."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int[4]",
+              "name": "color",
+              "decl": "int color[4]",
+              "default": null
+            }
+          ]
+        },
+        "GotoNextKey": {
+          "name": "GotoNextKey",
+          "refLine": 250,
+          "docStart": 10452,
+          "docEnd": 10823,
+          "docs": {
+            "brief": "Sets the current position in the KeyValues tree to the next sub key.\nThis native does NOT add to the internal traversal stack, and thus\nGoBack() is not needed for each successive call to this function.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the current position in the KeyValues tree to the next sub key.\nThis native does NOT add to the internal traversal stack, and thus\nGoBack() is not needed for each successive call to this function."
+              },
+              {
+                "tag": "param:keyOnly",
+                "text": "If false, non-keys will be traversed (values)."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there was no next sub key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "keyOnly",
+              "decl": "bool keyOnly",
+              "default": "true"
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 172,
+          "docStart": 6898,
+          "docEnd": 7210,
+          "docs": {
+            "brief": "Retrieves a string value from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string value from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store key value in."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the value buffer."
+              },
+              {
+                "tag": "param:defvalue",
+                "text": "Optional default value to use if the key is not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "defvalue",
+              "decl": "const char[] defvalue",
+              "default": "\"\""
+            }
+          ]
+        },
+        "SetNum": {
+          "name": "SetNum",
+          "refLine": 129,
+          "docStart": 5315,
+          "docEnd": 5463,
+          "docs": {
+            "brief": "Sets an integer value of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an integer value of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value number."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 141,
+          "docStart": 5786,
+          "docEnd": 5948,
+          "docs": {
+            "brief": "Sets a floating point value of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a floating point value of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "Floating point value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "GoBack": {
+          "name": "GoBack",
+          "refLine": 266,
+          "docStart": 11249,
+          "docEnd": 11648,
+          "docs": {
+            "brief": "Jumps back to the previous position.  Returns false if there are no\nprevious positions (i.e., at the root node with an empty traversal stack).\nThis should be called once for each successful Jump call, in order to return\nto the top node.  This function pops one node off the internal traversal stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Jumps back to the previous position.  Returns false if there are no\nprevious positions (i.e., at the root node with an empty traversal stack).\nThis should be called once for each successful Jump call, in order to return\nto the top node.  This function pops one node off the internal traversal stack."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there is no higher node."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "GetDataType": {
+          "name": "GetDataType",
+          "refLine": 313,
+          "docStart": 13597,
+          "docEnd": 13727,
+          "docs": {
+            "brief": "Returns the data type at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the data type at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key name."
+              },
+              {
+                "tag": "return",
+                "text": "KvDataType value of the key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "KvDataTypes",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        },
+        "Import": {
+          "name": "Import",
+          "refLine": 116,
+          "docStart": 4736,
+          "docEnd": 4999,
+          "docs": {
+            "brief": "Imports subkeys in the given KeyValues, at the current position in that\nKeyValues, into the current position in this KeyValues. Note that this\ncopies keys; it does not embed a reference to them.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Imports subkeys in the given KeyValues, at the current position in that\nKeyValues, into the current position in this KeyValues. Note that this\ncopies keys; it does not embed a reference to them."
+              },
+              {
+                "tag": "param:other",
+                "text": "Origin KeyValues Handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "KeyValues",
+              "name": "other",
+              "decl": "KeyValues other",
+              "default": null
+            }
+          ]
+        },
+        "SetColor": {
+          "name": "SetColor",
+          "refLine": 150,
+          "docStart": 6015,
+          "docEnd": 6281,
+          "docs": {
+            "brief": "Sets a set of color values of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a set of color values of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:r",
+                "text": "Red value."
+              },
+              {
+                "tag": "param:g",
+                "text": "Green value."
+              },
+              {
+                "tag": "param:b",
+                "text": "Blue value."
+              },
+              {
+                "tag": "param:a",
+                "text": "Alpha value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "r",
+              "decl": "int r",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "g",
+              "decl": "int g",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "b",
+              "decl": "int b",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "a",
+              "decl": "int a",
+              "default": "0"
+            }
+          ]
+        },
+        "SetColor4": {
+          "name": "SetColor4",
+          "refLine": 156,
+          "docStart": 6365,
+          "docEnd": 6541,
+          "docs": {
+            "brief": "Sets a set of color values of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a set of color values of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:color",
+                "text": "Red, green, blue and alpha channels."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const int[4]",
+              "name": "color",
+              "decl": "const int color[4]",
+              "default": null
+            }
+          ]
+        },
+        "ExportToString": {
+          "name": "ExportToString",
+          "refLine": 89,
+          "docStart": 3561,
+          "docEnd": 3821,
+          "docs": {
+            "brief": "Exports a KeyValues tree to a string. The string is dumped from the current position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Exports a KeyValues tree to a string. The string is dumped from the current position."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to write to."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Max length of buffer."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes that can be written to buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "SetSectionName": {
+          "name": "SetSectionName",
+          "refLine": 307,
+          "docStart": 13455,
+          "docEnd": 13533,
+          "docs": {
+            "brief": "Sets the current section name.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the current section name."
+              },
+              {
+                "tag": "param:section",
+                "text": "Section name."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "section",
+              "decl": "const char[] section",
+              "default": null
+            }
+          ]
+        },
+        "SetEscapeSequences": {
+          "name": "SetEscapeSequences",
+          "refLine": 320,
+          "docStart": 13791,
+          "docEnd": 14050,
+          "docs": {
+            "brief": "Sets whether or not the KeyValues parser will read escape sequences.\nFor example, \\n would be read as a literal newline.  This defaults\nto false for new KeyValues structures.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets whether or not the KeyValues parser will read escape sequences.\nFor example, \\n would be read as a literal newline.  This defaults\nto false for new KeyValues structures."
+              },
+              {
+                "tag": "param:useEscapes",
+                "text": "Whether or not to read escape sequences."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "useEscapes",
+              "decl": "bool useEscapes",
+              "default": null
+            }
+          ]
+        },
+        "ImportFromFile": {
+          "name": "ImportFromFile",
+          "refLine": 101,
+          "docStart": 4015,
+          "docEnd": 4224,
+          "docs": {
+            "brief": "Imports a file in KeyValues format. The file is read into the current\nposition of the tree.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Imports a file in KeyValues format. The file is read into the current\nposition of the tree."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to read from."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            }
+          ]
+        },
+        "ExportToFile": {
+          "name": "ExportToFile",
+          "refLine": 82,
+          "docStart": 3304,
+          "docEnd": 3502,
+          "docs": {
+            "brief": "Exports a KeyValues tree to a file. The tree is dumped from the current position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Exports a KeyValues tree to a file. The tree is dumped from the current position."
+              },
+              {
+                "tag": "param:file",
+                "text": "File to dump write to."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            }
+          ]
+        },
+        "SavePosition": {
+          "name": "SavePosition",
+          "refLine": 258,
+          "docStart": 10881,
+          "docEnd": 11207,
+          "docs": {
+            "brief": "Saves the current position in the traversal stack onto the traversal\nstack.  This can be useful if you wish to use KvGotoNextKey() and\nhave the previous key saved for backwards traversal.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Saves the current position in the traversal stack onto the traversal\nstack.  This can be useful if you wish to use KvGotoNextKey() and\nhave the previous key saved for backwards traversal."
+              },
+              {
+                "tag": "param:kv",
+                "text": "KeyValues Handle."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there is no higher node."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "KeyValues": {
+          "name": "KeyValues",
+          "refLine": 63,
+          "docStart": 2209,
+          "docEnd": 2521,
+          "docs": {
+            "brief": "Creates a new KeyValues structure.  The Handle must be closed with\nCloseHandle() or delete.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new KeyValues structure.  The Handle must be closed with\nCloseHandle() or delete."
+              },
+              {
+                "tag": "param:name",
+                "text": "Name of the root section."
+              },
+              {
+                "tag": "param:firstKey",
+                "text": "If non-empty, specifies the first key value."
+              },
+              {
+                "tag": "param:firstValue",
+                "text": "If firstKey is non-empty, specifies the first key's value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "KeyValues",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "name",
+              "decl": "const char[] name",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "firstKey",
+              "decl": "const char[] firstKey",
+              "default": "\"\""
+            },
+            {
+              "type": "const char[]",
+              "name": "firstValue",
+              "decl": "const char[] firstValue",
+              "default": "\"\""
+            }
+          ]
+        },
+        "ImportFromString": {
+          "name": "ImportFromString",
+          "refLine": 109,
+          "docStart": 4285,
+          "docEnd": 4624,
+          "docs": {
+            "brief": "Converts a given string to a KeyValues tree.  The string is read into\nthe current postion of the tree.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Converts a given string to a KeyValues tree.  The string is read into\nthe current postion of the tree."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "String buffer to load into the KeyValues."
+              },
+              {
+                "tag": "param:resourceName",
+                "text": "The resource name of the KeyValues, used for error tracking purposes."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "buffer",
+              "decl": "const char[] buffer",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "resourceName",
+              "decl": "const char[] resourceName",
+              "default": "\"StringToKeyValues\""
+            }
+          ]
+        },
+        "GetVector": {
+          "name": "GetVector",
+          "refLine": 222,
+          "docStart": 9132,
+          "docEnd": 9394,
+          "docs": {
+            "brief": "Retrieves a vector value from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a vector value from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Destination vector to store the value in."
+              },
+              {
+                "tag": "param:defvalue",
+                "text": "Optional default value to use if the key is not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "defvalue",
+              "decl": "const float defvalue[3]",
+              "default": "{ 0.000000, 0.000000, 0.000000 }"
+            }
+          ]
+        },
+        "JumpToKey": {
+          "name": "JumpToKey",
+          "refLine": 229,
+          "docStart": 9504,
+          "docEnd": 9795,
+          "docs": {
+            "brief": "Sets the current position in the KeyValues tree to the given key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the current position in the KeyValues tree to the given key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key."
+              },
+              {
+                "tag": "param:create",
+                "text": "If true, and the key does not exist, it will be created."
+              },
+              {
+                "tag": "return",
+                "text": "True if the key exists, false if it does not and was not created."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "create",
+              "decl": "bool create",
+              "default": "false"
+            }
+          ]
+        },
+        "GetSectionName": {
+          "name": "GetSectionName",
+          "refLine": 302,
+          "docStart": 13157,
+          "docEnd": 13382,
+          "docs": {
+            "brief": "Retrieves the current section name.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the current section name."
+              },
+              {
+                "tag": "param:section",
+                "text": "Buffer to store the section name."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the name buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "section",
+              "decl": "char[] section",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "GotoFirstSubKey": {
+          "name": "GotoFirstSubKey",
+          "refLine": 242,
+          "docStart": 10105,
+          "docEnd": 10390,
+          "docs": {
+            "brief": "Sets the current position in the KeyValues tree to the first sub key.\nThis native adds to the internal traversal stack.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the current position in the KeyValues tree to the first sub key.\nThis native adds to the internal traversal stack."
+              },
+              {
+                "tag": "param:keyOnly",
+                "text": "If false, non-keys will be traversed (values)."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if there was no first sub key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "keyOnly",
+              "decl": "bool keyOnly",
+              "default": "true"
+            }
+          ]
+        },
+        "NodesInStack": {
+          "name": "NodesInStack",
+          "refLine": 327,
+          "docStart": 14113,
+          "docEnd": 14386,
+          "docs": {
+            "brief": "Returns the position in the jump stack; I.e. the number of calls\nrequired for KvGoBack to return to the root node.  If at the root node,\nand the traversal stack is empty, 0 is returned.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the position in the jump stack; I.e. the number of calls\nrequired for KvGoBack to return to the root node.  If at the root node,\nand the traversal stack is empty, 0 is returned."
+              },
+              {
+                "tag": "return",
+                "text": "Number of non-root nodes in the jump stack."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "SetVector": {
+          "name": "SetVector",
+          "refLine": 164,
+          "docStart": 6677,
+          "docEnd": 6823,
+          "docs": {
+            "brief": "Sets a vector value of a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a vector value of a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "const float[3]",
+              "name": "vec",
+              "decl": "const float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "GetUInt64": {
+          "name": "GetUInt64",
+          "refLine": 215,
+          "docStart": 8775,
+          "docEnd": 9040,
+          "docs": {
+            "brief": "Retrieves a large integer value from a KeyValues key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a large integer value from a KeyValues key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Name of the key, or NULL_STRING."
+              },
+              {
+                "tag": "param:value",
+                "text": "Array to represent the large integer."
+              },
+              {
+                "tag": "param:defvalue",
+                "text": "Optional default value to use if the key is not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int[2]",
+              "name": "value",
+              "decl": "int value[2]",
+              "default": null
+            },
+            {
+              "type": "int[2]",
+              "name": "defvalue",
+              "decl": "int defvalue[2]",
+              "default": "{ 0, 0 }"
+            }
+          ]
+        },
+        "Rewind": {
+          "name": "Rewind",
+          "refLine": 295,
+          "docStart": 12698,
+          "docEnd": 13099,
+          "docs": {
+            "brief": "Sets the position back to the top node and clears the entire\nnode traversal history (by default).  This can be used instead of looping\nKvGoBack() if recursive iteration is not important.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the position back to the top node and clears the entire\nnode traversal history (by default).  This can be used instead of looping\nKvGoBack() if recursive iteration is not important."
+              },
+              {
+                "tag": "param:kv",
+                "text": "KeyValues Handle."
+              },
+              {
+                "tag": "param:clearHistory",
+                "text": "If true, the entire node traversal stack is cleared.\nIf false, this will add to the traversal stack."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "clearHistory",
+              "decl": "bool clearHistory",
+              "default": "true"
+            }
+          ]
+        },
+        "FindKeyById": {
+          "name": "FindKeyById",
+          "refLine": 335,
+          "docStart": 14427,
+          "docEnd": 14684,
+          "docs": {
+            "brief": "Finds a KeyValues name by id.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Finds a KeyValues name by id."
+              },
+              {
+                "tag": "param:id",
+                "text": "KeyValues id."
+              },
+              {
+                "tag": "param:name",
+                "text": "Buffer to store the name."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of the value buffer."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false if id not found."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "id",
+              "decl": "int id",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "JumpToKeySymbol": {
+          "name": "JumpToKeySymbol",
+          "refLine": 235,
+          "docStart": 9869,
+          "docEnd": 10054,
+          "docs": {
+            "brief": "Sets the current position in the KeyValues tree to the given key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the current position in the KeyValues tree to the given key."
+              },
+              {
+                "tag": "param:id",
+                "text": "KeyValues id."
+              },
+              {
+                "tag": "return",
+                "text": "True if the key exists, false if it does not."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "id",
+              "decl": "int id",
+              "default": null
+            }
+          ]
+        },
+        "DeleteThis": {
+          "name": "DeleteThis",
+          "refLine": 286,
+          "docStart": 11909,
+          "docEnd": 12659,
+          "docs": {
+            "brief": "Removes the current sub-key and attempts to set the position\nto the sub-key after the removed one.  If no such sub-key exists,\nthe position will be the parent key in the traversal stack.\nGiven the sub-key having position \"N\" in the traversal stack, the\nremoval will always take place from position \"N-1.\"",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes the current sub-key and attempts to set the position\nto the sub-key after the removed one.  If no such sub-key exists,\nthe position will be the parent key in the traversal stack.\nGiven the sub-key having position \"N\" in the traversal stack, the\nremoval will always take place from position \"N-1.\""
+              },
+              {
+                "tag": "param:kv",
+                "text": "KeyValues Handle."
+              },
+              {
+                "tag": "return",
+                "text": "1 if removal succeeded and there was another key.\n0 if the current node was not contained in the\nprevious node, or no previous node exists.\n-1 if removal succeeded and there were no more keys,\nthus the state is as if KvGoBack() was called."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "ExportLength": {
+          "name": "ExportLength",
+          "refLine": 92,
+          "docStart": 3892,
+          "docEnd": 3952,
+          "docs": {
+            "brief": "Amount of bytes written by ExportToFile & ExportToString.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Amount of bytes written by ExportToFile & ExportToString."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_keyvalues_included": {
+      "name": "_keyvalues_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "KvDataTypes": {
+      "name": "KvDataTypes",
+      "refLine": 41,
+      "docStart": 1659,
+      "docEnd": 1697,
+      "docs": {
+        "brief": "KeyValue data value types",
+        "tags": [
+          {
+            "tag": "",
+            "text": "KeyValue data value types"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "KvData_Float": {
+          "name": "KvData_Float",
+          "refLine": 46,
+          "docStart": 1899,
+          "docEnd": 1927,
+          "docs": {
+            "brief": "Floating point value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Floating point value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_Int": {
+          "name": "KvData_Int",
+          "refLine": 45,
+          "docStart": 1855,
+          "docEnd": 1876,
+          "docs": {
+            "brief": "Integer value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Integer value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_WString": {
+          "name": "KvData_WString",
+          "refLine": 48,
+          "docStart": 2020,
+          "docEnd": 2045,
+          "docs": {
+            "brief": "Wide string value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Wide string value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_UInt64": {
+          "name": "KvData_UInt64",
+          "refLine": 50,
+          "docStart": 2110,
+          "docEnd": 2149,
+          "docs": {
+            "brief": "Large integer value\n---",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Large integer value"
+              },
+              {
+                "tag": "",
+                "text": "---"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_String": {
+          "name": "KvData_String",
+          "refLine": 44,
+          "docStart": 1812,
+          "docEnd": 1832,
+          "docs": {
+            "brief": "String value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "String value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_Color": {
+          "name": "KvData_Color",
+          "refLine": 49,
+          "docStart": 2068,
+          "docEnd": 2087,
+          "docs": {
+            "brief": "Color value",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Color value"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_Ptr": {
+          "name": "KvData_Ptr",
+          "refLine": 47,
+          "docStart": 1950,
+          "docEnd": 1997,
+          "docs": {
+            "brief": "Pointer value (sometimes called \"long\")",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pointer value (sometimes called \"long\")"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "KvData_NUMTYPES": {
+          "name": "KvData_NUMTYPES",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "KvData_None": {
+          "name": "KvData_None",
+          "refLine": 43,
+          "docStart": 1741,
+          "docEnd": 1789,
+          "docs": {
+            "brief": "Type could not be identified, or no type",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Type could not be identified, or no type"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

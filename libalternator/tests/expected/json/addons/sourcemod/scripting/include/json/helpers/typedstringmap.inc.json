@@ -1,0 +1,515 @@
+{
+  "functions": {},
+  "methodmaps": {
+    "TypedStringMap": {
+      "name": "TypedStringMap",
+      "refLine": 49,
+      "docStart": 1850,
+      "docEnd": 1904,
+      "docs": {
+        "brief": "A StringMap with typed getters and setters.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A StringMap with typed getters and setters."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "StringMap",
+      "methods": {
+        "GetInt": {
+          "name": "GetInt",
+          "refLine": 110,
+          "docStart": 3116,
+          "docEnd": 3367,
+          "docs": {
+            "brief": "Retrieves the int stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the int stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve int value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "default_value",
+              "decl": "int default_value",
+              "default": "-1"
+            }
+          ]
+        },
+        "GetOptionalValue": {
+          "name": "GetOptionalValue",
+          "refLine": 95,
+          "docStart": 2618,
+          "docEnd": 2884,
+          "docs": {
+            "brief": "Retrieves the value stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the value stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "default_value",
+              "decl": "any default_value",
+              "default": "-1"
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 192,
+          "docStart": 5579,
+          "docEnd": 5781,
+          "docs": {
+            "brief": "Sets the bool stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the bool stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to bool value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 168,
+          "docStart": 4947,
+          "docEnd": 5147,
+          "docs": {
+            "brief": "Sets the int stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the int stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to int value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            }
+          ]
+        },
+        "GetBool": {
+          "name": "GetBool",
+          "refLine": 134,
+          "docStart": 3940,
+          "docEnd": 4193,
+          "docs": {
+            "brief": "Retrieves the bool stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the bool stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve bool value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "default_value",
+              "decl": "bool default_value",
+              "default": "false"
+            }
+          ]
+        },
+        "GetFloat": {
+          "name": "GetFloat",
+          "refLine": 122,
+          "docStart": 3521,
+          "docEnd": 3776,
+          "docs": {
+            "brief": "Retrieves the float stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the float stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve float value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "default_value",
+              "decl": "float default_value",
+              "default": "-1.000000"
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 180,
+          "docStart": 5259,
+          "docEnd": 5463,
+          "docs": {
+            "brief": "Sets the float stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the float stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to float value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            }
+          ]
+        },
+        "TypedStringMap": {
+          "name": "TypedStringMap",
+          "refLine": 218,
+          "docStart": 6264,
+          "docEnd": 6361,
+          "docs": {
+            "brief": "Creates a new TypedStringMap.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new TypedStringMap."
+              },
+              {
+                "tag": "return",
+                "text": "A new TypedStringMap."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "TypedStringMap",
+          "arguments": []
+        },
+        "SetHandle": {
+          "name": "SetHandle",
+          "refLine": 204,
+          "docStart": 5895,
+          "docEnd": 6101,
+          "docs": {
+            "brief": "Sets the handle stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the handle stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to set to object value."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to set."
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "Handle",
+              "name": "value",
+              "decl": "Handle value",
+              "default": null
+            }
+          ]
+        },
+        "GetHandle": {
+          "name": "GetHandle",
+          "refLine": 146,
+          "docStart": 4354,
+          "docEnd": 4611,
+          "docs": {
+            "brief": "Retrieves the handle stored at a key.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the handle stored at a key."
+              },
+              {
+                "tag": "param:key",
+                "text": "Key to retrieve handle value for."
+              },
+              {
+                "tag": "param:default_value",
+                "text": "Value to return if the key does not exist."
+              },
+              {
+                "tag": "return",
+                "text": "Value stored at key."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "Handle",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            },
+            {
+              "type": "Handle",
+              "name": "default_value",
+              "decl": "Handle default_value",
+              "default": "null"
+            }
+          ]
+        },
+        "HasKey": {
+          "name": "HasKey",
+          "refLine": 68,
+          "docStart": 2164,
+          "docEnd": 2197,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.ContainsKey"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "stock",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "key",
+              "decl": "const char[] key",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 56,
+          "docStart": 1991,
+          "docEnd": 2017,
+          "docs": {
+            "brief": "",
+            "tags": [
+              {
+                "tag": "see",
+                "text": "StringMap.Size"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "TRIE_SUPPORTS_CONTAINSKEY": {
+      "name": "TRIE_SUPPORTS_CONTAINSKEY",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "SOURCEMOD_V_MAJOR >= 1 \\\n    && SOURCEMOD_V_MINOR >= 11 \\\n    && SOURCEMOD_V_REV >= 6646"
+    },
+    "_typedstringmap_included": {
+      "name": "_typedstringmap_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

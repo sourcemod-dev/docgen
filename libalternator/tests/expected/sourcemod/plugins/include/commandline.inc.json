@@ -1,0 +1,267 @@
+{
+  "functions": {
+    "GetCommandLineParamFloat": {
+      "name": "GetCommandLineParamFloat",
+      "refLine": 77,
+      "docStart": 3033,
+      "docEnd": 3434,
+      "docs": {
+        "brief": "Gets the value of a command line parameter the server was launched with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the value of a command line parameter the server was launched with."
+          },
+          {
+            "tag": "param:param",
+            "text": "The command line parameter to get the value of."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "The default value to return if the parameter wasn't specified."
+          },
+          {
+            "tag": "return",
+            "text": "The floating point value of the command line parameter value."
+          },
+          {
+            "tag": "error",
+            "text": "No command line available, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "param",
+          "decl": "const char[] param",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "defValue",
+          "decl": "float defValue",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "FindCommandLineParam": {
+      "name": "FindCommandLineParam",
+      "refLine": 86,
+      "docStart": 3515,
+      "docEnd": 3809,
+      "docs": {
+        "brief": "Determines if a specific command line parameter is present.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determines if a specific command line parameter is present."
+          },
+          {
+            "tag": "param:param",
+            "text": "The command line parameter to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if the command line parameter is specified; otherwise, false."
+          },
+          {
+            "tag": "error",
+            "text": "No command line available, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "param",
+          "decl": "const char[] param",
+          "default": null
+        }
+      ]
+    },
+    "GetCommandLineParam": {
+      "name": "GetCommandLineParam",
+      "refLine": 57,
+      "docStart": 2020,
+      "docEnd": 2459,
+      "docs": {
+        "brief": "Gets the value of a command line parameter the server was launched with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the value of a command line parameter the server was launched with."
+          },
+          {
+            "tag": "param:param",
+            "text": "The command line parameter to get the value of."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store the parameter value in."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of the value buffer."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "The default value to return if the parameter wasn't specified."
+          },
+          {
+            "tag": "error",
+            "text": "No command line available, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "param",
+          "decl": "const char[] param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defValue",
+          "decl": "const char[] defValue",
+          "default": "\"\""
+        }
+      ]
+    },
+    "GetCommandLineParamInt": {
+      "name": "GetCommandLineParamInt",
+      "refLine": 67,
+      "docStart": 2566,
+      "docEnd": 2960,
+      "docs": {
+        "brief": "Gets the value of a command line parameter the server was launched with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the value of a command line parameter the server was launched with."
+          },
+          {
+            "tag": "param:param",
+            "text": "The command line parameter to get the value of."
+          },
+          {
+            "tag": "param:defValue",
+            "text": "The default value to return if the parameter wasn't specified."
+          },
+          {
+            "tag": "return",
+            "text": "The integer value of the command line parameter value."
+          },
+          {
+            "tag": "error",
+            "text": "No command line available, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "param",
+          "decl": "const char[] param",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "defValue",
+          "decl": "int defValue",
+          "default": "0"
+        }
+      ]
+    },
+    "GetCommandLine": {
+      "name": "GetCommandLine",
+      "refLine": 46,
+      "docStart": 1613,
+      "docEnd": 1958,
+      "docs": {
+        "brief": "Gets the full command line the server was launched with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the full command line the server was launched with."
+          },
+          {
+            "tag": "param:commandLine",
+            "text": "Buffer to store the command line in."
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of the command line buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if the command line is valid; otherwise, false."
+          },
+          {
+            "tag": "error",
+            "text": "No command line available, or no mod support."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "commandLine",
+          "decl": "char[] commandLine",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_commandline_included_": {
+      "name": "_commandline_included_",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

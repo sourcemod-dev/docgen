@@ -1,0 +1,174 @@
+{
+  "functions": {
+    "Overlay_OnPrecacheWinOverlay": {
+      "name": "Overlay_OnPrecacheWinOverlay",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "Overlay_OnWinOverlay": {
+      "name": "Overlay_OnWinOverlay",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "winner",
+          "decl": "int winner",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_overlay_SetNTVOptional": {
+      "name": "__pl_ttt_overlay_SetNTVOptional",
+      "refLine": 32,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Overlay_OnRoleOverlay": {
+      "name": "Overlay_OnRoleOverlay",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "Overlay_OnPrecacheRoleOverlay": {
+      "name": "Overlay_OnPrecacheRoleOverlay",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "path",
+          "decl": "char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "TTT_DisableRoleOverlays": {
+      "name": "TTT_DisableRoleOverlays",
+      "refLine": 13,
+      "docStart": 86,
+      "docEnd": 297,
+      "docs": {
+        "brief": "If you want to display your own overlay for a few seconds\nNOTE: Time Overlays will be not disabled!",
+        "tags": [
+          {
+            "tag": "",
+            "text": "If you want to display your own overlay for a few seconds\nNOTE: Time Overlays will be not disabled!"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:client",
+            "text": "Karma that will be added."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "fTime",
+          "decl": "float fTime",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_overlay_included": {
+      "name": "_ttt_overlay_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

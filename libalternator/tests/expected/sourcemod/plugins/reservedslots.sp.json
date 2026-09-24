@@ -1,0 +1,306 @@
+{
+  "functions": {
+    "SlotCountChanged": {
+      "name": "SlotCountChanged",
+      "refLine": 215,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "convar",
+          "decl": "ConVar convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldValue",
+          "decl": "const char[] oldValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "newValue",
+          "decl": "const char[] newValue",
+          "default": null
+        }
+      ]
+    },
+    "SetVisibleMaxSlots": {
+      "name": "SetVisibleMaxSlots",
+      "refLine": 250,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "clients",
+          "decl": "int clients",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "limit",
+          "decl": "int limit",
+          "default": null
+        }
+      ]
+    },
+    "SelectKickClient": {
+      "name": "SelectKickClient",
+      "refLine": 269,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "int",
+      "arguments": []
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 80,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "OnClientDisconnect_Post": {
+      "name": "OnClientDisconnect_Post",
+      "refLine": 204,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SlotHideChanged": {
+      "name": "SlotHideChanged",
+      "refLine": 229,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "convar",
+          "decl": "ConVar convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldValue",
+          "decl": "const char[] oldValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "newValue",
+          "decl": "const char[] newValue",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 100,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ResetVisibleMax": {
+      "name": "ResetVisibleMax",
+      "refLine": 264,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnPluginEnd": {
+      "name": "OnPluginEnd",
+      "refLine": 94,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnTimedKick": {
+      "name": "OnTimedKick",
+      "refLine": 110,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "client",
+          "decl": "any client",
+          "default": null
+        }
+      ]
+    },
+    "OnClientPostAdminCheck": {
+      "name": "OnClientPostAdminCheck",
+      "refLine": 124,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CheckHiddenSlots": {
+      "name": "CheckHiddenSlots",
+      "refLine": 242,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {
+    "KickType": {
+      "name": "KickType",
+      "refLine": 60,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Kick_HighestPing": {
+          "name": "Kick_HighestPing",
+          "refLine": 62,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Kick_HighestTime": {
+          "name": "Kick_HighestTime",
+          "refLine": 63,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Kick_Random": {
+          "name": "Kick_Random",
+          "refLine": 64,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

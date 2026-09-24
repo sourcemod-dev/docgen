@@ -1,0 +1,2173 @@
+{
+  "functions": {
+    "GetArrayString": {
+      "name": "GetArrayString",
+      "refLine": 377,
+      "docStart": 15535,
+      "docEnd": 16009,
+      "docs": {
+        "brief": "Retrieves a string value from an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a string value from an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to copy to."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum size of the buffer."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters copied."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "FindStringInArray": {
+      "name": "FindStringInArray",
+      "refLine": 479,
+      "docStart": 19844,
+      "docEnd": 20226,
+      "docs": {
+        "brief": "Returns the index for the first occurrence of the provided string. If the string\ncannot be located, -1 will be returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the index for the first occurrence of the provided string. If the string\ncannot be located, -1 will be returned."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:item",
+            "text": "String to search for"
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally which block to search in"
+          },
+          {
+            "tag": "return",
+            "text": "Array index, or -1 on failure"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "item",
+          "decl": "const char[] item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "GetArrayBlockSize": {
+      "name": "GetArrayBlockSize",
+      "refLine": 500,
+      "docStart": 20774,
+      "docEnd": 20972,
+      "docs": {
+        "brief": "Returns the blocksize the array was created with.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the blocksize the array was created with."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "return",
+            "text": "The blocksize of the array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "PushArrayArray": {
+      "name": "PushArrayArray",
+      "refLine": 350,
+      "docStart": 14302,
+      "docEnd": 14925,
+      "docs": {
+        "brief": "Pushes an array of cells onto the end of an array.  The cells\nare pushed as a block (i.e. the entire array sits at the index),\nrather than pushing each cell individually.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes an array of cells onto the end of an array.  The cells\nare pushed as a block (i.e. the entire array sits at the index),\nrather than pushing each cell individually."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:values",
+            "text": "Block of values to copy."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, the number of elements copied from the array\nwill be equal to the blocksize.  If set higher than the\nblocksize, the operation will be truncated."
+          },
+          {
+            "tag": "return",
+            "text": "Index of the new entry."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "values",
+          "decl": "const any[] values",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        }
+      ]
+    },
+    "ResizeArray": {
+      "name": "ResizeArray",
+      "refLine": 302,
+      "docStart": 12919,
+      "docEnd": 13270,
+      "docs": {
+        "brief": "Resizes an array.  If the size is smaller than the current size,\nthe array is truncated.  If the size is larger than the current size,\nthe data at the additional indexes will not be initialized.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resizes an array.  If the size is smaller than the current size,\nthe array is truncated.  If the size is larger than the current size,\nthe data at the additional indexes will not be initialized."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:newsize",
+            "text": "New size."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "newsize",
+          "decl": "int newsize",
+          "default": null
+        }
+      ]
+    },
+    "SwapArrayItems": {
+      "name": "SwapArrayItems",
+      "refLine": 467,
+      "docStart": 19553,
+      "docEnd": 19773,
+      "docs": {
+        "brief": "Swaps two items in the array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Swaps two items in the array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index1",
+            "text": "First index."
+          },
+          {
+            "tag": "param:index2",
+            "text": "Second index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index1",
+          "decl": "int index1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index2",
+          "decl": "int index2",
+          "default": null
+        }
+      ]
+    },
+    "GetArrayCell": {
+      "name": "GetArrayCell",
+      "refLine": 363,
+      "docStart": 15004,
+      "docEnd": 15448,
+      "docs": {
+        "brief": "Retrieves a cell value from an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves a cell value from an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "param:asChar",
+            "text": "Optionally read as a byte instead of a cell."
+          },
+          {
+            "tag": "return",
+            "text": "Value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid index, or invalid block."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "any",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "asChar",
+          "decl": "bool asChar",
+          "default": "false"
+        }
+      ]
+    },
+    "SetArrayArray": {
+      "name": "SetArrayArray",
+      "refLine": 435,
+      "docStart": 17994,
+      "docEnd": 18551,
+      "docs": {
+        "brief": "Sets an array of cells in an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets an array of cells in an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:values",
+            "text": "Array to copy."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of cells copied."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "values",
+          "decl": "const any[] values",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "GetArraySize": {
+      "name": "GetArraySize",
+      "refLine": 311,
+      "docStart": 13327,
+      "docEnd": 13505,
+      "docs": {
+        "brief": "Returns the array size.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the array size."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "return",
+            "text": "Number of elements in the array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "ByteCountToCells": {
+      "name": "ByteCountToCells",
+      "refLine": 45,
+      "docStart": 1659,
+      "docEnd": 1920,
+      "docs": {
+        "brief": "Given a maximum string size (including the null terminator),\nreturns the number of cells required to fit that string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given a maximum string size (including the null terminator),\nreturns the number of cells required to fit that string."
+          },
+          {
+            "tag": "param:size",
+            "text": "Number of bytes."
+          },
+          {
+            "tag": "return",
+            "text": "Minimum number of cells required to fit the byte count."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "PushArrayString": {
+      "name": "PushArrayString",
+      "refLine": 335,
+      "docStart": 13954,
+      "docEnd": 14235,
+      "docs": {
+        "brief": "Pushes a string onto the end of an array, truncating it\nif it is too big.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a string onto the end of an array, truncating it\nif it is too big."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "String to push."
+          },
+          {
+            "tag": "return",
+            "text": "Index of the new entry."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "ShiftArrayUp": {
+      "name": "ShiftArrayUp",
+      "refLine": 446,
+      "docStart": 18653,
+      "docEnd": 19033,
+      "docs": {
+        "brief": "Shifts an array up.  All array contents after and including the given\nindex are shifted up by one, and the given index is then \"free.\"\nAfter shifting, the contents of the given index is undefined.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Shifts an array up.  All array contents after and including the given\nindex are shifted up by one, and the given index is then \"free.\"\nAfter shifting, the contents of the given index is undefined."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array to shift up from."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "ClearArray": {
+      "name": "ClearArray",
+      "refLine": 280,
+      "docStart": 12270,
+      "docEnd": 12435,
+      "docs": {
+        "brief": "Clears an array of all entries.  This is the same as ResizeArray(0).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clears an array of all entries.  This is the same as ResizeArray(0)."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "FindValueInArray": {
+      "name": "FindValueInArray",
+      "refLine": 491,
+      "docStart": 20307,
+      "docEnd": 20703,
+      "docs": {
+        "brief": "Returns the index for the first occurrence of the provided value. If the value\ncannot be located, -1 will be returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the index for the first occurrence of the provided value. If the value\ncannot be located, -1 will be returned."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:item",
+            "text": "Value to search for"
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally which block to search in"
+          },
+          {
+            "tag": "return",
+            "text": "Array index, or -1 on failure"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid block"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "item",
+          "decl": "any item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "PushArrayCell": {
+      "name": "PushArrayCell",
+      "refLine": 324,
+      "docStart": 13549,
+      "docEnd": 13898,
+      "docs": {
+        "brief": "Pushes a value onto the end of an array, adding a new index.\n\nThis may safely be used even if the array has a blocksize\ngreater than 1.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Pushes a value onto the end of an array, adding a new index.\n\nThis may safely be used even if the array has a blocksize\ngreater than 1."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to push."
+          },
+          {
+            "tag": "return",
+            "text": "Index of the new entry."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or out of memory."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        }
+      ]
+    },
+    "SetArrayCell": {
+      "name": "SetArrayCell",
+      "refLine": 405,
+      "docStart": 16785,
+      "docEnd": 17227,
+      "docs": {
+        "brief": "Sets a cell value in an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a cell value in an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:value",
+            "text": "Cell value to set."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "param:asChar",
+            "text": "Optionally set as a byte instead of a cell."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle, invalid index, or invalid block."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "asChar",
+          "decl": "bool asChar",
+          "default": "false"
+        }
+      ]
+    },
+    "CloneArray": {
+      "name": "CloneArray",
+      "refLine": 291,
+      "docStart": 12478,
+      "docEnd": 12874,
+      "docs": {
+        "brief": "Clones an array, returning a new handle with the same size and data. This should NOT\nbe confused with CloneHandle. This is a completely new handle with the same data but\nno relation to the original. You MUST close it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clones an array, returning a new handle with the same size and data. This should NOT\nbe confused with CloneHandle. This is a completely new handle with the same data but\nno relation to the original. You MUST close it."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array handle to be cloned"
+          },
+          {
+            "tag": "return",
+            "text": "New handle to the cloned array object"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "SetArrayString": {
+      "name": "SetArrayString",
+      "refLine": 420,
+      "docStart": 17326,
+      "docEnd": 17891,
+      "docs": {
+        "brief": "Sets a string value in an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a string value in an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to set."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters copied."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "CreateArray": {
+      "name": "CreateArray",
+      "refLine": 272,
+      "docStart": 11406,
+      "docEnd": 12201,
+      "docs": {
+        "brief": "Creates a dynamic global cell array.  While slower than a normal array,\nit can be used globally AND dynamically, which is otherwise impossible.\n\nThe contents of the array are uniform; i.e. storing a string at index X\nand then retrieving it as an integer is NOT the same as StringToInt()!\nThe \"blocksize\" determines how many cells each array slot has; it cannot\nbe changed after creation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a dynamic global cell array.  While slower than a normal array,\nit can be used globally AND dynamically, which is otherwise impossible.\n\nThe contents of the array are uniform; i.e. storing a string at index X\nand then retrieving it as an integer is NOT the same as StringToInt()!\nThe \"blocksize\" determines how many cells each array slot has; it cannot\nbe changed after creation."
+          },
+          {
+            "tag": "param:blocksize",
+            "text": "The number of cells each member of the array can\nhold.  For example, 32 cells is equivalent to:\nnew Array[X][32]"
+          },
+          {
+            "tag": "param:startsize",
+            "text": "Initial size of the array.  Note that data will\nNOT be auto-initialized."
+          },
+          {
+            "tag": "return",
+            "text": "New Handle to the array object."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ArrayList",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "blocksize",
+          "decl": "int blocksize",
+          "default": "1"
+        },
+        {
+          "type": "int",
+          "name": "startsize",
+          "decl": "int startsize",
+          "default": "0"
+        }
+      ]
+    },
+    "GetArrayArray": {
+      "name": "GetArrayArray",
+      "refLine": 392,
+      "docStart": 16109,
+      "docEnd": 16689,
+      "docs": {
+        "brief": "Retrieves an array of cells from an array.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves an array of cells from an array."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store the array in."
+          },
+          {
+            "tag": "param:size",
+            "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+          },
+          {
+            "tag": "param:block",
+            "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+          },
+          {
+            "tag": "return",
+            "text": "Number of cells copied."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "buffer",
+          "decl": "any[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "block",
+          "decl": "int block",
+          "default": "0"
+        }
+      ]
+    },
+    "RemoveFromArray": {
+      "name": "RemoveFromArray",
+      "refLine": 457,
+      "docStart": 19089,
+      "docEnd": 19494,
+      "docs": {
+        "brief": "Removes an array index, shifting the entire array down from that position\non.  For example, if item 8 of 10 is removed, the last 3 items will then be\n(6,7,8) instead of (7,8,9), and all indexes before 8 will remain unchanged.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes an array index, shifting the entire array down from that position\non.  For example, if item 8 of 10 is removed, the last 3 items will then be\n(6,7,8) instead of (7,8,9), and all indexes before 8 will remain unchanged."
+          },
+          {
+            "tag": "param:array",
+            "text": "Array Handle."
+          },
+          {
+            "tag": "param:index",
+            "text": "Index in the array to remove at."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or invalid index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "ArrayList": {
+      "name": "ArrayList",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Get": {
+          "name": "Get",
+          "refLine": 125,
+          "docStart": 4863,
+          "docEnd": 5231,
+          "docs": {
+            "brief": "Retrieves a cell value from an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a cell value from an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "param:asChar",
+                "text": "Optionally read as a byte instead of a cell."
+              },
+              {
+                "tag": "return",
+                "text": "Value read."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "any",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "bool",
+              "name": "asChar",
+              "decl": "bool asChar",
+              "default": "false"
+            }
+          ]
+        },
+        "GetArray": {
+          "name": "GetArray",
+          "refLine": 148,
+          "docStart": 5809,
+          "docEnd": 6331,
+          "docs": {
+            "brief": "Retrieves an array of cells from an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves an array of cells from an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the array in."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Number of cells copied."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "any[]",
+              "name": "buffer",
+              "decl": "any[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            }
+          ]
+        },
+        "Resize": {
+          "name": "Resize",
+          "refLine": 88,
+          "docStart": 3396,
+          "docEnd": 3644,
+          "docs": {
+            "brief": "Resizes an array.  If the size is smaller than the current size, the\narray is truncated.  If the size is larger than the current size,\nthe data at the additional indexes will not be initialized.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Resizes an array.  If the size is smaller than the current size, the\narray is truncated.  If the size is larger than the current size,\nthe data at the additional indexes will not be initialized."
+              },
+              {
+                "tag": "param:newsize",
+                "text": "New size."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "newsize",
+              "decl": "int newsize",
+              "default": null
+            }
+          ]
+        },
+        "SwapAt": {
+          "name": "SwapAt",
+          "refLine": 205,
+          "docStart": 8828,
+          "docEnd": 8985,
+          "docs": {
+            "brief": "Swaps two items in the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Swaps two items in the array."
+              },
+              {
+                "tag": "param:index1",
+                "text": "First index."
+              },
+              {
+                "tag": "param:index2",
+                "text": "Second index."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index1",
+              "decl": "int index1",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "index2",
+              "decl": "int index2",
+              "default": null
+            }
+          ]
+        },
+        "Push": {
+          "name": "Push",
+          "refLine": 98,
+          "docStart": 3691,
+          "docEnd": 3998,
+          "docs": {
+            "brief": "Pushes a value onto the end of an array, adding a new index.\n\nThis may safely be used even if the array has a blocksize greater\nthan 1.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a value onto the end of an array, adding a new index.\n\nThis may safely be used even if the array has a blocksize greater\nthan 1."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value to push."
+              },
+              {
+                "tag": "return",
+                "text": "Index of the new entry."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid Handle or out of memory."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            }
+          ]
+        },
+        "SetArray": {
+          "name": "SetArray",
+          "refLine": 182,
+          "docStart": 7486,
+          "docEnd": 7985,
+          "docs": {
+            "brief": "Sets an array of cells in an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets an array of cells in an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:values",
+                "text": "Array to copy."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Number of cells copied."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const any[]",
+              "name": "values",
+              "decl": "const any[] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            }
+          ]
+        },
+        "FindValue": {
+          "name": "FindValue",
+          "refLine": 231,
+          "docStart": 9926,
+          "docEnd": 10536,
+          "docs": {
+            "brief": "Returns the index for the first occurrence of the provided value. If the\nvalue cannot be located, -1 will be returned.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the index for the first occurrence of the provided value. If the\nvalue cannot be located, -1 will be returned."
+              },
+              {
+                "tag": "param:item",
+                "text": "Value to search for."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally which block to search in."
+              },
+              {
+                "tag": "param:start",
+                "text": "Index to start searching from (exclusive), or -1 for direction default.\nValid numbers are in the interval [-1..Length]."
+              },
+              {
+                "tag": "param:reverse",
+                "text": "Whether the search direction should be reversed."
+              },
+              {
+                "tag": "return",
+                "text": "Array index, or -1 on failure."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid block, or invalid start index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "any",
+              "name": "item",
+              "decl": "any item",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "int",
+              "name": "start",
+              "decl": "int start",
+              "default": "-1"
+            },
+            {
+              "type": "bool",
+              "name": "reverse",
+              "decl": "bool reverse",
+              "default": "false"
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 170,
+          "docStart": 6886,
+          "docEnd": 7393,
+          "docs": {
+            "brief": "Sets a string value in an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a string value in an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to set."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, assumes the buffer size is equal to the\nblocksize.  Otherwise, the size passed is used."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Number of characters copied."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            }
+          ]
+        },
+        "Set": {
+          "name": "Set",
+          "refLine": 158,
+          "docStart": 6417,
+          "docEnd": 6801,
+          "docs": {
+            "brief": "Sets a cell value in an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets a cell value in an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:value",
+                "text": "Cell value to set."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to write to\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "param:asChar",
+                "text": "Optionally set as a byte instead of a cell."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index, or invalid block."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "any",
+              "name": "value",
+              "decl": "any value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "bool",
+              "name": "asChar",
+              "decl": "bool asChar",
+              "default": "false"
+            }
+          ]
+        },
+        "PushString": {
+          "name": "PushString",
+          "refLine": 104,
+          "docStart": 4040,
+          "docEnd": 4213,
+          "docs": {
+            "brief": "Pushes a string onto the end of an array, truncating it if it is too big.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes a string onto the end of an array, truncating it if it is too big."
+              },
+              {
+                "tag": "param:value",
+                "text": "String to push."
+              },
+              {
+                "tag": "return",
+                "text": "Index of the new entry."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "ShiftUp": {
+          "name": "ShiftUp",
+          "refLine": 190,
+          "docStart": 8077,
+          "docEnd": 8395,
+          "docs": {
+            "brief": "Shifts an array up.  All array contents after and including the given\nindex are shifted up by one, and the given index is then \"free.\"\nAfter shifting, the contents of the given index is undefined.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Shifts an array up.  All array contents after and including the given\nindex are shifted up by one, and the given index is then \"free.\"\nAfter shifting, the contents of the given index is undefined."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array to shift up from."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "Clear": {
+          "name": "Clear",
+          "refLine": 73,
+          "docStart": 2927,
+          "docEnd": 2993,
+          "docs": {
+            "brief": "Clears an array of all entries.  This is the same as Resize(0).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clears an array of all entries.  This is the same as Resize(0)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 136,
+          "docStart": 5304,
+          "docEnd": 5719,
+          "docs": {
+            "brief": "Retrieves a string value from an array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves a string value from an array."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to copy to."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum size of the buffer."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally specify which block to read from\n(useful if the blocksize > 0)."
+              },
+              {
+                "tag": "return",
+                "text": "Number of characters copied."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            }
+          ]
+        },
+        "Erase": {
+          "name": "Erase",
+          "refLine": 198,
+          "docStart": 8441,
+          "docEnd": 8784,
+          "docs": {
+            "brief": "Removes an array index, shifting the entire array down from that position\non.  For example, if item 8 of 10 is removed, the last 3 items will then be\n(6,7,8) instead of (7,8,9), and all indexes before 8 will remain unchanged.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes an array index, shifting the entire array down from that position\non.  For example, if item 8 of 10 is removed, the last 3 items will then be\n(6,7,8) instead of (7,8,9), and all indexes before 8 will remain unchanged."
+              },
+              {
+                "tag": "param:index",
+                "text": "Index in the array to remove at."
+              },
+              {
+                "tag": "error",
+                "text": "Invalid index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "index",
+              "decl": "int index",
+              "default": null
+            }
+          ]
+        },
+        "FindString": {
+          "name": "FindString",
+          "refLine": 219,
+          "docStart": 9043,
+          "docEnd": 9798,
+          "docs": {
+            "brief": "Returns the index for the first occurrence of the provided string. If\nthe string cannot be located, -1 will be returned.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the index for the first occurrence of the provided string. If\nthe string cannot be located, -1 will be returned."
+              },
+              {
+                "tag": "param:item",
+                "text": "String to search for."
+              },
+              {
+                "tag": "param:block",
+                "text": "Optionally which block to search in."
+              },
+              {
+                "tag": "param:start",
+                "text": "Index to start searching from (exclusive), or -1 for direction default.\nValid numbers are in the interval [-1..Length]."
+              },
+              {
+                "tag": "param:reverse",
+                "text": "Whether the search direction should be reversed."
+              },
+              {
+                "tag": "param:caseSensitive",
+                "text": "If true (default), comparison is case sensitive.\nIf false, comparison is case insensitive."
+              },
+              {
+                "tag": "return",
+                "text": "Array index, or -1 on failure"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid block, or invalid start index."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "item",
+              "decl": "const char[] item",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "block",
+              "decl": "int block",
+              "default": "0"
+            },
+            {
+              "type": "int",
+              "name": "start",
+              "decl": "int start",
+              "default": "-1"
+            },
+            {
+              "type": "bool",
+              "name": "reverse",
+              "decl": "bool reverse",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "caseSensitive",
+              "decl": "bool caseSensitive",
+              "default": "true"
+            }
+          ]
+        },
+        "SortCustom": {
+          "name": "SortCustom",
+          "refLine": 243,
+          "docStart": 10892,
+          "docEnd": 11104,
+          "docs": {
+            "brief": "Custom sorts an ADT Array. You must pass in a comparison function.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Custom sorts an ADT Array. You must pass in a comparison function."
+              },
+              {
+                "tag": "param:sortfunc",
+                "text": "Sort comparison function to use"
+              },
+              {
+                "tag": "param:hndl",
+                "text": "Optional Handle to pass through the comparison calls."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SortFuncADTArray",
+              "name": "sortfunc",
+              "decl": "SortFuncADTArray sortfunc",
+              "default": null
+            },
+            {
+              "type": "Handle",
+              "name": "hndl",
+              "decl": "Handle hndl",
+              "default": "INVALID_HANDLE"
+            }
+          ]
+        },
+        "Sort": {
+          "name": "Sort",
+          "refLine": 237,
+          "docStart": 10629,
+          "docEnd": 10828,
+          "docs": {
+            "brief": "Sort an ADT Array. Specify the type as Integer, Float, or String.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sort an ADT Array. Specify the type as Integer, Float, or String."
+              },
+              {
+                "tag": "param:order",
+                "text": "Sort order to use, same as other sorts."
+              },
+              {
+                "tag": "param:type",
+                "text": "Data type stored in the ADT Array"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "SortOrder",
+              "name": "order",
+              "decl": "SortOrder order",
+              "default": null
+            },
+            {
+              "type": "SortType",
+              "name": "type",
+              "decl": "SortType type",
+              "default": null
+            }
+          ]
+        },
+        "PushArray": {
+          "name": "PushArray",
+          "refLine": 115,
+          "docStart": 4270,
+          "docEnd": 4794,
+          "docs": {
+            "brief": "Pushes an array of cells onto the end of an array.  The cells\nare pushed as a block (i.e. the entire array sits at the index),\nrather than pushing each cell individually.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Pushes an array of cells onto the end of an array.  The cells\nare pushed as a block (i.e. the entire array sits at the index),\nrather than pushing each cell individually."
+              },
+              {
+                "tag": "param:values",
+                "text": "Block of values to copy."
+              },
+              {
+                "tag": "param:size",
+                "text": "If not set, the number of elements copied from the array\nwill be equal to the blocksize.  If set higher than the\nblocksize, the operation will be truncated."
+              },
+              {
+                "tag": "return",
+                "text": "Index of the new entry."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "const any[]",
+              "name": "values",
+              "decl": "const any[] values",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "size",
+              "decl": "int size",
+              "default": "-1"
+            }
+          ]
+        },
+        "Clone": {
+          "name": "Clone",
+          "refLine": 81,
+          "docStart": 3028,
+          "docEnd": 3356,
+          "docs": {
+            "brief": "Clones an array, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Clones an array, returning a new handle with the same size and data.\nThis should NOT be confused with CloneHandle. This is a completely new\nhandle with the same data but no relation to the original. It should be\nclosed when no longer needed."
+              },
+              {
+                "tag": "return",
+                "text": "New handle to the cloned array object"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "ArrayList",
+          "arguments": []
+        },
+        "ArrayList": {
+          "name": "ArrayList",
+          "refLine": 70,
+          "docStart": 2063,
+          "docEnd": 2861,
+          "docs": {
+            "brief": "Creates a dynamic global cell array.  While slower than a normal array,\nit can be used globally AND dynamically, which is otherwise impossible.\n\nThe contents of the array are uniform; i.e. storing a string at index X\nand then retrieving it as an integer is NOT the same as StringToInt()!\nThe \"blocksize\" determines how many cells each array slot has; it cannot\nbe changed after creation.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a dynamic global cell array.  While slower than a normal array,\nit can be used globally AND dynamically, which is otherwise impossible.\n\nThe contents of the array are uniform; i.e. storing a string at index X\nand then retrieving it as an integer is NOT the same as StringToInt()!\nThe \"blocksize\" determines how many cells each array slot has; it cannot\nbe changed after creation."
+              },
+              {
+                "tag": "param:blocksize",
+                "text": "The number of cells each member of the array can\nhold.  For example, 32 cells is equivalent to:\nnew Array[X][32]"
+              },
+              {
+                "tag": "param:startsize",
+                "text": "Initial size of the array.  Note that data will\nNOT be auto-initialized."
+              },
+              {
+                "tag": "return",
+                "text": "New Handle to the array object."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "ArrayList",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "blocksize",
+              "decl": "int blocksize",
+              "default": "1"
+            },
+            {
+              "type": "int",
+              "name": "startsize",
+              "decl": "int startsize",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "Length": {
+          "name": "Length",
+          "refLine": 246,
+          "docStart": 11198,
+          "docEnd": 11232,
+          "docs": {
+            "brief": "Retrieve the size of the array.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the size of the array."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        },
+        "BlockSize": {
+          "name": "BlockSize",
+          "refLine": 251,
+          "docStart": 11290,
+          "docEnd": 11343,
+          "docs": {
+            "brief": "Retrieve the blocksize the array was created with.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieve the blocksize the array was created with."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_adt_array_included": {
+      "name": "_adt_array_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

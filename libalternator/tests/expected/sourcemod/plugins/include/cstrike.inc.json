@@ -1,0 +1,2727 @@
+{
+  "functions": {
+    "CS_GetTeamScore": {
+      "name": "CS_GetTeamScore",
+      "refLine": 319,
+      "docStart": 11484,
+      "docEnd": 11677,
+      "docs": {
+        "brief": "Gets a team's score",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a team's score"
+          },
+          {
+            "tag": "param:team",
+            "text": "Team index to get score for."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the internal team score."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "team",
+          "decl": "int team",
+          "default": null
+        }
+      ]
+    },
+    "CS_OnGetWeaponPrice": {
+      "name": "CS_OnGetWeaponPrice",
+      "refLine": 217,
+      "docStart": 7428,
+      "docEnd": 7928,
+      "docs": {
+        "brief": "Called when game retrieves a weapon's price for a player.\nReturn Plugin_Continue to use default value or return a higher\naction to use a newly-set price.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when game retrieves a weapon's price for a player.\nReturn Plugin_Continue to use default value or return a higher\naction to use a newly-set price."
+          },
+          {
+            "tag": "note",
+            "text": "This can be called multiple times per weapon purchase"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Weapon classname"
+          },
+          {
+            "tag": "param:price",
+            "text": "Buffer param for the price of the weapon"
+          },
+          {
+            "tag": "note",
+            "text": "Not all \"weapons\" call GetWeaponPrice. Example: c4, knife, vest, vest helmet, night vision."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "weapon",
+          "decl": "const char[] weapon",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "price",
+          "decl": "int& price",
+          "default": null
+        }
+      ]
+    },
+    "CS_OnTerminateRound": {
+      "name": "CS_OnTerminateRound",
+      "refLine": 228,
+      "docStart": 8014,
+      "docEnd": 8376,
+      "docs": {
+        "brief": "Called when TerminateRound is called.\nReturn Plugin_Continue to ignore, return Plugin_Changed to continue,\nusing the given delay and reason, or return Plugin_Handled or a higher\naction to block TerminateRound from firing.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when TerminateRound is called.\nReturn Plugin_Continue to ignore, return Plugin_Changed to continue,\nusing the given delay and reason, or return Plugin_Handled or a higher\naction to block TerminateRound from firing."
+          },
+          {
+            "tag": "param:delay",
+            "text": "Time (in seconds) until new round starts"
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for round end"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "float&",
+          "name": "delay",
+          "decl": "float& delay",
+          "default": null
+        },
+        {
+          "type": "CSRoundEndReason&",
+          "name": "reason",
+          "decl": "CSRoundEndReason& reason",
+          "default": null
+        }
+      ]
+    },
+    "CS_UpdateClientModel": {
+      "name": "CS_UpdateClientModel",
+      "refLine": 423,
+      "docStart": 14887,
+      "docEnd": 15062,
+      "docs": {
+        "brief": "Sets a player's model based on their current class",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a player's model based on their current class"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CS_WeaponIDToAlias": {
+      "name": "CS_WeaponIDToAlias",
+      "refLine": 405,
+      "docStart": 14115,
+      "docEnd": 14398,
+      "docs": {
+        "brief": "Gets a alias from a weaponID",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a alias from a weaponID"
+          },
+          {
+            "tag": "param:weaponID",
+            "text": "WeaponID to get alias for."
+          },
+          {
+            "tag": "param:destination",
+            "text": "Destination string to hold the weapon alias."
+          },
+          {
+            "tag": "param:len",
+            "text": "Length of the destination array."
+          },
+          {
+            "tag": "return",
+            "text": "Returns number of cells written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "CSWeaponID",
+          "name": "weaponID",
+          "decl": "CSWeaponID weaponID",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "destination",
+          "decl": "char[] destination",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": null
+        }
+      ]
+    },
+    "CS_DropWeapon": {
+      "name": "CS_DropWeapon",
+      "refLine": 256,
+      "docStart": 8890,
+      "docEnd": 9305,
+      "docs": {
+        "brief": "Forces a player to drop or toss their weapon",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Forces a player to drop or toss their weapon"
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:weaponIndex",
+            "text": "Index of weapon to drop."
+          },
+          {
+            "tag": "param:toss",
+            "text": "True to toss weapon (with velocity) or false to just drop weapon"
+          },
+          {
+            "tag": "param:blockhook",
+            "text": "Set to true to stop the corresponding CS_OnCSWeaponDrop"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or invalid weapon index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weaponIndex",
+          "decl": "int weaponIndex",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "toss",
+          "decl": "bool toss",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "blockhook",
+          "decl": "bool blockhook",
+          "default": "false"
+        }
+      ]
+    },
+    "CS_RespawnPlayer": {
+      "name": "CS_RespawnPlayer",
+      "refLine": 236,
+      "docStart": 8457,
+      "docEnd": 8600,
+      "docs": {
+        "brief": "Respawns a player.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Respawns a player."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CS_SwitchTeam": {
+      "name": "CS_SwitchTeam",
+      "refLine": 245,
+      "docStart": 8647,
+      "docEnd": 8836,
+      "docs": {
+        "brief": "Switches the player's team.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Switches the player's team."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player's index."
+          },
+          {
+            "tag": "param:team",
+            "text": "Team index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "team",
+          "decl": "int team",
+          "default": null
+        }
+      ]
+    },
+    "CS_SetClientClanTag": {
+      "name": "CS_SetClientClanTag",
+      "refLine": 310,
+      "docStart": 11219,
+      "docEnd": 11416,
+      "docs": {
+        "brief": "Sets a clients clan tag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a clients clan tag"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to set clan tag for."
+          },
+          {
+            "tag": "param:tag",
+            "text": "Tag to set clients clan tag as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "tag",
+          "decl": "const char[] tag",
+          "default": null
+        }
+      ]
+    },
+    "CS_GetClientContributionScore": {
+      "name": "CS_GetClientContributionScore",
+      "refLine": 358,
+      "docStart": 12674,
+      "docEnd": 12887,
+      "docs": {
+        "brief": "Gets a client's contribution score (CS:GO only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's contribution score (CS:GO only)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to get score of."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the client's score."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CS_GetClientAssists": {
+      "name": "CS_GetClientAssists",
+      "refLine": 376,
+      "docStart": 13235,
+      "docEnd": 13441,
+      "docs": {
+        "brief": "Gets a client's assists (CS:GO only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's assists (CS:GO only)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to get assists of."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the client's assists."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CS_SetClientAssists": {
+      "name": "CS_SetClientAssists",
+      "refLine": 385,
+      "docStart": 13490,
+      "docEnd": 13701,
+      "docs": {
+        "brief": "Sets a client's assists (CS:GO only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's assists (CS:GO only)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to set assists for."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set client's assists as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "CS_AliasToWeaponID": {
+      "name": "CS_AliasToWeaponID",
+      "refLine": 395,
+      "docStart": 13762,
+      "docEnd": 14052,
+      "docs": {
+        "brief": "Gets a weaponID from a alias",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a weaponID from a alias"
+          },
+          {
+            "tag": "param:alias",
+            "text": "Weapon alias to attempt to get an id for."
+          },
+          {
+            "tag": "return",
+            "text": "Returns a weapon id or 0 if failed to find a match."
+          },
+          {
+            "tag": "note",
+            "text": "For best results use CS_GetTranslatedWeaponAlias on the weapon name before passing it."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CSWeaponID",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "alias",
+          "decl": "const char[] alias",
+          "default": null
+        }
+      ]
+    },
+    "CS_OnCSWeaponDrop": {
+      "name": "CS_OnCSWeaponDrop",
+      "refLine": 202,
+      "docStart": 6950,
+      "docEnd": 7346,
+      "docs": {
+        "brief": "Called when CSWeaponDrop is called\nReturn Plugin_Continue to allow the call or return a\nhigher action to block.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when CSWeaponDrop is called\nReturn Plugin_Continue to allow the call or return a\nhigher action to block."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:weaponIndex",
+            "text": "Weapon index"
+          },
+          {
+            "tag": "param:donated",
+            "text": "Was weapon donated (Bought from a buy menu while ctrl was pressed)\n(Note: This param is for CS:GO only, will be false on other games)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "weaponIndex",
+          "decl": "int weaponIndex",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "donated",
+          "decl": "bool donated",
+          "default": null
+        }
+      ]
+    },
+    "CS_IsValidWeaponID": {
+      "name": "CS_IsValidWeaponID",
+      "refLine": 415,
+      "docStart": 14484,
+      "docEnd": 14835,
+      "docs": {
+        "brief": "Returns weather a WeaponID is valid on the current mod (css or csgo)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns weather a WeaponID is valid on the current mod (css or csgo)"
+          },
+          {
+            "tag": "param:weaponID",
+            "text": "WeaponID to check"
+          },
+          {
+            "tag": "return",
+            "text": "Returns true if its a valid WeaponID false otherwise."
+          },
+          {
+            "tag": "note",
+            "text": "This will return false always for CSWeapon_NONE. Should only be called after OnMapStart since weapon info isnt intialized before."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "CSWeaponID",
+          "name": "id",
+          "decl": "CSWeaponID id",
+          "default": null
+        }
+      ]
+    },
+    "CS_WeaponIDToItemDefIndex": {
+      "name": "CS_WeaponIDToItemDefIndex",
+      "refLine": 445,
+      "docStart": 15550,
+      "docEnd": 15918,
+      "docs": {
+        "brief": "Returns a item definition index equivalent based on the CSWeaponID.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a item definition index equivalent based on the CSWeaponID."
+          },
+          {
+            "tag": "param:id",
+            "text": "CSWeaponID to get the item definition for."
+          },
+          {
+            "tag": "return",
+            "text": "Returns item definition index value for the weapon id."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid weapon id."
+          },
+          {
+            "tag": "note",
+            "text": "In most cases the item definition index will be the id. Works for CS:GO ONLY."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "CSWeaponID",
+          "name": "id",
+          "decl": "CSWeaponID id",
+          "default": null
+        }
+      ]
+    },
+    "CS_SetMVPCount": {
+      "name": "CS_SetMVPCount",
+      "refLine": 349,
+      "docStart": 12414,
+      "docEnd": 12618,
+      "docs": {
+        "brief": "Sets a client's mvp count",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's mvp count"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to set mvp count for."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set client's mvp count as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "CS_SetClientContributionScore": {
+      "name": "CS_SetClientContributionScore",
+      "refLine": 367,
+      "docStart": 12946,
+      "docEnd": 13164,
+      "docs": {
+        "brief": "Sets a client's contribution score (CS:GO only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a client's contribution score (CS:GO only)"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to set score for."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set client's score as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "CS_TerminateRound": {
+      "name": "CS_TerminateRound",
+      "refLine": 266,
+      "docStart": 9401,
+      "docEnd": 9715,
+      "docs": {
+        "brief": "Forces round to end with a reason",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Forces round to end with a reason"
+          },
+          {
+            "tag": "param:delay",
+            "text": "Time (in seconds) to delay before new round starts"
+          },
+          {
+            "tag": "param:reason",
+            "text": "Reason for the round ending"
+          },
+          {
+            "tag": "param:blockhook",
+            "text": "Set to true to stop the corresponding CS_OnTerminateRound\nforward from being called."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "delay",
+          "decl": "float delay",
+          "default": null
+        },
+        {
+          "type": "CSRoundEndReason",
+          "name": "reason",
+          "decl": "CSRoundEndReason reason",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "blockhook",
+          "decl": "bool blockhook",
+          "default": "false"
+        }
+      ]
+    },
+    "CS_GetTranslatedWeaponAlias": {
+      "name": "CS_GetTranslatedWeaponAlias",
+      "refLine": 277,
+      "docStart": 9814,
+      "docEnd": 10144,
+      "docs": {
+        "brief": "Gets a weapon name from a weapon alias",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a weapon name from a weapon alias"
+          },
+          {
+            "tag": "param:alias",
+            "text": "Weapons alias to get weapon name for."
+          },
+          {
+            "tag": "param:weapon",
+            "text": "Buffer to store weapons name"
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of buffer to store the weapons name."
+          },
+          {
+            "tag": "note",
+            "text": "Will set the buffer to the original alias if it is not an alias to a weapon."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "alias",
+          "decl": "const char[] alias",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "weapon",
+          "decl": "char[] weapon",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "CS_GetMVPCount": {
+      "name": "CS_GetMVPCount",
+      "refLine": 340,
+      "docStart": 12162,
+      "docEnd": 12370,
+      "docs": {
+        "brief": "Gets a client's mvp count",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a client's mvp count"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to get mvp count of."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the client's internal MVP count."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CS_ItemDefIndexToID": {
+      "name": "CS_ItemDefIndexToID",
+      "refLine": 434,
+      "docStart": 15113,
+      "docEnd": 15491,
+      "docs": {
+        "brief": "Returns a CSWeaponID equivalent based on the item definition index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns a CSWeaponID equivalent based on the item definition index."
+          },
+          {
+            "tag": "param:iDefIndex",
+            "text": "Definition index to get the CSWeaponID value for."
+          },
+          {
+            "tag": "return",
+            "text": "Returns CSWeaponID value for the definition index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid definition index."
+          },
+          {
+            "tag": "note",
+            "text": "In most cases the id will be the item definition index. Works for CS:GO ONLY."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CSWeaponID",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iDefIndex",
+          "decl": "int iDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "__ext_cstrike_SetNTVOptional": {
+      "name": "__ext_cstrike_SetNTVOptional",
+      "refLine": 472,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "CS_OnBuyCommand": {
+      "name": "CS_OnBuyCommand",
+      "refLine": 190,
+      "docStart": 6635,
+      "docEnd": 6880,
+      "docs": {
+        "brief": "Called when a player attempts to purchase an item.\nReturn Plugin_Continue to allow the purchase or return a\nhigher action to deny.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a player attempts to purchase an item.\nReturn Plugin_Continue to allow the purchase or return a\nhigher action to deny."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:weapon",
+            "text": "User input for weapon name"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "weapon",
+          "decl": "const char[] weapon",
+          "default": null
+        }
+      ]
+    },
+    "CS_GetClientClanTag": {
+      "name": "CS_GetClientClanTag",
+      "refLine": 301,
+      "docStart": 10839,
+      "docEnd": 11145,
+      "docs": {
+        "brief": "Gets a clients clan tag",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a clients clan tag"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index to get clan tag for."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store clients clan tag in."
+          },
+          {
+            "tag": "param:size",
+            "text": "Size of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of non-null bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "CS_WeaponIDToLoadoutSlot": {
+      "name": "CS_WeaponIDToLoadoutSlot",
+      "refLine": 454,
+      "docStart": 15976,
+      "docEnd": 16235,
+      "docs": {
+        "brief": "Returns the loadout slot based on the CSWeaponID. (CS:GO only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the loadout slot based on the CSWeaponID. (CS:GO only)"
+          },
+          {
+            "tag": "param:id",
+            "text": "CSWeaponID to get the loadout slot for."
+          },
+          {
+            "tag": "return",
+            "text": "Returns loadout slot value for the weapon id."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid weapon id."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "CSWeaponID",
+          "name": "id",
+          "decl": "CSWeaponID id",
+          "default": null
+        }
+      ]
+    },
+    "CS_GetWeaponPrice": {
+      "name": "CS_GetWeaponPrice",
+      "refLine": 290,
+      "docStart": 10236,
+      "docEnd": 10749,
+      "docs": {
+        "brief": "Gets a weapon's price",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets a weapon's price"
+          },
+          {
+            "tag": "param:client",
+            "text": "Client to check weapon price for."
+          },
+          {
+            "tag": "param:id",
+            "text": "Weapon id for the weapon to check"
+          },
+          {
+            "tag": "param:defaultprice",
+            "text": "Set to true to get defaultprice."
+          },
+          {
+            "tag": "return",
+            "text": "Returns price of the weapon (even if modified)"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client, failing to get weapon info, or failing to get price offset."
+          },
+          {
+            "tag": "note",
+            "text": "c4, knife and shield will always return 0. vest, vest helmet and night vision will always return default price."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "CSWeaponID",
+          "name": "id",
+          "decl": "CSWeaponID id",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "defaultprice",
+          "decl": "bool defaultprice",
+          "default": "false"
+        }
+      ]
+    },
+    "CS_SetTeamScore": {
+      "name": "CS_SetTeamScore",
+      "refLine": 331,
+      "docStart": 11720,
+      "docEnd": 12107,
+      "docs": {
+        "brief": "Sets a team's score",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a team's score"
+          },
+          {
+            "tag": "param:team",
+            "text": "Team index to set score for."
+          },
+          {
+            "tag": "param:value",
+            "text": "Value to set teams score as."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid team index."
+          },
+          {
+            "tag": "note",
+            "text": "This will update the scoreboard only after the scoreboard update function is called.\nUse SetTeamScore plus this to update the scoreboard instantly and save values correctly."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "team",
+          "decl": "int team",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "CS_TEAM_T": {
+      "name": "CS_TEAM_T",
+      "refLine": 40,
+      "docStart": 1779,
+      "docEnd": 1798,
+      "docs": {
+        "brief": "Terrorists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Terrorists."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "CS_SLOT_KNIFE": {
+      "name": "CS_SLOT_KNIFE",
+      "refLine": 45,
+      "docStart": 2021,
+      "docEnd": 2040,
+      "docs": {
+        "brief": "Knife slot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Knife slot."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "CS_SLOT_SECONDARY": {
+      "name": "CS_SLOT_SECONDARY",
+      "refLine": 44,
+      "docStart": 1957,
+      "docEnd": 1987,
+      "docs": {
+        "brief": "Secondary weapon slot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Secondary weapon slot."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "CS_SLOT_C4": {
+      "name": "CS_SLOT_C4",
+      "refLine": 47,
+      "docStart": 2160,
+      "docEnd": 2176,
+      "docs": {
+        "brief": "C4 slot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "C4 slot."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "4"
+    },
+    "CS_DMG_HEADSHOT": {
+      "name": "CS_DMG_HEADSHOT",
+      "refLine": 51,
+      "docStart": 2387,
+      "docEnd": 2403,
+      "docs": {
+        "brief": "Headshot",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Headshot"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 30)"
+    },
+    "CS_TEAM_CT": {
+      "name": "CS_TEAM_CT",
+      "refLine": 41,
+      "docStart": 1832,
+      "docEnd": 1859,
+      "docs": {
+        "brief": "Counter-Terrorists.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Counter-Terrorists."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "3"
+    },
+    "CS_TEAM_SPECTATOR": {
+      "name": "CS_TEAM_SPECTATOR",
+      "refLine": 39,
+      "docStart": 1726,
+      "docEnd": 1745,
+      "docs": {
+        "brief": "Spectators.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Spectators."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "CS_SLOT_GRENADE": {
+      "name": "CS_SLOT_GRENADE",
+      "refLine": 46,
+      "docStart": 2074,
+      "docEnd": 2126,
+      "docs": {
+        "brief": "Grenade slot (will only return one grenade).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Grenade slot (will only return one grenade)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "3"
+    },
+    "CS_SLOT_UTILITY": {
+      "name": "CS_SLOT_UTILITY",
+      "refLine": 49,
+      "docStart": 2318,
+      "docEnd": 2342,
+      "docs": {
+        "brief": "Slot for tablet.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Slot for tablet."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "12"
+    },
+    "_cstrike_included": {
+      "name": "_cstrike_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "CS_TEAM_NONE": {
+      "name": "CS_TEAM_NONE",
+      "refLine": 38,
+      "docStart": 1672,
+      "docEnd": 1692,
+      "docs": {
+        "brief": "No team yet.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No team yet."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "CS_SLOT_PRIMARY": {
+      "name": "CS_SLOT_PRIMARY",
+      "refLine": 43,
+      "docStart": 1895,
+      "docEnd": 1923,
+      "docs": {
+        "brief": "Primary weapon slot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Primary weapon slot."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "CS_SLOT_BOOST": {
+      "name": "CS_SLOT_BOOST",
+      "refLine": 48,
+      "docStart": 2210,
+      "docEnd": 2284,
+      "docs": {
+        "brief": "Slot for healthshot and shield (will only return one weapon/item).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Slot for healthshot and shield (will only return one weapon/item)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "11"
+    }
+  },
+  "enums": {
+    "CSRoundEndReason": {
+      "name": "CSRoundEndReason",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CSRoundEnd_TerroristsEscaped": {
+          "name": "CSRoundEnd_TerroristsEscaped",
+          "refLine": 58,
+          "docStart": 2746,
+          "docEnd": 2782,
+          "docs": {
+            "brief": "The terrorists have escaped!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The terrorists have escaped!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TargetSaved": {
+          "name": "CSRoundEnd_TargetSaved",
+          "refLine": 66,
+          "docStart": 3386,
+          "docEnd": 3416,
+          "docs": {
+            "brief": "Target has been saved!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Target has been saved!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TerroristWin": {
+          "name": "CSRoundEnd_TerroristWin",
+          "refLine": 63,
+          "docStart": 3179,
+          "docEnd": 3202,
+          "docs": {
+            "brief": "Terrorists Win!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Terrorists Win!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_HostagesNotRescued": {
+          "name": "CSRoundEnd_HostagesNotRescued",
+          "refLine": 67,
+          "docStart": 3458,
+          "docEnd": 3497,
+          "docs": {
+            "brief": "Hostages have not been rescued!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Hostages have not been rescued!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TerroristsPlanted": {
+          "name": "CSRoundEnd_TerroristsPlanted",
+          "refLine": 75,
+          "docStart": 3949,
+          "docEnd": 3984,
+          "docs": {
+            "brief": "Terrorists Planted the bomb",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Terrorists Planted the bomb"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_VIPKilled": {
+          "name": "CSRoundEnd_VIPKilled",
+          "refLine": 57,
+          "docStart": 2645,
+          "docEnd": 2704,
+          "docs": {
+            "brief": "VIP has been assassinated! - Doesn't exist on CS:GO",
+            "tags": [
+              {
+                "tag": "",
+                "text": "VIP has been assassinated! - Doesn't exist on CS:GO"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_CTStoppedEscape": {
+          "name": "CSRoundEnd_CTStoppedEscape",
+          "refLine": 59,
+          "docStart": 2824,
+          "docEnd": 2892,
+          "docs": {
+            "brief": "The CTs have prevented most of the terrorists from escaping!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The CTs have prevented most of the terrorists from escaping!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TerroristsSurrender": {
+          "name": "CSRoundEnd_TerroristsSurrender",
+          "refLine": 73,
+          "docStart": 3742,
+          "docEnd": 3774,
+          "docs": {
+            "brief": "The below only exist on CS:GO",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The below only exist on CS:GO"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_GameStart": {
+          "name": "CSRoundEnd_GameStart",
+          "refLine": 70,
+          "docStart": 3712,
+          "docEnd": 3736,
+          "docs": {
+            "brief": "Game Commencing!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Game Commencing!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TargetBombed": {
+          "name": "CSRoundEnd_TargetBombed",
+          "refLine": 55,
+          "docStart": 2473,
+          "docEnd": 2508,
+          "docs": {
+            "brief": "Target Successfully Bombed!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Target Successfully Bombed!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "CSRoundEnd_CTsReachedHostage": {
+          "name": "CSRoundEnd_CTsReachedHostage",
+          "refLine": 76,
+          "docStart": 4026,
+          "docEnd": 4057,
+          "docs": {
+            "brief": "CTs Reached the hostage",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CTs Reached the hostage"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_VIPNotEscaped": {
+          "name": "CSRoundEnd_VIPNotEscaped",
+          "refLine": 69,
+          "docStart": 3617,
+          "docEnd": 3670,
+          "docs": {
+            "brief": "VIP has not escaped! - Doesn't exist on CS:GO",
+            "tags": [
+              {
+                "tag": "",
+                "text": "VIP has not escaped! - Doesn't exist on CS:GO"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_CTSurrender": {
+          "name": "CSRoundEnd_CTSurrender",
+          "refLine": 74,
+          "docStart": 3886,
+          "docEnd": 3907,
+          "docs": {
+            "brief": "CTs Surrender",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CTs Surrender"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TerroristsStopped": {
+          "name": "CSRoundEnd_TerroristsStopped",
+          "refLine": 60,
+          "docStart": 2934,
+          "docEnd": 2988,
+          "docs": {
+            "brief": "Escaping terrorists have all been neutralized!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Escaping terrorists have all been neutralized!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_CTWin": {
+          "name": "CSRoundEnd_CTWin",
+          "refLine": 62,
+          "docStart": 3106,
+          "docEnd": 3137,
+          "docs": {
+            "brief": "Counter-Terrorists Win!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Counter-Terrorists Win!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_HostagesRescued": {
+          "name": "CSRoundEnd_HostagesRescued",
+          "refLine": 65,
+          "docStart": 3305,
+          "docEnd": 3344,
+          "docs": {
+            "brief": "All Hostages have been rescued!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "All Hostages have been rescued!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_VIPEscaped": {
+          "name": "CSRoundEnd_VIPEscaped",
+          "refLine": 56,
+          "docStart": 2550,
+          "docEnd": 2603,
+          "docs": {
+            "brief": "The VIP has escaped! - Doesn't exist on CS:GO",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The VIP has escaped! - Doesn't exist on CS:GO"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_BombDefused": {
+          "name": "CSRoundEnd_BombDefused",
+          "refLine": 61,
+          "docStart": 3030,
+          "docEnd": 3064,
+          "docs": {
+            "brief": "The bomb has been defused!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The bomb has been defused!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_TerroristsNotEscaped": {
+          "name": "CSRoundEnd_TerroristsNotEscaped",
+          "refLine": 68,
+          "docStart": 3539,
+          "docEnd": 3575,
+          "docs": {
+            "brief": "Terrorists have not escaped!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Terrorists have not escaped!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSRoundEnd_Draw": {
+          "name": "CSRoundEnd_Draw",
+          "refLine": 64,
+          "docStart": 3244,
+          "docEnd": 3263,
+          "docs": {
+            "brief": "Round Draw!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Round Draw!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "CSWeaponID": {
+      "name": "CSWeaponID",
+      "refLine": 79,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "CSWeapon_HEAVYASSAULTSUIT": {
+          "name": "CSWeapon_HEAVYASSAULTSUIT",
+          "refLine": 136,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_TATICAL": {
+          "name": "CSWeapon_KNIFE_TATICAL",
+          "refLine": 166,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "509"
+        },
+        "CSWeapon_P250": {
+          "name": "CSWeapon_P250",
+          "refLine": 126,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_MP9": {
+          "name": "CSWeapon_MP9",
+          "refLine": 124,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SAWEDOFF": {
+          "name": "CSWeapon_SAWEDOFF",
+          "refLine": 119,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_OUTDOOR": {
+          "name": "CSWeapon_KNIFE_OUTDOOR",
+          "refLine": 175,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "521"
+        },
+        "CSWeapon_HEGRENADE": {
+          "name": "CSWeapon_HEGRENADE",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_WIDOWMAKER": {
+          "name": "CSWeapon_KNIFE_WIDOWMAKER",
+          "refLine": 177,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "523"
+        },
+        "CSWeapon_CUTTERS": {
+          "name": "CSWeapon_CUTTERS",
+          "refLine": 138,
+          "docStart": 5169,
+          "docEnd": 5224,
+          "docs": {
+            "brief": "The rest are actual item definition indexes for CS:GO",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The rest are actual item definition indexes for CS:GO"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "56"
+        },
+        "CSWeapon_FIREBOMB": {
+          "name": "CSWeapon_FIREBOMB",
+          "refLine": 154,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "81"
+        },
+        "CSWeapon_TMP": {
+          "name": "CSWeapon_TMP",
+          "refLine": 103,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_TEC9": {
+          "name": "CSWeapon_TEC9",
+          "refLine": 120,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_CORD": {
+          "name": "CSWeapon_KNIFE_CORD",
+          "refLine": 171,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "517"
+        },
+        "CSWeapon_UMP45": {
+          "name": "CSWeapon_UMP45",
+          "refLine": 93,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SG552": {
+          "name": "CSWeapon_SG552",
+          "refLine": 107,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_P228": {
+          "name": "CSWeapon_P228",
+          "refLine": 82,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_FRAGGRENADE": {
+          "name": "CSWeapon_FRAGGRENADE",
+          "refLine": 156,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "83"
+        },
+        "CSWeapon_KNIFE_SKELETON": {
+          "name": "CSWeapon_KNIFE_SKELETON",
+          "refLine": 178,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "525"
+        },
+        "CSWeapon_ASSAULTSUIT": {
+          "name": "CSWeapon_ASSAULTSUIT",
+          "refLine": 113,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SPANNER": {
+          "name": "CSWeapon_SPANNER",
+          "refLine": 152,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "78"
+        },
+        "CSWeapon_KEVLAR": {
+          "name": "CSWeapon_KEVLAR",
+          "refLine": 112,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_GG": {
+          "name": "CSWeapon_KNIFE_GG",
+          "refLine": 131,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_MP5NAVY": {
+          "name": "CSWeapon_MP5NAVY",
+          "refLine": 99,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_AUG": {
+          "name": "CSWeapon_AUG",
+          "refLine": 89,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_M9_BAYONET": {
+          "name": "CSWeapon_KNIFE_M9_BAYONET",
+          "refLine": 165,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "508"
+        },
+        "CSWeapon_MAX_WEAPONS": {
+          "name": "CSWeapon_MAX_WEAPONS",
+          "refLine": 179,
+          "docStart": 6531,
+          "docEnd": 6627,
+          "docs": {
+            "brief": "THIS MUST BE LAST, EASY WAY TO CREATE LOOPS. When looping, do CS_IsValidWeaponID(i), to check.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "THIS MUST BE LAST, EASY WAY TO CREATE LOOPS. When looping, do CS_IsValidWeaponID(i), to check."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_C4": {
+          "name": "CSWeapon_C4",
+          "refLine": 87,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_REVOLVER": {
+          "name": "CSWeapon_REVOLVER",
+          "refLine": 144,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "64"
+        },
+        "CSWeapon_M4A1_SILENCER": {
+          "name": "CSWeapon_M4A1_SILENCER",
+          "refLine": 141,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "60"
+        },
+        "CSWeapon_NEGEV": {
+          "name": "CSWeapon_NEGEV",
+          "refLine": 118,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_T": {
+          "name": "CSWeapon_KNIFE_T",
+          "refLine": 140,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "59"
+        },
+        "CSWeapon_BIZON": {
+          "name": "CSWeapon_BIZON",
+          "refLine": 116,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_NIGHTVISION": {
+          "name": "CSWeapon_NIGHTVISION",
+          "refLine": 114,
+          "docStart": 4716,
+          "docEnd": 4746,
+          "docs": {
+            "brief": "Anything below is CS:GO ONLY",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Anything below is CS:GO ONLY"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SHIELD": {
+          "name": "CSWeapon_SHIELD",
+          "refLine": 111,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_HAMMER": {
+          "name": "CSWeapon_HAMMER",
+          "refLine": 151,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "76"
+        },
+        "CSWeapon_GALIL": {
+          "name": "CSWeapon_GALIL",
+          "refLine": 95,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_MAC10": {
+          "name": "CSWeapon_MAC10",
+          "refLine": 88,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_MAG7": {
+          "name": "CSWeapon_MAG7",
+          "refLine": 117,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_TASER": {
+          "name": "CSWeapon_TASER",
+          "refLine": 121,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_MP7": {
+          "name": "CSWeapon_MP7",
+          "refLine": 123,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_G3SG1": {
+          "name": "CSWeapon_G3SG1",
+          "refLine": 104,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_M249": {
+          "name": "CSWeapon_M249",
+          "refLine": 100,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SG550": {
+          "name": "CSWeapon_SG550",
+          "refLine": 94,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_NOVA": {
+          "name": "CSWeapon_NOVA",
+          "refLine": 125,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_DEFUSER": {
+          "name": "CSWeapon_DEFUSER",
+          "refLine": 135,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_FALCHION": {
+          "name": "CSWeapon_KNIFE_FALCHION",
+          "refLine": 167,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "512"
+        },
+        "CSWeapon_SG556": {
+          "name": "CSWeapon_SG556",
+          "refLine": 129,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_PUSH": {
+          "name": "CSWeapon_KNIFE_PUSH",
+          "refLine": 170,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "516"
+        },
+        "CSWeapon_XM1014": {
+          "name": "CSWeapon_XM1014",
+          "refLine": 86,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_FLASHBANG": {
+          "name": "CSWeapon_FLASHBANG",
+          "refLine": 105,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_SURVIVAL_BOWIE": {
+          "name": "CSWeapon_KNIFE_SURVIVAL_BOWIE",
+          "refLine": 168,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "514"
+        },
+        "CSWeapon_BREACHCHARGE": {
+          "name": "CSWeapon_BREACHCHARGE",
+          "refLine": 147,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "70"
+        },
+        "CSWeapon_SCAR17": {
+          "name": "CSWeapon_SCAR17",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_DEAGLE": {
+          "name": "CSWeapon_DEAGLE",
+          "refLine": 106,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SNOWBALL": {
+          "name": "CSWeapon_SNOWBALL",
+          "refLine": 157,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "84"
+        },
+        "CSWeapon_KNIFE_GUT": {
+          "name": "CSWeapon_KNIFE_GUT",
+          "refLine": 163,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "506"
+        },
+        "CSWeapon_AWP": {
+          "name": "CSWeapon_AWP",
+          "refLine": 98,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SCOUT": {
+          "name": "CSWeapon_SCOUT",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_AK47": {
+          "name": "CSWeapon_AK47",
+          "refLine": 108,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_FAMAS": {
+          "name": "CSWeapon_FAMAS",
+          "refLine": 96,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_M3": {
+          "name": "CSWeapon_M3",
+          "refLine": 101,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_FIVESEVEN": {
+          "name": "CSWeapon_FIVESEVEN",
+          "refLine": 92,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SCAR20": {
+          "name": "CSWeapon_SCAR20",
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_DECOY": {
+          "name": "CSWeapon_DECOY",
+          "refLine": 133,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_HKP2000": {
+          "name": "CSWeapon_HKP2000",
+          "refLine": 122,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_BUMPMINE": {
+          "name": "CSWeapon_BUMPMINE",
+          "refLine": 158,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "85"
+        },
+        "CSWeapon_BAYONET": {
+          "name": "CSWeapon_BAYONET",
+          "refLine": 160,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "500"
+        },
+        "CSWeapon_KNIFE_BUTTERFLY": {
+          "name": "CSWeapon_KNIFE_BUTTERFLY",
+          "refLine": 169,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "515"
+        },
+        "CSWeapon_AXE": {
+          "name": "CSWeapon_AXE",
+          "refLine": 150,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "75"
+        },
+        "CSWeapon_KNIFE_CANIS": {
+          "name": "CSWeapon_KNIFE_CANIS",
+          "refLine": 172,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "518"
+        },
+        "CSWeapon_KNIFE_GYPSY_JACKKNIFE": {
+          "name": "CSWeapon_KNIFE_GYPSY_JACKKNIFE",
+          "refLine": 174,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "520"
+        },
+        "CSWeapon_NONE": {
+          "name": "CSWeapon_NONE",
+          "refLine": 81,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "CSWeapon_KNIFE_STILETTO": {
+          "name": "CSWeapon_KNIFE_STILETTO",
+          "refLine": 176,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "522"
+        },
+        "CSWeapon_HEALTHSHOT": {
+          "name": "CSWeapon_HEALTHSHOT",
+          "refLine": 139,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "57"
+        },
+        "CSWeapon_P90": {
+          "name": "CSWeapon_P90",
+          "refLine": 110,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SMOKEGRENADE": {
+          "name": "CSWeapon_SMOKEGRENADE",
+          "refLine": 90,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_SSG08": {
+          "name": "CSWeapon_SSG08",
+          "refLine": 130,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_FISTS": {
+          "name": "CSWeapon_FISTS",
+          "refLine": 146,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "69"
+        },
+        "CSWeapon_MELEE": {
+          "name": "CSWeapon_MELEE",
+          "refLine": 149,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "74"
+        },
+        "CSWeapon_KNIFE": {
+          "name": "CSWeapon_KNIFE",
+          "refLine": 109,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_GLOCK": {
+          "name": "CSWeapon_GLOCK",
+          "refLine": 83,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_USP": {
+          "name": "CSWeapon_USP",
+          "refLine": 97,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_INCGRENADE": {
+          "name": "CSWeapon_INCGRENADE",
+          "refLine": 134,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_KNIFE_FLIP": {
+          "name": "CSWeapon_KNIFE_FLIP",
+          "refLine": 162,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "505"
+        },
+        "CSWeapon_KNIFE_GHOST": {
+          "name": "CSWeapon_KNIFE_GHOST",
+          "refLine": 153,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "80"
+        },
+        "CSWeapon_GALILAR": {
+          "name": "CSWeapon_GALILAR",
+          "refLine": 115,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_TAGGRENADE": {
+          "name": "CSWeapon_TAGGRENADE",
+          "refLine": 145,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "68"
+        },
+        "CSWeapon_KNIFE_URSUS": {
+          "name": "CSWeapon_KNIFE_URSUS",
+          "refLine": 173,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "519"
+        },
+        "CSWeapon_TABLET": {
+          "name": "CSWeapon_TABLET",
+          "refLine": 148,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "72"
+        },
+        "CSWeapon_MOLOTOV": {
+          "name": "CSWeapon_MOLOTOV",
+          "refLine": 132,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_USP_SILENCER": {
+          "name": "CSWeapon_USP_SILENCER",
+          "refLine": 142,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "61"
+        },
+        "CSWeapon_M4A1": {
+          "name": "CSWeapon_M4A1",
+          "refLine": 102,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_ELITE": {
+          "name": "CSWeapon_ELITE",
+          "refLine": 91,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_CZ75A": {
+          "name": "CSWeapon_CZ75A",
+          "refLine": 143,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "63"
+        },
+        "CSWeapon_MAX_WEAPONS_NO_KNIFES": {
+          "name": "CSWeapon_MAX_WEAPONS_NO_KNIFES",
+          "refLine": 159,
+          "docStart": 5808,
+          "docEnd": 5895,
+          "docs": {
+            "brief": "Max without the knife item defs, useful when treating all knives as a regular knife.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Max without the knife item defs, useful when treating all knives as a regular knife."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "CSWeapon_DIVERSION": {
+          "name": "CSWeapon_DIVERSION",
+          "refLine": 155,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "82"
+        },
+        "CSWeapon_KNIFE_CLASSIC": {
+          "name": "CSWeapon_KNIFE_CLASSIC",
+          "refLine": 161,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "503"
+        },
+        "CSWeapon_KNIFE_KARAMBIT": {
+          "name": "CSWeapon_KNIFE_KARAMBIT",
+          "refLine": 164,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "507"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

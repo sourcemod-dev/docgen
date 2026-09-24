@@ -1,0 +1,923 @@
+{
+  "functions": {
+    "TF2Items_OnGiveNamedItem": {
+      "name": "TF2Items_OnGiveNamedItem",
+      "refLine": 200,
+      "docStart": 7408,
+      "docEnd": 8077,
+      "docs": {
+        "brief": "Called when an item is about to be given to a client.\nReturn Plugin_Changed to override the item to use the configuration of the item object.\nReturn Plugin_Continue to keep them intact.\nReturn Plugin_Handled to stop the item being given to the player.\nMake sure the client gets atleast one weapon.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an item is about to be given to a client.\nReturn Plugin_Changed to override the item to use the configuration of the item object.\nReturn Plugin_Continue to keep them intact.\nReturn Plugin_Handled to stop the item being given to the player.\nMake sure the client gets atleast one weapon."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client Index."
+          },
+          {
+            "tag": "param:classname",
+            "text": "The classname of the entity that will be generated."
+          },
+          {
+            "tag": "param:itemDefIndex",
+            "text": "Item definition index."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to a TF2Item object wich describes what values will be overriden."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "classname",
+          "decl": "char[] classname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "itemDefIndex",
+          "decl": "int itemDefIndex",
+          "default": null
+        },
+        {
+          "type": "Handle&",
+          "name": "item",
+          "decl": "Handle &item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetItemIndex": {
+      "name": "TF2Items_SetItemIndex",
+      "refLine": 78,
+      "docStart": 2923,
+      "docEnd": 3238,
+      "docs": {
+        "brief": "Sets the item's Definition Index, wich tells the game what item it is. Each\nweapon/hat/item has an unique definition index. Find these out in the\ngame_items.txt",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the item's Definition Index, wich tells the game what item it is. Each\nweapon/hat/item has an unique definition index. Find these out in the\ngame_items.txt"
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:itemDefIndex",
+            "text": "New definition index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "itemDefIndex",
+          "decl": "int itemDefIndex",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_OnGiveNamedItem_Post": {
+      "name": "TF2Items_OnGiveNamedItem_Post",
+      "refLine": 202,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "classname",
+          "decl": "char[] classname",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "itemDefIndex",
+          "decl": "int itemDefIndex",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "quality",
+          "decl": "int quality",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetLevel": {
+      "name": "TF2Items_SetLevel",
+      "refLine": 95,
+      "docStart": 3634,
+      "docEnd": 3841,
+      "docs": {
+        "brief": "Sets the item's level value. This value can range from 0 to 127.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the item's level value. This value can range from 0 to 127."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:level",
+            "text": "New item level."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "level",
+          "decl": "int level",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetClassname": {
+      "name": "TF2Items_GetClassname",
+      "refLine": 132,
+      "docStart": 5162,
+      "docEnd": 5369,
+      "docs": {
+        "brief": "Gets the entity classname we'll use for the item.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the entity classname we'll use for the item."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "Size of entity classname string"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "dest",
+          "decl": "char[] dest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetItemIndex": {
+      "name": "TF2Items_GetItemIndex",
+      "refLine": 140,
+      "docStart": 5441,
+      "docEnd": 5646,
+      "docs": {
+        "brief": "Gets the new item definition index we'll use to override.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the new item definition index we'll use to override."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "New definition index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetAttributeValue": {
+      "name": "TF2Items_GetAttributeValue",
+      "refLine": 185,
+      "docStart": 7054,
+      "docEnd": 7341,
+      "docs": {
+        "brief": "Retrieves the value used for the attribute at the specified index on the item\nobject. Remember the iSlotIndex ranges from 0 to 15.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the value used for the attribute at the specified index on the item\nobject. Remember the iSlotIndex ranges from 0 to 15."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "The attribute value to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetQuality": {
+      "name": "TF2Items_SetQuality",
+      "refLine": 87,
+      "docStart": 3306,
+      "docEnd": 3573,
+      "docs": {
+        "brief": "Sets the item's quality value, wich determines what color will be used for\nthe item name. Valid values are from 0 to 9.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the item's quality value, wich determines what color will be used for\nthe item name. Valid values are from 0 to 9."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:quality",
+            "text": "New item quality."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "quality",
+          "decl": "int quality",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetFlags": {
+      "name": "TF2Items_GetFlags",
+      "refLine": 124,
+      "docStart": 4860,
+      "docEnd": 5117,
+      "docs": {
+        "brief": "Retrieves the flags used to determine what the item will override on the\nGiveNamedItem call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the flags used to determine what the item will override on the\nGiveNamedItem call."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "Returns the flags used by the item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetLevel": {
+      "name": "TF2Items_GetLevel",
+      "refLine": 158,
+      "docStart": 6099,
+      "docEnd": 6307,
+      "docs": {
+        "brief": "Gets the item's level value. This value can range from 0 to 127.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the item's level value. This value can range from 0 to 127."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "New entity level."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_CreateItem": {
+      "name": "TF2Items_CreateItem",
+      "refLine": 51,
+      "docStart": 1863,
+      "docEnd": 2224,
+      "docs": {
+        "brief": "Creates a TF2Items object, wich can be used to override the parameters of an\nitem before it's given to the client, or to create a new completely new one\nwith GiveNamedItem. Remember to free the object with CloseHandle()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a TF2Items object, wich can be used to override the parameters of an\nitem before it's given to the client, or to create a new completely new one\nwith GiveNamedItem. Remember to free the object with CloseHandle()"
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags used to specify what to override."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to the TFItems object."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetClassname": {
+      "name": "TF2Items_SetClassname",
+      "refLine": 68,
+      "docStart": 2635,
+      "docEnd": 2855,
+      "docs": {
+        "brief": "Sets the new entity classname used for the item's entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the new entity classname used for the item's entity."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:classname",
+            "text": "New classname to use for the entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "classname",
+          "decl": "char[] classname",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GiveNamedItem": {
+      "name": "TF2Items_GiveNamedItem",
+      "refLine": 41,
+      "docStart": 897,
+      "docEnd": 1801,
+      "docs": {
+        "brief": "WARNING: This is for ADVANCED users only!\nYou probably want to be using the forward instead of this.\n\nThis native will perform a GiveNamedItem call for the specified client in\norder to generate an object based on the specifications of the TF2Items\nobject passed to it.\n\nSince the item generation requires all the information that can be passed by\nthe extensions natives, the flags will be ignored and all the given\ninformation will be used.\n\nRemember that if your values aren't correct, this call may end up in a crash,\nso please make sure you fill out everything: Classname, item definition index,\nquality, level and attributes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "WARNING: This is for ADVANCED users only!\nYou probably want to be using the forward instead of this.\n\nThis native will perform a GiveNamedItem call for the specified client in\norder to generate an object based on the specifications of the TF2Items\nobject passed to it.\n\nSince the item generation requires all the information that can be passed by\nthe extensions natives, the flags will be ignored and all the given\ninformation will be used.\n\nRemember that if your values aren't correct, this call may end up in a crash,\nso please make sure you fill out everything: Classname, item definition index,\nquality, level and attributes."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client that the item will be generated for."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index of the newly created item."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetNumAttributes": {
+      "name": "TF2Items_GetNumAttributes",
+      "refLine": 167,
+      "docStart": 6352,
+      "docEnd": 6639,
+      "docs": {
+        "brief": "Gets the number of attributes that will be used on the item. The maximum\nnumber of attributes that can be allocated ranges from 0 to 15.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the number of attributes that will be used on the item. The maximum\nnumber of attributes that can be allocated ranges from 0 to 15."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "Number of attributes."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetQuality": {
+      "name": "TF2Items_GetQuality",
+      "refLine": 150,
+      "docStart": 5696,
+      "docEnd": 6051,
+      "docs": {
+        "brief": "Gets the item's quality value, wich determines what color will be used for\nthe item name. Valid values are from 0 to 9. But if set to 0 and attributes\nare also changed, this value will be overridden to 9",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets the item's quality value, wich determines what color will be used for\nthe item name. Valid values are from 0 to 9. But if set to 0 and attributes\nare also changed, this value will be overridden to 9"
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "New entity quality."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetNumAttributes": {
+      "name": "TF2Items_SetNumAttributes",
+      "refLine": 104,
+      "docStart": 3898,
+      "docEnd": 4186,
+      "docs": {
+        "brief": "Sets the number of attributes that will be used on the item. The maximum\nnumber of attributes that can be allocated ranges from 0 to 15.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the number of attributes that will be used on the item. The maximum\nnumber of attributes that can be allocated ranges from 0 to 15."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:attributes",
+            "text": "Number of attributes."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attributes",
+          "decl": "int attributes",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetAttribute": {
+      "name": "TF2Items_SetAttribute",
+      "refLine": 115,
+      "docStart": 4256,
+      "docEnd": 4772,
+      "docs": {
+        "brief": "Setups the given attribute index to use the attribute and values specified\nwith iAttribDefIndex and flValue. Remember the iSlotIndex ranges from 0 to 15.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Setups the given attribute index to use the attribute and values specified\nwith iAttribDefIndex and flValue. Remember the iSlotIndex ranges from 0 to 15."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:slot",
+            "text": "The attribute slot index, ranges from 0 to 15."
+          },
+          {
+            "tag": "param:attribute",
+            "text": "The attribute definition index, as it appears on game_items.txt."
+          },
+          {
+            "tag": "param:value",
+            "text": "The value assigned to the attribute (how much health, damage, etc.)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "attribute",
+          "decl": "int attribute",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_GetAttributeId": {
+      "name": "TF2Items_GetAttributeId",
+      "refLine": 176,
+      "docStart": 6692,
+      "docEnd": 6993,
+      "docs": {
+        "brief": "Retrieves the attribute definition index used at the specified index on the\nitem object. Remember the iSlotIndex ranges from 0 to 15.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the attribute definition index used at the specified index on the\nitem object. Remember the iSlotIndex ranges from 0 to 15."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "return",
+            "text": "The attribute definition index to use."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "slot",
+          "decl": "int slot",
+          "default": null
+        }
+      ]
+    },
+    "TF2Items_SetFlags": {
+      "name": "TF2Items_SetFlags",
+      "refLine": 60,
+      "docStart": 2272,
+      "docEnd": 2578,
+      "docs": {
+        "brief": "Sets the flags to determine what the item will override on the GiveNamedItem.\nUse the OVERRIDE_ defines to set what you will be changing.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the flags to determine what the item will override on the GiveNamedItem.\nUse the OVERRIDE_ defines to set what you will be changing."
+          },
+          {
+            "tag": "param:item",
+            "text": "Handle to the TF2Items object that we'll be operating with."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Flags used to specify what to override."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "item",
+          "decl": "Handle item",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "OVERRIDE_ATTRIBUTES": {
+      "name": "OVERRIDE_ATTRIBUTES",
+      "refLine": 13,
+      "docStart": 575,
+      "docEnd": 645,
+      "docs": {
+        "brief": "Item will override the attributes for the item with the given ones.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item will override the attributes for the item with the given ones."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 4)"
+    },
+    "OVERRIDE_ITEM_LEVEL": {
+      "name": "OVERRIDE_ITEM_LEVEL",
+      "refLine": 11,
+      "docStart": 401,
+      "docEnd": 442,
+      "docs": {
+        "brief": "Item will override the entity's level.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item will override the entity's level."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "OVERRIDE_ITEM_DEF": {
+      "name": "OVERRIDE_ITEM_DEF",
+      "refLine": 10,
+      "docStart": 306,
+      "docEnd": 356,
+      "docs": {
+        "brief": "Item will override the item's definition index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item will override the item's definition index."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "OVERRIDE_ITEM_QUALITY": {
+      "name": "OVERRIDE_ITEM_QUALITY",
+      "refLine": 12,
+      "docStart": 487,
+      "docEnd": 530,
+      "docs": {
+        "brief": "Item will override the entity's quality.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item will override the entity's quality."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 3)"
+    },
+    "FORCE_GENERATION": {
+      "name": "FORCE_GENERATION",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 6)"
+    },
+    "_tf2items_included": {
+      "name": "_tf2items_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "PRESERVE_ATTRIBUTES": {
+      "name": "PRESERVE_ATTRIBUTES",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "OVERRIDE_ALL": {
+      "name": "OVERRIDE_ALL",
+      "refLine": 14,
+      "docStart": 690,
+      "docEnd": 731,
+      "docs": {
+        "brief": "Magically enables all the other flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Magically enables all the other flags."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(0b11111)"
+    },
+    "OVERRIDE_CLASSNAME": {
+      "name": "OVERRIDE_CLASSNAME",
+      "refLine": 9,
+      "docStart": 216,
+      "docEnd": 261,
+      "docs": {
+        "brief": "Item will override the entity's classname.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Item will override the entity's classname."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 0)"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

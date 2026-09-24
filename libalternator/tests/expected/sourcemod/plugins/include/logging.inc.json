@@ -1,0 +1,440 @@
+{
+  "functions": {
+    "LogMessage": {
+      "name": "LogMessage",
+      "refLine": 45,
+      "docStart": 1645,
+      "docEnd": 1862,
+      "docs": {
+        "brief": "Logs a plugin message to the SourceMod logs.  The log message will be\nprefixed by the plugin's logtag (filename).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs a plugin message to the SourceMod logs.  The log message will be\nprefixed by the plugin's logtag (filename)."
+          },
+          {
+            "tag": "param:format",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "OnLogAction": {
+      "name": "OnLogAction",
+      "refLine": 102,
+      "docStart": 3444,
+      "docEnd": 4263,
+      "docs": {
+        "brief": "Called when an action is going to be logged.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when an action is going to be logged."
+          },
+          {
+            "tag": "param:source",
+            "text": "Handle to the object logging the action, or INVALID_HANDLE\nif Core is logging the action."
+          },
+          {
+            "tag": "param:ident",
+            "text": "Type of object logging the action (plugin, ext, or core)."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client the action is from; 0 for server, -1 if not applicable."
+          },
+          {
+            "tag": "param:target",
+            "text": "Client the action is targetting, or -1 if not applicable."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message that is being logged."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Continue will perform the default logging behavior.\nPlugin_Handled will stop Core from logging the message.\nPlugin_Stop is the same as Handled, but prevents any other\nplugins from handling the message."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "source",
+          "decl": "Handle source",
+          "default": null
+        },
+        {
+          "type": "Identity",
+          "name": "ident",
+          "decl": "Identity ident",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        }
+      ]
+    },
+    "RemoveGameLogHook": {
+      "name": "RemoveGameLogHook",
+      "refLine": 135,
+      "docStart": 5150,
+      "docEnd": 5231,
+      "docs": {
+        "brief": "Removes a game log hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a game log hook."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Hook function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GameLogHook",
+          "name": "hook",
+          "decl": "GameLogHook hook",
+          "default": null
+        }
+      ]
+    },
+    "LogAction": {
+      "name": "LogAction",
+      "refLine": 78,
+      "docStart": 2693,
+      "docEnd": 3154,
+      "docs": {
+        "brief": "Logs an action from a command or event whereby interception and routing may\nbe important.  This is intended to be a logging version of ShowActivity().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs an action from a command or event whereby interception and routing may\nbe important.  This is intended to be a logging version of ShowActivity()."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client performing the action, 0 for server, or -1 if not\napplicable."
+          },
+          {
+            "tag": "param:target",
+            "text": "Client being targetted, or -1 if not applicable."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Message formatting parameters."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "message",
+          "decl": "const char[] message",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "LogToFileEx": {
+      "name": "LogToFileEx",
+      "refLine": 66,
+      "docStart": 2338,
+      "docEnd": 2614,
+      "docs": {
+        "brief": "Same as LogToFile(), except no plugin logtag is prepended.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Same as LogToFile(), except no plugin logtag is prepended."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to write the log message in."
+          },
+          {
+            "tag": "param:format",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "error",
+            "text": "File could not be opened/written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "LogToFile": {
+      "name": "LogToFile",
+      "refLine": 56,
+      "docStart": 1921,
+      "docEnd": 2261,
+      "docs": {
+        "brief": "Logs a message to any file.  The log message will be in the normal\nSourceMod format, with the plugin logtag prepended.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs a message to any file.  The log message will be in the normal\nSourceMod format, with the plugin logtag prepended."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to write the log message in."
+          },
+          {
+            "tag": "param:format",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          },
+          {
+            "tag": "error",
+            "text": "File could not be opened/written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "LogError": {
+      "name": "LogError",
+      "refLine": 86,
+      "docStart": 3237,
+      "docEnd": 3387,
+      "docs": {
+        "brief": "Logs a plugin error message to the SourceMod logs.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Logs a plugin error message to the SourceMod logs."
+          },
+          {
+            "tag": "param:format",
+            "text": "String format."
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "AddGameLogHook": {
+      "name": "AddGameLogHook",
+      "refLine": 128,
+      "docStart": 5021,
+      "docEnd": 5099,
+      "docs": {
+        "brief": "Adds a game log hook.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a game log hook."
+          },
+          {
+            "tag": "param:hook",
+            "text": "Hook function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "GameLogHook",
+          "name": "hook",
+          "decl": "GameLogHook hook",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sm_logging_included": {
+      "name": "_sm_logging_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {
+    "GameLogHook": {
+      "name": "GameLogHook",
+      "refLine": 121,
+      "docStart": 4413,
+      "docEnd": 4954,
+      "docs": {
+        "brief": "Called when a game log message is received.\n\nAny Log*() functions called within this callback will not recursively\npass through.  That is, they will log directly, bypassing this callback.\n\nNote that this does not capture log messages from the engine.  It only\ncaptures log messages being sent from the game/mod itself.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a game log message is received.\n\nAny Log*() functions called within this callback will not recursively\npass through.  That is, they will log directly, bypassing this callback.\n\nNote that this does not capture log messages from the engine.  It only\ncaptures log messages being sent from the game/mod itself."
+          },
+          {
+            "tag": "param:message",
+            "text": "Message contents."
+          },
+          {
+            "tag": "return",
+            "text": "Plugin_Handled or Plugin_Stop will prevent the message\nfrom being written to the log file."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function Action(const char[] message)",
+      "parsedSignature": {
+        "returnType": "Action",
+        "arguments": [
+          {
+            "type": "const char[]",
+            "name": "message",
+            "decl": "const char[] message",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

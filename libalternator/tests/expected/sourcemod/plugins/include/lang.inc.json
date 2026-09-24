@@ -1,0 +1,484 @@
+{
+  "functions": {
+    "TranslationPhraseExists": {
+      "name": "TranslationPhraseExists",
+      "refLine": 134,
+      "docStart": 4464,
+      "docEnd": 4658,
+      "docs": {
+        "brief": "Determines if the specified phrase exists within the plugin's\ntranslation cache.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determines if the specified phrase exists within the plugin's\ntranslation cache."
+          },
+          {
+            "tag": "param:phrase",
+            "text": "Phrase to look for."
+          },
+          {
+            "tag": "return",
+            "text": "True if phrase exists."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "phrase",
+          "decl": "const char[] phrase",
+          "default": null
+        }
+      ]
+    },
+    "GetLanguageByCode": {
+      "name": "GetLanguageByCode",
+      "refLine": 117,
+      "docStart": 3978,
+      "docEnd": 4170,
+      "docs": {
+        "brief": "Retrieves the language number from a language code.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the language number from a language code."
+          },
+          {
+            "tag": "param:code",
+            "text": "Language code (2-3 characters usually)."
+          },
+          {
+            "tag": "return",
+            "text": "Language number. -1 if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "code",
+          "decl": "const char[] code",
+          "default": null
+        }
+      ]
+    },
+    "GetClientLanguage": {
+      "name": "GetClientLanguage",
+      "refLine": 65,
+      "docStart": 2313,
+      "docEnd": 2540,
+      "docs": {
+        "brief": "Retrieves the language number of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the language number of a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Language number client is using."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientOriginalLanguage": {
+      "name": "GetClientOriginalLanguage",
+      "refLine": 109,
+      "docStart": 3669,
+      "docEnd": 3923,
+      "docs": {
+        "brief": "Retrieves the language number a client had when they connected.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the language number a client had when they connected."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "Language number client originally had."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "LoadTranslations": {
+      "name": "LoadTranslations",
+      "refLine": 46,
+      "docStart": 1709,
+      "docEnd": 1880,
+      "docs": {
+        "brief": "Loads a translation file for the plugin calling this native.\nIf no extension is specified, .txt is assumed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Loads a translation file for the plugin calling this native.\nIf no extension is specified, .txt is assumed."
+          },
+          {
+            "tag": "param:file",
+            "text": "Translation file."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "SetClientLanguage": {
+      "name": "SetClientLanguage",
+      "refLine": 100,
+      "docStart": 3401,
+      "docEnd": 3607,
+      "docs": {
+        "brief": "Sets the language number of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the language number of a client."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "param:language",
+            "text": "Language number."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "language",
+          "decl": "int language",
+          "default": null
+        }
+      ]
+    },
+    "GetLanguageInfo": {
+      "name": "GetLanguageInfo",
+      "refLine": 91,
+      "docStart": 2880,
+      "docEnd": 3291,
+      "docs": {
+        "brief": "Retrieves info about a given language number.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves info about a given language number."
+          },
+          {
+            "tag": "param:language",
+            "text": "Language number."
+          },
+          {
+            "tag": "param:code",
+            "text": "Language code buffer (2-3 characters usually)."
+          },
+          {
+            "tag": "param:codeLen",
+            "text": "Maximum length of the language code buffer."
+          },
+          {
+            "tag": "param:name",
+            "text": "Language name buffer."
+          },
+          {
+            "tag": "param:nameLen",
+            "text": "Maximum length of the language name buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid language number."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "language",
+          "decl": "int language",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "code",
+          "decl": "char[] code",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "codeLen",
+          "decl": "int codeLen",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "nameLen",
+          "decl": "int nameLen",
+          "default": "0"
+        }
+      ]
+    },
+    "SetGlobalTransTarget": {
+      "name": "SetGlobalTransTarget",
+      "refLine": 56,
+      "docStart": 1934,
+      "docEnd": 2262,
+      "docs": {
+        "brief": "Sets the global language target.  This is useful for creating functions\nthat will be compatible with the %t format specifier.  Note that invalid\nindexes can be specified but the error will occur during translation,\nnot during this function call.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the global language target.  This is useful for creating functions\nthat will be compatible with the %t format specifier.  Note that invalid\nindexes can be specified but the error will occur during translation,\nnot during this function call."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index or LANG_SERVER."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetLanguageCount": {
+      "name": "GetLanguageCount",
+      "refLine": 79,
+      "docStart": 2731,
+      "docEnd": 2844,
+      "docs": {
+        "brief": "Returns the number of languages known in languages.cfg.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of languages known in languages.cfg."
+          },
+          {
+            "tag": "return",
+            "text": "Language count."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "GetLanguageByName": {
+      "name": "GetLanguageByName",
+      "refLine": 125,
+      "docStart": 4224,
+      "docEnd": 4410,
+      "docs": {
+        "brief": "Retrieves the language number from a language name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the language number from a language name."
+          },
+          {
+            "tag": "param:name",
+            "text": "Language name (case insensitive)."
+          },
+          {
+            "tag": "return",
+            "text": "Language number. -1 if not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "IsTranslatedForLanguage": {
+      "name": "IsTranslatedForLanguage",
+      "refLine": 143,
+      "docStart": 4721,
+      "docEnd": 4939,
+      "docs": {
+        "brief": "Determines if there is a translation for the specified language.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Determines if there is a translation for the specified language."
+          },
+          {
+            "tag": "param:phrase",
+            "text": "Phrase to check."
+          },
+          {
+            "tag": "param:language",
+            "text": "Language number."
+          },
+          {
+            "tag": "return",
+            "text": "True if translation exists."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "phrase",
+          "decl": "const char[] phrase",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "language",
+          "decl": "int language",
+          "default": null
+        }
+      ]
+    },
+    "GetServerLanguage": {
+      "name": "GetServerLanguage",
+      "refLine": 72,
+      "docStart": 2587,
+      "docEnd": 2694,
+      "docs": {
+        "brief": "Retrieves the server's language.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the server's language."
+          },
+          {
+            "tag": "return",
+            "text": "Language number server is using."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_lang_included": {
+      "name": "_lang_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "LANG_SERVER": {
+      "name": "LANG_SERVER",
+      "refLine": 38,
+      "docStart": 1660,
+      "docEnd": 1705,
+      "docs": {
+        "brief": "Translate using the server's language",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Translate using the server's language"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,397 @@
+{
+  "functions": {
+    "SCR_OnEventReceive": {
+      "name": "SCR_OnEventReceive",
+      "refLine": 56,
+      "docStart": 1556,
+      "docEnd": 1758,
+      "docs": {
+        "brief": "Called upon receiving an event",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called upon receiving an event"
+          },
+          {
+            "tag": "param:sEvent",
+            "text": "Name of the event. The size of which is MAX_EVENT_NAME_LENGTH"
+          },
+          {
+            "tag": "param:sData",
+            "text": "Data of the event. The size of which is MAX_COMMAND_LENGTH"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "sEvent",
+          "decl": "char[] sEvent",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sData",
+          "decl": "char[] sData",
+          "default": null
+        }
+      ]
+    },
+    "SCR_SendMessage": {
+      "name": "SCR_SendMessage",
+      "refLine": 65,
+      "docStart": 1824,
+      "docEnd": 2034,
+      "docs": {
+        "brief": "Sends a message to the router",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends a message to the router"
+          },
+          {
+            "tag": "param:iClient",
+            "text": "Client ID to use as name display (If left at 0, it will display \"CONSOLE\")"
+          },
+          {
+            "tag": "param:fmt",
+            "text": "Format string"
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "fmt",
+          "decl": "const char[] fmt",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "SCR_OnEventSend": {
+      "name": "SCR_OnEventSend",
+      "refLine": 48,
+      "docStart": 1293,
+      "docEnd": 1493,
+      "docs": {
+        "brief": "Called upon sending an event",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called upon sending an event"
+          },
+          {
+            "tag": "param:sEvent",
+            "text": "Name of the event. The size of which is MAX_EVENT_NAME_LENGTH"
+          },
+          {
+            "tag": "param:sData",
+            "text": "Data of the event. The size of which is MAX_COMMAND_LENGTH"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "sEvent",
+          "decl": "char[] sEvent",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sData",
+          "decl": "char[] sData",
+          "default": null
+        }
+      ]
+    },
+    "SCR_OnMessageReceive": {
+      "name": "SCR_OnMessageReceive",
+      "refLine": 40,
+      "docStart": 762,
+      "docEnd": 1145,
+      "docs": {
+        "brief": "Called upon receiving a message",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called upon receiving a message"
+          },
+          {
+            "tag": "param:sEntityName",
+            "text": "Entity name/hostname of the sending client"
+          },
+          {
+            "tag": "param:iIDType",
+            "text": "The IdentificationType of the ID"
+          },
+          {
+            "tag": "param:sID",
+            "text": "String variant of the ID"
+          },
+          {
+            "tag": "param:sClientName",
+            "text": "Name of the client that sent the message. The size of which is MAX_NAME_LENGTH"
+          },
+          {
+            "tag": "param:sMessage",
+            "text": "Message content. The size of which is MAX_COMMAND_LENGTH"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sEntityName",
+          "decl": "const char[] sEntityName",
+          "default": null
+        },
+        {
+          "type": "IdentificationType",
+          "name": "iIDType",
+          "decl": "IdentificationType iIDType",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sID",
+          "decl": "const char[] sID",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sClientName",
+          "decl": "char[] sClientName",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sMessage",
+          "decl": "char[] sMessage",
+          "default": null
+        }
+      ]
+    },
+    "SCR_SendEvent": {
+      "name": "SCR_SendEvent",
+      "refLine": 74,
+      "docStart": 2109,
+      "docEnd": 2255,
+      "docs": {
+        "brief": "Sends an event to the router",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sends an event to the router"
+          },
+          {
+            "tag": "param:sEvent",
+            "text": "Name of the event"
+          },
+          {
+            "tag": "param:sData",
+            "text": "Data format string"
+          },
+          {
+            "tag": "param:...",
+            "text": "Format arguments"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "sEvent",
+          "decl": "const char[] sEvent",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sData",
+          "decl": "const char[] sData",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "__pl_Source_Chat_Relay_SetNTVOptional": {
+      "name": "__pl_Source_Chat_Relay_SetNTVOptional",
+      "refLine": 77,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "SCR_OnMessageSend": {
+      "name": "SCR_OnMessageSend",
+      "refLine": 29,
+      "docStart": 374,
+      "docEnd": 676,
+      "docs": {
+        "brief": "Called upon sending a message via chat triggers",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called upon sending a message via chat triggers"
+          },
+          {
+            "tag": "param:iClient",
+            "text": "Index of client that is sending the message"
+          },
+          {
+            "tag": "param:sClientName",
+            "text": "Name of the client sending the message. The size of which is MAX_NAME_LENGTH"
+          },
+          {
+            "tag": "param:sMessage",
+            "text": "Message content. The size of which is MAX_COMMAND_LENGTH"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sClientName",
+          "decl": "char[] sClientName",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sMessage",
+          "decl": "char[] sMessage",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MAX_COMMAND_LENGTH": {
+      "name": "MAX_COMMAND_LENGTH",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "512"
+    },
+    "_Source_Chat_Relay_included": {
+      "name": "_Source_Chat_Relay_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MAX_EVENT_NAME_LENGTH": {
+      "name": "MAX_EVENT_NAME_LENGTH",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "128"
+    }
+  },
+  "enums": {
+    "IdentificationType": {
+      "name": "IdentificationType",
+      "refLine": 14,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "IdentificationInvalid": {
+          "name": "IdentificationInvalid",
+          "refLine": 16,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "IdentificationTypeCount": {
+          "name": "IdentificationTypeCount",
+          "refLine": 19,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "IdentificationSteam": {
+          "name": "IdentificationSteam",
+          "refLine": 17,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "IdentificationDiscord": {
+          "name": "IdentificationDiscord",
+          "refLine": 18,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

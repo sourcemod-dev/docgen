@@ -1,0 +1,263 @@
+{
+  "functions": {
+    "InternalReadOverrides": {
+      "name": "InternalReadOverrides",
+      "refLine": 187,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "parser",
+          "decl": "SMCParser parser",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        }
+      ]
+    },
+    "ReadOldOverrides_NewSection": {
+      "name": "ReadOldOverrides_NewSection",
+      "refLine": 46,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ReadOldOverrides_EndSection": {
+      "name": "ReadOldOverrides_EndSection",
+      "refLine": 122,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "InitializeOverrideParsers": {
+      "name": "InitializeOverrideParsers",
+      "refLine": 167,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadOverrides": {
+      "name": "ReadOverrides",
+      "refLine": 208,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadNewOverrides_NewSection": {
+      "name": "ReadNewOverrides_NewSection",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ReadNewOverrides_EndSection": {
+      "name": "ReadNewOverrides_EndSection",
+      "refLine": 143,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "ReadOverrides_KeyValue": {
+      "name": "ReadOverrides_KeyValue",
+      "refLine": 99,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ReadOverrides_CurrentLine": {
+      "name": "ReadOverrides_CurrentLine",
+      "refLine": 160,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "line",
+          "decl": "const char[] line",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "lineno",
+          "decl": "int lineno",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {
+    "OverrideState": {
+      "name": "OverrideState",
+      "refLine": 35,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "OverrideState_Overrides": {
+          "name": "OverrideState_Overrides",
+          "refLine": 39,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "OverrideState_Levels": {
+          "name": "OverrideState_Levels",
+          "refLine": 38,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "OverrideState_None": {
+          "name": "OverrideState_None",
+          "refLine": 37,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

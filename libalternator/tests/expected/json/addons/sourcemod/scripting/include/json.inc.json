@@ -1,0 +1,439 @@
+{
+  "functions": {
+    "json_encode": {
+      "name": "json_encode",
+      "refLine": 163,
+      "docStart": 4781,
+      "docEnd": 5112,
+      "docs": {
+        "brief": "Encodes a JSON instance into its string representation.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Encodes a JSON instance into its string representation."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to encode."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:options",
+            "text": "Bitwise combination of `JSON_ENCODE_*` options."
+          },
+          {
+            "tag": "param:depth",
+            "text": "The current depth of the encoder."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        },
+        {
+          "type": "int",
+          "name": "depth",
+          "decl": "int depth",
+          "default": "0"
+        }
+      ]
+    },
+    "json_decode": {
+      "name": "json_decode",
+      "refLine": 353,
+      "docStart": 10618,
+      "docEnd": 11177,
+      "docs": {
+        "brief": "Decodes a JSON string into a JSON instance.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Decodes a JSON string into a JSON instance."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to decode."
+          },
+          {
+            "tag": "param:options",
+            "text": "Bitwise combination of `JSON_DECODE_*` options."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Current position of the decoder as bytes\noffset into the buffer."
+          },
+          {
+            "tag": "param:depth",
+            "text": "Current nested depth of the decoder."
+          },
+          {
+            "tag": "return",
+            "text": "JSON instance or null if decoding failed becase\nthe buffer didn't contain valid JSON."
+          },
+          {
+            "tag": "error",
+            "text": "If the buffer does not contain valid JSON,\nan error will be thrown."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "JSON_Object",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        },
+        {
+          "type": "int&",
+          "name": "pos",
+          "decl": "int& pos",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "depth",
+          "decl": "int depth",
+          "default": "0"
+        }
+      ]
+    },
+    "json_write_to_file": {
+      "name": "json_write_to_file",
+      "refLine": 665,
+      "docStart": 20986,
+      "docEnd": 21318,
+      "docs": {
+        "brief": "Encodes the object with the options provided and writes\nthe output to the file at the path specified.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Encodes the object with the options provided and writes\nthe output to the file at the path specified."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to encode/write to file."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path of file to write to."
+          },
+          {
+            "tag": "param:options",
+            "text": "Options to pass to `json_encode`."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        }
+      ]
+    },
+    "json_copy_shallow": {
+      "name": "json_copy_shallow",
+      "refLine": 717,
+      "docStart": 22339,
+      "docEnd": 22488,
+      "docs": {
+        "brief": "Creates a shallow copy of the specified object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a shallow copy of the specified object."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to copy."
+          },
+          {
+            "tag": "return",
+            "text": "A shallow copy of the specified object."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "JSON_Object",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        }
+      ]
+    },
+    "json_read_from_file": {
+      "name": "json_read_from_file",
+      "refLine": 693,
+      "docStart": 21727,
+      "docEnd": 21961,
+      "docs": {
+        "brief": "Reads and decodes the contents of a JSON file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads and decodes the contents of a JSON file."
+          },
+          {
+            "tag": "param:path",
+            "text": "Path of file to read from."
+          },
+          {
+            "tag": "param:options",
+            "text": "Options to pass to `json_decode`."
+          },
+          {
+            "tag": "return",
+            "text": "The decoded object on success, null otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "JSON_Object",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        }
+      ]
+    },
+    "json_cleanup_and_delete": {
+      "name": "json_cleanup_and_delete",
+      "refLine": 801,
+      "docStart": 24351,
+      "docEnd": 24458,
+      "docs": {
+        "brief": "Cleans up an object and sets the passed variable to null.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Cleans up an object and sets the passed variable to null."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to clean up."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object&",
+          "name": "obj",
+          "decl": "JSON_Object &obj",
+          "default": null
+        }
+      ]
+    },
+    "json_encode_size": {
+      "name": "json_encode_size",
+      "refLine": 55,
+      "docStart": 1838,
+      "docEnd": 2128,
+      "docs": {
+        "brief": "Calculates the buffer size required to store an encoded JSON instance.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the buffer size required to store an encoded JSON instance."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to encode."
+          },
+          {
+            "tag": "param:options",
+            "text": "Bitwise combination of `JSON_ENCODE_*` options."
+          },
+          {
+            "tag": "param:depth",
+            "text": "The current depth of the encoder."
+          },
+          {
+            "tag": "return",
+            "text": "The required buffer size."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "options",
+          "decl": "int options",
+          "default": "JSON_NONE"
+        },
+        {
+          "type": "int",
+          "name": "depth",
+          "decl": "int depth",
+          "default": "0"
+        }
+      ]
+    },
+    "json_copy_deep": {
+      "name": "json_copy_deep",
+      "refLine": 739,
+      "docStart": 22846,
+      "docEnd": 22989,
+      "docs": {
+        "brief": "Creates a deep copy of the specified object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a deep copy of the specified object."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to copy."
+          },
+          {
+            "tag": "return",
+            "text": "A deep copy of the specified object."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "JSON_Object",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        }
+      ]
+    },
+    "json_cleanup": {
+      "name": "json_cleanup",
+      "refLine": 768,
+      "docStart": 23618,
+      "docEnd": 23735,
+      "docs": {
+        "brief": "Recursively cleans up the instance and any instances stored within.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Recursively cleans up the instance and any instances stored within."
+          },
+          {
+            "tag": "param:obj",
+            "text": "Object to clean up."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "JSON_Object",
+          "name": "obj",
+          "decl": "JSON_Object obj",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_included": {
+      "name": "_json_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

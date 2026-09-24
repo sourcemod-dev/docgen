@@ -1,0 +1,156 @@
+{
+  "functions": {
+    "OnMapInit": {
+      "name": "OnMapInit",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ParseEntityOutputString": {
+      "name": "ParseEntityOutputString",
+      "refLine": 97,
+      "docStart": 2415,
+      "docEnd": 2653,
+      "docs": {
+        "brief": "Parses an entity's output value (as formatted in the entity string).\nRefer to https://developer.valvesoftware.com/wiki/AddOutput for the format.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Parses an entity's output value (as formatted in the entity string).\nRefer to https://developer.valvesoftware.com/wiki/AddOutput for the format."
+          },
+          {
+            "tag": "return",
+            "text": "True if the output string was successfully parsed, false if not."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "output",
+          "decl": "const char[] output",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "targetName",
+          "decl": "char[] targetName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "targetNameLength",
+          "decl": "int targetNameLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "inputName",
+          "decl": "char[] inputName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "inputNameLength",
+          "decl": "int inputNameLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "variantValue",
+          "decl": "char[] variantValue",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "variantValueLength",
+          "decl": "int variantValueLength",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "delay",
+          "decl": "float& delay",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "nFireCount",
+          "decl": "int& nFireCount",
+          "default": null
+        }
+      ]
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 33,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "FindEntityLumpEntryByHammerID": {
+      "name": "FindEntityLumpEntryByHammerID",
+      "refLine": 77,
+      "docStart": 2003,
+      "docEnd": 2073,
+      "docs": {
+        "brief": "Returns the first EntityLumpEntry with a matching hammerid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the first EntityLumpEntry with a matching hammerid."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "function",
+      "returnType": "EntityLumpEntry",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "hammerid",
+          "decl": "int hammerid",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "OUTPUT_NAME": {
+      "name": "OUTPUT_NAME",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"OnCapTeam2\""
+    },
+    "PLUGIN_VERSION": {
+      "name": "PLUGIN_VERSION",
+      "refLine": 9,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"0.0.0\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

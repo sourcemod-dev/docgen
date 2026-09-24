@@ -1,0 +1,181 @@
+{
+  "functions": {
+    "TTT_OnHudSend_Pre": {
+      "name": "TTT_OnHudSend_Pre",
+      "refLine": 25,
+      "docStart": 90,
+      "docEnd": 1288,
+      "docs": {
+        "brief": "Called when a HUD is send to a player. Return Plugin_Stop\nto prevent the HUD from beeing send.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a HUD is send to a player. Return Plugin_Stop\nto prevent the HUD from beeing send."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client who is targeting another player."
+          },
+          {
+            "tag": "param:target",
+            "text": "The client who is targeted by another player."
+          },
+          {
+            "tag": "param:sName",
+            "text": "The name string that will be send to the client."
+          },
+          {
+            "tag": "param:iNameLength",
+            "text": "The length of the name string."
+          },
+          {
+            "tag": "param:sPlayerName",
+            "text": "The playerhealth string that will be send to the client."
+          },
+          {
+            "tag": "param:iPlayerNameLength",
+            "text": "The length of the playername string."
+          },
+          {
+            "tag": "param:sHealth",
+            "text": "The heatlh string that will be send to the client."
+          },
+          {
+            "tag": "param:iHealthLength",
+            "text": "The length of the health string."
+          },
+          {
+            "tag": "param:sPlayerHealth",
+            "text": "The playerhealth string that will be send to the client."
+          },
+          {
+            "tag": "param:sPlayerHealthLength",
+            "text": "The length of the playerhealth string."
+          },
+          {
+            "tag": "param:sKarma",
+            "text": "The karma string that will be send to the client."
+          },
+          {
+            "tag": "param:iKarmaLength",
+            "text": "The length of the karma string."
+          },
+          {
+            "tag": "param:sPlayerKarma",
+            "text": "The playerkarma string that will be send to the client."
+          },
+          {
+            "tag": "param:iPlayerKarmaLength",
+            "text": "The length of the playerkarma string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sName",
+          "decl": "char[] sName",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iNameLength",
+          "decl": "int iNameLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sPlayerName",
+          "decl": "char[] sPlayerName",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "iPlayerNameLength",
+          "decl": "int& iPlayerNameLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sHealth",
+          "decl": "char[] sHealth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iHealthLength",
+          "decl": "int iHealthLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sPlayerHealth",
+          "decl": "char[] sPlayerHealth",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iPlayerHealthLength",
+          "decl": "int iPlayerHealthLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sKarma",
+          "decl": "char[] sKarma",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iKarmaLength",
+          "decl": "int iKarmaLength",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sPlayerKarma",
+          "decl": "char[] sPlayerKarma",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iPlayerKarmaLength",
+          "decl": "int iPlayerKarmaLength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_playerhud_included": {
+      "name": "_ttt_playerhud_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

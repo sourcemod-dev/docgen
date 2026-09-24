@@ -1,0 +1,535 @@
+{
+  "functions": {
+    "SetClientListeningFlags": {
+      "name": "SetClientListeningFlags",
+      "refLine": 80,
+      "docStart": 2705,
+      "docEnd": 2907,
+      "docs": {
+        "brief": "Set the client listening flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set the client listening flags."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "param:flags",
+            "text": "The voice flags"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "IsClientMuted": {
+      "name": "IsClientMuted",
+      "refLine": 143,
+      "docStart": 4994,
+      "docEnd": 5293,
+      "docs": {
+        "brief": "Retrieves if the muter has muted the mutee.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves if the muter has muted the mutee."
+          },
+          {
+            "tag": "param:iMuter",
+            "text": "The muter index."
+          },
+          {
+            "tag": "param:iMutee",
+            "text": "The mutee index."
+          },
+          {
+            "tag": "return",
+            "text": "True if muter has muted mutee, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Muter or mutee client index is invalid or not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iMuter",
+          "decl": "int iMuter",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iMutee",
+          "decl": "int iMutee",
+          "default": null
+        }
+      ]
+    },
+    "GetClientListeningFlags": {
+      "name": "GetClientListeningFlags",
+      "refLine": 89,
+      "docStart": 2972,
+      "docEnd": 3195,
+      "docs": {
+        "brief": "Retrieve the client current listening flags.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieve the client current listening flags."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "return",
+            "text": "The current voice flags"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index or client not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "SetClientListening": {
+      "name": "SetClientListening",
+      "refLine": 101,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReceiver",
+          "decl": "int iReceiver",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSender",
+          "decl": "int iSender",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bListen",
+          "decl": "bool bListen",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSpeakingEnd": {
+      "name": "OnClientSpeakingEnd",
+      "refLine": 71,
+      "docStart": 2561,
+      "docEnd": 2654,
+      "docs": {
+        "brief": "Called once a client speaking end.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called once a client speaking end."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "GetClientListening": {
+      "name": "GetClientListening",
+      "refLine": 112,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReceiver",
+          "decl": "int iReceiver",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSender",
+          "decl": "int iSender",
+          "default": null
+        }
+      ]
+    },
+    "SetListenOverride": {
+      "name": "SetListenOverride",
+      "refLine": 123,
+      "docStart": 4125,
+      "docEnd": 4522,
+      "docs": {
+        "brief": "Override the receiver's ability to listen to the sender.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Override the receiver's ability to listen to the sender."
+          },
+          {
+            "tag": "param:iReceiver",
+            "text": "The listener index."
+          },
+          {
+            "tag": "param:iSender",
+            "text": "The sender index."
+          },
+          {
+            "tag": "param:override",
+            "text": "The override of the receiver's ability to listen to the sender."
+          },
+          {
+            "tag": "return",
+            "text": "True if successful otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Listener or sender client index is invalid or not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReceiver",
+          "decl": "int iReceiver",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSender",
+          "decl": "int iSender",
+          "default": null
+        },
+        {
+          "type": "ListenOverride",
+          "name": "override",
+          "decl": "ListenOverride override",
+          "default": null
+        }
+      ]
+    },
+    "GetListenOverride": {
+      "name": "GetListenOverride",
+      "refLine": 133,
+      "docStart": 4611,
+      "docEnd": 4920,
+      "docs": {
+        "brief": "Retrieves the override of the receiver's ability to listen to the sender.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the override of the receiver's ability to listen to the sender."
+          },
+          {
+            "tag": "param:iReceiver",
+            "text": "The listener index."
+          },
+          {
+            "tag": "param:iSender",
+            "text": "The sender index."
+          },
+          {
+            "tag": "return",
+            "text": "The override value."
+          },
+          {
+            "tag": "error",
+            "text": "Listener or sender client index is invalid or not connected."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ListenOverride",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReceiver",
+          "decl": "int iReceiver",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iSender",
+          "decl": "int iSender",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSpeaking": {
+      "name": "OnClientSpeaking",
+      "refLine": 64,
+      "docStart": 2421,
+      "docEnd": 2513,
+      "docs": {
+        "brief": "Called when a client is speaking.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when a client is speaking."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "VOICE_MUTED": {
+      "name": "VOICE_MUTED",
+      "refLine": 42,
+      "docStart": 1809,
+      "docEnd": 1860,
+      "docs": {
+        "brief": "Mutes the client from speaking to everyone.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Mutes the client from speaking to everyone."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "VOICE_SPEAKALL": {
+      "name": "VOICE_SPEAKALL",
+      "refLine": 43,
+      "docStart": 1894,
+      "docEnd": 1940,
+      "docs": {
+        "brief": "Allow the client to speak to everyone.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow the client to speak to everyone."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "2"
+    },
+    "VOICE_NORMAL": {
+      "name": "VOICE_NORMAL",
+      "refLine": 41,
+      "docStart": 1721,
+      "docEnd": 1775,
+      "docs": {
+        "brief": "Allow the client to listen and speak normally.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow the client to listen and speak normally."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "VOICE_TEAM": {
+      "name": "VOICE_TEAM",
+      "refLine": 45,
+      "docStart": 2055,
+      "docEnd": 2120,
+      "docs": {
+        "brief": "Allow the client to always speak to team, even when dead.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow the client to always speak to team, even when dead."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "8"
+    },
+    "VOICE_LISTENALL": {
+      "name": "VOICE_LISTENALL",
+      "refLine": 44,
+      "docStart": 1974,
+      "docEnd": 2021,
+      "docs": {
+        "brief": "Allow the client to listen to everyone.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow the client to listen to everyone."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "4"
+    },
+    "_sdktools_voice_included": {
+      "name": "_sdktools_voice_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "VOICE_LISTENTEAM": {
+      "name": "VOICE_LISTENTEAM",
+      "refLine": 46,
+      "docStart": 2154,
+      "docEnd": 2225,
+      "docs": {
+        "brief": "Allow the client to always hear teammates, including dead ones.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Allow the client to always hear teammates, including dead ones."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "16"
+    }
+  },
+  "enums": {
+    "ListenOverride": {
+      "name": "ListenOverride",
+      "refLine": 52,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Listen_Default": {
+          "name": "Listen_Default",
+          "refLine": 54,
+          "docStart": 2302,
+          "docEnd": 2333,
+          "docs": {
+            "brief": "Leave it up to the game",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Leave it up to the game"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "Listen_No": {
+          "name": "Listen_No",
+          "refLine": 55,
+          "docStart": 2356,
+          "docEnd": 2374,
+          "docs": {
+            "brief": "Can't hear",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Can't hear"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Listen_Yes": {
+          "name": "Listen_Yes",
+          "refLine": 56,
+          "docStart": 2397,
+          "docEnd": 2413,
+          "docs": {
+            "brief": "Can hear",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Can hear"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

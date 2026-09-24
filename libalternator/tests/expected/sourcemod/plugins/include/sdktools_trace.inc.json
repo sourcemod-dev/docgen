@@ -1,0 +1,3623 @@
+{
+  "functions": {
+    "TR_GetFraction": {
+      "name": "TR_GetFraction",
+      "refLine": 584,
+      "docStart": 26961,
+      "docEnd": 27238,
+      "docs": {
+        "brief": "Returns the time fraction from a trace result (1.0 means no collision).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the time fraction from a trace result (1.0 means no collision)."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Time fraction value of the trace."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_AllSolid": {
+      "name": "TR_AllSolid",
+      "refLine": 676,
+      "docStart": 30298,
+      "docEnd": 30582,
+      "docs": {
+        "brief": "Returns whether the entire trace was in a solid area.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether the entire trace was in a solid area."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "True if entire trace was in a solid area, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_StartSolid": {
+      "name": "TR_StartSolid",
+      "refLine": 685,
+      "docStart": 30640,
+      "docEnd": 30926,
+      "docs": {
+        "brief": "Returns whether the initial point was in a solid area.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether the initial point was in a solid area."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "True if initial point was in a solid area, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_ClipRayToEntity": {
+      "name": "TR_ClipRayToEntity",
+      "refLine": 415,
+      "docStart": 19808,
+      "docEnd": 20235,
+      "docs": {
+        "brief": "Clips a ray to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips a ray to a particular entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_TraceHullFilter": {
+      "name": "TR_TraceHullFilter",
+      "refLine": 395,
+      "docStart": 18723,
+      "docEnd": 19399,
+      "docs": {
+        "brief": "Starts up a new trace hull using a global trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace hull using a global trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Function to use as a filter."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the filter\nfunction."
+          },
+          {
+            "tag": "param:traceType",
+            "text": "Trace type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "TraceEntityFilter",
+          "name": "filter",
+          "decl": "TraceEntityFilter filter",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "TraceType",
+          "name": "traceType",
+          "decl": "TraceType traceType",
+          "default": "TRACE_EVERYTHING"
+        }
+      ]
+    },
+    "TR_TraceHullEx": {
+      "name": "TR_TraceHullEx",
+      "refLine": 473,
+      "docStart": 22077,
+      "docEnd": 22463,
+      "docs": {
+        "brief": "Starts up a new trace hull using a new trace result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace hull using a new trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "TR_TraceHullFilterEx": {
+      "name": "TR_TraceHullFilterEx",
+      "refLine": 521,
+      "docStart": 23858,
+      "docEnd": 24589,
+      "docs": {
+        "brief": "Starts up a new trace hull using a new trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace hull using a new trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Function to use as a filter."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the filter function."
+          },
+          {
+            "tag": "param:traceType",
+            "text": "Trace type."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "TraceEntityFilter",
+          "name": "filter",
+          "decl": "TraceEntityFilter filter",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "TraceType",
+          "name": "traceType",
+          "decl": "TraceType traceType",
+          "default": "TRACE_EVERYTHING"
+        }
+      ]
+    },
+    "TR_EnumerateEntities": {
+      "name": "TR_EnumerateEntities",
+      "refLine": 278,
+      "docStart": 13261,
+      "docEnd": 14048,
+      "docs": {
+        "brief": "Enumerates over entities along a ray. This may find entities that are\nclose to the ray but do not actually intersect it. Use TR_Clip*RayToEntity\nwith TR_DidHit to check if the ray actually intersects the entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates over entities along a ray. This may find entities that are\nclose to the ray but do not actually intersect it. Use TR_Clip*RayToEntity\nwith TR_DidHit to check if the ray actually intersects the entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:mask",
+            "text": "Mask to use for the trace. See PARTITION_* flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "param:enumerator",
+            "text": "Function to use as enumerator. For each entity found\nalong the ray, this function is called."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the enumerator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        },
+        {
+          "type": "TraceEntityEnumerator",
+          "name": "enumerator",
+          "decl": "TraceEntityEnumerator enumerator",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "TR_ClipCurrentRayToEntityEx": {
+      "name": "TR_ClipCurrentRayToEntityEx",
+      "refLine": 575,
+      "docStart": 26605,
+      "docEnd": 26890,
+      "docs": {
+        "brief": "Clips the current global ray (or hull) to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips the current global ray (or hull) to a particular entity."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_ClipRayHullToEntityEx": {
+      "name": "TR_ClipRayHullToEntityEx",
+      "refLine": 560,
+      "docStart": 25796,
+      "docEnd": 26255,
+      "docs": {
+        "brief": "Clips a ray hull to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips a ray hull to a particular entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetEndPosition": {
+      "name": "TR_GetEndPosition",
+      "refLine": 612,
+      "docStart": 28006,
+      "docEnd": 28259,
+      "docs": {
+        "brief": "Returns the collision position of a trace result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the collision position of a trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "float[3]",
+          "name": "pos",
+          "decl": "float pos[3]",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_GetEntityIndex": {
+      "name": "TR_GetEntityIndex",
+      "refLine": 621,
+      "docStart": 28337,
+      "docEnd": 28600,
+      "docs": {
+        "brief": "Returns the entity index that collided with the trace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the entity index that collided with the trace."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index or -1 for no collision."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_TraceRayFilter": {
+      "name": "TR_TraceRayFilter",
+      "refLine": 370,
+      "docStart": 17649,
+      "docEnd": 18380,
+      "docs": {
+        "brief": "Starts up a new trace ray using a global trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace ray using a global trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_Trace*FilterEx from inside a filter\nfunction is currently not allowed and may not work."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Function to use as a filter."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the filter\nfunction."
+          },
+          {
+            "tag": "param:traceType",
+            "text": "Trace type."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        },
+        {
+          "type": "TraceEntityFilter",
+          "name": "filter",
+          "decl": "TraceEntityFilter filter",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "TraceType",
+          "name": "traceType",
+          "decl": "TraceType traceType",
+          "default": "TRACE_EVERYTHING"
+        }
+      ]
+    },
+    "TR_GetSurfaceFlags": {
+      "name": "TR_GetSurfaceFlags",
+      "refLine": 658,
+      "docStart": 29703,
+      "docEnd": 29928,
+      "docs": {
+        "brief": "Returns the surface flags. See SURF_*.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the surface flags. See SURF_*."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Surface flags."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_ClipRayToEntityEx": {
+      "name": "TR_ClipRayToEntityEx",
+      "refLine": 542,
+      "docStart": 25023,
+      "docEnd": 25533,
+      "docs": {
+        "brief": "Clips a ray to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips a ray to a particular entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetHitBoxIndex": {
+      "name": "TR_GetHitBoxIndex",
+      "refLine": 715,
+      "docStart": 31629,
+      "docEnd": 32047,
+      "docs": {
+        "brief": "Returns in which hitbox the trace collided if any.\n\nNote: if the entity that collided with the trace is the world entity,\nthen this function doesn't return an hitbox index but a static prop index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns in which hitbox the trace collided if any.\n\nNote: if the entity that collided with the trace is the world entity,\nthen this function doesn't return an hitbox index but a static prop index."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Hitbox index (Or static prop index)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_EnumerateEntitiesHull": {
+      "name": "TR_EnumerateEntitiesHull",
+      "refLine": 299,
+      "docStart": 14368,
+      "docEnd": 15104,
+      "docs": {
+        "brief": "Enumerates over entities along a ray hull. This may find entities that are\nclose to the ray but do not actually intersect it. Use TR_Clip*RayToEntity\nwith TR_DidHit to check if the ray actually intersects the entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates over entities along a ray hull. This may find entities that are\nclose to the ray but do not actually intersect it. Use TR_Clip*RayToEntity\nwith TR_DidHit to check if the ray actually intersects the entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:mask",
+            "text": "Mask to use for the trace. See PARTITION_* flags."
+          },
+          {
+            "tag": "param:enumerator",
+            "text": "Function to use as enumerator. For each entity found\nalong the ray, this function is called."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the enumerator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        },
+        {
+          "type": "TraceEntityEnumerator",
+          "name": "enumerator",
+          "decl": "TraceEntityEnumerator enumerator",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "TR_GetPlaneNormal": {
+      "name": "TR_GetPlaneNormal",
+      "refLine": 724,
+      "docStart": 32110,
+      "docEnd": 32402,
+      "docs": {
+        "brief": "Find the normal vector to the collision plane of a trace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Find the normal vector to the collision plane of a trace."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "param:normal",
+            "text": "Vector buffer to store the vector normal to the collision plane"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "normal",
+          "decl": "float normal[3]",
+          "default": null
+        }
+      ]
+    },
+    "TR_DidHit": {
+      "name": "TR_DidHit",
+      "refLine": 694,
+      "docStart": 30986,
+      "docEnd": 31267,
+      "docs": {
+        "brief": "Returns if there was any kind of collision along the trace ray.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if there was any kind of collision along the trace ray."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "True if any collision found, otherwise false."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_GetSurfaceProps": {
+      "name": "TR_GetSurfaceProps",
+      "refLine": 649,
+      "docStart": 29387,
+      "docEnd": 29639,
+      "docs": {
+        "brief": "Returns the surface properties index of the surface that was hit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the surface properties index of the surface that was hit."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Surface props."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_GetDisplacementFlags": {
+      "name": "TR_GetDisplacementFlags",
+      "refLine": 630,
+      "docStart": 28663,
+      "docEnd": 28936,
+      "docs": {
+        "brief": "Returns the displacement flags for the surface that was hit. See DISPSURF_FLAG_*.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the displacement flags for the surface that was hit. See DISPSURF_FLAG_*."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Displacement flags."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_GetPointContentsEnt": {
+      "name": "TR_GetPointContentsEnt",
+      "refLine": 233,
+      "docStart": 11876,
+      "docEnd": 12121,
+      "docs": {
+        "brief": "Get the point contents testing only the given entity index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the point contents testing only the given entity index."
+          },
+          {
+            "tag": "param:entindex",
+            "text": "Entity index to test."
+          },
+          {
+            "tag": "param:pos",
+            "text": "World position."
+          },
+          {
+            "tag": "return",
+            "text": "Contents mask."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entindex",
+          "decl": "int entindex",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        }
+      ]
+    },
+    "TR_TraceHull": {
+      "name": "TR_TraceHull",
+      "refLine": 258,
+      "docStart": 12727,
+      "docEnd": 13033,
+      "docs": {
+        "brief": "Starts up a new trace hull using a global trace result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace hull using a global trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "TR_EnumerateEntitiesPoint": {
+      "name": "TR_EnumerateEntitiesPoint",
+      "refLine": 348,
+      "docStart": 17010,
+      "docEnd": 17410,
+      "docs": {
+        "brief": "Enumerates over entities at point.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates over entities at point."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Position of the point."
+          },
+          {
+            "tag": "param:mask",
+            "text": "Mask to use for the trace. See PARTITION_* flags."
+          },
+          {
+            "tag": "param:enumerator",
+            "text": "Function to use as enumerator. For each entity found\nalong the point, this function is called."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the enumerator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        },
+        {
+          "type": "TraceEntityEnumerator",
+          "name": "enumerator",
+          "decl": "TraceEntityEnumerator enumerator",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "TR_ClipCurrentRayToEntity": {
+      "name": "TR_ClipCurrentRayToEntity",
+      "refLine": 446,
+      "docStart": 21180,
+      "docEnd": 21382,
+      "docs": {
+        "brief": "Clips the current global ray (or hull) to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips the current global ray (or hull) to a particular entity."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetSurfaceName": {
+      "name": "TR_GetSurfaceName",
+      "refLine": 640,
+      "docStart": 29005,
+      "docEnd": 29311,
+      "docs": {
+        "brief": "Returns the name of the surface that was hit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the name of the surface that was hit."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Buffer to store surface name in"
+          },
+          {
+            "tag": "param:maxlen",
+            "text": "Maximum length of output buffer"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "TR_ClipRayHullToEntity": {
+      "name": "TR_ClipRayHullToEntity",
+      "refLine": 432,
+      "docStart": 20478,
+      "docEnd": 20854,
+      "docs": {
+        "brief": "Clips a ray hull to a particular entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Clips a ray hull to a particular entity."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Ending position of the ray."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Hull minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Hull maximum size."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:entity",
+            "text": "Entity to clip to."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetHitGroup": {
+      "name": "TR_GetHitGroup",
+      "refLine": 703,
+      "docStart": 31323,
+      "docEnd": 31569,
+      "docs": {
+        "brief": "Returns in which body hit group the trace collided if any.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns in which body hit group the trace collided if any."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Body hit group."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_TraceRayEx": {
+      "name": "TR_TraceRayEx",
+      "refLine": 458,
+      "docStart": 21449,
+      "docEnd": 21890,
+      "docs": {
+        "brief": "Starts up a new trace ray using a new trace result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace ray using a new trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        }
+      ]
+    },
+    "TR_EnumerateEntitiesBox": {
+      "name": "TR_EnumerateEntitiesBox",
+      "refLine": 333,
+      "docStart": 16278,
+      "docEnd": 16714,
+      "docs": {
+        "brief": "Enumerates over entities in a box.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates over entities in a box."
+          },
+          {
+            "tag": "param:mins",
+            "text": "Box minimum size."
+          },
+          {
+            "tag": "param:maxs",
+            "text": "Box maximum size."
+          },
+          {
+            "tag": "param:mask",
+            "text": "Mask to use for the trace. See PARTITION_* flags."
+          },
+          {
+            "tag": "param:enumerator",
+            "text": "Function to use as enumerator. For each entity found\nalong the box, this function is called."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the enumerator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "mins",
+          "decl": "const float mins[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "maxs",
+          "decl": "const float maxs[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        },
+        {
+          "type": "TraceEntityEnumerator",
+          "name": "enumerator",
+          "decl": "TraceEntityEnumerator enumerator",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "TR_GetStartPosition": {
+      "name": "TR_GetStartPosition",
+      "refLine": 603,
+      "docStart": 27696,
+      "docEnd": 27941,
+      "docs": {
+        "brief": "Returns the starting position of a trace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the starting position of a trace."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "pos",
+          "decl": "float pos[3]",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetPointContents": {
+      "name": "TR_GetPointContents",
+      "refLine": 223,
+      "docStart": 11548,
+      "docEnd": 11801,
+      "docs": {
+        "brief": "Get the contents mask and the entity index at the given position.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the contents mask and the entity index at the given position."
+          },
+          {
+            "tag": "param:pos",
+            "text": "World position to test."
+          },
+          {
+            "tag": "param:entindex",
+            "text": "Entity index found at the given position (by reference)."
+          },
+          {
+            "tag": "return",
+            "text": "Contents mask."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "entindex",
+          "decl": "int& entindex",
+          "default": "-1"
+        }
+      ]
+    },
+    "TR_GetPhysicsBone": {
+      "name": "TR_GetPhysicsBone",
+      "refLine": 667,
+      "docStart": 29992,
+      "docEnd": 30235,
+      "docs": {
+        "brief": "Returns the index of the physics bone that was hit.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the index of the physics bone that was hit."
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Physics bone index."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_TraceRay": {
+      "name": "TR_TraceRay",
+      "refLine": 244,
+      "docStart": 12195,
+      "docEnd": 12556,
+      "docs": {
+        "brief": "Starts up a new trace ray using a global trace result.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace ray using a global trace result."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the\nending point, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        }
+      ]
+    },
+    "TR_GetFractionLeftSolid": {
+      "name": "TR_GetFractionLeftSolid",
+      "refLine": 594,
+      "docStart": 27300,
+      "docEnd": 27625,
+      "docs": {
+        "brief": "Returns the time fraction from a trace result when it left a solid.\nOnly valid if trace started in solid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the time fraction from a trace result when it left a solid.\nOnly valid if trace started in solid"
+          },
+          {
+            "tag": "param:hndl",
+            "text": "A trace Handle, or INVALID_HANDLE to use a global trace result."
+          },
+          {
+            "tag": "return",
+            "text": "Time fraction left solid value of the trace."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": "INVALID_HANDLE"
+        }
+      ]
+    },
+    "TR_EnumerateEntitiesSphere": {
+      "name": "TR_EnumerateEntitiesSphere",
+      "refLine": 317,
+      "docStart": 15507,
+      "docEnd": 15959,
+      "docs": {
+        "brief": "Enumerates over entities in a sphere.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Enumerates over entities in a sphere."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:radius",
+            "text": "Radius of the ray."
+          },
+          {
+            "tag": "param:mask",
+            "text": "Mask to use for the trace. See PARTITION_* flags."
+          },
+          {
+            "tag": "param:enumerator",
+            "text": "Function to use as enumerator. For each entity found\nalong the ray, this function is called."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the enumerator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "radius",
+          "decl": "float radius",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "mask",
+          "decl": "int mask",
+          "default": null
+        },
+        {
+          "type": "TraceEntityEnumerator",
+          "name": "enumerator",
+          "decl": "TraceEntityEnumerator enumerator",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        }
+      ]
+    },
+    "TR_TraceRayFilterEx": {
+      "name": "TR_TraceRayFilterEx",
+      "refLine": 496,
+      "docStart": 22711,
+      "docEnd": 23494,
+      "docs": {
+        "brief": "Starts up a new trace ray using a new trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_TraceRay*Ex from inside a filter\nfunction is currently not allowed and may not work.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts up a new trace ray using a new trace result and a customized\ntrace ray filter.\n\nCalling TR_Trace*Filter or TR_TraceRay*Ex from inside a filter\nfunction is currently not allowed and may not work."
+          },
+          {
+            "tag": "param:pos",
+            "text": "Starting position of the ray."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Depending on RayType, it will be used as the ending\npoint, or the direction angle."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Trace flags."
+          },
+          {
+            "tag": "param:rtype",
+            "text": "Method to calculate the ray direction."
+          },
+          {
+            "tag": "param:filter",
+            "text": "Function to use as a filter."
+          },
+          {
+            "tag": "param:data",
+            "text": "Arbitrary data value to pass through to the filter function."
+          },
+          {
+            "tag": "param:traceType",
+            "text": "Trace type."
+          },
+          {
+            "tag": "return",
+            "text": "Ray trace handle, which must be closed via CloseHandle()."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const float[3]",
+          "name": "pos",
+          "decl": "const float pos[3]",
+          "default": null
+        },
+        {
+          "type": "const float[3]",
+          "name": "vec",
+          "decl": "const float vec[3]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        },
+        {
+          "type": "RayType",
+          "name": "rtype",
+          "decl": "RayType rtype",
+          "default": null
+        },
+        {
+          "type": "TraceEntityFilter",
+          "name": "filter",
+          "decl": "TraceEntityFilter filter",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": "0"
+        },
+        {
+          "type": "TraceType",
+          "name": "traceType",
+          "decl": "TraceType traceType",
+          "default": "TRACE_EVERYTHING"
+        }
+      ]
+    },
+    "TR_PointOutsideWorld": {
+      "name": "TR_PointOutsideWorld",
+      "refLine": 732,
+      "docStart": 32468,
+      "docEnd": 32661,
+      "docs": {
+        "brief": "Tests a point to see if it's outside any playable area",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tests a point to see if it's outside any playable area"
+          },
+          {
+            "tag": "param:pos",
+            "text": "Vector buffer to store data in."
+          },
+          {
+            "tag": "return",
+            "text": "True if outside world, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "float[3]",
+          "name": "pos",
+          "decl": "float pos[3]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "MASK_PLAYERSOLID_BRUSHONLY": {
+      "name": "MASK_PLAYERSOLID_BRUSHONLY",
+      "refLine": 98,
+      "docStart": 6861,
+      "docEnd": 6950,
+      "docs": {
+        "brief": "everything normally solid for player movement, except monsters (world+brush only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything normally solid for player movement, except monsters (world+brush only)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_WINDOW|CONTENTS_PLAYERCLIP|CONTENTS_GRATE)"
+    },
+    "CONTENTS_LADDER": {
+      "name": "CONTENTS_LADDER",
+      "refLine": 79,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x20000000"
+    },
+    "CONTENTS_UNUSED5": {
+      "name": "CONTENTS_UNUSED5",
+      "refLine": 50,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x200"
+    },
+    "CONTENTS_HITBOX": {
+      "name": "CONTENTS_HITBOX",
+      "refLine": 80,
+      "docStart": 4204,
+      "docEnd": 4243,
+      "docs": {
+        "brief": "use accurate hitboxes on trace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "use accurate hitboxes on trace."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x40000000"
+    },
+    "CONTENTS_TESTFOGVOLUME": {
+      "name": "CONTENTS_TESTFOGVOLUME",
+      "refLine": 49,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x100"
+    },
+    "DISPSURF_FLAG_SURFACE": {
+      "name": "DISPSURF_FLAG_SURFACE",
+      "refLine": 151,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<0)"
+    },
+    "CONTENTS_MOVEABLE": {
+      "name": "CONTENTS_MOVEABLE",
+      "refLine": 55,
+      "docStart": 3058,
+      "docEnd": 3123,
+      "docs": {
+        "brief": "hits entities which are MOVETYPE_PUSH (doors, plats, etc)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "hits entities which are MOVETYPE_PUSH (doors, plats, etc)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x4000"
+    },
+    "SURF_WARP": {
+      "name": "SURF_WARP",
+      "refLine": 114,
+      "docStart": 7956,
+      "docEnd": 7984,
+      "docs": {
+        "brief": "turbulent water warp",
+        "tags": [
+          {
+            "tag": "",
+            "text": "turbulent water warp"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0008"
+    },
+    "DISPSURF_FLAG_WALKABLE": {
+      "name": "DISPSURF_FLAG_WALKABLE",
+      "refLine": 152,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<1)"
+    },
+    "MASK_NPCSOLID_BRUSHONLY": {
+      "name": "MASK_NPCSOLID_BRUSHONLY",
+      "refLine": 99,
+      "docStart": 7092,
+      "docEnd": 7178,
+      "docs": {
+        "brief": "everything normally solid for npc movement, except monsters (world+brush only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything normally solid for npc movement, except monsters (world+brush only)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_WINDOW|CONTENTS_MONSTERCLIP|CONTENTS_GRATE)"
+    },
+    "MASK_WATER": {
+      "name": "MASK_WATER",
+      "refLine": 89,
+      "docStart": 5013,
+      "docEnd": 5052,
+      "docs": {
+        "brief": "water physics in these contents",
+        "tags": [
+          {
+            "tag": "",
+            "text": "water physics in these contents"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_WATER|CONTENTS_MOVEABLE|CONTENTS_SLIME)"
+    },
+    "CONTENTS_TEAM2": {
+      "name": "CONTENTS_TEAM2",
+      "refLine": 53,
+      "docStart": 2828,
+      "docEnd": 2883,
+      "docs": {
+        "brief": "between players and objects on different teams.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "between players and objects on different teams."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x1000"
+    },
+    "SURF_NODRAW": {
+      "name": "SURF_NODRAW",
+      "refLine": 118,
+      "docStart": 8287,
+      "docEnd": 8331,
+      "docs": {
+        "brief": "don't bother referencing the texture",
+        "tags": [
+          {
+            "tag": "",
+            "text": "don't bother referencing the texture"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0080"
+    },
+    "MASK_PLAYERSOLID": {
+      "name": "MASK_PLAYERSOLID",
+      "refLine": 87,
+      "docStart": 4656,
+      "docEnd": 4702,
+      "docs": {
+        "brief": "everything that blocks player movement",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that blocks player movement"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_PLAYERCLIP|CONTENTS_WINDOW|CONTENTS_MONSTER|CONTENTS_GRATE)"
+    },
+    "PARTITION_NON_STATIC_EDICTS": {
+      "name": "PARTITION_NON_STATIC_EDICTS",
+      "refLine": 140,
+      "docStart": 9309,
+      "docEnd": 9391,
+      "docs": {
+        "brief": "everything in solid & trigger except the static props, includes SOLID_NOTs",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything in solid & trigger except the static props, includes SOLID_NOTs"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 5)"
+    },
+    "DISPSURF_FLAG_SURFPROP2": {
+      "name": "DISPSURF_FLAG_SURFPROP2",
+      "refLine": 155,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<4)"
+    },
+    "SURF_NODECALS": {
+      "name": "SURF_NODECALS",
+      "refLine": 126,
+      "docStart": 8781,
+      "docEnd": 8809,
+      "docs": {
+        "brief": "Don't receive decals",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't receive decals"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x2000"
+    },
+    "CONTENTS_DEBRIS": {
+      "name": "CONTENTS_DEBRIS",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x4000000"
+    },
+    "SURF_NOLIGHT": {
+      "name": "SURF_NOLIGHT",
+      "refLine": 123,
+      "docStart": 8541,
+      "docEnd": 8570,
+      "docs": {
+        "brief": "Don't calculate light",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't calculate light"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0400"
+    },
+    "SURF_HITBOX": {
+      "name": "SURF_HITBOX",
+      "refLine": 128,
+      "docStart": 8934,
+      "docEnd": 8969,
+      "docs": {
+        "brief": "surface is part of a hitbox",
+        "tags": [
+          {
+            "tag": "",
+            "text": "surface is part of a hitbox"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x8000"
+    },
+    "CONTENTS_CURRENT_180": {
+      "name": "CONTENTS_CURRENT_180",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x100000"
+    },
+    "CONTENTS_CURRENT_270": {
+      "name": "CONTENTS_CURRENT_270",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x200000"
+    },
+    "MASK_SHOT_PORTAL": {
+      "name": "MASK_SHOT_PORTAL",
+      "refLine": 96,
+      "docStart": 6441,
+      "docEnd": 6508,
+      "docs": {
+        "brief": "hits solids (not grates) and passes through everything else",
+        "tags": [
+          {
+            "tag": "",
+            "text": "hits solids (not grates) and passes through everything else"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_WINDOW)"
+    },
+    "CONTENTS_DETAIL": {
+      "name": "CONTENTS_DETAIL",
+      "refLine": 77,
+      "docStart": 3982,
+      "docEnd": 4026,
+      "docs": {
+        "brief": "brushes to be added after vis leafs.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "brushes to be added after vis leafs."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x8000000"
+    },
+    "CONTENTS_SLIME": {
+      "name": "CONTENTS_SLIME",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x10"
+    },
+    "SURF_SKY2D": {
+      "name": "SURF_SKY2D",
+      "refLine": 112,
+      "docStart": 7752,
+      "docEnd": 7841,
+      "docs": {
+        "brief": "don't draw, indicates we should skylight + draw 2d sky but not draw the 3D skybox",
+        "tags": [
+          {
+            "tag": "",
+            "text": "don't draw, indicates we should skylight + draw 2d sky but not draw the 3D skybox"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0002"
+    },
+    "CONTENTS_AREAPORTAL": {
+      "name": "CONTENTS_AREAPORTAL",
+      "refLine": 56,
+      "docStart": 3178,
+      "docEnd": 3244,
+      "docs": {
+        "brief": "remaining contents are non-visible, and don't eat brushes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "remaining contents are non-visible, and don't eat brushes."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x8000"
+    },
+    "CONTENTS_SOLID": {
+      "name": "CONTENTS_SOLID",
+      "refLine": 39,
+      "docStart": 1781,
+      "docEnd": 1823,
+      "docs": {
+        "brief": "an eye is never valid in a solid .",
+        "tags": [
+          {
+            "tag": "",
+            "text": "an eye is never valid in a solid ."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x1"
+    },
+    "MASK_VISIBLE_AND_NPCS": {
+      "name": "MASK_VISIBLE_AND_NPCS",
+      "refLine": 93,
+      "docStart": 5834,
+      "docEnd": 5916,
+      "docs": {
+        "brief": "everything that blocks line of sight for players, but with monsters added.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that blocks line of sight for players, but with monsters added."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(MASK_OPAQUE_AND_NPCS|CONTENTS_IGNORE_NODRAW_OPAQUE)"
+    },
+    "SURF_SKIP": {
+      "name": "SURF_SKIP",
+      "refLine": 122,
+      "docStart": 8448,
+      "docEnd": 8502,
+      "docs": {
+        "brief": "completely ignore, allowing non-closed brushes",
+        "tags": [
+          {
+            "tag": "",
+            "text": "completely ignore, allowing non-closed brushes"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0200"
+    },
+    "DISPSURF_FLAG_SURFPROP1": {
+      "name": "DISPSURF_FLAG_SURFPROP1",
+      "refLine": 154,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<3)"
+    },
+    "SURF_LIGHT": {
+      "name": "SURF_LIGHT",
+      "refLine": 111,
+      "docStart": 7671,
+      "docEnd": 7713,
+      "docs": {
+        "brief": "value will hold the light strength",
+        "tags": [
+          {
+            "tag": "",
+            "text": "value will hold the light strength"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0001"
+    },
+    "SURF_NOCHOP": {
+      "name": "SURF_NOCHOP",
+      "refLine": 127,
+      "docStart": 8848,
+      "docEnd": 8895,
+      "docs": {
+        "brief": "Don't subdivide patches on this surface",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't subdivide patches on this surface"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x4000"
+    },
+    "CONTENTS_AUX": {
+      "name": "CONTENTS_AUX",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x4"
+    },
+    "CONTENTS_CURRENT_90": {
+      "name": "CONTENTS_CURRENT_90",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x80000"
+    },
+    "MASK_OPAQUE_AND_NPCS": {
+      "name": "MASK_OPAQUE_AND_NPCS",
+      "refLine": 91,
+      "docStart": 5402,
+      "docEnd": 5494,
+      "docs": {
+        "brief": "everything that blocks line of sight for AI, lighting, etc, but with monsters added.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that blocks line of sight for AI, lighting, etc, but with monsters added."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(MASK_OPAQUE|CONTENTS_MONSTER)"
+    },
+    "SURF_NOSHADOWS": {
+      "name": "SURF_NOSHADOWS",
+      "refLine": 125,
+      "docStart": 8713,
+      "docEnd": 8742,
+      "docs": {
+        "brief": "Don't receive shadows",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Don't receive shadows"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x1000"
+    },
+    "CONTENTS_IGNORE_NODRAW_OPAQUE": {
+      "name": "CONTENTS_IGNORE_NODRAW_OPAQUE",
+      "refLine": 54,
+      "docStart": 2938,
+      "docEnd": 3003,
+      "docs": {
+        "brief": "ignore CONTENTS_OPAQUE on surfaces that have SURF_NODRAW.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ignore CONTENTS_OPAQUE on surfaces that have SURF_NODRAW."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x2000"
+    },
+    "DISPSURF_FLAG_BUILDABLE": {
+      "name": "DISPSURF_FLAG_BUILDABLE",
+      "refLine": 153,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1<<2)"
+    },
+    "SURF_TRANS": {
+      "name": "SURF_TRANS",
+      "refLine": 115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x0010"
+    },
+    "PARTITION_TRIGGER_EDICTS": {
+      "name": "PARTITION_TRIGGER_EDICTS",
+      "refLine": 139,
+      "docStart": 9217,
+      "docEnd": 9260,
+      "docs": {
+        "brief": "every edict_t that IS SOLID_TRIGGER",
+        "tags": [
+          {
+            "tag": "",
+            "text": "every edict_t that IS SOLID_TRIGGER"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 2)"
+    },
+    "MASK_NPCSOLID": {
+      "name": "MASK_NPCSOLID",
+      "refLine": 88,
+      "docStart": 4844,
+      "docEnd": 4871,
+      "docs": {
+        "brief": "blocks npc movement",
+        "tags": [
+          {
+            "tag": "",
+            "text": "blocks npc movement"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_MONSTERCLIP|CONTENTS_WINDOW|CONTENTS_MONSTER|CONTENTS_GRATE)"
+    },
+    "CONTENTS_OPAQUE": {
+      "name": "CONTENTS_OPAQUE",
+      "refLine": 46,
+      "docStart": 2304,
+      "docEnd": 2373,
+      "docs": {
+        "brief": "things that cannot be seen through (may be non-solid though).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "things that cannot be seen through (may be non-solid though)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x80"
+    },
+    "CONTENTS_MIST": {
+      "name": "CONTENTS_MIST",
+      "refLine": 45,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x40"
+    },
+    "CONTENTS_MONSTER": {
+      "name": "CONTENTS_MONSTER",
+      "refLine": 75,
+      "docStart": 3844,
+      "docEnd": 3893,
+      "docs": {
+        "brief": "should never be on a brush, only in game.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "should never be on a brush, only in game."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x2000000"
+    },
+    "MASK_OPAQUE": {
+      "name": "MASK_OPAQUE",
+      "refLine": 90,
+      "docStart": 5194,
+      "docEnd": 5260,
+      "docs": {
+        "brief": "everything that blocks line of sight for AI, lighting, etc",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that blocks line of sight for AI, lighting, etc"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_OPAQUE)"
+    },
+    "SURF_BUMPLIGHT": {
+      "name": "SURF_BUMPLIGHT",
+      "refLine": 124,
+      "docStart": 8609,
+      "docEnd": 8674,
+      "docs": {
+        "brief": "calculate three lightmaps for the surface for bumpmapping",
+        "tags": [
+          {
+            "tag": "",
+            "text": "calculate three lightmaps for the surface for bumpmapping"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0800"
+    },
+    "CONTENTS_GRATE": {
+      "name": "CONTENTS_GRATE",
+      "refLine": 42,
+      "docStart": 2023,
+      "docEnd": 2108,
+      "docs": {
+        "brief": "alpha-tested \"grate\" textures.  Bullets/sight pass through, but solids don't.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "alpha-tested \"grate\" textures.  Bullets/sight pass through, but solids don't."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x8"
+    },
+    "CONTENTS_CURRENT_DOWN": {
+      "name": "CONTENTS_CURRENT_DOWN",
+      "refLine": 68,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x800000"
+    },
+    "MASK_SOLID": {
+      "name": "MASK_SOLID",
+      "refLine": 86,
+      "docStart": 4473,
+      "docEnd": 4514,
+      "docs": {
+        "brief": "everything that is normally solid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that is normally solid"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_WINDOW|CONTENTS_MONSTER|CONTENTS_GRATE)"
+    },
+    "MASK_VISIBLE": {
+      "name": "MASK_VISIBLE",
+      "refLine": 92,
+      "docStart": 5636,
+      "docEnd": 5692,
+      "docs": {
+        "brief": "everything that blocks line of sight for players",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything that blocks line of sight for players"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(MASK_OPAQUE|CONTENTS_IGNORE_NODRAW_OPAQUE)"
+    },
+    "CONTENTS_WINDOW": {
+      "name": "CONTENTS_WINDOW",
+      "refLine": 40,
+      "docStart": 1878,
+      "docEnd": 1922,
+      "docs": {
+        "brief": "translucent, but not watery (glass).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "translucent, but not watery (glass)."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x2"
+    },
+    "CONTENTS_UNUSED6": {
+      "name": "CONTENTS_UNUSED6",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x4000"
+    },
+    "CONTENTS_EMPTY": {
+      "name": "CONTENTS_EMPTY",
+      "refLine": 38,
+      "docStart": 1706,
+      "docEnd": 1726,
+      "docs": {
+        "brief": "No contents.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "No contents."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "CONTENTS_CURRENT_0": {
+      "name": "CONTENTS_CURRENT_0",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x40000"
+    },
+    "CONTENTS_TRANSLUCENT": {
+      "name": "CONTENTS_TRANSLUCENT",
+      "refLine": 78,
+      "docStart": 4072,
+      "docEnd": 4114,
+      "docs": {
+        "brief": "auto set if any surface has trans.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "auto set if any surface has trans."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x10000000"
+    },
+    "MASK_SHOT": {
+      "name": "MASK_SHOT",
+      "refLine": 94,
+      "docStart": 6058,
+      "docEnd": 6092,
+      "docs": {
+        "brief": "bullets see these as solid",
+        "tags": [
+          {
+            "tag": "",
+            "text": "bullets see these as solid"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_MONSTER|CONTENTS_WINDOW|CONTENTS_DEBRIS|CONTENTS_HITBOX)"
+    },
+    "MASK_SPLITAREAPORTAL": {
+      "name": "MASK_SPLITAREAPORTAL",
+      "refLine": 101,
+      "docStart": 7511,
+      "docEnd": 7562,
+      "docs": {
+        "brief": "These are things that can split areaportals",
+        "tags": [
+          {
+            "tag": "",
+            "text": "These are things that can split areaportals"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_WATER|CONTENTS_SLIME)"
+    },
+    "SURF_NOPORTAL": {
+      "name": "SURF_NOPORTAL",
+      "refLine": 116,
+      "docStart": 8056,
+      "docEnd": 8110,
+      "docs": {
+        "brief": "the surface can not have a portal placed on it",
+        "tags": [
+          {
+            "tag": "",
+            "text": "the surface can not have a portal placed on it"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0020"
+    },
+    "PARTITION_STATIC_PROPS": {
+      "name": "PARTITION_STATIC_PROPS",
+      "refLine": 141,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(1 << 7)"
+    },
+    "SURF_TRIGGER": {
+      "name": "SURF_TRIGGER",
+      "refLine": 117,
+      "docStart": 8149,
+      "docEnd": 8248,
+      "docs": {
+        "brief": "This is an xbox hack to work around elimination of trigger surfaces, which breaks occluders",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This is an xbox hack to work around elimination of trigger surfaces, which breaks occluders"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0040"
+    },
+    "LAST_VISIBLE_CONTENTS": {
+      "name": "LAST_VISIBLE_CONTENTS",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x80"
+    },
+    "CONTENTS_ORIGIN": {
+      "name": "CONTENTS_ORIGIN",
+      "refLine": 74,
+      "docStart": 3757,
+      "docEnd": 3798,
+      "docs": {
+        "brief": "removed before bsp-ing an entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "removed before bsp-ing an entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x1000000"
+    },
+    "CONTENTS_TEAM1": {
+      "name": "CONTENTS_TEAM1",
+      "refLine": 52,
+      "docStart": 2714,
+      "docEnd": 2773,
+      "docs": {
+        "brief": "per team contents used to differentiate collisions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "per team contents used to differentiate collisions."
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x800"
+    },
+    "CONTENTS_CURRENT_UP": {
+      "name": "CONTENTS_CURRENT_UP",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x400000"
+    },
+    "SURF_SKY": {
+      "name": "SURF_SKY",
+      "refLine": 113,
+      "docStart": 7880,
+      "docEnd": 7917,
+      "docs": {
+        "brief": "don't draw, but add to skybox",
+        "tags": [
+          {
+            "tag": "",
+            "text": "don't draw, but add to skybox"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0004"
+    },
+    "MASK_ALL": {
+      "name": "MASK_ALL",
+      "refLine": 85,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(0xFFFFFFFF)"
+    },
+    "ALL_VISIBLE_CONTENTS": {
+      "name": "ALL_VISIBLE_CONTENTS",
+      "refLine": 48,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "(LAST_VISIBLE_CONTENTS | (LAST_VISIBLE_CONTENTS-1))"
+    },
+    "MASK_NPCWORLDSTATIC": {
+      "name": "MASK_NPCWORLDSTATIC",
+      "refLine": 100,
+      "docStart": 7320,
+      "docEnd": 7369,
+      "docs": {
+        "brief": "just the world, used for route rebuilding",
+        "tags": [
+          {
+            "tag": "",
+            "text": "just the world, used for route rebuilding"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_WINDOW|CONTENTS_MONSTERCLIP|CONTENTS_GRATE)"
+    },
+    "CONTENTS_PLAYERCLIP": {
+      "name": "CONTENTS_PLAYERCLIP",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x10000"
+    },
+    "CONTENTS_WATER": {
+      "name": "CONTENTS_WATER",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x20"
+    },
+    "PARTITION_SOLID_EDICTS": {
+      "name": "PARTITION_SOLID_EDICTS",
+      "refLine": 138,
+      "docStart": 9090,
+      "docEnd": 9168,
+      "docs": {
+        "brief": "every edict_t that isn't SOLID_TRIGGER or SOLID_NOT (and static props)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "every edict_t that isn't SOLID_TRIGGER or SOLID_NOT (and static props)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(1 << 1)"
+    },
+    "SURF_HINT": {
+      "name": "SURF_HINT",
+      "refLine": 120,
+      "docStart": 8372,
+      "docEnd": 8407,
+      "docs": {
+        "brief": "make a primary bsp splitter",
+        "tags": [
+          {
+            "tag": "",
+            "text": "make a primary bsp splitter"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0x0100"
+    },
+    "MASK_SHOT_HULL": {
+      "name": "MASK_SHOT_HULL",
+      "refLine": 95,
+      "docStart": 6234,
+      "docEnd": 6299,
+      "docs": {
+        "brief": "non-raycasted weapons see this as solid (includes grates)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "non-raycasted weapons see this as solid (includes grates)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_MONSTER|CONTENTS_WINDOW|CONTENTS_DEBRIS|CONTENTS_GRATE)"
+    },
+    "_sdktools_trace_included": {
+      "name": "_sdktools_trace_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "MASK_SOLID_BRUSHONLY": {
+      "name": "MASK_SOLID_BRUSHONLY",
+      "refLine": 97,
+      "docStart": 6650,
+      "docEnd": 6719,
+      "docs": {
+        "brief": "everything normally solid, except monsters (world+brush only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "everything normally solid, except monsters (world+brush only)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "(CONTENTS_SOLID|CONTENTS_MOVEABLE|CONTENTS_WINDOW|CONTENTS_GRATE)"
+    },
+    "CONTENTS_MONSTERCLIP": {
+      "name": "CONTENTS_MONSTERCLIP",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0x20000"
+    }
+  },
+  "enums": {
+    "RayType": {
+      "name": "RayType",
+      "refLine": 161,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "RayType_EndPoint": {
+          "name": "RayType_EndPoint",
+          "refLine": 163,
+          "docStart": 9814,
+          "docEnd": 9888,
+          "docs": {
+            "brief": "The trace ray will go from the start position to the end position.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The trace ray will go from the start position to the end position."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "RayType_Infinite": {
+          "name": "RayType_Infinite",
+          "refLine": 164,
+          "docStart": 9911,
+          "docEnd": 10002,
+          "docs": {
+            "brief": "The trace ray will go from the start position to infinity using a direction vector.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The trace ray will go from the start position to infinity using a direction vector."
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "TraceType": {
+      "name": "TraceType",
+      "refLine": 167,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "TRACE_WORLD_ONLY": {
+          "name": "TRACE_WORLD_ONLY",
+          "refLine": 170,
+          "docStart": 10086,
+          "docEnd": 10136,
+          "docs": {
+            "brief": "NOTE: This does *not* test static props!!!",
+            "tags": [
+              {
+                "tag": "",
+                "text": "NOTE: This does *not* test static props!!!"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TRACE_EVERYTHING_FILTER_PROPS": {
+          "name": "TRACE_EVERYTHING_FILTER_PROPS",
+          "refLine": 172,
+          "docStart": 10261,
+          "docEnd": 10370,
+          "docs": {
+            "brief": "NOTE: This version will pass the IHandleEntity for props through the filter, unlike all other filters",
+            "tags": [
+              {
+                "tag": "",
+                "text": "NOTE: This version will pass the IHandleEntity for props through the filter, unlike all other filters"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TRACE_ENTITIES_ONLY": {
+          "name": "TRACE_ENTITIES_ONLY",
+          "refLine": 171,
+          "docStart": 10171,
+          "docEnd": 10226,
+          "docs": {
+            "brief": "NOTE: This version will *not* test static props",
+            "tags": [
+              {
+                "tag": "",
+                "text": "NOTE: This version will *not* test static props"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "TRACE_EVERYTHING": {
+          "name": "TRACE_EVERYTHING",
+          "refLine": 169,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {
+    "TraceEntityFilter": {
+      "name": "TraceEntityFilter",
+      "refLine": 175,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function bool(int entity, int contentsMask)": {
+          "refLine": 184,
+          "docStart": 10409,
+          "docEnd": 10624,
+          "docs": {
+            "brief": "Called on entity filtering.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called on entity filtering."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity index."
+              },
+              {
+                "tag": "param:contentsMask",
+                "text": "Contents Mask."
+              },
+              {
+                "tag": "return",
+                "text": "True to allow the current entity to be hit, otherwise false."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int entity, int contentsMask)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "contentsMask",
+                "decl": "int contentsMask",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(int entity, int contentsMask, any data)": {
+          "refLine": 194,
+          "docStart": 10677,
+          "docEnd": 10939,
+          "docs": {
+            "brief": "Called on entity filtering.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called on entity filtering."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity index."
+              },
+              {
+                "tag": "param:contentsMask",
+                "text": "Contents Mask."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data value, if used."
+              },
+              {
+                "tag": "return",
+                "text": "True to allow the current entity to be hit, otherwise false."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int entity, int contentsMask, any data)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "contentsMask",
+                "decl": "int contentsMask",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "TraceEntityEnumerator": {
+      "name": "TraceEntityEnumerator",
+      "refLine": 197,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function bool(int entity)": {
+          "refLine": 205,
+          "docStart": 11040,
+          "docEnd": 11231,
+          "docs": {
+            "brief": "Called for each entity enumerated with EnumerateEntities*.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called for each entity enumerated with EnumerateEntities*."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity index."
+              },
+              {
+                "tag": "return",
+                "text": "True to continue enumerating, otherwise false."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int entity)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function bool(int entity, any data)": {
+          "refLine": 213,
+          "docStart": 11266,
+          "docEnd": 11501,
+          "docs": {
+            "brief": "Called for each entity enumerated with EnumerateEntities*.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called for each entity enumerated with EnumerateEntities*."
+              },
+              {
+                "tag": "param:entity",
+                "text": "Entity index."
+              },
+              {
+                "tag": "param:data",
+                "text": "Data value, if used."
+              },
+              {
+                "tag": "return",
+                "text": "True to continue enumerating, otherwise false."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function bool(int entity, any data)",
+          "parsedSignature": {
+            "returnType": "bool",
+            "arguments": [
+              {
+                "type": "int",
+                "name": "entity",
+                "decl": "int entity",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

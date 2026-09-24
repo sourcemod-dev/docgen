@@ -1,0 +1,55 @@
+{
+  "functions": {
+    "FindTeamByName": {
+      "name": "FindTeamByName",
+      "refLine": 50,
+      "docStart": 1656,
+      "docEnd": 2129,
+      "docs": {
+        "brief": "Given a partial team name, attempts to find a matching team.\n\nThe search is performed case insensitively and only against the\nfirst N characters of the team names, where N is the number of\ncharacters in the search pattern.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given a partial team name, attempts to find a matching team.\n\nThe search is performed case insensitively and only against the\nfirst N characters of the team names, where N is the number of\ncharacters in the search pattern."
+          },
+          {
+            "tag": "param:name",
+            "text": "Partial or full team name."
+          },
+          {
+            "tag": "return",
+            "text": "A valid team index on success.\n-1 if no team matched.\n-2 if more than one team matched."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_stocks_included": {
+      "name": "_sdktools_stocks_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,1280 @@
+{
+  "functions": {
+    "SMC_SetParseStart": {
+      "name": "SMC_SetParseStart",
+      "refLine": 236,
+      "docStart": 9120,
+      "docEnd": 9339,
+      "docs": {
+        "brief": "Sets the SMC_ParseStart function of a parse Handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the SMC_ParseStart function of a parse Handle."
+          },
+          {
+            "tag": "param:smc",
+            "text": "Handle to an SMC Parse."
+          },
+          {
+            "tag": "param:func",
+            "text": "SMC_ParseStart function."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "smc",
+          "decl": "Handle smc",
+          "default": null
+        },
+        {
+          "type": "SMC_ParseStart",
+          "name": "func",
+          "decl": "SMC_ParseStart func",
+          "default": null
+        }
+      ]
+    },
+    "SMC_GetErrorString": {
+      "name": "SMC_GetErrorString",
+      "refLine": 227,
+      "docStart": 8604,
+      "docEnd": 9039,
+      "docs": {
+        "brief": "Gets an error string for an SMCError code.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Gets an error string for an SMCError code."
+          },
+          {
+            "tag": "note",
+            "text": "SMCError_Okay returns false."
+          },
+          {
+            "tag": "note",
+            "text": "SMCError_Custom (which is thrown on SMCParse_HaltFail) returns false."
+          },
+          {
+            "tag": "param:error",
+            "text": "The SMCParseError code."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "A string buffer for the error (contents undefined on failure)."
+          },
+          {
+            "tag": "param:buf_max",
+            "text": "The maximum size of the buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "SMCError",
+          "name": "error",
+          "decl": "SMCError error",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "buf_max",
+          "decl": "int buf_max",
+          "default": null
+        }
+      ]
+    },
+    "SMC_SetReaders": {
+      "name": "SMC_SetReaders",
+      "refLine": 255,
+      "docStart": 9679,
+      "docEnd": 9960,
+      "docs": {
+        "brief": "Sets the three main reader functions.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the three main reader functions."
+          },
+          {
+            "tag": "param:smc",
+            "text": "An SMC parse Handle."
+          },
+          {
+            "tag": "param:ns",
+            "text": "An SMC_NewSection function pointer."
+          },
+          {
+            "tag": "param:kv",
+            "text": "An SMC_KeyValue function pointer."
+          },
+          {
+            "tag": "param:es",
+            "text": "An SMC_EndSection function pointer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "smc",
+          "decl": "Handle smc",
+          "default": null
+        },
+        {
+          "type": "SMC_NewSection",
+          "name": "ns",
+          "decl": "SMC_NewSection ns",
+          "default": null
+        },
+        {
+          "type": "SMC_KeyValue",
+          "name": "kv",
+          "decl": "SMC_KeyValue kv",
+          "default": null
+        },
+        {
+          "type": "SMC_EndSection",
+          "name": "es",
+          "decl": "SMC_EndSection es",
+          "default": null
+        }
+      ]
+    },
+    "SMC_ParseFile": {
+      "name": "SMC_ParseFile",
+      "refLine": 214,
+      "docStart": 8069,
+      "docEnd": 8512,
+      "docs": {
+        "brief": "Parses an SMC file.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Parses an SMC file."
+          },
+          {
+            "tag": "param:smc",
+            "text": "A Handle to an SMC Parse structure."
+          },
+          {
+            "tag": "param:file",
+            "text": "A string containing the file path."
+          },
+          {
+            "tag": "param:line",
+            "text": "An optional by reference cell to store the last line number read."
+          },
+          {
+            "tag": "param:col",
+            "text": "An optional by reference cell to store the last column number read."
+          },
+          {
+            "tag": "return",
+            "text": "An SMCParseError result."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "SMCError",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "smc",
+          "decl": "Handle smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "line",
+          "decl": "int& line",
+          "default": "0"
+        },
+        {
+          "type": "int&",
+          "name": "col",
+          "decl": "int& col",
+          "default": "0"
+        }
+      ]
+    },
+    "SMC_SetParseEnd": {
+      "name": "SMC_SetParseEnd",
+      "refLine": 245,
+      "docStart": 9408,
+      "docEnd": 9614,
+      "docs": {
+        "brief": "Sets the SMC_ParseEnd of a parse handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the SMC_ParseEnd of a parse handle."
+          },
+          {
+            "tag": "param:smc",
+            "text": "Handle to an SMC Parse."
+          },
+          {
+            "tag": "param:func",
+            "text": "SMC_ParseEnd function."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "smc",
+          "decl": "Handle smc",
+          "default": null
+        },
+        {
+          "type": "SMC_ParseEnd",
+          "name": "func",
+          "decl": "SMC_ParseEnd func",
+          "default": null
+        }
+      ]
+    },
+    "SMC_SetRawLine": {
+      "name": "SMC_SetRawLine",
+      "refLine": 263,
+      "docStart": 10060,
+      "docEnd": 10220,
+      "docs": {
+        "brief": "Sets a raw line reader on an SMC parser Handle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets a raw line reader on an SMC parser Handle."
+          },
+          {
+            "tag": "param:smc",
+            "text": "Handle to an SMC Parse."
+          },
+          {
+            "tag": "param:func",
+            "text": "SMC_RawLine function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "smc",
+          "decl": "Handle smc",
+          "default": null
+        },
+        {
+          "type": "SMC_RawLine",
+          "name": "func",
+          "decl": "SMC_RawLine func",
+          "default": null
+        }
+      ]
+    },
+    "SMC_CreateParser": {
+      "name": "SMC_CreateParser",
+      "refLine": 202,
+      "docStart": 7874,
+      "docEnd": 8027,
+      "docs": {
+        "brief": "Creates a new SMC file format parser.  This is used to set parse hooks.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new SMC file format parser.  This is used to set parse hooks."
+          },
+          {
+            "tag": "return",
+            "text": "A new Handle to an SMC Parse structure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "SMCParser",
+      "arguments": []
+    }
+  },
+  "methodmaps": {
+    "SMCParser": {
+      "name": "SMCParser",
+      "refLine": 137,
+      "docStart": 5364,
+      "docEnd": 5681,
+      "docs": {
+        "brief": "An SMCParser is a callback-driven parser for SourceMod configuration files.\nSMC files are similar to Valve KeyValues format, with two key differences:\n(1) SMC cannot handle single-item entries (that is, a key with no value).\n(2) SMC files can have multi-line comment blocks, whereas KeyValues cannot.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "An SMCParser is a callback-driven parser for SourceMod configuration files.\nSMC files are similar to Valve KeyValues format, with two key differences:\n(1) SMC cannot handle single-item entries (that is, a key with no value).\n(2) SMC files can have multi-line comment blocks, whereas KeyValues cannot."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "ParseFile": {
+          "name": "ParseFile",
+          "refLine": 148,
+          "docStart": 5790,
+          "docEnd": 6097,
+          "docs": {
+            "brief": "Parses an SMC file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Parses an SMC file."
+              },
+              {
+                "tag": "param:file",
+                "text": "A string containing the file path."
+              },
+              {
+                "tag": "param:line",
+                "text": "An optional variable to store the last line number read."
+              },
+              {
+                "tag": "param:col",
+                "text": "An optional variable to store the last column number read."
+              },
+              {
+                "tag": "return",
+                "text": "An SMCParseError result."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "SMCError",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "file",
+              "decl": "const char[] file",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "line",
+              "decl": "int& line",
+              "default": "0"
+            },
+            {
+              "type": "int&",
+              "name": "col",
+              "decl": "int& col",
+              "default": "0"
+            }
+          ]
+        },
+        "SMCParser": {
+          "name": "SMCParser",
+          "refLine": 140,
+          "docStart": 5717,
+          "docEnd": 5756,
+          "docs": {
+            "brief": "Create a new SMC file format parser.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Create a new SMC file format parser."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "SMCParser",
+          "arguments": []
+        },
+        "GetErrorString": {
+          "name": "GetErrorString",
+          "refLine": 194,
+          "docStart": 7468,
+          "docEnd": 7785,
+          "docs": {
+            "brief": "Gets an error string for an SMCError code.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets an error string for an SMCError code."
+              },
+              {
+                "tag": "param:error",
+                "text": "The SMCParseError code."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "A string buffer for the error (contents undefined on failure)."
+              },
+              {
+                "tag": "param:buf_max",
+                "text": "The maximum size of the buffer."
+              },
+              {
+                "tag": "return",
+                "text": "The number of characters written to buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "SMCError",
+              "name": "error",
+              "decl": "SMCError error",
+              "default": null
+            },
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "buf_max",
+              "decl": "int buf_max",
+              "default": null
+            }
+          ]
+        },
+        "ParseString": {
+          "name": "ParseString",
+          "refLine": 156,
+          "docStart": 6186,
+          "docEnd": 6509,
+          "docs": {
+            "brief": "Parses raw UTF-8 text as an SMC file.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Parses raw UTF-8 text as an SMC file."
+              },
+              {
+                "tag": "param:string",
+                "text": "A string containing an SMC file."
+              },
+              {
+                "tag": "param:line",
+                "text": "An optional variable to store the last line number read."
+              },
+              {
+                "tag": "param:col",
+                "text": "An optional variable to store the last column number read."
+              },
+              {
+                "tag": "return",
+                "text": "An SMCParseError result."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "SMCError",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "string",
+              "decl": "const char[] string",
+              "default": null
+            },
+            {
+              "type": "int&",
+              "name": "line",
+              "decl": "int& line",
+              "default": "0"
+            },
+            {
+              "type": "int&",
+              "name": "col",
+              "decl": "int& col",
+              "default": "0"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "OnStart": {
+          "name": "OnStart",
+          "refLine": 159,
+          "docStart": 6602,
+          "docEnd": 6659,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_ParseStart events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_ParseStart events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_ParseStart",
+          "getter": false,
+          "setter": true
+        },
+        "OnEnterSection": {
+          "name": "OnEnterSection",
+          "refLine": 169,
+          "docStart": 6884,
+          "docEnd": 6941,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_NewSection events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_NewSection events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_NewSection",
+          "getter": false,
+          "setter": true
+        },
+        "OnKeyValue": {
+          "name": "OnKeyValue",
+          "refLine": 179,
+          "docStart": 7188,
+          "docEnd": 7243,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_KeyValue events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_KeyValue events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_KeyValue",
+          "getter": false,
+          "setter": true
+        },
+        "OnEnd": {
+          "name": "OnEnd",
+          "refLine": 164,
+          "docStart": 6747,
+          "docEnd": 6802,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_ParseEnd events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_ParseEnd events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_ParseEnd",
+          "getter": false,
+          "setter": true
+        },
+        "OnLeaveSection": {
+          "name": "OnLeaveSection",
+          "refLine": 174,
+          "docStart": 7036,
+          "docEnd": 7093,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_EndSection events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_EndSection events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_EndSection",
+          "getter": false,
+          "setter": true
+        },
+        "OnRawLine": {
+          "name": "OnRawLine",
+          "refLine": 184,
+          "docStart": 7330,
+          "docEnd": 7384,
+          "docs": {
+            "brief": "Sets the callback for receiving SMC_RawLine events.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the callback for receiving SMC_RawLine events."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "SMC_RawLine",
+          "getter": false,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_textparse_included": {
+      "name": "_textparse_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "SMCError": {
+      "name": "SMCError",
+      "refLine": 58,
+      "docStart": 2218,
+      "docEnd": 2249,
+      "docs": {
+        "brief": "Parse error codes.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Parse error codes."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SMCError_InvalidProperty1": {
+          "name": "SMCError_InvalidProperty1",
+          "refLine": 71,
+          "docStart": 3136,
+          "docEnd": 3190,
+          "docs": {
+            "brief": "A property was declared outside of any section",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A property was declared outside of any section"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_Custom": {
+          "name": "SMCError_Custom",
+          "refLine": 63,
+          "docStart": 2470,
+          "docEnd": 2509,
+          "docs": {
+            "brief": "A custom handler threw an error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A custom handler threw an error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_Okay": {
+          "name": "SMCError_Okay",
+          "refLine": 60,
+          "docStart": 2298,
+          "docEnd": 2314,
+          "docs": {
+            "brief": "No error",
+            "tags": [
+              {
+                "tag": "",
+                "text": "No error"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        },
+        "SMCError_InvalidSection2": {
+          "name": "SMCError_InvalidSection2",
+          "refLine": 65,
+          "docStart": 2638,
+          "docEnd": 2687,
+          "docs": {
+            "brief": "A section was declared without any header",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A section was declared without any header"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_InvalidSection5": {
+          "name": "SMCError_InvalidSection5",
+          "refLine": 68,
+          "docStart": 2896,
+          "docEnd": 2946,
+          "docs": {
+            "brief": "A section beginning has no matching ending",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A section beginning has no matching ending"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_TokenOverflow": {
+          "name": "SMCError_TokenOverflow",
+          "refLine": 70,
+          "docStart": 3070,
+          "docEnd": 3105,
+          "docs": {
+            "brief": "The token buffer overflowed",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The token buffer overflowed"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_StreamOpen": {
+          "name": "SMCError_StreamOpen",
+          "refLine": 61,
+          "docStart": 2345,
+          "docEnd": 2374,
+          "docs": {
+            "brief": "Stream failed to open",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Stream failed to open"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_StreamError": {
+          "name": "SMCError_StreamError",
+          "refLine": 62,
+          "docStart": 2405,
+          "docEnd": 2439,
+          "docs": {
+            "brief": "The stream died... somehow",
+            "tags": [
+              {
+                "tag": "",
+                "text": "The stream died... somehow"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_InvalidSection1": {
+          "name": "SMCError_InvalidSection1",
+          "refLine": 64,
+          "docStart": 2540,
+          "docEnd": 2607,
+          "docs": {
+            "brief": "A section was declared without quotes, and had extra tokens",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A section was declared without quotes, and had extra tokens"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_InvalidSection4": {
+          "name": "SMCError_InvalidSection4",
+          "refLine": 67,
+          "docStart": 2815,
+          "docEnd": 2865,
+          "docs": {
+            "brief": "A section ending has no matching beginning",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A section ending has no matching beginning"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_InvalidTokens": {
+          "name": "SMCError_InvalidTokens",
+          "refLine": 69,
+          "docStart": 2977,
+          "docEnd": 3039,
+          "docs": {
+            "brief": "There were too many unidentifiable strings on one line",
+            "tags": [
+              {
+                "tag": "",
+                "text": "There were too many unidentifiable strings on one line"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCError_InvalidSection3": {
+          "name": "SMCError_InvalidSection3",
+          "refLine": 66,
+          "docStart": 2718,
+          "docEnd": 2784,
+          "docs": {
+            "brief": "A section ending was declared with too many unknown tokens",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A section ending was declared with too many unknown tokens"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "SMCResult": {
+      "name": "SMCResult",
+      "refLine": 48,
+      "docStart": 1974,
+      "docEnd": 2010,
+      "docs": {
+        "brief": "Parse result directive.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Parse result directive."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SMCParse_Halt": {
+          "name": "SMCParse_Halt",
+          "refLine": 51,
+          "docStart": 2115,
+          "docEnd": 2140,
+          "docs": {
+            "brief": "Stop parsing here",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Stop parsing here"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCParse_HaltFail": {
+          "name": "SMCParse_HaltFail",
+          "refLine": 52,
+          "docStart": 2171,
+          "docEnd": 2210,
+          "docs": {
+            "brief": "Stop parsing and return failure",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Stop parsing and return failure"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SMCParse_Continue": {
+          "name": "SMCParse_Continue",
+          "refLine": 50,
+          "docStart": 2060,
+          "docEnd": 2084,
+          "docs": {
+            "brief": "Continue parsing",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Continue parsing"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {
+    "SMC_ParseEnd": {
+      "name": "SMC_ParseEnd",
+      "refLine": 121,
+      "docStart": 4661,
+      "docEnd": 4883,
+      "docs": {
+        "brief": "Called when parsing is halted.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when parsing is halted."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMCParser."
+          },
+          {
+            "tag": "param:halted",
+            "text": "True if abnormally halted, false otherwise."
+          },
+          {
+            "tag": "param:failed",
+            "text": "True if parsing failed, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(SMCParser smc, bool halted, bool failed)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "halted",
+            "decl": "bool halted",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "failed",
+            "decl": "bool failed",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SMC_ParseStart": {
+      "name": "SMC_ParseStart",
+      "refLine": 79,
+      "docStart": 3198,
+      "docEnd": 3293,
+      "docs": {
+        "brief": "Called when parsing is started.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when parsing is started."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMC Parse Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function void(SMCParser smc)",
+      "parsedSignature": {
+        "returnType": "void",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SMC_RawLine": {
+      "name": "SMC_RawLine",
+      "refLine": 131,
+      "docStart": 4968,
+      "docEnd": 5270,
+      "docs": {
+        "brief": "Callback for whenever a new line of text is about to be parsed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Callback for whenever a new line of text is about to be parsed."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMCParser."
+          },
+          {
+            "tag": "param:line",
+            "text": "A string containing the raw line from the file."
+          },
+          {
+            "tag": "param:lineno",
+            "text": "The line number it occurs on."
+          },
+          {
+            "tag": "return",
+            "text": "An SMCResult action to take."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function SMCResult(SMCParser smc, const char[] line, int lineno)",
+      "parsedSignature": {
+        "returnType": "SMCResult",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "line",
+            "decl": "const char[] line",
+            "default": null
+          },
+          {
+            "type": "int",
+            "name": "lineno",
+            "decl": "int lineno",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SMC_KeyValue": {
+      "name": "SMC_KeyValue",
+      "refLine": 105,
+      "docStart": 3823,
+      "docEnd": 4290,
+      "docs": {
+        "brief": "Called when the parser finds a new key/value pair.\n\nNote: Enclosing quotes are always stripped.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the parser finds a new key/value pair.\n\nNote: Enclosing quotes are always stripped."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMCParser."
+          },
+          {
+            "tag": "param:key",
+            "text": "String containing key name."
+          },
+          {
+            "tag": "param:value",
+            "text": "String containing value name."
+          },
+          {
+            "tag": "param:key_quotes",
+            "text": "Whether or not the key was enclosed in quotes."
+          },
+          {
+            "tag": "param:value_quotes",
+            "text": "Whether or not the value was enclosed in quotes."
+          },
+          {
+            "tag": "return",
+            "text": "An SMCResult action to take."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function SMCResult(SMCParser smc, const char[] key, const char[] value, bool key_quotes, bool value_quotes)",
+      "parsedSignature": {
+        "returnType": "SMCResult",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "key",
+            "decl": "const char[] key",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "value",
+            "decl": "const char[] value",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "key_quotes",
+            "decl": "bool key_quotes",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "value_quotes",
+            "decl": "bool value_quotes",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SMC_NewSection": {
+      "name": "SMC_NewSection",
+      "refLine": 91,
+      "docStart": 3354,
+      "docEnd": 3721,
+      "docs": {
+        "brief": "Called when the parser is entering a new section or sub-section.\n\nNote: Enclosing quotes are always stripped.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the parser is entering a new section or sub-section.\n\nNote: Enclosing quotes are always stripped."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMC Parser."
+          },
+          {
+            "tag": "param:name",
+            "text": "String containing section name."
+          },
+          {
+            "tag": "param:opt_quotes",
+            "text": "True if the section name was quote-enclosed in the file."
+          },
+          {
+            "tag": "return",
+            "text": "An SMCResult action to take."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function SMCResult(SMCParser smc, const char[] name, bool opt_quotes)",
+      "parsedSignature": {
+        "returnType": "SMCResult",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          },
+          {
+            "type": "const char[]",
+            "name": "name",
+            "decl": "const char[] name",
+            "default": null
+          },
+          {
+            "type": "bool",
+            "name": "opt_quotes",
+            "decl": "bool opt_quotes",
+            "default": null
+          }
+        ]
+      }
+    },
+    "SMC_EndSection": {
+      "name": "SMC_EndSection",
+      "refLine": 112,
+      "docStart": 4428,
+      "docEnd": 4595,
+      "docs": {
+        "brief": "Called when the parser finds the end of the current section.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the parser finds the end of the current section."
+          },
+          {
+            "tag": "param:smc",
+            "text": "The SMCParser."
+          },
+          {
+            "tag": "return",
+            "text": "An SMCResult action to take."
+          }
+        ]
+      },
+      "metadata": null,
+      "type": "function SMCResult(SMCParser smc)",
+      "parsedSignature": {
+        "returnType": "SMCResult",
+        "arguments": [
+          {
+            "type": "SMCParser",
+            "name": "smc",
+            "decl": "SMCParser smc",
+            "default": null
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "functions": {
+    "json_get_last_error": {
+      "name": "json_get_last_error",
+      "refLine": 61,
+      "docStart": 2049,
+      "docEnd": 2334,
+      "docs": {
+        "brief": "Retrieves the last error encountered and stores it in the buffer provided.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the last error encountered and stores it in the buffer provided."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String buffer."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "True if the error was copied successfuly,\nfalse otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        }
+      ]
+    },
+    "json_set_last_error": {
+      "name": "json_set_last_error",
+      "refLine": 48,
+      "docStart": 1724,
+      "docEnd": 1918,
+      "docs": {
+        "brief": "Stores the error provided as the 'last error' for later access.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stores the error provided as the 'last error' for later access."
+          },
+          {
+            "tag": "param:error",
+            "text": "Error to store."
+          },
+          {
+            "tag": "param:...",
+            "text": "Further arguments to pass to message formatter."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_json_helpers_errors_included": {
+      "name": "_json_helpers_errors_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

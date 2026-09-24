@@ -1,0 +1,168 @@
+{
+  "functions": {
+    "SBPP_CheckerGetClientsBans": {
+      "name": "SBPP_CheckerGetClientsBans",
+      "refLine": 60,
+      "docStart": 1770,
+      "docEnd": 2060,
+      "docs": {
+        "brief": "Get the number of bans of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the number of bans of a client."
+          },
+          {
+            "tag": "param:iClient",
+            "text": "The client index of who you want to get the number of bans."
+          },
+          {
+            "tag": "return",
+            "text": "The number of bans of the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_CheckerGetClientsComms": {
+      "name": "SBPP_CheckerGetClientsComms",
+      "refLine": 69,
+      "docStart": 2115,
+      "docEnd": 2423,
+      "docs": {
+        "brief": "Get the number of comms bans of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the number of comms bans of a client."
+          },
+          {
+            "tag": "param:iClient",
+            "text": "The client index of who you want to get the number of comms bans."
+          },
+          {
+            "tag": "return",
+            "text": "The number of comms bans of the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_CheckerGetClientsGags": {
+      "name": "SBPP_CheckerGetClientsGags",
+      "refLine": 85,
+      "docStart": 2826,
+      "docEnd": 3116,
+      "docs": {
+        "brief": "Get the number of gags of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the number of gags of a client."
+          },
+          {
+            "tag": "param:iClient",
+            "text": "The client index of who you want to get the number of gags."
+          },
+          {
+            "tag": "return",
+            "text": "The number of gags of the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_CheckerGetClientsMutes": {
+      "name": "SBPP_CheckerGetClientsMutes",
+      "refLine": 77,
+      "docStart": 2478,
+      "docEnd": 2771,
+      "docs": {
+        "brief": "Get the number of mutes of a client.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get the number of mutes of a client."
+          },
+          {
+            "tag": "param:iClient",
+            "text": "The client index of who you want to get the number of mutes."
+          },
+          {
+            "tag": "return",
+            "text": "The number of mutes of the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "__pl_sourcebanschecker_SetNTVOptional": {
+      "name": "__pl_sourcebanschecker_SetNTVOptional",
+      "refLine": 44,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sourcebanschecker_included": {
+      "name": "_sourcebanschecker_included",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

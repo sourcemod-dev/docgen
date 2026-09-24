@@ -1,0 +1,670 @@
+{
+  "functions": {
+    "FindStringIndex": {
+      "name": "FindStringIndex",
+      "refLine": 93,
+      "docStart": 3317,
+      "docEnd": 3614,
+      "docs": {
+        "brief": "Searches for the index of a given string in a string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Searches for the index of a given string in a string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to find."
+          },
+          {
+            "tag": "return",
+            "text": "String index if found, INVALID_STRING_INDEX otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "GetStringTableData": {
+      "name": "GetStringTableData",
+      "refLine": 127,
+      "docStart": 4597,
+      "docEnd": 5102,
+      "docs": {
+        "brief": "Retrieves the user data associated with a given string index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the user data associated with a given string index."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:stringidx",
+            "text": "A string index."
+          },
+          {
+            "tag": "param:userdata",
+            "text": "Buffer to store the user data. This will be set to \"\" if there is no user data"
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (binary safe, includes the null terminator)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index or string index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "stringidx",
+          "decl": "int stringidx",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "userdata",
+          "decl": "char[] userdata",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetNumStringTables": {
+      "name": "GetNumStringTables",
+      "refLine": 54,
+      "docStart": 2071,
+      "docEnd": 2216,
+      "docs": {
+        "brief": "Returns the number of string tables that currently exist.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of string tables that currently exist."
+          },
+          {
+            "tag": "return",
+            "text": "Number of string tables that currently exist."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "FindStringTable": {
+      "name": "FindStringTable",
+      "refLine": 47,
+      "docStart": 1824,
+      "docEnd": 2019,
+      "docs": {
+        "brief": "Searches for a string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Searches for a string table."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of string table to find."
+          },
+          {
+            "tag": "return",
+            "text": "A string table index number if found, INVALID_STRING_TABLE otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "SetStringTableData": {
+      "name": "SetStringTableData",
+      "refLine": 138,
+      "docStart": 5199,
+      "docEnd": 5583,
+      "docs": {
+        "brief": "Sets the user data associated with a given string index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the user data associated with a given string index."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:stringidx",
+            "text": "A string index."
+          },
+          {
+            "tag": "param:userdata",
+            "text": "User data string that will be set."
+          },
+          {
+            "tag": "param:length",
+            "text": "Length of user data string. This should include the null terminator."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index or string index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "stringidx",
+          "decl": "int stringidx",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "userdata",
+          "decl": "const char[] userdata",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "GetStringTableNumStrings": {
+      "name": "GetStringTableNumStrings",
+      "refLine": 63,
+      "docStart": 2254,
+      "docEnd": 2511,
+      "docs": {
+        "brief": "Returns the number of strings that currently exist in a given string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of strings that currently exist in a given string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "return",
+            "text": "Number of strings that currently exist."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        }
+      ]
+    },
+    "GetStringTableMaxStrings": {
+      "name": "GetStringTableMaxStrings",
+      "refLine": 72,
+      "docStart": 2567,
+      "docEnd": 2823,
+      "docs": {
+        "brief": "Returns the maximum number of strings that are allowed in a given string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the maximum number of strings that are allowed in a given string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "return",
+            "text": "Maximum number of strings allowed."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        }
+      ]
+    },
+    "GetStringTableName": {
+      "name": "GetStringTableName",
+      "refLine": 83,
+      "docStart": 2879,
+      "docEnd": 3239,
+      "docs": {
+        "brief": "Retrieves the name of a string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name of a string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the name of the string table."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (UTF-8 safe)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetStringTableDataLength": {
+      "name": "GetStringTableDataLength",
+      "refLine": 115,
+      "docStart": 4192,
+      "docEnd": 4526,
+      "docs": {
+        "brief": "Returns the length of the user data associated with a given string index.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the length of the user data associated with a given string index."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:stringidx",
+            "text": "A string index."
+          },
+          {
+            "tag": "return",
+            "text": "Length of user data. This will be 0 if there is no user data."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index or string index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "stringidx",
+          "decl": "int stringidx",
+          "default": null
+        }
+      ]
+    },
+    "AddFileToDownloadsTable": {
+      "name": "AddFileToDownloadsTable",
+      "refLine": 168,
+      "docStart": 6633,
+      "docEnd": 6855,
+      "docs": {
+        "brief": "Adds a file to the downloadables network string table.\nThis forces a client to download the file if they do not already have it.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a file to the downloadables network string table.\nThis forces a client to download the file if they do not already have it."
+          },
+          {
+            "tag": "param:filename",
+            "text": "File that will be added to downloadables table."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "filename",
+          "decl": "const char[] filename",
+          "default": null
+        }
+      ]
+    },
+    "AddToStringTable": {
+      "name": "AddToStringTable",
+      "refLine": 151,
+      "docStart": 5684,
+      "docEnd": 6190,
+      "docs": {
+        "brief": "Adds a string to a given string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds a string to a given string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to add."
+          },
+          {
+            "tag": "param:userdata",
+            "text": "An optional user data string."
+          },
+          {
+            "tag": "param:length",
+            "text": "Length of user data string. This should include the null terminator.\nIf set to -1, then user data will be not be altered if the specified string\nalready exists in the string table."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "userdata",
+          "decl": "const char[] userdata",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        }
+      ]
+    },
+    "LockStringTables": {
+      "name": "LockStringTables",
+      "refLine": 160,
+      "docStart": 6298,
+      "docEnd": 6587,
+      "docs": {
+        "brief": "Locks or unlocks the network string tables.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Locks or unlocks the network string tables."
+          },
+          {
+            "tag": "param:lock",
+            "text": "Determines whether network string tables should be locked.\nTrue means the tables should be locked for writing; false means unlocked."
+          },
+          {
+            "tag": "return",
+            "text": "Previous lock state."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "bool",
+          "name": "lock",
+          "decl": "bool lock",
+          "default": null
+        }
+      ]
+    },
+    "ReadStringTable": {
+      "name": "ReadStringTable",
+      "refLine": 105,
+      "docStart": 3679,
+      "docEnd": 4103,
+      "docs": {
+        "brief": "Retrieves the string at a given index of a string table.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the string at a given index of a string table."
+          },
+          {
+            "tag": "param:tableidx",
+            "text": "A string table index."
+          },
+          {
+            "tag": "param:stringidx",
+            "text": "A string index."
+          },
+          {
+            "tag": "param:str",
+            "text": "Buffer to store the string value."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (UTF-8 safe)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid string table index or string index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "tableidx",
+          "decl": "int tableidx",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "stringidx",
+          "decl": "int stringidx",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "INVALID_STRING_INDEX": {
+      "name": "INVALID_STRING_INDEX",
+      "refLine": 39,
+      "docStart": 1778,
+      "docEnd": 1820,
+      "docs": {
+        "brief": "An invalid string index in a table",
+        "tags": [
+          {
+            "tag": "",
+            "text": "An invalid string index in a table"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-1"
+    },
+    "INVALID_STRING_TABLE": {
+      "name": "INVALID_STRING_TABLE",
+      "refLine": 38,
+      "docStart": 1703,
+      "docEnd": 1740,
+      "docs": {
+        "brief": "An invalid string table index",
+        "tags": [
+          {
+            "tag": "",
+            "text": "An invalid string table index"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "-1"
+    },
+    "_sdktools_stringtables_included": {
+      "name": "_sdktools_stringtables_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

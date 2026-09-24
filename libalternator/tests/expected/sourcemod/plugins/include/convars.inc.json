@@ -1,0 +1,2320 @@
+{
+  "functions": {
+    "SetConVarInt": {
+      "name": "SetConVarInt",
+      "refLine": 337,
+      "docStart": 13668,
+      "docEnd": 14477,
+      "docs": {
+        "brief": "Sets the integer value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the integer value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "New integer value."
+          },
+          {
+            "tag": "param:replicate",
+            "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+          },
+          {
+            "tag": "param:notify",
+            "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replicate",
+          "decl": "bool replicate",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "notify",
+          "decl": "bool notify",
+          "default": "false"
+        }
+      ]
+    },
+    "GetConVarName": {
+      "name": "GetConVarName",
+      "refLine": 467,
+      "docStart": 19964,
+      "docEnd": 20242,
+      "docs": {
+        "brief": "Retrieves the name of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the name of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:name",
+            "text": "Buffer to store the name of the convar."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "QueryClientConVar": {
+      "name": "QueryClientConVar",
+      "refLine": 514,
+      "docStart": 22150,
+      "docEnd": 22645,
+      "docs": {
+        "brief": "Starts a query to retrieve the value of a client's console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts a query to retrieve the value of a client's console variable."
+          },
+          {
+            "tag": "param:client",
+            "text": "Player index."
+          },
+          {
+            "tag": "param:cvarName",
+            "text": "Name of client convar to query."
+          },
+          {
+            "tag": "param:callback",
+            "text": "A function to use as a callback when the query has finished."
+          },
+          {
+            "tag": "param:value",
+            "text": "Optional value to pass to the callback function."
+          },
+          {
+            "tag": "return",
+            "text": "A cookie that uniquely identifies the query.\nReturns QUERYCOOKIE_FAILED on failure, such as when used on a bot."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "QueryCookie",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "cvarName",
+          "decl": "const char[] cvarName",
+          "default": null
+        },
+        {
+          "type": "ConVarQueryFinished",
+          "name": "callback",
+          "decl": "ConVarQueryFinished callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": "0"
+        }
+      ]
+    },
+    "SetConVarBool": {
+      "name": "SetConVarBool",
+      "refLine": 311,
+      "docStart": 12504,
+      "docEnd": 13313,
+      "docs": {
+        "brief": "Sets the boolean value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the boolean value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "New boolean value."
+          },
+          {
+            "tag": "param:replicate",
+            "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+          },
+          {
+            "tag": "param:notify",
+            "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replicate",
+          "decl": "bool replicate",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "notify",
+          "decl": "bool notify",
+          "default": "false"
+        }
+      ]
+    },
+    "SetConVarBounds": {
+      "name": "SetConVarBounds",
+      "refLine": 457,
+      "docStart": 19447,
+      "docEnd": 19872,
+      "docs": {
+        "brief": "Sets the specified bound of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the specified bound of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of bound to set, ConVarBound_Lower or ConVarBound_Upper"
+          },
+          {
+            "tag": "param:set",
+            "text": "If set to true, convar will use specified bound. If false, bound will be removed."
+          },
+          {
+            "tag": "param:value",
+            "text": "Floating point value to use as the specified bound."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "ConVarBounds",
+          "name": "type",
+          "decl": "ConVarBounds type",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "set",
+          "decl": "bool set",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "IsValidConVarChar": {
+      "name": "IsValidConVarChar",
+      "refLine": 522,
+      "docStart": 22763,
+      "docEnd": 22956,
+      "docs": {
+        "brief": "Returns true if the supplied character is valid in a ConVar name.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns true if the supplied character is valid in a ConVar name."
+          },
+          {
+            "tag": "param:c",
+            "text": "Character to validate."
+          },
+          {
+            "tag": "return",
+            "text": "True is valid for ConVars, false otherwise"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "c",
+          "decl": "int c",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarInt": {
+      "name": "GetConVarInt",
+      "refLine": 320,
+      "docStart": 13410,
+      "docEnd": 13626,
+      "docs": {
+        "brief": "Returns the integer value of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the integer value of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "return",
+            "text": "The integer value of the convar."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        }
+      ]
+    },
+    "UnhookConVarChange": {
+      "name": "UnhookConVarChange",
+      "refLine": 285,
+      "docStart": 11881,
+      "docEnd": 12171,
+      "docs": {
+        "brief": "Removes a hook for when a console variable's value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes a hook for when a console variable's value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An OnConVarChanged function pointer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle, invalid callback function, or no active hook on convar."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "ConVarChanged",
+          "name": "callback",
+          "decl": "ConVarChanged callback",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarString": {
+      "name": "GetConVarString",
+      "refLine": 373,
+      "docStart": 15770,
+      "docEnd": 16057,
+      "docs": {
+        "brief": "Retrieves the string value of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the string value of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store the value of the convar."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "SendConVarValue": {
+      "name": "SendConVarValue",
+      "refLine": 478,
+      "docStart": 20314,
+      "docEnd": 20683,
+      "docs": {
+        "brief": "Replicates a convar value to a specific client. This does not change the actual convar value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Replicates a convar value to a specific client. This does not change the actual convar value."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index"
+          },
+          {
+            "tag": "param:convar",
+            "text": "ConVar handle"
+          },
+          {
+            "tag": "param:value",
+            "text": "String value to send"
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index, client not in game, or client is fake"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarBool": {
+      "name": "GetConVarBool",
+      "refLine": 294,
+      "docStart": 12244,
+      "docEnd": 12460,
+      "docs": {
+        "brief": "Returns the boolean value of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the boolean value of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "return",
+            "text": "The boolean value of the convar."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        }
+      ]
+    },
+    "ResetConVar": {
+      "name": "ResetConVar",
+      "refLine": 406,
+      "docStart": 17046,
+      "docEnd": 17816,
+      "docs": {
+        "brief": "Resets the console variable to its default value.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resets the console variable to its default value.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:replicate",
+            "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+          },
+          {
+            "tag": "param:notify",
+            "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replicate",
+          "decl": "bool replicate",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "notify",
+          "decl": "bool notify",
+          "default": "false"
+        }
+      ]
+    },
+    "GetConVarFloat": {
+      "name": "GetConVarFloat",
+      "refLine": 346,
+      "docStart": 14572,
+      "docEnd": 14802,
+      "docs": {
+        "brief": "Returns the floating point value of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the floating point value of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "return",
+            "text": "The floating point value of the convar."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        }
+      ]
+    },
+    "CreateConVar": {
+      "name": "CreateConVar",
+      "refLine": 93,
+      "docStart": 2893,
+      "docEnd": 3856,
+      "docs": {
+        "brief": "Creates a new console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new console variable."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of new convar."
+          },
+          {
+            "tag": "param:defaultValue",
+            "text": "String containing the default value of new convar."
+          },
+          {
+            "tag": "param:description",
+            "text": "Optional description of the convar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "Optional bitstring of flags determining how the convar should be handled. See FCVAR_* constants for more details."
+          },
+          {
+            "tag": "param:hasMin",
+            "text": "Optional boolean that determines if the convar has a minimum value."
+          },
+          {
+            "tag": "param:min",
+            "text": "Minimum floating point value that the convar can have if hasMin is true."
+          },
+          {
+            "tag": "param:hasMax",
+            "text": "Optional boolean that determines if the convar has a maximum value."
+          },
+          {
+            "tag": "param:max",
+            "text": "Maximum floating point value that the convar can have if hasMax is true."
+          },
+          {
+            "tag": "return",
+            "text": "A handle to the newly created convar. If the convar already exists, a handle to it will still be returned."
+          },
+          {
+            "tag": "error",
+            "text": "Convar name is blank or is the same as an existing console command."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ConVar",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "defaultValue",
+          "decl": "const char[] defaultValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "description",
+          "decl": "const char[] description",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": "0"
+        },
+        {
+          "type": "bool",
+          "name": "hasMin",
+          "decl": "bool hasMin",
+          "default": "false"
+        },
+        {
+          "type": "float",
+          "name": "min",
+          "decl": "float min",
+          "default": "0.000000"
+        },
+        {
+          "type": "bool",
+          "name": "hasMax",
+          "decl": "bool hasMax",
+          "default": "false"
+        },
+        {
+          "type": "float",
+          "name": "max",
+          "decl": "float max",
+          "default": "0.000000"
+        }
+      ]
+    },
+    "FindConVar": {
+      "name": "FindConVar",
+      "refLine": 107,
+      "docStart": 4049,
+      "docEnd": 4209,
+      "docs": {
+        "brief": "Searches for a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Searches for a console variable."
+          },
+          {
+            "tag": "param:name",
+            "text": "Name of convar to find."
+          },
+          {
+            "tag": "return",
+            "text": "A ConVar object if found; null otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "ConVar",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarFlags": {
+      "name": "GetConVarFlags",
+      "refLine": 426,
+      "docStart": 18348,
+      "docEnd": 18595,
+      "docs": {
+        "brief": "Returns the bitstring of flags on a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the bitstring of flags on a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "return",
+            "text": "A bitstring containing the FCVAR_* flags that are enabled."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        }
+      ]
+    },
+    "SetConVarFloat": {
+      "name": "SetConVarFloat",
+      "refLine": 363,
+      "docStart": 14848,
+      "docEnd": 15671,
+      "docs": {
+        "brief": "Sets the floating point value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the floating point value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "New floating point value."
+          },
+          {
+            "tag": "param:replicate",
+            "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+          },
+          {
+            "tag": "param:notify",
+            "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "value",
+          "decl": "float value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replicate",
+          "decl": "bool replicate",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "notify",
+          "decl": "bool notify",
+          "default": "false"
+        }
+      ]
+    },
+    "HookConVarChange": {
+      "name": "HookConVarChange",
+      "refLine": 276,
+      "docStart": 11547,
+      "docEnd": 11810,
+      "docs": {
+        "brief": "Creates a hook for when a console variable's value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a hook for when a console variable's value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:callback",
+            "text": "An OnConVarChanged function pointer."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle or invalid callback function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "ConVarChanged",
+          "name": "callback",
+          "decl": "ConVarChanged callback",
+          "default": null
+        }
+      ]
+    },
+    "SetConVarString": {
+      "name": "SetConVarString",
+      "refLine": 390,
+      "docStart": 16132,
+      "docEnd": 16939,
+      "docs": {
+        "brief": "Sets the string value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the string value of a console variable.\n\nNote: The replicate and notify params are only relevant for the original, Dark Messiah, and\nEpisode 1 engines. Newer engines automatically do these things when the convar value is changed."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "New string value."
+          },
+          {
+            "tag": "param:replicate",
+            "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+          },
+          {
+            "tag": "param:notify",
+            "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "replicate",
+          "decl": "bool replicate",
+          "default": "false"
+        },
+        {
+          "type": "bool",
+          "name": "notify",
+          "decl": "bool notify",
+          "default": "false"
+        }
+      ]
+    },
+    "SetConVarFlags": {
+      "name": "SetConVarFlags",
+      "refLine": 435,
+      "docStart": 18639,
+      "docEnd": 18876,
+      "docs": {
+        "brief": "Sets the bitstring of flags on a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the bitstring of flags on a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:flags",
+            "text": "A bitstring containing the FCVAR_* flags to enable."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarDefault": {
+      "name": "GetConVarDefault",
+      "refLine": 417,
+      "docStart": 17899,
+      "docEnd": 18273,
+      "docs": {
+        "brief": "Retrieves the default string value of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the default string value of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:value",
+            "text": "Buffer to store the default value of the convar."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer (UTF-8 safe)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "value",
+          "decl": "char[] value",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "GetConVarBounds": {
+      "name": "GetConVarBounds",
+      "refLine": 446,
+      "docStart": 18932,
+      "docEnd": 19368,
+      "docs": {
+        "brief": "Retrieves the specified bound of a console variable.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the specified bound of a console variable."
+          },
+          {
+            "tag": "param:convar",
+            "text": "Handle to the convar."
+          },
+          {
+            "tag": "param:type",
+            "text": "Type of bound to retrieve, ConVarBound_Lower or ConVarBound_Upper."
+          },
+          {
+            "tag": "param:value",
+            "text": "By-reference cell to store the specified floating point bound value."
+          },
+          {
+            "tag": "return",
+            "text": "True if the convar has the specified bound set, false otherwise."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or corrupt Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "convar",
+          "decl": "Handle convar",
+          "default": null
+        },
+        {
+          "type": "ConVarBounds",
+          "name": "type",
+          "decl": "ConVarBounds type",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "value",
+          "decl": "float& value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "ConVar": {
+      "name": "ConVar",
+      "refLine": 110,
+      "docStart": 4256,
+      "docEnd": 4322,
+      "docs": {
+        "brief": "A ConVar is a configurable, named setting in the srcds console.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "A ConVar is a configurable, named setting in the srcds console."
+          }
+        ]
+      },
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "GetBounds": {
+          "name": "GetBounds",
+          "refLine": 228,
+          "docStart": 9467,
+          "docEnd": 9793,
+          "docs": {
+            "brief": "Retrieves the specified bound of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the specified bound of a console variable."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of bound to retrieve, ConVarBound_Lower or ConVarBound_Upper."
+              },
+              {
+                "tag": "param:value",
+                "text": "By-reference cell to store the specified floating point bound value."
+              },
+              {
+                "tag": "return",
+                "text": "True if the convar has the specified bound set, false otherwise."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "ConVarBounds",
+              "name": "type",
+              "decl": "ConVarBounds type",
+              "default": null
+            },
+            {
+              "type": "float&",
+              "name": "value",
+              "decl": "float& value",
+              "default": null
+            }
+          ]
+        },
+        "SetInt": {
+          "name": "SetInt",
+          "refLine": 167,
+          "docStart": 5795,
+          "docEnd": 6489,
+          "docs": {
+            "brief": "Sets the integer value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the integer value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed."
+              },
+              {
+                "tag": "param:value",
+                "text": "New integer value."
+              },
+              {
+                "tag": "param:replicate",
+                "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+              },
+              {
+                "tag": "param:notify",
+                "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "value",
+              "decl": "int value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replicate",
+              "decl": "bool replicate",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "notify",
+              "decl": "bool notify",
+              "default": "false"
+            }
+          ]
+        },
+        "SetString": {
+          "name": "SetString",
+          "refLine": 201,
+          "docStart": 7604,
+          "docEnd": 8302,
+          "docs": {
+            "brief": "Sets the string value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the string value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed."
+              },
+              {
+                "tag": "param:value",
+                "text": "New string value."
+              },
+              {
+                "tag": "param:replicate",
+                "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+              },
+              {
+                "tag": "param:notify",
+                "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replicate",
+              "decl": "bool replicate",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "notify",
+              "decl": "bool notify",
+              "default": "false"
+            }
+          ]
+        },
+        "RestoreDefault": {
+          "name": "RestoreDefault",
+          "refLine": 214,
+          "docStart": 8397,
+          "docEnd": 9060,
+          "docs": {
+            "brief": "Resets the console variable to its default value.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Resets the console variable to its default value.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed."
+              },
+              {
+                "tag": "param:replicate",
+                "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+              },
+              {
+                "tag": "param:notify",
+                "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "replicate",
+              "decl": "bool replicate",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "notify",
+              "decl": "bool notify",
+              "default": "false"
+            }
+          ]
+        },
+        "SetBool": {
+          "name": "SetBool",
+          "refLine": 153,
+          "docStart": 5016,
+          "docEnd": 5710,
+          "docs": {
+            "brief": "Sets the boolean value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the boolean value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed."
+              },
+              {
+                "tag": "param:value",
+                "text": "New boolean value."
+              },
+              {
+                "tag": "param:replicate",
+                "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+              },
+              {
+                "tag": "param:notify",
+                "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "value",
+              "decl": "bool value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replicate",
+              "decl": "bool replicate",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "notify",
+              "decl": "bool notify",
+              "default": "false"
+            }
+          ]
+        },
+        "GetName": {
+          "name": "GetName",
+          "refLine": 241,
+          "docStart": 10255,
+          "docEnd": 10420,
+          "docs": {
+            "brief": "Retrieves the name of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the name of a console variable."
+              },
+              {
+                "tag": "param:name",
+                "text": "Buffer to store the name of the convar."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "name",
+              "decl": "char[] name",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "ReplicateToClient": {
+          "name": "ReplicateToClient",
+          "refLine": 255,
+          "docStart": 10728,
+          "docEnd": 11044,
+          "docs": {
+            "brief": "Replicates a convar value to a specific client. This does not change the actual convar value.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Replicates a convar value to a specific client. This does not change the actual convar value."
+              },
+              {
+                "tag": "param:client",
+                "text": "Client index"
+              },
+              {
+                "tag": "param:value",
+                "text": "String value to send"
+              },
+              {
+                "tag": "return",
+                "text": "True on success, false on failure"
+              },
+              {
+                "tag": "error",
+                "text": "Invalid client index, client not in game, or client is fake"
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "client",
+              "decl": "int client",
+              "default": null
+            },
+            {
+              "type": "const char[]",
+              "name": "value",
+              "decl": "const char[] value",
+              "default": null
+            }
+          ]
+        },
+        "AddChangeHook": {
+          "name": "AddChangeHook",
+          "refLine": 260,
+          "docStart": 11118,
+          "docEnd": 11245,
+          "docs": {
+            "brief": "Creates a hook for when a console variable's value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a hook for when a console variable's value is changed."
+              },
+              {
+                "tag": "param:callback",
+                "text": "An OnConVarChanged function pointer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "ConVarChanged",
+              "name": "callback",
+              "decl": "ConVarChanged callback",
+              "default": null
+            }
+          ]
+        },
+        "GetDescription": {
+          "name": "GetDescription",
+          "refLine": 247,
+          "docStart": 10480,
+          "docEnd": 10659,
+          "docs": {
+            "brief": "Retrieves the description of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the description of a console variable."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Buffer to store the description of the convar."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "SetFloat": {
+          "name": "SetFloat",
+          "refLine": 181,
+          "docStart": 6572,
+          "docEnd": 7280,
+          "docs": {
+            "brief": "Sets the floating point value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the floating point value of a console variable.\n\nNote: The replicate and notify params are only relevant for the\noriginal, Dark Messiah, and Episode 1 engines. Newer engines\nautomatically do these things when the convar value is changed."
+              },
+              {
+                "tag": "param:value",
+                "text": "New floating point value."
+              },
+              {
+                "tag": "param:replicate",
+                "text": "If set to true, the new convar value will be set on all clients.\nThis will only work if the convar has the FCVAR_REPLICATED flag\nand actually exists on clients."
+              },
+              {
+                "tag": "param:notify",
+                "text": "If set to true, clients will be notified that the convar has changed.\nThis will only work if the convar has the FCVAR_NOTIFY flag."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "replicate",
+              "decl": "bool replicate",
+              "default": "false"
+            },
+            {
+              "type": "bool",
+              "name": "notify",
+              "decl": "bool notify",
+              "default": "false"
+            }
+          ]
+        },
+        "SetBounds": {
+          "name": "SetBounds",
+          "refLine": 235,
+          "docStart": 9860,
+          "docEnd": 10175,
+          "docs": {
+            "brief": "Sets the specified bound of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Sets the specified bound of a console variable."
+              },
+              {
+                "tag": "param:type",
+                "text": "Type of bound to set, ConVarBound_Lower or ConVarBound_Upper"
+              },
+              {
+                "tag": "param:set",
+                "text": "If set to true, convar will use specified bound. If false, bound will be removed."
+              },
+              {
+                "tag": "param:value",
+                "text": "Floating point value to use as the specified bound."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "ConVarBounds",
+              "name": "type",
+              "decl": "ConVarBounds type",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "set",
+              "decl": "bool set",
+              "default": null
+            },
+            {
+              "type": "float",
+              "name": "value",
+              "decl": "float value",
+              "default": "0.000000"
+            }
+          ]
+        },
+        "RemoveChangeHook": {
+          "name": "RemoveChangeHook",
+          "refLine": 266,
+          "docStart": 11307,
+          "docEnd": 11481,
+          "docs": {
+            "brief": "Removes a hook for when a console variable's value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Removes a hook for when a console variable's value is changed."
+              },
+              {
+                "tag": "param:callback",
+                "text": "An OnConVarChanged function pointer."
+              },
+              {
+                "tag": "error",
+                "text": "No active hook on convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "ConVarChanged",
+              "name": "callback",
+              "decl": "ConVarChanged callback",
+              "default": null
+            }
+          ]
+        },
+        "GetString": {
+          "name": "GetString",
+          "refLine": 187,
+          "docStart": 7367,
+          "docEnd": 7541,
+          "docs": {
+            "brief": "Retrieves the string value of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the string value of a console variable."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store the value of the convar."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        },
+        "GetDefault": {
+          "name": "GetDefault",
+          "refLine": 221,
+          "docStart": 9140,
+          "docEnd": 9404,
+          "docs": {
+            "brief": "Retrieves the default string value of a console variable.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the default string value of a console variable."
+              },
+              {
+                "tag": "param:value",
+                "text": "Buffer to store the default value of the convar."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of string buffer."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written to the buffer (UTF-8 safe)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "value",
+              "decl": "char[] value",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {
+        "BoolValue": {
+          "name": "BoolValue",
+          "refLine": 113,
+          "docStart": 4352,
+          "docEnd": 4404,
+          "docs": {
+            "brief": "Retrieves or sets a boolean value for the convar.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves or sets a boolean value for the convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "bool",
+          "getter": true,
+          "setter": true
+        },
+        "Flags": {
+          "name": "Flags",
+          "refLine": 131,
+          "docStart": 4770,
+          "docEnd": 4824,
+          "docs": {
+            "brief": "Gets or sets the flag bits (FCVAR_*) on the convar.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Gets or sets the flag bits (FCVAR_*) on the convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        },
+        "FloatValue": {
+          "name": "FloatValue",
+          "refLine": 125,
+          "docStart": 4628,
+          "docEnd": 4678,
+          "docs": {
+            "brief": "Retrieves or sets a float value for the convar.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves or sets a float value for the convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "float",
+          "getter": true,
+          "setter": true
+        },
+        "Plugin": {
+          "name": "Plugin",
+          "refLine": 137,
+          "docStart": 4907,
+          "docEnd": 4961,
+          "docs": {
+            "brief": "Retrieves the plugin handle of the convar's creator",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves the plugin handle of the convar's creator"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "Handle",
+          "getter": true,
+          "setter": false
+        },
+        "IntValue": {
+          "name": "IntValue",
+          "refLine": 119,
+          "docStart": 4489,
+          "docEnd": 4542,
+          "docs": {
+            "brief": "Retrieves or sets an integer value for the convar.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieves or sets an integer value for the convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": true
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_convars_included": {
+      "name": "_convars_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "ConVarQueryResult": {
+      "name": "ConVarQueryResult",
+      "refLine": 50,
+      "docStart": 1759,
+      "docEnd": 1807,
+      "docs": {
+        "brief": "Console variable query result values.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Console variable query result values."
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ConVarQuery_Protected": {
+          "name": "ConVarQuery_Protected",
+          "refLine": 56,
+          "docStart": 2229,
+          "docEnd": 2319,
+          "docs": {
+            "brief": "Client convar was found, but it is protected. The server cannot retrieve its value. */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client convar was found, but it is protected. The server cannot retrieve its value. */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ConVarQuery_Cancelled": {
+          "name": "ConVarQuery_Cancelled",
+          "refLine": 52,
+          "docStart": 1870,
+          "docEnd": 1909,
+          "docs": {
+            "brief": "Client disconnected during query */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client disconnected during query */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "-1"
+        },
+        "ConVarQuery_NotFound": {
+          "name": "ConVarQuery_NotFound",
+          "refLine": 54,
+          "docStart": 2040,
+          "docEnd": 2075,
+          "docs": {
+            "brief": "Client convar was not found. */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client convar was not found. */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ConVarQuery_NotValid": {
+          "name": "ConVarQuery_NotValid",
+          "refLine": 55,
+          "docStart": 2113,
+          "docEnd": 2191,
+          "docs": {
+            "brief": "A console command with the same name was found, but there is no convar. */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "A console command with the same name was found, but there is no convar. */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "ConVarQuery_Okay": {
+          "name": "ConVarQuery_Okay",
+          "refLine": 53,
+          "docStart": 1947,
+          "docEnd": 2002,
+          "docs": {
+            "brief": "Retrieval of client convar value was successful. */",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Retrieval of client convar value was successful. */"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    },
+    "ConVarBounds": {
+      "name": "ConVarBounds",
+      "refLine": 41,
+      "docStart": 1619,
+      "docEnd": 1691,
+      "docs": {
+        "brief": "Console variable bound values used with Get/SetConVarBounds()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Console variable bound values used with Get/SetConVarBounds()"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ConVarBound_Upper": {
+          "name": "ConVarBound_Upper",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "ConVarBound_Lower": {
+          "name": "ConVarBound_Lower",
+          "refLine": 44,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {
+    "ConVarChanged": {
+      "name": "ConVarChanged",
+      "refLine": 62,
+      "docStart": 2324,
+      "docEnd": 2405,
+      "docs": {
+        "brief": "Any of the following prototypes will work as a ConVarChanged callback.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Any of the following prototypes will work as a ConVarChanged callback."
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void()": {
+          "refLine": 67,
+          "docStart": 2431,
+          "docEnd": 2494,
+          "docs": {
+            "brief": "Called when a console variable's value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a console variable's value is changed."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void()",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": []
+          }
+        },
+        "function void(ConVar convar, const char[] oldValue, const char[] newValue)": {
+          "refLine": 76,
+          "docStart": 2516,
+          "docEnd": 2810,
+          "docs": {
+            "brief": "Called when a console variable's value is changed.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a console variable's value is changed."
+              },
+              {
+                "tag": "param:convar",
+                "text": "Handle to the convar that was changed."
+              },
+              {
+                "tag": "param:oldValue",
+                "text": "String containing the value of the convar before it was changed."
+              },
+              {
+                "tag": "param:newValue",
+                "text": "String containing the new value of the convar."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(ConVar convar, const char[] oldValue, const char[] newValue)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "ConVar",
+                "name": "convar",
+                "decl": "ConVar convar",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "oldValue",
+                "decl": "const char[] oldValue",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "newValue",
+                "decl": "const char[] newValue",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "ConVarQueryFinished": {
+      "name": "ConVarQueryFinished",
+      "refLine": 480,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)": {
+          "refLine": 501,
+          "docStart": 21512,
+          "docEnd": 22023,
+          "docs": {
+            "brief": "Called when a query to retrieve a client's console variable has finished.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a query to retrieve a client's console variable has finished."
+              },
+              {
+                "tag": "param:cookie",
+                "text": "Unique identifier of query."
+              },
+              {
+                "tag": "param:client",
+                "text": "Player index."
+              },
+              {
+                "tag": "param:result",
+                "text": "Result of query that tells one whether or not query was successful.\nSee ConVarQueryResult enum for more details."
+              },
+              {
+                "tag": "param:convarName",
+                "text": "Name of client convar that was queried."
+              },
+              {
+                "tag": "param:convarValue",
+                "text": "Value of client convar that was queried if successful. This will be \"\" if it was not."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "QueryCookie",
+                "name": "cookie",
+                "decl": "QueryCookie cookie",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "ConVarQueryResult",
+                "name": "result",
+                "decl": "ConVarQueryResult result",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "cvarName",
+                "decl": "const char[] cvarName",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "cvarValue",
+                "decl": "const char[] cvarValue",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue, any value)": {
+          "refLine": 491,
+          "docStart": 20793,
+          "docEnd": 21375,
+          "docs": {
+            "brief": "Called when a query to retrieve a client's console variable has finished.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Called when a query to retrieve a client's console variable has finished."
+              },
+              {
+                "tag": "param:cookie",
+                "text": "Unique identifier of query."
+              },
+              {
+                "tag": "param:client",
+                "text": "Player index."
+              },
+              {
+                "tag": "param:result",
+                "text": "Result of query that tells one whether or not query was successful.\nSee ConVarQueryResult enum for more details."
+              },
+              {
+                "tag": "param:convarName",
+                "text": "Name of client convar that was queried."
+              },
+              {
+                "tag": "param:convarValue",
+                "text": "Value of client convar that was queried if successful. This will be \"\" if it was not."
+              },
+              {
+                "tag": "param:value",
+                "text": "Value that was passed when query was started."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue, any value)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "QueryCookie",
+                "name": "cookie",
+                "decl": "QueryCookie cookie",
+                "default": null
+              },
+              {
+                "type": "int",
+                "name": "client",
+                "decl": "int client",
+                "default": null
+              },
+              {
+                "type": "ConVarQueryResult",
+                "name": "result",
+                "decl": "ConVarQueryResult result",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "cvarName",
+                "decl": "const char[] cvarName",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "cvarValue",
+                "decl": "const char[] cvarValue",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "value",
+                "decl": "any value",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

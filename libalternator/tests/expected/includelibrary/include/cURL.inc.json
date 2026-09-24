@@ -1,0 +1,2401 @@
+{
+  "functions": {
+    "curl_set_send_buffer": {
+      "name": "curl_set_send_buffer",
+      "refLine": 354,
+      "docStart": 12138,
+      "docEnd": 12414,
+      "docs": {
+        "brief": "Send the send buffer for send & receive curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Send the send buffer for send & receive curl handle"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "data   The data to send"
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "size   if specified the \\0 terminator will not be included"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "data",
+          "decl": "const char[] data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": "-1"
+        }
+      ]
+    },
+    "curl_easy_setopt_string": {
+      "name": "curl_easy_setopt_string",
+      "refLine": 230,
+      "docStart": 6643,
+      "docEnd": 7025,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_OBJECTPOINT type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_OBJECTPOINT type"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURLoption",
+            "text": "opt  The option to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer The value to set the option to."
+          },
+          {
+            "tag": "return",
+            "text": "bool    1 on success. 0 = The option not accept string or unsupport."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLoption",
+          "name": "opt",
+          "decl": "CURLoption opt",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_setopt_handle": {
+      "name": "curl_easy_setopt_handle",
+      "refLine": 279,
+      "docStart": 8590,
+      "docEnd": 9085,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_OBJECTPOINT type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_OBJECTPOINT type"
+          },
+          {
+            "tag": "note",
+            "text": "only accept the following handle type\ncurl_OpenFile()\ncurl_httppost()\ncurl_slist()"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURLoption",
+            "text": "opt   The option to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:Handle",
+            "text": "other_hndl The other handle to set the option to."
+          },
+          {
+            "tag": "return",
+            "text": "bool     1 on success. 0 = The option not accept string or unsupport."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLoption",
+          "name": "opt",
+          "decl": "CURLoption opt",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "other_hndl",
+          "decl": "Handle other_hndl",
+          "default": null
+        }
+      ]
+    },
+    "curl_get_error_buffer": {
+      "name": "curl_get_error_buffer",
+      "refLine": 387,
+      "docStart": 13368,
+      "docEnd": 13650,
+      "docs": {
+        "brief": "Get CURLOPT_ERRORBUFFER error string in curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get CURLOPT_ERRORBUFFER error string in curl handle"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_httppost": {
+      "name": "curl_httppost",
+      "refLine": 487,
+      "docStart": 16964,
+      "docEnd": 17200,
+      "docs": {
+        "brief": "Create a curl_httppost struct\nFor the following CUROPT_* only\nCURLOPT_HTTPPOST",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Create a curl_httppost struct\nFor the following CUROPT_* only\nCURLOPT_HTTPPOST"
+          },
+          {
+            "tag": "note",
+            "text": "Should not share to another threaded curl handle."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to the curl_httppost, INVALID_HANDLE on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "curl_easy_setopt_function": {
+      "name": "curl_easy_setopt_function",
+      "refLine": 290,
+      "docStart": 9172,
+      "docEnd": 9627,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_FUNCTIONPOINT type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_FUNCTIONPOINT type"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURLoption",
+            "text": "opt   The option to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:CURL_Function_CB",
+            "text": "callback The value to set the option to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "value  Value to set."
+          },
+          {
+            "tag": "return",
+            "text": "bool       1 on success. 0 = The option unsupport or invalid callback function."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLoption",
+          "name": "opt",
+          "decl": "CURLoption opt",
+          "default": null
+        },
+        {
+          "type": "CURL_Function_CB",
+          "name": "callback",
+          "decl": "CURL_Function_CB callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": "0"
+        }
+      ]
+    },
+    "curl_send_recv_Signal": {
+      "name": "curl_send_recv_Signal",
+      "refLine": 338,
+      "docStart": 11479,
+      "docEnd": 11784,
+      "docs": {
+        "brief": "Send a signal to a send & receive curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Send a signal to a send & receive curl handle"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "param:SendRecv_Act",
+            "text": "act    The SendRecv_Act action after the singal"
+          },
+          {
+            "tag": "return",
+            "text": "bool       1 on success. 0 = not a curl_easy_send_recv() curl, or not running/waiting"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "SendRecv_Act",
+          "name": "act",
+          "decl": "SendRecv_Act act",
+          "default": null
+        }
+      ]
+    },
+    "curl_hash_string": {
+      "name": "curl_hash_string",
+      "refLine": 546,
+      "docStart": 18693,
+      "docEnd": 19053,
+      "docs": {
+        "brief": "Hash a string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hash a string"
+          },
+          {
+            "tag": "parma",
+            "text": "String   input   The string to hash."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "dataSize  The input string size."
+          },
+          {
+            "tag": "param:Openssl_Hash",
+            "text": "algorithm  Hash Algorithm."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer   Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen   Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "1 on success"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "input",
+          "decl": "const char[] input",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "dataSize",
+          "decl": "int dataSize",
+          "default": null
+        },
+        {
+          "type": "Openssl_Hash",
+          "name": "algorithm",
+          "decl": "Openssl_Hash algorithm",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "curl_send_recv_IsWaiting": {
+      "name": "curl_send_recv_IsWaiting",
+      "refLine": 345,
+      "docStart": 11852,
+      "docEnd": 12085,
+      "docs": {
+        "brief": "Check send & receive curl handle is Waiting or not",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Check send & receive curl handle is Waiting or not"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "return",
+            "text": "bool  1 = is waiting. 0 = not a curl_easy_send_recv() curl, or not running/waiting"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "curl_set_recv_timeout": {
+      "name": "curl_set_recv_timeout",
+      "refLine": 378,
+      "docStart": 13060,
+      "docEnd": 13305,
+      "docs": {
+        "brief": "Set receive timeout for curl_easy_send_recv()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set receive timeout for curl_easy_send_recv()"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "timeout   How long will try to receive data before it timeout (milliseconds)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "timeout",
+          "decl": "int timeout",
+          "default": null
+        }
+      ]
+    },
+    "curl_protocols": {
+      "name": "curl_protocols",
+      "refLine": 451,
+      "docStart": 16078,
+      "docEnd": 16295,
+      "docs": {
+        "brief": "Returns the libcurl supported protocols string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the libcurl supported protocols string"
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_send_recv": {
+      "name": "curl_easy_send_recv",
+      "refLine": 330,
+      "docStart": 10592,
+      "docEnd": 11240,
+      "docs": {
+        "brief": "Create a send & receive function for a connected curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Create a send & receive function for a connected curl handle"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl    The handle of the curl to be used."
+          },
+          {
+            "tag": "param:CURL_OnSend",
+            "text": "send_callback  The send callback."
+          },
+          {
+            "tag": "param:CURL_OnReceive",
+            "text": "receive_callback The receive callback."
+          },
+          {
+            "tag": "param:CURL_OnComplete",
+            "text": "complete_callback The complete callback."
+          },
+          {
+            "tag": "param:SendRecv_Act",
+            "text": "act     The first SendRecv_Act action"
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "send_timeout   Send timeout value in milliseconds."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "recv_timeout   Receive timeout value in milliseconds."
+          },
+          {
+            "tag": "param:cenn_t",
+            "text": "recv_buffer_Size Receive buffer size."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "value    Value to set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURL_OnSend",
+          "name": "send_callback",
+          "decl": "CURL_OnSend send_callback",
+          "default": null
+        },
+        {
+          "type": "CURL_OnReceive",
+          "name": "receive_callback",
+          "decl": "CURL_OnReceive receive_callback",
+          "default": null
+        },
+        {
+          "type": "CURL_OnComplete",
+          "name": "complete_callback",
+          "decl": "CURL_OnComplete complete_callback",
+          "default": null
+        },
+        {
+          "type": "SendRecv_Act",
+          "name": "act",
+          "decl": "SendRecv_Act act",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "send_timeout",
+          "decl": "int send_timeout",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "recv_timeout",
+          "decl": "int recv_timeout",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "recv_buffer_Size",
+          "decl": "int recv_buffer_Size",
+          "default": "1024"
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": "0"
+        }
+      ]
+    },
+    "curl_easy_escape": {
+      "name": "curl_easy_escape",
+      "refLine": 416,
+      "docStart": 14631,
+      "docEnd": 14957,
+      "docs": {
+        "brief": "URL encodes the given string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "URL encodes the given string"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "url   The string to encodes."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "1 on success."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "url",
+          "decl": "const char[] url",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_OpenFile": {
+      "name": "curl_OpenFile",
+      "refLine": 475,
+      "docStart": 16493,
+      "docEnd": 16894,
+      "docs": {
+        "brief": "This funcitopn same as Sourcemod OpenFile()\nFor the following CUROPT_* only\nCURLOPT_WRITEDATA\nCURLOPT_HEADERDATA\nCURLOPT_READDATA\nCURLOPT_STDERR\nCURLOPT_INTERLEAVEDATA",
+        "tags": [
+          {
+            "tag": "",
+            "text": "This funcitopn same as Sourcemod OpenFile()\nFor the following CUROPT_* only\nCURLOPT_WRITEDATA\nCURLOPT_HEADERDATA\nCURLOPT_READDATA\nCURLOPT_STDERR\nCURLOPT_INTERLEAVEDATA"
+          },
+          {
+            "tag": "note",
+            "text": "Should not share to another threaded curl handle."
+          },
+          {
+            "tag": "param:file",
+            "text": "File to open."
+          },
+          {
+            "tag": "param:mode",
+            "text": "Open mode."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to the file, INVALID_HANDLE on open error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "mode",
+          "decl": "const char[] mode",
+          "default": null
+        }
+      ]
+    },
+    "curl_formadd": {
+      "name": "curl_formadd",
+      "refLine": 498,
+      "docStart": 17233,
+      "docEnd": 17569,
+      "docs": {
+        "brief": "Add a section to a multipart/formdata HTTP POST",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a section to a multipart/formdata HTTP POST"
+          },
+          {
+            "tag": "note",
+            "text": "Check enum CURLformoption (cURL_head.inc) to see which option supported"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl_httppost to be used."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "The CURLFORMcode code, see cURL_header.inc"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CURLFORMcode",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "handl",
+          "decl": "Handle handl",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "curl_set_receive_size": {
+      "name": "curl_set_receive_size",
+      "refLine": 362,
+      "docStart": 12495,
+      "docEnd": 12698,
+      "docs": {
+        "brief": "Send the receive data size for send & receive curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Send the receive data size for send & receive curl handle"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "size   The receive size"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "curl_slist_append": {
+      "name": "curl_slist_append",
+      "refLine": 525,
+      "docStart": 18049,
+      "docEnd": 18210,
+      "docs": {
+        "brief": "Add a string to an slist",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Add a string to an slist"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl_slist to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  The string to add"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "buffer",
+          "decl": "const char[] buffer",
+          "default": null
+        }
+      ]
+    },
+    "curl_set_send_timeout": {
+      "name": "curl_set_send_timeout",
+      "refLine": 370,
+      "docStart": 12758,
+      "docEnd": 12997,
+      "docs": {
+        "brief": "Set send timeout for curl_easy_send_recv()",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set send timeout for curl_easy_send_recv()"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl   The handle of the send & receive curl to be used."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "timeout   How long will try to send data before it timeout (milliseconds)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "timeout",
+          "decl": "int timeout",
+          "default": null
+        }
+      ]
+    },
+    "curl_hash_file": {
+      "name": "curl_hash_file",
+      "refLine": 535,
+      "docStart": 18277,
+      "docEnd": 18566,
+      "docs": {
+        "brief": "Hash a file",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hash a file"
+          },
+          {
+            "tag": "parma",
+            "text": "String     file     The file path. supports the \"file //\" notation."
+          },
+          {
+            "tag": "param:Openssl_Hash",
+            "text": "algorithm   Hash Algorithm."
+          },
+          {
+            "tag": "param:Openssl_Hash_Complete",
+            "text": "complete_callback The complete callback."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "value    Value to set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "file",
+          "decl": "const char[] file",
+          "default": null
+        },
+        {
+          "type": "Openssl_Hash",
+          "name": "algorithm",
+          "decl": "Openssl_Hash algorithm",
+          "default": null
+        },
+        {
+          "type": "Openssl_Hash_Complete",
+          "name": "complete_callback",
+          "decl": "Openssl_Hash_Complete complete_callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": "0"
+        }
+      ]
+    },
+    "curl_slist": {
+      "name": "curl_slist",
+      "refLine": 517,
+      "docStart": 17628,
+      "docEnd": 18019,
+      "docs": {
+        "brief": "Create a curl_slist struct\nFor the following CUROPT_* only\nCURLOPT_QUOTE\nCURLOPT_HTTPHEADER\nCURLOPT_POSTQUOTE\nCURLOPT_TELNETOPTIONS\nCURLOPT_PREQUOTE\nCURLOPT_HTTP200ALIASES\nCURLOPT_MAIL_RCPT\nCURLOPT_RESOLVE",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Create a curl_slist struct\nFor the following CUROPT_* only\nCURLOPT_QUOTE\nCURLOPT_HTTPHEADER\nCURLOPT_POSTQUOTE\nCURLOPT_TELNETOPTIONS\nCURLOPT_PREQUOTE\nCURLOPT_HTTP200ALIASES\nCURLOPT_MAIL_RCPT\nCURLOPT_RESOLVE"
+          },
+          {
+            "tag": "note",
+            "text": "Should not share to another threaded curl handle."
+          },
+          {
+            "tag": "return",
+            "text": "A Handle to the curl_slist, INVALID_HANDLE on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    },
+    "curl_easy_setopt_int_array": {
+      "name": "curl_easy_setopt_int_array",
+      "refLine": 255,
+      "docStart": 7565,
+      "docEnd": 8024,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_LONG type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_LONG type"
+          },
+          {
+            "tag": "example\"",
+            "text": "new opt[][2] = {\n{_ CURLOPT_NOPROGRESS,1},\n{_ CURLOPT_VERBOSE,0}\n};"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "array  The option array to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "array_size The array size."
+          },
+          {
+            "tag": "return",
+            "text": "bool     1 on success. 0 = The option not accept integer or unsupport."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "int[][]",
+          "name": "array",
+          "decl": "int[][] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "array_size",
+          "decl": "int array_size",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_getinfo_int": {
+      "name": "curl_easy_getinfo_int",
+      "refLine": 406,
+      "docStart": 14228,
+      "docEnd": 14550,
+      "docs": {
+        "brief": "Extract information from a curl handle. (CURLINFO_LONG, CURLINFO_DOUBLE only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Extract information from a curl handle. (CURLINFO_LONG, CURLINFO_DOUBLE only)"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used."
+          },
+          {
+            "tag": "param:CURLINFO",
+            "text": "info  The enum CURLINFO, see cURL_header.inc"
+          },
+          {
+            "tag": "param:value",
+            "text": "Variable to store the value."
+          },
+          {
+            "tag": "return",
+            "text": "The CURLcode code, see cURL_header.inc"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CURLcode",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLINFO",
+          "name": "info",
+          "decl": "CURLINFO info",
+          "default": null
+        },
+        {
+          "type": "any&",
+          "name": "value",
+          "decl": "any& value",
+          "default": null
+        }
+      ]
+    },
+    "curl_load_opt": {
+      "name": "curl_load_opt",
+      "refLine": 300,
+      "docStart": 9737,
+      "docEnd": 10034,
+      "docs": {
+        "brief": "Load all CURLoption to curl Handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Load all CURLoption to curl Handle"
+          },
+          {
+            "tag": "note",
+            "text": "Using curl_easy_perform_thread() will load option in thread\nUse this on curl_easy_perform or check all CURLoption are valid or not\nOnly can use one time for each curl handle"
+          },
+          {
+            "tag": "return",
+            "text": "The CURLcode code, see cURL_header.inc"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CURLcode",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_perform": {
+      "name": "curl_easy_perform",
+      "refLine": 306,
+      "docStart": 10080,
+      "docEnd": 10167,
+      "docs": {
+        "brief": "Perform a file transfer",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Perform a file transfer"
+          },
+          {
+            "tag": "return",
+            "text": "The CURLcode code, see cURL_header.inc"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CURLcode",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_strerror": {
+      "name": "curl_easy_strerror",
+      "refLine": 435,
+      "docStart": 15470,
+      "docEnd": 15742,
+      "docs": {
+        "brief": "Return string describing error code",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Return string describing error code"
+          },
+          {
+            "tag": "param:CURLcode",
+            "text": "code  The CURLcode code, see cURL_header.inc"
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "CURLcode",
+          "name": "code",
+          "decl": "CURLcode code",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_getinfo_string": {
+      "name": "curl_easy_getinfo_string",
+      "refLine": 397,
+      "docStart": 13727,
+      "docEnd": 14129,
+      "docs": {
+        "brief": "Extract information from a curl handle. (CURLINFO_STRING only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Extract information from a curl handle. (CURLINFO_STRING only)"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used."
+          },
+          {
+            "tag": "param:CURLINFO",
+            "text": "info  The enum CURLINFO, see cURL_header.inc"
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "The CURLcode code, see cURL_header.inc"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "CURLcode",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLINFO",
+          "name": "info",
+          "decl": "CURLINFO info",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_features": {
+      "name": "curl_features",
+      "refLine": 457,
+      "docStart": 16352,
+      "docEnd": 16463,
+      "docs": {
+        "brief": "Returns the libcurl supported features",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the libcurl supported features"
+          },
+          {
+            "tag": "return",
+            "text": "The currently features bits. see CURL_VERSION_*"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": []
+    },
+    "curl_easy_setopt_int": {
+      "name": "curl_easy_setopt_int",
+      "refLine": 240,
+      "docStart": 7114,
+      "docEnd": 7489,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_LONG type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_LONG type"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURLoption",
+            "text": "opt  The option to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "value The value to set the option to."
+          },
+          {
+            "tag": "return",
+            "text": "bool    1 on success. 0 = The option not accept integer or unsupport."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLoption",
+          "name": "opt",
+          "decl": "CURLoption opt",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "value",
+          "decl": "int value",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_unescape": {
+      "name": "curl_easy_unescape",
+      "refLine": 426,
+      "docStart": 15047,
+      "docEnd": 15379,
+      "docs": {
+        "brief": "URL decodes the given string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "URL decodes the given string"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The handle of the curl to be used."
+          },
+          {
+            "tag": "param:String",
+            "text": "url   The string to dencodes."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "return",
+            "text": "The output length."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "url",
+          "decl": "const char[] url",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_version": {
+      "name": "curl_version",
+      "refLine": 443,
+      "docStart": 15818,
+      "docEnd": 16023,
+      "docs": {
+        "brief": "Returns the libcurl version string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the libcurl version string"
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "maxlen  Destination buffer length (includes null terminator)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_setopt_int64": {
+      "name": "curl_easy_setopt_int64",
+      "refLine": 265,
+      "docStart": 8128,
+      "docEnd": 8504,
+      "docs": {
+        "brief": "Set a curl option for CURLOPTTYPE_OFF_T type",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Set a curl option for CURLOPTTYPE_OFF_T type"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURLoption",
+            "text": "opt  The option to add (see enum CURLoption for details)."
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer The value to set the option to."
+          },
+          {
+            "tag": "return",
+            "text": "bool    1 on success. 0 = The option not accept string or unsupport."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURLoption",
+          "name": "opt",
+          "decl": "CURLoption opt",
+          "default": null
+        },
+        {
+          "type": "const char",
+          "name": "buffer",
+          "decl": "const char buffer",
+          "default": null
+        }
+      ]
+    },
+    "curl_easy_perform_thread": {
+      "name": "curl_easy_perform_thread",
+      "refLine": 315,
+      "docStart": 10217,
+      "docEnd": 10492,
+      "docs": {
+        "brief": "Perform a file transfer, using thread",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Perform a file transfer, using thread"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl    The handle of the curl to be used. May be INVALID_HANDLE if not essential."
+          },
+          {
+            "tag": "param:CURL_OnComplete",
+            "text": "perform_callback The complete callback."
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "value    Value to set."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "CURL_OnComplete",
+          "name": "perform_callback",
+          "decl": "CURL_OnComplete perform_callback",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "value",
+          "decl": "any value",
+          "default": "0"
+        }
+      ]
+    },
+    "curl_easy_init": {
+      "name": "curl_easy_init",
+      "refLine": 220,
+      "docStart": 6505,
+      "docEnd": 6609,
+      "docs": {
+        "brief": "Create a curl handle",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Create a curl handle"
+          },
+          {
+            "tag": "return",
+            "text": "Handle    The curl handle. Returns INVALID_HANDLE on failure"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Handle",
+      "arguments": []
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_cURL_included": {
+      "name": "_cURL_included",
+      "refLine": 5,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {
+    "SendRecv_Act": {
+      "name": "SendRecv_Act",
+      "refLine": 110,
+      "docStart": 2648,
+      "docEnd": 3089,
+      "docs": {
+        "brief": "The Send & Receive Action\nUsing on CURL_OnSend, CURL_OnReceive\nSendRecv_Act_GOTO_SEND = go to send\nSendRecv_Act_GOTO_RECV = go to receive\nSendRecv_Act_GOTO_WAIT = go to wait\nSendRecv_Act_GOTO_END = end the connection\nSendRecv_Act_GOTO_SEND_NO_WAIT = go to send but no select\nSendRecv_Act_GOTO_RECV_NO_WAIT = go to receive but no select\nTo see how it work? see curl_echo_test.sp & curl_rcon_test.sp examples",
+        "tags": [
+          {
+            "tag": "",
+            "text": "The Send & Receive Action\nUsing on CURL_OnSend, CURL_OnReceive\nSendRecv_Act_GOTO_SEND = go to send\nSendRecv_Act_GOTO_RECV = go to receive\nSendRecv_Act_GOTO_WAIT = go to wait\nSendRecv_Act_GOTO_END = end the connection\nSendRecv_Act_GOTO_SEND_NO_WAIT = go to send but no select\nSendRecv_Act_GOTO_RECV_NO_WAIT = go to receive but no select\nTo see how it work? see curl_echo_test.sp & curl_rcon_test.sp examples"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "SendRecv_Act_LAST": {
+          "name": "SendRecv_Act_LAST",
+          "refLine": 120,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_NOTHING": {
+          "name": "SendRecv_Act_NOTHING",
+          "refLine": 111,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "SendRecv_Act_GOTO_END": {
+          "name": "SendRecv_Act_GOTO_END",
+          "refLine": 116,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_GOTO_RECV": {
+          "name": "SendRecv_Act_GOTO_RECV",
+          "refLine": 114,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_GOTO_WAIT": {
+          "name": "SendRecv_Act_GOTO_WAIT",
+          "refLine": 115,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_GOTO_RECV_NO_WAIT": {
+          "name": "SendRecv_Act_GOTO_RECV_NO_WAIT",
+          "refLine": 118,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_GOTO_SEND_NO_WAIT": {
+          "name": "SendRecv_Act_GOTO_SEND_NO_WAIT",
+          "refLine": 117,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SendRecv_Act_GOTO_SEND": {
+          "name": "SendRecv_Act_GOTO_SEND",
+          "refLine": 113,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "Openssl_Hash": {
+      "name": "Openssl_Hash",
+      "refLine": 126,
+      "docStart": 3328,
+      "docEnd": 3385,
+      "docs": {
+        "brief": "Hash type for curl_hash_file, curl_hash_string",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Hash type for curl_hash_file, curl_hash_string"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "Openssl_Hash_RIPEMD160": {
+          "name": "Openssl_Hash_RIPEMD160",
+          "refLine": 136,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA1": {
+          "name": "Openssl_Hash_SHA1",
+          "refLine": 131,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA": {
+          "name": "Openssl_Hash_SHA",
+          "refLine": 130,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA224": {
+          "name": "Openssl_Hash_SHA224",
+          "refLine": 132,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA384": {
+          "name": "Openssl_Hash_SHA384",
+          "refLine": 134,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA512": {
+          "name": "Openssl_Hash_SHA512",
+          "refLine": 135,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_MD2": {
+          "name": "Openssl_Hash_MD2",
+          "refLine": 129,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_SHA256": {
+          "name": "Openssl_Hash_SHA256",
+          "refLine": 133,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Openssl_Hash_MD5": {
+          "name": "Openssl_Hash_MD5",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "Openssl_Hash_MD4": {
+          "name": "Openssl_Hash_MD4",
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {
+    "CURL_OnComplete": {
+      "name": "CURL_OnComplete",
+      "refLine": 152,
+      "docStart": 3926,
+      "docEnd": 4190,
+      "docs": {
+        "brief": "called if curl_easy_perform_thread() or curl_easy_send_recv() Complete",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if curl_easy_perform_thread() or curl_easy_send_recv() Complete"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The curl handle"
+          },
+          {
+            "tag": "param:CURLcode",
+            "text": "code  The CURLcode code, see cURL_header.inc"
+          },
+          {
+            "tag": "param:any",
+            "text": "data  Data passed to curl_easy_perform_thread()"
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void(Handle hndl, CURLcode code, any data)": {
+          "refLine": 155,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hndl, CURLcode code, any data)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hndl, CURLcode code)": {
+          "refLine": 154,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hndl, CURLcode code)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "CURL_OnSend": {
+      "name": "CURL_OnSend",
+      "refLine": 166,
+      "docStart": 4322,
+      "docEnd": 4652,
+      "docs": {
+        "brief": "called if curl_easy_send_recv() before sending data",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if curl_easy_send_recv() before sending data"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl    The curl handle"
+          },
+          {
+            "tag": "param:CURLcode",
+            "text": "code    The last CURLcode code, see cURL_header.inc"
+          },
+          {
+            "tag": "param:cell_t",
+            "text": "last_sent_dataSize The last sent datasize"
+          },
+          {
+            "tag": "param:any",
+            "text": "data    Data passed to curl_easy_send_recv()"
+          },
+          {
+            "tag": "return",
+            "text": "SendRecv_Act"
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function SendRecv_Act(Handle hndl, CURLcode code, const int last_sent_dataSize, any data)": {
+          "refLine": 169,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function SendRecv_Act(Handle hndl, CURLcode code, const int last_sent_dataSize, any data)",
+          "parsedSignature": {
+            "returnType": "SendRecv_Act",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "last_sent_dataSize",
+                "decl": "const int last_sent_dataSize",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function SendRecv_Act(Handle hndl, CURLcode code, const int last_sent_dataSize)": {
+          "refLine": 168,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function SendRecv_Act(Handle hndl, CURLcode code, const int last_sent_dataSize)",
+          "parsedSignature": {
+            "returnType": "SendRecv_Act",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "last_sent_dataSize",
+                "decl": "const int last_sent_dataSize",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Openssl_Hash_Complete": {
+      "name": "Openssl_Hash_Complete",
+      "refLine": 193,
+      "docStart": 5397,
+      "docEnd": 5639,
+      "docs": {
+        "brief": "called if Openssl_Hash_file() after hashed the file",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if Openssl_Hash_file() after hashed the file"
+          },
+          {
+            "tag": "param:bool",
+            "text": "success  True on success, false if hash file fail"
+          },
+          {
+            "tag": "param:String",
+            "text": "buffer  The hash string"
+          },
+          {
+            "tag": "param:any",
+            "text": "data  Data passed to Openssl_Hash_file()"
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function void(const bool success, const char[] buffer)": {
+          "refLine": 195,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const bool success, const char[] buffer)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const bool",
+                "name": "success",
+                "decl": "const bool success",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "buffer",
+                "decl": "const char[] buffer",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(const bool success, const char[] buffer, any data)": {
+          "refLine": 196,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(const bool success, const char[] buffer, any data)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "const bool",
+                "name": "success",
+                "decl": "const bool success",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "buffer",
+                "decl": "const char[] buffer",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "CURL_Function_CB": {
+      "name": "CURL_Function_CB",
+      "refLine": 200,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "types": {
+        "function void(Handle hndl, const char[] buffer, const int bytes, const int nmemb)": {
+          "refLine": 203,
+          "docStart": 5830,
+          "docEnd": 5854,
+          "docs": {
+            "brief": "CURLOPT_WRITEFUNCTION",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CURLOPT_WRITEFUNCTION"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Handle hndl, const char[] buffer, const int bytes, const int nmemb)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "buffer",
+                "decl": "const char[] buffer",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "bytes",
+                "decl": "const int bytes",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "nmemb",
+                "decl": "const int nmemb",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hndl, const int bytes, const int nmemb, any data)": {
+          "refLine": 208,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hndl, const int bytes, const int nmemb, any data)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "bytes",
+                "decl": "const int bytes",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "nmemb",
+                "decl": "const int nmemb",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hndl, const char[] buffer, const int bytes, const int nmemb, any data)": {
+          "refLine": 204,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function void(Handle hndl, const char[] buffer, const int bytes, const int nmemb, any data)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "buffer",
+                "decl": "const char[] buffer",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "bytes",
+                "decl": "const int bytes",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "nmemb",
+                "decl": "const int nmemb",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function void(Handle hndl, const int bytes, const int nmemb)": {
+          "refLine": 207,
+          "docStart": 6038,
+          "docEnd": 6061,
+          "docs": {
+            "brief": "CURLOPT_READFUNCTION",
+            "tags": [
+              {
+                "tag": "",
+                "text": "CURLOPT_READFUNCTION"
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "function void(Handle hndl, const int bytes, const int nmemb)",
+          "parsedSignature": {
+            "returnType": "void",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "bytes",
+                "decl": "const int bytes",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "nmemb",
+                "decl": "const int nmemb",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    "CURL_OnReceive": {
+      "name": "CURL_OnReceive",
+      "refLine": 180,
+      "docStart": 4854,
+      "docEnd": 5160,
+      "docs": {
+        "brief": "called if curl_easy_send_recv() after received data",
+        "tags": [
+          {
+            "tag": "",
+            "text": "called if curl_easy_send_recv() after received data"
+          },
+          {
+            "tag": "param:Handle",
+            "text": "hndl  The curl handle"
+          },
+          {
+            "tag": "param:CURLcode",
+            "text": "code  The CURLcode code, see cURL_header.inc"
+          },
+          {
+            "tag": "param:String",
+            "text": "dataSize The received datasize"
+          },
+          {
+            "tag": "param:any",
+            "text": "data  Data passed to curl_easy_send_recv()"
+          },
+          {
+            "tag": "return",
+            "text": "SendRecv_Act"
+          }
+        ]
+      },
+      "metadata": null,
+      "types": {
+        "function SendRecv_Act(Handle hndl, CURLcode code, const char[] receiveData, const int dataSize)": {
+          "refLine": 182,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function SendRecv_Act(Handle hndl, CURLcode code, const char[] receiveData, const int dataSize)",
+          "parsedSignature": {
+            "returnType": "SendRecv_Act",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "receiveData",
+                "decl": "const char[] receiveData",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "dataSize",
+                "decl": "const int dataSize",
+                "default": null
+              }
+            ]
+          }
+        },
+        "function SendRecv_Act(Handle hndl, CURLcode code, const char[] receiveData, const int dataSize, any data)": {
+          "refLine": 183,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "function SendRecv_Act(Handle hndl, CURLcode code, const char[] receiveData, const int dataSize, any data)",
+          "parsedSignature": {
+            "returnType": "SendRecv_Act",
+            "arguments": [
+              {
+                "type": "Handle",
+                "name": "hndl",
+                "decl": "Handle hndl",
+                "default": null
+              },
+              {
+                "type": "CURLcode",
+                "name": "code",
+                "decl": "CURLcode code",
+                "default": null
+              },
+              {
+                "type": "const char[]",
+                "name": "receiveData",
+                "decl": "const char[] receiveData",
+                "default": null
+              },
+              {
+                "type": "const int",
+                "name": "dataSize",
+                "decl": "const int dataSize",
+                "default": null
+              },
+              {
+                "type": "any",
+                "name": "data",
+                "decl": "any data",
+                "default": null
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typedefs": {}
+}

@@ -1,0 +1,200 @@
+{
+  "functions": {
+    "TTT_GetClientGrabEntity": {
+      "name": "TTT_GetClientGrabEntity",
+      "refLine": 22,
+      "docStart": 382,
+      "docEnd": 572,
+      "docs": {
+        "brief": "Get valid client object.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Get valid client object."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "return",
+            "text": "Entity reference (use EntRefToEntIndex to get index) [-1 otherwise]"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "TTT_OnGrabbing": {
+      "name": "TTT_OnGrabbing",
+      "refLine": 13,
+      "docStart": 92,
+      "docEnd": 325,
+      "docs": {
+        "brief": "Call while grabbing.\nBy returning Plugin_Handled or Plugin_Stop you can stop grabbing",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Call while grabbing.\nBy returning Plugin_Handled or Plugin_Stop you can stop grabbing"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index which was grabbed by the client."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TTT_GetEntityGrabber": {
+      "name": "TTT_GetEntityGrabber",
+      "refLine": 40,
+      "docStart": 794,
+      "docEnd": 947,
+      "docs": {
+        "brief": "Client index of entity.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Client index of entity."
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index."
+          },
+          {
+            "tag": "return",
+            "text": "The client index (0 on failure)"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "__pl_ttt_grabbermod_SetNTVOptional": {
+      "name": "__pl_ttt_grabbermod_SetNTVOptional",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "TTT_ResetClientGrabByEntity": {
+      "name": "TTT_ResetClientGrabByEntity",
+      "refLine": 49,
+      "docStart": 994,
+      "docEnd": 1122,
+      "docs": {
+        "brief": "Reset all clients that grabbed the specific entity",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reset all clients that grabbed the specific entity"
+          },
+          {
+            "tag": "param:entity",
+            "text": "The entity index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "entity",
+          "decl": "int entity",
+          "default": null
+        }
+      ]
+    },
+    "TTT_ResetClientGrab": {
+      "name": "TTT_ResetClientGrab",
+      "refLine": 31,
+      "docStart": 622,
+      "docEnd": 747,
+      "docs": {
+        "brief": "Resets client grab (similar to droping object).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Resets client grab (similar to droping object)."
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_ttt_grabbermod_included": {
+      "name": "_ttt_grabbermod_included",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,2095 @@
+{
+  "functions": {
+    "ExplodeString": {
+      "name": "ExplodeString",
+      "refLine": 570,
+      "docStart": 20279,
+      "docEnd": 20902,
+      "docs": {
+        "brief": "Breaks a string into pieces and stores each piece into an array of buffers.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Breaks a string into pieces and stores each piece into an array of buffers."
+          },
+          {
+            "tag": "param:text",
+            "text": "The string to split."
+          },
+          {
+            "tag": "param:split",
+            "text": "The string to use as a split delimiter."
+          },
+          {
+            "tag": "param:buffers",
+            "text": "An array of string buffers (2D array)."
+          },
+          {
+            "tag": "param:maxStrings",
+            "text": "Number of string buffers (first dimension size)."
+          },
+          {
+            "tag": "param:maxStringLength",
+            "text": "Maximum length of each string buffer."
+          },
+          {
+            "tag": "param:copyRemainder",
+            "text": "False (default) discard excess pieces, true to ignore\ndelimiters after last piece."
+          },
+          {
+            "tag": "return",
+            "text": "Number of strings retrieved."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "split",
+          "decl": "const char[] split",
+          "default": null
+        },
+        {
+          "type": "char[][]",
+          "name": "buffers",
+          "decl": "char[][] buffers",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxStrings",
+          "decl": "int maxStrings",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxStringLength",
+          "decl": "int maxStringLength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "copyRemainder",
+          "decl": "bool copyRemainder",
+          "default": "false"
+        }
+      ]
+    },
+    "ReplaceString": {
+      "name": "ReplaceString",
+      "refLine": 362,
+      "docStart": 13911,
+      "docEnd": 14459,
+      "docs": {
+        "brief": "Given a string, replaces all occurrences of a search string with a\nreplacement string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given a string, replaces all occurrences of a search string with a\nreplacement string."
+          },
+          {
+            "tag": "param:text",
+            "text": "String to perform search and replacements on."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the string buffer."
+          },
+          {
+            "tag": "param:search",
+            "text": "String to search for."
+          },
+          {
+            "tag": "param:replace",
+            "text": "String to replace the search string with."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), search is case sensitive."
+          },
+          {
+            "tag": "return",
+            "text": "Number of replacements that were performed."
+          },
+          {
+            "tag": "error",
+            "text": "'search' parameter is empty."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "text",
+          "decl": "char[] text",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "search",
+          "decl": "const char[] search",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "replace",
+          "decl": "const char[] replace",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "StrCat": {
+      "name": "StrCat",
+      "refLine": 547,
+      "docStart": 19802,
+      "docEnd": 20065,
+      "docs": {
+        "brief": "Concatenates one string onto another.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Concatenates one string onto another."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "String to append to."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of entire buffer."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source string to concatenate."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        }
+      ]
+    },
+    "StrContains": {
+      "name": "StrContains",
+      "refLine": 63,
+      "docStart": 2106,
+      "docEnd": 2584,
+      "docs": {
+        "brief": "Tests whether a string is found inside another string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Tests whether a string is found inside another string."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to search in."
+          },
+          {
+            "tag": "param:substr",
+            "text": "Substring to find inside the original string."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), search is case sensitive.\nIf false, search is case insensitive."
+          },
+          {
+            "tag": "return",
+            "text": "-1 on failure (no match found). Any other value\nindicates a position in the string where the match starts."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "substr",
+          "decl": "const char[] substr",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "VFormat": {
+      "name": "VFormat",
+      "refLine": 189,
+      "docStart": 6991,
+      "docEnd": 7739,
+      "docs": {
+        "brief": "Formats a string according to the SourceMod format rules (see documentation).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a string according to the SourceMod format rules (see documentation)."
+          },
+          {
+            "tag": "note",
+            "text": "This is the same as Format(), except it grabs parameters from a\nparent parameter stack, rather than a local.  This is useful for\nimplementing your own variable argument functions."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer,\nincluding the null terminator."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:varpos",
+            "text": "Argument number which contains the '...' symbol.\nNote: Arguments start at 1."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid argument index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "varpos",
+          "decl": "int varpos",
+          "default": null
+        }
+      ]
+    },
+    "BreakString": {
+      "name": "BreakString",
+      "refLine": 317,
+      "docStart": 12080,
+      "docEnd": 12652,
+      "docs": {
+        "brief": "Finds the first \"argument\" in a string; either a set of space\nterminated characters, or a fully quoted string.  After the\nargument is found, whitespace is read until the next portion\nof the string is reached.  If nothing remains, -1 is returned.\nOtherwise, the index to the first character is returned.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds the first \"argument\" in a string; either a set of space\nterminated characters, or a fully quoted string.  After the\nargument is found, whitespace is read until the next portion\nof the string is reached.  If nothing remains, -1 is returned.\nOtherwise, the index to the first character is returned."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source input string."
+          },
+          {
+            "tag": "param:arg",
+            "text": "Stores argument read from string."
+          },
+          {
+            "tag": "param:argLen",
+            "text": "Maximum length of argument buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Index to next piece of string, or -1 if none."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "arg",
+          "decl": "char[] arg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argLen",
+          "decl": "int argLen",
+          "default": null
+        }
+      ]
+    },
+    "ReplaceStringEx": {
+      "name": "ReplaceStringEx",
+      "refLine": 382,
+      "docStart": 14586,
+      "docEnd": 15555,
+      "docs": {
+        "brief": "Given a string, replaces the first occurrence of a search string with a\nreplacement string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Given a string, replaces the first occurrence of a search string with a\nreplacement string."
+          },
+          {
+            "tag": "param:text",
+            "text": "String to perform search and replacements on."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of the string buffer."
+          },
+          {
+            "tag": "param:search",
+            "text": "String to search for."
+          },
+          {
+            "tag": "param:replace",
+            "text": "String to replace the search string with."
+          },
+          {
+            "tag": "param:searchLen",
+            "text": "If higher than -1, its value will be used instead of\na strlen() call on the search parameter."
+          },
+          {
+            "tag": "param:replaceLen",
+            "text": "If higher than -1, its value will be used instead of\na strlen() call on the replace parameter."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), search is case sensitive."
+          },
+          {
+            "tag": "return",
+            "text": "Index into the buffer (relative to the start) from where\nthe last replacement ended, or -1 if no replacements were\nmade."
+          },
+          {
+            "tag": "error",
+            "text": "'search' parameter is empty."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "text",
+          "decl": "char[] text",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "search",
+          "decl": "const char[] search",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "replace",
+          "decl": "const char[] replace",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "searchLen",
+          "decl": "int searchLen",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "replaceLen",
+          "decl": "int replaceLen",
+          "default": "-1"
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "IsCharAlpha": {
+      "name": "IsCharAlpha",
+      "refLine": 402,
+      "docStart": 16056,
+      "docEnd": 16315,
+      "docs": {
+        "brief": "Returns whether a character is an ASCII alphabet character.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a character is an ASCII alphabet character."
+          },
+          {
+            "tag": "note",
+            "text": "Multi-byte characters will always return false."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if character is alphabetical, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "StrCompare": {
+      "name": "StrCompare",
+      "refLine": 97,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str1",
+          "decl": "const char[] str1",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str2",
+          "decl": "const char[] str2",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "StrBreak": {
+      "name": "StrBreak",
+      "refLine": 324,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "arg",
+          "decl": "char[] arg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "argLen",
+          "decl": "int argLen",
+          "default": null
+        }
+      ]
+    },
+    "IsCharLower": {
+      "name": "IsCharLower",
+      "refLine": 451,
+      "docStart": 17476,
+      "docEnd": 17726,
+      "docs": {
+        "brief": "Returns whether an alphabetic character is lowercase.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether an alphabetic character is lowercase."
+          },
+          {
+            "tag": "note",
+            "text": "Multi-byte characters will always return false."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if character is lowercase, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "StringToInt64": {
+      "name": "StringToInt64",
+      "refLine": 224,
+      "docStart": 8495,
+      "docEnd": 9049,
+      "docs": {
+        "brief": "Converts a string to a 64-bit integer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to a 64-bit integer."
+          },
+          {
+            "tag": "note",
+            "text": "If the value is outside the range of representable values,\nIf the value is positive, this function will return INT64_MAX.\nIf the value is negative, this function will return INT64_MIN."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert."
+          },
+          {
+            "tag": "param:result",
+            "text": "Array to store the upper and lower\n32-bits of the 64-bit integer."
+          },
+          {
+            "tag": "param:nBase",
+            "text": "Numerical base to use.  10 is default."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters consumed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "int[2]",
+          "name": "result",
+          "decl": "int result[2]",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nBase",
+          "decl": "int nBase",
+          "default": "10"
+        }
+      ]
+    },
+    "strcopy": {
+      "name": "strcopy",
+      "refLine": 127,
+      "docStart": 4540,
+      "docEnd": 5046,
+      "docs": {
+        "brief": "Copies one string to another string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Copies one string to another string."
+          },
+          {
+            "tag": "note",
+            "text": "If the destination buffer is too small to hold the source string, the\ndestination will be truncated."
+          },
+          {
+            "tag": "param:dest",
+            "text": "Destination string buffer to copy to."
+          },
+          {
+            "tag": "param:destLen",
+            "text": "Destination buffer length (includes null terminator)."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source string buffer to copy from."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "dest",
+          "decl": "char[] dest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "destLen",
+          "decl": "int destLen",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        }
+      ]
+    },
+    "StrEqual": {
+      "name": "StrEqual",
+      "refLine": 111,
+      "docStart": 4048,
+      "docEnd": 4395,
+      "docs": {
+        "brief": "Returns whether two strings are equal.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether two strings are equal."
+          },
+          {
+            "tag": "param:str1",
+            "text": "First string (left)."
+          },
+          {
+            "tag": "param:str2",
+            "text": "Second string (right)."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), comparison is case sensitive.\nIf false, comparison is case insensitive."
+          },
+          {
+            "tag": "return",
+            "text": "True if equal, false otherwise."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str1",
+          "decl": "const char[] str1",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str2",
+          "decl": "const char[] str2",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "TrimString": {
+      "name": "TrimString",
+      "refLine": 335,
+      "docStart": 12999,
+      "docEnd": 13193,
+      "docs": {
+        "brief": "Removes whitespace characters from the beginning and end of a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Removes whitespace characters from the beginning and end of a string."
+          },
+          {
+            "tag": "param:str",
+            "text": "The string to trim."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written (UTF-8 safe)."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        }
+      ]
+    },
+    "StripQuotes": {
+      "name": "StripQuotes",
+      "refLine": 465,
+      "docStart": 17765,
+      "docEnd": 18291,
+      "docs": {
+        "brief": "Strips a quote pair off a string if it exists.  That is, the following\nreplace rule is applied once:  ^\"(.*)\"$ -> ^\\1$\n\nNote that the leading and trailing quotes will only be removed if both\nexist.  Otherwise, the string is left unmodified.  This function should\nbe considered O(k) (all characters get shifted down).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Strips a quote pair off a string if it exists.  That is, the following\nreplace rule is applied once:  ^\"(.*)\"$ -> ^\\1$\n\nNote that the leading and trailing quotes will only be removed if both\nexist.  Otherwise, the string is left unmodified.  This function should\nbe considered O(k) (all characters get shifted down)."
+          },
+          {
+            "tag": "param:text",
+            "text": "String to modify (in place)."
+          },
+          {
+            "tag": "return",
+            "text": "True if string was modified, false if there was no\nset of quotes."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "text",
+          "decl": "char[] text",
+          "default": null
+        }
+      ]
+    },
+    "StringToInt": {
+      "name": "StringToInt",
+      "refLine": 199,
+      "docStart": 7835,
+      "docEnd": 8064,
+      "docs": {
+        "brief": "Converts a string to an integer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to an integer."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert."
+          },
+          {
+            "tag": "param:nBase",
+            "text": "Numerical base to use.  10 is default."
+          },
+          {
+            "tag": "return",
+            "text": "Integer conversion of string, or 0 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nBase",
+          "decl": "int nBase",
+          "default": "10"
+        }
+      ]
+    },
+    "SplitString": {
+      "name": "SplitString",
+      "refLine": 348,
+      "docStart": 13233,
+      "docEnd": 13815,
+      "docs": {
+        "brief": "Returns text in a string up until a certain character sequence is reached.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns text in a string up until a certain character sequence is reached."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source input string."
+          },
+          {
+            "tag": "param:split",
+            "text": "A string which specifies a search point to break at."
+          },
+          {
+            "tag": "param:part",
+            "text": "Buffer to store string part."
+          },
+          {
+            "tag": "param:partLen",
+            "text": "Maximum length of the string part buffer."
+          },
+          {
+            "tag": "return",
+            "text": "-1 if no match was found; otherwise, an index into source\nmarking the first index after the searched text.  The\nindex is always relative to the start of the input string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "split",
+          "decl": "const char[] split",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "part",
+          "decl": "char[] part",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "partLen",
+          "decl": "int partLen",
+          "default": null
+        }
+      ]
+    },
+    "CharToUpper": {
+      "name": "CharToUpper",
+      "refLine": 474,
+      "docStart": 18334,
+      "docEnd": 18563,
+      "docs": {
+        "brief": "Converts a lowercase character to its uppercase counterpart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a lowercase character to its uppercase counterpart."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to convert."
+          },
+          {
+            "tag": "return",
+            "text": "Uppercase character on success,\nno change on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "IntToString": {
+      "name": "IntToString",
+      "refLine": 249,
+      "docStart": 9719,
+      "docEnd": 10052,
+      "docs": {
+        "brief": "Converts an integer to a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an integer to a string."
+          },
+          {
+            "tag": "param:num",
+            "text": "Integer to convert."
+          },
+          {
+            "tag": "param:str",
+            "text": "Buffer to store string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "StringToI64": {
+      "name": "StringToI64",
+      "refLine": 238,
+      "docStart": 9127,
+      "docEnd": 9638,
+      "docs": {
+        "brief": "Converts a string to an int64 type value.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to an int64 type value."
+          },
+          {
+            "tag": "note",
+            "text": "If the value is outside the range of representable values,\nIf the value is positive, this function will return INT64_MAX.\nIf the value is negative, this function will return INT64_MIN."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert."
+          },
+          {
+            "tag": "param:nBase",
+            "text": "Numerical base to use.  10 is default."
+          },
+          {
+            "tag": "param:nConsumed",
+            "text": "Number of characters consumed."
+          },
+          {
+            "tag": "return",
+            "text": "int64 conversion of string, or 0 on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int64",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nBase",
+          "decl": "int nBase",
+          "default": "10"
+        },
+        {
+          "type": "int&",
+          "name": "nConsumed",
+          "decl": "int& nConsumed",
+          "default": "0"
+        }
+      ]
+    },
+    "Int64ToStringEx": {
+      "name": "Int64ToStringEx",
+      "refLine": 272,
+      "docStart": 10639,
+      "docEnd": 10980,
+      "docs": {
+        "brief": "Converts an int64 value to a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an int64 value to a string."
+          },
+          {
+            "tag": "param:num",
+            "text": "int64 value to convert."
+          },
+          {
+            "tag": "param:str",
+            "text": "Buffer to store string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int64",
+          "name": "num",
+          "decl": "int64 num",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "strcmp": {
+      "name": "strcmp",
+      "refLine": 76,
+      "docStart": 2677,
+      "docEnd": 3094,
+      "docs": {
+        "brief": "Compares two strings lexographically.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Compares two strings lexographically."
+          },
+          {
+            "tag": "param:str1",
+            "text": "First string (left)."
+          },
+          {
+            "tag": "param:str2",
+            "text": "Second string (right)."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), comparison is case sensitive.\nIf false, comparison is case insensitive."
+          },
+          {
+            "tag": "return",
+            "text": "-1 if str1 < str2\n0 if str1 == str2\n1 if str1 > str2"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str1",
+          "decl": "const char[] str1",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str2",
+          "decl": "const char[] str2",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "IsCharMB": {
+      "name": "IsCharMB",
+      "refLine": 431,
+      "docStart": 16908,
+      "docEnd": 17152,
+      "docs": {
+        "brief": "Returns if a character is multi-byte or not.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns if a character is multi-byte or not."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "0 for a normal 7-bit ASCII character,\notherwise number of bytes in multi-byte character."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "GetCharBytes": {
+      "name": "GetCharBytes",
+      "refLine": 392,
+      "docStart": 15721,
+      "docEnd": 16005,
+      "docs": {
+        "brief": "Returns the number of bytes a character is using.  This is\nfor multi-byte characters (UTF-8).  For normal ASCII characters,\nthis will return 1.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of bytes a character is using.  This is\nfor multi-byte characters (UTF-8).  For normal ASCII characters,\nthis will return 1."
+          },
+          {
+            "tag": "param:source",
+            "text": "Source input string."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes the current character uses."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        }
+      ]
+    },
+    "CharToLower": {
+      "name": "CharToLower",
+      "refLine": 491,
+      "docStart": 18680,
+      "docEnd": 18910,
+      "docs": {
+        "brief": "Converts an uppercase character to its lowercase counterpart.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts an uppercase character to its lowercase counterpart."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to convert."
+          },
+          {
+            "tag": "return",
+            "text": "Lowercase character on success,\nno change on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "FloatToString": {
+      "name": "FloatToString",
+      "refLine": 303,
+      "docStart": 11651,
+      "docEnd": 12011,
+      "docs": {
+        "brief": "Converts a floating point number to a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a floating point number to a string."
+          },
+          {
+            "tag": "param:num",
+            "text": "Floating point number to convert."
+          },
+          {
+            "tag": "param:str",
+            "text": "Buffer to store string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "float",
+          "name": "num",
+          "decl": "float num",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "FormatEx": {
+      "name": "FormatEx",
+      "refLine": 166,
+      "docStart": 5963,
+      "docEnd": 6672,
+      "docs": {
+        "brief": "Formats a string according to the SourceMod format rules (see documentation).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a string according to the SourceMod format rules (see documentation)."
+          },
+          {
+            "tag": "note",
+            "text": "This is the same as Format(), except none of the input buffers can\noverlap the same memory as the output buffer.  Since this security\ncheck is removed, it is slightly faster."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer,\nincluding the null terminator."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "FindCharInString": {
+      "name": "FindCharInString",
+      "refLine": 511,
+      "docStart": 19027,
+      "docEnd": 19447,
+      "docs": {
+        "brief": "Finds the first occurrence of a character in a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Finds the first occurrence of a character in a string."
+          },
+          {
+            "tag": "param:str",
+            "text": "String."
+          },
+          {
+            "tag": "param:c",
+            "text": "Character to search for."
+          },
+          {
+            "tag": "param:reverse",
+            "text": "False (default) to search forward, true to search\nbackward."
+          },
+          {
+            "tag": "return",
+            "text": "The index of the first occurrence of the character\nin the string, or -1 if the character was not found."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "char",
+          "name": "c",
+          "decl": "char c",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "reverse",
+          "decl": "bool reverse",
+          "default": "false"
+        }
+      ]
+    },
+    "ImplodeStrings": {
+      "name": "ImplodeStrings",
+      "refLine": 609,
+      "docStart": 21537,
+      "docEnd": 22080,
+      "docs": {
+        "brief": "Joins an array of strings into one string, with a \"join\" string inserted in\nbetween each given string.  This function complements ExplodeString.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Joins an array of strings into one string, with a \"join\" string inserted in\nbetween each given string.  This function complements ExplodeString."
+          },
+          {
+            "tag": "param:strings",
+            "text": "An array of strings."
+          },
+          {
+            "tag": "param:numStrings",
+            "text": "Number of strings in the array."
+          },
+          {
+            "tag": "param:join",
+            "text": "The join string to insert between each string."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Output buffer to write the joined string to."
+          },
+          {
+            "tag": "param:maxLength",
+            "text": "Maximum length of the output buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the output buffer."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[][]",
+          "name": "strings",
+          "decl": "const char[][] strings",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numStrings",
+          "decl": "int numStrings",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "join",
+          "decl": "const char[] join",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxLength",
+          "decl": "int maxLength",
+          "default": null
+        }
+      ]
+    },
+    "strlen": {
+      "name": "strlen",
+      "refLine": 51,
+      "docStart": 1899,
+      "docEnd": 2064,
+      "docs": {
+        "brief": "Calculates the length of a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the length of a string."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to check."
+          },
+          {
+            "tag": "return",
+            "text": "Number of valid character bytes in the string."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "strncmp": {
+      "name": "strncmp",
+      "refLine": 90,
+      "docStart": 3181,
+      "docEnd": 3662,
+      "docs": {
+        "brief": "Compares two strings parts lexographically.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Compares two strings parts lexographically."
+          },
+          {
+            "tag": "param:str1",
+            "text": "First string (left)."
+          },
+          {
+            "tag": "param:str2",
+            "text": "Second string (right)."
+          },
+          {
+            "tag": "param:num",
+            "text": "Number of characters to compare."
+          },
+          {
+            "tag": "param:caseSensitive",
+            "text": "If true (default), comparison is case sensitive.\nIf false, comparison is case insensitive."
+          },
+          {
+            "tag": "return",
+            "text": "-1 if str1 < str2\n0 if str1 == str2\n1 if str1 > str2"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str1",
+          "decl": "const char[] str1",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "str2",
+          "decl": "const char[] str2",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "caseSensitive",
+          "decl": "bool caseSensitive",
+          "default": "true"
+        }
+      ]
+    },
+    "StringToIntEx": {
+      "name": "StringToIntEx",
+      "refLine": 209,
+      "docStart": 8125,
+      "docEnd": 8419,
+      "docs": {
+        "brief": "Converts a string to an integer with some more options.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to an integer with some more options."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert."
+          },
+          {
+            "tag": "param:result",
+            "text": "Variable to store the result in."
+          },
+          {
+            "tag": "param:nBase",
+            "text": "Numerical base to use.  10 is default."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters consumed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "int&",
+          "name": "result",
+          "decl": "int& result",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "nBase",
+          "decl": "int nBase",
+          "default": "10"
+        }
+      ]
+    },
+    "Format": {
+      "name": "Format",
+      "refLine": 150,
+      "docStart": 5377,
+      "docEnd": 5879,
+      "docs": {
+        "brief": "Formats a string according to the SourceMod format rules (see documentation).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats a string according to the SourceMod format rules (see documentation)."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer,\nincluding the null terminator."
+          },
+          {
+            "tag": "param:format",
+            "text": "Formatting rules."
+          },
+          {
+            "tag": "param:...",
+            "text": "Variable number of format parameters."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "format",
+          "decl": "const char[] format",
+          "default": null
+        },
+        {
+          "type": "any...",
+          "name": "...",
+          "decl": "any...",
+          "default": null
+        }
+      ]
+    },
+    "StringToFloat": {
+      "name": "StringToFloat",
+      "refLine": 283,
+      "docStart": 11100,
+      "docEnd": 11283,
+      "docs": {
+        "brief": "Converts a string to a floating point number.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to a floating point number."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert to a float."
+          },
+          {
+            "tag": "return",
+            "text": "Floating point result, or 0.0 on error."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        }
+      ]
+    },
+    "IsCharSpace": {
+      "name": "IsCharSpace",
+      "refLine": 422,
+      "docStart": 16629,
+      "docEnd": 16869,
+      "docs": {
+        "brief": "Returns whether a character is whitespace.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a character is whitespace."
+          },
+          {
+            "tag": "note",
+            "text": "Multi-byte characters will always return false."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if character is whitespace, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "IsCharUpper": {
+      "name": "IsCharUpper",
+      "refLine": 441,
+      "docStart": 17187,
+      "docEnd": 17437,
+      "docs": {
+        "brief": "Returns whether an alphabetic character is uppercase.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether an alphabetic character is uppercase."
+          },
+          {
+            "tag": "note",
+            "text": "Multi-byte characters will always return false."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if character is uppercase, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "StringToFloatEx": {
+      "name": "StringToFloatEx",
+      "refLine": 292,
+      "docStart": 11334,
+      "docEnd": 11585,
+      "docs": {
+        "brief": "Converts a string to a floating point number with some more options.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a string to a floating point number with some more options."
+          },
+          {
+            "tag": "param:str",
+            "text": "String to convert to a float."
+          },
+          {
+            "tag": "param:result",
+            "text": "Variable to store result in."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters consumed."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "str",
+          "decl": "const char[] str",
+          "default": null
+        },
+        {
+          "type": "float&",
+          "name": "result",
+          "decl": "float& result",
+          "default": null
+        }
+      ]
+    },
+    "StrCopy": {
+      "name": "StrCopy",
+      "refLine": 134,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "dest",
+          "decl": "char[] dest",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "destLen",
+          "decl": "int destLen",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "source",
+          "decl": "const char[] source",
+          "default": null
+        }
+      ]
+    },
+    "Int64ToString": {
+      "name": "Int64ToString",
+      "refLine": 261,
+      "docStart": 10117,
+      "docEnd": 10563,
+      "docs": {
+        "brief": "Converts a 64-bit integer in the legacy 2-cell representation to a string.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Converts a 64-bit integer in the legacy 2-cell representation to a string."
+          },
+          {
+            "tag": "param:num",
+            "text": "Array containing the upper and lower\n32-bits of a 64-bit integer."
+          },
+          {
+            "tag": "param:str",
+            "text": "Buffer to store string in."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of string buffer."
+          },
+          {
+            "tag": "return",
+            "text": "Number of characters written to the buffer,\nnot including the null terminator."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const int[2]",
+          "name": "num",
+          "decl": "const int num[2]",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "str",
+          "decl": "char[] str",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "IsCharNumeric": {
+      "name": "IsCharNumeric",
+      "refLine": 412,
+      "docStart": 16354,
+      "docEnd": 16588,
+      "docs": {
+        "brief": "Returns whether a character is numeric.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns whether a character is numeric."
+          },
+          {
+            "tag": "note",
+            "text": "Multi-byte characters will always return false."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to test."
+          },
+          {
+            "tag": "return",
+            "text": "True if character is numeric, otherwise false."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_string_included": {
+      "name": "_string_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

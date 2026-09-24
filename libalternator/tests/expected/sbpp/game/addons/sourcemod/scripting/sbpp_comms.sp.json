@@ -1,0 +1,3154 @@
+{
+  "functions": {
+    "InsertTempBlock": {
+      "name": "InsertTempBlock",
+      "refLine": 2772,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "auth",
+          "decl": "const char[] auth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "adminIp",
+          "decl": "const char[] adminIp",
+          "default": null
+        }
+      ]
+    },
+    "InitializeBackupDB": {
+      "name": "InitializeBackupDB",
+      "refLine": 2235,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ReadConfig": {
+      "name": "ReadConfig",
+      "refLine": 2822,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AdminMenu_GetPunishPhrase": {
+      "name": "AdminMenu_GetPunishPhrase",
+      "refLine": 2881,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "name",
+          "decl": "char[] name",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        }
+      ]
+    },
+    "CreateMuteExpireTimer": {
+      "name": "CreateMuteExpireTimer",
+      "refLine": 3075,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "remainingTime",
+          "decl": "int remainingTime",
+          "default": "0"
+        }
+      ]
+    },
+    "Handle_MenuList": {
+      "name": "Handle_MenuList",
+      "refLine": 780,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_MenuDuration": {
+      "name": "MenuHandler_MenuDuration",
+      "refLine": 957,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_MenuListTarget": {
+      "name": "MenuHandler_MenuListTarget",
+      "refLine": 1250,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "Query_ProcessQueue": {
+      "name": "Query_ProcessQueue",
+      "refLine": 1699,
+      "docStart": 49265,
+      "docEnd": 49359,
+      "docs": {
+        "brief": "ProcessQueueCallback is called as the result of selecting all the rows from the queue table",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ProcessQueueCallback is called as the result of selecting all the rows from the queue table"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "Handle_MenuSilence": {
+      "name": "Handle_MenuSilence",
+      "refLine": 756,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "CloseGagExpireTimer": {
+      "name": "CloseGagExpireTimer",
+      "refLine": 3069,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "PerformGag": {
+      "name": "PerformGag",
+      "refLine": 3128,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "adminName",
+          "decl": "const char[] adminName",
+          "default": "\"CONSOLE\""
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": "\"STEAM_ID_SERVER\""
+        },
+        {
+          "type": "int",
+          "name": "adminImmunity",
+          "decl": "int adminImmunity",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "remaining_time",
+          "decl": "int remaining_time",
+          "default": "0"
+        }
+      ]
+    },
+    "VerifyBlock": {
+      "name": "VerifyBlock",
+      "refLine": 335,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_List": {
+      "name": "AdminMenu_List",
+      "refLine": 1048,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        }
+      ]
+    },
+    "MarkClientAsUnMuted": {
+      "name": "MarkClientAsUnMuted",
+      "refLine": 2999,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "Forward_Block": {
+      "name": "Forward_Block",
+      "refLine": 3346,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "Forward_UnBlock": {
+      "name": "Forward_UnBlock",
+      "refLine": 3357,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": null
+        }
+      ]
+    },
+    "Native_GetClientGagType": {
+      "name": "Native_GetClientGagType",
+      "refLine": 3506,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Query_AddBlockFromQueue": {
+      "name": "Query_AddBlockFromQueue",
+      "refLine": 1761,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "InitializeConfigParser": {
+      "name": "InitializeConfigParser",
+      "refLine": 1956,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ProcessUnBlock": {
+      "name": "ProcessUnBlock",
+      "refLine": 2452,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "targetId",
+          "decl": "int targetId",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "sReason",
+          "decl": "char[] sReason",
+          "default": "\"\""
+        }
+      ]
+    },
+    "Handle_MenuGag": {
+      "name": "Handle_MenuGag",
+      "refLine": 708,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "OnClientConnected": {
+      "name": "OnClientConnected",
+      "refLine": 314,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_MenuReason": {
+      "name": "MenuHandler_MenuReason",
+      "refLine": 1008,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "ClientRecheck": {
+      "name": "ClientRecheck",
+      "refLine": 2172,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnLibraryRemoved": {
+      "name": "OnLibraryRemoved",
+      "refLine": 251,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    },
+    "DB_Connect": {
+      "name": "DB_Connect",
+      "refLine": 2185,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "Timer_GagExpire": {
+      "name": "Timer_GagExpire",
+      "refLine": 1926,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "ShowActivityToServer": {
+      "name": "ShowActivityToServer",
+      "refLine": 3254,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "0"
+        },
+        {
+          "type": "char[]",
+          "name": "reason",
+          "decl": "char[] reason",
+          "default": "\"\""
+        },
+        {
+          "type": "char[]",
+          "name": "targetName",
+          "decl": "char[] targetName",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "ml",
+          "decl": "bool ml",
+          "default": "false"
+        }
+      ]
+    },
+    "SavePunishment": {
+      "name": "SavePunishment",
+      "refLine": 3135,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"\""
+        }
+      ]
+    },
+    "OnClientPostAdminCheck": {
+      "name": "OnClientPostAdminCheck",
+      "refLine": 323,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "FWUnmute": {
+      "name": "FWUnmute",
+      "refLine": 585,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_Target": {
+      "name": "AdminMenu_Target",
+      "refLine": 795,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        }
+      ]
+    },
+    "IsAllowedBlockLength": {
+      "name": "IsAllowedBlockLength",
+      "refLine": 2920,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target_count",
+          "decl": "int target_count",
+          "default": "1"
+        }
+      ]
+    },
+    "OnConfigsExecuted": {
+      "name": "OnConfigsExecuted",
+      "refLine": 257,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Query_AddBlockInsert": {
+      "name": "Query_AddBlockInsert",
+      "refLine": 1403,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_NewSection": {
+      "name": "ReadConfig_NewSection",
+      "refLine": 1980,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_KeyValue": {
+      "name": "ReadConfig_KeyValue",
+      "refLine": 2005,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "OnClientConnect": {
+      "name": "OnClientConnect",
+      "refLine": 290,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "rejectmsg",
+          "decl": "char[] rejectmsg",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        }
+      ]
+    },
+    "AskPluginLoad2": {
+      "name": "AskPluginLoad2",
+      "refLine": 178,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "APLRes",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "myself",
+          "decl": "Handle myself",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "late",
+          "decl": "bool late",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "error",
+          "decl": "char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "err_max",
+          "decl": "int err_max",
+          "default": null
+        }
+      ]
+    },
+    "Query_ErrorCheck": {
+      "name": "Query_ErrorCheck",
+      "refLine": 1778,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_MenuTarget": {
+      "name": "MenuHandler_MenuTarget",
+      "refLine": 906,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_ListTarget": {
+      "name": "AdminMenu_ListTarget",
+      "refLine": 1107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index",
+          "decl": "int index",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "viewMute",
+          "decl": "int viewMute",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "viewGag",
+          "decl": "int viewGag",
+          "default": "0"
+        }
+      ]
+    },
+    "NotApplyToThisServer": {
+      "name": "NotApplyToThisServer",
+      "refLine": 2994,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "srvID",
+          "decl": "int srvID",
+          "default": null
+        }
+      ]
+    },
+    "MarkClientAsUnGagged": {
+      "name": "MarkClientAsUnGagged",
+      "refLine": 3010,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "InternalReadConfig": {
+      "name": "InternalReadConfig",
+      "refLine": 1967,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "static",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "path",
+          "decl": "const char[] path",
+          "default": null
+        }
+      ]
+    },
+    "Handle_Commands": {
+      "name": "Handle_Commands",
+      "refLine": 696,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Handle_MenuMute": {
+      "name": "Handle_MenuMute",
+      "refLine": 732,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "MenuHandler_MenuList": {
+      "name": "MenuHandler_MenuList",
+      "refLine": 1081,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "MarkClientAsGagged": {
+      "name": "MarkClientAsGagged",
+      "refLine": 3042,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "adminName",
+          "decl": "const char[] adminName",
+          "default": "\"CONSOLE\""
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": "\"STEAM_ID_SERVER\""
+        },
+        {
+          "type": "int",
+          "name": "adminImmunity",
+          "decl": "int adminImmunity",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"\""
+        }
+      ]
+    },
+    "CloseMuteExpireTimer": {
+      "name": "CloseMuteExpireTimer",
+      "refLine": 3063,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "ForcePlayersRecheck": {
+      "name": "ForcePlayersRecheck",
+      "refLine": 2980,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "OnMapStart": {
+      "name": "OnMapStart",
+      "refLine": 262,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "DB_Conn_Lost": {
+      "name": "DB_Conn_Lost",
+      "refLine": 2212,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "DBResultSet",
+          "name": "db",
+          "decl": "DBResultSet db",
+          "default": null
+        }
+      ]
+    },
+    "Native_GetClientMuteType": {
+      "name": "Native_GetClientMuteType",
+      "refLine": 3488,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "IsInvalidSteamID": {
+      "name": "IsInvalidSteamID",
+      "refLine": 2177,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "ReadConfig_EndSection": {
+      "name": "ReadConfig_EndSection",
+      "refLine": 2146,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "Handle_MenuUnSilence": {
+      "name": "Handle_MenuUnSilence",
+      "refLine": 768,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "PerformUnMute": {
+      "name": "PerformUnMute",
+      "refLine": 3107,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_Reason": {
+      "name": "AdminMenu_Reason",
+      "refLine": 991,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "lengthIndex",
+          "decl": "int lengthIndex",
+          "default": null
+        }
+      ]
+    },
+    "Timer_MuteExpire": {
+      "name": "Timer_MuteExpire",
+      "refLine": 1905,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "Handle_MenuUnGag": {
+      "name": "Handle_MenuUnGag",
+      "refLine": 720,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "Query_VerifyBlock": {
+      "name": "Query_VerifyBlock",
+      "refLine": 1784,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "userid",
+          "decl": "any userid",
+          "default": null
+        }
+      ]
+    },
+    "OnClientDisconnect": {
+      "name": "OnClientDisconnect",
+      "refLine": 279,
+      "docStart": 7679,
+      "docEnd": 7712,
+      "docs": {
+        "brief": "CLIENT CONNECTION FUNCTIONS //",
+        "tags": [
+          {
+            "tag": "",
+            "text": "CLIENT CONNECTION FUNCTIONS //"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Query_UnBlockSelect": {
+      "name": "Query_UnBlockSelect",
+      "refLine": 1434,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "Event_OnPlayerName": {
+      "name": "Event_OnPlayerName",
+      "refLine": 381,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "event",
+          "decl": "Handle event",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "dontBroadcast",
+          "decl": "bool dontBroadcast",
+          "default": null
+        }
+      ]
+    },
+    "Bool_ValidMenuTarget": {
+      "name": "Bool_ValidMenuTarget",
+      "refLine": 2896,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "BaseComm_OnClientMute": {
+      "name": "BaseComm_OnClientMute",
+      "refLine": 389,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "muteState",
+          "decl": "bool muteState",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_Duration": {
+      "name": "AdminMenu_Duration",
+      "refLine": 937,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        }
+      ]
+    },
+    "Query_UnBlockUpdate": {
+      "name": "Query_UnBlockUpdate",
+      "refLine": 1644,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "DBResultSet",
+          "name": "results",
+          "decl": "DBResultSet results",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "OnAdminMenuReady": {
+      "name": "OnAdminMenuReady",
+      "refLine": 671,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hTemp",
+          "decl": "Handle hTemp",
+          "default": null
+        }
+      ]
+    },
+    "TempUnBlock": {
+      "name": "TempUnBlock",
+      "refLine": 2671,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "DataPack",
+          "name": "dataPack",
+          "decl": "DataPack dataPack",
+          "default": null
+        }
+      ]
+    },
+    "AdmHasFlag": {
+      "name": "AdmHasFlag",
+      "refLine": 2941,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        }
+      ]
+    },
+    "GetClientUserId2": {
+      "name": "GetClientUserId2",
+      "refLine": 2975,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "CreateGagExpireTimer": {
+      "name": "CreateGagExpireTimer",
+      "refLine": 3091,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "remainingTime",
+          "decl": "int remainingTime",
+          "default": "0"
+        }
+      ]
+    },
+    "PerformUnGag": {
+      "name": "PerformUnGag",
+      "refLine": 3114,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        }
+      ]
+    },
+    "PerformMute": {
+      "name": "PerformMute",
+      "refLine": 3121,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "adminName",
+          "decl": "const char[] adminName",
+          "default": "\"CONSOLE\""
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": "\"STEAM_ID_SERVER\""
+        },
+        {
+          "type": "int",
+          "name": "adminImmunity",
+          "decl": "int adminImmunity",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"\""
+        },
+        {
+          "type": "int",
+          "name": "remaining_time",
+          "decl": "int remaining_time",
+          "default": "0"
+        }
+      ]
+    },
+    "FWUngag": {
+      "name": "FWUngag",
+      "refLine": 546,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Timer_StopWait": {
+      "name": "Timer_StopWait",
+      "refLine": 1947,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "Timer_ClientRecheck": {
+      "name": "Timer_ClientRecheck",
+      "refLine": 1889,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "timer",
+          "decl": "Handle timer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "userid",
+          "decl": "int userid",
+          "default": null
+        }
+      ]
+    },
+    "PanelHandler_ListTargetReason": {
+      "name": "PanelHandler_ListTargetReason",
+      "refLine": 1342,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    },
+    "ServerInfo": {
+      "name": "ServerInfo",
+      "refLine": 2816,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Native_SetClientMute": {
+      "name": "Native_SetClientMute",
+      "refLine": 3368,
+      "docStart": 97072,
+      "docEnd": 97085,
+      "docs": {
+        "brief": "Natives //",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Natives //"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "Native_SetClientGag": {
+      "name": "Native_SetClientGag",
+      "refLine": 3429,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "hPlugin",
+          "decl": "Handle hPlugin",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numParams",
+          "decl": "int numParams",
+          "default": null
+        }
+      ]
+    },
+    "setMute": {
+      "name": "setMute",
+      "refLine": 2162,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "clientAuth",
+          "decl": "const char[] clientAuth",
+          "default": null
+        }
+      ]
+    },
+    "GetAdmImmunity": {
+      "name": "GetAdmImmunity",
+      "refLine": 2946,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "admin",
+          "decl": "int admin",
+          "default": null
+        }
+      ]
+    },
+    "AdminMenu_ListTargetReason": {
+      "name": "AdminMenu_ListTargetReason",
+      "refLine": 1288,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "showMute",
+          "decl": "int showMute",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "showGag",
+          "decl": "int showGag",
+          "default": null
+        }
+      ]
+    },
+    "CommandComms": {
+      "name": "CommandComms",
+      "refLine": 435,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "BaseComm_OnClientGag": {
+      "name": "BaseComm_OnClientGag",
+      "refLine": 411,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "gagState",
+          "decl": "bool gagState",
+          "default": null
+        }
+      ]
+    },
+    "Handle_MenuUnMute": {
+      "name": "Handle_MenuUnMute",
+      "refLine": 744,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "menu",
+          "decl": "TopMenu menu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 194,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GotDatabase": {
+      "name": "GotDatabase",
+      "refLine": 1357,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Database",
+          "name": "db",
+          "decl": "Database db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "OnMapEnd": {
+      "name": "OnMapEnd",
+      "refLine": 267,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "FWBlock": {
+      "name": "FWBlock",
+      "refLine": 489,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "CommandCallback": {
+      "name": "CommandCallback",
+      "refLine": 625,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "command",
+          "decl": "const char[] command",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "MarkClientAsMuted": {
+      "name": "MarkClientAsMuted",
+      "refLine": 3021,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "target",
+          "decl": "int target",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "time",
+          "decl": "int time",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "const char[]",
+          "name": "adminName",
+          "decl": "const char[] adminName",
+          "default": "\"CONSOLE\""
+        },
+        {
+          "type": "const char[]",
+          "name": "adminAuth",
+          "decl": "const char[] adminAuth",
+          "default": "\"STEAM_ID_SERVER\""
+        },
+        {
+          "type": "int",
+          "name": "adminImmunity",
+          "decl": "int adminImmunity",
+          "default": "0"
+        },
+        {
+          "type": "const char[]",
+          "name": "reason",
+          "decl": "const char[] reason",
+          "default": "\"\""
+        }
+      ]
+    },
+    "CreateBlock": {
+      "name": "CreateBlock",
+      "refLine": 2257,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "targetId",
+          "decl": "int targetId",
+          "default": "0"
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": "-1"
+        },
+        {
+          "type": "int",
+          "name": "type",
+          "decl": "int type",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": "\"\""
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": "\"\""
+        }
+      ]
+    },
+    "setGag": {
+      "name": "setGag",
+      "refLine": 2152,
+      "docStart": 61312,
+      "docEnd": 61333,
+      "docs": {
+        "brief": "STOCK FUNCTIONS //",
+        "tags": [
+          {
+            "tag": "",
+            "text": "STOCK FUNCTIONS //"
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "length",
+          "decl": "int length",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "clientAuth",
+          "decl": "const char[] clientAuth",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {
+    "viewingMute": {
+      "name": "viewingMute",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "curTarget": {
+      "name": "curTarget",
+      "refLine": 63,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "viewingList": {
+      "name": "viewingList",
+      "refLine": 67,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "curIndex": {
+      "name": "curIndex",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "PeskyPanels": {
+      "name": "PeskyPanels",
+      "refLine": 68,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "viewingGag": {
+      "name": "viewingGag",
+      "refLine": 66,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    }
+  },
+  "defines": {
+    "NOW": {
+      "name": "NOW",
+      "refLine": 53,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "MAX_REASONS": {
+      "name": "MAX_REASONS",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    },
+    "UNBLOCK_FLAG": {
+      "name": "UNBLOCK_FLAG",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "ADMFLAG_CHEATS"
+    },
+    "DATABASE": {
+      "name": "DATABASE",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"sourcebans\""
+    },
+    "MAX_TIME_MULTI": {
+      "name": "MAX_TIME_MULTI",
+      "refLine": 50,
+      "docStart": 1645,
+      "docEnd": 1685,
+      "docs": {
+        "brief": "maximum mass-target punishment length",
+        "tags": [
+          {
+            "tag": "",
+            "text": "maximum mass-target punishment length"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "30"
+    },
+    "TYPE_TEMP_SHIFT": {
+      "name": "TYPE_TEMP_SHIFT",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "10"
+    },
+    "REASON_SIZE": {
+      "name": "REASON_SIZE",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "192"
+    },
+    "SESSION_MUTE_FALLBACK": {
+      "name": "SESSION_MUTE_FALLBACK",
+      "refLine": 51,
+      "docStart": 1725,
+      "docEnd": 1795,
+      "docs": {
+        "brief": "session mute will expire after this if it hasn't already (fallback)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "session mute will expire after this if it hasn't already (fallback)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "120 * 60"
+    },
+    "MAX_TIMES": {
+      "name": "MAX_TIMES",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    },
+    "PREFIX": {
+      "name": "PREFIX",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"\\x04[SourceComms++]\\x01 \""
+    },
+    "DISPLAY_SIZE": {
+      "name": "DISPLAY_SIZE",
+      "refLine": 56,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    }
+  },
+  "enums": {
+    "State": {
+      "name": "State",
+      "refLine": 80,
+      "docStart": 2234,
+      "docEnd": 2251,
+      "docs": {
+        "brief": "ConfigState",
+        "tags": [
+          {
+            "tag": "",
+            "text": "ConfigState"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ConfigStateNone": {
+          "name": "ConfigStateNone",
+          "refLine": 82,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "ConfigStateConfig": {
+          "name": "ConfigStateConfig",
+          "refLine": 83,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateServers": {
+          "name": "ConfigStateServers",
+          "refLine": 86,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateTimes": {
+          "name": "ConfigStateTimes",
+          "refLine": 85,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "ConfigStateReasons": {
+          "name": "ConfigStateReasons",
+          "refLine": 84,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "DatabaseState": {
+      "name": "DatabaseState",
+      "refLine": 71,
+      "docStart": 2056,
+      "docEnd": 2087,
+      "docs": {
+        "brief": "Database connection state",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Database connection state"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "DatabaseState_Wait": {
+          "name": "DatabaseState_Wait",
+          "refLine": 74,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_Connecting": {
+          "name": "DatabaseState_Connecting",
+          "refLine": 75,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "DatabaseState_None": {
+          "name": "DatabaseState_None",
+          "refLine": 73,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "DatabaseState_Connected": {
+          "name": "DatabaseState_Connected",
+          "refLine": 76,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

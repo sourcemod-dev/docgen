@@ -1,0 +1,2151 @@
+{
+  "functions": {
+    "BfReadByte": {
+      "name": "BfReadByte",
+      "refLine": 344,
+      "docStart": 11761,
+      "docEnd": 11992,
+      "docs": {
+        "brief": "Reads a byte from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a byte from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Byte value read (read as 8bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfReadBool": {
+      "name": "BfReadBool",
+      "refLine": 335,
+      "docStart": 11499,
+      "docEnd": 11721,
+      "docs": {
+        "brief": "Reads a single bit from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a single bit from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Bit value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfReadVecNormal": {
+      "name": "BfReadVecNormal",
+      "refLine": 452,
+      "docStart": 15574,
+      "docEnd": 15811,
+      "docs": {
+        "brief": "Reads a 3D normal vector from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a 3D normal vector from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Destination vector array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "BfReadFloat": {
+      "name": "BfReadFloat",
+      "refLine": 389,
+      "docStart": 13153,
+      "docEnd": 13396,
+      "docs": {
+        "brief": "Reads a floating point number from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a floating point number from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Floating point value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteString": {
+      "name": "BfWriteString",
+      "refLine": 270,
+      "docStart": 9349,
+      "docEnd": 9572,
+      "docs": {
+        "brief": "Writes a string to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a string to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:string",
+            "text": "Text string to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "string",
+          "decl": "const char[] string",
+          "default": null
+        }
+      ]
+    },
+    "BfReadWord": {
+      "name": "BfReadWord",
+      "refLine": 371,
+      "docStart": 12580,
+      "docEnd": 12833,
+      "docs": {
+        "brief": "Reads a 16bit unsigned integer from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a 16bit unsigned integer from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Integer value read (read as 16bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfReadChar": {
+      "name": "BfReadChar",
+      "refLine": 353,
+      "docStart": 12031,
+      "docEnd": 12257,
+      "docs": {
+        "brief": "Reads a character from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a character from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Character value read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteShort": {
+      "name": "BfWriteShort",
+      "refLine": 234,
+      "docStart": 8126,
+      "docEnd": 8385,
+      "docs": {
+        "brief": "Writes a 16bit integer to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a 16bit integer to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:num",
+            "text": "Integer to write (value will be written as 16bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteBool": {
+      "name": "BfWriteBool",
+      "refLine": 207,
+      "docStart": 7262,
+      "docEnd": 7508,
+      "docs": {
+        "brief": "Writes a single bit to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a single bit to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:bit",
+            "text": "Bit to write (true for 1, false for 0)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bit",
+          "decl": "bool bit",
+          "default": null
+        }
+      ]
+    },
+    "BfReadVecCoord": {
+      "name": "BfReadVecCoord",
+      "refLine": 443,
+      "docStart": 15265,
+      "docEnd": 15514,
+      "docs": {
+        "brief": "Reads a 3D vector of coordinates from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a 3D vector of coordinates from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "param:coord",
+            "text": "Destination coordinate array."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "coord",
+          "decl": "float coord[3]",
+          "default": null
+        }
+      ]
+    },
+    "BfReadString": {
+      "name": "BfReadString",
+      "refLine": 405,
+      "docStart": 13438,
+      "docEnd": 14271,
+      "docs": {
+        "brief": "Reads a string from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a string from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "param:buffer",
+            "text": "Destination string buffer."
+          },
+          {
+            "tag": "param:maxlength",
+            "text": "Maximum length of output string buffer."
+          },
+          {
+            "tag": "param:line",
+            "text": "If true the buffer will be copied until it reaches a '\\n' or a null terminator."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes written to the buffer.  If the bitbuffer stream overflowed,\nthat is, had no terminator before the end of the stream, then a negative\nnumber will be returned equal to the number of characters written to the\nbuffer minus 1.  The buffer will be null terminated regardless of the\nreturn value."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "line",
+          "decl": "bool line",
+          "default": "false"
+        }
+      ]
+    },
+    "BfReadAngle": {
+      "name": "BfReadAngle",
+      "refLine": 425,
+      "docStart": 14671,
+      "docEnd": 14944,
+      "docs": {
+        "brief": "Reads a bit angle from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a bit angle from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "param:numBits",
+            "text": "Optional number of bits to use."
+          },
+          {
+            "tag": "return",
+            "text": "Angle read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numBits",
+          "decl": "int numBits",
+          "default": "8"
+        }
+      ]
+    },
+    "BfReadEntity": {
+      "name": "BfReadEntity",
+      "refLine": 415,
+      "docStart": 14359,
+      "docEnd": 14630,
+      "docs": {
+        "brief": "Reads an entity from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads an entity from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "note",
+            "text": "This is a wrapper around BfReadShort()."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Entity index read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteVecNormal": {
+      "name": "BfWriteVecNormal",
+      "refLine": 317,
+      "docStart": 10918,
+      "docEnd": 11146,
+      "docs": {
+        "brief": "Writes a 3D normal vector to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a 3D normal vector to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:vec",
+            "text": "Vector to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "vec",
+          "decl": "float vec[3]",
+          "default": null
+        }
+      ]
+    },
+    "BfReadAngles": {
+      "name": "BfReadAngles",
+      "refLine": 461,
+      "docStart": 15870,
+      "docEnd": 16106,
+      "docs": {
+        "brief": "Reads a 3D angle vector from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a 3D angle vector from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Destination angle vector."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "angles",
+          "decl": "float angles[3]",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteWord": {
+      "name": "BfWriteWord",
+      "refLine": 243,
+      "docStart": 8436,
+      "docEnd": 8704,
+      "docs": {
+        "brief": "Writes a 16bit unsigned integer to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a 16bit unsigned integer to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:num",
+            "text": "Integer to write (value will be written as 16bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteByte": {
+      "name": "BfWriteByte",
+      "refLine": 216,
+      "docStart": 7560,
+      "docEnd": 7806,
+      "docs": {
+        "brief": "Writes a byte to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a byte to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:byte",
+            "text": "Byte to write (value will be written as 8bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "byte",
+          "decl": "int byte",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteNum": {
+      "name": "BfWriteNum",
+      "refLine": 252,
+      "docStart": 8754,
+      "docEnd": 9014,
+      "docs": {
+        "brief": "Writes a normal integer to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a normal integer to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:num",
+            "text": "Integer to write (value will be written as 32bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "num",
+          "decl": "int num",
+          "default": null
+        }
+      ]
+    },
+    "BfGetNumBytesLeft": {
+      "name": "BfGetNumBytesLeft",
+      "refLine": 470,
+      "docStart": 16165,
+      "docEnd": 16411,
+      "docs": {
+        "brief": "Returns the number of bytes left in a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the number of bytes left in a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Number of bytes left unread."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteFloat": {
+      "name": "BfWriteFloat",
+      "refLine": 261,
+      "docStart": 9063,
+      "docEnd": 9296,
+      "docs": {
+        "brief": "Writes a floating point number to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a floating point number to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:num",
+            "text": "Number to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "num",
+          "decl": "float num",
+          "default": null
+        }
+      ]
+    },
+    "BfReadShort": {
+      "name": "BfReadShort",
+      "refLine": 362,
+      "docStart": 12296,
+      "docEnd": 12540,
+      "docs": {
+        "brief": "Reads a 16bit integer from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a 16bit integer from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Integer value read (read as 16bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfReadCoord": {
+      "name": "BfReadCoord",
+      "refLine": 434,
+      "docStart": 15001,
+      "docEnd": 15223,
+      "docs": {
+        "brief": "Reads a coordinate from a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a coordinate from a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Coordinate read."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteAngles": {
+      "name": "BfWriteAngles",
+      "refLine": 326,
+      "docStart": 11206,
+      "docEnd": 11439,
+      "docs": {
+        "brief": "Writes a 3D angle vector to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a 3D angle vector to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:angles",
+            "text": "Angle vector to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "angles",
+          "decl": "float angles[3]",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteEntity": {
+      "name": "BfWriteEntity",
+      "refLine": 280,
+      "docStart": 9636,
+      "docEnd": 9931,
+      "docs": {
+        "brief": "Writes an entity to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes an entity to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "note",
+            "text": "This is a wrapper around BfWriteShort()."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:ent",
+            "text": "Entity index to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle, or invalid entity."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "ent",
+          "decl": "int ent",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteChar": {
+      "name": "BfWriteChar",
+      "refLine": 225,
+      "docStart": 7857,
+      "docEnd": 8076,
+      "docs": {
+        "brief": "Writes a byte to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a byte to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:chr",
+            "text": "Character to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "chr",
+          "decl": "int chr",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteAngle": {
+      "name": "BfWriteAngle",
+      "refLine": 290,
+      "docStart": 9983,
+      "docEnd": 10260,
+      "docs": {
+        "brief": "Writes a bit angle to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a bit angle to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:angle",
+            "text": "Angle to write."
+          },
+          {
+            "tag": "param:numBits",
+            "text": "Optional number of bits to use."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "angle",
+          "decl": "float angle",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numBits",
+          "decl": "int numBits",
+          "default": "8"
+        }
+      ]
+    },
+    "BfWriteCoord": {
+      "name": "BfWriteCoord",
+      "refLine": 299,
+      "docStart": 10330,
+      "docEnd": 10556,
+      "docs": {
+        "brief": "Writes a coordinate to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a coordinate to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:coord",
+            "text": "Coordinate to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float",
+          "name": "coord",
+          "decl": "float coord",
+          "default": null
+        }
+      ]
+    },
+    "BfReadNum": {
+      "name": "BfReadNum",
+      "refLine": 380,
+      "docStart": 12872,
+      "docEnd": 13115,
+      "docs": {
+        "brief": "Reads a normal integer to a readable bitbuffer (bf_read).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reads a normal integer to a readable bitbuffer (bf_read)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_read handle to read from."
+          },
+          {
+            "tag": "return",
+            "text": "Integer value read (read as 32bit)."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        }
+      ]
+    },
+    "BfWriteVecCoord": {
+      "name": "BfWriteVecCoord",
+      "refLine": 308,
+      "docStart": 10611,
+      "docEnd": 10857,
+      "docs": {
+        "brief": "Writes a 3D vector of coordinates to a writable bitbuffer (bf_write).",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Writes a 3D vector of coordinates to a writable bitbuffer (bf_write)."
+          },
+          {
+            "tag": "param:bf",
+            "text": "bf_write handle to write to."
+          },
+          {
+            "tag": "param:coord",
+            "text": "Coordinate array to write."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid or incorrect Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "bf",
+          "decl": "Handle bf",
+          "default": null
+        },
+        {
+          "type": "float[3]",
+          "name": "coord",
+          "decl": "float coord[3]",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "BfWrite": {
+      "name": "BfWrite",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "WriteNum": {
+          "name": "WriteNum",
+          "refLine": 68,
+          "docStart": 2564,
+          "docEnd": 2704,
+          "docs": {
+            "brief": "Writes a normal integer to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a normal integer to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:num",
+                "text": "Integer to write (value will be written as 32bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        },
+        "WriteShort": {
+          "name": "WriteShort",
+          "refLine": 58,
+          "docStart": 2184,
+          "docEnd": 2323,
+          "docs": {
+            "brief": "Writes a 16bit integer to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a 16bit integer to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:num",
+                "text": "Integer to write (value will be written as 16bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        },
+        "WriteString": {
+          "name": "WriteString",
+          "refLine": 78,
+          "docStart": 2911,
+          "docEnd": 3014,
+          "docs": {
+            "brief": "Writes a string to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a string to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:string",
+                "text": "Text string to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "const char[]",
+              "name": "string",
+              "decl": "const char[] string",
+              "default": null
+            }
+          ]
+        },
+        "WriteBool": {
+          "name": "WriteBool",
+          "refLine": 43,
+          "docStart": 1692,
+          "docEnd": 1817,
+          "docs": {
+            "brief": "Writes a single bit to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a single bit to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:bit",
+                "text": "Bit to write (true for 1, false for 0)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "bool",
+              "name": "bit",
+              "decl": "bool bit",
+              "default": null
+            }
+          ]
+        },
+        "WriteFloat": {
+          "name": "WriteFloat",
+          "refLine": 73,
+          "docStart": 2749,
+          "docEnd": 2862,
+          "docs": {
+            "brief": "Writes a floating point number to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a floating point number to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:num",
+                "text": "Number to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "num",
+              "decl": "float num",
+              "default": null
+            }
+          ]
+        },
+        "WriteEntity": {
+          "name": "WriteEntity",
+          "refLine": 83,
+          "docStart": 3074,
+          "docEnd": 3179,
+          "docs": {
+            "brief": "Writes an entity to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes an entity to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:ent",
+                "text": "Entity index to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "ent",
+              "decl": "int ent",
+              "default": null
+            }
+          ]
+        },
+        "WriteAngle": {
+          "name": "WriteAngle",
+          "refLine": 89,
+          "docStart": 3227,
+          "docEnd": 3381,
+          "docs": {
+            "brief": "Writes a bit angle to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a bit angle to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:angle",
+                "text": "Angle to write."
+              },
+              {
+                "tag": "param:numBits",
+                "text": "Optional number of bits to use."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "angle",
+              "decl": "float angle",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "numBits",
+              "decl": "int numBits",
+              "default": "8"
+            }
+          ]
+        },
+        "WriteCoord": {
+          "name": "WriteCoord",
+          "refLine": 94,
+          "docStart": 3447,
+          "docEnd": 3553,
+          "docs": {
+            "brief": "Writes a coordinate to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a coordinate to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:coord",
+                "text": "Coordinate to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float",
+              "name": "coord",
+              "decl": "float coord",
+              "default": null
+            }
+          ]
+        },
+        "WriteByte": {
+          "name": "WriteByte",
+          "refLine": 48,
+          "docStart": 1866,
+          "docEnd": 1992,
+          "docs": {
+            "brief": "Writes a byte to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a byte to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:byte",
+                "text": "Byte to write (value will be written as 8bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "byte",
+              "decl": "int byte",
+              "default": null
+            }
+          ]
+        },
+        "WriteVecCoord": {
+          "name": "WriteVecCoord",
+          "refLine": 99,
+          "docStart": 3604,
+          "docEnd": 3730,
+          "docs": {
+            "brief": "Writes a 3D vector of coordinates to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a 3D vector of coordinates to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:coord",
+                "text": "Coordinate array to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "coord",
+              "decl": "float coord[3]",
+              "default": null
+            }
+          ]
+        },
+        "WriteVecNormal": {
+          "name": "WriteVecNormal",
+          "refLine": 104,
+          "docStart": 3787,
+          "docEnd": 3895,
+          "docs": {
+            "brief": "Writes a 3D normal vector to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a 3D normal vector to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Vector to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "WriteWord": {
+          "name": "WriteWord",
+          "refLine": 63,
+          "docStart": 2370,
+          "docEnd": 2518,
+          "docs": {
+            "brief": "Writes a 16bit unsigned integer to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a 16bit unsigned integer to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:num",
+                "text": "Integer to write (value will be written as 16bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "num",
+              "decl": "int num",
+              "default": null
+            }
+          ]
+        },
+        "WriteAngles": {
+          "name": "WriteAngles",
+          "refLine": 109,
+          "docStart": 3951,
+          "docEnd": 4064,
+          "docs": {
+            "brief": "Writes a 3D angle vector to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a 3D angle vector to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:angles",
+                "text": "Angle vector to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "angles",
+              "decl": "float angles[3]",
+              "default": null
+            }
+          ]
+        },
+        "WriteChar": {
+          "name": "WriteChar",
+          "refLine": 53,
+          "docStart": 2039,
+          "docEnd": 2138,
+          "docs": {
+            "brief": "Writes a byte to a writable bitbuffer (bf_write).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Writes a byte to a writable bitbuffer (bf_write)."
+              },
+              {
+                "tag": "param:chr",
+                "text": "Character to write."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "chr",
+              "decl": "int chr",
+              "default": null
+            }
+          ]
+        }
+      },
+      "properties": {}
+    },
+    "BfRead": {
+      "name": "BfRead",
+      "refLine": 112,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "ReadByte": {
+          "name": "ReadByte",
+          "refLine": 122,
+          "docStart": 4293,
+          "docEnd": 4404,
+          "docs": {
+            "brief": "Reads a byte from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a byte from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Byte value read (read as 8bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadShort": {
+          "name": "ReadShort",
+          "refLine": 133,
+          "docStart": 4584,
+          "docEnd": 4759,
+          "docs": {
+            "brief": "Reads a 16bit integer from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a 16bit integer from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:bf",
+                "text": "bf_read handle to read from."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value read (read as 16bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadWord": {
+          "name": "ReadWord",
+          "refLine": 139,
+          "docStart": 4797,
+          "docEnd": 4981,
+          "docs": {
+            "brief": "Reads a 16bit unsigned integer from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a 16bit unsigned integer from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:bf",
+                "text": "bf_read handle to read from."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value read (read as 16bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadString": {
+          "name": "ReadString",
+          "refLine": 161,
+          "docStart": 5340,
+          "docEnd": 6032,
+          "docs": {
+            "brief": "Reads a string from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a string from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:buffer",
+                "text": "Destination string buffer."
+              },
+              {
+                "tag": "param:maxlength",
+                "text": "Maximum length of output string buffer."
+              },
+              {
+                "tag": "param:line",
+                "text": "If true the buffer will be copied until it reaches a '\\n' or a null terminator."
+              },
+              {
+                "tag": "return",
+                "text": "Number of bytes written to the buffer.  If the bitbuffer stream overflowed,\nthat is, had no terminator before the end of the stream, then a negative\nnumber will be returned equal to the number of characters written to the\nbuffer minus 1.  The buffer will be null terminated regardless of the\nreturn value."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": [
+            {
+              "type": "char[]",
+              "name": "buffer",
+              "decl": "char[] buffer",
+              "default": null
+            },
+            {
+              "type": "int",
+              "name": "maxlength",
+              "decl": "int maxlength",
+              "default": null
+            },
+            {
+              "type": "bool",
+              "name": "line",
+              "decl": "bool line",
+              "default": "false"
+            }
+          ]
+        },
+        "ReadAngle": {
+          "name": "ReadAngle",
+          "refLine": 172,
+          "docStart": 6256,
+          "docEnd": 6406,
+          "docs": {
+            "brief": "Reads a bit angle from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a bit angle from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:numBits",
+                "text": "Optional number of bits to use."
+              },
+              {
+                "tag": "return",
+                "text": "Angle read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": [
+            {
+              "type": "int",
+              "name": "numBits",
+              "decl": "int numBits",
+              "default": "8"
+            }
+          ]
+        },
+        "ReadChar": {
+          "name": "ReadChar",
+          "refLine": 127,
+          "docStart": 4441,
+          "docEnd": 4547,
+          "docs": {
+            "brief": "Reads a character from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a character from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Character value read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadBool": {
+          "name": "ReadBool",
+          "refLine": 117,
+          "docStart": 4154,
+          "docEnd": 4255,
+          "docs": {
+            "brief": "Reads a single bit from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a single bit from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Bit value read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "bool",
+          "arguments": []
+        },
+        "ReadNum": {
+          "name": "ReadNum",
+          "refLine": 144,
+          "docStart": 5018,
+          "docEnd": 5141,
+          "docs": {
+            "brief": "Reads a normal integer to a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a normal integer to a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Integer value read (read as 32bit)."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadEntity": {
+          "name": "ReadEntity",
+          "refLine": 166,
+          "docStart": 6116,
+          "docEnd": 6217,
+          "docs": {
+            "brief": "Reads an entity from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads an entity from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Entity index read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "int",
+          "arguments": []
+        },
+        "ReadVecCoord": {
+          "name": "ReadVecCoord",
+          "refLine": 182,
+          "docStart": 6601,
+          "docEnd": 6730,
+          "docs": {
+            "brief": "Reads a 3D vector of coordinates from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a 3D vector of coordinates from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:coord",
+                "text": "Destination coordinate array."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "coord",
+              "decl": "float coord[3]",
+              "default": null
+            }
+          ]
+        },
+        "ReadAngles": {
+          "name": "ReadAngles",
+          "refLine": 192,
+          "docStart": 6958,
+          "docEnd": 7074,
+          "docs": {
+            "brief": "Reads a 3D angle vector from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a 3D angle vector from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:angles",
+                "text": "Destination angle vector."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "angles",
+              "decl": "float angles[3]",
+              "default": null
+            }
+          ]
+        },
+        "ReadVecNormal": {
+          "name": "ReadVecNormal",
+          "refLine": 187,
+          "docStart": 6786,
+          "docEnd": 6903,
+          "docs": {
+            "brief": "Reads a 3D normal vector from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a 3D normal vector from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "param:vec",
+                "text": "Destination vector array."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": [
+            {
+              "type": "float[3]",
+              "name": "vec",
+              "decl": "float vec[3]",
+              "default": null
+            }
+          ]
+        },
+        "ReadCoord": {
+          "name": "ReadCoord",
+          "refLine": 177,
+          "docStart": 6459,
+          "docEnd": 6561,
+          "docs": {
+            "brief": "Reads a coordinate from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a coordinate from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Coordinate read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": []
+        },
+        "ReadFloat": {
+          "name": "ReadFloat",
+          "refLine": 149,
+          "docStart": 5177,
+          "docEnd": 5300,
+          "docs": {
+            "brief": "Reads a floating point number from a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Reads a floating point number from a readable bitbuffer (bf_read)."
+              },
+              {
+                "tag": "return",
+                "text": "Floating point value read."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "float",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "BytesLeft": {
+          "name": "BytesLeft",
+          "refLine": 195,
+          "docStart": 7129,
+          "docEnd": 7199,
+          "docs": {
+            "brief": "Returns the number of bytes left in a readable bitbuffer (bf_read).",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the number of bytes left in a readable bitbuffer (bf_read)."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "int",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_bitbuffer_included": {
+      "name": "_bitbuffer_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

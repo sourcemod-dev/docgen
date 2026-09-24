@@ -1,0 +1,418 @@
+{
+  "functions": {
+    "Command_TestSortADTFloats": {
+      "name": "Command_TestSortADTFloats",
+      "refLine": 236,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 12,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "PrintADTArrayIntegers": {
+      "name": "PrintADTArrayIntegers",
+      "refLine": 188,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "PrintFloats": {
+      "name": "PrintFloats",
+      "refLine": 61,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const float[]",
+          "name": "array",
+          "decl": "const float[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortFloats": {
+      "name": "Command_TestSortFloats",
+      "refLine": 69,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortADTInts": {
+      "name": "Command_TestSortADTInts",
+      "refLine": 197,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "PrintIntegers": {
+      "name": "PrintIntegers",
+      "refLine": 30,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const int[]",
+          "name": "array",
+          "decl": "const int[] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortStrings": {
+      "name": "Command_TestSortStrings",
+      "refLine": 124,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Custom2DSort": {
+      "name": "Custom2DSort",
+      "refLine": 155,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "elem1",
+          "decl": "char[] elem1",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "elem2",
+          "decl": "char[] elem2",
+          "default": null
+        },
+        {
+          "type": "char[][]",
+          "name": "array",
+          "decl": "char[][] array",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortADTStrings": {
+      "name": "Command_TestSortADTStrings",
+      "refLine": 276,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "ArrayADTCustomCallback": {
+      "name": "ArrayADTCustomCallback",
+      "refLine": 305,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "index1",
+          "decl": "int index1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "index2",
+          "decl": "int index2",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSort1D": {
+      "name": "Command_TestSort1D",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "PrintADTArrayStrings": {
+      "name": "PrintADTArrayStrings",
+      "refLine": 265,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSort2D": {
+      "name": "Command_TestSort2D",
+      "refLine": 160,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortInts": {
+      "name": "Command_TestSortInts",
+      "refLine": 38,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Custom1DSort": {
+      "name": "Custom1DSort",
+      "refLine": 88,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "elem1",
+          "decl": "int elem1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "elem2",
+          "decl": "int elem2",
+          "default": null
+        },
+        {
+          "type": "const int[]",
+          "name": "array",
+          "decl": "const int[] array",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        }
+      ]
+    },
+    "PrintStrings": {
+      "name": "PrintStrings",
+      "refLine": 116,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[][]",
+          "name": "array",
+          "decl": "const char[][] array",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "size",
+          "decl": "int size",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSortADTCustom": {
+      "name": "Command_TestSortADTCustom",
+      "refLine": 314,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "PrintADTArrayFloats": {
+      "name": "PrintADTArrayFloats",
+      "refLine": 227,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "array",
+          "decl": "Handle array",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

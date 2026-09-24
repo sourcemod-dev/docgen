@@ -1,0 +1,89 @@
+{
+  "functions": {
+    "InactivateClient": {
+      "name": "InactivateClient",
+      "refLine": 44,
+      "docStart": 1656,
+      "docEnd": 1820,
+      "docs": {
+        "brief": "Sets the client to an inactive state waiting for a new map",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Sets the client to an inactive state waiting for a new map"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "ReconnectClient": {
+      "name": "ReconnectClient",
+      "refLine": 52,
+      "docStart": 1867,
+      "docEnd": 2023,
+      "docs": {
+        "brief": "Reconnect a client without dropping the netchannel",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Reconnect a client without dropping the netchannel"
+          },
+          {
+            "tag": "param:client",
+            "text": "The client index"
+          },
+          {
+            "tag": "error",
+            "text": "Invalid client index."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_sdktools_client_included": {
+      "name": "_sdktools_client_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

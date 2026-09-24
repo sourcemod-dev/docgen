@@ -1,0 +1,538 @@
+{
+  "functions": {
+    "Command_TestTxn": {
+      "name": "Command_TestTxn",
+      "refLine": 265,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSql1": {
+      "name": "Command_TestSql1",
+      "refLine": 62,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "FastQuery": {
+      "name": "FastQuery",
+      "refLine": 208,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "query",
+          "decl": "const char[] query",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 13,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "Txn_Test2_OnSuccess": {
+      "name": "Txn_Test2_OnSuccess",
+      "refLine": 238,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numQueries",
+          "decl": "int numQueries",
+          "default": null
+        },
+        {
+          "type": "Handle[]",
+          "name": "results",
+          "decl": "Handle[] results",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "queryData",
+          "decl": "any[] queryData",
+          "default": null
+        }
+      ]
+    },
+    "CallbackTest5": {
+      "name": "CallbackTest5",
+      "refLine": 166,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "owner",
+          "decl": "Handle owner",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "CallbackTest7": {
+      "name": "CallbackTest7",
+      "refLine": 188,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "owner",
+          "decl": "Handle owner",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSql2": {
+      "name": "Command_TestSql2",
+      "refLine": 87,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSql5": {
+      "name": "Command_TestSql5",
+      "refLine": 198,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "PrintQueryData": {
+      "name": "PrintQueryData",
+      "refLine": 28,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "query",
+          "decl": "Handle query",
+          "default": null
+        }
+      ]
+    },
+    "Txn_Test2_OnFailure": {
+      "name": "Txn_Test2_OnFailure",
+      "refLine": 243,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numQueries",
+          "decl": "int numQueries",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "failIndex",
+          "decl": "int failIndex",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "queryData",
+          "decl": "any[] queryData",
+          "default": null
+        }
+      ]
+    },
+    "Txn_Test1_OnFailure": {
+      "name": "Txn_Test1_OnFailure",
+      "refLine": 233,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numQueries",
+          "decl": "int numQueries",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "failIndex",
+          "decl": "int failIndex",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "queryData",
+          "decl": "any[] queryData",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSql4": {
+      "name": "Command_TestSql4",
+      "refLine": 148,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    },
+    "Txn_Test1_OnSuccess": {
+      "name": "Txn_Test1_OnSuccess",
+      "refLine": 217,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numQueries",
+          "decl": "int numQueries",
+          "default": null
+        },
+        {
+          "type": "Handle[]",
+          "name": "results",
+          "decl": "Handle[] results",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "queryData",
+          "decl": "any[] queryData",
+          "default": null
+        }
+      ]
+    },
+    "CallbackTest6": {
+      "name": "CallbackTest6",
+      "refLine": 177,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "owner",
+          "decl": "Handle owner",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "CallbackTest3": {
+      "name": "CallbackTest3",
+      "refLine": 120,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "owner",
+          "decl": "Handle owner",
+          "default": null
+        },
+        {
+          "type": "Handle",
+          "name": "hndl",
+          "decl": "Handle hndl",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "error",
+          "decl": "const char[] error",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        }
+      ]
+    },
+    "Txn_Test3_OnSuccess": {
+      "name": "Txn_Test3_OnSuccess",
+      "refLine": 254,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "db",
+          "decl": "Handle db",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "data",
+          "decl": "any data",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "numQueries",
+          "decl": "int numQueries",
+          "default": null
+        },
+        {
+          "type": "Handle[]",
+          "name": "results",
+          "decl": "Handle[] results",
+          "default": null
+        },
+        {
+          "type": "any[]",
+          "name": "queryData",
+          "decl": "any[] queryData",
+          "default": null
+        }
+      ]
+    },
+    "Command_TestSql3": {
+      "name": "Command_TestSql3",
+      "refLine": 131,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "args",
+          "decl": "int args",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

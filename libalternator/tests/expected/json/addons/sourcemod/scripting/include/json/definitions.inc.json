@@ -1,0 +1,350 @@
+{
+  "functions": {
+    "json_meta_key_length": {
+      "name": "json_meta_key_length",
+      "refLine": 157,
+      "docStart": 4119,
+      "docEnd": 4312,
+      "docs": {
+        "brief": "Calculates the length required to store a meta key\nfor a specified key/metainfo combination.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Calculates the length required to store a meta key\nfor a specified key/metainfo combination."
+          },
+          {
+            "tag": "param:key",
+            "text": ""
+          },
+          {
+            "tag": "return",
+            "text": "The length required to store the meta key."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        }
+      ]
+    },
+    "json_format_meta_key": {
+      "name": "json_format_meta_key",
+      "refLine": 172,
+      "docStart": 4431,
+      "docEnd": 4722,
+      "docs": {
+        "brief": "Formats the key/metainfo combination into a buffer.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Formats the key/metainfo combination into a buffer."
+          },
+          {
+            "tag": "param:output",
+            "text": "String buffer to store output."
+          },
+          {
+            "tag": "param:max_size",
+            "text": "Maximum size of string buffer."
+          },
+          {
+            "tag": "param:key",
+            "text": "Key to generate metakey for."
+          },
+          {
+            "tag": "param:meta",
+            "text": "Meta information to generate metakey for."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "max_size",
+          "decl": "int max_size",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "JSONMetaInfo",
+          "name": "meta",
+          "decl": "JSONMetaInfo meta",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "JSON_BOOL_BUFFER_SIZE": {
+      "name": "JSON_BOOL_BUFFER_SIZE",
+      "refLine": 105,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "6"
+    },
+    "JSON_NONE": {
+      "name": "JSON_NONE",
+      "refLine": 51,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "_json_definitions_included": {
+      "name": "_json_definitions_included",
+      "refLine": 37,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "JSON_DECODE_SINGLE_QUOTES": {
+      "name": "JSON_DECODE_SINGLE_QUOTES",
+      "refLine": 65,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1 << 0"
+    },
+    "JSON_MERGE_REPLACE": {
+      "name": "JSON_MERGE_REPLACE",
+      "refLine": 72,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1 << 0"
+    },
+    "JSON_FLOAT_BUFFER_SIZE": {
+      "name": "JSON_FLOAT_BUFFER_SIZE",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    },
+    "SM_INT64_SUPPORTED": {
+      "name": "SM_INT64_SUPPORTED",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "SOURCEMOD_V_MAJOR >= 1 \\\n    && SOURCEMOD_V_MINOR >= 11 \\\n    && SOURCEMOD_V_REV >= 6861"
+    },
+    "JSON_NULL_BUFFER_SIZE": {
+      "name": "JSON_NULL_BUFFER_SIZE",
+      "refLine": 108,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "5"
+    },
+    "JSON_ARRAY_KEY": {
+      "name": "JSON_ARRAY_KEY",
+      "refLine": 114,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"is_array\""
+    },
+    "JSON_ENFORCE_TYPE_KEY": {
+      "name": "JSON_ENFORCE_TYPE_KEY",
+      "refLine": 115,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"enforce_type\""
+    },
+    "JSON_INT_BUFFER_SIZE": {
+      "name": "JSON_INT_BUFFER_SIZE",
+      "refLine": 94,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "12"
+    },
+    "JSON_MERGE_CLEANUP": {
+      "name": "JSON_MERGE_CLEANUP",
+      "refLine": 76,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1 << 1"
+    },
+    "JSON_ENCODE_PRETTY": {
+      "name": "JSON_ENCODE_PRETTY",
+      "refLine": 58,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "1 << 0"
+    }
+  },
+  "enums": {
+    "JSONCellType": {
+      "name": "JSONCellType",
+      "refLine": 120,
+      "docStart": 3526,
+      "docEnd": 3572,
+      "docs": {
+        "brief": "Types of cells within a JSON object",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Types of cells within a JSON object"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "JSON_Type_Invalid": {
+          "name": "JSON_Type_Invalid",
+          "refLine": 121,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "-1"
+        },
+        "JSON_Type_Int": {
+          "name": "JSON_Type_Int",
+          "refLine": 123,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Type_Float": {
+          "name": "JSON_Type_Float",
+          "refLine": 127,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Type_Bool": {
+          "name": "JSON_Type_Bool",
+          "refLine": 128,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Type_String": {
+          "name": "JSON_Type_String",
+          "refLine": 122,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        },
+        "JSON_Type_Object": {
+          "name": "JSON_Type_Object",
+          "refLine": 129,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "JSONMetaInfo": {
+      "name": "JSONMetaInfo",
+      "refLine": 135,
+      "docStart": 3791,
+      "docEnd": 3843,
+      "docs": {
+        "brief": "Types of metadata a JSON element can have",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Types of metadata a JSON element can have"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "JSON_Meta_Index": {
+          "name": "JSON_Meta_Index",
+          "refLine": 139,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Meta_Hidden": {
+          "name": "JSON_Meta_Hidden",
+          "refLine": 138,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Meta_Size": {
+          "name": "JSON_Meta_Size",
+          "refLine": 137,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "JSON_Meta_Type": {
+          "name": "JSON_Meta_Type",
+          "refLine": 136,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": "0"
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

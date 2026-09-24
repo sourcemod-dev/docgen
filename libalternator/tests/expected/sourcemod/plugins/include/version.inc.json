@@ -1,0 +1,115 @@
+{
+  "functions": {},
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "SOURCEMOD_V_REV": {
+      "name": "SOURCEMOD_V_REV",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "0"
+    },
+    "SOURCEMOD_V_TAG": {
+      "name": "SOURCEMOD_V_TAG",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"manual\""
+    },
+    "SOURCEMOD_VERSION": {
+      "name": "SOURCEMOD_VERSION",
+      "refLine": 48,
+      "docStart": 2122,
+      "docEnd": 2180,
+      "docs": {
+        "brief": "SourceMod version string (major.minor.release-tag)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SourceMod version string (major.minor.release-tag)"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "\"1.13.0-manual\""
+    },
+    "SOURCEMOD_V_RELEASE": {
+      "name": "SOURCEMOD_V_RELEASE",
+      "refLine": 46,
+      "docStart": 2036,
+      "docEnd": 2069,
+      "docs": {
+        "brief": "SourceMod Release version",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SourceMod Release version"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "0"
+    },
+    "SOURCEMOD_V_CSET": {
+      "name": "SOURCEMOD_V_CSET",
+      "refLine": 43,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"0\""
+    },
+    "SOURCEMOD_V_MAJOR": {
+      "name": "SOURCEMOD_V_MAJOR",
+      "refLine": 44,
+      "docStart": 1872,
+      "docEnd": 1903,
+      "docs": {
+        "brief": "SourceMod Major version",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SourceMod Major version"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "1"
+    },
+    "_version_included": {
+      "name": "_version_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    },
+    "SOURCEMOD_V_MINOR": {
+      "name": "SOURCEMOD_V_MINOR",
+      "refLine": 45,
+      "docStart": 1954,
+      "docEnd": 1985,
+      "docs": {
+        "brief": "SourceMod Minor version",
+        "tags": [
+          {
+            "tag": "",
+            "text": "SourceMod Minor version"
+          }
+        ]
+      },
+      "metadata": null,
+      "value": "13"
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

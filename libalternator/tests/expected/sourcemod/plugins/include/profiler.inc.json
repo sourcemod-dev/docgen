@@ -1,0 +1,330 @@
+{
+  "functions": {
+    "StartProfiling": {
+      "name": "StartProfiling",
+      "refLine": 82,
+      "docStart": 2545,
+      "docEnd": 2663,
+      "docs": {
+        "brief": "Starts profiling.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Starts profiling."
+          },
+          {
+            "tag": "param:prof",
+            "text": "Profiling object."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "prof",
+          "decl": "Handle prof",
+          "default": null
+        }
+      ]
+    },
+    "IsProfilingActive": {
+      "name": "IsProfilingActive",
+      "refLine": 123,
+      "docStart": 3804,
+      "docEnd": 3952,
+      "docs": {
+        "brief": "Returns true if the global profiler is enabled; false otherwise. It is\nnot necessary to call this before Enter/LeaveProfilingEvent.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns true if the global profiler is enabled; false otherwise. It is\nnot necessary to call this before Enter/LeaveProfilingEvent."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "bool",
+      "arguments": []
+    },
+    "LeaveProfilingEvent": {
+      "name": "LeaveProfilingEvent",
+      "refLine": 117,
+      "docStart": 3554,
+      "docEnd": 3764,
+      "docs": {
+        "brief": "Mark the end of the last profiling event. This must be called in the same\nstack frame as StartProfilingEvent(). Not doing so, or throwing errors,\nwill make the resulting profile very wrong.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Mark the end of the last profiling event. This must be called in the same\nstack frame as StartProfilingEvent(). Not doing so, or throwing errors,\nwill make the resulting profile very wrong."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": []
+    },
+    "StopProfiling": {
+      "name": "StopProfiling",
+      "refLine": 90,
+      "docStart": 2709,
+      "docEnd": 2857,
+      "docs": {
+        "brief": "Stops profiling.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Stops profiling."
+          },
+          {
+            "tag": "param:prof",
+            "text": "Profiling object."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle or profiling was never started."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "prof",
+          "decl": "Handle prof",
+          "default": null
+        }
+      ]
+    },
+    "GetProfilerTime": {
+      "name": "GetProfilerTime",
+      "refLine": 101,
+      "docStart": 2902,
+      "docEnd": 3171,
+      "docs": {
+        "brief": "Returns the amount of high-precision time in seconds\nthat passed during the profiler's last start/stop\ncycle.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Returns the amount of high-precision time in seconds\nthat passed during the profiler's last start/stop\ncycle."
+          },
+          {
+            "tag": "param:prof",
+            "text": "Profiling object."
+          },
+          {
+            "tag": "return",
+            "text": "Time elapsed in seconds."
+          },
+          {
+            "tag": "error",
+            "text": "Invalid Handle."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "prof",
+          "decl": "Handle prof",
+          "default": null
+        }
+      ]
+    },
+    "CreateProfiler": {
+      "name": "CreateProfiler",
+      "refLine": 74,
+      "docStart": 2343,
+      "docEnd": 2506,
+      "docs": {
+        "brief": "Creates a new profile object.  The Handle must be freed\nusing delete or CloseHandle().",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Creates a new profile object.  The Handle must be freed\nusing delete or CloseHandle()."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to the profiler object."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "Profiler",
+      "arguments": []
+    },
+    "EnterProfilingEvent": {
+      "name": "EnterProfilingEvent",
+      "refLine": 110,
+      "docStart": 3219,
+      "docEnd": 3477,
+      "docs": {
+        "brief": "Mark the start of a profiling event.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Mark the start of a profiling event."
+          },
+          {
+            "tag": "param:group",
+            "text": "Budget group. This can be \"all\" for a default, or a short\ndescription like \"Timers\" or \"Events\"."
+          },
+          {
+            "tag": "param:name",
+            "text": "A name to attribute to this profiling event."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "group",
+          "decl": "const char[] group",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {
+    "Profiler": {
+      "name": "Profiler",
+      "refLine": 42,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "parent": "Handle",
+      "methods": {
+        "Stop": {
+          "name": "Stop",
+          "refLine": 56,
+          "docStart": 1979,
+          "docEnd": 2069,
+          "docs": {
+            "brief": "Stops a cycle for profiling.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Stops a cycle for profiling."
+              },
+              {
+                "tag": "error",
+                "text": "Profiler was never started."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        },
+        "Profiler": {
+          "name": "Profiler",
+          "refLine": 48,
+          "docStart": 1730,
+          "docEnd": 1878,
+          "docs": {
+            "brief": "Creates a new profile object.  The Handle must be freed\nusing delete or CloseHandle().",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Creates a new profile object.  The Handle must be freed\nusing delete or CloseHandle()."
+              },
+              {
+                "tag": "return",
+                "text": "A new Profiler Handle."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "Profiler",
+          "arguments": []
+        },
+        "Start": {
+          "name": "Start",
+          "refLine": 51,
+          "docStart": 1912,
+          "docEnd": 1944,
+          "docs": {
+            "brief": "Starts a cycle for profiling.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Starts a cycle for profiling."
+              }
+            ]
+          },
+          "metadata": null,
+          "kind": "native",
+          "returnType": "void",
+          "arguments": []
+        }
+      },
+      "properties": {
+        "Time": {
+          "name": "Time",
+          "refLine": 63,
+          "docStart": 2104,
+          "docEnd": 2283,
+          "docs": {
+            "brief": "Returns the amount of high-precision time in seconds\nthat passed during the profiler's last start/stop\ncycle.",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Returns the amount of high-precision time in seconds\nthat passed during the profiler's last start/stop\ncycle."
+              },
+              {
+                "tag": "return",
+                "text": "Time elapsed in seconds."
+              }
+            ]
+          },
+          "metadata": null,
+          "type": "float",
+          "getter": true,
+          "setter": false
+        }
+      }
+    }
+  },
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "_profiler_included": {
+      "name": "_profiler_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,748 @@
+{
+  "functions": {
+    "UnQuoteString": {
+      "name": "UnQuoteString",
+      "refLine": 689,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "input",
+          "decl": "char[] input",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "quotechars",
+          "decl": "char[] quotechars",
+          "default": null
+        }
+      ]
+    },
+    "NewSection": {
+      "name": "NewSection",
+      "refLine": 372,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "name",
+          "decl": "const char[] name",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "opt_quotes",
+          "decl": "bool opt_quotes",
+          "default": null
+        }
+      ]
+    },
+    "EndSection": {
+      "name": "EndSection",
+      "refLine": 385,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        }
+      ]
+    },
+    "BuildDynamicMenu": {
+      "name": "BuildDynamicMenu",
+      "refLine": 75,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "ParseConfigs": {
+      "name": "ParseConfigs",
+      "refLine": 325,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": []
+    },
+    "DynamicMenuCategoryHandler": {
+      "name": "DynamicMenuCategoryHandler",
+      "refLine": 392,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "topmenu",
+          "decl": "TopMenu topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "QuoteString": {
+      "name": "QuoteString",
+      "refLine": 652,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "char[]",
+          "name": "input",
+          "decl": "char[] input",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "output",
+          "decl": "char[] output",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlen",
+          "decl": "int maxlen",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "quotechars",
+          "decl": "char[] quotechars",
+          "default": null
+        }
+      ]
+    },
+    "DynamicMenuItemHandler": {
+      "name": "DynamicMenuItemHandler",
+      "refLine": 405,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "TopMenu",
+          "name": "topmenu",
+          "decl": "TopMenu topmenu",
+          "default": null
+        },
+        {
+          "type": "TopMenuAction",
+          "name": "action",
+          "decl": "TopMenuAction action",
+          "default": null
+        },
+        {
+          "type": "TopMenuObject",
+          "name": "object_id",
+          "decl": "TopMenuObject object_id",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param",
+          "decl": "int param",
+          "default": null
+        },
+        {
+          "type": "char[]",
+          "name": "buffer",
+          "decl": "char[] buffer",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "maxlength",
+          "decl": "int maxlength",
+          "default": null
+        }
+      ]
+    },
+    "KeyValue": {
+      "name": "KeyValue",
+      "refLine": 377,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "SMCResult",
+      "arguments": [
+        {
+          "type": "SMCParser",
+          "name": "smc",
+          "decl": "SMCParser smc",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "key",
+          "decl": "const char[] key",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "key_quotes",
+          "decl": "bool key_quotes",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value_quotes",
+          "decl": "bool value_quotes",
+          "default": null
+        }
+      ]
+    },
+    "ParamCheck": {
+      "name": "ParamCheck",
+      "refLine": 435,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "Menu_Selection": {
+      "name": "Menu_Selection",
+      "refLine": 602,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param1",
+          "decl": "int param1",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "param2",
+          "decl": "int param2",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {
+    "Submenu": {
+      "name": "Submenu",
+      "refLine": 64,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "listcount": {
+          "name": "listcount",
+          "refLine": 69,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "title": {
+          "name": "title",
+          "refLine": 67,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[32]"
+        },
+        "type": {
+          "name": "type",
+          "refLine": 66,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "SubMenu_Type"
+        },
+        "method": {
+          "name": "method",
+          "refLine": 68,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "PlayerMethod"
+        },
+        "listdata": {
+          "name": "listdata",
+          "refLine": 70,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "DataPack"
+        }
+      }
+    },
+    "Item": {
+      "name": "Item",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "execute": {
+          "name": "execute",
+          "refLine": 60,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "ExecuteType"
+        },
+        "submenus": {
+          "name": "submenus",
+          "refLine": 61,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "ArrayList"
+        },
+        "cmd": {
+          "name": "cmd",
+          "refLine": 59,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "char[256]"
+        }
+      }
+    },
+    "Places": {
+      "name": "Places",
+      "refLine": 18,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "replaceNum": {
+          "name": "replaceNum",
+          "refLine": 22,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "category": {
+          "name": "category",
+          "refLine": 20,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        },
+        "item": {
+          "name": "item",
+          "refLine": 21,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "int"
+        }
+      }
+    },
+    "GroupCommands": {
+      "name": "GroupCommands",
+      "refLine": 7,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "methods": {},
+      "fields": {
+        "groupListName": {
+          "name": "groupListName",
+          "refLine": 9,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "ArrayList"
+        },
+        "groupListCommand": {
+          "name": "groupListCommand",
+          "refLine": 10,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "type": "ArrayList"
+        }
+      }
+    }
+  },
+  "constants": {},
+  "defines": {
+    "ARRAY_STRING_LENGTH": {
+      "name": "ARRAY_STRING_LENGTH",
+      "refLine": 5,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "32"
+    },
+    "NAME_LENGTH": {
+      "name": "NAME_LENGTH",
+      "refLine": 2,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "64"
+    },
+    "CMD_LENGTH": {
+      "name": "CMD_LENGTH",
+      "refLine": 3,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "255"
+    }
+  },
+  "enums": {
+    "SubMenu_Type": {
+      "name": "SubMenu_Type",
+      "refLine": 47,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "SubMenu_Group": {
+          "name": "SubMenu_Group",
+          "refLine": 49,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SubMenu_List": {
+          "name": "SubMenu_List",
+          "refLine": 53,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SubMenu_OnOff": {
+          "name": "SubMenu_OnOff",
+          "refLine": 54,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SubMenu_GroupPlayer": {
+          "name": "SubMenu_GroupPlayer",
+          "refLine": 50,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SubMenu_MapCycle": {
+          "name": "SubMenu_MapCycle",
+          "refLine": 52,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "SubMenu_Player": {
+          "name": "SubMenu_Player",
+          "refLine": 51,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "ExecuteType": {
+      "name": "ExecuteType",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "entries": {
+        "Execute_Server": {
+          "name": "Execute_Server",
+          "refLine": 44,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        },
+        "Execute_Player": {
+          "name": "Execute_Player",
+          "refLine": 43,
+          "docStart": 0,
+          "docEnd": 0,
+          "docs": null,
+          "metadata": null,
+          "value": null
+        }
+      }
+    },
+    "PlayerMethod": {
+      "name": "PlayerMethod",
+      "refLine": 31,
+      "docStart": 403,
+      "docEnd": 494,
+      "docs": {
+        "brief": "What to put in the 'info' menu field (for PlayerList and Player_Team menus only)",
+        "tags": [
+          {
+            "tag": "",
+            "text": "What to put in the 'info' menu field (for PlayerList and Player_Team menus only)"
+          }
+        ]
+      },
+      "metadata": null,
+      "entries": {
+        "ClientId": {
+          "name": "ClientId",
+          "refLine": 33,
+          "docStart": 531,
+          "docEnd": 572,
+          "docs": {
+            "brief": "Client id number ( 1 - Maxplayers)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client id number ( 1 - Maxplayers)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "Name": {
+          "name": "Name",
+          "refLine": 35,
+          "docStart": 618,
+          "docEnd": 636,
+          "docs": {
+            "brief": "Client Name",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client Name"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "UserId2": {
+          "name": "UserId2",
+          "refLine": 38,
+          "docStart": 727,
+          "docEnd": 762,
+          "docs": {
+            "brief": "Userid (not prefixed with #)",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Userid (not prefixed with #)"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "UserId": {
+          "name": "UserId",
+          "refLine": 34,
+          "docStart": 586,
+          "docEnd": 606,
+          "docs": {
+            "brief": "Client userid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client userid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "SteamId": {
+          "name": "SteamId",
+          "refLine": 36,
+          "docStart": 650,
+          "docEnd": 671,
+          "docs": {
+            "brief": "Client Steamid",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client Steamid"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        },
+        "IpAddress": {
+          "name": "IpAddress",
+          "refLine": 37,
+          "docStart": 687,
+          "docEnd": 713,
+          "docs": {
+            "brief": "Client's Ip Address",
+            "tags": [
+              {
+                "tag": "",
+                "text": "Client's Ip Address"
+              }
+            ]
+          },
+          "metadata": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,281 @@
+{
+  "functions": {
+    "AssertStrEq": {
+      "name": "AssertStrEq",
+      "refLine": 116,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "value",
+          "decl": "const char[] value",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "expected",
+          "decl": "const char[] expected",
+          "default": null
+        }
+      ]
+    },
+    "AssertArray2DEq": {
+      "name": "AssertArray2DEq",
+      "refLine": 70,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "const any[][]",
+          "name": "value",
+          "decl": "const any[][] value",
+          "default": null
+        },
+        {
+          "type": "const any[][]",
+          "name": "expected",
+          "decl": "const any[][] expected",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "innerlen",
+          "decl": "int innerlen",
+          "default": null
+        }
+      ]
+    },
+    "AssertArrayEq": {
+      "name": "AssertArrayEq",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "value",
+          "decl": "const any[] value",
+          "default": null
+        },
+        {
+          "type": "const any[]",
+          "name": "expected",
+          "decl": "const any[] expected",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": null
+        }
+      ]
+    },
+    "AssertEq": {
+      "name": "AssertEq",
+      "refLine": 41,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "cell1",
+          "decl": "any cell1",
+          "default": null
+        },
+        {
+          "type": "any",
+          "name": "cell2",
+          "decl": "any cell2",
+          "default": null
+        }
+      ]
+    },
+    "AssertStrArrayEq": {
+      "name": "AssertStrArrayEq",
+      "refLine": 130,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "const char[][]",
+          "name": "value",
+          "decl": "const char[][] value",
+          "default": null
+        },
+        {
+          "type": "const char[][]",
+          "name": "expected",
+          "decl": "const char[][] expected",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "len",
+          "decl": "int len",
+          "default": null
+        }
+      ]
+    },
+    "SetTestContext": {
+      "name": "SetTestContext",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "context",
+          "decl": "const char[] context",
+          "default": null
+        }
+      ]
+    },
+    "AssertTrue": {
+      "name": "AssertTrue",
+      "refLine": 102,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        }
+      ]
+    },
+    "AssertInt64Eq": {
+      "name": "AssertInt64Eq",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "int64",
+          "name": "value",
+          "decl": "int64 value",
+          "default": null
+        },
+        {
+          "type": "int64",
+          "name": "expected",
+          "decl": "int64 expected",
+          "default": null
+        }
+      ]
+    },
+    "AssertFalse": {
+      "name": "AssertFalse",
+      "refLine": 88,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "const char[]",
+          "name": "text",
+          "decl": "const char[] text",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "value",
+          "decl": "bool value",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {},
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,321 @@
+{
+  "functions": {
+    "IsValidClient": {
+      "name": "IsValidClient",
+      "refLine": 187,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "bAlive",
+          "decl": "bool bAlive",
+          "default": "false"
+        }
+      ]
+    },
+    "OnConvarChanged": {
+      "name": "OnConvarChanged",
+      "refLine": 179,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "ConVar",
+          "name": "convar",
+          "decl": "ConVar convar",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "oldValue",
+          "decl": "const char[] oldValue",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "newValue",
+          "decl": "const char[] newValue",
+          "default": null
+        }
+      ]
+    },
+    "OnClientSayCommand": {
+      "name": "OnClientSayCommand",
+      "refLine": 108,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sCommand",
+          "decl": "const char[] sCommand",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sArgs",
+          "decl": "const char[] sArgs",
+          "default": null
+        }
+      ]
+    },
+    "CmdReport": {
+      "name": "CmdReport",
+      "refLine": 54,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "Action",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iArgs",
+          "decl": "int iArgs",
+          "default": null
+        }
+      ]
+    },
+    "SBPP_OnReportPlayer": {
+      "name": "SBPP_OnReportPlayer",
+      "refLine": 145,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iReporter",
+          "decl": "int iReporter",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iTarget",
+          "decl": "int iTarget",
+          "default": null
+        },
+        {
+          "type": "const char[]",
+          "name": "sReason",
+          "decl": "const char[] sReason",
+          "default": null
+        }
+      ]
+    },
+    "ResetInReason": {
+      "name": "ResetInReason",
+      "refLine": 153,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "AddCooldown": {
+      "name": "AddCooldown",
+      "refLine": 159,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "ReportMenu": {
+      "name": "ReportMenu",
+      "refLine": 86,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Menu",
+          "name": "menu",
+          "decl": "Menu menu",
+          "default": null
+        },
+        {
+          "type": "MenuAction",
+          "name": "action",
+          "decl": "MenuAction action",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "iItem",
+          "decl": "int iItem",
+          "default": null
+        }
+      ]
+    },
+    "OnCooldown": {
+      "name": "OnCooldown",
+      "refLine": 164,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    },
+    "OnPluginStart": {
+      "name": "OnPluginStart",
+      "refLine": 39,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "GetRemainingTime": {
+      "name": "GetRemainingTime",
+      "refLine": 169,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "function",
+      "returnType": "float",
+      "arguments": [
+        {
+          "type": "int",
+          "name": "iClient",
+          "decl": "int iClient",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {
+    "Cooldown": {
+      "name": "Cooldown",
+      "refLine": 15,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "MinLen": {
+      "name": "MinLen",
+      "refLine": 16,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    },
+    "Settings_Count": {
+      "name": "Settings_Count",
+      "refLine": 17,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null
+    }
+  },
+  "defines": {
+    "PLUGIN_VERSION": {
+      "name": "PLUGIN_VERSION",
+      "refLine": 4,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"1.8.0\""
+    },
+    "Chat_Prefix": {
+      "name": "Chat_Prefix",
+      "refLine": 11,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"[SourceBans++] \""
+    },
+    "PLUGIN_AUTHOR": {
+      "name": "PLUGIN_AUTHOR",
+      "refLine": 3,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"RumbleFrog, SourceBans++ Dev Team\""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}

@@ -1,0 +1,304 @@
+{
+  "functions": {
+    "__pl_adminmenu_SetNTVOptional": {
+      "name": "__pl_adminmenu_SetNTVOptional",
+      "refLine": 146,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "kind": "public",
+      "returnType": "void",
+      "arguments": []
+    },
+    "AddTargetsToMenu": {
+      "name": "AddTargetsToMenu",
+      "refLine": 96,
+      "docStart": 2965,
+      "docEnd": 3398,
+      "docs": {
+        "brief": "Adds targets to an admin menu.\n\nEach client is displayed as: name (userid)\nEach item contains the userid as a string for its info.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds targets to an admin menu.\n\nEach client is displayed as: name (userid)\nEach item contains the userid as a string for its info."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:source_client",
+            "text": "Source client, or 0 to ignore immunity."
+          },
+          {
+            "tag": "param:in_game_only",
+            "text": "True to only select in-game players."
+          },
+          {
+            "tag": "param:alive_only",
+            "text": "True to only select alive players."
+          },
+          {
+            "tag": "return",
+            "text": "Number of clients added."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "source_client",
+          "decl": "int source_client",
+          "default": null
+        },
+        {
+          "type": "bool",
+          "name": "in_game_only",
+          "decl": "bool in_game_only",
+          "default": "true"
+        },
+        {
+          "type": "bool",
+          "name": "alive_only",
+          "decl": "bool alive_only",
+          "default": "false"
+        }
+      ]
+    },
+    "RedisplayAdminMenu": {
+      "name": "RedisplayAdminMenu",
+      "refLine": 122,
+      "docStart": 3998,
+      "docEnd": 4260,
+      "docs": {
+        "brief": "Re-displays the admin menu to a client after selecting an item.\nAuto-aborts if the Handle is invalid.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Re-displays the admin menu to a client after selecting an item.\nAuto-aborts if the Handle is invalid."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "TopMenu Handle."
+          },
+          {
+            "tag": "param:client",
+            "text": "Client index."
+          },
+          {
+            "tag": "return",
+            "text": "True on success, false on failure."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "stock",
+      "returnType": "bool",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "client",
+          "decl": "int client",
+          "default": null
+        }
+      ]
+    },
+    "OnAdminMenuCreated": {
+      "name": "OnAdminMenuCreated",
+      "refLine": 67,
+      "docStart": 2319,
+      "docEnd": 2501,
+      "docs": {
+        "brief": "Called when the admin menu is created and 3rd party plugins can grab\nthe Handle or add categories.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the admin menu is created and 3rd party plugins can grab\nthe Handle or add categories."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "Handle to the admin menu's TopMenu."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        }
+      ]
+    },
+    "OnAdminMenuReady": {
+      "name": "OnAdminMenuReady",
+      "refLine": 74,
+      "docStart": 2555,
+      "docEnd": 2690,
+      "docs": {
+        "brief": "Called when the admin menu is ready to have items added.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Called when the admin menu is ready to have items added."
+          },
+          {
+            "tag": "param:topmenu",
+            "text": "Handle to the admin menu's TopMenu."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "forward",
+      "returnType": "void",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "topmenu",
+          "decl": "Handle topmenu",
+          "default": null
+        }
+      ]
+    },
+    "GetAdminTopMenu": {
+      "name": "GetAdminTopMenu",
+      "refLine": 82,
+      "docStart": 2742,
+      "docEnd": 2926,
+      "docs": {
+        "brief": "Retrieves the Handle to the admin top menu.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Retrieves the Handle to the admin top menu."
+          },
+          {
+            "tag": "return",
+            "text": "Handle to the admin menu's TopMenu,\nor INVALID_HANDLE if not created yet."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "TopMenu",
+      "arguments": []
+    },
+    "AddTargetsToMenu2": {
+      "name": "AddTargetsToMenu2",
+      "refLine": 112,
+      "docStart": 3538,
+      "docEnd": 3920,
+      "docs": {
+        "brief": "Adds targets to an admin menu.\n\nEach client is displayed as: name (userid)\nEach item contains the userid as a string for its info.",
+        "tags": [
+          {
+            "tag": "",
+            "text": "Adds targets to an admin menu.\n\nEach client is displayed as: name (userid)\nEach item contains the userid as a string for its info."
+          },
+          {
+            "tag": "param:menu",
+            "text": "Menu Handle."
+          },
+          {
+            "tag": "param:source_client",
+            "text": "Source client, or 0 to ignore immunity."
+          },
+          {
+            "tag": "param:flags",
+            "text": "COMMAND_FILTER flags from commandfilters.inc."
+          },
+          {
+            "tag": "return",
+            "text": "Number of clients added."
+          }
+        ]
+      },
+      "metadata": null,
+      "kind": "native",
+      "returnType": "int",
+      "arguments": [
+        {
+          "type": "Handle",
+          "name": "menu",
+          "decl": "Handle menu",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "source_client",
+          "decl": "int source_client",
+          "default": null
+        },
+        {
+          "type": "int",
+          "name": "flags",
+          "decl": "int flags",
+          "default": null
+        }
+      ]
+    }
+  },
+  "methodmaps": {},
+  "enumstructs": {},
+  "constants": {},
+  "defines": {
+    "ADMINMENU_PLAYERCOMMANDS": {
+      "name": "ADMINMENU_PLAYERCOMMANDS",
+      "refLine": 55,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"PlayerCommands\""
+    },
+    "ADMINMENU_SERVERCOMMANDS": {
+      "name": "ADMINMENU_SERVERCOMMANDS",
+      "refLine": 57,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"ServerCommands\""
+    },
+    "ADMINMENU_VOTINGCOMMANDS": {
+      "name": "ADMINMENU_VOTINGCOMMANDS",
+      "refLine": 59,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": "\"VotingCommands\""
+    },
+    "_adminmenu_included": {
+      "name": "_adminmenu_included",
+      "refLine": 36,
+      "docStart": 0,
+      "docEnd": 0,
+      "docs": null,
+      "metadata": null,
+      "value": ""
+    }
+  },
+  "enums": {},
+  "typesets": {},
+  "typedefs": {}
+}
