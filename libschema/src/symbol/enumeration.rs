@@ -48,7 +48,7 @@ impl Metable for Enumeration {
 impl ShlAssign for Enumeration {
     fn shl_assign(&mut self, rhs: Self) {
         self.declaration <<= rhs.declaration;
-        self.entries = rhs.entries;
+        // Entries are merged individually to preserve their metadata
     }
 }
 

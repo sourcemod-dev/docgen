@@ -10,7 +10,7 @@ fn test_walk() -> Result<(), Box<dyn std::error::Error>> {
         vec!["plugins/include/geoip.inc"],
     )?;
 
-    let spec_diffs = walker.walk(None)?;
+    let spec_diffs = walker.walk(None, None)?;
 
     for t in spec_diffs {
         for c in t {

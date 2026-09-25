@@ -51,8 +51,7 @@ impl Metable for EnumStruct {
 impl ShlAssign for EnumStruct {
     fn shl_assign(&mut self, rhs: Self) {
         self.declaration <<= rhs.declaration;
-        self.methods = rhs.methods;
-        self.fields = rhs.fields;
+        // Methods and fields are merged individually to preserve their metadata
     }
 }
 

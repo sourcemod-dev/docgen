@@ -33,16 +33,14 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
 
     let manifest: Manifest = toml::from_slice(&fs_content)?;
     let mut bundle: Option<Bundle> = None;
-    let mut from_time: Option<i64> = None;
+    let mut since: Option<Versioning> = None;
 
     if matches.is_present("bundle") {
         let bundle_str = std::fs::read(matches.value_of("bundle").unwrap())?;
 
         let parsed_bundle: Bundle = serde_json::from_slice(&bundle_str)?;
 
-        if let Some(version) = &parsed_bundle.version {
-            from_time = Some(version.time);
-        }
+        since = parsed_bundle.version.clone();
 
         bundle = Some(parsed_bundle);
     }
@@ -64,7 +62,7 @@ pub async fn generate_command(matches: &ArgMatches) -> Result<()> {
             )?;
 
             let latest_file_names = walker.latest_file_names()?;
-            let git = Git::from_walker(from_time, &mut walker)?;
+            let git = Git::from_walker(since.as_ref(), &mut walker)?;
 
             let it_ret = iterate_chronicles(git, manifest, bundle, latest_file_names).await?;
 
@@ -313,52 +311,49 @@ impl<'b> ChronicleProcessor<'b> {
         new: &HashMap<String, T>,
         version: Option<Versioning>,
     ) -> u64 {
-        // Handle any new entries
-        for (k, v) in new {
-            if let Entry::Vacant(entry) = existing.entry(k.clone()) {
-                entry.insert(v.clone());
-            }
-        }
-
-        let mut to_remove = Vec::new();
-
-        // Handle any deleted entries
-        for (k, _) in existing.iter() {
-            if !new.contains_key(k) {
-                to_remove.push(k.clone());
-            }
-        }
-
-        for k in to_remove {
-            existing.remove(&k);
-        }
-
         let mut diff = 0;
 
-        // At this point, both list should have the same keys, so we can safely iterate over them
-        // Handle any updated entries
-        for (k, v) in existing.iter_mut() {
-            let dp_v = new.get(k).unwrap();
+        // Handle any deleted entries
+        let before = existing.len();
+        existing.retain(|k, _| new.contains_key(k));
+        diff += (before - existing.len()) as u64;
 
-            let is_diff = v != dp_v;
-
-            if is_diff {
-                *v <<= dp_v.clone();
-                diff += 1;
-            }
-
-            // Update the metadata
-            match v.metadata() {
-                Some(m) if is_diff => {
-                    m.last_updated = version.clone();
-                }
-                None if !is_diff => {
-                    *v.metadata() = Some(Metadata {
+        for (k, dp_v) in new {
+            match existing.entry(k.clone()) {
+                // Newly added entry, created at this version
+                Entry::Vacant(entry) => {
+                    *entry.insert(dp_v.clone()).metadata() = Some(Metadata {
                         last_updated: version.clone(),
                         created: version.clone(),
                     });
+                    diff += 1;
                 }
-                _ => {}
+                // Existing entry, only its last updated version changes
+                Entry::Occupied(mut entry) => {
+                    let v = entry.get_mut();
+
+                    let is_diff = v != dp_v;
+
+                    if is_diff {
+                        *v <<= dp_v.clone();
+                        diff += 1;
+                    }
+
+                    match v.metadata() {
+                        Some(m) => {
+                            if is_diff {
+                                m.last_updated = version.clone();
+                            }
+                        }
+                        // Entry without metadata (e.g. nested in a newly added parent)
+                        m @ None => {
+                            *m = Some(Metadata {
+                                last_updated: version.clone(),
+                                created: version.clone(),
+                            });
+                        }
+                    }
+                }
             }
         }
 
