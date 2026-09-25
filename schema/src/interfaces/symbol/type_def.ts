@@ -10,9 +10,10 @@ export interface ITypeDefinition extends IDeclaration {
 
     /**
      * @brief Parsed function signature
+     * @note Null if type is not a function signature, such as `typedef Address = int`
      * @readonly
      */
-    readonly parsedSignature: ITypeSignature;
+    readonly parsedSignature: ITypeSignature | null;
 }
 
 export interface ITypeSignature {

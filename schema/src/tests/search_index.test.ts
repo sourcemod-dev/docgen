@@ -91,6 +91,7 @@ const data = {
                     ...decl('SQLQueryCallback'),
                     types: {
                         a: { ...decl(''), type: 'function void (Database db)', parsedSignature: sig('void', [['db', 'Database']]) },
+                        b: { ...decl(''), type: 'int', parsedSignature: null },
                     },
                 },
             },
@@ -99,6 +100,11 @@ const data = {
                     ...decl('ListenCB'),
                     type: 'function Action (int client, const char[] command)',
                     parsedSignature: sig('Action', [['client', 'int'], ['command', 'const char[]']]),
+                },
+                Address: {
+                    ...decl('Address'),
+                    type: 'int',
+                    parsedSignature: null,
                 },
             },
         },
@@ -109,7 +115,7 @@ const needles = [
     '', 'a', 'A', ' ', 'int', 'INT', 'void', 'char[]', 'const char[]', 'constchar[]', 'const  char[]',
     'ArrayList', 'arraylist', 'Array List', 'Array', 'GetClientName', 'getclientname', 'GetClient',
     'ClientName', 'GetClinetName', 'NetFlow', 'netflow_in', 'MAX', 'max_name', 'userid', 'Player',
-    'Database', 'Action', 'Length', 'xyzzy', 'Q',
+    'Database', 'Action', 'Length', 'Address', 'xyzzy', 'Q',
 ];
 
 // Score every entry, as search did before indexing

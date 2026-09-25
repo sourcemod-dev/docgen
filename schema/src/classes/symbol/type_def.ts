@@ -10,9 +10,10 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
 
     /**
      * @brief Parsed function signature
+     * @note Null if type is not a function signature, such as `typedef Address = int`
      * @readonly
      */
-    readonly parsedSignature: ITypeSignature;
+    readonly parsedSignature: ITypeSignature | null;
 
     readonly identifier: Identifier = Identifier.TypeDefinition;
 
@@ -28,7 +29,7 @@ export class TypeDefinition extends Declaration implements ITypeDefinition, Sear
 
         const parents = [...options.parents, `${this.identifier}.${this.name}`];
 
-        if (options.l1Only !== true) {
+        if (options.l1Only !== true && this.parsedSignature !== null) {
             for (const arg of this.parsedSignature.arguments) {
                 ret.push({
                     name: arg.type,
