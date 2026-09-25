@@ -178,3 +178,43 @@ fn walks_from_checkpoint() {
         vec![(c2, 2, vec!["a.inc".to_string()])]
     );
 }
+
+#[test]
+fn continues_through_reimported_history() {
+    let f = Fixture::new("reimport");
+
+    // Older history, only reachable through the second parent of a later merge
+    let old1 = f.commit(100, &[], &[("a.inc", "a1")]);
+    let old2 = f.commit(200, &[old1], &[("a.inc", "a2")]);
+
+    // New root re-importing the same files
+    let root = f.commit(300, &[], &[("a.inc", "a2"), ("README", "readme")]);
+    let c2 = f.commit(400, &[root], &[("a.inc", "a3")]);
+    let merge = f.commit(500, &[c2, old2], &[]);
+    f.set_head(merge);
+
+    assert_eq!(
+        collect(&mut f.walker(), None, None),
+        vec![
+            (old1, 1, vec!["a.inc".to_string()]),
+            (old2, 2, vec!["a.inc".to_string()]),
+            // Unchanged from its predecessor, so the root itself isn't collected
+            (c2, 2, vec!["a.inc".to_string()]),
+        ]
+    );
+}
+
+#[test]
+fn unrelated_root_starts_from_empty_tree() {
+    let f = Fixture::new("unrelated");
+
+    let old = f.commit(100, &[], &[("a.inc", "a1")]);
+    let root = f.commit(300, &[], &[("a.inc", "other")]);
+    let merge = f.commit(500, &[root, old], &[]);
+    f.set_head(merge);
+
+    assert_eq!(
+        collect(&mut f.walker(), None, None),
+        vec![(root, 1, vec!["a.inc".to_string()])]
+    );
+}

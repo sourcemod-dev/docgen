@@ -1,7 +1,8 @@
+use std::collections::HashSet;
 use std::ops::Range;
 use std::path::{Path, PathBuf};
 
-use git2::{Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository};
+use git2::{Commit, Delta, IntoCString, Oid, Pathspec, PathspecFlags, Repository, Sort, Tree};
 
 mod error;
 
@@ -77,6 +78,7 @@ impl Walker {
         // Commits from merged branches are observed through their merge commit, otherwise their
         // contents would be interleaved with, and reverted by, the mainline commits around them
         let mut chain = Vec::new();
+        let mut on_chain = HashSet::new();
         let mut reached_checkpoint = false;
         let mut next = Some(self.repo.head()?.peel_to_commit()?);
 
@@ -86,8 +88,12 @@ impl Walker {
                 break;
             }
 
+            if !on_chain.insert(commit.id()) {
+                break;
+            }
+
             next = match commit.parent_count() {
-                0 => None,
+                0 => self.find_predecessor(&commit, &on_chain)?,
                 _ => Some(commit.parent(0)?),
             };
 
@@ -96,60 +102,65 @@ impl Walker {
 
         chain.reverse();
 
-        // Rev-list count of the commit the chain starts from
-        let mut count = match chain.first().map(|v| v.parent_ids().next()) {
-            Some(Some(parent)) => self.rev_list_count(&[parent], None)?,
-            _ => 0,
-        };
-
         let mut spec_diffs = Vec::new();
+        let mut prev: Option<Commit> = None;
+        let mut count = 0;
 
         for commit in chain {
             let parents: Vec<Oid> = commit.parent_ids().collect();
 
-            // A merge also brings in every commit of the merged branch not already in the first parent
-            count += 1 + match parents.split_first() {
-                Some((first, rest)) if !rest.is_empty() => {
-                    self.rev_list_count(rest, Some(*first))?
+            count = match (parents.split_first(), &prev) {
+                // A merge also brings in every commit of the merged branch not already in the first parent
+                (Some((first, rest)), Some(prev)) if *first == prev.id() => {
+                    count
+                        + 1
+                        + match rest.is_empty() {
+                            true => 0,
+                            false => self.rev_list_count(rest, Some(*first))?,
+                        }
                 }
-                _ => 0,
+                // Start of the walk, or a root continuing from its predecessor
+                _ => self.rev_list_count(&[commit.id()], None)?,
             };
 
             // If the checkpoint couldn't be found, fall back to skipping commits older than the time
-            if !reached_checkpoint {
-                if let Some(from_time) = since_time {
-                    if commit.time().seconds() < from_time {
-                        continue;
-                    }
+            let skip = match (reached_checkpoint, since_time) {
+                (false, Some(from_time)) => commit.time().seconds() < from_time,
+                _ => false,
+            };
+
+            if !skip {
+                // Compared against the previous commit walked (or the first parent at the start of
+                // the walk), so a root without a predecessor is compared against an empty tree
+                let base_tree = match (&prev, parents.first()) {
+                    (Some(prev), _) => Some(prev.tree()?),
+                    (None, Some(_)) => Some(commit.parent(0)?.tree()?),
+                    (None, None) => None,
+                };
+
+                let diff =
+                    self.repo
+                        .diff_tree_to_tree(base_tree.as_ref(), Some(&commit.tree()?), None)?;
+
+                let ml = self.pathspec.match_diff(&diff, PathspecFlags::DEFAULT)?;
+
+                let diff_stems: Vec<PathBuf> = ml
+                    .diff_entries()
+                    .filter(|v| v.status() != Delta::Deleted)
+                    .filter_map(|v| v.new_file().path())
+                    .map(|v| v.to_path_buf())
+                    .collect();
+
+                if !diff_stems.is_empty() {
+                    spec_diffs.push(CommitDiffs {
+                        commit: commit.id(),
+                        count,
+                        path_diffs: diff_stems,
+                    });
                 }
             }
 
-            // The root commit is compared against an empty tree, so files it adds are picked up
-            let parent_tree = match parents.first() {
-                Some(_) => Some(commit.parent(0)?.tree()?),
-                None => None,
-            };
-
-            let diff =
-                self.repo
-                    .diff_tree_to_tree(parent_tree.as_ref(), Some(&commit.tree()?), None)?;
-
-            let ml = self.pathspec.match_diff(&diff, PathspecFlags::DEFAULT)?;
-
-            let diff_stems: Vec<PathBuf> = ml
-                .diff_entries()
-                .filter(|v| v.status() != Delta::Deleted)
-                .filter_map(|v| v.new_file().path())
-                .map(|v| v.to_path_buf())
-                .collect();
-
-            if !diff_stems.is_empty() {
-                spec_diffs.push(CommitDiffs {
-                    commit: commit.id(),
-                    count,
-                    path_diffs: diff_stems,
-                });
-            }
+            prev = Some(commit);
         }
 
         Ok(DiffList {
@@ -157,6 +168,66 @@ impl Walker {
             spec_diffs,
             walker: self,
         })
+    }
+
+    /// A root commit may re-import the files of an older, otherwise disconnected history, such as
+    /// a VCS conversion restarting from a snapshot. Returns the latest commit reachable from HEAD,
+    /// no newer than the root and not already walked, whose matching files are identical to the
+    /// root's, so the walk can continue through that history
+    fn find_predecessor(
+        &self,
+        root: &Commit,
+        on_chain: &HashSet<Oid>,
+    ) -> Result<Option<Commit<'_>>> {
+        let files = self.matching_files(&root.tree()?)?;
+
+        if files.is_empty() {
+            return Ok(None);
+        }
+
+        let mut revwalk = self.repo.revwalk()?;
+
+        revwalk.set_sorting(Sort::TIME)?;
+
+        revwalk.push_head()?;
+
+        for oid in revwalk {
+            let oid = oid?;
+
+            if on_chain.contains(&oid) {
+                continue;
+            }
+
+            let commit = self.repo.find_commit(oid)?;
+
+            if commit.time().seconds() > root.time().seconds() {
+                continue;
+            }
+
+            if self.matching_files(&commit.tree()?)? == files {
+                return Ok(Some(commit));
+            }
+        }
+
+        Ok(None)
+    }
+
+    /// Paths matching the pathspec in a tree, with their blob ids
+    fn matching_files(&self, tree: &Tree) -> Result<Vec<(PathBuf, Oid)>> {
+        let ml = self.pathspec.match_tree(tree, PathspecFlags::DEFAULT)?;
+
+        let mut files = Vec::new();
+
+        for entry in ml.entries() {
+            let path = PathBuf::from(String::from_utf8_lossy(entry).into_owned());
+            let id = tree.get_path(&path)?.id();
+
+            files.push((path, id));
+        }
+
+        files.sort();
+
+        Ok(files)
     }
 
     /// Number of commits reachable from `from`, excluding those reachable from `hide`
