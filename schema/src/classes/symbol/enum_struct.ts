@@ -1,6 +1,6 @@
-import { Declaration, calculateScore } from './base';
+import { Declaration, SearchEntry } from './base';
 import { Function } from './function';
-import { IEnumStruct, IField, Searchable, SearchResult, SearchOptions, Identifier, IdentifierWeights, Part } from '../../interfaces';
+import { IEnumStruct, IField, Searchable, SearchOptions, Identifier, IdentifierWeights, Part } from '../../interfaces';
 
 export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
     /**
@@ -33,43 +33,42 @@ export class EnumStruct extends Declaration implements IEnumStruct, Searchable {
         }, {} as Record<string, Field>);
     }
 
-    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const ret = super.searchEntries(options);
 
-        let ret = [
-            ...await super.search(needle, localOptions),
-        ];
+        ret[0].boost += 0.01;
 
-        ret[0].score += 0.01;
+        const parents = [...options.parents, `${this.identifier}.${this.name}`];
 
-        localOptions.parents.push(`${this.identifier}.${this.name}`);
-
-        if (localOptions.l1Only !== true) {
-            for (const method of Object.values(this.methods)) {
-                ret.push(...await method.search(needle, {
-                    ...localOptions,
+        if (options.l1Only !== true) {
+            Object.values(this.methods).forEach((method, i) => {
+                const entries = method.searchEntries({
+                    ...options,
+                    parents,
                     weighted: false,
                     identifier: Identifier.EnumStructMethod,
-                }));
-            }
+                });
+
+                entries[0].trackOrder = i + 1;
+
+                ret.push(...entries);
+            });
 
             for (const field of Object.values(this.fields)) {
                 ret.push({
                     name: field.name,
+                    term: field.name,
                     identifier: Identifier.EnumStructField,
                     part: Part.Name,
-                    path: [...localOptions.parents, `${Identifier.EnumStructField}.${field.name}`],
-                    score: calculateScore(field.name, needle),
+                    path: [...parents, `${Identifier.EnumStructField}.${field.name}`],
+                    boost: 0,
+                    weight: 0,
                 });
             }
         }
 
-        if (localOptions.weighted !== false) {
-            ret = ret.map(e => {
-                e.score += IdentifierWeights.EnumStruct;
-
-                return e;
-            });
+        if (options.weighted !== false) {
+            ret.forEach(e => e.weight += IdentifierWeights.EnumStruct);
         }
 
         return ret;

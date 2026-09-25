@@ -1,5 +1,5 @@
-import { IMethodMap, IProperty, SearchOptions, SearchResult, Searchable, Identifier, IdentifierWeights, Part } from '../../interfaces';
-import { Declaration, calculateScore } from './base';
+import { IMethodMap, IProperty, SearchOptions, Searchable, Identifier, IdentifierWeights, Part } from '../../interfaces';
+import { Declaration, SearchEntry } from './base';
 import { Function } from './function';
 
 export class MethodMap extends Declaration implements IMethodMap, Searchable {
@@ -41,43 +41,42 @@ export class MethodMap extends Declaration implements IMethodMap, Searchable {
         }, {} as Record<string, Property>);
     }
 
-    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const ret = super.searchEntries(options);
 
-        let ret = [
-            ...await super.search(needle, localOptions),
-        ];
+        ret[0].boost += 0.01;
 
-        ret[0].score += 0.01;
+        const parents = [...options.parents, `${this.identifier}.${this.name}`];
 
-        localOptions.parents.push(`${this.identifier}.${this.name}`);
-
-        if (localOptions.l1Only !== true) {
-            for (const method of Object.values(this.methods)) {
-                ret.push(...await method.search(needle, {
-                    ...localOptions,
+        if (options.l1Only !== true) {
+            Object.values(this.methods).forEach((method, i) => {
+                const entries = method.searchEntries({
+                    ...options,
+                    parents,
                     weighted: false,
                     identifier: Identifier.MethodMapMethod,
-                }));
-            }
-    
+                });
+
+                entries[0].trackOrder = i + 1;
+
+                ret.push(...entries);
+            });
+
             for (const property of Object.values(this.properties)) {
                 ret.push({
                     name: property.name,
+                    term: property.name,
                     identifier: Identifier.MethodMapProperty,
-                    path: [...localOptions.parents, `${Identifier.MethodMapProperty}.${property.name}`],
+                    path: [...parents, `${Identifier.MethodMapProperty}.${property.name}`],
                     part: Part.Name,
-                    score: calculateScore(property.name, needle),
+                    boost: 0,
+                    weight: 0,
                 });
             }
         }
 
-        if (localOptions.weighted !== false) {
-            ret = ret.map(e => {
-                e.score += IdentifierWeights.MethodMap;
-
-                return e;
-            });
+        if (options.weighted !== false) {
+            ret.forEach(e => e.weight += IdentifierWeights.MethodMap);
         }
 
         return ret;

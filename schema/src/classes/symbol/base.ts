@@ -61,36 +61,145 @@ export class Declaration implements IDeclaration, Searchable {
     }
 
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+        return scoreEntries(this.searchEntries(options), needle);
+    }
 
-        const path = [...localOptions.parents, `${this.identifier}.${this.name}`];
-
-        const ret = {
+    /**
+     * @brief Everything a search can match on this symbol, without scores
+     */
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const entry: SearchEntry = {
             name: this.name,
+            term: this.name,
             identifier: this.identifier,
             part: Part.Name,
-            path,
-            score: calculateScore(this.name, needle),
+            path: [...options.parents, `${this.identifier}.${this.name}`],
+            boost: 0,
+            weight: 0,
         };
 
         if (this.metadata !== null && this.metadata.created !== null) {
-            processAddition(this.metadata, ret);
+            entry.metadata = this.metadata;
+            entry.trackOrder = 0;
         }
 
-        return [ret];
+        return [entry];
     }
 }
 
-async function processAddition(metadata: Metadata, sr: SearchResult) {
+/**
+ * @brief Unscored search candidate
+ *
+ * Final score is `calculateScore(term, needle) + boost + weight`.
+ */
+export interface SearchEntry {
+    /**
+     * @brief Name reported in the search result
+     */
+    name: string;
+
+    /**
+     * @brief String the needle is scored against, usually the same as name
+     */
+    term: string;
+
+    identifier: Identifier;
+
+    part: Part;
+
+    path: string[];
+
+    /**
+     * @brief Bonus applied before the identifier weight
+     */
+    boost: number;
+
+    /**
+     * @brief Identifier weight, 0 if unweighted
+     */
+    weight: number;
+
+    /**
+     * @brief Set on declaration names that count towards recent additions
+     */
+    metadata?: Metadata;
+
+    /**
+     * @brief Order recent additions are processed in, lower first
+     */
+    trackOrder?: number;
+}
+
+/**
+ * @param termScore calculateScore of the entry term against the needle
+ * @param parents Prepended to the entry path
+ */
+export function toSearchResult(entry: SearchEntry, termScore: number, parents: readonly string[] = []): SearchResult {
+    return {
+        name: entry.name,
+        identifier: entry.identifier,
+        part: entry.part,
+        path: [...parents, ...entry.path],
+        score: termScore + entry.boost + entry.weight,
+    };
+}
+
+function scoreEntries(entries: SearchEntry[], needle: string): SearchResult[] {
+    const ret = entries.map(e => toSearchResult(e, calculateScore(e.term, needle)));
+
+    recordRecentAdditions(entries, trackedEntries(entries), i => ret[i]);
+
+    return ret;
+}
+
+/**
+ * @param tracked Entry indices from trackedEntries
+ * @param result Search result of the entry at the given index
+ */
+export function recordRecentAdditions(
+    entries: readonly SearchEntry[],
+    tracked: readonly number[],
+    result: (i: number) => SearchResult,
+) {
+    if (RecentFinalized)
+        return;
+
+    for (const i of tracked) {
+        processAddition(entries[i].metadata!, result(i));
+    }
+}
+
+/**
+ * @brief Indices of entries that count towards recent additions, in processing order
+ *
+ * Declarations are processed first, then nested methods round-robin across
+ * their parents. This mirrors the order the previous async search visited them.
+ */
+export function trackedEntries(entries: readonly SearchEntry[]): number[] {
+    const ret: number[] = [];
+
+    entries.forEach((e, i) => {
+        if (e.metadata !== undefined) {
+            ret.push(i);
+        }
+    });
+
+    // Array.prototype.sort is stable
+    return ret.sort((a, b) => entries[a].trackOrder! - entries[b].trackOrder!);
+}
+
+function processAddition(metadata: Metadata, sr: SearchResult) {
     if (RecentFinalized)
         return;
 
     // Keep only the 20 highest created timestamp metadata
     if (RecentAdditions.length < 20) {
-        return RecentAdditions.push({
+        RecentAdditions.push({
             sr,
             metadata,
         });
+
+        return;
     }
     
     const sorted = RecentAdditions.sort((a, b) => {
