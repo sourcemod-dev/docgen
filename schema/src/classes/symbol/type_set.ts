@@ -23,6 +23,10 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
 
         if (options.l1Only !== true) {
             for (const type of Object.values(this.types)) {
+                if (type.parsedSignature === null) {
+                    continue;
+                }
+
                 for (const arg of type.parsedSignature.arguments) {
                     ret.push({
                         name: arg.name,
