@@ -1,5 +1,5 @@
-import { ITypeSet, IType, SearchOptions, SearchResult, Searchable, Identifier, IdentifierWeights, Part } from '../../interfaces';
-import { Declaration, calculateScore } from './base';
+import { ITypeSet, IType, SearchOptions, Searchable, Identifier, IdentifierWeights, Part } from '../../interfaces';
+import { Declaration, SearchEntry } from './base';
 
 export class TypeSet extends Declaration implements ITypeSet, Searchable {
     /**
@@ -16,43 +16,39 @@ export class TypeSet extends Declaration implements ITypeSet, Searchable {
         this.types = typeSet.types;
     }
 
-    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const ret = super.searchEntries(options);
 
-        let ret: SearchResult[] = [
-            ...await super.search(needle, localOptions),
-        ];
+        const parents = [...options.parents, `${this.identifier}.${this.name}`];
 
-        localOptions.parents.push(`${this.identifier}.${this.name}`);
-
-        if (localOptions.l1Only !== true) {
+        if (options.l1Only !== true) {
             for (const type of Object.values(this.types)) {
                 for (const arg of type.parsedSignature.arguments) {
                     ret.push({
                         name: arg.name,
+                        term: arg.type,
                         identifier: Identifier.Argument,
                         part: Part.Parameter,
-                        path: [...localOptions.parents, `${Identifier.Entry}.${type.type}`, `${Identifier.Argument}.${arg.name}`],
-                        score: calculateScore(arg.type, needle),
+                        path: [...parents, `${Identifier.Entry}.${type.type}`, `${Identifier.Argument}.${arg.name}`],
+                        boost: 0,
+                        weight: 0,
                     });
                 }
 
                 ret.push({
                     name: type.parsedSignature.returnType,
+                    term: type.parsedSignature.returnType,
                     identifier: Identifier.Return,
                     part: Part.Return,
-                    path: [...localOptions.parents, `${Identifier.Return}.${type.parsedSignature.returnType}`],
-                    score: calculateScore(type.parsedSignature.returnType, needle),
+                    path: [...parents, `${Identifier.Return}.${type.parsedSignature.returnType}`],
+                    boost: 0,
+                    weight: 0,
                 });
             }
         }
 
-        if (localOptions.weighted !== false) {
-            ret = ret.map(e => {
-                e.score += IdentifierWeights.TypeSet;
-
-                return e;
-            });
+        if (options.weighted !== false) {
+            ret.forEach(e => e.weight += IdentifierWeights.TypeSet);
         }
 
         return ret;

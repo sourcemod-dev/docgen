@@ -1,5 +1,5 @@
-import { IFunction, FunctionKind, IArgument, Identifier, Part, SearchResult, Searchable, SearchOptions, IdentifierWeights } from '../../interfaces';
-import { Declaration, calculateScore } from './base';
+import { IFunction, FunctionKind, IArgument, Identifier, Part, Searchable, SearchOptions, IdentifierWeights } from '../../interfaces';
+import { Declaration, SearchEntry } from './base';
 
 export class Function extends Declaration implements IFunction, Searchable {
     /**
@@ -34,41 +34,37 @@ export class Function extends Declaration implements IFunction, Searchable {
         }
     }
 
-    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const identifier: Identifier = options.identifier ? options.identifier : this.identifier;
 
-        const identifier: Identifier = localOptions.identifier ? localOptions.identifier : this.identifier;
+        const ret = super.searchEntries(options);
 
-        let ret: SearchResult[] = [
-            ...await super.search(needle, localOptions),
-        ];
-
-        localOptions.parents.push(`${identifier}.${this.name}`);
+        const parents = [...options.parents, `${identifier}.${this.name}`];
 
         for (const arg of this.arguments) {
             ret.push({
                 name: arg.type,
+                term: arg.type,
                 identifier,
                 part: Part.Parameter,
-                path: [...localOptions.parents, `${Identifier.Argument}.${arg.name}`],
-                score: calculateScore(arg.type, needle),
+                path: [...parents, `${Identifier.Argument}.${arg.name}`],
+                boost: 0,
+                weight: 0,
             });
         }
 
         ret.push({
             name: this.returnType,
+            term: this.returnType,
             identifier,
             part: Part.Return,
-            path: [...localOptions.parents, `${Identifier.Return}.${this.returnType}`],
-            score: calculateScore(this.returnType, needle),
+            path: [...parents, `${Identifier.Return}.${this.returnType}`],
+            boost: 0,
+            weight: 0,
         });
 
-        if (localOptions.weighted !== false) {
-            ret = ret.map(e => {
-                e.score += IdentifierWeights.Function;
-
-                return e;
-            });
+        if (options.weighted !== false) {
+            ret.forEach(e => e.weight += IdentifierWeights.Function);
         }
 
         return ret;

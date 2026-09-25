@@ -1,5 +1,5 @@
-import { Declaration, calculateScore } from './base';
-import { IEnumeration, IEntry, Searchable, Identifier, IdentifierWeights, SearchOptions, SearchResult, Part } from '../../interfaces';
+import { Declaration, SearchEntry } from './base';
+import { IEnumeration, IEntry, Searchable, Identifier, IdentifierWeights, SearchOptions, Part } from '../../interfaces';
 
 export class Enumeration extends Declaration implements IEnumeration, Searchable {
     /**
@@ -20,35 +20,29 @@ export class Enumeration extends Declaration implements IEnumeration, Searchable
         }, {} as Record<string, Entry>);
     }
 
-    public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const localOptions = JSON.parse(JSON.stringify(options));
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        const ret = super.searchEntries(options);
 
-        let ret = [
-            ...await super.search(needle, localOptions),
-        ];
+        ret[0].boost += 0.01;
 
-        ret[0].score += 0.01;
+        const parents = [...options.parents, `${this.identifier}.${this.name}`];
 
-        localOptions.parents.push(`${this.identifier}.${this.name}`);
-
-        if (localOptions.l1Only !== true) {
+        if (options.l1Only !== true) {
             for (const entry of Object.values(this.entries)) {
                 ret.push({
                     name: entry.name,
+                    term: entry.name,
                     identifier: Identifier.EnumerationEntry,
                     part: Part.Name,
-                    path: [...localOptions.parents, `${Identifier.EnumerationEntry}.${entry.name}`],
-                    score: calculateScore(entry.name, needle),
+                    path: [...parents, `${Identifier.EnumerationEntry}.${entry.name}`],
+                    boost: 0,
+                    weight: 0,
                 });
             }
         }
 
-        if (localOptions.weighted !== false) {
-            ret = ret.map(e => {
-                e.score += IdentifierWeights.Enumeration;
-
-                return e;
-            });
+        if (options.weighted !== false) {
+            ret.forEach(e => e.weight += IdentifierWeights.Enumeration);
         }
 
         return ret;

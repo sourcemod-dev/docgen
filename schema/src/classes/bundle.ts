@@ -1,6 +1,7 @@
 import { IBundle, IStrand, Meta, Source, IVersioning, Searchable, SearchOptions, SearchResult, Identifier, Symbol, splitPath } from '../interfaces';
-import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet } from './symbol';
+import { Function, MethodMap, EnumStruct, Constant, Define, Enumeration, TypeDefinition, TypeSet, Declaration, SearchEntry } from './symbol';
 import { ClassSymbol } from './symbol/types';
+import { getSearchIndex } from './search_index';
 
 export class Bundle implements IBundle, Searchable {
     /**
@@ -35,17 +36,19 @@ export class Bundle implements IBundle, Searchable {
         this.version = bundle.version;
     }
 
+    /**
+     * @brief Symbols scoring above MIN_SCORE across all strands
+     * @note Indexes are built on first search, changes to strands afterwards are not searched
+     */
     public async search(needle: string, options: SearchOptions): Promise<SearchResult[]> {
-        const ret: Promise<SearchResult[]>[] = [];
+        return getSearchIndex(this, options, o => this.searchEntries(o)).search(needle, options.parents);
+    }
 
-        for (const [include, strand] of Object.entries(this.strands)) {
-            ret.push(strand.search(needle, {
-                ...options,
-                parents: [...options.parents, include],
-            }));
-        }
-
-        return (await Promise.all(ret)).flat();
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        return Object.entries(this.strands).flatMap(([include, strand]) => strand.searchEntries({
+            ...options,
+            parents: [...options.parents, include],
+        }));
     }
 
     public getSymbolByPath(p: readonly string[]): ClassSymbol {
@@ -86,26 +89,25 @@ export class Strand implements IStrand, Searchable {
         this.typedefs = Strand.mapFibers(strand.typedefs, TypeDefinition);
     }
 
+    /**
+     * @brief Symbols scoring above MIN_SCORE
+     * @note Indexes are built on first search, changes to the strand afterwards are not searched
+     */
     public async search(needle: string, options: Readonly<SearchOptions>): Promise<SearchResult[]> {
-        const ret: Promise<SearchResult[]>[] = [];
+        return getSearchIndex(this, options, o => this.searchEntries(o)).search(needle, options.parents);
+    }
 
-        const searchSymbolType = (member: Record<string, Searchable>) => {
-            for (const f of Object.values(member)) {
-                ret.push(f.search(needle, options));
-            }
-        }
-
-        searchSymbolType(this.functions);
-        searchSymbolType(this.methodmaps);
-        searchSymbolType(this.enumstructs);
-        searchSymbolType(this.constants);
-        searchSymbolType(this.defines);
-        searchSymbolType(this.enums);
-        searchSymbolType(this.typesets);
-        searchSymbolType(this.typedefs);
-
-        // Return at least somewhat similar results
-        return (await Promise.all(ret)).flat().filter(e => e.score > 0.5);
+    public searchEntries(options: Readonly<SearchOptions>): SearchEntry[] {
+        return [
+            this.functions,
+            this.methodmaps,
+            this.enumstructs,
+            this.constants,
+            this.defines,
+            this.enums,
+            this.typesets,
+            this.typedefs,
+        ].flatMap(member => Object.values(member).flatMap((symbol: Declaration) => symbol.searchEntries(options)));
     }
 
     public getSymbolByPath(p: readonly string[]): ClassSymbol {
